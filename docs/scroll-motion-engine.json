@@ -1,0 +1,639 @@
+{
+  "version": 1,
+  "engine": "vanilla",
+  "benchmarkSourceHash": "6e9b7f496088e5bef90e2c19072ec98f51673e8d5717c5f73b41443177717d4b",
+  "confirmatorySourceHash": "5dc997689b71bfb72c05bbbb9048453a4f003bc1e0a727bb5667e17af22cf301",
+  "versions": {
+    "motion": "14.0.0",
+    "gsap": "3.15.0",
+    "playwright": "1.63.0",
+    "esbuild": "0.28.1"
+  },
+  "reason": "Vanilla and Motion runtime differences overlap repeatability noise on ordinary effects. Choose the much smaller vanilla delivered asset. GSAP scripting cost is materially higher and reproduced in two throttled deciding cases; its input proxy and total-task noise do not establish a universal smoothness ranking.",
+  "prototypeGzipBytes": {
+    "vanilla": 1021,
+    "motion": 23445,
+    "gsap": 49313,
+    "staticDelivered": 0
+  },
+  "confirmation": [
+    {
+      "fixture": "imagery",
+      "width": 1080,
+      "cpu": 4,
+      "engine": "static",
+      "scriptMs": {
+        "median": 108.022,
+        "p95": 108.692,
+        "min": 104.759,
+        "max": 108.692,
+        "values": [
+          104.759,
+          108.022,
+          108.30699999999999,
+          107.186,
+          108.692
+        ]
+      },
+      "taskMs": {
+        "median": 437.76099999999997,
+        "p95": 471.318,
+        "min": 392.491,
+        "max": 471.318,
+        "values": [
+          437.76099999999997,
+          392.491,
+          471.318,
+          429.40399999999994,
+          467.122
+        ]
+      },
+      "lcpMs": {
+        "median": 116,
+        "p95": 140,
+        "min": 112,
+        "max": 140,
+        "values": [
+          136,
+          116,
+          140,
+          112,
+          116
+        ]
+      },
+      "cls": {
+        "median": 0,
+        "p95": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "eventMs": {
+        "median": 30,
+        "p95": 32.5,
+        "min": 26.40000009536743,
+        "max": 32.5,
+        "values": [
+          32.5,
+          31.200000047683716,
+          30,
+          26.40000009536743,
+          27.100000143051147
+        ]
+      }
+    },
+    {
+      "fixture": "imagery",
+      "width": 1080,
+      "cpu": 4,
+      "engine": "vanilla",
+      "scriptMs": {
+        "median": 108.911,
+        "p95": 110.64900000000002,
+        "min": 104.381,
+        "max": 110.64900000000002,
+        "values": [
+          108.911,
+          104.381,
+          110.64900000000002,
+          109.427,
+          106.739
+        ]
+      },
+      "taskMs": {
+        "median": 596.717,
+        "p95": 624.1249999999999,
+        "min": 563.584,
+        "max": 624.1249999999999,
+        "values": [
+          608.099,
+          578.5550000000001,
+          563.584,
+          624.1249999999999,
+          596.717
+        ]
+      },
+      "lcpMs": {
+        "median": 124,
+        "p95": 136,
+        "min": 124,
+        "max": 136,
+        "values": [
+          136,
+          124,
+          124,
+          128,
+          124
+        ]
+      },
+      "cls": {
+        "median": 0,
+        "p95": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "eventMs": {
+        "median": 27.90000009536743,
+        "p95": 32.09999990463257,
+        "min": 23.100000143051147,
+        "max": 32.09999990463257,
+        "values": [
+          27.90000009536743,
+          32.09999990463257,
+          23.100000143051147,
+          30.5,
+          24.100000143051147
+        ]
+      }
+    },
+    {
+      "fixture": "imagery",
+      "width": 1080,
+      "cpu": 4,
+      "engine": "motion",
+      "scriptMs": {
+        "median": 115.453,
+        "p95": 117.156,
+        "min": 111.64999999999999,
+        "max": 117.156,
+        "values": [
+          117.156,
+          111.64999999999999,
+          117.109,
+          115.453,
+          115.034
+        ]
+      },
+      "taskMs": {
+        "median": 608.159,
+        "p95": 642.1170000000001,
+        "min": 557.06,
+        "max": 642.1170000000001,
+        "values": [
+          626.775,
+          585.721,
+          642.1170000000001,
+          608.159,
+          557.06
+        ]
+      },
+      "lcpMs": {
+        "median": 148,
+        "p95": 152,
+        "min": 132,
+        "max": 152,
+        "values": [
+          148,
+          148,
+          132,
+          152,
+          140
+        ]
+      },
+      "cls": {
+        "median": 0,
+        "p95": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "eventMs": {
+        "median": 28.399999856948853,
+        "p95": 31.59999990463257,
+        "min": 22.199999809265137,
+        "max": 31.59999990463257,
+        "values": [
+          28.399999856948853,
+          31.59999990463257,
+          31.299999952316284,
+          22.199999809265137,
+          28.399999856948853
+        ]
+      }
+    },
+    {
+      "fixture": "imagery",
+      "width": 1080,
+      "cpu": 4,
+      "engine": "gsap",
+      "scriptMs": {
+        "median": 222.92700000000002,
+        "p95": 231.412,
+        "min": 208.422,
+        "max": 231.412,
+        "values": [
+          231.412,
+          208.422,
+          222.92700000000002,
+          217.92499999999998,
+          223.183
+        ]
+      },
+      "taskMs": {
+        "median": 769.216,
+        "p95": 829.885,
+        "min": 703.1610000000001,
+        "max": 829.885,
+        "values": [
+          829.885,
+          703.1610000000001,
+          787.1940000000001,
+          754.6389999999999,
+          769.216
+        ]
+      },
+      "lcpMs": {
+        "median": 172,
+        "p95": 216,
+        "min": 164,
+        "max": 216,
+        "values": [
+          216,
+          164,
+          164,
+          176,
+          172
+        ]
+      },
+      "cls": {
+        "median": 0,
+        "p95": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "eventMs": {
+        "median": 21.90000009536743,
+        "p95": 29.200000047683716,
+        "min": 19.40000009536743,
+        "max": 29.200000047683716,
+        "values": [
+          21.90000009536743,
+          29.200000047683716,
+          28.59999990463257,
+          21.200000047683716,
+          19.40000009536743
+        ]
+      }
+    },
+    {
+      "fixture": "process",
+      "width": 375,
+      "cpu": 4,
+      "engine": "static",
+      "scriptMs": {
+        "median": 106.062,
+        "p95": 111.13400000000001,
+        "min": 104.015,
+        "max": 111.13400000000001,
+        "values": [
+          104.015,
+          106.062,
+          111.13400000000001,
+          105.613,
+          106.42
+        ]
+      },
+      "taskMs": {
+        "median": 389.926,
+        "p95": 462.503,
+        "min": 362.21500000000003,
+        "max": 462.503,
+        "values": [
+          419.651,
+          389.926,
+          462.503,
+          362.21500000000003,
+          365.35
+        ]
+      },
+      "lcpMs": {
+        "median": 112,
+        "p95": 136,
+        "min": 108,
+        "max": 136,
+        "values": [
+          136,
+          116,
+          108,
+          112,
+          112
+        ]
+      },
+      "cls": {
+        "median": 0,
+        "p95": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "eventMs": {
+        "median": 26.299999952316284,
+        "p95": 32.700000047683716,
+        "min": 16.299999952316284,
+        "max": 32.700000047683716,
+        "values": [
+          26.299999952316284,
+          16.299999952316284,
+          22.199999809265137,
+          28.299999952316284,
+          32.700000047683716
+        ]
+      }
+    },
+    {
+      "fixture": "process",
+      "width": 375,
+      "cpu": 4,
+      "engine": "vanilla",
+      "scriptMs": {
+        "median": 107.617,
+        "p95": 108.732,
+        "min": 105.63300000000001,
+        "max": 108.732,
+        "values": [
+          108.58300000000001,
+          105.63300000000001,
+          107.617,
+          108.732,
+          105.93299999999999
+        ]
+      },
+      "taskMs": {
+        "median": 515.886,
+        "p95": 545.3650000000001,
+        "min": 504.397,
+        "max": 545.3650000000001,
+        "values": [
+          515.886,
+          531.924,
+          504.397,
+          514.4179999999999,
+          545.3650000000001
+        ]
+      },
+      "lcpMs": {
+        "median": 120,
+        "p95": 128,
+        "min": 108,
+        "max": 128,
+        "values": [
+          116,
+          108,
+          120,
+          128,
+          120
+        ]
+      },
+      "cls": {
+        "median": 0,
+        "p95": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "eventMs": {
+        "median": 25.699999809265137,
+        "p95": 28.40000009536743,
+        "min": 20.299999952316284,
+        "max": 28.40000009536743,
+        "values": [
+          25.699999809265137,
+          20.299999952316284,
+          26.09999990463257,
+          28.40000009536743,
+          23.699999809265137
+        ]
+      }
+    },
+    {
+      "fixture": "process",
+      "width": 375,
+      "cpu": 4,
+      "engine": "motion",
+      "scriptMs": {
+        "median": 115.85999999999999,
+        "p95": 117.03099999999999,
+        "min": 113.638,
+        "max": 117.03099999999999,
+        "values": [
+          117.03099999999999,
+          116.686,
+          114.957,
+          115.85999999999999,
+          113.638
+        ]
+      },
+      "taskMs": {
+        "median": 493.359,
+        "p95": 526.972,
+        "min": 473.67799999999994,
+        "max": 526.972,
+        "values": [
+          526.972,
+          473.67799999999994,
+          494.464,
+          492.512,
+          493.359
+        ]
+      },
+      "lcpMs": {
+        "median": 136,
+        "p95": 152,
+        "min": 132,
+        "max": 152,
+        "values": [
+          152,
+          132,
+          136,
+          132,
+          152
+        ]
+      },
+      "cls": {
+        "median": 0,
+        "p95": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "eventMs": {
+        "median": 28.299999952316284,
+        "p95": 30.399999856948853,
+        "min": 16.799999952316284,
+        "max": 30.399999856948853,
+        "values": [
+          16.799999952316284,
+          28.299999952316284,
+          17.800000190734863,
+          29.59999990463257,
+          30.399999856948853
+        ]
+      }
+    },
+    {
+      "fixture": "process",
+      "width": 375,
+      "cpu": 4,
+      "engine": "gsap",
+      "scriptMs": {
+        "median": 180.606,
+        "p95": 196.89999999999998,
+        "min": 180.43300000000002,
+        "max": 196.89999999999998,
+        "values": [
+          196.89999999999998,
+          185.795,
+          180.43300000000002,
+          180.606,
+          180.573
+        ]
+      },
+      "taskMs": {
+        "median": 630.912,
+        "p95": 668.368,
+        "min": 619.5039999999999,
+        "max": 668.368,
+        "values": [
+          668.368,
+          662.313,
+          623.536,
+          619.5039999999999,
+          630.912
+        ]
+      },
+      "lcpMs": {
+        "median": 156,
+        "p95": 180,
+        "min": 148,
+        "max": 180,
+        "values": [
+          180,
+          156,
+          176,
+          148,
+          152
+        ]
+      },
+      "cls": {
+        "median": 0,
+        "p95": 0,
+        "min": 0,
+        "max": 0,
+        "values": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "eventMs": {
+        "median": 23.700000047683716,
+        "p95": 29.899999856948853,
+        "min": 23.299999952316284,
+        "max": 29.899999856948853,
+        "values": [
+          29.899999856948853,
+          23.700000047683716,
+          23.5,
+          27.5,
+          23.299999952316284
+        ]
+      }
+    }
+  ],
+  "equivalence": [
+    {
+      "browser": "chromium",
+      "engine": "motion",
+      "maxTransformDifference": 0,
+      "tolerance": 0.05
+    },
+    {
+      "browser": "chromium",
+      "engine": "gsap",
+      "maxTransformDifference": 0.006699999999998596,
+      "tolerance": 0.05
+    },
+    {
+      "browser": "firefox",
+      "engine": "motion",
+      "maxTransformDifference": 0.013570000000000526,
+      "tolerance": 0.05
+    },
+    {
+      "browser": "firefox",
+      "engine": "gsap",
+      "maxTransformDifference": 0.006599999999998829,
+      "tolerance": 0.05
+    },
+    {
+      "browser": "webkit",
+      "engine": "motion",
+      "maxTransformDifference": 0,
+      "tolerance": 0.05
+    },
+    {
+      "browser": "webkit",
+      "engine": "gsap",
+      "maxTransformDifference": 0.00602899999999984,
+      "tolerance": 0.05
+    }
+  ],
+  "humanPreference": null,
+  "rollout": "versioned opt-in",
+  "limitations": [
+    "Five runs describe repeatability, not strong statistical proof.",
+    "Windows headless Chromium desktop/mobile emulation, not physical phone or Safari/iOS.",
+    "Power and hardware refresh cadence unknown; see OS/CPU/RAM inventory.",
+    "Native CDP wheel input drives fixed scrolling; rAF intervals are main-thread scheduling proxy only.",
+    "Paint trace sums are event durations; overlapping compositing/frame events are counts, not a single end-to-end frame metric.",
+    "Interaction event-to-two-rAF latency is a lab processing/presentation proxy, not field INP.",
+    "LCP is lab-only and never opacity-hidden primary content.",
+    "Long-task and raw compositor/frame traces retained per run; recordings separate."
+  ]
+}

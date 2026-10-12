@@ -1,0 +1,36 @@
+{
+  "version":2,
+  "businessHash":"5b5f8667a5c3bb8d30c28d9bcdbbb3952e72e93750a120ab057ed76b52e66c5c",
+  "request":"",
+  "candidates":[
+    {"id":"monthly-line","rationale":"The actual monthly service can be understood as a repeatable sequence, and sparse media favors precise typography and rules.","typography":"Large literary serif offer statement paired with compact tabular labels and plain sans-serif explanations.","composition":"An asymmetric opening with a short service statement and a narrow vertical month line; interiors use a wider reading column and structured scope rows.","mediaTreatment":"No fabricated photographs; CSS rules and numerals explain sequence without posing as customer documents."},
+    {"id":"quiet-brief","rationale":"A minimal memo style would keep language clear but gives too little visual structure to the recurring monthly process.","typography":"Uniform sans-serif with restrained scale contrast.","composition":"Single central column of prose and bullet sections.","mediaTreatment":"No imagery, only text."}
+  ],
+  "selected":"monthly-line",
+  "rationale":"Monthly bookkeeping is an ongoing service with defined handoffs; the month line helps owners locate what they receive and when, while the first screen answers who, what, and next step. The alternate memo approach was too flat for comparing inclusions and exclusions.",
+  "system":{
+    "personality":"Measured, candid, precise, and quietly warm; no bank-like authority cues or fabricated proof.",
+    "typography":"Georgia serif for a compact opening proposition; system sans for explanations; tabular numerals and letter-spaced labels for process markers.",
+    "colorRoles":"Warm paper #F6F2EA, dark blue ink #17333D, copper action #914B30, pale blue-gray surface #E8EEED; contrast is checked in browser.",
+    "density":"Open first screen with a concise statement; denser, aligned detail for monthly scope and pricing boundaries.",
+    "rhythm":"Short proposition, then three unequal process beats, then precise service details and an honest invitation to contact.",
+    "mediaTreatment":"No photography or sample reports. Use CSS-drawn lines only as navigation and sequence aids, never as evidence.",
+    "surfaces":"Flat paper and one tinted process field; hairlines divide actual service steps.",
+    "navigation":"Persistent brand, Monthly work, and Contact links; active route visible and mobile links remain directly reachable.",
+    "motifs":"A left-side month line with small numerals and a single horizontal rule that continues into interior section headings.",
+    "interiors":"The monthly-work page answers scope, exclusions, and price process with detailed rows; it shares colors and rules without repeating the homepage opening.",
+    "avoid":["Fabricated client figures or sample reports","Stock finance imagery","Automatic booking language","Uniform card grids"]
+  },
+  "studies":[],
+  "designContractVersion":1,
+  "centralIdea":"For a small service-company owner deciding whether recurring bookkeeping fits, show the documented monthly sequence and clear service boundaries as a readable line of work.",
+  "opportunityIds":["opp-ledger","opp-proof"],
+  "decisions":[
+    {"id":"d-sequence","kind":"composition","choice":"Use a vertical month line with three unequal service beats.","rationale":"The included activities are concrete and recurring; a sequence helps the visitor understand the engagement.","scope":"Homepage process and interior monthly-work detail","tradeoff":"Less visual spectacle; avoids unsupported proof."},
+    {"id":"d-type","kind":"typography","choice":"Pair a modest serif headline with compact numbered sans-serif process labels.","rationale":"Distinct scale lets the owner scan the offer and then the practical detail.","scope":"Site-wide hierarchy","tradeoff":"Requires careful mobile line lengths and contrast."},
+    {"id":"d-contact","kind":"interaction","choice":"Describe the email as a fit-call request, with a separate page explaining reply timing.","rationale":"The source says no appointment is booked at submission.","scope":"Navigation and CTAs","tradeoff":"One extra step before the visitor contacts the firm, but expectations stay accurate."}
+  ],
+  "rejectedAlternatives":[{"id":"quiet-brief","summary":"A uniformly restrained memo column hides the important differences between recurring work, exclusions, and first contact."}],
+  "identityInvariants":["Warm paper and dark blue ink with copper actions","Distinct serif proposition and compact numbered process labels","Month-line sequence grounded in the documented service","Contact language remains a request, never a booked appointment"],
+  "flexibleDecisions":["Exact section spacing and rule thickness","Whether interior scope uses rows or a compact table","Minor heading wording after factual review"]
+}

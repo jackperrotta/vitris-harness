@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "packVersion": "v1",
+  "packHash": "92d1ebbea104da3ba7c5af6c7dc3f5d973e0ed536470ff461301f3f99c7954b4",
+  "narrativeHash": "05d64e1cb5d6e03989780cb2fd84a40f03d99b34a560be01983f635aa1c64321",
+  "applicable": [
+    {
+      "principle": "Let the service process carry the visual sequence when no real photography is available.",
+      "why": "The synthetic brief gives an exact monthly scope and contact sequence, while the media inventory has zero usable images. The inspected Northline desktop capture shows type scale and a right-side checklist making a sparse first screen legible; mobile preserves its verbal hierarchy but the cookie notice takes substantial space.",
+      "evidencePaths": [
+        "vitris-northline-counsel-home-1280-viewport.png",
+        "vitris-northline-counsel-home-375-viewport.png"
+      ]
+    },
+    {
+      "principle": "Use strong type hierarchy for the owner question, then quieter detail for scope and exclusions.",
+      "why": "The inspected Northline home separates a large claim from a compact process list. Harbor Ledger needs an equally clear but distinct accounting expression without borrowing its wording or exact composition.",
+      "evidencePaths": [
+        "vitris-northline-counsel-home-1280-viewport.png"
+      ]
+    }
+  ],
+  "avoided": [
+    {
+      "principle": "Project-photo proof as a first-screen device",
+      "why": "No client work or real team photography exists; the inspected Tide & Slate example works because its large roof image depicts work, which Harbor Ledger cannot substantiate."
+    },
+    {
+      "principle": "Copy the Northline legal hero",
+      "why": "Its oversized legal headline and identical right-side checklist would make the accounting site feel borrowed rather than driven by the monthly reporting process."
+    }
+  ],
+  "plannedApplication": {
+    "homepage": "A ledger-inspired timeline will explain capture, reconciliation, and monthly conversation; a concise first screen will state the service and honest email next step.",
+    "interior": "A service-scope page will expand the monthly cycle, exclusions, pricing process, and fit-call behavior without inventing client proof."
+  },
+  "evidencePaths": [
+    "vitris-northline-counsel-home-1280-viewport.png",
+    "vitris-northline-counsel-home-375-viewport.png",
+    "vitris-tide-and-slate-home-1280-viewport.png"
+  ],
+  "teachingPrinciples": [
+    {
+      "id": "sparse-imagery-process",
+      "version": 1,
+      "contentHash": "c55f301b9c63b295e36fcca64f70966882ed848fc9336297ed0cd414b9c9618c",
+      "reason": "Zero real images and a documented repeatable bookkeeping scope favor process-based explanation."
+    },
+    {
+      "id": "typography-led-hierarchy",
+      "version": 1,
+      "contentHash": "5c37b7a21e0e26db70d8d74ec527e8bdabee59ade3af7de6f75873662e56d4f6",
+      "reason": "The visitor needs to scan scope, exclusions, and next step without photographic proof."
+    }
+  ]
+}

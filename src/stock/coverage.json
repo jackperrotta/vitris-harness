@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "targets": ["trades", "professional-services"],
+  "imageQueries": [
+    {"query":"roofer roof installation", "industry":"trades"},
+    {"query":"electrician electrical work", "industry":"trades"},
+    {"query":"plumber pipe repair", "industry":"trades"},
+    {"query":"carpenter woodworking hands", "industry":"trades"},
+    {"query":"accounting paperwork desk", "industry":"professional-services"},
+    {"query":"consulting office meeting", "industry":"professional-services"},
+    {"query":"architecture blueprints desk", "industry":"professional-services"},
+    {"query":"minimal office interior natural light", "industry":"professional-services"}
+  ],
+  "videoQueries": [
+    {"query":"woodworking hands", "industry":"trades"},
+    {"query":"office desk working", "industry":"professional-services"}
+  ]
+}

@@ -1,0 +1,12 @@
+import {EXTREMES} from './theme-compositions-extremes.ts';
+import {READING} from './theme-compositions-reading.ts';
+import {GRAPHIC} from './theme-compositions-graphic.ts';
+import {TACTILE} from './theme-compositions-tactile.ts';
+import {SERVICE_EXTREMES} from './theme-compositions-service-extremes.ts';
+import {SERVICE_PEOPLE} from './theme-compositions-service-people.ts';
+import {SERVICE_PROJECT} from './theme-compositions-service-project.ts';
+import {SERVICE_PROGRAMME} from './theme-compositions-service-programme.ts';
+import {SERVICE_SEASON} from './theme-compositions-service-season.ts';
+import {refineComposition} from './theme-art-direction.ts';
+import type {Composition} from './theme-compositions-extremes.ts';
+export const COMPOSITIONS:Record<string,Composition>=Object.fromEntries(Object.entries({...EXTREMES,...READING,...GRAPHIC,...TACTILE,...SERVICE_EXTREMES,...SERVICE_PEOPLE,...SERVICE_PROJECT,...SERVICE_PROGRAMME,...SERVICE_SEASON}).map(([id,c])=>[id,refineComposition(id,c)]));

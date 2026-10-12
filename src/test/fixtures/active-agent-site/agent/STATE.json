@@ -1,0 +1,202 @@
+{
+  "version": 3,
+  "status": "preview_ready",
+  "current": null,
+  "preview_ready": true,
+  "launched": false,
+  "iteration": 81,
+  "cumulativeSpend": {
+    "iterations": 81,
+    "calls": 81,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "durationMs": 197,
+    "jevCalls": 0,
+    "jevInputTokens": 0,
+    "jevOutputTokens": 0,
+    "hasUnmeteredStages": true
+  },
+  "nodes": {
+    "harvest": {
+      "status": "done",
+      "attempts": 2,
+      "failures": [],
+      "inputHash": "2a925045ed697abd2a100ada642620b8441d6a3c9a134fa031fc066a7f4d0a8b",
+      "outputHash": "b59079eb9f5aa8ee186b1b6e47e890e07531361465b74afde18bdbc824190070",
+      "skillHash": "0ebb4c10b2df46b25d2e30674194e3edc46a8183548c608b1b0845411632a175"
+    },
+    "business": {
+      "status": "done",
+      "attempts": 2,
+      "failures": [],
+      "inputHash": "c51d01bc5d2850a757bde713cdf21e8094868159e5980f36c9765b6951e1e30b",
+      "outputHash": "5b5f8667a5c3bb8d30c28d9bcdbbb3952e72e93750a120ab057ed76b52e66c5c",
+      "skillHash": "08d3143683845de86e3193d417141e4eab31ffeda1470a1a03016be276e0d1f7"
+    },
+    "business-review": {
+      "status": "done",
+      "attempts": 1,
+      "failures": [],
+      "inputHash": "990794bbf2d86589ba3a88478a67826d28f868c1751acb93a41056f749e5c81a",
+      "outputHash": "0ac1e3b4ba47b5566a4c7703467d0d310f1990ae33f740334069d4522c82765e",
+      "skillHash": "c5340b88aa7a06baeba7deccc52abf45bb059e573977a3f3ec1e9201ae392f40"
+    },
+    "media": {
+      "status": "done",
+      "attempts": 3,
+      "failures": [],
+      "inputHash": "8f0b6d13b5067ca7306f2a0ada28be7e7bcd7b02fe7135346ddac95a39aa48cf",
+      "outputHash": "1bac4ff181f267c8cc4a392d1d1f2361b8555f056133f09eccb5707660b15116",
+      "skillHash": "9bb1d5bd70b328b875a1627efb6549c0d41f70086ddaaf57f28072b789fe6490"
+    },
+    "narrative": {
+      "status": "done",
+      "attempts": 1,
+      "failures": [],
+      "inputHash": "6982ece6b55f407e75aa05132224ecad40f204df202c3e7787300cf40aa78a12",
+      "outputHash": "05d64e1cb5d6e03989780cb2fd84a40f03d99b34a560be01983f635aa1c64321",
+      "skillHash": "47039952b541a6bb0915f10340584417448d282ed1abec9885bcab0a9e309785"
+    },
+    "narrative-review": {
+      "status": "done",
+      "attempts": 1,
+      "failures": [],
+      "inputHash": "41d0c312bd9a0a556712c289eb2ea3c5d9f78dea87124c21f026f3c118ba54d5",
+      "outputHash": "1cc42efade47ea1b9d2ed7094d5d9f2b53eead83f2e80650ff528052267eb6f8",
+      "skillHash": "c5340b88aa7a06baeba7deccc52abf45bb059e573977a3f3ec1e9201ae392f40"
+    },
+    "reference-analysis": {
+      "status": "done",
+      "attempts": 1,
+      "failures": [],
+      "inputHash": "4268e3652ad9cfa276f71526f8ab7ca61671630be2a612c067af0fbf804f9b68",
+      "outputHash": "00c0b67010b7b730c8eaccfbb45f41ec356ae10d5f5d10003549e9249e7e6b08",
+      "skillHash": "e77029edf99126abda950b89e3d32d1fc88639ba27286f69208accfe11ef563e"
+    },
+    "direction": {
+      "status": "done",
+      "attempts": 1,
+      "failures": [],
+      "inputHash": "f90e6a1c870a882b57725f10cc0a35652082035e2959ed7f78f708cb94d00122",
+      "outputHash": "9362ccb64bcac101fbb0bac961e36b6d4d612c14300075b60f525ebbe2025297",
+      "skillHash": "8da53ea2d4b70894c0620a8fd29a4d1cbf192ed753305c5a0319e4b0f4b1e0a1"
+    },
+    "direction-review": {
+      "status": "done",
+      "attempts": 1,
+      "failures": [],
+      "inputHash": "05add0f42d82a32d3270c679461ea6460863dd91854d8598f7ab1bc23acd66c6",
+      "outputHash": "22d8288b3bb2cfa079f53247610117a69171fdb82aca7d878e32edc54d81321b",
+      "skillHash": "3c4bb56754221e1cb2f5738fd1371c5aa650c392ddaf218593677e103a0dcd5f"
+    },
+    "storyboard": {
+      "status": "done",
+      "attempts": 1,
+      "failures": [],
+      "inputHash": "624bf802cd7a005311cd983e2cb845f9ec6d2429a33e244bd46256057b822b4d",
+      "outputHash": "ec27f88dc836d026eaa2e18b9f185ae55e3a5b2b435e3f89abe60b41b84e20e2",
+      "skillHash": "86c37c40926c8fe94ea0daf69d850ac735a34bce26c50aa228037e4fa3011608"
+    },
+    "copy": {
+      "status": "done",
+      "attempts": 1,
+      "failures": [],
+      "inputHash": "cfb59ae1090bdc95e4bc7251e5c5307e4ee4fe79aad4b9cdd4f59fb6e4d76422",
+      "outputHash": "ab435b18ece07fe5792011de99bba61f5e4efdb25354011e5e341fb0a7855120",
+      "skillHash": "d4b81f98c8a551d390656d2a4f574429aae6f559309f0f54c5aaf9f07b5d0bf3"
+    },
+    "copy-review": {
+      "status": "done",
+      "attempts": 1,
+      "failures": [],
+      "inputHash": "b228b1d0ee748e1fbb016d14138b4e5375d0209d93f85dcfba02845aba0eb839",
+      "outputHash": "fad1eb95a00bababb89a73327475d51baa9f066d35a0eaba6989b282cd870793",
+      "skillHash": "c5340b88aa7a06baeba7deccc52abf45bb059e573977a3f3ec1e9201ae392f40"
+    },
+    "representative": {
+      "status": "done",
+      "attempts": 2,
+      "failures": [],
+      "inputHash": "a3ff11146c4b669a49547d447741041cabc03403cd2626bcdcb75a4392326e28",
+      "outputHash": "bbec87138b07d20b621637ddc263ffae5b80f70e10487722afdc526671049edd",
+      "skillHash": "9c03fe37065e4c2991e1f8ef1c051a5daab08b0b7c2f2777828caf6d41bec76e"
+    },
+    "representative-browser": {
+      "status": "done",
+      "attempts": 2,
+      "failures": [],
+      "inputHash": "0e2998414c2668a6f71ac515fd830128354fa7c11ec4b89764616f4845d25b1b",
+      "outputHash": "5f21f7577d1f97561a1d5d82f7cc6f62dec37b61ce25be68c2dc25b6d8493684",
+      "skillHash": "5ec4df0d791a44784de464bbe1269cf79a2c8c8cd873d6f614284e6a3f689d82"
+    },
+    "representative-review": {
+      "status": "done",
+      "attempts": 2,
+      "failures": [],
+      "inputHash": "d8b03e60651bbf3b8defdf4a05cab629bf2d0dfd4ba2753946f1609b1ad60bb5",
+      "outputHash": "4ef59ebd9b4af9ed30876e34ad6e948d44a0ce1d31bf958138e5b4e1d18eaf1a",
+      "skillHash": "3c4bb56754221e1cb2f5738fd1371c5aa650c392ddaf218593677e103a0dcd5f"
+    },
+    "representative-quality": {
+      "status": "done",
+      "attempts": 2,
+      "failures": [],
+      "inputHash": "8470f74e06e3e119b56d6e25c01b0dc37cf02f5bb1280418cd10e230ca637930",
+      "outputHash": "a6af2bcc4fa9544f87b36e5e291a1daac390c040028cdff43412a211db05926c",
+      "skillHash": "28e6c0d233cc265f58eed82238a59d2a3aa62a6d625ed92691af2e8a9ef0a971"
+    },
+    "copy-expansion": {
+      "status": "done",
+      "attempts": 1,
+      "failures": [],
+      "inputHash": "b62bf0892f35ed3707db4746ba8970389d310676509c69191441ae7c9ee4e1a0",
+      "outputHash": "ab435b18ece07fe5792011de99bba61f5e4efdb25354011e5e341fb0a7855120",
+      "skillHash": "9c0e05126e25ef6ba0b3d50e3bf8134354a5e3ba64da84b8782650f0981c5f78"
+    },
+    "pages": {
+      "status": "done",
+      "attempts": 1,
+      "failures": [],
+      "inputHash": "15e67d23520198368ef6a97e5f2973b9684bf195ad3ae3bb14df89576c66f4e4",
+      "outputHash": "c059695ab6775128eb3bd19a90be46d0813bd69350d1ba49be951a38a54424d0",
+      "skillHash": "b8c19caa811a52f5a80d0258b745138d24c43702d0982b0ab249c5635e63efdc"
+    },
+    "browser": {
+      "status": "done",
+      "attempts": 1,
+      "failures": [],
+      "inputHash": "0e2998414c2668a6f71ac515fd830128354fa7c11ec4b89764616f4845d25b1b",
+      "outputHash": "d0a2e140a1e5651fd8eb43c5ffc09496d32a546faaf011d848f377cdf009415f",
+      "skillHash": "5ec4df0d791a44784de464bbe1269cf79a2c8c8cd873d6f614284e6a3f689d82"
+    },
+    "visual-review": {
+      "status": "done",
+      "attempts": 1,
+      "failures": [],
+      "inputHash": "d8b03e60651bbf3b8defdf4a05cab629bf2d0dfd4ba2753946f1609b1ad60bb5",
+      "outputHash": "fde2bd7fad30da3ac6afd0059743adb295651206c56d7673bff301f58fc155f2",
+      "skillHash": "3c4bb56754221e1cb2f5738fd1371c5aa650c392ddaf218593677e103a0dcd5f"
+    },
+    "content-review": {
+      "status": "done",
+      "attempts": 1,
+      "failures": [],
+      "inputHash": "868bd04f8a6c1cb51aef011d9e58486772ee09e797e1e9ce4d3f2415def831d0",
+      "outputHash": "11855cd870b658ad4920e3c47d63db54b935d5835aa5e997d3fef60832b66128",
+      "skillHash": "3c4bb56754221e1cb2f5738fd1371c5aa650c392ddaf218593677e103a0dcd5f"
+    },
+    "preview": {
+      "status": "done",
+      "attempts": 1,
+      "failures": [],
+      "inputHash": "a250c99f5098b39f5afb5ade9b29e2f0ba5e836df18fc8b08378a06dacb223e5",
+      "outputHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "skillHash": "9ab26b1a0c49e4456e19d146e9c2d343a09e7e3538a1f552d405c288440cbcad"
+    },
+    "launch": {
+      "status": "pending",
+      "attempts": 0
+    }
+  },
+  "consecutiveFailures": {}
+}

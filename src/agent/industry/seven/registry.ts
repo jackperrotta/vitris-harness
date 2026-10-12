@@ -1,0 +1,26 @@
+import {NEIGHBORHOOD_PRACTICE} from './medical-neighborhood.ts';
+import {GROUND_ATLAS} from './landscape-atlas.ts';
+import {BUILT_RECORD} from './construction-built.ts';
+import {COMFORT_DISPATCH} from './hvac-dispatch.ts';
+import {CIRCUIT_OFFICE} from './electrical-circuit.ts';
+import {COUNSEL_CHAMBERS} from './legal-counsel.ts';
+import {CORNER_STANDARD} from './barber-corner.ts';
+import {CONTINUUM} from './medical-continuum.ts';
+import {MOVEMENT_CLINIC} from './medical-movement.ts';
+import {LIVING_SEASONS} from './landscape-seasons.ts';
+import {COURTYARD_STUDIO} from './landscape-courtyard.ts';
+import {HOUSE_AND_CRAFT} from './construction-craft.ts';
+import {SITEWORKS} from './construction-siteworks.ts';
+import {CLIMATE_STUDIO} from './hvac-climate.ts';
+import {SEASONAL_SERVICE} from './hvac-seasonal.ts';
+import {LIGHT_AND_LIVING} from './electrical-light.ts';
+import {POWER_FORWARD} from './electrical-power.ts';
+import {COMMON_TABLE} from './legal-table.ts';
+import {CASEWORK} from './legal-casework.ts';
+import {FORM_STUDIO} from './barber-form.ts';
+import {CLUBHOUSE} from './barber-club.ts';
+import {SEVEN_SCRIPT} from './interactions.ts';
+import type {IndustrySite} from '../types.ts';
+export const SEVEN_RELEASE='2026-10-09.2';
+/** Only complete, individually authored suites enter the shared catalog. */
+export const SEVEN_SITES:Record<string,IndustrySite>=Object.fromEntries([NEIGHBORHOOD_PRACTICE,CONTINUUM,MOVEMENT_CLINIC,GROUND_ATLAS,LIVING_SEASONS,COURTYARD_STUDIO,BUILT_RECORD,HOUSE_AND_CRAFT,SITEWORKS,COMFORT_DISPATCH,CLIMATE_STUDIO,SEASONAL_SERVICE,CIRCUIT_OFFICE,LIGHT_AND_LIVING,POWER_FORWARD,COUNSEL_CHAMBERS,COMMON_TABLE,CASEWORK,CORNER_STANDARD,FORM_STUDIO,CLUBHOUSE].map(spec=>[spec.id,{...spec,script:SEVEN_SCRIPT}]));

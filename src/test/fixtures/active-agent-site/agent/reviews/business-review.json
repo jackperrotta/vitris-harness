@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "subjectHash": "5b5f8667a5c3bb8d30c28d9bcdbbb3952e72e93750a120ab057ed76b52e66c5c",
+  "reviewer": "same-agent critical review; synthetic source inspected",
+  "verdict": "pass",
+  "evidence": [
+    "onboarding/business.json",
+    "onboarding/copy/synthetic-brief.md"
+  ],
+  "checks": [
+    {
+      "criterion": "offer",
+      "verdict": "pass",
+      "evidence": "Source describes monthly bookkeeping and excluded tax filing."
+    },
+    {
+      "criterion": "audience",
+      "verdict": "pass",
+      "evidence": "Source identifies small service company owners moving beyond spreadsheets."
+    },
+    {
+      "criterion": "engagement",
+      "verdict": "pass",
+      "evidence": "Email request is distinguished from booking; price remains unquoted."
+    },
+    {
+      "criterion": "evidence",
+      "verdict": "pass",
+      "evidence": "Seven fact-specific excerpts now quote the synthetic brief; each material fact points to its matching evidence ID."
+    },
+    {
+      "criterion": "contradictions",
+      "verdict": "pass",
+      "evidence": "No source contradiction found; people and credentials remain uncertain."
+    }
+  ],
+  "findings": []
+}

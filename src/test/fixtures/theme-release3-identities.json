@@ -1,0 +1,216 @@
+{
+  "release": "2026-10-08.3",
+  "brand": {
+    "schemaVersion": 1,
+    "siteId": "missing-brand-demo",
+    "name": "A small new business",
+    "colors": [],
+    "fallback": true
+  },
+  "themes": [
+    {
+      "id": "swiss-index",
+      "hash": "e6735a484b7ec0ade060c171c68bcbca6a6f65a7c4226a9f195c0ff76fb21042",
+      "main": "0e8b1666e79306dae3d202b9063b3a03079ad8c3fdbd28bca621c6bbaef7e47f",
+      "interior": "a09de042d721f7571d124bd82f2827dc2d6da79d292f3267d52b61ccbe73a81c"
+    },
+    {
+      "id": "rail-atlas",
+      "hash": "61bf8c611a9585e92c9ae33e8a01e48e3e3aa101e45d3fe12f58a9b7b5176b11",
+      "main": "b696017b5c2359d2a0ae74ba188fa66f61f7db55b408d393a245374bcc247c61",
+      "interior": "1a7a352e669ee1eefc69ae9d0f34a05e5a3447b8b9bcc84e80e5abbce2069bf2"
+    },
+    {
+      "id": "technical-manual",
+      "hash": "e31d41fe4de4f328ed5baadc42c9cd6aea9146bf72fea66248d0ffa34af88f0c",
+      "main": "1967680f9ea2d62dfa21236b22183c784758c4f596648ac8be0ebf21caccda4b",
+      "interior": "97d688dd9c5c82869734478ac001ef7e677181f5ca788efd181ae20b94d219c8"
+    },
+    {
+      "id": "utility-directory",
+      "hash": "13986cd81339bfc2a9e5b984f22ae4b604252189889c384992448798e6cdb620",
+      "main": "26023a21bc16dac224aac9ce8be07b1ef0c4e965d605db5c15165bd59d0870b8",
+      "interior": "e23b8d9213e006e939efd5413d8a965c9bc8cd913e5d61ebfa6253e41a675c4c"
+    },
+    {
+      "id": "literary-essay",
+      "hash": "ec0c2c8a184032575d9fc5f387d6bb1b9f26247fc8b6e72445a1fe4e42125e8c",
+      "main": "92dd901ad4f2f61fbae6d8b5e718fe1a1a6c6c2a8f304edddd65e9acc5183c62",
+      "interior": "23cce80ca48266b84c232b011fd986c0a847190bd3f6d9cd6dba0d3184d79ea4"
+    },
+    {
+      "id": "newspaper",
+      "hash": "cb6a6d4184785395823ed485da817c8a23729e758fbe330dce52668e7439c9ac",
+      "main": "43f9c2789dbf086854525b30fcf3db97d9b823e54fe16ab9ff2e722a4b8fb013",
+      "interior": "d3f51db5e8a4862d9f720b1645e3b3b4be9767818106b90e110b7af7506e3300"
+    },
+    {
+      "id": "annotated-journal",
+      "hash": "d70e7b023c74394350277cc2fd8c1f44fc0dcb0afc7f5946c106a01930f8da4c",
+      "main": "79c7d91c1fa9ddfb1e47772befc7b52d151ed55eb927d4eb09b8fa18dc57ee08",
+      "interior": "40896bca7c9f6dc8f77288418f95860f914c173a485e5ac5d678e7315c99ee4f"
+    },
+    {
+      "id": "quiet-folio",
+      "hash": "953a5c1e2c076de00b94179daf6834530e78138f746b3c2a9fa9ed99095987e1",
+      "main": "6546f1fc453f091e858fe7e6e0aab3e688e78aa91f4e24b0522c5a70c68e49af",
+      "interior": "a504bbfb509848eb2df05635f189850c47cff1fb756bb1fb9b35b1761c1a7b4a"
+    },
+    {
+      "id": "cinematic-panorama",
+      "hash": "4ba89376d21b3f2d8cf4ffc00f878d09204a4b2be699296097dddbbf8eb5f8a6",
+      "main": "bb7c1e202bf976f71f340007eccfb42a4ee202e5b0f855078b535ab629d6ec7e",
+      "interior": "f8912416a3fd37fedfb0c74cac6dc77ad0828adcfc3cbb4175b88f42b7edd4a3"
+    },
+    {
+      "id": "contact-sheet",
+      "hash": "e238e2604755acdc64389580881da92f8c21d2122bc39e594bf7d7946c5b7e9e",
+      "main": "bcd8962165da120db3b616a8b4fb8eb704a5fb7c159647d207c7c8500b0134e4",
+      "interior": "479f31b202bdcf5e8715bc00ecc501adde1375dbfc5b6602470333f5bd20cd6a"
+    },
+    {
+      "id": "architectural-frame",
+      "hash": "777e550006d60ce53f3ddc2a4465fcfa40c4eadc1df76d8a5c0f8b93891e7fbd",
+      "main": "379e049443d93460c7380de19c74e961b9124ef585e835b0971e9f2e454db9f9",
+      "interior": "11f75509a319742cada01b593edaa18000b7788651d698991fdd0281f039cf32"
+    },
+    {
+      "id": "immersive-exhibition",
+      "hash": "2d3ba441cc53bfc19c6981471ca10ae2a814482805517406caed10b156ae455b",
+      "main": "a18d02417039692fd234610733c992add1b966cd2ff409168ca0e3f28240ffa3",
+      "interior": "021e28b265c664133ef8530cffd4466f8f4ff921b8bf1b99a1d18e6c0057b3af"
+    },
+    {
+      "id": "poster",
+      "hash": "ad42f2e430cfdea8c59c30faa95726073f8186242ec2ebca956206cfbe69946b",
+      "main": "15db306cc4b973c70c7b562fd8bcd2f90fae1829dff92ee18bc532017ac8173f",
+      "interior": "1e4295f7059ffd90dc8f156f70cbe8254f65e6c69d1192429d27ecc813dd0d42"
+    },
+    {
+      "id": "hard-edge",
+      "hash": "307809ca90bedf265481f4721ba930e253974b868673b192a8a0e46e1ebe6123",
+      "main": "f660502584e80025e9b7365348f44c46fd7ce26b6a0d21970ae862f89492450e",
+      "interior": "3df875078f8b02cb0fd0191a9bfecf8dd65f5bc7ebf38b1b75c4ea88d3110b45"
+    },
+    {
+      "id": "modular-mosaic",
+      "hash": "e2e4ee338553075c97d2beb760aeb490a840d870bdb866f6f035d6c8e1429d7f",
+      "main": "484981def437c3fd4562d4e33989472eacfc9eef6acb9df5595691cebff862d9",
+      "interior": "e717b02acd8657dd74a16833b4f9f3f5de990d96eeb5481c9a84fa6fa14eea03"
+    },
+    {
+      "id": "kinetic-type",
+      "hash": "74107e849759a2bcb4727bcc2fd43ff7658c013f9c1169ce21e9f243a170f08f",
+      "main": "f21b25f94d2a9b1deaa43285f06fbf68f8c96baeaf65e6bf24b15b3ac13c641f",
+      "interior": "abe72feaff50598b12fb5d6be77c7055dee1754b73d9776d697d1f0aec4ed8c0"
+    },
+    {
+      "id": "organic-studio",
+      "hash": "2eb7dfa3de401a365a2c5bdbc9bfd62f63c6c3c4efba4e75d67064112b130f9b",
+      "main": "0c409dde874e9aca9e4a9487b5993f627738aefc42899de5f38bcee66ce56d1d",
+      "interior": "db4e437f758b409eae273402cd08dfebfeae17e294c148485937f38fed5262c8"
+    },
+    {
+      "id": "paper-workshop",
+      "hash": "03c11bc7919feb73c6091732eead67a596ab575e8ccb79767483008bb4ea76b0",
+      "main": "cb6f914df296cd60247ada169d9247d09f3eb793015a23c642a5f7d7aca51a8a",
+      "interior": "7cc3950cf47479cd7173fd143a1c2d52707a513ab967e9786eb5a4f0a0372eac"
+    },
+    {
+      "id": "botanical",
+      "hash": "f1a65517a0b980dbf8fbf9a2f0c20408259ee8699154493a2d32c57ff994068e",
+      "main": "b02010e189943052821803dc50a6cab1a59ae566e9f76e4e7d8e0e37078f7f3b",
+      "interior": "dab9b0d1dc10f7623d5562d791f3853ad0e43fb305480745bff402455f185a1c"
+    },
+    {
+      "id": "playful-shapes",
+      "hash": "71fec69e810a4ee4da359cc860b9ef2c2f724fd6e8f7782df3fa2733af6a11bf",
+      "main": "990b5aafc2f01c30e7681dedbc0bad185c34d04d3d239f85ace8eff388c4954a",
+      "interior": "3d5fdc29ac03e3cf5f152bd474de87344c42cde87b3dfc706470e40b51511a5a"
+    },
+    {
+      "id": "formal-heritage",
+      "hash": "3bd98973f7c0ce8dcb44a4c03e7cc0d78220e08001793d1a9f8476dcc2e49598",
+      "main": "d538e4a79848139d83f174c1cc8e88b9b027d862f4f6ba784912b87ed074dc2d",
+      "interior": "8f1c35ffecc9035238dd07331460921692e1616e4eefad1df1589a4f1c01b248"
+    },
+    {
+      "id": "art-deco",
+      "hash": "fedcf8e0248fa80d89f6de1bb1c6afec29cd761b284db0e7003281ba2867eee7",
+      "main": "5cb6067fde050ef72690c48ce390565a1cd608a404566df89267996bf9cfce7b",
+      "interior": "216ed06bdaebae1c53502b6e7559e733e0f98052210ed62bccebf12ca4c3eb63"
+    },
+    {
+      "id": "soft-modern",
+      "hash": "422ed201b15e075f8a44948bd5005438f89dbfe221821de5495b50b07c65ae7a",
+      "main": "8e235aef2c86c77c1436170754af13e0244ffa49f7a185ac002185b91bc269a9",
+      "interior": "689ab51e81176bd4580f745f5236eaeed7d72aef14227557fe386b36e200de7a"
+    },
+    {
+      "id": "luminous-digital",
+      "hash": "7dd5885c20da6df75d8d628a7ca123a693509f5fc8bf2e2077eeff57424d26b4",
+      "main": "25f1c61a92786091439b8a66a0554e4d6f3f0bee12ee5b4e875ac6e73bdeb1e5",
+      "interior": "a8df0f68d24e11e9f78fed5fa6db0db6bd333e5486d3fab5439a1eb3b41a81fe"
+    },
+    {
+      "id": "dispatch-board",
+      "hash": "1449822878bb5fefa22189ce7b9cb9cd95fd6b4c2ce767d9be438633991ec23c",
+      "main": "842f179465f4d25dbe749620ad721a8df3329fffcff8f307bec875ca7ca37027",
+      "interior": "c0487435c9657808e0fcd2a7af7f6351a2ba438d2632d23387c10c2a49f4ef2f"
+    },
+    {
+      "id": "fresh-routine",
+      "hash": "1ee3e7a0cd64fc737315b859f75024d0aac4d12394f7a1a6a254a97279a3f0d6",
+      "main": "4da135d5c387434efcc29c2bd83af876ed68f5862d62ea7637bb5234e1e1379d",
+      "interior": "77e6e08d69788f981811809a52464c19e10ca0d021e50185ffb4f2c3af65864f"
+    },
+    {
+      "id": "treatment-menu",
+      "hash": "8ba64f87053a4edc1e5373002ae922838499f610e70b84e281571a1e2c343658",
+      "main": "8f98612aaec0d996d10312061dc2b6d9700964bb7da09af50e8c938bf304676f",
+      "interior": "69dd0b179ecca56772fa9780ff3ed4aa3abdea8c25ef3cdcce61861d0207ff7a"
+    },
+    {
+      "id": "signwritten",
+      "hash": "dbb85f82c6f159c71c3660daa2e86cf89c6a10833431c6e29eab3743ce6f1f56",
+      "main": "d4ec2129ea20c18fa15ab917e7265a428d0f9c01c9bd0718dfd35afe41e223d6",
+      "interior": "ffd590ea5edff82ee655f6b5471412736d00e66a70e02995bd95e01fe8b65d01"
+    },
+    {
+      "id": "open-door-care",
+      "hash": "be77d2360371e58c7f0a94a2b29c243026dc82293b186e627c2861bdae644c33",
+      "main": "e36d0d65a61e93a64ff821b8c6f3f42246f89bee4e63f641f20fb6bf3d251298",
+      "interior": "677f9b0d84c8cb50640785fd719069760d2178ab87a60087f752c038bbe36d6d"
+    },
+    {
+      "id": "portrait-practice",
+      "hash": "84aaadcab69f2acd79ee87ff12f6887699bf8eb033127df79c8a2d594e5271e8",
+      "main": "4b3c5160b4acb11a868638fdd90c0fd18aa5841b01d106bf233fdfbad2582b6f",
+      "interior": "ac2f41062c28955e982b4cb72254784951d029bb188c5216c14e2bd9c507eaa8"
+    },
+    {
+      "id": "project-evidence",
+      "hash": "79c12d41537c94caaae5d1d7152d407005e8b9447f50748fe42a79b28137f3c2",
+      "main": "aa03bfdfa5af6754c7a912d045198c537bb313f17c081e4a96ace543677d2cac",
+      "interior": "12bff4000260062460eb9fe2e9c86baf100defc8dae206f1fa79951e0e93a2e7"
+    },
+    {
+      "id": "route-radius",
+      "hash": "339fce944d30c72aa829a14f0def71bafbc678ff16392e8d74898131271bc11c",
+      "main": "e519423d910c86c35a9ea76c16dc24b6e750e171fb35f929477393b08ba778c0",
+      "interior": "7b1833ea87a5fe4f8c24df6cef253a6d6b07d0b3dbe160491acbe88c3d731880"
+    },
+    {
+      "id": "club-timetable",
+      "hash": "f52ecc48e7bd577ca18a61886724984eb2c2f7104f9a99b4504a1eb942569df3",
+      "main": "dc43c5e6b24f4a11b1c28b4671397eeb2b9823ab5f29a64c93cd547ad5a5867e",
+      "interior": "b16248856ca3dee0c68a0aac8a5e0e8f1d03c563e55db7977668d73347f61420"
+    },
+    {
+      "id": "field-season",
+      "hash": "599c69680108b2385cc8e95f88dbeecbe9e78e4dbe024e7b2a1f63e6ab41bbb6",
+      "main": "84388504702ad4353fbbec127fde0f0e8d63de9440680e310ea27df7f88cef11",
+      "interior": "dd7e61d3d238f31d153168ac55eceabe2b7a126258afcb8aa89e738e3f841b22"
+    }
+  ]
+}

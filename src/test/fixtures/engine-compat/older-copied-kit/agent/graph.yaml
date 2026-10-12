@@ -1,0 +1,10 @@
+version: 1
+stop_at: preview
+nodes:
+  - id: pages
+    kind: agent
+    needs: []
+    refs: [refs/local-pages.md]
+    writes: [pages/index.html]
+    eval: pages
+    maxAttempts: 3

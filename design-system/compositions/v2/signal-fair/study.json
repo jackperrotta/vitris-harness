@@ -1,0 +1,271 @@
+{
+  "id": "signal-fair",
+  "revision": 1,
+  "title": "Signal Fair / graphic programme",
+  "primaryFamily": "maximalism",
+  "assetMinimum": "none",
+  "fitSignals": [
+    "collection",
+    "comparison",
+    "location",
+    "type-content",
+    "real-copy",
+    "action",
+    "sparse-media"
+  ],
+  "visitorTasks": [
+    "compare-options",
+    "find-location",
+    "read-deeply"
+  ],
+  "organizingIdea": "A typographic poster makes room for a small programme directory; the interior becomes one session with practical participation information.",
+  "brief": {
+    "fictional": true,
+    "facts": {
+      "name": "Signal Fair",
+      "offer": "Fictional neighbourhood ideas gathering",
+      "theme": "Make room for a new idea",
+      "sessions": [
+        {
+          "time": "10:00",
+          "name": "Paper Cities",
+          "purpose": "Draw the spaces we share"
+        },
+        {
+          "time": "12:00",
+          "name": "Repair Table",
+          "purpose": "Talk through the life of an everyday object"
+        },
+        {
+          "time": "14:00",
+          "name": "Open Signals",
+          "purpose": "Share a small idea with the room"
+        }
+      ],
+      "venue": "Assembly Hall, invented location",
+      "access": "Seating and step-free access in invented brief",
+      "contact": "signal@example.test"
+    },
+    "factsHash": "74a5cfc24d536f4cbee526dd5f5545fd98ec74a298a488f68b89ad2026cd7bb2",
+    "mediaHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "provenance": {
+    "content": "Original fictional Vitris teaching brief and copy; no customer claims.",
+    "media": "Original inline SVG diagrams or authored text, no external images, branding or type assets.",
+    "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+  },
+  "storyboard": {
+    "homepage": [
+      "graphic poster",
+      "time-based programme",
+      "location/access"
+    ],
+    "interior": [
+      "session poster",
+      "participation process",
+      "visit questions"
+    ],
+    "mobile": "Poster typography remains complete and readable; programme time precedes session name and purpose, with one clear detail link."
+  },
+  "designDecisions": "A typographic poster makes room for a small programme directory; the interior becomes one session with practical participation information.",
+  "lessonIds": [
+    "cmp-type-roles",
+    "cmp-page-rhythm",
+    "cmp-contextual-action"
+  ],
+  "referenceIds": [
+    "oatly",
+    "the-blimp"
+  ],
+  "sourcePath": "signal-fair",
+  "homepage": "/",
+  "interior": "/detail",
+  "status": "compiled and automated/assistant visually reviewed; human preference pending",
+  "humanPreference": null,
+  "renderEvidence": [
+    {
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T18:34:54.114Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/signal-fair-home-1440.png",
+        "sha256": "ef26a30878766f5391a967697f4667dc132615c3ae21c813a4899e9edef0276d"
+      },
+      "compiledHash": "551353fcdaaebf3abf44006b5aef5ffefc1c77076089a898c7563a1ad87c239e",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail#visit",
+            "/detail",
+            "/detail#visit"
+          ]
+        },
+        "audio": [],
+        "captureGeometry": null,
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views inspected, then inspected again after repairing misleading links and narrow row placement. Bold poster/ornament leads to programme times and purpose. Only authored Paper Cities session links to its detail; other session entries remain honest static summaries. Native Visit disclosure keyboard/focus passed. Narrow static Repair Table row initially broke into letters despite no automated overflow; repaired selector treats static and linked rows alike. Final contact sheet shows readable time/title/purpose rows at both widths."
+      }
+    },
+    {
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T18:34:55.163Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/signal-fair-home-390.png",
+        "sha256": "2c5b06ff467bd3fe35c742ac54a5ad4122b510d58d56a055ab96397d7aa8052c"
+      },
+      "compiledHash": "551353fcdaaebf3abf44006b5aef5ffefc1c77076089a898c7563a1ad87c239e",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail#visit",
+            "/detail",
+            "/detail#visit"
+          ]
+        },
+        "audio": [],
+        "captureGeometry": null,
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views inspected, then inspected again after repairing misleading links and narrow row placement. Bold poster/ornament leads to programme times and purpose. Only authored Paper Cities session links to its detail; other session entries remain honest static summaries. Native Visit disclosure keyboard/focus passed. Narrow static Repair Table row initially broke into letters despite no automated overflow; repaired selector treats static and linked rows alike. Final contact sheet shows readable time/title/purpose rows at both widths."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T18:34:56.269Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/signal-fair-interior-1440.png",
+        "sha256": "d92e12d2ba26729f02ab1add1ab49a9630d49904183316bcd958fe131c7f05f1"
+      },
+      "compiledHash": "1fcb10cc800dc34488c2781c7c6196ce08c8b656c29e90c1a250da13fa2a23ab",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/"
+          ]
+        },
+        "audio": [],
+        "captureGeometry": null,
+        "firstFocus": {
+          "tag": "A",
+          "text": "Ask a programme question →",
+          "outline": "solid",
+          "width": "3px"
+        },
+        "disclosures": [
+          {
+            "label": "Access and participation",
+            "keyboardToggle": true,
+            "focusVisible": true
+          }
+        ]
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views inspected, then inspected again after repairing misleading links and narrow row placement. Bold poster/ornament leads to programme times and purpose. Only authored Paper Cities session links to its detail; other session entries remain honest static summaries. Native Visit disclosure keyboard/focus passed. Narrow static Repair Table row initially broke into letters despite no automated overflow; repaired selector treats static and linked rows alike. Final contact sheet shows readable time/title/purpose rows at both widths."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T18:34:57.314Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/signal-fair-interior-390.png",
+        "sha256": "22289add335dc1d61c60cb297e00652e8437b8e2856998e0a74e2e9ab94a1b91"
+      },
+      "compiledHash": "1fcb10cc800dc34488c2781c7c6196ce08c8b656c29e90c1a250da13fa2a23ab",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/"
+          ]
+        },
+        "audio": [],
+        "captureGeometry": null,
+        "firstFocus": {
+          "tag": "A",
+          "text": "Ask a programme question →",
+          "outline": "solid",
+          "width": "3px"
+        },
+        "disclosures": [
+          {
+            "label": "Access and participation",
+            "keyboardToggle": true,
+            "focusVisible": true
+          }
+        ]
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views inspected, then inspected again after repairing misleading links and narrow row placement. Bold poster/ornament leads to programme times and purpose. Only authored Paper Cities session links to its detail; other session entries remain honest static summaries. Native Visit disclosure keyboard/focus passed. Narrow static Repair Table row initially broke into letters despite no automated overflow; repaired selector treats static and linked rows alike. Final contact sheet shows readable time/title/purpose rows at both widths."
+      }
+    }
+  ]
+}

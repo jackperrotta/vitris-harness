@@ -1,0 +1,197 @@
+{
+  "id": "clearwell-directory",
+  "revision": 2,
+  "title": "Clearwell / task directory",
+  "primaryFamily": "civic",
+  "assetMinimum": "none",
+  "fitSignals": [
+    "professional-service",
+    "type-content",
+    "real-copy",
+    "process",
+    "comparison",
+    "sparse-media",
+    "action"
+  ],
+  "visitorTasks": [
+    "Evaluate a practice",
+    "Understand a process"
+  ],
+  "organizingIdea": "Start with the visitor’s bookkeeping decision; service choices lead before explanatory prose.",
+  "brief": {
+    "fictional": true,
+    "facts": {
+      "name": "Clearwell",
+      "offer": "Bookkeeping for independent studios",
+      "scope": [
+        "Monthly reconciliation",
+        "Monthly reporting",
+        "Year-end handover"
+      ],
+      "excludes": [
+        "Tax returns",
+        "Investment advice"
+      ],
+      "process": [
+        "Bring a sample of your records",
+        "Agree scope together",
+        "Set a monthly handover"
+      ],
+      "contact": "hello@example.test",
+      "media": [],
+      "development": "Expanded original fictional explanatory content and interaction detail; no measured client outcome"
+    },
+    "factsHash": "7124deb7e86ec94e7f3aaa5c22bbfc3574ef2a47f90f68eca9c9892016ad8c5f",
+    "mediaHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "provenance": {
+    "content": "Original fictional teaching content authored for Vitris; never customer facts",
+    "media": "Original editable HTML/CSS typographic specimens; no real client work.",
+    "rights": "Original Vitris teaching source; customer reuse requires adapting facts"
+  },
+  "storyboard": {
+    "homepage": [
+      "What needs clearing up?",
+      "Keep the month clear",
+      "Prepare the handover",
+      "A small start, with a clear scope."
+    ],
+    "interior": [
+      "A month you can read.",
+      "Monthly support",
+      "At year end",
+      "Before a conversation"
+    ],
+    "mobile": "Native decision disclosures, three-column responsibility comparison and contextual inquiry lead into reconcile/report/handover chapters and exclusions. Mobile table retains complete words after a reviewed repair."
+  },
+  "designDecisions": "Start with the visitor’s bookkeeping decision; service choices lead before explanatory prose.",
+  "lessonIds": [
+    "cmp-collection-structure",
+    "cmp-navigation",
+    "cmp-unequal-emphasis"
+  ],
+  "referenceIds": [
+    "gov-uk"
+  ],
+  "sourcePath": "clearwell-directory",
+  "homepage": "/",
+  "interior": "/detail",
+  "status": "production compiled; assistant visually inspected; human preference unlabeled",
+  "humanPreference": null,
+  "renderEvidence": [
+    {
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-06T20:54:23.724Z",
+      "browser": "153.0.8010.12",
+      "compiledHash": "fb18e97b29b050ba23122f89933f674784f04e5a72644c6a4c080f8bc9f87fc0",
+      "preview": {
+        "path": "previews/clearwell-directory-home-1440.png",
+        "sha256": "71705266c488f39dc5b2fecfe438cf900bdb1c70d3b67683aa450368a39ccfa1"
+      },
+      "fullPreview": {
+        "path": "previews/full/clearwell-directory-home-1440.png",
+        "sha256": "4e1f7b1088caac9c5ac548c85963952792f3ad9ba229bbc5219f7443e2c693c8"
+      },
+      "visualReview": {
+        "assessor": "agent",
+        "reviewedAt": "2026-10-06T21:00:13.933Z",
+        "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Native decision disclosures, three-column responsibility comparison and contextual inquiry lead into reconcile/report/handover chapters and exclusions. Mobile table retains complete words after a reviewed repair. Remaining: Fictional bookkeeping scope is not tax or investment advice. Email links demonstrate inquiry rather than a production form."
+      }
+    },
+    {
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-06T20:54:24.820Z",
+      "browser": "153.0.8010.12",
+      "compiledHash": "fb18e97b29b050ba23122f89933f674784f04e5a72644c6a4c080f8bc9f87fc0",
+      "preview": {
+        "path": "previews/clearwell-directory-home-390.png",
+        "sha256": "b9e47a8e219905d055e9d6c5070fe62b6f3d0787a4a6a6e5a48a76bb40de06d0"
+      },
+      "fullPreview": {
+        "path": "previews/full/clearwell-directory-home-390.png",
+        "sha256": "962b4f644e2ba6a1421acedcb0a5814ba0f99fe6830c3545b34ed3bc818d61c0"
+      },
+      "visualReview": {
+        "assessor": "agent",
+        "reviewedAt": "2026-10-06T21:00:13.933Z",
+        "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Native decision disclosures, three-column responsibility comparison and contextual inquiry lead into reconcile/report/handover chapters and exclusions. Mobile table retains complete words after a reviewed repair. Remaining: Fictional bookkeeping scope is not tax or investment advice. Email links demonstrate inquiry rather than a production form."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-06T20:54:25.943Z",
+      "browser": "153.0.8010.12",
+      "compiledHash": "77063288556c4c568f19108ec851e6edbff53e0f9af12e8779e53cd2d9a6f5c2",
+      "preview": {
+        "path": "previews/clearwell-directory-interior-1440.png",
+        "sha256": "93e582ba34b4fd2b5fa156b69656e09d8514aefb5ebfdf02963d300ca0b71306"
+      },
+      "fullPreview": {
+        "path": "previews/full/clearwell-directory-interior-1440.png",
+        "sha256": "782ce6fd8543066f94c1f9359da4c49782eceaad6e80bdc32b1d89fb055d8da8"
+      },
+      "visualReview": {
+        "assessor": "agent",
+        "reviewedAt": "2026-10-06T21:00:13.933Z",
+        "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Native decision disclosures, three-column responsibility comparison and contextual inquiry lead into reconcile/report/handover chapters and exclusions. Mobile table retains complete words after a reviewed repair. Remaining: Fictional bookkeeping scope is not tax or investment advice. Email links demonstrate inquiry rather than a production form."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-06T20:54:26.989Z",
+      "browser": "153.0.8010.12",
+      "compiledHash": "77063288556c4c568f19108ec851e6edbff53e0f9af12e8779e53cd2d9a6f5c2",
+      "preview": {
+        "path": "previews/clearwell-directory-interior-390.png",
+        "sha256": "57cd6a484b065ba37f978376d5b2d93871566655b6b0e697600c132754eb9ffb"
+      },
+      "fullPreview": {
+        "path": "previews/full/clearwell-directory-interior-390.png",
+        "sha256": "093ac585f7db9584e6ec44471b1fac2025ded7a82224e842b9862bc9270015cd"
+      },
+      "visualReview": {
+        "assessor": "agent",
+        "reviewedAt": "2026-10-06T21:00:13.933Z",
+        "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Native decision disclosures, three-column responsibility comparison and contextual inquiry lead into reconcile/report/handover chapters and exclusions. Mobile table retains complete words after a reviewed repair. Remaining: Fictional bookkeeping scope is not tax or investment advice. Email links demonstrate inquiry rather than a production form."
+      }
+    }
+  ],
+  "selectionProfile": {
+    "tasks": [
+      "evaluate-service",
+      "compare-options",
+      "understand-process",
+      "book-inquiry"
+    ],
+    "contexts": [
+      "financial-service"
+    ],
+    "contributions": [
+      "task-directory",
+      "scope-comparison",
+      "contextual-inquiry"
+    ],
+    "expressions": [
+      "civic"
+    ]
+  },
+  "exampleScope": "developed-homepage-interior-example",
+  "releaseNotes": "Native decision disclosures, three-column responsibility comparison and contextual inquiry lead into reconcile/report/handover chapters and exclusions. Mobile table retains complete words after a reviewed repair. Limitations: Fictional bookkeeping scope is not tax or investment advice. Email links demonstrate inquiry rather than a production form.",
+  "comparisonStatus": "v2 paired facts/media remain controlled there; v3 development is not a controlled same-facts pair"
+}

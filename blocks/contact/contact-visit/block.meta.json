@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "id": "contact/contact-visit",
+  "revision": 1,
+  "status": "draft",
+  "owner": "Vitris design library",
+  "sourceHash": "6c2f4f834640bbb77daef89b452da92ddaedcd4c0730d88ec051a805c77e6349",
+  "fit": {
+    "visitorJobs": [
+      "Find the address, hours, and access details"
+    ],
+    "pageRoles": [
+      "visit"
+    ],
+    "useWhen": [
+      "Find the address, hours, and access details"
+    ],
+    "avoidWhen": [
+      "The content or media cannot support this composition"
+    ]
+  },
+  "content": {
+    "requiredSlots": [
+      "heading",
+      "place",
+      "hours"
+    ],
+    "optionalSlots": [
+      "eyebrow",
+      "intro",
+      "access",
+      "actions"
+    ],
+    "testedItemCounts": [
+      1
+    ]
+  },
+  "media": {
+    "min": 0,
+    "max": 8,
+    "optionalBehavior": "Recompose without empty media frames when media is optional",
+    "aspect": [
+      "content-dependent"
+    ]
+  },
+  "composition": {
+    "hierarchy": "place with practical details",
+    "alignment": "split",
+    "density": "medium",
+    "mediaProminence": "none",
+    "geometry": [
+      "place-led",
+      "split"
+    ],
+    "boundary": "section boundary adapts to adjacent content"
+  },
+  "adaptation": {
+    "flexible": [
+      "spacing",
+      "surface treatment",
+      "type scale"
+    ],
+    "invariants": [
+      "semantic reading order",
+      "one clear section purpose"
+    ],
+    "customWhen": [
+      "The visitor job needs a different hierarchy"
+    ]
+  },
+  "responsive": {
+    "readingOrder": "DOM order follows the visitor narrative",
+    "reflow": "Stack or resize according to content",
+    "crop": "Keep important subjects visible"
+  },
+  "interaction": {
+    "behavior": "Native links and controls",
+    "islands": []
+  },
+  "evidence": {
+    "provenance": [
+      "Original Vitris block source"
+    ],
+    "testedContexts": [],
+    "accessibility": [],
+    "previewManifest": "../../../design-system/block-previews/v1/contact--contact-visit.json"
+  }
+}

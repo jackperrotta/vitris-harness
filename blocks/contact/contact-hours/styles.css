@@ -1,0 +1,8 @@
+.c-contact-hours__copy .section__head{margin-bottom:var(--space-5)}
+.c-contact-hours__card{padding:var(--space-5) var(--space-6);display:grid;gap:var(--space-3)}
+.c-contact-hours__table th{font-weight:500;color:var(--color-text);text-transform:none;letter-spacing:0;font-size:var(--step-1)}
+.c-contact-hours__table td{color:var(--color-muted);font-variant-numeric:tabular-nums}
+.c-contact-hours__table tr:last-child th,.c-contact-hours__table tr:last-child td{border-bottom:0}
+.c-contact-hours__table .is-today th,.c-contact-hours__table .is-today td{color:var(--color-accent);font-weight:600}
+.c-contact-hours__card small{color:var(--color-muted)}
+@media(min-width:720px){.c-contact-hours .split{grid-template-columns:3fr 2fr;align-items:center}}

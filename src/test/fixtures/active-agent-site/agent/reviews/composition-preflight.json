@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "nodeId": "representative",
+  "findings": [],
+  "note": "Deterministic structure check. Stylistic concerns stay advisory until a reviewer accepts them."
+}

@@ -1,0 +1,5 @@
+.c-cta-band__inner{display:grid;gap:var(--space-5);align-items:center}
+@media(min-width:720px){.c-cta-band__inner{grid-template-columns:1fr auto}}
+.c-cta-band--dark{background:#141210;color:#F7F4EF}
+.c-cta-band--accent{background:var(--color-accent);color:var(--color-accent-text)}
+.c-cta-band--accent .lede{color:color-mix(in srgb,var(--color-accent-text) 85%,transparent)}

@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "knowledgeRelease": "2026-09-22",
+  "labeledPreferenceData": false,
+  "purpose": "Sourced requirements, lesson extensions, and fixtures. Not a labeled preference dataset.",
+  "files": [
+    {
+      "path": "added-lessons.json",
+      "sha256": "bc6d255d318ccdfba379a71c34d82d158e760968fd30693b82d1290194ad601b"
+    },
+    {
+      "path": "assets.json",
+      "sha256": "c11e32084fc4e7de9e7a3d5b79173d45e4a6204571e6e3d149f2011778e265fa"
+    },
+    {
+      "path": "fixtures/contact-alternate.html",
+      "sha256": "f764429b51dad657812f15c8897f632985c024e6dc1932a867991b8839f0e072"
+    },
+    {
+      "path": "fixtures/contact-broken.html",
+      "sha256": "b166eb56919fdecd7e7446acb90ebae469eb8a91e6fab97b7d202fb6be2c642a"
+    },
+    {
+      "path": "fixtures/contact-valid.html",
+      "sha256": "ada3770df3a1d06693ca64b1c1012dd1b41868f53d849d241ce3ea9332627057"
+    },
+    {
+      "path": "fixtures/contrast-cases.html",
+      "sha256": "61b31b38e7bcff71a778701c82646459ad93ca308772ff5c711a018379b4d513"
+    },
+    {
+      "path": "island-audit.json",
+      "sha256": "ed8bd18fb3ba97817be4f6273b4291c265c6ee6dadeb752da47e69834df6204f"
+    },
+    {
+      "path": "lesson-extensions.json",
+      "sha256": "fac784c9020a9889d3edac37d0ea83dcf4a8227076880a754e4e520347faf63e"
+    },
+    {
+      "path": "replacements.json",
+      "sha256": "d913b3a7dc5a9f1f69ba1a6edf73481c94966d6ef02a5bf74c61dd3e005ef425"
+    },
+    {
+      "path": "requirements.json",
+      "sha256": "49185855abc209f200b167b076ed192b080034dcd4f34afb14099b787f1b9baf"
+    },
+    {
+      "path": "sources.json",
+      "sha256": "fcfc0e53430e3d1caaffc139dd4b0b4fec5a7be099132b40b8027f18463166b2"
+    }
+  ]
+}

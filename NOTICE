@@ -1,0 +1,17 @@
+Vitris code and original instructional material use the MIT license in LICENSE.
+Machine reviews are not human preference labels.
+
+Third-party software retains its own license. Runtime npm dependencies include
+their own notices. Notices for dependencies embedded in Cloudflare bundles are
+included in licenses/.
+
+Calibration v2 contains original fictional Vitris material. Third-party legacy
+calibration captures, reference screenshots, customer experiments and historical
+source archives are excluded from this repository and the npm package. Original fictional teaching
+fixtures retained in source are MIT licensed; large optional teaching packs are
+excluded from npm.
+
+Externally hosted photographs, fonts, reference sites and demonstrations are not
+relicensed by this package. Check their individual provenance/license records
+before downloading, adapting or redistributing them. The package supplies no
+API credentials or rights to an operator's Cloudflare account.

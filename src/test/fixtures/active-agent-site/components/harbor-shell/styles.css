@@ -1,0 +1,73 @@
+.c-harbor-shell{--ink:#17333d;--paper:#f6f2ea;--accent:#914b30;--line:#c3cfcd;color:var(--ink);background:var(--paper);font-family:ui-sans-serif,system-ui,sans-serif;min-height:100vh}
+.c-harbor-shell *{box-sizing:border-box}
+.c-harbor-shell a{color:inherit;text-underline-offset:.2em}
+.c-harbor-shell a:focus-visible,.c-harbor-shell button:focus-visible,.c-harbor-shell input:focus-visible,.c-harbor-shell textarea:focus-visible{outline:3px solid #1a6692;outline-offset:4px}
+.c-harbor-shell .h-wrap{width:min(1160px,calc(100% - 48px));margin-inline:auto}
+.c-harbor-shell .h-nav{display:flex;align-items:center;justify-content:space-between;gap:32px;padding:28px 0;border-bottom:1px solid var(--line)}
+.c-harbor-shell .h-brand{text-decoration:none;font:700 26px/1 Georgia,serif;letter-spacing:-.04em;white-space:nowrap}
+.c-harbor-shell .h-brand span{display:block;font:600 10px/1.4 ui-sans-serif,system-ui,sans-serif;letter-spacing:.19em;text-transform:uppercase;margin-top:5px}
+.c-harbor-shell .h-links{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:650}
+.c-harbor-shell .h-links a{text-decoration:none;padding:10px 2px;border-bottom:2px solid transparent}
+.c-harbor-shell .h-links a[aria-current="page"]{border-color:var(--accent)}
+.c-harbor-shell .h-links a:hover{text-decoration:underline}
+.c-harbor-shell .h-kicker{font-size:11px;font-weight:750;letter-spacing:.16em;text-transform:uppercase;color:#425a61}
+.c-harbor-shell h1,.c-harbor-shell h2,.c-harbor-shell h3{font-family:Georgia,serif;letter-spacing:-.035em;text-wrap:balance}
+.c-harbor-shell p{line-height:1.7}
+.c-harbor-shell .h-action{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:11px 20px;background:var(--accent);border:2px solid var(--accent);color:#fff;text-decoration:none;font-size:14px;font-weight:700;transition:transform .18s ease,background .18s ease}
+.c-harbor-shell .h-action:hover{background:#733820;transform:translateY(-2px)}
+.c-harbor-shell .h-link{font-size:14px;font-weight:700}
+.c-harbor-shell .h-hero{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(230px,.65fr);gap:clamp(38px,8vw,112px);align-items:end;padding:clamp(74px,10vw,145px) 0 110px}
+.c-harbor-shell .h-hero h1{font-size:clamp(54px,7.4vw,108px);line-height:.98;max-width:900px;margin:24px 0 28px}
+.c-harbor-shell .h-hero .h-lede{font-size:clamp(18px,2vw,23px);line-height:1.48;max-width:600px;margin:0 0 32px}
+.c-harbor-shell .h-hero-aside{border-top:2px solid var(--ink);padding-top:20px}
+.c-harbor-shell .h-hero-aside .h-index{font:700 11px/1.3 ui-monospace,monospace;letter-spacing:.12em;color:var(--accent)}
+.c-harbor-shell .h-hero-aside p{font-size:15px;line-height:1.6}
+.c-harbor-shell .h-hero-aside a{font-size:14px;font-weight:700}
+.c-harbor-shell .h-cycle{background:#e8eeed;padding:100px 0 110px}
+.c-harbor-shell .h-section-head{display:grid;grid-template-columns:1fr 1.25fr;gap:50px;align-items:end;margin-bottom:45px}
+.c-harbor-shell .h-section-head h2{font-size:clamp(42px,5vw,68px);line-height:1.03;margin:15px 0 0}
+.c-harbor-shell .h-section-head p{font-size:18px;max-width:500px;margin:0}
+.c-harbor-shell .h-cycle-line{border-top:2px solid var(--ink);display:grid;grid-template-columns:.9fr 1.1fr 1.35fr;gap:44px}
+.c-harbor-shell .h-step{padding-top:23px}
+.c-harbor-shell .h-step .h-num{font:700 12px/1 ui-monospace,monospace;color:var(--accent)}
+.c-harbor-shell .h-step h3{font-size:clamp(26px,3vw,39px);line-height:1.08;margin:27px 0 10px}
+.c-harbor-shell .h-step p{font-size:15px;max-width:290px}
+.c-harbor-shell .h-boundary{padding:110px 0;display:grid;grid-template-columns:.75fr 1.25fr;gap:90px;border-bottom:1px solid var(--line)}
+.c-harbor-shell .h-boundary h2{font-size:clamp(40px,4.7vw,62px);line-height:1.05;margin:0}
+.c-harbor-shell .h-boundary p{font-size:19px;max-width:590px;margin:0}
+.c-harbor-shell .h-close{background:var(--ink);color:#f6f2ea;padding:88px 0}
+.c-harbor-shell .h-close .h-kicker{color:#c6d8d8}
+.c-harbor-shell .h-close-inner{display:flex;justify-content:space-between;align-items:end;gap:35px}
+.c-harbor-shell .h-close h2{font-size:clamp(43px,5.4vw,72px);line-height:1.02;margin:14px 0 20px}
+.c-harbor-shell .h-close p{font-size:17px;max-width:590px;margin:0}
+.c-harbor-shell .h-close .h-action{background:#914b30;border-color:#914b30;color:#fff;white-space:nowrap}
+.c-harbor-shell .h-close .h-action:hover{background:#733820}
+.c-harbor-shell .h-interior-head{display:grid;grid-template-columns:.65fr 1.35fr;gap:60px;padding:95px 0 85px;border-bottom:2px solid var(--ink)}
+.c-harbor-shell .h-interior-head h1{font-size:clamp(56px,7vw,92px);line-height:1.01;margin:0}
+.c-harbor-shell .h-interior-head p{font-size:20px;max-width:700px;margin:20px 0 0}
+.c-harbor-shell .h-service{padding:90px 0}
+.c-harbor-shell .h-service h2{font-size:clamp(40px,4.6vw,62px);margin:0 0 40px}
+.c-harbor-shell .h-service-row{display:grid;grid-template-columns:90px minmax(180px,.75fr) 1.25fr;gap:30px;border-top:1px solid var(--line);padding:28px 0}
+.c-harbor-shell .h-service-row:last-child{border-bottom:1px solid var(--line)}
+.c-harbor-shell .h-service-row .h-num{font:700 12px ui-monospace,monospace;color:var(--accent)}
+.c-harbor-shell .h-service-row h3{font-size:29px;margin:0}
+.c-harbor-shell .h-service-row p{margin:0;font-size:16px;max-width:530px}
+.c-harbor-shell .h-limits{background:#e8eeed;padding:90px 0}
+.c-harbor-shell .h-limits-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.c-harbor-shell .h-limits h2{font-size:clamp(40px,4.5vw,58px);margin:0 0 26px}
+.c-harbor-shell .h-limits h3{font-size:28px;margin:0 0 12px}
+.c-harbor-shell .h-limits p{font-size:17px}
+.c-harbor-shell .h-contact{padding:90px 0 110px;max-width:800px}
+.c-harbor-shell .h-contact h1{font-size:clamp(54px,7vw,88px);margin:10px 0 22px;line-height:1.02}
+.c-harbor-shell .h-contact>p{font-size:19px}
+.c-harbor-shell .h-form{margin-top:55px;border-top:2px solid var(--ink);padding-top:32px;display:grid;gap:22px}
+.c-harbor-shell .h-form label{display:grid;gap:8px;font-size:14px;font-weight:700}
+.c-harbor-shell .h-form input,.c-harbor-shell .h-form textarea{width:100%;border:1px solid #9daead;background:#fff;color:var(--ink);padding:13px 15px;font:inherit;border-radius:2px}
+.c-harbor-shell .h-form textarea{min-height:130px;resize:vertical}
+.c-harbor-shell .h-form button{justify-self:start;cursor:pointer;font:700 14px ui-sans-serif,system-ui,sans-serif}
+.c-harbor-shell .h-form-note{font-size:13px;line-height:1.55;color:#425a61}
+.c-harbor-shell .h-footer{padding:42px 0 60px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:25px;font-size:13px;color:#425a61}
+.c-harbor-shell .h-footer p{margin:0}
+.c-harbor-shell .h-footer a{color:var(--ink)}
+@media(max-width:760px){.c-harbor-shell .h-wrap{width:min(100% - 32px,600px)}.c-harbor-shell .h-nav{display:grid;grid-template-columns:1fr;padding:18px 0;gap:14px}.c-harbor-shell .h-brand{font-size:21px}.c-harbor-shell .h-brand span{font-size:8px}.c-harbor-shell .h-links{width:100%;gap:12px;justify-content:space-between;font-size:12px}.c-harbor-shell .h-links a{padding:7px 1px}.c-harbor-shell .h-hero,.c-harbor-shell .h-section-head,.c-harbor-shell .h-boundary,.c-harbor-shell .h-interior-head,.c-harbor-shell .h-limits-grid{grid-template-columns:1fr;gap:28px}.c-harbor-shell .h-hero{padding:72px 0 82px}.c-harbor-shell .h-hero h1{font-size:clamp(49px,13vw,70px)}.c-harbor-shell .h-hero-aside{margin-top:18px}.c-harbor-shell .h-cycle{padding:75px 0}.c-harbor-shell .h-section-head{margin-bottom:32px}.c-harbor-shell .h-cycle-line{grid-template-columns:1fr;gap:0}.c-harbor-shell .h-step{padding:21px 0;border-bottom:1px solid var(--line)}.c-harbor-shell .h-step h3{margin:14px 0 7px}.c-harbor-shell .h-boundary{padding:80px 0;gap:22px}.c-harbor-shell .h-close{padding:70px 0}.c-harbor-shell .h-close-inner{display:block}.c-harbor-shell .h-close .h-action{margin-top:28px}.c-harbor-shell .h-interior-head{padding:70px 0 55px}.c-harbor-shell .h-service{padding:70px 0}.c-harbor-shell .h-service-row{grid-template-columns:44px 1fr;gap:10px 18px}.c-harbor-shell .h-service-row p{grid-column:2}.c-harbor-shell .h-limits{padding:75px 0}.c-harbor-shell .h-contact{padding:70px 0 85px}.c-harbor-shell .h-footer{display:block}.c-harbor-shell .h-footer p+p{margin-top:10px}}
+@media(prefers-reduced-motion:reduce){.c-harbor-shell .h-action{transition:none}.c-harbor-shell .h-action:hover{transform:none}}

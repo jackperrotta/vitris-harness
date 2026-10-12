@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "scope": "Teaching example authoring review, not a normal harness stage receipt or independent design review.",
+  "reviewer": "Codex active agent",
+  "reviewedOn": "2026-09-22",
+  "libraryProfile": "slice-v1",
+  "decisions": [
+    {
+      "section": "home opening",
+      "visitorJob": "Understand the practice focus and find a conversation path without a supplied photo",
+      "eligibleCompared": ["hero/hero-evidence", "hero/hero-editorial"],
+      "hardRejected": [],
+      "selected": "hero/hero-evidence",
+      "inspectedPreviews": [
+        {"id": "hero/hero-evidence", "sourceHash": "a6e4e590acd369d516d3d67301ff5b0bd1383850ec797a3826e713ae0e380099", "mobileImageHash": "2673677aa220d93f0df285eadbf0ae17955fac6aeb31b8ff76087eb83f66a480", "desktopImageHash": "5b4a6350de71179ff4a251e0449929d2a14a4cdd882ebf77a0cba09148001a6b"},
+        {"id": "hero/hero-editorial", "sourceHash": "c7523f6b19a0b7643a08fbb15054906ef4d53d0acec527dc7582519e00a5f0b0", "mobileImageHash": "12da60f01d0142ec939dfe9625851c9b38867a01a6723d27541c3f3da475ed6b", "desktopImageHash": "98eaaec876a66bf6839bc5f94ff003b2d28425e23f979ff1a6f5db287a939629"}
+      ],
+      "reason": "The evidence column gives the visitor a concrete explanation beside the offer without implying a photograph or testimonial. The editorial alternative is viable only after replacing its placeholder media area; it gives less room for the documented scope facts.",
+      "adaptation": "Copy and tokens were adapted for this fictional practice; no customer credentials or portraits were invented."
+    },
+    {
+      "section": "home service index",
+      "visitorJob": "Distinguish the primary planning offer from two supporting services",
+      "eligibleCompared": ["services/services-priority", "services/services-list"],
+      "hardRejected": [],
+      "selected": "services/services-priority",
+      "inspectedPreviews": [
+        {"id": "services/services-priority", "sourceHash": "538a84d99d4dc98cf0e725ccfba0749f71d254cabe70be9015354c017bc674a6", "mobileImageHash": "9fda078b68d0a5d4bbc5541ee7ed71f707595115b6b2ddb3a614752912b79ec0", "desktopImageHash": "fa64a0c1466c8b5034758f335bd20d7b29f90d6518f750a778635b435205087e"},
+        {"id": "services/services-list", "sourceHash": "5b26a7c187d49a5ffe6d79fc5c099f6846529a748bc7b0a5127831fa3e132732", "mobileImageHash": "6cdf4bafcb9ffe42c158bfa45b49c64ea9d7b23a7b03de43126b09773c5e2d87", "desktopImageHash": "9fbfe24fa5ef7419482022a4e185c833e225de12a73686f113086d0f14ec4cd7"}
+      ],
+      "reason": "The unequal hierarchy matches the fixture's one primary offer. The numbered list is a good alternative when each practice area deserves equal weight. The selected block changes to a vertical narrative on mobile.",
+      "adaptation": "The primary item received the longer explanation; supporting items retain distinct next actions."
+    }
+  ],
+  "limitations": ["Structural previews use fictional copy and default tokens", "This is an example authoring decision, not a measured customer preference", "No independent human design review was performed"]
+}

@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "id": "services/services-list",
+  "revision": 1,
+  "status": "draft",
+  "owner": "Vitris design library",
+  "sourceHash": "5b26a7c187d49a5ffe6d79fc5c099f6846529a748bc7b0a5127831fa3e132732",
+  "fit": {
+    "visitorJobs": [
+      "Compare service scope and open the right detail"
+    ],
+    "pageRoles": [
+      "service index"
+    ],
+    "useWhen": [
+      "Compare service scope and open the right detail"
+    ],
+    "avoidWhen": [
+      "The content or media cannot support this composition"
+    ]
+  },
+  "content": {
+    "requiredSlots": [
+      "heading",
+      "rows"
+    ],
+    "optionalSlots": [
+      "eyebrow",
+      "lede"
+    ],
+    "testedItemCounts": [
+      1
+    ]
+  },
+  "media": {
+    "min": 0,
+    "max": 8,
+    "optionalBehavior": "Recompose without empty media frames when media is optional",
+    "aspect": [
+      "content-dependent"
+    ]
+  },
+  "composition": {
+    "hierarchy": "numbered rows",
+    "alignment": "left",
+    "density": "dense",
+    "mediaProminence": "low",
+    "geometry": [
+      "list",
+      "rows"
+    ],
+    "boundary": "section boundary adapts to adjacent content"
+  },
+  "adaptation": {
+    "flexible": [
+      "spacing",
+      "surface treatment",
+      "type scale"
+    ],
+    "invariants": [
+      "semantic reading order",
+      "one clear section purpose"
+    ],
+    "customWhen": [
+      "The visitor job needs a different hierarchy"
+    ]
+  },
+  "responsive": {
+    "readingOrder": "DOM order follows the visitor narrative",
+    "reflow": "Stack or resize according to content",
+    "crop": "Keep important subjects visible"
+  },
+  "interaction": {
+    "behavior": "Native links and controls",
+    "islands": []
+  },
+  "evidence": {
+    "provenance": [
+      "Original Vitris block source"
+    ],
+    "testedContexts": [],
+    "accessibility": [],
+    "previewManifest": "../../../design-system/block-previews/v1/services--services-list.json"
+  }
+}

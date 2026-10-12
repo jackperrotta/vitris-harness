@@ -1,0 +1,13 @@
+<section class="c-hero-video-still section section--roomy">
+  <div class="wrap">
+    <div class="c-hero-video-still__copy">
+      <slot name="eyebrow"></slot>
+      <slot></slot>
+      <div class="btn-group"><slot name="actions"></slot></div>
+    </div>
+    <div class="c-hero-video-still__frame frame ratio-21x9">
+      <slot name="media"></slot>
+      <a class="btn btn-lg c-hero-video-still__play" href="#video"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14l11-7z"/></svg><slot name="play-label"></slot></a>
+    </div>
+  </div>
+</section>

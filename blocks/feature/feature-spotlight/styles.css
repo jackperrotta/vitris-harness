@@ -1,0 +1,5 @@
+.c-feature-spotlight__copy{display:grid;gap:var(--space-5)}
+.c-feature-spotlight__copy .section__head{margin-bottom:0}
+.c-feature-spotlight__list{color:var(--color-text)}
+.c-feature-spotlight__list:empty{display:none}
+.c-feature-spotlight--reverse .split > :first-child{order:2}

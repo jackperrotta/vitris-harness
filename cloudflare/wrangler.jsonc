@@ -1,0 +1,14 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "my-vitris-backend",
+  "main": "../bin/cloudflare/backend.js",
+  "compatibility_date": "2026-10-11",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "d1_databases": [{"binding":"DB","database_name":"my-vitris","database_id":"REPLACE_WITH_YOUR_D1_DATABASE_ID","migrations_dir":"../migrations"}],
+  "kv_namespaces": [{"binding":"KV","id":"REPLACE_WITH_YOUR_KV_NAMESPACE_ID"}],
+  "r2_buckets": [{"binding":"R2","bucket_name":"my-vitris-assets"}],
+  "analytics_engine_datasets": [{"binding":"AE","dataset":"my_vitris_events"}],
+  "workflows": [{"name":"my-site-update","binding":"SITE_UPDATE","class_name":"SiteUpdateWorkflow"}],
+  "triggers": {"crons":["0 6 * * *","*/5 * * * *"]}
+}

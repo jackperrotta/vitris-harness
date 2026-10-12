@@ -1,0 +1,256 @@
+{
+  "id": "clearwell-letter",
+  "revision": 1,
+  "title": "Clearwell / working letter",
+  "primaryFamily": "text-first",
+  "assetMinimum": "none",
+  "fitSignals": [
+    "professional-service",
+    "type-content",
+    "real-copy",
+    "process",
+    "comparison",
+    "sparse-media",
+    "action"
+  ],
+  "visitorTasks": [
+    "Evaluate a practice",
+    "Understand a process"
+  ],
+  "organizingIdea": "A personal explanatory letter develops the responsibility relationship; an attached scope note supports comparison.",
+  "brief": {
+    "fictional": true,
+    "facts": {
+      "name": "Clearwell",
+      "offer": "Bookkeeping for independent studios",
+      "scope": [
+        "Monthly reconciliation",
+        "Monthly reporting",
+        "Year-end handover"
+      ],
+      "excludes": [
+        "Tax returns",
+        "Investment advice"
+      ],
+      "process": [
+        "Bring a sample of your records",
+        "Agree scope together",
+        "Set a monthly handover"
+      ],
+      "contact": "hello@example.test",
+      "media": []
+    },
+    "factsHash": "a27aeea57fb381f20268557ae9c788abd1219ad30cc1b8b09c3177b633f782d5",
+    "mediaHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "provenance": {
+    "content": "Original fictional teaching content authored for Vitris; never customer facts",
+    "media": "No imagery required",
+    "rights": "Original Vitris teaching source; customer reuse requires adapting facts"
+  },
+  "storyboard": {
+    "homepage": [
+      "Let’s make senseof the month.",
+      "The scope note"
+    ],
+    "interior": [
+      "A month you can read.",
+      "Monthly support",
+      "At year end",
+      "Before a conversation"
+    ],
+    "mobile": "Content order is preserved; side navigation and supporting columns reflow into the document. No essential hover interactions."
+  },
+  "designDecisions": "A personal explanatory letter develops the responsibility relationship; an attached scope note supports comparison.",
+  "lessonIds": [
+    "cmp-type-roles",
+    "cmp-page-rhythm",
+    "cmp-sparse-media"
+  ],
+  "referenceIds": [
+    "gov-uk"
+  ],
+  "sourcePath": "clearwell-letter",
+  "homepage": "/",
+  "interior": "/detail",
+  "status": "compiled, automated checks passed, assistant visual review recorded; human preference pending",
+  "humanPreference": null,
+  "renderEvidence": [
+    {
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T15:53:13.575Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/clearwell-letter-home-1440.png",
+        "sha256": "d32fcd28eb0c63b8fc3e798752ae9b1614410cbfb36bb2d6944a06813e15b6c5"
+      },
+      "compiledHash": "7dfa963fc571965b983f088234cb2ba4da4ae291271aecd71d70c216f39a3f9e",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        }
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:08:16.890952+00:00",
+        "scope": "desktop/mobile full-page contact-sheet inspection; text hierarchy, reading order, overflow and matched-pair distinction",
+        "assessment": "Clear organization and readable narrow layout; no visual collision observed. Functional checks are automated, human preference is pending."
+      }
+    },
+    {
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T15:53:14.622Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/clearwell-letter-home-390.png",
+        "sha256": "b55ad3915a88c22306d0d834b51cf1a6a4bae3d891b61af2e3d031c5c9c216f2"
+      },
+      "compiledHash": "7dfa963fc571965b983f088234cb2ba4da4ae291271aecd71d70c216f39a3f9e",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        }
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:08:16.890952+00:00",
+        "scope": "desktop/mobile full-page contact-sheet inspection; text hierarchy, reading order, overflow and matched-pair distinction",
+        "assessment": "Clear organization and readable narrow layout; no visual collision observed. Functional checks are automated, human preference is pending."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T15:53:15.720Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/clearwell-letter-interior-1440.png",
+        "sha256": "5d5a7eeb2e01b74a381c42a4b6e75702db848306d9e6d146d7c3bfea4e29b94c"
+      },
+      "compiledHash": "f910fb4536f582d97d039789ee344a1a623108f01ffdea060d76d0945983dbaa",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        }
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:08:16.890952+00:00",
+        "scope": "desktop/mobile full-page contact-sheet inspection; text hierarchy, reading order, overflow and matched-pair distinction",
+        "assessment": "Clear organization and readable narrow layout; no visual collision observed. Functional checks are automated, human preference is pending."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T15:53:16.750Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/clearwell-letter-interior-390.png",
+        "sha256": "e3954d607bf5eff2200f67ff9b42d833731ec1b5236e9c1b94de655986f0a786"
+      },
+      "compiledHash": "f910fb4536f582d97d039789ee344a1a623108f01ffdea060d76d0945983dbaa",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        }
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:08:16.890952+00:00",
+        "scope": "desktop/mobile full-page contact-sheet inspection; text hierarchy, reading order, overflow and matched-pair distinction",
+        "assessment": "Clear organization and readable narrow layout; no visual collision observed. Functional checks are automated, human preference is pending."
+      }
+    }
+  ],
+  "selectionProfile": {
+    "tasks": [
+      "evaluate-service",
+      "understand-process",
+      "book-inquiry"
+    ],
+    "contexts": [
+      "financial-service"
+    ],
+    "contributions": [
+      "explanatory-letter",
+      "scope-note"
+    ],
+    "expressions": [
+      "text-first"
+    ]
+  },
+  "exampleScope": "focused-structural-lesson",
+  "releaseNotes": "Preserved original lesson; not a comprehensive finished-site exemplar or human-approved taste label.",
+  "comparisonStatus": "v2 paired facts/media remain controlled there; v3 development is not a controlled same-facts pair"
+}

@@ -1,0 +1,209 @@
+{
+  "id": "mara-specimen",
+  "revision": 2,
+  "title": "Mara Vale / typographic index",
+  "primaryFamily": "expressive-type",
+  "assetMinimum": "none",
+  "fitSignals": [
+    "professional-service",
+    "type-content",
+    "real-copy",
+    "process",
+    "collection",
+    "sparse-media",
+    "action"
+  ],
+  "visitorTasks": [
+    "Evaluate a practice",
+    "Understand a process"
+  ],
+  "organizingIdea": "Selected work is the introduction; large project titles function as a navigable index with quieter project metadata.",
+  "brief": {
+    "fictional": true,
+    "facts": {
+      "name": "Mara Vale",
+      "offer": "Independent information design",
+      "projects": [
+        {
+          "name": "Field Notes",
+          "type": "Wayfinding study",
+          "year": "2025"
+        },
+        {
+          "name": "Open Table",
+          "type": "Publication study",
+          "year": "2026"
+        }
+      ],
+      "method": [
+        "Collect the material",
+        "Find the hierarchy",
+        "Test the reading"
+      ],
+      "contact": "mara@example.test",
+      "media": [
+        "Original SVG reading diagram"
+      ],
+      "development": "Expanded original fictional explanatory content and interaction detail; no measured client outcome"
+    },
+    "factsHash": "6445ff7ffa6eeac3382ad89c6582267e2ca3f20dad0ad14ec9b89d3a55d90d04",
+    "mediaHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "provenance": {
+    "content": "Original fictional teaching content authored for Vitris; never customer facts",
+    "media": "Original editable HTML/CSS typographic specimens; no real client work.",
+    "rights": "Original Vitris teaching source; customer reuse requires adapting facts"
+  },
+  "storyboard": {
+    "homepage": [
+      "FieldNotes ↗",
+      "Open Table ↗",
+      "Collect. Order. Read."
+    ],
+    "interior": [
+      "Field Notes",
+      "Collect the material",
+      "Find the hierarchy",
+      "Test the reading",
+      "Open Table"
+    ],
+    "mobile": "Editable oversized mixed type introduces an unequal work index; four substantive case chapters, chapter navigation and original text specimens explain wayfinding hierarchy. Mobile type sizes and the stacked chapter directory preserve readable work hierarchy."
+  },
+  "designDecisions": "Selected work is the introduction; large project titles function as a navigable index with quieter project metadata.",
+  "lessonIds": [
+    "cmp-type-roles",
+    "cmp-collection-structure",
+    "cmp-image-art-direction"
+  ],
+  "referenceIds": [
+    "pangram-pangram",
+    "big"
+  ],
+  "sourcePath": "mara-specimen",
+  "homepage": "/",
+  "interior": "/detail",
+  "status": "production compiled; assistant visually inspected; human preference unlabeled",
+  "humanPreference": null,
+  "renderEvidence": [
+    {
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-06T20:53:10.375Z",
+      "browser": "153.0.8010.12",
+      "compiledHash": "2f5ad74092a6ca6f49c09e7817fb3d63e6e3fd370467345bbfca30f465d5c9a2",
+      "preview": {
+        "path": "previews/mara-specimen-home-1440.png",
+        "sha256": "afa2500524f510a4c3ff00812812b856085e1bf05f8d6a482d17cb8c6949bdd4"
+      },
+      "fullPreview": {
+        "path": "previews/full/mara-specimen-home-1440.png",
+        "sha256": "f43beb497e4e1a7f72545422f00f92d75297b4d33fe5d46787e1dea8d8b88a79"
+      },
+      "visualReview": {
+        "assessor": "agent",
+        "reviewedAt": "2026-10-06T21:00:13.933Z",
+        "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Editable oversized mixed type introduces an unequal work index; four substantive case chapters, chapter navigation and original text specimens explain wayfinding hierarchy. Mobile type sizes and the stacked chapter directory preserve readable work hierarchy. Remaining: Invented work examples cannot substantiate customer portfolio claims. Available system type limits cross-platform fidelity."
+      }
+    },
+    {
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-06T20:53:11.406Z",
+      "browser": "153.0.8010.12",
+      "compiledHash": "2f5ad74092a6ca6f49c09e7817fb3d63e6e3fd370467345bbfca30f465d5c9a2",
+      "preview": {
+        "path": "previews/mara-specimen-home-390.png",
+        "sha256": "bd2229f2aa7683804d8f67d51ce875b0f6e11c198f4877ebff276c20438f8214"
+      },
+      "fullPreview": {
+        "path": "previews/full/mara-specimen-home-390.png",
+        "sha256": "6d8ee227ea63ab5f08b8c90f3eb72632cb00e668dfede557702328ded766bc9a"
+      },
+      "visualReview": {
+        "assessor": "agent",
+        "reviewedAt": "2026-10-06T21:00:13.933Z",
+        "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Editable oversized mixed type introduces an unequal work index; four substantive case chapters, chapter navigation and original text specimens explain wayfinding hierarchy. Mobile type sizes and the stacked chapter directory preserve readable work hierarchy. Remaining: Invented work examples cannot substantiate customer portfolio claims. Available system type limits cross-platform fidelity."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-06T20:53:12.559Z",
+      "browser": "153.0.8010.12",
+      "compiledHash": "593de518fe6e4b438afb5bf12aa49e7a22a1a359e3c79f306ea627e6b1f6fe1a",
+      "preview": {
+        "path": "previews/mara-specimen-interior-1440.png",
+        "sha256": "599ac98d8f6cd0593c1fdd47cd35898a848df2aed25504185695be17977381bc"
+      },
+      "fullPreview": {
+        "path": "previews/full/mara-specimen-interior-1440.png",
+        "sha256": "e1ca051a1bd762ecd57e693fd11f48c0fdc5d0674279844bdc69d3329400fd24"
+      },
+      "visualReview": {
+        "assessor": "agent",
+        "reviewedAt": "2026-10-06T21:00:13.933Z",
+        "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Editable oversized mixed type introduces an unequal work index; four substantive case chapters, chapter navigation and original text specimens explain wayfinding hierarchy. Mobile type sizes and the stacked chapter directory preserve readable work hierarchy. Remaining: Invented work examples cannot substantiate customer portfolio claims. Available system type limits cross-platform fidelity."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-06T20:53:13.696Z",
+      "browser": "153.0.8010.12",
+      "compiledHash": "593de518fe6e4b438afb5bf12aa49e7a22a1a359e3c79f306ea627e6b1f6fe1a",
+      "preview": {
+        "path": "previews/mara-specimen-interior-390.png",
+        "sha256": "99908facf9422617a48ebd7976dc70ccd2f9794f46346f152baff27eeda86754"
+      },
+      "fullPreview": {
+        "path": "previews/full/mara-specimen-interior-390.png",
+        "sha256": "a263650feb783fc27f0c6caefb41d81f3672e70df0eea1b0a86a6fa7f7019f58"
+      },
+      "visualReview": {
+        "assessor": "agent",
+        "reviewedAt": "2026-10-06T21:00:13.933Z",
+        "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Editable oversized mixed type introduces an unequal work index; four substantive case chapters, chapter navigation and original text specimens explain wayfinding hierarchy. Mobile type sizes and the stacked chapter directory preserve readable work hierarchy. Remaining: Invented work examples cannot substantiate customer portfolio claims. Available system type limits cross-platform fidelity."
+      }
+    }
+  ],
+  "selectionProfile": {
+    "tasks": [
+      "inspect-work",
+      "read-deeply",
+      "book-inquiry"
+    ],
+    "contexts": [
+      "creative-practice"
+    ],
+    "contributions": [
+      "type-work-index",
+      "project-case",
+      "mobile-type"
+    ],
+    "expressions": [
+      "expressive-type"
+    ],
+    "interpretation": {
+      "assetMinimum": "none",
+      "scope": "Typographic work index and reading relationships can be adapted without borrowing the fictional SVG diagram; invent no client work.",
+      "missingDependencies": [
+        "Original study diagram is teaching material, not customer proof"
+      ]
+    }
+  },
+  "exampleScope": "developed-homepage-interior-example",
+  "releaseNotes": "Editable oversized mixed type introduces an unequal work index; four substantive case chapters, chapter navigation and original text specimens explain wayfinding hierarchy. Mobile type sizes and the stacked chapter directory preserve readable work hierarchy. Limitations: Invented work examples cannot substantiate customer portfolio claims. Available system type limits cross-platform fidelity.",
+  "comparisonStatus": "v2 paired facts/media remain controlled there; v3 development is not a controlled same-facts pair"
+}

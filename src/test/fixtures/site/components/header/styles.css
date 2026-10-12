@@ -1,0 +1,13 @@
+.c-header__inner{display:flex;align-items:center;gap:var(--space-4);min-height:var(--header-h)}
+.c-header__brand{font-weight:700;text-decoration:none;letter-spacing:-.02em}
+.c-header__links{display:none;gap:var(--space-4);margin-inline:auto}
+.c-header__links a{text-decoration:none;font-weight:600;font-size:var(--step-0);color:var(--color-muted)}
+.c-header__links a:hover{color:var(--color-text)}
+.c-header__actions{display:flex;align-items:center;gap:var(--space-3);margin-inline-start:auto}
+.c-header__toggle{display:inline-flex}
+.c-header .nav-drawer{display:block}
+@media(min-width:720px){
+  .c-header__links{display:flex}
+  .c-header__toggle{display:none}
+  .c-header .nav-drawer{display:none}
+}

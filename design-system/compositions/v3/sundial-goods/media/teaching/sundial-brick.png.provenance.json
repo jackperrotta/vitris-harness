@@ -1,0 +1,33 @@
+{
+  "method": "generated-raster",
+  "tool": "built-in image_gen.imagegen",
+  "model": null,
+  "seed": null,
+  "providerReceipt": null,
+  "prompt": "Use case: precise-object-edit. Create a companion product-detail photograph of the BRICK RED cotton bag from this fictional campaign. Preserve its shape, two sewn handles, colour and believable canvas texture. Isolate that one bag on a warm off-white studio background, placed upright at a slight three-quarter angle with soft directional daylight; show both handles completely and bottom gusset. No other bags, no paper blocks, no text, no logo, no people. Wide landscape image with generous space around the object, commercially polished material detail. Fictional teaching product, no actual stock claim.",
+  "parents": [
+    {
+      "path": "media/teaching/sundial-campaign.png",
+      "role": "reference and edit target",
+      "sha256": "adc442740a435262424b66d244183802cea31bac93d1f6e935f6ea01a6c2d19b"
+    }
+  ],
+  "rights": "Original AI-generated fictional teaching material; package/generation teaching eligible. No third-party branding or customer proof.",
+  "forbiddenImplications": [
+    "Not real customer work, venue, manufactured product or verified result",
+    "No structural, material, safety or performance certification"
+  ],
+  "sha256": "07f461464799188ce1c8c22456a3bec881295069961ec1935d4b8c68524ebce4",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "recipe": {
+    "prompt": "Use case: precise-object-edit. Create a companion product-detail photograph of the BRICK RED cotton bag from this fictional campaign. Preserve its shape, two sewn handles, colour and believable canvas texture. Isolate that one bag on a warm off-white studio background, placed upright at a slight three-quarter angle with soft directional daylight; show both handles completely and bottom gusset. No other bags, no paper blocks, no text, no logo, no people. Wide landscape image with generous space around the object, commercially polished material detail. Fictional teaching product, no actual stock claim.",
+    "parent": {
+      "path": "sundial-goods/media/teaching/sundial-campaign.png",
+      "sha256": "adc442740a435262424b66d244183802cea31bac93d1f6e935f6ea01a6c2d19b",
+      "relativeTo": "teaching-release"
+    }
+  }
+}

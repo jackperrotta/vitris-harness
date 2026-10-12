@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "packVersion": "v2",
+  "purpose": "Original Vitris calibration examples for public redistribution under MIT. No third-party captures.",
+  "labeledCalibration": false,
+  "probe": {
+    "file": "probe.png",
+    "expectedToken": "2E6BFF",
+    "instruction": "Report the sRGB hex of the solid fill, without #."
+  },
+  "accuracyProbe": {
+    "file": "accuracy.png",
+    "expectedPhrase": "Trusted legal help",
+    "sourceUrl": "vitris:original-reading-probe"
+  },
+  "records": [
+    {
+      "name": "probe",
+      "role": "probe",
+      "file": "probe.png",
+      "sha256": "604789a72fd8f4b1bf930341db1f7b7b2b7ec56981c43524d2736e38f66bd9a3",
+      "notes": "Solid sRGB fill used as a visual capability token; not a design reference."
+    },
+    {
+      "name": "vitris-northline-counsel-home",
+      "role": "mobile-first-view",
+      "file": "vitris-northline-counsel-home-375-viewport.png",
+      "sha256": "c4ef72c7b99517c42b8822060b4b6b1b91239ba5965517ef5a0648f08fa4d922",
+      "notes": "Original fictional Vitris composition, production-compiled and cropped from the exact local capture. All business claims are teaching fiction."
+    },
+    {
+      "name": "vitris-northline-counsel-home",
+      "role": "desktop-first-view",
+      "file": "vitris-northline-counsel-home-1280-viewport.png",
+      "sha256": "0e1a0fdc5ccc9dd419525d69fea912ea51c74fcc8a19ed5c5f56e098afa62ad4",
+      "notes": "Original fictional Vitris composition, production-compiled and cropped from the exact local capture. All business claims are teaching fiction."
+    },
+    {
+      "name": "vitris-northline-counsel-planning",
+      "role": "mobile-first-view",
+      "file": "vitris-northline-counsel-planning-375-viewport.png",
+      "sha256": "2abfd50f2986ee44e1b8145a40640b4ad42af01605a11c8c44144cb93a3841b5",
+      "notes": "Original fictional Vitris composition, production-compiled and cropped from the exact local capture. All business claims are teaching fiction."
+    },
+    {
+      "name": "vitris-northline-counsel-planning",
+      "role": "desktop-first-view",
+      "file": "vitris-northline-counsel-planning-1280-viewport.png",
+      "sha256": "d77214942982edd1cf6a7156ec9b1eac1fd6815aa6f7e4c4954e3dc3e31311fa",
+      "notes": "Original fictional Vitris composition, production-compiled and cropped from the exact local capture. All business claims are teaching fiction."
+    },
+    {
+      "name": "vitris-tide-and-slate-home",
+      "role": "mobile-first-view",
+      "file": "vitris-tide-and-slate-home-375-viewport.png",
+      "sha256": "cdebe569f7414a78e8ecd72417b62e6912c50c2cb8b97865909de19b54a7776a",
+      "notes": "Original fictional Vitris composition, production-compiled and cropped from the exact local capture. All business claims are teaching fiction."
+    },
+    {
+      "name": "vitris-tide-and-slate-home",
+      "role": "desktop-first-view",
+      "file": "vitris-tide-and-slate-home-1280-viewport.png",
+      "sha256": "ee8c553e7e549e52fdd42e97b0733321729b12d53974568a769c391dbe3d5987",
+      "notes": "Original fictional Vitris composition, production-compiled and cropped from the exact local capture. All business claims are teaching fiction."
+    },
+    {
+      "name": "vitris-tide-and-slate-project",
+      "role": "mobile-first-view",
+      "file": "vitris-tide-and-slate-project-375-viewport.png",
+      "sha256": "e55b83b3f4d87ee54220f433511a9bbf3a7381c566f388ca9c40cbcd1ef7689d",
+      "notes": "Original fictional Vitris composition, production-compiled and cropped from the exact local capture. All business claims are teaching fiction."
+    },
+    {
+      "name": "vitris-tide-and-slate-project",
+      "role": "desktop-first-view",
+      "file": "vitris-tide-and-slate-project-1280-viewport.png",
+      "sha256": "6158501e6ebaa0847dc996743eb1f87d2a1c09b22c89c04507ebaa8a755163d5",
+      "notes": "Original fictional Vitris composition, production-compiled and cropped from the exact local capture. All business claims are teaching fiction."
+    },
+    {
+      "name": "vitris-reading-probe",
+      "role": "desktop-first-view",
+      "file": "accuracy.png",
+      "sha256": "052b46aaef7febbaccfb2dc1e69bda74aba0170909dea0ce984fdd801a7facbb",
+      "notes": "Original synthetic Vitris reading capability test, MIT. No third-party imagery."
+    }
+  ]
+}

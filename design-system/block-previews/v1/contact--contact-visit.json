@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "blockId": "contact/contact-visit",
+  "blockRevision": 1,
+  "sourceHash": "6c2f4f834640bbb77daef89b452da92ddaedcd4c0730d88ec051a805c77e6349",
+  "previewHtmlHash": "0baf86697be9984a951a1482241f9e93b5ee92bfa525020cb13d9cbdcca4cb7a",
+  "rendererHash": "adb9cf206350ec5e97bc41d8db13fe3ced203ffc9ec42bde236a81d53043bb46",
+  "content": "README example",
+  "assets": "inline placeholders",
+  "theme": "defaultTheme",
+  "browser": "Chromium 153.0.8010.12",
+  "renderer": "scripts/blocks-preview.ts",
+  "images": {
+    "mobile": {
+      "file": "contact--contact-visit--mobile.jpg",
+      "hash": "966e8fac7ad4b070add9e23e1b356e6624c5b611b209f28f7484ef7aa77776fb",
+      "width": 375,
+      "height": 900
+    },
+    "desktop": {
+      "file": "contact--contact-visit--desktop.jpg",
+      "hash": "50bda1a5361f9cc590b1e55ce8188944df40f8baf84fe160b6c67a494b17a999",
+      "width": 1280,
+      "height": 800
+    }
+  }
+}

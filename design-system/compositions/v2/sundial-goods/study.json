@@ -1,0 +1,247 @@
+{
+  "id": "sundial-goods",
+  "revision": 1,
+  "title": "Sundial Goods / colour campaign",
+  "primaryFamily": "campaign",
+  "assetMinimum": "none",
+  "fitSignals": [
+    "collection",
+    "comparison",
+    "type-content",
+    "real-copy",
+    "action",
+    "sparse-media"
+  ],
+  "visitorTasks": [
+    "shop-collection",
+    "compare-options"
+  ],
+  "organizingIdea": "A cropped-looking but fully readable type field meets a bold product illustration; colour choices become broad navigable fields and the interior exposes product facts before options.",
+  "brief": {
+    "fictional": true,
+    "facts": {
+      "name": "Sundial Goods",
+      "offer": "Fictional everyday cotton carry bags",
+      "product": "Daily Carry",
+      "variants": [
+        "Brick",
+        "Ink",
+        "Leaf"
+      ],
+      "dimensions": "38 × 42 cm",
+      "material": "Cotton in invented brief",
+      "price": "24 teaching units",
+      "restriction": "No actual stock, certifications or purchasing system",
+      "contact": "sundial@example.test"
+    },
+    "factsHash": "f1744ebac1d86003c54b90fae9b16d779784b6ae6b8ceb83fa1bfbbbb2560325",
+    "mediaHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "provenance": {
+    "content": "Original fictional Vitris teaching brief and authored copy; operational details, dimensions and offers are invented and must never populate customer inventories.",
+    "media": "Original inline SVG illustrations authored for this release; no external photographs, branding or type assets.",
+    "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+  },
+  "storyboard": {
+    "homepage": [
+      "campaign type/object",
+      "wide colour choices",
+      "everyday-use explanation"
+    ],
+    "interior": [
+      "product illustration/facts",
+      "colour comparison",
+      "adaptation boundary"
+    ],
+    "mobile": "Campaign type precedes object; colour choices form two columns then explicit product detail options stack with their labels."
+  },
+  "designDecisions": "A cropped-looking but fully readable type field meets a bold product illustration; colour choices become broad navigable fields and the interior exposes product facts before options.",
+  "lessonIds": [
+    "cmp-image-art-direction",
+    "cmp-comparison",
+    "cmp-narrative-continuity"
+  ],
+  "referenceIds": [
+    "baggu",
+    "good-weird"
+  ],
+  "sourcePath": "sundial-goods",
+  "homepage": "/",
+  "interior": "/detail",
+  "status": "compiled and automated/assistant visually reviewed; human preference pending",
+  "humanPreference": null,
+  "renderEvidence": [
+    {
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T18:23:47.935Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/sundial-goods-home-1440.png",
+        "sha256": "488b00a962aaec743b8a47defacf057f9ae876e2abb7a47f60d9b21d9ad61621"
+      },
+      "compiledHash": "04eca1d4a1e6fb09c2505cbf53da9342f2665750ce07bb89f40155062f245c8b",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail#options",
+            "/detail",
+            "/detail#options",
+            "/detail#options",
+            "/detail#options",
+            "/detail"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:25:17.945223+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views visually inspected in contact sheet. Bold campaign, object illustration and broad colour choice fields give different density from conventional product cards. Narrow campaign type precedes object and swatches; product detail reverses emphasis toward object then facts. Comparison labels remain readable. Teaching stock/prices are explicit, no checkout. Loop and Sundial share a wide two-column opening, justified by poster interpretation versus merchandise comparison; later sequences, navigation and actions differ. Further batch will add non-split openings."
+      }
+    },
+    {
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T18:23:49.127Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/sundial-goods-home-390.png",
+        "sha256": "e3e3719e6ef3cd4613a7b6afe983c546c4ba09060c16116f6b105a5307392e0d"
+      },
+      "compiledHash": "04eca1d4a1e6fb09c2505cbf53da9342f2665750ce07bb89f40155062f245c8b",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail#options",
+            "/detail",
+            "/detail#options",
+            "/detail#options",
+            "/detail#options",
+            "/detail"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:25:17.945223+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views visually inspected in contact sheet. Bold campaign, object illustration and broad colour choice fields give different density from conventional product cards. Narrow campaign type precedes object and swatches; product detail reverses emphasis toward object then facts. Comparison labels remain readable. Teaching stock/prices are explicit, no checkout. Loop and Sundial share a wide two-column opening, justified by poster interpretation versus merchandise comparison; later sequences, navigation and actions differ. Further batch will add non-split openings."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T18:23:50.700Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/sundial-goods-interior-1440.png",
+        "sha256": "19e5e51acd93edadf369a4b64436b89b3a26904740d7fb5c4d09eb7b10194348"
+      },
+      "compiledHash": "8fa0c46a3333314b7ee302dfaecbdaa4fd630eaac2676bf274beafdcc06007a9",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:25:17.945223+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views visually inspected in contact sheet. Bold campaign, object illustration and broad colour choice fields give different density from conventional product cards. Narrow campaign type precedes object and swatches; product detail reverses emphasis toward object then facts. Comparison labels remain readable. Teaching stock/prices are explicit, no checkout. Loop and Sundial share a wide two-column opening, justified by poster interpretation versus merchandise comparison; later sequences, navigation and actions differ. Further batch will add non-split openings."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T18:23:51.806Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/sundial-goods-interior-390.png",
+        "sha256": "0479f0d3d4d18416dab6113db6685c61319e88eb2b13d6cf775547c1a96dea0c"
+      },
+      "compiledHash": "8fa0c46a3333314b7ee302dfaecbdaa4fd630eaac2676bf274beafdcc06007a9",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:25:17.945223+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views visually inspected in contact sheet. Bold campaign, object illustration and broad colour choice fields give different density from conventional product cards. Narrow campaign type precedes object and swatches; product detail reverses emphasis toward object then facts. Comparison labels remain readable. Teaching stock/prices are explicit, no checkout. Loop and Sundial share a wide two-column opening, justified by poster interpretation versus merchandise comparison; later sequences, navigation and actions differ. Further batch will add non-split openings."
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "status": "draft_not_started",
+  "campaignId": null,
+  "sourceBaseline": { "path": null, "sourceHash": null, "packageSha256": null },
+  "driverPrerequisitesPassed": false,
+  "author": { "host": null, "hostVersion": null, "model": null, "settings": null },
+  "reviewer": { "provenance": null, "configurationHash": null },
+  "catalogHash": null,
+  "cases": [
+    { "id": "D1", "role": "development_image_rich", "sourceUrl": null, "capturePath": null, "captureHash": null, "requiredRoutes": [], "requiredIdentityAssets": [], "primaryAction": null, "knownTraps": [] },
+    { "id": "D2", "role": "development_sparse_media", "sourceUrl": null, "capturePath": null, "captureHash": null, "requiredRoutes": [], "requiredIdentityAssets": [], "primaryAction": null, "knownTraps": [] },
+    { "id": "H1", "role": "held_out", "sourceUrl": null, "capturePath": null, "captureHash": null, "requiredRoutes": [], "requiredIdentityAssets": [], "primaryAction": null, "knownTraps": [] }
+  ],
+  "repetitionsPerCasePerArm": 3,
+  "viewports": { "mobile": { "width": 375, "height": 812 }, "desktop": { "width": 1440, "height": 900 } },
+  "budgets": { "workflowIterationsPerRun": 60, "operatorElapsedMinutesPerRun": null, "hostTokenLimit": null, "jevTransportAttemptsPerRun": 30, "jevInputTokensPerRun": 100000, "providerEnforcedSpendLimit": null, "currency": null, "campaignSpendLimit": null, "maxAcceptableAssistCostIncrease": null },
+  "jev": { "model": null, "offConfigHash": null, "shadowConfigHash": null, "assistConfigHash": null, "workOwnership": "agent", "capabilitiesUnderTest": ["mediaClassification", "mediaSelection", "mediaSetReview", "mediaProvenance"] },
+  "allowedInterventions": [],
+  "stopRules": ["unresolved critical defect", "declared budget exhausted", "changed frozen inputs"],
+  "runResults": [],
+  "pairwiseLabels": [],
+  "finalDecision": null
+}

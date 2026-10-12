@@ -1,0 +1,8 @@
+.c-blog-post-header__inner{max-width:46rem;margin-inline:auto;display:grid;gap:var(--space-4);text-align:center;justify-items:center}
+.c-blog-post-header__inner h1{font-size:var(--step-4);max-width:22ch}
+.c-blog-post-header__meta:empty{display:none}
+.c-blog-post-header__byline{margin-top:var(--space-2)}
+.c-blog-post-header__byline:empty{display:none}
+.c-blog-post-header__byline .byline{text-align:left}
+.c-blog-post-header__media{margin-top:var(--space-7);box-shadow:none}
+.c-blog-post-header__media:not(:has(img,video)){display:none}

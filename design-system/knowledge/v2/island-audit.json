@@ -1,0 +1,12 @@
+{
+  "reviewed": "2026-09-22",
+  "method": "Source reading of kernel island scripts. Not a browser certification.",
+  "islands": [
+    {"id": "header", "keyboard": "Escape closes the drawer and focus moves into the panel. Tab is not captured, so this is not a keyboard trap. Focus is not restored to the toggle.", "launchBlocker": false, "gap": "Focus restoration is unimplemented. Manual check still pending."},
+    {"id": "tabs", "keyboard": "Arrow keys move and select tabs. Home and End are not implemented.", "launchBlocker": false, "gap": "Partial APG keyboard pattern."},
+    {"id": "lightbox", "keyboard": "Uses the native dialog element, which supplies a focus trap and Escape. A close control is wired.", "launchBlocker": false, "gap": "Manual screen-reader naming of the image swap is pending."},
+    {"id": "carousel", "keyboard": "Previous and next buttons and arrow keys. No autoplay in the island script. Button names depend on the site markup.", "launchBlocker": false, "gap": "Unnamed buttons would fail the form/name check in page markup, not in this script."},
+    {"id": "before-after", "keyboard": "Arrow keys change the slider. Pointer drag is also present.", "launchBlocker": false, "gap": "The control needs an accessible name in markup."},
+    {"id": "counter", "keyboard": "No keyboard interaction. Decorative count.", "launchBlocker": false, "gap": "If the number is the only expression of a fact, the text must also be present."}
+  ]
+}

@@ -1,0 +1,17 @@
+decisions/
+runs/
+run-history/
+reviews/
+screenshots/
+preparations/
+leases/
+receipts/
+design-runs/
+CURRENT.md
+PREPARED.json
+preview-server.json
+RUN.lock
+result-manifest.json
+.mutation.lock
+.commit-journal.json
+quality-attempts.json

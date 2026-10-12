@@ -1,0 +1,307 @@
+{
+  "id": "dock-radio",
+  "revision": 1,
+  "title": "Dock Radio / listening desk",
+  "primaryFamily": "retro",
+  "assetMinimum": "none",
+  "fitSignals": [
+    "product-ui",
+    "collection",
+    "type-content",
+    "real-copy",
+    "action",
+    "sparse-media"
+  ],
+  "visitorTasks": [
+    "explore-product",
+    "read-deeply"
+  ],
+  "organizingIdea": "Desktop window chrome groups a functioning native player and guide; the episode interior develops original audio credits and notes without changing the listening metaphor.",
+  "brief": {
+    "fictional": true,
+    "facts": {
+      "name": "Dock Radio",
+      "offer": "Fictional tiny listening desk",
+      "episode": "Evening Interval",
+      "duration": "8 seconds",
+      "media": "Original synthesized tone sequence; no external recording",
+      "restriction": "No broadcast, live schedule or catalogue of actual musicians"
+    },
+    "factsHash": "cafad57633f67d86bd40bbae0b4cc6071cc262904176bd348021ca0b962f7825",
+    "mediaHash": "e7dfaa456108ecc17bfa04542f5b1146053292d087ab7b4fd65ef05210d6858d"
+  },
+  "provenance": {
+    "content": "Original fictional Vitris teaching brief and copy; no customer claims.",
+    "media": "Original inline cassette SVG and locally synthesized eight-second sine-wave sequence. No external samples, music or photographs.",
+    "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+  },
+  "storyboard": {
+    "homepage": [
+      "listening desk identity",
+      "player window beside guide",
+      "taskbar"
+    ],
+    "interior": [
+      "episode player",
+      "original credits and notes",
+      "desk return"
+    ],
+    "mobile": "Windows stack with complete native audio controls; guide/credits follow listening content. No draggable chrome or tiny emulated controls required."
+  },
+  "designDecisions": "Desktop window chrome groups a functioning native player and guide; the episode interior develops original audio credits and notes without changing the listening metaphor.",
+  "lessonIds": [
+    "cmp-interactive-explanation",
+    "cmp-surfaces-motifs",
+    "cmp-contextual-action"
+  ],
+  "referenceIds": [
+    "poolsuite",
+    "beats-in-space"
+  ],
+  "sourcePath": "dock-radio",
+  "homepage": "/",
+  "interior": "/detail",
+  "status": "compiled and automated/assistant visually reviewed; human preference pending",
+  "humanPreference": null,
+  "renderEvidence": [
+    {
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T18:45:00.637Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/dock-radio-home-1440.png",
+        "sha256": "7589e4c06ded1a7c4032d113a9259f4b9708ecf39bb420753b90d5f2cc2e9854"
+      },
+      "compiledHash": "cf0c7972530c890db0b3549a282a880e292861f16206fca474cf1759c1d4ee94",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/media/teaching/original-tone-study.wav",
+            "/detail",
+            "/detail#notes",
+            "/",
+            "/detail"
+          ]
+        },
+        "audio": [
+          {
+            "source": "http://127.0.0.1:62139/media/teaching/original-tone-study.wav",
+            "readyState": 4,
+            "duration": 8,
+            "paused": true
+          }
+        ],
+        "captureGeometry": {
+          "beforeCaptureHeight": 994,
+          "afterCaptureHeight": 993,
+          "finalCaptureHeight": 993
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views inspected and latest stable-capture contact sheet re-inspected. Native audio desk/player window and guide have different chrome from other studies; narrow stacks player, guide, taskbar and complete teaching footer. Interior player precedes recording notes. Initial Chromium full-page capture changed document height and clipped the narrow home footer; two-capture stabilization now retains complete footer with geometry recorded. Native CUA desktop play and narrow interior play/pause exercised (2026-10-05T18:30:54.837Z, 18:31:30.723Z, 18:31:36.473Z); narrow pause returned paused true at 5.667883 seconds of 8. No audible-quality, seek or volume exercise claimed. Audio is original synthesized tone study; no third-party sample or broadcast."
+      }
+    },
+    {
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T18:45:16.804Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/dock-radio-home-390.png",
+        "sha256": "e25822428259529afc3fad1aae111b60b8ddee31ff6b4106c4ae236a23b8f446"
+      },
+      "compiledHash": "cf0c7972530c890db0b3549a282a880e292861f16206fca474cf1759c1d4ee94",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/media/teaching/original-tone-study.wav",
+            "/detail",
+            "/detail#notes",
+            "/",
+            "/detail"
+          ]
+        },
+        "audio": [
+          {
+            "source": "http://127.0.0.1:62139/media/teaching/original-tone-study.wav",
+            "readyState": 4,
+            "duration": 8,
+            "paused": true
+          }
+        ],
+        "captureGeometry": {
+          "beforeCaptureHeight": 1180,
+          "afterCaptureHeight": 1239,
+          "finalCaptureHeight": 1239
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views inspected and latest stable-capture contact sheet re-inspected. Native audio desk/player window and guide have different chrome from other studies; narrow stacks player, guide, taskbar and complete teaching footer. Interior player precedes recording notes. Initial Chromium full-page capture changed document height and clipped the narrow home footer; two-capture stabilization now retains complete footer with geometry recorded. Native CUA desktop play and narrow interior play/pause exercised (2026-10-05T18:30:54.837Z, 18:31:30.723Z, 18:31:36.473Z); narrow pause returned paused true at 5.667883 seconds of 8. No audible-quality, seek or volume exercise claimed. Audio is original synthesized tone study; no third-party sample or broadcast."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T18:45:33.102Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/dock-radio-interior-1440.png",
+        "sha256": "cc55732e747b8a32e3d21d5933c9966de977a65e52af47e9ba2565f440bb4b52"
+      },
+      "compiledHash": "216def017e7b53500680c24867a2cd24629ce899e740356e9684b3cbbb7d7e2a",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/media/teaching/original-tone-study.wav",
+            "/"
+          ]
+        },
+        "audio": [
+          {
+            "source": "http://127.0.0.1:62139/media/teaching/original-tone-study.wav",
+            "readyState": 4,
+            "duration": 8,
+            "paused": true
+          }
+        ],
+        "captureGeometry": {
+          "beforeCaptureHeight": 1626,
+          "afterCaptureHeight": 1624,
+          "finalCaptureHeight": 1624
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views inspected and latest stable-capture contact sheet re-inspected. Native audio desk/player window and guide have different chrome from other studies; narrow stacks player, guide, taskbar and complete teaching footer. Interior player precedes recording notes. Initial Chromium full-page capture changed document height and clipped the narrow home footer; two-capture stabilization now retains complete footer with geometry recorded. Native CUA desktop play and narrow interior play/pause exercised (2026-10-05T18:30:54.837Z, 18:31:30.723Z, 18:31:36.473Z); narrow pause returned paused true at 5.667883 seconds of 8. No audible-quality, seek or volume exercise claimed. Audio is original synthesized tone study; no third-party sample or broadcast."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T18:45:49.219Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/dock-radio-interior-390.png",
+        "sha256": "ec6f7a5a0dddab2a3803204b893dd37944fbd285dacc76069cbb9ef98b13a410"
+      },
+      "compiledHash": "216def017e7b53500680c24867a2cd24629ce899e740356e9684b3cbbb7d7e2a",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/media/teaching/original-tone-study.wav",
+            "/"
+          ]
+        },
+        "audio": [
+          {
+            "source": "http://127.0.0.1:62139/media/teaching/original-tone-study.wav",
+            "readyState": 4,
+            "duration": 8,
+            "paused": true
+          }
+        ],
+        "captureGeometry": {
+          "beforeCaptureHeight": 1424,
+          "afterCaptureHeight": 1422,
+          "finalCaptureHeight": 1422
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views inspected and latest stable-capture contact sheet re-inspected. Native audio desk/player window and guide have different chrome from other studies; narrow stacks player, guide, taskbar and complete teaching footer. Interior player precedes recording notes. Initial Chromium full-page capture changed document height and clipped the narrow home footer; two-capture stabilization now retains complete footer with geometry recorded. Native CUA desktop play and narrow interior play/pause exercised (2026-10-05T18:30:54.837Z, 18:31:30.723Z, 18:31:36.473Z); narrow pause returned paused true at 5.667883 seconds of 8. No audible-quality, seek or volume exercise claimed. Audio is original synthesized tone study; no third-party sample or broadcast."
+      }
+    }
+  ],
+  "selectionProfile": {
+    "tasks": [
+      "play-audio",
+      "explore-product"
+    ],
+    "contexts": [
+      "technical-product"
+    ],
+    "contributions": [
+      "desktop-metaphor",
+      "native-task-controls"
+    ],
+    "expressions": [
+      "retro"
+    ]
+  },
+  "exampleScope": "focused-structural-lesson",
+  "releaseNotes": "Preserved original lesson; not a comprehensive finished-site exemplar or human-approved taste label.",
+  "comparisonStatus": "not a controlled same-facts comparison"
+}

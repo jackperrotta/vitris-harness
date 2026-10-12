@@ -1,0 +1,34 @@
+{
+  "version": 2,
+  "sourceUrl": "",
+  "crawledAt": "2026-09-22T20:04:22.820Z",
+  "slug": "harbor-ledger",
+  "business": {
+    "name": "Harbor Ledger Advisors",
+    "phone": "",
+    "email": "",
+    "address": "",
+    "city": "",
+    "hours": [],
+    "primaryCta": {
+      "label": "",
+      "href": ""
+    },
+    "services": [],
+    "social": []
+  },
+  "missing": [
+    "phone",
+    "email",
+    "address",
+    "primaryCta",
+    "hours",
+    "services"
+  ],
+  "pages": [],
+  "images": [],
+  "warnings": [
+    "Blank starter — no existing URL crawled."
+  ],
+  "compose": "Follow the agent skill graph (agent/PROMPT.md). Keep facts (name, phone, email, address, hours, services, primary CTA, social). Keep the old site’s media language: owner photos, illustrations, device mockups, portraits, and press marks — use interpret shortlist /media paths first. Invent new layout, copy, and chrome; do not clone the old grid 1:1. If the old home has a named visual chapter (How It Works, Featured work, Built for…), restyle it on the new home instead of moving it to an inner route."
+}

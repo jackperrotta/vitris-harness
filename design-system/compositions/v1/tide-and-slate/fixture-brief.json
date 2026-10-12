@@ -1,0 +1,10 @@
+{
+  "fictional": true,
+  "name": "Tide & Slate",
+  "businessType": "coastal slate roofing studio",
+  "visitorJobs": ["understand the service", "inspect material and project evidence", "start a roof conversation"],
+  "routes": ["/", "/project/"],
+  "factsPolicy": "All example business statements are fictional teaching copy. The two images are synthetic and must not be presented as completed customer work.",
+  "availableMedia": ["media/teaching/slate-roof-work.webp", "media/teaching/slate-roof-finished.webp"],
+  "requiredActions": ["open project detail", "call the fictional example number"]
+}

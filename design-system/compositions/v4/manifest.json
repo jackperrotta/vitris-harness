@@ -1,0 +1,892 @@
+{
+  "schemaVersion": 1,
+  "release": "2026-10-06.2",
+  "status": "immutable; original teaching; assistant reviewed; human preference unlabeled",
+  "labeledPreferenceData": false,
+  "catalog": {
+    "path": "catalog.json",
+    "sha256": "74e14ae45307c0c26ef41470ad84079f110e1bfa9293ea00ca9dbca7218af20f"
+  },
+  "files": [
+    {
+      "path": "clearwell-directory/components/study-clearwell-directory/styles.css",
+      "sha256": "8a7e1a690354bde5598577f7857260b56057d9f6ab468c3c169eae3bff900631"
+    },
+    {
+      "path": "clearwell-directory/components/study-clearwell-directory/template.html",
+      "sha256": "24c27a26a68a3847896d1907ba715b13f51cf891786b81a34375a296cf3a51d0"
+    },
+    {
+      "path": "clearwell-directory/pages/detail/index.html",
+      "sha256": "2ea4b2f6c05cad53a05bde7bba59bb1333ab8332de472ec012bf83b9714bdd76"
+    },
+    {
+      "path": "clearwell-directory/pages/index.html",
+      "sha256": "fad66a6511b4f0cede4b017cd745f8f3aa17b9c8a3f21c51d173aad0e2f8ea2d"
+    },
+    {
+      "path": "clearwell-directory/site.json",
+      "sha256": "0ee1bc1304747163bdd74ec8a6a54f1aa5b41e407db09736bf270d51e8b6a21c"
+    },
+    {
+      "path": "clearwell-directory/study.json",
+      "sha256": "5dc34d31cb7945baa68f5ee004968f766563b6840306c205826d7937f9abf3af"
+    },
+    {
+      "path": "clearwell-directory/theme/defaults.json",
+      "sha256": "eda413097d79a0f2b73b04738b15fef915ad277c7851910f18e78c057c2f356d"
+    },
+    {
+      "path": "clearwell-letter/components/study-clearwell-letter/styles.css",
+      "sha256": "d29b84e98ac37a2075bf008a292ffceec34ba2c14c155e107b72f646eaa18f0c"
+    },
+    {
+      "path": "clearwell-letter/components/study-clearwell-letter/template.html",
+      "sha256": "8f05d44ca2ae2da77c71028cba382363c9d985afa14d82619761d5b1288a60d2"
+    },
+    {
+      "path": "clearwell-letter/pages/detail/index.html",
+      "sha256": "a9abc5d5f3ac41d6a862d4045281fa0d0eb32a3d035b107f8419f9c6d0c53ecc"
+    },
+    {
+      "path": "clearwell-letter/pages/index.html",
+      "sha256": "0d59c4ff84b1648936eb9a05474245b4b13d642595cae66fe7c0919e710f5448"
+    },
+    {
+      "path": "clearwell-letter/site.json",
+      "sha256": "d0b34539ef7bb4c33d0ec23cb3907f627ea39cf93effb5d6e575bc5fa0a9ef63"
+    },
+    {
+      "path": "clearwell-letter/study.json",
+      "sha256": "0753bc27fad337dfffd9dc5f1f6e766cd9486f049c477bc491af2abb62d33513"
+    },
+    {
+      "path": "clearwell-letter/theme/defaults.json",
+      "sha256": "ac2691cecd9363b8ebba99c7f067ec409b18e13e8e4e0565cda40bc796034441"
+    },
+    {
+      "path": "dock-radio/components/study-dock-radio/styles.css",
+      "sha256": "7d9fd6fc1b6ccf4c587e3d609eefc0fa94f67d55c3060d0f093a154566690c17"
+    },
+    {
+      "path": "dock-radio/components/study-dock-radio/template.html",
+      "sha256": "227c85d2f39b7849a0c4db5158319f06d181b914911cefcf5f79645f629625b6"
+    },
+    {
+      "path": "dock-radio/media/teaching/original-tone-study.wav",
+      "sha256": "a197a8ff177890354f964daba3fdb8085f81f831cb9c63af19ee275a10d742d3"
+    },
+    {
+      "path": "dock-radio/media/teaching/original-tone-study.wav.provenance.json",
+      "sha256": "559c67a5e9cf683ae72a32fc92bbc2eb675b90b7d2a95472dde48aa19e8e0a5a"
+    },
+    {
+      "path": "dock-radio/pages/detail/index.html",
+      "sha256": "0b2a9e7f7f2704ebd1a7086a2a5bcd9698d0c62b1f63fcffb2f5b9fbc07e208d"
+    },
+    {
+      "path": "dock-radio/pages/index.html",
+      "sha256": "5c79eb78c704739f90e67386910a21ed2d63fd6e638edc4fa8efcfe0c3dadfd3"
+    },
+    {
+      "path": "dock-radio/site.json",
+      "sha256": "be280d2c815937b819b0f7020e87dbff579cfaab9f3481eef3b0ab9ed73747d0"
+    },
+    {
+      "path": "dock-radio/study.json",
+      "sha256": "e182fb94d3db7c8ac0b8d054509b189197f61044989362006175f66269645784"
+    },
+    {
+      "path": "dock-radio/theme/defaults.json",
+      "sha256": "949aa34609fe488d07ebd747fa5eb6b0c7171dcea2be17a036ed12e37b80e1a1"
+    },
+    {
+      "path": "fen-repair/components/study-fen-repair/styles.css",
+      "sha256": "e2c1d423a896cc8a9607e787b871150fda3e61c5420f89ab7dd8c281c8e19bca"
+    },
+    {
+      "path": "fen-repair/components/study-fen-repair/template.html",
+      "sha256": "fbff3f3042ad4d49638682716dcb6611886d8a8d06488a1105987a848b2c447b"
+    },
+    {
+      "path": "fen-repair/media/teaching/slate-roof-finished.webp",
+      "sha256": "263431d71685757fecd164e3f56fb87fbc64c836eae2e8dbf0ab641fd8191298"
+    },
+    {
+      "path": "fen-repair/media/teaching/slate-roof-finished.webp.provenance.json",
+      "sha256": "7d32d6941ad87b396b1e3719eaaa8bbeadf9108ac35a2661e0df8190626c7e3f"
+    },
+    {
+      "path": "fen-repair/media/teaching/slate-roof-work.webp",
+      "sha256": "b7975143d0fbd1e55363b0571c8d7f2284c16b576759ce17f7230d541168a29c"
+    },
+    {
+      "path": "fen-repair/media/teaching/slate-roof-work.webp.provenance.json",
+      "sha256": "ec98debb5dfb206f207c1fabfb75ce1f986070c71c17d4e5f0cea8310908e381"
+    },
+    {
+      "path": "fen-repair/pages/detail/index.html",
+      "sha256": "1575ea242cf536889fb5c2820c23f99c63eb2de2da02c127b90161c8e744a46d"
+    },
+    {
+      "path": "fen-repair/pages/index.html",
+      "sha256": "81f048d499c9b4c46b436a7ec55fb8d93fecfbe61c965b406414a8e4e6522f8f"
+    },
+    {
+      "path": "fen-repair/site.json",
+      "sha256": "a853b88fef701f9792cf8467eb1f21e558cff1efbb0b5803e149090ab91465a0"
+    },
+    {
+      "path": "fen-repair/study.json",
+      "sha256": "fd29724a0bdc2417413067ee03d95240a301407b13773ca095022168b1a4c885"
+    },
+    {
+      "path": "fen-repair/theme/defaults.json",
+      "sha256": "03b7edfde7ba40e18b37d34dbe54f3728276d36d0602b89e928caeeba6add216"
+    },
+    {
+      "path": "hearth-plane/components/study-hearth-plane/styles.css",
+      "sha256": "1c77262e1e0e8429511b4b6b1ca855a88e2c77200a5b5138019ccaebddc53a1f"
+    },
+    {
+      "path": "hearth-plane/components/study-hearth-plane/template.html",
+      "sha256": "8aac95250bb40ca57ede344cfb306f59f9eff5bf551ecad4b218e7df59561088"
+    },
+    {
+      "path": "hearth-plane/media/teaching/hearth-courtyard.png",
+      "sha256": "2c708aff326fb67052dad1ee6c2be5e4dc21861937efbe3d15b839955330ea5b"
+    },
+    {
+      "path": "hearth-plane/media/teaching/hearth-courtyard.png.provenance.json",
+      "sha256": "419f8c087b093eaae616f8a775cb416b7b25a73302713883886796e32df66101"
+    },
+    {
+      "path": "hearth-plane/media/teaching/hearth-threshold.png",
+      "sha256": "6f12c8534ef1511806c2815e83b51a7053e40e0556c8b930d0fa74a2f5ed2249"
+    },
+    {
+      "path": "hearth-plane/media/teaching/hearth-threshold.png.provenance.json",
+      "sha256": "f1cf8f01a33d893ad83bc5f05dcb1f5ead064c480f379965491042b748051e91"
+    },
+    {
+      "path": "hearth-plane/pages/detail/index.html",
+      "sha256": "0a150e3399325b1b1112d27b152951085d22f29cf1ea088c8637127b4234b393"
+    },
+    {
+      "path": "hearth-plane/pages/index.html",
+      "sha256": "328bef102802dd8036fdc3fa11a23039bba4edd2ad533f9d29fb215113d5ba12"
+    },
+    {
+      "path": "hearth-plane/site.json",
+      "sha256": "13427f9135d7d5388dc6a0f7bb6470eb8ea5bc4c2441cb5a85e21585b6e34c27"
+    },
+    {
+      "path": "hearth-plane/study.json",
+      "sha256": "a82c0656b095902feb03abce7c3c95de7d0462988a8d6ee88ab20739215dd196"
+    },
+    {
+      "path": "hearth-plane/theme/defaults.json",
+      "sha256": "520f9aa9434c085f8fb7e03672a8c7354bda21bc1d5822044e657c538fd1dd45"
+    },
+    {
+      "path": "lacuna-objects/components/study-lacuna-objects/styles.css",
+      "sha256": "140e468b4956c615d0a2c550923aa68581fff32849f174fd784d167ef91033df"
+    },
+    {
+      "path": "lacuna-objects/components/study-lacuna-objects/template.html",
+      "sha256": "66fdaef65ccfb5c1f73ca8859d8f2bf83ffac6a2aadfb1066b0deeeca4bf3aef"
+    },
+    {
+      "path": "lacuna-objects/media/teaching/lacuna-detail.png",
+      "sha256": "9e90c2474e41031990242529735062c2600fd45bd546089567c595f5409c06cb"
+    },
+    {
+      "path": "lacuna-objects/media/teaching/lacuna-detail.png.provenance.json",
+      "sha256": "953900cb58e907ef201f76ad010b3a9bd1eb8776ccd117476710a3232cb45683"
+    },
+    {
+      "path": "lacuna-objects/media/teaching/lacuna-object.png",
+      "sha256": "7c4c15e40efe33828111f0b94e01ac2feba22bdf7f79bf211f006b79ea9eb79a"
+    },
+    {
+      "path": "lacuna-objects/media/teaching/lacuna-object.png.provenance.json",
+      "sha256": "2de6931c226a12f5724340202804dbecc529629f8d945b0ae7303d4b9633e2f9"
+    },
+    {
+      "path": "lacuna-objects/pages/detail/index.html",
+      "sha256": "87f86e1f4e284afbc1b267a7ed8666249445d14dd3b5d4e9cf9e45c3ae5bce78"
+    },
+    {
+      "path": "lacuna-objects/pages/index.html",
+      "sha256": "53e9c7822cfdd40c378bb46354877322550a3f1057736b52d066172577f2844b"
+    },
+    {
+      "path": "lacuna-objects/site.json",
+      "sha256": "8eab92de9f2ae97d2e49d9a600444ea67403c6646a4e24568634adf97bf24128"
+    },
+    {
+      "path": "lacuna-objects/study.json",
+      "sha256": "055bf08023966199ccd343253559704c2161b620c29a8a5a02a73199abc6df32"
+    },
+    {
+      "path": "lacuna-objects/theme/defaults.json",
+      "sha256": "fb6c688ecdf21ef29e3dceeb795bfb7f7f72b4e79f8421d257d01eb31bf17690"
+    },
+    {
+      "path": "loop-room/components/study-loop-room/styles.css",
+      "sha256": "f86daddf547900a5584f21456e2da364013e6465a76c13927dd7897b2f8ea18b"
+    },
+    {
+      "path": "loop-room/components/study-loop-room/template.html",
+      "sha256": "d1ee235e368a55d0e17a77b3256a6c7b88d9b82176367d4b500343f60077f8ab"
+    },
+    {
+      "path": "loop-room/pages/detail/index.html",
+      "sha256": "8476e1a60bc4e5a51f1f12b834e3faf6f5dd95684b531a080d095e655787f1db"
+    },
+    {
+      "path": "loop-room/pages/index.html",
+      "sha256": "991df925cd23cc3f6a886dc8a9edd15493aa25f70e1c3772bf2c1f881bbd9df4"
+    },
+    {
+      "path": "loop-room/site.json",
+      "sha256": "077e5310f279aadc43c8a995db45bdd38e587c5f8fb6364964fee9ccfd77f827"
+    },
+    {
+      "path": "loop-room/study.json",
+      "sha256": "7bfb9705daa6391cbf28f2f5dec20ce9aa59c92952bbcbaf0bb00afc4f610b02"
+    },
+    {
+      "path": "loop-room/theme/defaults.json",
+      "sha256": "85ea7fa2c4de1364a010473c4973fae360b093867e9c17662d3235f75b6822e2"
+    },
+    {
+      "path": "mara-reading-room/components/study-mara-reading-room/styles.css",
+      "sha256": "d623aef2ef72c13b04c007706a34241d9b2a9b59459dd4d509e02fc0bde2196e"
+    },
+    {
+      "path": "mara-reading-room/components/study-mara-reading-room/template.html",
+      "sha256": "b28d4bdd9231fd01be21b9dd5f12a676e64404a56c2eb92f30d442ae445ce517"
+    },
+    {
+      "path": "mara-reading-room/pages/detail/index.html",
+      "sha256": "cae10d928f7437612b514fc4bb9d68998c064e190c438772a72a9e3b58e56ddf"
+    },
+    {
+      "path": "mara-reading-room/pages/index.html",
+      "sha256": "2c8a3a3b2ca541d62352e4b4050de9d094ce83729fd25e37a544127a82b29a45"
+    },
+    {
+      "path": "mara-reading-room/site.json",
+      "sha256": "4e6e29ad1474b8d5e7f6d13274e6c51d57221d95136a4fe8a547bc1850a1f4a1"
+    },
+    {
+      "path": "mara-reading-room/study.json",
+      "sha256": "603e665783f7758af8f49ea6d5e07ac779b23d3cf67cd3a6e94124ae7cc13e3b"
+    },
+    {
+      "path": "mara-reading-room/theme/defaults.json",
+      "sha256": "06eba5620bfcb4cef6cb1af38fb31cb327f47327b50ac7101ea4e43b6c1429f8"
+    },
+    {
+      "path": "mara-specimen/components/study-mara-specimen/styles.css",
+      "sha256": "b9f4c275e2929ae27efad4b351cb8d69d6974c31d11c71477a713891faa64f09"
+    },
+    {
+      "path": "mara-specimen/components/study-mara-specimen/template.html",
+      "sha256": "48d1b98245f3c318ae530b4e87199f014e6a5bd8be8e9057b0ac98f91aad25e6"
+    },
+    {
+      "path": "mara-specimen/pages/detail/index.html",
+      "sha256": "b12d509bf1e2b6ebedb01692b7668203851f39815a37473546df7d4ecae7dfc0"
+    },
+    {
+      "path": "mara-specimen/pages/index.html",
+      "sha256": "371e8c1d5661a6dd51ab6663c07ac125b11144b96af1c726cbc4ff7f0ed55d35"
+    },
+    {
+      "path": "mara-specimen/site.json",
+      "sha256": "bc84983c69d764b312edc911ab87bcba4a83aa686452ed53aa847e3b7eb11970"
+    },
+    {
+      "path": "mara-specimen/study.json",
+      "sha256": "c86a14c189722a2bf239ad6a1db01519fcd18543030511e7b7e150a15f1d7c71"
+    },
+    {
+      "path": "mara-specimen/theme/defaults.json",
+      "sha256": "233d5675b10eeaa772398328d806cd53c15fdc407490e737539f4eec8412dfaa"
+    },
+    {
+      "path": "margin-journal/components/study-margin-journal/styles.css",
+      "sha256": "929d58c0f53449938f0e496d298910429baf3e73953ccdb2f8b8fb57310974e2"
+    },
+    {
+      "path": "margin-journal/components/study-margin-journal/template.html",
+      "sha256": "4b649d6166092492ec392eea27e8795454d5913e8ee1389b39747c5afbd95b6a"
+    },
+    {
+      "path": "margin-journal/pages/detail/index.html",
+      "sha256": "3c3df0e2173f512bbb33d0ed6451c79a4608bf0e2da77267f71c67c1eddb6f54"
+    },
+    {
+      "path": "margin-journal/pages/index.html",
+      "sha256": "13c9059815a8e2c568e4b08c1c61f9a2e15eb885851b3c3a4f375dbba942946c"
+    },
+    {
+      "path": "margin-journal/site.json",
+      "sha256": "67f4dca60f636757a644c5de223e461dc9b29c672519c4db77c43370c226f5da"
+    },
+    {
+      "path": "margin-journal/study.json",
+      "sha256": "5b8412e26a065d7014350f0507ef5ae23b0e311a0d3764d25e9c5289fd5105b9"
+    },
+    {
+      "path": "margin-journal/theme/defaults.json",
+      "sha256": "c395da6f30bdcc0276840444974ee8e23c6606ea2a2b684103852e67a12b7ace"
+    },
+    {
+      "path": "night-orchard/components/study-night-orchard/styles.css",
+      "sha256": "d9ba118760f2d946e0d999ec0f0c9d60a51af19bb09657da580b1d90152d0dcc"
+    },
+    {
+      "path": "night-orchard/components/study-night-orchard/template.html",
+      "sha256": "86c6583fc40f74db633f1607c016be256eb3b3b2a37ac090302b32beb06de409"
+    },
+    {
+      "path": "night-orchard/media/teaching/orchard-evening.png",
+      "sha256": "af1ca09f68c2cf51fc96277d5d1e2332ce436033e1614f14fcfb81c509f32f12"
+    },
+    {
+      "path": "night-orchard/media/teaching/orchard-evening.png.provenance.json",
+      "sha256": "c14ca6882f65ea16e0e93baf8d6b2ddd3faec6a988deca4ff94678225a978346"
+    },
+    {
+      "path": "night-orchard/pages/detail/index.html",
+      "sha256": "ae72ff516178605e13970010e01d0ddb4ba92800437dc714b2bc81cef5c1a862"
+    },
+    {
+      "path": "night-orchard/pages/index.html",
+      "sha256": "c2e18d3de571df397717ed91cd410aeb2161d861f0b4f4a11dc0e7db0d9b18ee"
+    },
+    {
+      "path": "night-orchard/site.json",
+      "sha256": "462efc447efefea2c1377341fed95974c4709aa8ac30694ace356945f2575e23"
+    },
+    {
+      "path": "night-orchard/study.json",
+      "sha256": "d652e305972073dad8fd4f07626a4d6c38544412d34ad7c3b2c30cc974d30b2a"
+    },
+    {
+      "path": "night-orchard/theme/defaults.json",
+      "sha256": "b2eda3a8e746361a9c5e0cf6822c321d78a5863ea6d356ecc27cf8da3bf8d109"
+    },
+    {
+      "path": "previews/clearwell-directory-home-1440.png",
+      "sha256": "71705266c488f39dc5b2fecfe438cf900bdb1c70d3b67683aa450368a39ccfa1"
+    },
+    {
+      "path": "previews/clearwell-directory-home-390.png",
+      "sha256": "b9e47a8e219905d055e9d6c5070fe62b6f3d0787a4a6a6e5a48a76bb40de06d0"
+    },
+    {
+      "path": "previews/clearwell-directory-interior-1440.png",
+      "sha256": "93e582ba34b4fd2b5fa156b69656e09d8514aefb5ebfdf02963d300ca0b71306"
+    },
+    {
+      "path": "previews/clearwell-directory-interior-390.png",
+      "sha256": "57cd6a484b065ba37f978376d5b2d93871566655b6b0e697600c132754eb9ffb"
+    },
+    {
+      "path": "previews/clearwell-letter-home-1440.png",
+      "sha256": "d32fcd28eb0c63b8fc3e798752ae9b1614410cbfb36bb2d6944a06813e15b6c5"
+    },
+    {
+      "path": "previews/clearwell-letter-home-390.png",
+      "sha256": "b55ad3915a88c22306d0d834b51cf1a6a4bae3d891b61af2e3d031c5c9c216f2"
+    },
+    {
+      "path": "previews/clearwell-letter-interior-1440.png",
+      "sha256": "5d5a7eeb2e01b74a381c42a4b6e75702db848306d9e6d146d7c3bfea4e29b94c"
+    },
+    {
+      "path": "previews/clearwell-letter-interior-390.png",
+      "sha256": "e3954d607bf5eff2200f67ff9b42d833731ec1b5236e9c1b94de655986f0a786"
+    },
+    {
+      "path": "previews/dock-radio-home-1440.png",
+      "sha256": "7589e4c06ded1a7c4032d113a9259f4b9708ecf39bb420753b90d5f2cc2e9854"
+    },
+    {
+      "path": "previews/dock-radio-home-390.png",
+      "sha256": "e25822428259529afc3fad1aae111b60b8ddee31ff6b4106c4ae236a23b8f446"
+    },
+    {
+      "path": "previews/dock-radio-interior-1440.png",
+      "sha256": "cc55732e747b8a32e3d21d5933c9966de977a65e52af47e9ba2565f440bb4b52"
+    },
+    {
+      "path": "previews/dock-radio-interior-390.png",
+      "sha256": "ec6f7a5a0dddab2a3803204b893dd37944fbd285dacc76069cbb9ef98b13a410"
+    },
+    {
+      "path": "previews/fen-repair-home-1440.png",
+      "sha256": "9ae1f1bb988411134b0a590711b538b3c590853c8d9bb6c5ee69f512e0d1875f"
+    },
+    {
+      "path": "previews/fen-repair-home-390.png",
+      "sha256": "a180d9ec0eb67df2d1d5f9d852753f6d50f8dd6ebfda80aa41376ac15adbcabb"
+    },
+    {
+      "path": "previews/fen-repair-interior-1440.png",
+      "sha256": "ae39e22c046db9eebf5ec67172777ba64aaefd26d002ca88bd256dc3ade86e31"
+    },
+    {
+      "path": "previews/fen-repair-interior-390.png",
+      "sha256": "c397fde8afb5e009104f3f324c7111454f5464ada9216c49d9947b52e50b7412"
+    },
+    {
+      "path": "previews/full/clearwell-directory-home-1440.png",
+      "sha256": "4e1f7b1088caac9c5ac548c85963952792f3ad9ba229bbc5219f7443e2c693c8"
+    },
+    {
+      "path": "previews/full/clearwell-directory-home-390.png",
+      "sha256": "962b4f644e2ba6a1421acedcb0a5814ba0f99fe6830c3545b34ed3bc818d61c0"
+    },
+    {
+      "path": "previews/full/clearwell-directory-interior-1440.png",
+      "sha256": "782ce6fd8543066f94c1f9359da4c49782eceaad6e80bdc32b1d89fb055d8da8"
+    },
+    {
+      "path": "previews/full/clearwell-directory-interior-390.png",
+      "sha256": "093ac585f7db9584e6ec44471b1fac2025ded7a82224e842b9862bc9270015cd"
+    },
+    {
+      "path": "previews/full/hearth-plane-home-1440.png",
+      "sha256": "254efe7313ba5aa1b8f1b4fa2d3ab1dcff108bec3c0e56ad3448211e4514e30b"
+    },
+    {
+      "path": "previews/full/hearth-plane-home-390.png",
+      "sha256": "d5d1033f2a25be86720a1dfd21bb606566af9984c2ac2ea7f3345296ae708648"
+    },
+    {
+      "path": "previews/full/hearth-plane-interior-1440.png",
+      "sha256": "2469874ea90256f8a9d70180338056f4527e104720e9cffdbadefb16d552a81c"
+    },
+    {
+      "path": "previews/full/hearth-plane-interior-390.png",
+      "sha256": "d4407202289a6bd49ebd915dba5accfea9d7e8794a5114b9b3d85feeb1c73746"
+    },
+    {
+      "path": "previews/full/lacuna-objects-home-1440.png",
+      "sha256": "1ed06a9bd1e46d1f76d1297f4ec5e14cf647deb51ae9c29312496a812c6db895"
+    },
+    {
+      "path": "previews/full/lacuna-objects-home-390.png",
+      "sha256": "f5b9e313b4c787751f066ddc9aa847e89a478650d396a921efeb0de9c5ac2793"
+    },
+    {
+      "path": "previews/full/lacuna-objects-interior-1440.png",
+      "sha256": "0a727ee3ae7523ab61939c183becc150c46097455a63eb18417d0de1e14948a6"
+    },
+    {
+      "path": "previews/full/lacuna-objects-interior-390.png",
+      "sha256": "0edad202cd9ce40201756c8946f5e5dde9f1c064ecdb9f1e4e7ea45b6c949f36"
+    },
+    {
+      "path": "previews/full/mara-specimen-home-1440.png",
+      "sha256": "f43beb497e4e1a7f72545422f00f92d75297b4d33fe5d46787e1dea8d8b88a79"
+    },
+    {
+      "path": "previews/full/mara-specimen-home-390.png",
+      "sha256": "6d8ee227ea63ab5f08b8c90f3eb72632cb00e668dfede557702328ded766bc9a"
+    },
+    {
+      "path": "previews/full/mara-specimen-interior-1440.png",
+      "sha256": "e1ca051a1bd762ecd57e693fd11f48c0fdc5d0674279844bdc69d3329400fd24"
+    },
+    {
+      "path": "previews/full/mara-specimen-interior-390.png",
+      "sha256": "a263650feb783fc27f0c6caefb41d81f3672e70df0eea1b0a86a6fa7f7019f58"
+    },
+    {
+      "path": "previews/full/night-orchard-home-1440.png",
+      "sha256": "f20a35ebc96d0da1b8b073a7bcd6af5a24743c48df5438869c5804a28e6383e8"
+    },
+    {
+      "path": "previews/full/night-orchard-home-390.png",
+      "sha256": "412162f32e466d01672821abc26a499425e3c167a965ece0f8898019fb5e6415"
+    },
+    {
+      "path": "previews/full/night-orchard-interior-1440.png",
+      "sha256": "e6cfb4d6457c2a97225947adc31cc83c24940d256d8e8269c077674a6d764439"
+    },
+    {
+      "path": "previews/full/night-orchard-interior-390.png",
+      "sha256": "1b7f05aa803c21ea2091addfaf657f28309fc4606b23cc1a94d723718401744b"
+    },
+    {
+      "path": "previews/full/sundial-goods-home-1440.png",
+      "sha256": "6708c380ad48a8e6001a1e8ae4bcea1317275c290215c88ab17334376ae6cf11"
+    },
+    {
+      "path": "previews/full/sundial-goods-home-390.png",
+      "sha256": "215266bc43262de7279fb9c2b30e2f336c8dd058312805d4f03b0e7d7f096c97"
+    },
+    {
+      "path": "previews/full/sundial-goods-interior-1440.png",
+      "sha256": "3622225d294ad8c5951d3ebc57367afe94e2bcdfa668d6031e6a8a1cca6bdef2"
+    },
+    {
+      "path": "previews/full/sundial-goods-interior-390.png",
+      "sha256": "16fabc945fc7073ab6540de74fca3cfbd846ce6d133f2ea8c418d9bfe06c121a"
+    },
+    {
+      "path": "previews/hearth-plane-home-1440.png",
+      "sha256": "b7eb698d86751f506cec621663df2435c67d6fdec61f4f782cb54967672cf002"
+    },
+    {
+      "path": "previews/hearth-plane-home-390.png",
+      "sha256": "b779aaad21e394f86b243b106ce172c847b187de1276066dacde0777d8ba2b55"
+    },
+    {
+      "path": "previews/hearth-plane-interior-1440.png",
+      "sha256": "77dd4703500b40aeb9277f19e9b97aa09ee6794f157586f8980ee014f21c38f6"
+    },
+    {
+      "path": "previews/hearth-plane-interior-390.png",
+      "sha256": "3c0bcaa4a8eb28e73c469d7802adba8f3fbfdb899558c0c2b45ae95b9ce3ddc4"
+    },
+    {
+      "path": "previews/lacuna-objects-home-1440.png",
+      "sha256": "ca8339f6cb909ad0ac9d1dab79d4cef6e72850e576ef7dae09286c9f76ca49d3"
+    },
+    {
+      "path": "previews/lacuna-objects-home-390.png",
+      "sha256": "c65f237e879acf2559ba0afa10683a04e0d5de6eb7d386bce4d405ac9b662edc"
+    },
+    {
+      "path": "previews/lacuna-objects-interior-1440.png",
+      "sha256": "ce7359ed18f9226e6d8642421faa08f85d4879103761ef2dc08b7cc89cf38605"
+    },
+    {
+      "path": "previews/lacuna-objects-interior-390.png",
+      "sha256": "a17f7e092994d97a633486226ab9d6c3c47c2c4f97a096da0f9119298a369201"
+    },
+    {
+      "path": "previews/loop-room-home-1440.png",
+      "sha256": "78584586862f9b860bd085fc776ef0b3208f7cae461efb6816d53dc138bb030d"
+    },
+    {
+      "path": "previews/loop-room-home-390.png",
+      "sha256": "2dd1af9e349a94621b7433624073545e0b10aad5f4927129b8c728c54a019ddb"
+    },
+    {
+      "path": "previews/loop-room-interior-1440.png",
+      "sha256": "65707345efe629ba0be040db2ede0c60d61f32e6d01f5fe12737d6480a01f064"
+    },
+    {
+      "path": "previews/loop-room-interior-390.png",
+      "sha256": "23e69c04837f05d2008cd3cf83d316679f7de0ad7e5979d262181d86d08cb012"
+    },
+    {
+      "path": "previews/mara-reading-room-home-1440.png",
+      "sha256": "10becbd3cd86191681ab7b339d21f2294a5896c8d4f9b33f8e0b230e6335360e"
+    },
+    {
+      "path": "previews/mara-reading-room-home-390.png",
+      "sha256": "628943d761b44a0ff9ea6f67438644088dd4aea25ab3f94d682253dd5b282374"
+    },
+    {
+      "path": "previews/mara-reading-room-interior-1440.png",
+      "sha256": "4c0e6792a4ea164e2508bd5f9effb2c6f5beb296ed5c204f6dfd5fbe4205e0f3"
+    },
+    {
+      "path": "previews/mara-reading-room-interior-390.png",
+      "sha256": "3ba40e8377097ea807292773529bc01ef6415f04367eaec62c10fbf711739ae7"
+    },
+    {
+      "path": "previews/mara-specimen-home-1440.png",
+      "sha256": "afa2500524f510a4c3ff00812812b856085e1bf05f8d6a482d17cb8c6949bdd4"
+    },
+    {
+      "path": "previews/mara-specimen-home-390.png",
+      "sha256": "bd2229f2aa7683804d8f67d51ce875b0f6e11c198f4877ebff276c20438f8214"
+    },
+    {
+      "path": "previews/mara-specimen-interior-1440.png",
+      "sha256": "599ac98d8f6cd0593c1fdd47cd35898a848df2aed25504185695be17977381bc"
+    },
+    {
+      "path": "previews/mara-specimen-interior-390.png",
+      "sha256": "99908facf9422617a48ebd7976dc70ccd2f9794f46346f152baff27eeda86754"
+    },
+    {
+      "path": "previews/margin-journal-home-1440.png",
+      "sha256": "d67228352002fb6f38830e9cd2652b48de11088593a095835f08b8f404861683"
+    },
+    {
+      "path": "previews/margin-journal-home-390.png",
+      "sha256": "aa4e38f35f14cf3aa1ec143614d8ee7d47db20aafa9fc0bf1664891464500d9e"
+    },
+    {
+      "path": "previews/margin-journal-interior-1440.png",
+      "sha256": "72d05587c1aa8f3f102aac723c6e040c314fa8ebd31446063d7331aa5a8bd44e"
+    },
+    {
+      "path": "previews/margin-journal-interior-390.png",
+      "sha256": "3a82447bbc918d2473de69bdc9a1085402322ffbd285ea2b2a4b76d0557e7934"
+    },
+    {
+      "path": "previews/night-orchard-home-1440.png",
+      "sha256": "a680563565a62db62e5db903c3b4f20a578862edd6001c3f668430eec4574b8d"
+    },
+    {
+      "path": "previews/night-orchard-home-390.png",
+      "sha256": "09d9e41bda4c8b6cc3cdbe4503a9d3e723517761706d4269e3818980bbf3eef5"
+    },
+    {
+      "path": "previews/night-orchard-interior-1440.png",
+      "sha256": "127c1cc7a53e7088de35606be9f927bd52c3a4ca48c0701d71dded9b3dc76572"
+    },
+    {
+      "path": "previews/night-orchard-interior-390.png",
+      "sha256": "196b416d5a7af4ab916de403bd37a65af6c8b39267ce7bc9760aed970d0bc854"
+    },
+    {
+      "path": "previews/relay-workflow-home-1440.png",
+      "sha256": "9f07b4e37cb8a0a73093bbe921859efc1b3248eac168d0f96e8b346bcd037e23"
+    },
+    {
+      "path": "previews/relay-workflow-home-390.png",
+      "sha256": "b1be668d42924fb73aba9d75a4eb98554147603533d66e539f627192188a30f4"
+    },
+    {
+      "path": "previews/relay-workflow-interior-1440.png",
+      "sha256": "e4369f2b8ae94366e4227c44b25a5c16c5f66ccaa2d684af58c3c31a9b286f45"
+    },
+    {
+      "path": "previews/relay-workflow-interior-390.png",
+      "sha256": "3d69422afda4d559f60353dff28be99b31e3d83862cf37847a8cd72d27a2eb6e"
+    },
+    {
+      "path": "previews/rivet-components-home-1440.png",
+      "sha256": "2cf539d22d7e078ed27542da783c00a854fb35bd076f967513de0df1cbf058fc"
+    },
+    {
+      "path": "previews/rivet-components-home-390.png",
+      "sha256": "24d2ac431d17ccda5a4fd46357bd7c45537e8a4cb35cf21f629006fed8909871"
+    },
+    {
+      "path": "previews/rivet-components-interior-1440.png",
+      "sha256": "244c0e17329969255367915592219ec220e6983d36467645e7f488d20e17a779"
+    },
+    {
+      "path": "previews/rivet-components-interior-390.png",
+      "sha256": "7f56af78d0673218eebcb823d170ad66d375f14d8ef31739c7394e0336997141"
+    },
+    {
+      "path": "previews/signal-fair-home-1440.png",
+      "sha256": "ef26a30878766f5391a967697f4667dc132615c3ae21c813a4899e9edef0276d"
+    },
+    {
+      "path": "previews/signal-fair-home-390.png",
+      "sha256": "2c5b06ff467bd3fe35c742ac54a5ad4122b510d58d56a055ab96397d7aa8052c"
+    },
+    {
+      "path": "previews/signal-fair-interior-1440.png",
+      "sha256": "d92e12d2ba26729f02ab1add1ab49a9630d49904183316bcd958fe131c7f05f1"
+    },
+    {
+      "path": "previews/signal-fair-interior-390.png",
+      "sha256": "22289add335dc1d61c60cb297e00652e8437b8e2856998e0a74e2e9ab94a1b91"
+    },
+    {
+      "path": "previews/sundial-goods-home-1440.png",
+      "sha256": "ff1d5c321d58501d8e93d683ff00334d2fbaffd021f9b661915a9f97be485327"
+    },
+    {
+      "path": "previews/sundial-goods-home-390.png",
+      "sha256": "3eb78ac5cb8ff6d78503a596296c0544100e49ffe31cce7ab77f62563edae126"
+    },
+    {
+      "path": "previews/sundial-goods-interior-1440.png",
+      "sha256": "8ae1bcbe16f37051ef77353131d59767e4b7a425d4c10d420cdefe8a13067fd9"
+    },
+    {
+      "path": "previews/sundial-goods-interior-390.png",
+      "sha256": "c70152962b1394ecbeba8715a3542d313766b031041387ece5f5fb62d2f99a1b"
+    },
+    {
+      "path": "previews/thread-mender-home-1440.png",
+      "sha256": "43add004a81011c425afae190434be2d55a549d84eb18c7f0ef21b1da1b1a065"
+    },
+    {
+      "path": "previews/thread-mender-home-390.png",
+      "sha256": "f7b6810609c0add417a5f294dfd9f52fcc78790e094bcb3d6d9f8a54a932dedb"
+    },
+    {
+      "path": "previews/thread-mender-interior-1440.png",
+      "sha256": "656d999e665244223c6cffabced8326217d8c19373056d89d6f9075e076b4356"
+    },
+    {
+      "path": "previews/thread-mender-interior-390.png",
+      "sha256": "05d7e0fd09f607254d4ea9cdb90d049f225aed1ed127b98194ce996dbd819c46"
+    },
+    {
+      "path": "relay-workflow/components/study-relay-workflow/styles.css",
+      "sha256": "367b840508945aa82291899eb48ddca8e35ffc431d389bb1bb1bc5c98429ba5e"
+    },
+    {
+      "path": "relay-workflow/components/study-relay-workflow/template.html",
+      "sha256": "8fa70f8638d17b06e3a6f1c9663b398adc0202cd12fe9061bffa072a911c2bcc"
+    },
+    {
+      "path": "relay-workflow/pages/detail/index.html",
+      "sha256": "77307e9fc406fac72fdc1826ffad471cfee1e9ff51e1afcba1f12522eab7518d"
+    },
+    {
+      "path": "relay-workflow/pages/index.html",
+      "sha256": "af7c2fd1275057593785a8d9d8af316e98471a3efb6bf6975701add18d0ace6e"
+    },
+    {
+      "path": "relay-workflow/site.json",
+      "sha256": "7f11d548a01e953bc5dbb3e6621ce7178ce02f153b8dbd978f79d4c9cf7545a5"
+    },
+    {
+      "path": "relay-workflow/study.json",
+      "sha256": "9e2b1ea26b7582309c650e2d983385f020f28b28d6ebf5051391abc01498a23c"
+    },
+    {
+      "path": "relay-workflow/theme/defaults.json",
+      "sha256": "1a96968350f5086d1fdf96a08b43a03b1314f0c3172d228be298a5c174b9ddb7"
+    },
+    {
+      "path": "rivet-components/components/study-rivet-components/styles.css",
+      "sha256": "5da525f2e6e61258ff59c3c0fb1021c691599d95bf46d2cfb9367ccc22150142"
+    },
+    {
+      "path": "rivet-components/components/study-rivet-components/template.html",
+      "sha256": "53122f61ffd60fb6fd94ede32efbc5ba9b34434ff54848060e1121865fb3f9b8"
+    },
+    {
+      "path": "rivet-components/pages/detail/index.html",
+      "sha256": "e2e184c6afb95802a31a17abcb2e4f834b5cac822d5cbad7c7cf505295be4a27"
+    },
+    {
+      "path": "rivet-components/pages/index.html",
+      "sha256": "3669b140ae99f905c230b5c08e9d9831971260bab218cbb16e17447ebb3c5263"
+    },
+    {
+      "path": "rivet-components/site.json",
+      "sha256": "7a58f56d6fdc078cf5525d445126796de59fd19cefb1782e71e1d26b64854f78"
+    },
+    {
+      "path": "rivet-components/study.json",
+      "sha256": "ad95060d2c5ce022943394554c02ff3e7bf01eddb4376b92c4b1a93d4cc31234"
+    },
+    {
+      "path": "rivet-components/theme/defaults.json",
+      "sha256": "f3e321eff592243761f6b81f9e01b25af378526e832dfcd2b09ef714fb09b9e5"
+    },
+    {
+      "path": "signal-fair/components/study-signal-fair/styles.css",
+      "sha256": "b5f507879d7fc62196238445c855985c3dca67d19685f8c7948d3cd9d7a30345"
+    },
+    {
+      "path": "signal-fair/components/study-signal-fair/template.html",
+      "sha256": "7a8d1bff282c25e8c821b442d3851838afb169c9382fe52bea0940185867d437"
+    },
+    {
+      "path": "signal-fair/pages/detail/index.html",
+      "sha256": "3b80b35bff1987f9cae29a4f12f9f387f51172324e4ab7732352d02e1665c526"
+    },
+    {
+      "path": "signal-fair/pages/index.html",
+      "sha256": "36369971e6342f0f7571e74dc0e541aa75aa0ce59a841e797123086ba00e16cf"
+    },
+    {
+      "path": "signal-fair/site.json",
+      "sha256": "08daf0668a4acfccbd5fcd615b53cc8b47cabbd4ff966bbdb876655085487c78"
+    },
+    {
+      "path": "signal-fair/study.json",
+      "sha256": "200c1d1d95fd9fb1ecacb865c605c6a69b36c21014129270a3d8f431312168b8"
+    },
+    {
+      "path": "signal-fair/theme/defaults.json",
+      "sha256": "17ff8e9ae2303c3653dbafa18419993c1cbf7923dd3123ecc73f60361241f677"
+    },
+    {
+      "path": "sundial-goods/components/study-sundial-goods/styles.css",
+      "sha256": "db84a93108410321afd64e1dddfdf1e8f2e94d98bb023745c75d1a2118402c88"
+    },
+    {
+      "path": "sundial-goods/components/study-sundial-goods/template.html",
+      "sha256": "7933bd3988a3af39ba54b843926def3713da70be9f0b11b5e77ec1bdd27f2966"
+    },
+    {
+      "path": "sundial-goods/media/teaching/sundial-brick.png",
+      "sha256": "07f461464799188ce1c8c22456a3bec881295069961ec1935d4b8c68524ebce4"
+    },
+    {
+      "path": "sundial-goods/media/teaching/sundial-brick.png.provenance.json",
+      "sha256": "b1359ad78f20ff0ee3181ef14e81b680da49e3f7509044ba58317d0f43ea0084"
+    },
+    {
+      "path": "sundial-goods/media/teaching/sundial-campaign.png",
+      "sha256": "adc442740a435262424b66d244183802cea31bac93d1f6e935f6ea01a6c2d19b"
+    },
+    {
+      "path": "sundial-goods/media/teaching/sundial-campaign.png.provenance.json",
+      "sha256": "94b09d5742d0fc484182f7ef6f7160bfa91f231f03ce827e832626dc8a8ca476"
+    },
+    {
+      "path": "sundial-goods/pages/detail/index.html",
+      "sha256": "12ee364d3b1befa02f1cbf6dcff63bf057af03288699885fc3cc7a98f44482da"
+    },
+    {
+      "path": "sundial-goods/pages/index.html",
+      "sha256": "d043721e79187435574301215afd53bb1dbfd9dd577aea6c2b120dfc2084d43d"
+    },
+    {
+      "path": "sundial-goods/site.json",
+      "sha256": "0d2161dfb046262304e06353025c1ed52885def5c94214ff9e27b64c52c8c79b"
+    },
+    {
+      "path": "sundial-goods/study.json",
+      "sha256": "c46bccbf4b558d805da6955230942174a1b3be1f636f2fac8b4b23be4e6d709a"
+    },
+    {
+      "path": "sundial-goods/theme/defaults.json",
+      "sha256": "1befd8233556339f39955696c32c409bf8594a77ab702025e135672fa4d9a7b4"
+    },
+    {
+      "path": "thread-mender/components/study-thread-mender/styles.css",
+      "sha256": "18b28d25f414dbdbf52df316ee3698da5e95ae9e765115aec2bbd46c715011b3"
+    },
+    {
+      "path": "thread-mender/components/study-thread-mender/template.html",
+      "sha256": "a12e4fa61d6a48c41e084c79cebe762e6526fecc38fed42d05a9cc0dd875c730"
+    },
+    {
+      "path": "thread-mender/pages/detail/index.html",
+      "sha256": "312ebfb241c9bc5d7bb7151b73d5fccd81879985f6cda39eab89393f047e61b1"
+    },
+    {
+      "path": "thread-mender/pages/index.html",
+      "sha256": "92bda486d35b267408fde7507cbc5a4c22eebf57943d2c800da6995a950d66b8"
+    },
+    {
+      "path": "thread-mender/site.json",
+      "sha256": "58ec8bd5db0e084ce39cb8027829dbb0f160f1e140f8dd810ebaf37f3cf922a8"
+    },
+    {
+      "path": "thread-mender/study.json",
+      "sha256": "91e21e9bf2cb952fadeb36205ad26a8059bf2453b4cb6feafd98f06062a357aa"
+    },
+    {
+      "path": "thread-mender/theme/defaults.json",
+      "sha256": "13b7d5793fa7f65a9bbfe406bf443c7b73e0ebf18b3dd30a00f2ed05c9f76f9e"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+.c-pricing-table__card{max-width:60rem;margin-inline:auto}
+.c-pricing-table .table{min-width:38rem}
+.c-pricing-table .table th,.c-pricing-table .table td{padding:var(--space-4) var(--space-5)}
+.c-pricing-table .table thead th{background:var(--color-surface-2)}
+.c-pricing-table .table thead th:not(:first-child){font-family:var(--font-display);text-transform:none;letter-spacing:-.01em;font-size:var(--step-1);color:var(--color-text)}
+.c-pricing-table .table tbody tr:last-child td{border-bottom:0}
+.c-pricing-table .table td .icon{color:var(--color-accent);width:1.1rem;height:1.1rem}
+.c-pricing-table .table td:first-child{font-weight:500}
+.c-pricing-table .table tfoot td{border-bottom:0;padding-top:var(--space-5)}

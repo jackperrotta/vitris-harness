@@ -1,0 +1,14 @@
+[
+  {
+    "id": "teaching-slate-slope",
+    "path": "../v1/demonstrations/assets/teaching-slate-slope.png",
+    "creator": "Vitris teaching asset",
+    "license": "Repository teaching use only",
+    "acquired": "2026-09-22",
+    "sha256": "577c5abb185108b12c76d0165fc699e006c6aa7b14ab930011cde59e9a578d9f",
+    "origin": "generated",
+    "permittedUses": [
+      "teaching"
+    ]
+  }
+]

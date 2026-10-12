@@ -1,0 +1,8 @@
+.c-stats-row{border-block:1px solid var(--color-border)}
+.c-stats-row__row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-5)}
+.c-stats-row__row .stat{text-align:center;justify-items:center}
+@media(min-width:720px){
+  .c-stats-row__row{grid-template-columns:repeat(auto-fit,minmax(10rem,1fr))}
+  .c-stats-row__row .stat + .stat{border-left:1px solid var(--color-border)}
+}
+.c-stats-row--dark{--color-bg:#141210;--color-text:#F7F4EF;--color-muted:#B8B0A4;--color-surface:#1E1B18;--color-surface-2:#2A2622;--color-border:#3A342E;--color-focus:#F7F4EF;background:var(--color-bg);color:var(--color-text);border-block-color:transparent;padding-block:var(--space-7)}

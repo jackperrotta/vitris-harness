@@ -1,0 +1,253 @@
+{
+  "id": "thread-mender",
+  "revision": 1,
+  "title": "Thread Mender / drawn process",
+  "primaryFamily": "handmade",
+  "assetMinimum": "none",
+  "fitSignals": [
+    "professional-service",
+    "process",
+    "action",
+    "type-content",
+    "real-copy",
+    "sparse-media"
+  ],
+  "visitorTasks": [
+    "evaluate-service",
+    "understand-process",
+    "book-inquiry"
+  ],
+  "organizingIdea": "A winding thread connects three practical stages; the drawing is navigation support and the interior turns each stage into readable guidance.",
+  "brief": {
+    "fictional": true,
+    "facts": {
+      "name": "Thread Mender",
+      "offer": "Fictional clothing repair service",
+      "scope": [
+        "Hems",
+        "Small tears",
+        "Loose seams"
+      ],
+      "process": [
+        "Notice the damaged area",
+        "Agree the repair scope",
+        "Mend and return the garment"
+      ],
+      "restriction": "Repair suitability is assessed before agreement; no guaranteed restoration",
+      "location": "Local drop-off by arrangement, invented service",
+      "contact": "thread@example.test"
+    },
+    "factsHash": "479f3bb31e2059f7f96a90420defaf29da4774c646d732f4a27f88aef1c87e16",
+    "mediaHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "provenance": {
+    "content": "Original fictional Vitris teaching brief and copy; no customer claims.",
+    "media": "Original inline SVG diagrams or authored text, no external images, branding or type assets.",
+    "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+  },
+  "storyboard": {
+    "homepage": [
+      "drawn stage navigation",
+      "repair scope",
+      "conversation preparation"
+    ],
+    "interior": [
+      "process drawing",
+      "notice/agree/mend guidance",
+      "first conversation"
+    ],
+    "mobile": "Drawing shrinks but native stage links become a readable vertical list; decorative note rotation is removed; numbered guidance remains text, not diagram-only."
+  },
+  "designDecisions": "A winding thread connects three practical stages; the drawing is navigation support and the interior turns each stage into readable guidance.",
+  "lessonIds": [
+    "cmp-process",
+    "cmp-surfaces-motifs",
+    "cmp-contextual-action"
+  ],
+  "referenceIds": [
+    "gohar-world",
+    "on-air",
+    "bokman"
+  ],
+  "sourcePath": "thread-mender",
+  "homepage": "/",
+  "interior": "/detail",
+  "status": "compiled and automated/assistant visually reviewed; human preference pending",
+  "humanPreference": null,
+  "renderEvidence": [
+    {
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T18:33:11.059Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/thread-mender-home-1440.png",
+        "sha256": "43add004a81011c425afae190434be2d55a549d84eb18c7f0ef21b1da1b1a065"
+      },
+      "compiledHash": "4b62541793499d8da86db10d13451980850972ddad416a5c712cc6464dc433da",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail#notice",
+            "/detail#agree",
+            "/detail#mend"
+          ]
+        },
+        "audio": [],
+        "captureGeometry": null,
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views inspected, then inspected again after moving decorative stitches below Notice/Agree/Mend lettering. Illustrated thread/process and scope precede invitation; interior numbered process develops the service. Narrow retains native text alongside the scaled illustration; stitches no longer cross labels. Original modest SVG media and invented service scope; no actual customer outcomes."
+      }
+    },
+    {
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T18:33:12.119Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/thread-mender-home-390.png",
+        "sha256": "f7b6810609c0add417a5f294dfd9f52fcc78790e094bcb3d6d9f8a54a932dedb"
+      },
+      "compiledHash": "4b62541793499d8da86db10d13451980850972ddad416a5c712cc6464dc433da",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail#notice",
+            "/detail#agree",
+            "/detail#mend"
+          ]
+        },
+        "audio": [],
+        "captureGeometry": null,
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views inspected, then inspected again after moving decorative stitches below Notice/Agree/Mend lettering. Illustrated thread/process and scope precede invitation; interior numbered process develops the service. Narrow retains native text alongside the scaled illustration; stitches no longer cross labels. Original modest SVG media and invented service scope; no actual customer outcomes."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T18:33:13.224Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/thread-mender-interior-1440.png",
+        "sha256": "656d999e665244223c6cffabced8326217d8c19373056d89d6f9075e076b4356"
+      },
+      "compiledHash": "3a53720349e95b13479f47063ebacd4544e034905f04b5ef0e2e49e58bd3ef2a",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/"
+          ]
+        },
+        "audio": [],
+        "captureGeometry": null,
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views inspected, then inspected again after moving decorative stitches below Notice/Agree/Mend lettering. Illustrated thread/process and scope precede invitation; interior numbered process develops the service. Narrow retains native text alongside the scaled illustration; stitches no longer cross labels. Original modest SVG media and invented service scope; no actual customer outcomes."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T18:33:14.255Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/thread-mender-interior-390.png",
+        "sha256": "05d7e0fd09f607254d4ea9cdb90d049f225aed1ed127b98194ce996dbd819c46"
+      },
+      "compiledHash": "3a53720349e95b13479f47063ebacd4544e034905f04b5ef0e2e49e58bd3ef2a",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/"
+          ]
+        },
+        "audio": [],
+        "captureGeometry": null,
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views inspected, then inspected again after moving decorative stitches below Notice/Agree/Mend lettering. Illustrated thread/process and scope precede invitation; interior numbered process develops the service. Narrow retains native text alongside the scaled illustration; stitches no longer cross labels. Original modest SVG media and invented service scope; no actual customer outcomes."
+      }
+    }
+  ]
+}

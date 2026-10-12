@@ -1,0 +1,589 @@
+{
+  "version": 1,
+  "direction": "construction-ridgeline-exteriors",
+  "assets": [
+    {
+      "id": "ridge-cedar-aerial",
+      "kind": "image",
+      "file": "ridge-cedar-aerial.jpg",
+      "mime": "image/jpeg",
+      "sha256": "2f50f69338ab5e47991bb7bef662097b8460593165bc987dfb89fe31a469ceae",
+      "bytes": 210952,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "Aerial view of a pale limestone ranch house with a gray-brown shingle roof among live oaks",
+      "focal": "50% 42%",
+      "ratio": "16/9",
+      "dimensions": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "id": "ridge-cedar-elevation",
+      "kind": "image",
+      "file": "ridge-cedar-elevation.jpg",
+      "mime": "image/jpeg",
+      "sha256": "d43b80f3dae919833714d35decfedf688b40fbd6ed34397bfb12513a85136f96",
+      "bytes": 228177,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "Front elevation of the same limestone ranch house with dark shutters and a finished shingle roof",
+      "focal": "50% 58%",
+      "ratio": "16/9",
+      "dimensions": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "id": "ridge-cedar-before",
+      "kind": "image",
+      "file": "ridge-cedar-before.jpg",
+      "mime": "image/jpeg",
+      "sha256": "165afb85753aeea4f4cefb834992da819527e73365fb75e20c98c247e6463ac8",
+      "bytes": 193823,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "The same front elevation with worn, uneven shingles before the demonstration renewal",
+      "focal": "50% 48%",
+      "ratio": "16/9",
+      "dimensions": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "id": "ridge-shingle-detail",
+      "kind": "image",
+      "file": "ridge-shingle-detail.jpg",
+      "mime": "image/jpeg",
+      "sha256": "81a365dabe3282ed876cc522bb04d002599123b94ffeff60a0fef1db8e132ba5",
+      "bytes": 227613,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "Close view of architectural shingles, a drip edge and step flashing",
+      "focal": "50% 45%",
+      "ratio": "4/3",
+      "dimensions": {
+        "width": 1152,
+        "height": 864
+      }
+    },
+    {
+      "id": "ridge-flashing",
+      "kind": "image",
+      "file": "ridge-flashing.jpg",
+      "mime": "image/jpeg",
+      "sha256": "91306266c39207b15cd1e56ef84035d66af64434e67ab2a45d9885259428bb6a",
+      "bytes": 243342,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "Step flashing where a chimney meets shingles, with a dark stain beside the metal",
+      "focal": "40% 50%",
+      "ratio": "4/3",
+      "dimensions": {
+        "width": 1152,
+        "height": 864
+      }
+    },
+    {
+      "id": "ridge-metal-roof",
+      "kind": "image",
+      "file": "ridge-metal-roof.jpg",
+      "mime": "image/jpeg",
+      "sha256": "5640d7bf9db5da6652ab7b89267c50a191612fc7c53bd863e51d3d5281336f85",
+      "bytes": 82144,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "Standing-seam metal roof panels on a small house",
+      "focal": "50% 40%",
+      "ratio": "4/3",
+      "dimensions": {
+        "width": 1152,
+        "height": 864
+      }
+    },
+    {
+      "id": "ridge-gutter-after",
+      "kind": "image",
+      "file": "ridge-gutter-after.jpg",
+      "mime": "image/jpeg",
+      "sha256": "98eba73c87d941b1366e68360f68f5395f953abf0b15d44383f74f2a56460b56",
+      "bytes": 199208,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "A new bronze gutter and downspout on a limestone wall, discharging onto a splash block",
+      "focal": "50% 40%",
+      "ratio": "16/9",
+      "dimensions": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "id": "ridge-gutter-before",
+      "kind": "image",
+      "file": "ridge-gutter-before.jpg",
+      "mime": "image/jpeg",
+      "sha256": "e22934c0c6698db9717f1a9390706a92838558829f7af371ff5a763b0024f40b",
+      "bytes": 186536,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "The same eave with a worn gutter and a downspout discharging against the wall",
+      "focal": "50% 40%",
+      "ratio": "16/9",
+      "dimensions": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "id": "ridge-siding-after",
+      "kind": "image",
+      "file": "ridge-siding-after.jpg",
+      "mime": "image/jpeg",
+      "sha256": "d32b8721b9b63fafaa16f310bfba8172db639d24aad33be17b2b017701623bc8",
+      "bytes": 202742,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "A two-story house with finished warm-gray fiber-cement siding and white trim",
+      "focal": "50% 45%",
+      "ratio": "16/9",
+      "dimensions": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "id": "ridge-siding-before",
+      "kind": "image",
+      "file": "ridge-siding-before.jpg",
+      "mime": "image/jpeg",
+      "sha256": "6a2efb1069e4245738acd59236a45b0c167da34d553cfcb4cfb19fba9152a4ed",
+      "bytes": 201230,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "The same house elevation with weathered, mismatched siding and peeling trim",
+      "focal": "50% 45%",
+      "ratio": "16/9",
+      "dimensions": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "id": "ridge-trim-corner",
+      "kind": "image",
+      "file": "ridge-trim-corner.jpg",
+      "mime": "image/jpeg",
+      "sha256": "4d572abad69390b2c91c6e9ad229124ebb08ffc17b5233fed340ce06f9037f34",
+      "bytes": 133443,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "A trim corner where fiber-cement siding meets a window casing",
+      "focal": "50% 50%",
+      "ratio": "4/3",
+      "dimensions": {
+        "width": 1152,
+        "height": 864
+      }
+    },
+    {
+      "id": "ridge-fiber-sample",
+      "kind": "image",
+      "file": "ridge-fiber-sample.jpg",
+      "mime": "image/jpeg",
+      "sha256": "9b09458b4b2dd0786ce1119178cfa6277535d1e05bbdd0b03eb6b2df0f66008a",
+      "bytes": 205160,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "Close texture of warm-gray fiber-cement siding",
+      "focal": "50% 50%",
+      "ratio": "1/1",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      }
+    },
+    {
+      "id": "ridge-vinyl-sample",
+      "kind": "image",
+      "file": "ridge-vinyl-sample.jpg",
+      "mime": "image/jpeg",
+      "sha256": "1e3fe2f49da033f0948828276d222d9fbb4600ed94b57e9fe48326b2a907176c",
+      "bytes": 114788,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "Close texture of pale vinyl siding",
+      "focal": "50% 50%",
+      "ratio": "1/1",
+      "dimensions": {
+        "width": 1024,
+        "height": 1024
+      }
+    },
+    {
+      "id": "ridge-window-out",
+      "kind": "image",
+      "file": "ridge-window-out.jpg",
+      "mime": "image/jpeg",
+      "sha256": "b2631e37b9b626ced3c96e6c366759a38eddb37b72a78464b6c92b483911df5b",
+      "bytes": 184038,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "A double-hung window in a limestone wall with dark shutters",
+      "focal": "50% 45%",
+      "ratio": "4/3",
+      "dimensions": {
+        "width": 1152,
+        "height": 864
+      }
+    },
+    {
+      "id": "ridge-window-in",
+      "kind": "image",
+      "file": "ridge-window-in.jpg",
+      "mime": "image/jpeg",
+      "sha256": "705eff0b7104463eb432e88d8d47866f92443485bd6b3fc2eef1563ae3bd1f9e",
+      "bytes": 147201,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "Interior view through a double-hung window with a wood sill and linen curtain",
+      "focal": "50% 40%",
+      "ratio": "4/3",
+      "dimensions": {
+        "width": 1152,
+        "height": 864
+      }
+    },
+    {
+      "id": "ridge-window-before",
+      "kind": "image",
+      "file": "ridge-window-before.jpg",
+      "mime": "image/jpeg",
+      "sha256": "8e65d88c1d972d052ecbe69501f0f7032bdb2baba21ef069cf1ca5e0c34b045e",
+      "bytes": 190156,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "The same exterior window with a weathered frame and clouded glass",
+      "focal": "50% 45%",
+      "ratio": "4/3",
+      "dimensions": {
+        "width": 1152,
+        "height": 864
+      }
+    },
+    {
+      "id": "ridge-chimney",
+      "kind": "image",
+      "file": "ridge-chimney.jpg",
+      "mime": "image/jpeg",
+      "sha256": "e173415bb9ce84ce09130d4c7441637228178423c1c7e81e9cd0dfe850f77fdf",
+      "bytes": 172631,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "A limestone chimney rising from a shingle roof",
+      "focal": "50% 30%",
+      "ratio": "3/4",
+      "dimensions": {
+        "width": 864,
+        "height": 1152
+      }
+    },
+    {
+      "id": "ridge-mortar",
+      "kind": "image",
+      "file": "ridge-mortar.jpg",
+      "mime": "image/jpeg",
+      "sha256": "3eb95d8ba0086e0a8fa344780e964ed20c46f5e88849ed8c31976f775090c6f2",
+      "bytes": 253781,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "Brick mortar joints in sound condition",
+      "focal": "50% 50%",
+      "ratio": "4/3",
+      "dimensions": {
+        "width": 1152,
+        "height": 864
+      }
+    },
+    {
+      "id": "ridge-mortar-before",
+      "kind": "image",
+      "file": "ridge-mortar-before.jpg",
+      "mime": "image/jpeg",
+      "sha256": "7a6afde7e93b8747b7eadc6d12dea5e7d28c718cf8ac54da07216ba5fcf433d7",
+      "bytes": 231819,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "The same brick area with eroded, recessed mortar joints",
+      "focal": "50% 50%",
+      "ratio": "4/3",
+      "dimensions": {
+        "width": 1152,
+        "height": 864
+      }
+    },
+    {
+      "id": "ridge-portrait-avery",
+      "kind": "image",
+      "file": "ridge-portrait-avery.jpg",
+      "mime": "image/jpeg",
+      "sha256": "9420121cdb50e3a2b71ef37d9f2270a9f2e9feb6338ce81026da24f1ea59f49e",
+      "bytes": 143320,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "Generated portrait of Avery Cole, a fictional estimator in an olive work shirt",
+      "focal": "50% 22%",
+      "ratio": "3/4",
+      "dimensions": {
+        "width": 864,
+        "height": 1152
+      }
+    },
+    {
+      "id": "ridge-portrait-morgan",
+      "kind": "image",
+      "file": "ridge-portrait-morgan.jpg",
+      "mime": "image/jpeg",
+      "sha256": "2c1add1f0caba262700cac36f5bba903e95b40bd4677833b69ec9a5d79ff7814",
+      "bytes": 74474,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "Generated portrait of Morgan Lee, a fictional coordinator with a notebook",
+      "focal": "50% 20%",
+      "ratio": "3/4",
+      "dimensions": {
+        "width": 864,
+        "height": 1152
+      }
+    },
+    {
+      "id": "ridge-portrait-jordan",
+      "kind": "image",
+      "file": "ridge-portrait-jordan.jpg",
+      "mime": "image/jpeg",
+      "sha256": "fb7d620776ebdf594f5dba45e6a18a21b20ca853b45da5998c4b392501b8bf7d",
+      "bytes": 113779,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "Generated portrait of Jordan Ellis, a fictional installation lead in a rust jacket",
+      "focal": "50% 18%",
+      "ratio": "3/4",
+      "dimensions": {
+        "width": 864,
+        "height": 1152
+      }
+    },
+    {
+      "id": "ridge-portrait-taylor",
+      "kind": "image",
+      "file": "ridge-portrait-taylor.jpg",
+      "mime": "image/jpeg",
+      "sha256": "c7c84854e02829547db6a7c090529bec7339218c3d10d3c0d229e52e8e0241fd",
+      "bytes": 154341,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "Generated portrait of Taylor Reed, a fictional exterior specialist beside material samples",
+      "focal": "50% 20%",
+      "ratio": "3/4",
+      "dimensions": {
+        "width": 864,
+        "height": 1152
+      }
+    },
+    {
+      "id": "ridge-inspect",
+      "kind": "image",
+      "file": "ridge-inspect.jpg",
+      "mime": "image/jpeg",
+      "sha256": "9205cc335080d93a82da948e10b3848d62cc8b2ee81ea02c84a3338728574b30",
+      "bytes": 155717,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "A person at ground level looking up at an eave with a tablet",
+      "focal": "50% 35%",
+      "ratio": "4/3",
+      "dimensions": {
+        "width": 1152,
+        "height": 864
+      }
+    },
+    {
+      "id": "ridge-scope",
+      "kind": "image",
+      "file": "ridge-scope.jpg",
+      "mime": "image/jpeg",
+      "sha256": "4eb655ebc4086074154134a7e5550e653177730807dac0b68254ceab4a4aafc7",
+      "bytes": 113070,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "Two people reviewing roof photographs and a paper scope at a table",
+      "focal": "50% 40%",
+      "ratio": "4/3",
+      "dimensions": {
+        "width": 1152,
+        "height": 864
+      }
+    },
+    {
+      "id": "ridge-install",
+      "kind": "image",
+      "file": "ridge-install.jpg",
+      "mime": "image/jpeg",
+      "sha256": "4008248fcf559d2c98f9731fc04074dafc162c55e987c018ba65b0ac16e5ae46",
+      "bytes": 153151,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "Two harnessed roofers installing shingles near a ridge",
+      "focal": "50% 40%",
+      "ratio": "16/9",
+      "dimensions": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "id": "ridge-cleanup",
+      "kind": "image",
+      "file": "ridge-cleanup.jpg",
+      "mime": "image/jpeg",
+      "sha256": "8d4c144e88bc17304fff8cb7da9850fea6522f0832599cb4f3d5e25b1324421f",
+      "bytes": 230305,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "A broom, tarp and nail sweep beside a limestone wall after work",
+      "focal": "40% 60%",
+      "ratio": "4/3",
+      "dimensions": {
+        "width": 1152,
+        "height": 864
+      }
+    },
+    {
+      "id": "ridge-hail",
+      "kind": "image",
+      "file": "ridge-hail.jpg",
+      "mime": "image/jpeg",
+      "sha256": "07b102f828c091d026beae624b6f104de521d66f1579b23e2f7f56181ee2cf46",
+      "bytes": 242619,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "Shingles on a board at ground level showing round impact marks",
+      "focal": "50% 50%",
+      "ratio": "4/3",
+      "dimensions": {
+        "width": 1152,
+        "height": 864
+      }
+    },
+    {
+      "id": "ridge-home-prep",
+      "kind": "image",
+      "file": "ridge-home-prep.jpg",
+      "mime": "image/jpeg",
+      "sha256": "4a444532442b63bd6e152ac557bd7f02ed349616af7502f3a23785259e0f25b2",
+      "bytes": 110678,
+      "source": "Generated original raster for the Ridgeline demonstration, 9 October 2026",
+      "terms": "Original generated demonstration image. Not a photograph of completed customer work and not a real person's identity.",
+      "license": "Original Vitris demonstration media",
+      "credit": "Generated demonstration photograph",
+      "alt": "Living-room furniture covered with canvas before roof work",
+      "focal": "50% 45%",
+      "ratio": "4/3",
+      "dimensions": {
+        "width": 1152,
+        "height": 864
+      }
+    },
+    {
+      "id": "sourcesans3",
+      "kind": "font",
+      "family": "Source Sans 3",
+      "file": "SourceSans3-wght.ttf",
+      "mime": "font/ttf",
+      "sha256": "042fe2cc0b933e328410d7acbd0aa6a1873dca5aef81875f4bc214b08825c7b9",
+      "bytes": 646340,
+      "weights": "200 900",
+      "style": "normal",
+      "source": "https://github.com/google/fonts/tree/main/ofl/sourcesans3",
+      "license": "SIL OFL 1.1",
+      "licenseFile": "OFL.txt",
+      "licenseHash": "09746787287a289323b0ec3cff4d1a4a801331b82b7207c1e186f5d26619a392",
+      "fallback": "Arial, sans-serif"
+    },
+    {
+      "id": "sourcesans3italic",
+      "kind": "font",
+      "family": "Source Sans 3",
+      "file": "SourceSans3-Italic-wght.ttf",
+      "mime": "font/ttf",
+      "sha256": "39e3ab05ccd7cb94907c31005bb5bec1d5432f0b096a2b782976e217a540eb6c",
+      "bytes": 395372,
+      "weights": "200 900",
+      "style": "italic",
+      "source": "https://github.com/google/fonts/tree/main/ofl/sourcesans3",
+      "license": "SIL OFL 1.1",
+      "licenseFile": "OFL.txt",
+      "licenseHash": "09746787287a289323b0ec3cff4d1a4a801331b82b7207c1e186f5d26619a392",
+      "fallback": "Arial, sans-serif"
+    }
+  ]
+}

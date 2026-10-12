@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "lessons": [
+    {
+      "id": "contact-journey",
+      "version": 1,
+      "title": "Make the next step match the effort",
+      "principle": "The contact path should ask only for what the business needs in order to respond.",
+      "explanation": "A repair estimate, a professional consultation, and a phone call are different amounts of effort. Choose the path the visitor can finish. A form is one option, not a requirement.",
+      "useWhen": ["The visitor is ready to request an estimate, appointment, or call", "The business has a real response channel"],
+      "avoidWhen": ["The page is still explaining suitability and the visitor has not been given a reason to act"],
+      "requiredAssets": ["A real phone, email, or form endpoint from the business evidence"],
+      "contraindications": ["No harvested contact channel"],
+      "visitorGoal": "Start the right next step without guessing which fields matter.",
+      "composition": "Facts that justify the request, then one primary action. A second channel can sit quieter.",
+      "typography": "The action label uses the visitor's words. Field labels are the same size as body text.",
+      "media": "No image is required. Do not add a stock handshake.",
+      "mobile": "The labeled action stays after the reason. Fields stack in the same order as desktop.",
+      "adaptation": "If a form is too much, publish the phone or email instead. If a field is unknown, omit it.",
+      "counterexample": "Placeholder-only fields, no error text, and a keyboard trap around the submit control.",
+      "counterexampleWhy": "The visitor cannot tell what to enter, what failed, or how to leave.",
+      "references": [
+        {"id": "fixture-contact-valid", "kind": "original-synthetic", "file": "design-system/knowledge/v2/fixtures/contact-valid.html", "note": "Synthetic valid form. Not a customer."},
+        {"id": "fixture-contact-alternate", "kind": "original-synthetic", "file": "design-system/knowledge/v2/fixtures/contact-alternate.html", "note": "Synthetic phone-first alternative. Not a customer."}
+      ],
+      "evidenceKind": "original-synthetic",
+      "selectWhen": ["contact-path"]
+    }
+  ]
+}

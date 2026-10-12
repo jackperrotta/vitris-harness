@@ -1,0 +1,5 @@
+.c-about-story__copy{display:grid;gap:var(--space-5)}
+.c-about-story__copy .section__head{margin-bottom:0}
+.c-about-story__prose{color:var(--color-muted)}
+.c-about-story__prose > p:first-child{color:var(--color-text);font-size:var(--step-1)}
+.c-about-story--reverse .split > :first-child{order:2}

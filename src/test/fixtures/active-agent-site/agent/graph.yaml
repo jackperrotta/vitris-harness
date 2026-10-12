@@ -1,0 +1,624 @@
+{
+    "version": 3,
+  "stop_at": "preview_ready",
+  "nodes": [
+    {
+      "id": "harvest",
+      "needs": [],
+      "inputs": [
+        "launch.json"
+      ],
+      "writes": [
+        "onboarding/brief.json",
+        "onboarding/raw",
+        "onboarding/harvest-inventory.json",
+        "media/harvest"
+      ],
+      "refs": [
+        "harvest"
+      ],
+      "tools": [
+        "npm run harvest"
+      ],
+      "eval": "harvest",
+      "maxAttempts": 4,
+      "kind": "tool",
+      "command": [
+        "--experimental-strip-types",
+        "{kernel}/scripts/harvest.ts",
+        "--no-prompt"
+      ]
+    },
+    {
+      "id": "business",
+      "needs": [
+        "harvest"
+      ],
+      "inputs": [
+        "onboarding/brief.json",
+        "onboarding/copy",
+        "agent/change-request.json"
+      ],
+      "optionalInputs": [
+        "agent/site-memory.json"
+      ],
+      "writes": [
+        "onboarding/business.json"
+      ],
+      "refs": [
+        "business",
+        "contracts"
+      ],
+      "optionalRefs": [
+        "refine"
+      ],
+      "tools": [],
+      "eval": "business",
+      "maxAttempts": 4,
+      "kind": "agent"
+    },
+    {
+      "id": "business-review",
+      "needs": [
+        "business"
+      ],
+      "inputs": [
+        "onboarding/business.json"
+      ],
+      "writes": [
+        "agent/reviews/business-review.json"
+      ],
+      "refs": [
+        "critic",
+        "contracts"
+      ],
+      "tools": [],
+      "eval": "business-review",
+      "maxAttempts": 4,
+      "kind": "critic",
+      "repair": "business"
+    },
+    {
+      "id": "media",
+      "needs": [
+        "harvest"
+      ],
+      "inputs": [
+        "onboarding/brief.json",
+        "media/harvest"
+      ],
+      "writes": [
+        "onboarding/media-inventory.json",
+        "onboarding/contact-sheet.html"
+      ],
+      "refs": [
+        "media",
+        "contracts"
+      ],
+      "tools": [],
+      "eval": "media",
+      "maxAttempts": 4,
+      "kind": "agent"
+    },
+    {
+      "id": "narrative",
+      "needs": [
+        "business-review",
+        "media"
+      ],
+      "inputs": [
+        "onboarding/business.json",
+        "onboarding/media-inventory.json"
+      ],
+      "writes": [
+        "onboarding/narrative-brief.json"
+      ],
+      "refs": [
+        "narrative",
+        "contracts"
+      ],
+      "tools": [],
+      "eval": "narrative",
+      "maxAttempts": 4,
+      "kind": "agent"
+    },
+    {
+      "id": "narrative-review",
+      "needs": [
+        "narrative"
+      ],
+      "inputs": [
+        "onboarding/narrative-brief.json",
+        "onboarding/business.json"
+      ],
+      "writes": [
+        "agent/reviews/narrative-review.json"
+      ],
+      "refs": [
+        "critic",
+        "contracts"
+      ],
+      "tools": [],
+      "eval": "narrative-review",
+      "maxAttempts": 4,
+      "kind": "critic",
+      "repair": "narrative"
+    },
+    {
+      "id": "reference-analysis",
+      "needs": [
+        "narrative-review"
+      ],
+      "inputs": [
+        "onboarding/narrative-brief.json",
+        "onboarding/media-inventory.json"
+      ],
+      "writes": [
+        "onboarding/reference-analysis.json"
+      ],
+      "refs": [
+        "design-calibration",
+        "contracts"
+      ],
+      "tools": [],
+      "eval": "reference-analysis",
+      "maxAttempts": 4,
+      "kind": "agent"
+    },
+    {
+      "id": "direction",
+      "needs": [
+        "reference-analysis"
+      ],
+      "inputs": [
+        "onboarding/business.json",
+        "onboarding/media-inventory.json",
+        "onboarding/narrative-brief.json",
+        "onboarding/reference-analysis.json",
+        "agent/request.json"
+      ],
+      "writes": [
+        "onboarding/direction.json",
+        "theme/defaults.json"
+      ],
+      "refs": [
+        "direction",
+        "contracts",
+        "design-calibration",
+        "accessibility"
+      ],
+      "tools": [],
+      "eval": "direction",
+      "maxAttempts": 4,
+      "kind": "agent",
+      "optionalRefs": [
+        "inspiration",
+        "variant-directions",
+        "refine"
+      ],
+      "optionalInputs": [
+        "agent/assigned-direction.json",
+        "agent/site-memory.json"
+      ]
+    },
+    {
+      "id": "direction-review",
+      "needs": [
+        "direction"
+      ],
+      "inputs": [
+        "onboarding/direction.json",
+        "theme/defaults.json"
+      ],
+      "writes": [
+        "agent/reviews/direction-review.json"
+      ],
+      "refs": [
+        "critic",
+        "contracts",
+        "design-calibration"
+      ],
+      "tools": [],
+      "eval": "direction-review",
+      "maxAttempts": 4,
+      "kind": "critic",
+      "repair": "direction"
+    },
+    {
+      "id": "storyboard",
+      "needs": [
+        "direction-review"
+      ],
+      "inputs": [
+        "onboarding/business.json",
+        "onboarding/direction.json",
+        "onboarding/media-inventory.json"
+      ],
+      "writes": [
+        "onboarding/storyboard.json"
+      ],
+      "refs": [
+        "storyboard",
+        "contracts",
+        "design-calibration",
+        "seo"
+      ],
+      "optionalRefs": [
+        "design-synthesis"
+      ],
+      "optionalInputs": [
+        "onboarding/synthesis-plan.json"
+      ],
+      "tools": [],
+      "eval": "storyboard",
+      "maxAttempts": 4,
+      "kind": "agent"
+    },
+    {
+      "id": "copy",
+      "needs": [
+        "storyboard"
+      ],
+      "inputs": [
+        "onboarding/business.json",
+        "onboarding/storyboard.json",
+        "agent/change-request.json"
+      ],
+      "writes": [
+        "onboarding/copy-plan.json"
+      ],
+      "refs": [
+        "copy",
+        "contracts",
+        "seo",
+        "geo"
+      ],
+      "optionalRefs": [
+        "design-synthesis",
+        "refine"
+      ],
+      "optionalInputs": [
+        "onboarding/synthesis-plan.json",
+        "agent/site-memory.json"
+      ],
+      "tools": [],
+      "eval": "copy",
+      "maxAttempts": 4,
+      "kind": "agent"
+    },
+    {
+      "id": "copy-review",
+      "needs": [
+        "copy"
+      ],
+      "inputs": [
+        "onboarding/business.json",
+        "onboarding/storyboard.json",
+        "onboarding/copy-plan.json"
+      ],
+      "writes": [
+        "agent/reviews/copy-review.json"
+      ],
+      "refs": [
+        "critic",
+        "contracts"
+      ],
+      "tools": [],
+      "eval": "copy-review",
+      "maxAttempts": 4,
+      "kind": "critic",
+      "repair": "copy"
+    },
+    {
+      "id": "representative",
+      "needs": [
+        "copy-review"
+      ],
+      "inputs": [
+        "onboarding/direction.json",
+        "onboarding/storyboard.json",
+        "onboarding/copy-plan.json"
+      ],
+      "writes": [
+        "pages",
+        "components",
+        "site.json"
+      ],
+      "refs": [
+        "implement",
+        "accessibility",
+        "usability"
+      ],
+      "tools": [],
+      "eval": "representative",
+      "maxAttempts": 4,
+      "kind": "agent",
+      "optionalRefs": [
+        "components",
+        "compose",
+        "design-synthesis"
+      ],
+      "optionalInputs": [
+        "onboarding/synthesis-plan.json"
+      ],
+      "historicalAfter": "pages"
+    },
+    {
+      "id": "representative-browser",
+      "needs": [
+        "representative"
+      ],
+      "inputs": [
+        "pages",
+        "components",
+        "theme",
+        "media",
+        "site.json",
+        "public",
+        "onboarding/storyboard.json"
+      ],
+      "writes": [
+        "agent/reviews/representative-browser.json",
+        "agent/screenshots/representative-browser"
+      ],
+      "refs": [
+        "browser"
+      ],
+      "tools": [],
+      "eval": "representative-browser",
+      "maxAttempts": 4,
+      "kind": "tool",
+      "command": [
+        "--experimental-strip-types",
+        "{kernel}/scripts/verify-browser.ts",
+        "--site",
+        "{site}",
+        "--representative"
+      ],
+      "repair": "representative",
+      "historicalAfter": "pages"
+    },
+    {
+      "id": "representative-review",
+      "needs": [
+        "representative-browser"
+      ],
+      "inputs": [
+        "dist",
+        "onboarding/direction.json"
+      ],
+      "writes": [
+        "agent/reviews/representative-review.json"
+      ],
+      "refs": [
+        "critic",
+        "contracts",
+        "design-calibration"
+      ],
+      "tools": [],
+      "eval": "representative-review",
+      "maxAttempts": 4,
+      "kind": "critic",
+      "repair": "representative",
+      "historicalAfter": "pages"
+    },
+    {
+      "id": "representative-quality",
+      "needs": [
+        "representative-review"
+      ],
+      "inputs": [
+        "dist",
+        "pages",
+        "onboarding/direction.json",
+        "onboarding/narrative-brief.json",
+        "onboarding/copy-plan.json",
+        "agent/reviews/representative-browser.json",
+        "agent/screenshots/representative-browser"
+      ],
+      "writes": [
+        "agent/reviews/representative-quality.json"
+      ],
+      "refs": [
+        "design-quality",
+        "critic",
+        "contracts",
+        "design-calibration"
+      ],
+      "tools": [],
+      "eval": "representative-quality",
+      "maxAttempts": 3,
+      "kind": "critic",
+      "repair": "representative",
+      "historicalAfter": "pages"
+    },
+    {
+      "id": "copy-expansion",
+      "needs": [
+        "representative-quality"
+      ],
+      "inputs": [
+        "onboarding/storyboard.json",
+        "onboarding/copy-plan.json",
+        "onboarding/business.json",
+        "pages",
+        "components"
+      ],
+      "writes": [
+        "onboarding/copy-plan.json"
+      ],
+      "refs": [
+        "copy",
+        "contracts"
+      ],
+      "tools": [],
+      "eval": "copy-expansion",
+      "maxAttempts": 4,
+      "kind": "agent",
+      "historicalAfter": "pages"
+    },
+    {
+      "id": "pages",
+      "needs": [
+        "copy-expansion"
+      ],
+      "inputs": [
+        "onboarding/storyboard.json",
+        "onboarding/copy-plan.json",
+        "onboarding/direction.json",
+        "agent/change-request.json"
+      ],
+      "writes": [
+        "pages",
+        "components"
+      ],
+      "refs": [
+        "implement",
+        "accessibility",
+        "performance"
+      ],
+      "optionalRefs": [
+        "design-synthesis",
+        "refine"
+      ],
+      "optionalInputs": [
+        "onboarding/synthesis-plan.json",
+        "agent/site-memory.json"
+      ],
+      "tools": [],
+      "eval": "pages",
+      "maxAttempts": 4,
+      "kind": "agent"
+    },
+    {
+      "id": "browser",
+      "needs": [
+        "pages"
+      ],
+      "inputs": [
+        "pages",
+        "components",
+        "theme",
+        "media",
+        "site.json",
+        "public",
+        "onboarding/storyboard.json"
+      ],
+      "writes": [
+        "agent/reviews/browser.json",
+        "agent/screenshots/browser"
+      ],
+      "refs": [
+        "browser"
+      ],
+      "tools": [],
+      "eval": "browser",
+      "maxAttempts": 4,
+      "kind": "tool",
+      "command": [
+        "--experimental-strip-types",
+        "{kernel}/scripts/verify-browser.ts",
+        "--site",
+        "{site}"
+      ],
+      "repair": "pages"
+    },
+    {
+      "id": "visual-review",
+      "needs": [
+        "browser"
+      ],
+      "inputs": [
+        "dist",
+        "onboarding/direction.json"
+      ],
+      "writes": [
+        "agent/reviews/visual-review.json"
+      ],
+      "refs": [
+        "critic",
+        "contracts",
+        "design-calibration"
+      ],
+      "tools": [],
+      "eval": "visual-review",
+      "maxAttempts": 4,
+      "kind": "critic",
+      "repair": "pages"
+    },
+    {
+      "id": "content-review",
+      "needs": [
+        "visual-review"
+      ],
+      "inputs": [
+        "dist",
+        "onboarding/business.json",
+        "onboarding/copy-plan.json"
+      ],
+      "writes": [
+        "agent/reviews/content-review.json"
+      ],
+      "refs": [
+        "critic",
+        "contracts",
+        "design-calibration"
+      ],
+      "tools": [],
+      "eval": "content-review",
+      "maxAttempts": 4,
+      "kind": "critic",
+      "repair": "pages"
+    },
+    {
+      "id": "preview",
+      "needs": [
+        "content-review"
+      ],
+      "inputs": [
+        "dist",
+        "agent/reviews",
+        "onboarding/business.json",
+        "onboarding/media-inventory.json",
+        "onboarding/direction.json",
+        "onboarding/storyboard.json",
+        "onboarding/copy-plan.json"
+      ],
+      "writes": [],
+      "refs": [],
+      "tools": [],
+      "eval": "preview",
+      "maxAttempts": 4,
+      "kind": "tool",
+      "command": [
+        "--experimental-strip-types",
+        "{kernel}/scripts/eval-site.ts",
+        "--site",
+        "{site}",
+        "--node",
+        "preview"
+      ],
+      "repair": "pages"
+    },
+    {
+      "id": "launch",
+      "needs": [
+        "preview"
+      ],
+      "inputs": [
+        "launch.json"
+      ],
+      "writes": [
+        "launch.json"
+      ],
+      "refs": [
+        "launch"
+      ],
+      "tools": [],
+      "eval": "launch",
+      "maxAttempts": 4,
+      "kind": "agent",
+      "optional": true
+    }
+  ]
+}

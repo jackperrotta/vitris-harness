@@ -1,0 +1,19 @@
+{
+  "method": "generated-raster",
+  "tool": "built-in image_gen.imagegen",
+  "model": null,
+  "seed": null,
+  "providerReceipt": null,
+  "prompt": "Use case: product-mockup. Asset type: refined object-led fictional product visualization for original teaching website. Primary request: an elegantly simple natural oak wall shelf 80 cm wide, rounded front edge with a subtle arched underside and concealed wall fixing, a thin sculptural profile. Mounted on a chalk-white plaster wall in a quiet architectural room, one small unbranded matte ceramic bowl on the shelf for scale, side daylight from the left, tactile oak end grain and fine satin finish. Wide landscape photograph, shelf in lower middle, restrained bone/wood/charcoal palette, authentic material detail, lots of quiet breathing space, no text, no people, no watermark. Clearly an invented design concept, no real product or load rating claim.",
+  "parents": [],
+  "rights": "Original AI-generated fictional teaching material; package/generation teaching eligible. No third-party branding or customer proof.",
+  "forbiddenImplications": [
+    "Not real customer work, venue, manufactured product or verified result",
+    "No structural, material, safety or performance certification"
+  ],
+  "sha256": "7c4c15e40efe33828111f0b94e01ac2feba22bdf7f79bf211f006b79ea9eb79a",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  }
+}

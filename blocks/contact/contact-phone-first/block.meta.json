@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "id": "contact/contact-phone-first",
+  "revision": 1,
+  "status": "draft",
+  "owner": "Vitris design library",
+  "sourceHash": "3623088d798410ade10459edfb313f50b0f28ce74b38f543c1eca2a08b61aee0",
+  "fit": {
+    "visitorJobs": [
+      "Call the business and find a backup channel"
+    ],
+    "pageRoles": [
+      "contact"
+    ],
+    "useWhen": [
+      "Call the business and find a backup channel"
+    ],
+    "avoidWhen": [
+      "The content or media cannot support this composition"
+    ]
+  },
+  "content": {
+    "requiredSlots": [
+      "heading",
+      "phone"
+    ],
+    "optionalSlots": [
+      "eyebrow",
+      "intro",
+      "details"
+    ],
+    "testedItemCounts": [
+      1
+    ]
+  },
+  "media": {
+    "min": 0,
+    "max": 8,
+    "optionalBehavior": "Recompose without empty media frames when media is optional",
+    "aspect": [
+      "content-dependent"
+    ]
+  },
+  "composition": {
+    "hierarchy": "large phone action with practical details",
+    "alignment": "split",
+    "density": "compact",
+    "mediaProminence": "none",
+    "geometry": [
+      "phone-led",
+      "split"
+    ],
+    "boundary": "section boundary adapts to adjacent content"
+  },
+  "adaptation": {
+    "flexible": [
+      "spacing",
+      "surface treatment",
+      "type scale"
+    ],
+    "invariants": [
+      "semantic reading order",
+      "one clear section purpose"
+    ],
+    "customWhen": [
+      "The visitor job needs a different hierarchy"
+    ]
+  },
+  "responsive": {
+    "readingOrder": "DOM order follows the visitor narrative",
+    "reflow": "Stack or resize according to content",
+    "crop": "Keep important subjects visible"
+  },
+  "interaction": {
+    "behavior": "Native links and controls",
+    "islands": []
+  },
+  "evidence": {
+    "provenance": [
+      "Original Vitris block source"
+    ],
+    "testedContexts": [],
+    "accessibility": [],
+    "previewManifest": "../../../design-system/block-previews/v1/contact--contact-phone-first.json"
+  }
+}

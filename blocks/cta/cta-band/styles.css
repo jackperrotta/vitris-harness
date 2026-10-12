@@ -1,0 +1,11 @@
+.c-cta-band__inner{display:grid;gap:var(--space-6);padding:var(--space-7) var(--space-6);background:var(--color-surface-2);border-radius:var(--radius-lg)}
+@media(min-width:900px){.c-cta-band__inner{grid-template-columns:1fr auto;align-items:center;padding:var(--space-8) var(--space-8)}}
+.c-cta-band__copy{display:grid;gap:var(--space-3);max-width:40rem}
+.c-cta-band__copy h2{font-size:var(--step-4)}
+.c-cta-band__actions{flex-shrink:0}
+.c-cta-band--dark .c-cta-band__inner{--color-bg:#141210;--color-text:#F7F4EF;--color-muted:#B8B0A4;--color-surface:#1E1B18;--color-surface-2:#2A2622;--color-border:#3A342E;--color-focus:#F7F4EF;background:var(--color-bg);color:var(--color-text)}
+.c-cta-band--accent .c-cta-band__inner{background:var(--color-accent);color:var(--color-accent-text);--color-muted:color-mix(in srgb,var(--color-accent-text) 80%,transparent);--color-border:color-mix(in srgb,var(--color-accent-text) 45%,transparent)}
+.c-cta-band--accent .c-cta-band__inner .btn{background:var(--color-accent-text);color:var(--color-accent)}
+.c-cta-band--accent .c-cta-band__inner .btn:hover{background:color-mix(in srgb,var(--color-accent-text) 90%,var(--color-accent))}
+.c-cta-band--accent .c-cta-band__inner .btn-outline{color:var(--color-accent-text)}
+.c-cta-band--accent .c-cta-band__inner .eyebrow{color:var(--color-muted)}

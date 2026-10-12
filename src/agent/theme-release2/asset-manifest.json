@@ -1,0 +1,222 @@
+{
+  "version": 1,
+  "release": "2026-10-08.2",
+  "assets": [
+    {
+      "id": "inter",
+      "kind": "font",
+      "family": "Inter",
+      "file": "inter.ttf",
+      "mime": "font/ttf",
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "bytes": 876576,
+      "weights": "100 900",
+      "source": "https://github.com/google/fonts/blob/main/ofl/inter/Inter[opsz,wght].ttf",
+      "license": "SIL OFL 1.1",
+      "licenseFile": "inter-OFL.txt",
+      "licenseHash": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+      "fallback": "Arial, sans-serif"
+    },
+    {
+      "id": "sourceserif4",
+      "kind": "font",
+      "family": "Source Serif 4",
+      "file": "sourceserif4.ttf",
+      "mime": "font/ttf",
+      "sha256": "97b2d4da6e3cb494b5a1e66ae176914d852ccabef49e0c02c0df25f3e39aca0b",
+      "bytes": 1209508,
+      "weights": "200 900",
+      "source": "https://github.com/google/fonts/blob/main/ofl/sourceserif4/SourceSerif4[opsz,wght].ttf",
+      "license": "SIL OFL 1.1",
+      "licenseFile": "sourceserif4-OFL.txt",
+      "licenseHash": "5f94c3fd3a23131a417ab5a0c8452de57e70c3cfb9f604d88241f7065ebf9fd9",
+      "fallback": "Georgia, serif"
+    },
+    {
+      "id": "oswald",
+      "kind": "font",
+      "family": "Oswald",
+      "file": "oswald.ttf",
+      "mime": "font/ttf",
+      "sha256": "5b38c246e255a12f5712d640d56bcced0472466fc68983d2d0410ec0457c2817",
+      "bytes": 172088,
+      "weights": "200 700",
+      "source": "https://github.com/google/fonts/blob/main/ofl/oswald/Oswald[wght].ttf",
+      "license": "SIL OFL 1.1",
+      "licenseFile": "oswald-OFL.txt",
+      "licenseHash": "0fd731a904b729a4e02eaf5e8ebd06783edd9abe400e8882760160230675b652",
+      "fallback": "Arial, sans-serif"
+    },
+    {
+      "id": "fraunces",
+      "kind": "font",
+      "family": "Fraunces",
+      "file": "fraunces.ttf",
+      "mime": "font/ttf",
+      "sha256": "177ff6c0f14e5550a3c624247cd1189611d4eb65d000b14944c63d967958abbb",
+      "bytes": 360440,
+      "weights": "100 900",
+      "source": "https://github.com/google/fonts/blob/main/ofl/fraunces/Fraunces[SOFT,WONK,opsz,wght].ttf",
+      "license": "SIL OFL 1.1",
+      "licenseFile": "fraunces-OFL.txt",
+      "licenseHash": "bdf4c22802eaf804f998195871c6b8938aac2ac14b2d78a8bd66a6f1eced833b",
+      "fallback": "Georgia, serif"
+    },
+    {
+      "id": "cormorantgaramond",
+      "kind": "font",
+      "family": "Cormorant Garamond",
+      "file": "cormorantgaramond.ttf",
+      "mime": "font/ttf",
+      "sha256": "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0",
+      "bytes": 1195560,
+      "weights": "300 700",
+      "source": "https://github.com/google/fonts/blob/main/ofl/cormorantgaramond/CormorantGaramond[wght].ttf",
+      "license": "SIL OFL 1.1",
+      "licenseFile": "cormorantgaramond-OFL.txt",
+      "licenseHash": "60700d351cac4650c51f3f9db318d2a420f8b45052dba2715eb5fec41f0f6956",
+      "fallback": "Georgia, serif"
+    },
+    {
+      "id": "limelight",
+      "kind": "font",
+      "family": "Limelight",
+      "file": "limelight.ttf",
+      "mime": "font/ttf",
+      "sha256": "f5bf8a9159adfc5b9c756c85d812a4fd1299b8916fefdf39ad4b24ade6d8d0cf",
+      "bytes": 132292,
+      "weights": "400",
+      "source": "https://github.com/google/fonts/blob/main/ofl/limelight/Limelight-Regular.ttf",
+      "license": "SIL OFL 1.1",
+      "licenseFile": "limelight-OFL.txt",
+      "licenseHash": "6b53fb03a50914cc382f4d025ee595c17c43f24ae870f840bc51969d3e316c7e",
+      "fallback": "Arial, sans-serif"
+    },
+    {
+      "id": "ibmplexmono",
+      "kind": "font",
+      "family": "IBM Plex Mono",
+      "file": "ibmplexmono.ttf",
+      "mime": "font/ttf",
+      "sha256": "6a3412f058c7d8dfd9170c41e85ade48e5156ecb89356110ca57a0a27734af46",
+      "bytes": 135580,
+      "weights": "400",
+      "source": "https://github.com/google/fonts/blob/main/ofl/ibmplexmono/IBMPlexMono-Regular.ttf",
+      "license": "SIL OFL 1.1",
+      "licenseFile": "ibmplexmono-OFL.txt",
+      "licenseHash": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+      "fallback": "monospace"
+    },
+    {
+      "id": "atkinsonhyperlegiblenext",
+      "kind": "font",
+      "family": "Atkinson Hyperlegible Next",
+      "file": "atkinsonhyperlegiblenext.ttf",
+      "mime": "font/ttf",
+      "sha256": "5a455d1cfa099b601ab70751bb9673e8fe1854dc4500c80e1a220d0d75e31745",
+      "bytes": 114552,
+      "weights": "200 800",
+      "source": "https://github.com/google/fonts/blob/main/ofl/atkinsonhyperlegiblenext/AtkinsonHyperlegibleNext[wght].ttf",
+      "license": "SIL OFL 1.1",
+      "licenseFile": "atkinsonhyperlegiblenext-OFL.txt",
+      "licenseHash": "aca6a428580965d2297d1b718042dd427c2a9443ece3b0d02d758e161e0c4030",
+      "fallback": "Arial, sans-serif"
+    },
+    {
+      "id": "scene-cafe",
+      "kind": "image",
+      "file": "scene-cafe.jpg",
+      "mime": "image/jpeg",
+      "sha256": "0778f8a800b37793ad1173a31fa6d9850ef391c58ff7defb938d210e394eac1c",
+      "bytes": 268938,
+      "sourceId": "cafe-interior",
+      "source": "https://www.pexels.com/photo/woman-posing-in-cafe-17104305/",
+      "terms": "https://www.pexels.com/license/",
+      "credit": "Photo by Munis Asadov on Pexels",
+      "alt": "Warm and inviting cafe interior featuring people relaxing and enjoying cozy ambiance.",
+      "inspectionEvidence": [
+        "artifacts/stock/2026-09-23-inspect-existing/sheet-1.jpg"
+      ]
+    },
+    {
+      "id": "scene-window",
+      "kind": "image",
+      "file": "scene-window.jpg",
+      "mime": "image/jpeg",
+      "sha256": "7bfaa97026678cb661c019adff451bc71a89cbc3fd33abe936fa8cb8143f5897",
+      "bytes": 154963,
+      "sourceId": "hotel-lobby",
+      "source": "https://www.pexels.com/photo/woman-sitting-on-a-couch-3923357/",
+      "terms": "https://www.pexels.com/license/",
+      "credit": "Photo by Andrea Piacquadio on Pexels",
+      "alt": "A woman in a stylish hallway, seated near a large window, illuminated by natural light.",
+      "inspectionEvidence": [
+        "artifacts/stock/2026-09-23-inspect-existing/sheet-4.jpg"
+      ]
+    },
+    {
+      "id": "material",
+      "kind": "image",
+      "file": "material.jpg",
+      "mime": "image/jpeg",
+      "sha256": "3a39c00c2f3af32b983b84e69da9f1b7612e0c2c18b98731e9d21ec4f5aa9fda",
+      "bytes": 382360,
+      "sourceId": "wood-grain",
+      "source": "https://www.pexels.com/photo/brown-leather-surface-368756/",
+      "terms": "https://www.pexels.com/license/",
+      "credit": "Photo by Digital Buggu on Pexels",
+      "alt": "Detailed close-up of a textured hardwood surface, showcasing natural wooden grains and warm earthy tones.",
+      "inspectionEvidence": [
+        "artifacts/stock/2026-09-23-inspect-existing/sheet-4.jpg"
+      ]
+    },
+    {
+      "id": "hands",
+      "kind": "image",
+      "file": "hands.jpg",
+      "mime": "image/jpeg",
+      "sha256": "714bd9c988f129793573ba2771200cc012ba30cd26e0043660b37eba610af57e",
+      "bytes": 204757,
+      "sourceId": "carpenter",
+      "source": "https://www.pexels.com/photo/woodworker-cutting-wood-with-knife-in-workshop-5974285/",
+      "terms": "https://www.pexels.com/license/",
+      "credit": "Photo by Ono  Kosuki on Pexels",
+      "alt": "From above of crop anonymous craftsman cutting wooden plank with sharp chisel during work in carpenter workshop",
+      "inspectionEvidence": [
+        "artifacts/stock/2026-09-23-inspect-existing/sheet-2.jpg"
+      ]
+    },
+    {
+      "id": "room",
+      "kind": "image",
+      "file": "room.jpg",
+      "mime": "image/jpeg",
+      "sha256": "65e92edc6f0219932bcb456341e6002f943c4c4d2622827bb788655e247b5cd5",
+      "bytes": 90690,
+      "sourceId": "pexels-image-8092466",
+      "source": "https://www.pexels.com/photo/pen-and-notebook-on-wooden-table-with-glass-vase-8092466/",
+      "terms": "https://www.pexels.com/license/",
+      "credit": "https://kaboompics.com/ / Pexels",
+      "alt": "Elegant minimalist workspace with wooden desk, glass vase and panel wall.",
+      "inspectionEvidence": [
+        "artifacts/stock/2026-09-23-inspect-expansion/sheet-2.jpg"
+      ]
+    },
+    {
+      "id": "leaves",
+      "kind": "image",
+      "file": "leaves.jpg",
+      "mime": "image/jpeg",
+      "sha256": "7fab0b155db3506c26a5146ef416ac2fd1adf05998efa0e9333eb50237788b83",
+      "bytes": 3643781,
+      "sourceId": "indoor-plants",
+      "source": "https://www.pexels.com/photo/lush-indoor-monstera-plant-display-38868931/",
+      "terms": "https://www.pexels.com/license/",
+      "credit": "Photo by Phát Trương on Pexels",
+      "alt": "An indoor view of thriving Monstera plants with large green leaves, creating a lush jungle feel.",
+      "inspectionEvidence": [
+        "artifacts/stock/2026-09-23-inspect-existing/sheet-4.jpg"
+      ]
+    }
+  ]
+}

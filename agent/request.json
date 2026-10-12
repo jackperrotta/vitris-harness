@@ -1,0 +1,11 @@
+{
+  "mode": "build",
+  "theme": "",
+  "priorities": [
+    "design quality",
+    "faithful migration",
+    "functionality",
+    "low intervention",
+    "time and cost"
+  ]
+}

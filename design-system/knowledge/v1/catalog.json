@@ -1,0 +1,479 @@
+{
+  "version": 1,
+  "lessons": [
+    {
+      "id": "project-photography-transformations",
+      "version": 1,
+      "title": "Organize project photography around the change",
+      "principle": "When real project photos exist, sequence them as a transformation the visitor can verify.",
+      "explanation": "A trade or studio with several inspected job photos can lead with the outcome, then the work that produced it. The photo is evidence, not decoration.",
+      "useWhen": [
+        "Two or more usable project photographs",
+        "The visitor needs to judge craft before contacting"
+      ],
+      "avoidWhen": [
+        "The only images are logos, icons, or uninspected downloads"
+      ],
+      "requiredAssets": [
+        "Inspected project photos with honest captions"
+      ],
+      "contraindications": [
+        "Fewer than two usable project images",
+        "Sparse imagery"
+      ],
+      "visitorGoal": "See whether this business has done the kind of work they need.",
+      "composition": "One dominant before/after or finished-job plate, then a quieter supporting sequence.",
+      "typography": "Short captions that name the job, not a slogan over the photograph.",
+      "media": "Crop to the work. Do not cover the subject with a full-bleed headline.",
+      "mobile": "Stack the outcome photo, then the caption, then the action. Do not crop the subject out of the frame.",
+      "adaptation": "Pick the strongest inspected job for the first screen. Move the rest to a project index with the same caption system.",
+      "counterexample": "A row of equal cards, each a different photo with the same 'View project' button.",
+      "counterexampleWhy": "Equal cards hide which job is the proof the visitor came to judge.",
+      "references": [
+        {
+          "id": "demo-project-strong",
+          "kind": "original-synthetic",
+          "file": "demonstrations/project-strong.html",
+          "note": "Synthetic teaching pair, not a customer site."
+        }
+      ],
+      "evidenceKind": "original-synthetic",
+      "selectWhen": [
+        "project-photography"
+      ]
+    },
+    {
+      "id": "sparse-imagery-process",
+      "version": 1,
+      "title": "Explain the process when images are scarce",
+      "principle": "A specialist with little usable imagery should show the diagnostic or working sequence in type and structure.",
+      "explanation": "Inventing stock photography makes the business look like every other template. A clear process is more specific than a fake hero photo.",
+      "useWhen": [
+        "One or zero usable photographs",
+        "The offer is expertise, diagnosis, or a method"
+      ],
+      "avoidWhen": [
+        "A large inspected project library is the actual proof"
+      ],
+      "requiredAssets": [
+        "A real sequence of steps from the business evidence"
+      ],
+      "contraindications": [
+        "Requires a gallery of project photos"
+      ],
+      "visitorGoal": "Understand how the engagement works before asking for it.",
+      "composition": "A numbered diagnostic column with one action, not a photo placeholder.",
+      "typography": "The step names carry the hierarchy. Keep the display size for the offer, not for a missing image.",
+      "media": "Use a diagram or a single inspected artifact only when it exists. Leave the space empty rather than fake.",
+      "mobile": "Keep the step order identical to desktop. The action stays after the step that justifies it.",
+      "adaptation": "Write the steps from harvested process facts. If a step is uncertain, omit it.",
+      "counterexample": "A gray box labeled 'Your image here' beside three generic benefit cards.",
+      "counterexampleWhy": "The placeholder asks the visitor to imagine proof the business did not supply.",
+      "references": [
+        {
+          "id": "demo-sparse-strong",
+          "kind": "original-synthetic",
+          "file": "demonstrations/sparse-strong.html",
+          "note": "Synthetic teaching pair."
+        }
+      ],
+      "evidenceKind": "original-synthetic",
+      "selectWhen": [
+        "sparse-media"
+      ]
+    },
+    {
+      "id": "founder-team-credibility",
+      "version": 1,
+      "title": "Put people next to the claim they substantiate",
+      "principle": "A portrait or team fact belongs beside the responsibility it proves, not in a detached avatar row.",
+      "explanation": "Inspected people photos and named roles help when the visitor is hiring a person. Unrelated headshots do not.",
+      "useWhen": [
+        "Inspected portraits or named practitioners exist",
+        "The visitor is choosing a person or a small team"
+      ],
+      "avoidWhen": [
+        "No staff facts or portraits were harvested"
+      ],
+      "requiredAssets": [
+        "Named people with roles, or inspected portraits"
+      ],
+      "contraindications": [
+        "Requires a team portrait"
+      ],
+      "visitorGoal": "Know who will actually do the work.",
+      "composition": "One practitioner with role, scope, and the work they are tied to.",
+      "typography": "The person's name is secondary to what they do for this visitor.",
+      "media": "Use only inspected portraits. Do not import faces from reference sites.",
+      "mobile": "Name and role stay with the portrait. Do not dump every person into equal circles.",
+      "adaptation": "If only one person is evidenced, design for one person. Do not invent colleagues.",
+      "counterexample": "Six identical circular crops with first names and no responsibilities.",
+      "counterexampleWhy": "Equal avatars imply a team the evidence does not describe.",
+      "references": [
+        {
+          "id": "verdict-portrait",
+          "kind": "inspected-reference",
+          "file": "design-system/calibration/v1/verdict-1080-viewport.png",
+          "note": "Inspected first view: a portrait sits beside a large promise and three proof lines. The marketplace banner is capture chrome. The person and legal claims are not client facts."
+        }
+      ],
+      "evidenceKind": "inspected-reference",
+      "selectWhen": [
+        "founder-team"
+      ]
+    },
+    {
+      "id": "unequal-services",
+      "version": 1,
+      "title": "Give unequal services unequal emphasis",
+      "principle": "When one offer matters more to the visitor, the page should show that difference in scale and position.",
+      "explanation": "A business with a primary service and several add-ons should not present them as the same card three times.",
+      "useWhen": [
+        "Three or more services with different visitor importance"
+      ],
+      "avoidWhen": [
+        "The services are genuinely peers, such as equal menu categories"
+      ],
+      "requiredAssets": [
+        "A ranked or evidenced list of services"
+      ],
+      "contraindications": [
+        "All offerings are intentionally equal"
+      ],
+      "visitorGoal": "Find the service that matches their job without reading every sibling.",
+      "composition": "Primary offer in a large band. Secondary offers in a quieter index.",
+      "typography": "One display headline for the primary offer. Secondary offers use the body scale.",
+      "media": "Spend the strongest image on the primary offer only if that image exists.",
+      "mobile": "The primary offer remains first. Secondary offers can become a short list.",
+      "adaptation": "Rank from the narrative's visitor questions, not from an alphabetical menu.",
+      "counterexample": "Three identical cards with the same button weight for a flagship service and two minor add-ons.",
+      "counterexampleWhy": "Equal cards tell the visitor the business has no priority.",
+      "references": [
+        {
+          "id": "demo-services-strong",
+          "kind": "original-synthetic",
+          "file": "demonstrations/services-strong.html",
+          "note": "Synthetic teaching pair."
+        }
+      ],
+      "evidenceKind": "original-synthetic",
+      "selectWhen": [
+        "unequal-services"
+      ]
+    },
+    {
+      "id": "dense-practical-information",
+      "version": 1,
+      "title": "Make dense facts scannable",
+      "principle": "Hours, specs, coverage, and requirements should be a structured reference, not a paragraph of adjectives.",
+      "explanation": "Visitors with a practical question leave if the fact is buried in a hero slogan.",
+      "useWhen": [
+        "The visitor job is to check a fact before acting"
+      ],
+      "avoidWhen": [
+        "The page is a single emotional introduction with no operational facts"
+      ],
+      "requiredAssets": [
+        "Harvested facts that are safe to publish"
+      ],
+      "contraindications": [
+        "Publishing an unverified price or hour"
+      ],
+      "visitorGoal": "Confirm the practical constraint that decides the visit or the call.",
+      "composition": "A definition list or table with a stable label column.",
+      "typography": "Labels and values in one size system. Do not set specifications in display type.",
+      "media": "Optional. A diagram helps only when it is clearer than the list.",
+      "mobile": "Keep each fact as label plus value. Do not turn the list into equal marketing cards.",
+      "adaptation": "Publish only facts with evidence. Mark conflicts instead of averaging them.",
+      "counterexample": "A hero headline that paraphrases the hours and hides the actual schedule.",
+      "counterexampleWhy": "The visitor cannot extract the fact without rereading marketing copy.",
+      "references": [
+        {
+          "id": "demo-dense-strong",
+          "kind": "original-synthetic",
+          "file": "demonstrations/dense-strong.html",
+          "note": "Synthetic teaching pair. Apex's inspected first view also puts a practical estimate panel on a work photo; that panel is a reference, not a template."
+        }
+      ],
+      "evidenceKind": "original-synthetic",
+      "selectWhen": [
+        "dense-information"
+      ]
+    },
+    {
+      "id": "tangible-materials",
+      "version": 1,
+      "title": "Show the material at a readable scale",
+      "principle": "Products and materials need to be identifiable. A tiny swatch or a text-covered photo fails that job.",
+      "explanation": "If the business sells a physical thing, the visitor is judging texture, portion, or finish.",
+      "useWhen": [
+        "Inspected product or material images exist"
+      ],
+      "avoidWhen": [
+        "The business has no product photography and the offer is a service process"
+      ],
+      "requiredAssets": [
+        "Inspected images where the material is legible"
+      ],
+      "contraindications": [
+        "Images are low-resolution or covered in baked-in text"
+      ],
+      "visitorGoal": "Recognize the product or material before ordering or visiting.",
+      "composition": "A large plate of the object with a short identifying caption.",
+      "typography": "Keep type off the important part of the object.",
+      "media": "Do not upscale a tiny asset to fill the viewport.",
+      "mobile": "The object remains large enough to identify after stacking.",
+      "adaptation": "If the asset is weak, say so in the storyboard and use type instead of enlarging it.",
+      "counterexample": "A full-bleed photo with a centered headline covering the product.",
+      "counterexampleWhy": "The visitor cannot see the thing they would buy.",
+      "references": [
+        {
+          "id": "munch-food",
+          "kind": "inspected-reference",
+          "file": "design-system/calibration/v1/munch-375-viewport.png",
+          "note": "Inspected 375px first view: the words 'smash burgers' sit above a large food photograph, with a Menu control. Capture includes a theme-marketplace banner that is not the restaurant."
+        }
+      ],
+      "evidenceKind": "inspected-reference",
+      "selectWhen": [
+        "tangible-product"
+      ]
+    },
+    {
+      "id": "location-hours-access",
+      "version": 1,
+      "title": "Answer the visit before the atmosphere",
+      "principle": "A place people must travel to should expose hours, address, and access as early as the mood.",
+      "explanation": "Atmosphere can support the visit. It cannot replace the facts that decide whether the visit is possible.",
+      "useWhen": [
+        "The business has a location, hours, menu, or access instructions"
+      ],
+      "avoidWhen": [
+        "The business does not serve visitors at a place"
+      ],
+      "requiredAssets": [
+        "Harvested address, hours, or access facts"
+      ],
+      "contraindications": [
+        "Requires a full menu the source does not contain"
+      ],
+      "visitorGoal": "Decide if they can get there, and when.",
+      "composition": "Practical facts in a stable block. Photography supports, it does not replace the facts.",
+      "typography": "Hours and address in body type that remains readable on a phone outdoors.",
+      "media": "A place photo is useful when it helps someone recognize the entrance.",
+      "mobile": "The address and hours stay above long editorial copy.",
+      "adaptation": "If hours conflict in the source, show the conflict rather than picking a convenient value.",
+      "counterexample": "A full-screen mood photograph with the address only in the footer.",
+      "counterexampleWhy": "The visitor who needs to know if the place is open has to hunt.",
+      "references": [
+        {
+          "id": "apex-estimate",
+          "kind": "inspected-reference",
+          "file": "design-system/calibration/v1/apex-1080-viewport.png",
+          "note": "Inspected first view: a work photograph with an estimate panel and a phone number in the bar. Demo phone and marketplace banner are not client facts."
+        }
+      ],
+      "evidenceKind": "inspected-reference",
+      "selectWhen": [
+        "location-practical"
+      ]
+    },
+    {
+      "id": "comparison-decision-support",
+      "version": 1,
+      "title": "Compare options on the decision that matters",
+      "principle": "A comparison should use the visitor's actual choice, with differences that change the decision.",
+      "explanation": "Three columns of synonyms are not a comparison. Name the criterion, then the difference.",
+      "useWhen": [
+        "The visitor must choose between evidenced options"
+      ],
+      "avoidWhen": [
+        "There is only one offer"
+      ],
+      "requiredAssets": [
+        "Two or more options with factual differences"
+      ],
+      "contraindications": [
+        "Inventing a competitor or a price"
+      ],
+      "visitorGoal": "Choose an option without guessing which difference matters.",
+      "composition": "A table or paired columns keyed to one criterion.",
+      "typography": "The criterion labels are as visible as the option names.",
+      "media": "Images only when they show the difference.",
+      "mobile": "Each option becomes a block that repeats the criterion labels. Do not rely on a wide table alone.",
+      "adaptation": "Drop any column that is not backed by a fact.",
+      "counterexample": "Three pricing tiers with identical feature lists and a highlighted middle card.",
+      "counterexampleWhy": "The highlight is a decoration if the features do not differ.",
+      "references": [
+        {
+          "id": "demo-compare-strong",
+          "kind": "original-synthetic",
+          "file": "demonstrations/compare-strong.html",
+          "note": "Synthetic teaching pair."
+        }
+      ],
+      "evidenceKind": "original-synthetic",
+      "selectWhen": [
+        "comparison"
+      ]
+    },
+    {
+      "id": "longform-case-study",
+      "version": 1,
+      "title": "Let a case study change scale on purpose",
+      "principle": "A long project page should open with the result, then the constraints, then the work.",
+      "explanation": "A case study that repeats the homepage hero wastes the interior's job.",
+      "useWhen": [
+        "A project has enough evidence for a sequence longer than a card"
+      ],
+      "avoidWhen": [
+        "The only material is a single photo and a title"
+      ],
+      "requiredAssets": [
+        "A project fact set: situation, work, and outcome"
+      ],
+      "contraindications": [
+        "No project evidence beyond a title"
+      ],
+      "visitorGoal": "Judge whether a past job resembles their situation.",
+      "composition": "Result first, constraints second, process third. Pull quotes only from evidence.",
+      "typography": "A readable measure for the narrative. Captions stay with figures.",
+      "media": "Place each figure where the paragraph needs it.",
+      "mobile": "Figures follow the sentence that introduces them.",
+      "adaptation": "If the outcome is unmeasured, do not invent a metric. Describe the visible result.",
+      "counterexample": "The homepage hero copied onto the case study with the project name swapped.",
+      "counterexampleWhy": "The interior then has no job of its own.",
+      "references": [
+        {
+          "id": "demo-case-strong",
+          "kind": "original-synthetic",
+          "file": "demonstrations/case-strong.html",
+          "note": "Synthetic teaching pair."
+        }
+      ],
+      "evidenceKind": "original-synthetic",
+      "selectWhen": [
+        "case-study"
+      ]
+    },
+    {
+      "id": "typography-led-hierarchy",
+      "version": 1,
+      "title": "Use type to make the first question obvious",
+      "principle": "Hierarchy is the difference between the offer, the proof, and the action, not an unusual font.",
+      "explanation": "A distinctive typeface can support identity. It does not replace a clear reading order.",
+      "useWhen": [
+        "The identity can be carried by language",
+        "Imagery is limited or should stay secondary"
+      ],
+      "avoidWhen": [
+        "A photographed object is the thing the visitor must recognize immediately"
+      ],
+      "requiredAssets": [
+        "A specific offer sentence from the narrative"
+      ],
+      "contraindications": [
+        "Display type set so large that the offer wraps into an unreadable shape"
+      ],
+      "visitorGoal": "Understand the offer in one glance.",
+      "composition": "One display line, one supporting sentence, one action. Secondary information steps down.",
+      "typography": "Limit the display face to the offer. Body text stays in a readable text face.",
+      "media": "Optional and subordinate.",
+      "mobile": "Shorten the display line rather than shrinking it below the body text.",
+      "adaptation": "If the harvested offer is long, split it into a short line and a sentence. Do not invent a slogan.",
+      "counterexample": "Three different display faces in one screen, with the action in the same size as the legal text.",
+      "counterexampleWhy": "Nothing tells the visitor what to read or do first.",
+      "references": [
+        {
+          "id": "demo-type-strong",
+          "kind": "original-synthetic",
+          "file": "demonstrations/type-strong.html",
+          "note": "Synthetic teaching pair."
+        }
+      ],
+      "evidenceKind": "original-synthetic",
+      "selectWhen": [
+        "typography-led"
+      ]
+    },
+    {
+      "id": "mobile-complex-composition",
+      "version": 1,
+      "title": "Redraw a complex desktop composition for a narrow screen",
+      "principle": "If stacking the desktop regions would scramble the story, specify the mobile order.",
+      "explanation": "A side-by-side proof and action can become proof, then action. It should not become action, then an unlabeled image, then the explanation.",
+      "useWhen": [
+        "The desktop composition has two or more regions whose order matters"
+      ],
+      "avoidWhen": [
+        "The section is already a single column"
+      ],
+      "requiredAssets": [
+        "A storyboard mobileTransformation for that section"
+      ],
+      "contraindications": [
+        "No complex composition is planned"
+      ],
+      "visitorGoal": "Meet the same offer, proof, and action in that order on a phone.",
+      "composition": "Name the desktop regions and their mobile sequence.",
+      "typography": "Do not let a desktop display size overflow the viewport.",
+      "media": "Keep the subject in frame after the crop changes.",
+      "mobile": "Write the sequence explicitly: offer, proof, action, or the order this business needs.",
+      "adaptation": "Add a 375px check when the transformation is more than a simple stack.",
+      "counterexample": "A desktop split that stacks as image, button, then the sentence that explains both.",
+      "counterexampleWhy": "The visitor meets the action before they know what it does.",
+      "references": [
+        {
+          "id": "demo-mobile-strong",
+          "kind": "original-synthetic",
+          "file": "demonstrations/mobile-strong.html",
+          "note": "Synthetic mobile teaching pair."
+        }
+      ],
+      "evidenceKind": "original-synthetic",
+      "selectWhen": [
+        "mobile-complex"
+      ]
+    },
+    {
+      "id": "purposeful-repetition",
+      "version": 1,
+      "title": "Repeat a treatment only when the items are one list",
+      "principle": "Equal cards are appropriate for equal items. They are monotonous when each card has a different job.",
+      "explanation": "A menu, a project index, or a comparison can share a template. A homepage that gives the offer, the proof, the process, and the visit the same card does not.",
+      "useWhen": [
+        "Several items share one visitor job",
+        "Or a page is starting to repeat unrelated sections"
+      ],
+      "avoidWhen": [
+        "Using repetition as the only way to fill a homepage"
+      ],
+      "requiredAssets": [
+        "A storyboard note that says why the repeat exists"
+      ],
+      "contraindications": [
+        "The repeated sections answer unrelated questions"
+      ],
+      "visitorGoal": "Scan peers quickly, and still see the primary action.",
+      "composition": "One template for the list. A different scale for the section that is not part of the list.",
+      "typography": "Shared label styles inside the list. A different heading for the section outside it.",
+      "media": "Same crop logic inside the list.",
+      "mobile": "The list can stack. The primary action does not become just another row.",
+      "adaptation": "If the jobs differ, change emphasis or write the rationale that makes them one system.",
+      "counterexample": "Five equal card grids for the hero, the story, the hours, the team, and the footer prompt.",
+      "counterexampleWhy": "Changing the background color of every other band does not create a new job.",
+      "references": [
+        {
+          "id": "demo-repeat-strong",
+          "kind": "original-synthetic",
+          "file": "demonstrations/repeat-strong.html",
+          "note": "Synthetic teaching pair."
+        }
+      ],
+      "evidenceKind": "original-synthetic",
+      "selectWhen": [
+        "purposeful-repetition"
+      ]
+    }
+  ]
+}

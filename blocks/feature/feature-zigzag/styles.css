@@ -1,0 +1,6 @@
+.c-feature-zigzag__stack{display:grid;gap:var(--space-8)}
+.c-feature-zigzag__stack > .split > div:not([class*="ratio"]):not(.frame){display:grid;gap:var(--space-4);align-content:center}
+.c-feature-zigzag__stack h3{font-size:var(--step-3)}
+.c-feature-zigzag__stack p{color:var(--color-muted);max-width:36rem}
+.c-feature-zigzag__stack .eyebrow{margin-bottom:calc(var(--space-2) * -1)}
+@media(min-width:720px){.c-feature-zigzag__stack > .split:nth-child(even) > :first-child{order:2}}

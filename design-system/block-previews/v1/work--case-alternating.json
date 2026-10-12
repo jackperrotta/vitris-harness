@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "blockId": "work/case-alternating",
+  "blockRevision": 1,
+  "sourceHash": "ce5e6e7e56b617a2400c71e9a61c9e3cb83560165f174edd2303c97cb616056e",
+  "previewHtmlHash": "aa2a01853c9811a6d9ff23962d40977e7aa767bec6fcd4f5fa736f8cc01d2a8a",
+  "rendererHash": "adb9cf206350ec5e97bc41d8db13fe3ced203ffc9ec42bde236a81d53043bb46",
+  "content": "README example",
+  "assets": "inline placeholders",
+  "theme": "defaultTheme",
+  "browser": "Chromium 153.0.8010.12",
+  "renderer": "scripts/blocks-preview.ts",
+  "images": {
+    "mobile": {
+      "file": "work--case-alternating--mobile.jpg",
+      "hash": "9f32a5b363165933bbd248dd507eaf9e97978029d2d01a018644df8d0afb02e0",
+      "width": 375,
+      "height": 900
+    },
+    "desktop": {
+      "file": "work--case-alternating--desktop.jpg",
+      "hash": "dda75eabf7017623bb6d9fa400a4c4b522d6b80b4c5b537a58a601972157fd0e",
+      "width": 1280,
+      "height": 800
+    }
+  }
+}

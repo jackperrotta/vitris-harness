@@ -1,0 +1,59 @@
+name: Deploy
+# Prefer connecting the Cloudflare Pages project to this GitHub repo
+# (Dashboard → Pages → project → Settings → Builds → Connect to Git).
+# Then every branch, including update-* preview branches from the Vitris
+# concierge, builds automatically. Keep this workflow only if you are NOT
+# using Pages Git integration (Direct Upload fallback).
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      VITRIS_TENANT_ID: ${{ secrets.VITRIS_TENANT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run build
+        env:
+          VITRIS_BACKEND_ORIGIN: ${{ secrets.VITRIS_BACKEND_ORIGIN || secrets.KERNEL_ORIGIN }}
+          VITRIS_SITE_ENVIRONMENT: ${{ github.ref == 'refs/heads/main' && 'production' || 'preview' }}
+      - name: Launch preflight
+        run: |
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            node ./node_modules/@vitris/harness/bin/vitris-launch-preflight.js --environment production --site .
+          else
+            node ./node_modules/@vitris/harness/bin/vitris-launch-preflight.js --environment preview --site .
+          fi
+      - name: Deploy to Cloudflare Pages
+        if: github.ref != 'refs/heads/main' || env.VITRIS_TENANT_ID == ''
+        # On PRs / non-main, --branch creates a Pages preview deployment.
+        run: |
+          BRANCH="${{ github.head_ref || github.ref_name }}"
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            npx wrangler pages deploy dist --project-name=__SLUG__
+          else
+            npx wrangler pages deploy dist --project-name=__SLUG__ --branch="$BRANCH"
+          fi
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      - name: Publish authenticated exact bundle through the backend Worker
+        if: github.ref == 'refs/heads/main' && env.VITRIS_TENANT_ID != ''
+        env:
+          VITRIS_PUBLISH_ATTESTATION_SECRET: ${{ secrets.VITRIS_PUBLISH_ATTESTATION_SECRET }}
+          VITRIS_BACKEND_ORIGIN: ${{ secrets.VITRIS_BACKEND_ORIGIN || secrets.KERNEL_ORIGIN }}
+        run: |
+          node ./node_modules/@vitris/harness/bin/vitris-sign-publish-bundle.js \
+            --site . --tenant-id "$VITRIS_TENANT_ID" --slug __SLUG__ --project __SLUG__ \
+            --out "$RUNNER_TEMP/vitris-publish-bundle.json"
+          curl --fail-with-body --silent --show-error \
+            -H 'content-type: application/json' \
+            --data-binary @"$RUNNER_TEMP/vitris-publish-bundle.json" \
+            "${VITRIS_BACKEND_ORIGIN%/}/api/publish-attested"

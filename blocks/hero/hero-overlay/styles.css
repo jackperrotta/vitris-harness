@@ -1,0 +1,14 @@
+.c-hero-overlay{position:relative;min-height:min(80vh,44rem);display:grid;align-items:end;isolation:isolate;--color-text:#fff;--color-muted:color-mix(in srgb,#fff 78%,transparent);--color-border:color-mix(in srgb,#fff 40%,transparent);color:var(--color-text)}
+.c-hero-overlay--tall{min-height:min(94vh,54rem)}
+.c-hero-overlay__media{position:absolute;inset:0;z-index:0;background:#2a2622}
+.c-hero-overlay__media img{width:100%;height:100%;object-fit:cover}
+.c-hero-overlay__scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,color-mix(in srgb,#000 18%,transparent) 0%,color-mix(in srgb,#000 30%,transparent) 45%,color-mix(in srgb,#000 74%,transparent) 100%)}
+.c-hero-overlay__copy{position:relative;z-index:2;display:grid;gap:var(--space-5);padding-block:var(--space-9) var(--space-8);max-width:42rem}
+.c-hero-overlay__copy h1{max-width:18ch;text-shadow:0 2px 24px color-mix(in srgb,#000 30%,transparent)}
+.c-hero-overlay__copy .btn-group{margin-top:var(--space-2)}
+.c-hero-overlay__copy .btn-outline{background:color-mix(in srgb,#fff 10%,transparent);backdrop-filter:blur(6px)}
+.c-hero-overlay__copy .btn-outline:hover{background:color-mix(in srgb,#fff 20%,transparent);border-color:#fff}
+.c-hero-overlay__proof:empty{display:none}
+.c-hero-overlay--center{align-items:center}
+.c-hero-overlay--center .c-hero-overlay__copy{margin-inline:auto;text-align:center;justify-items:center}
+.c-hero-overlay--center .c-hero-overlay__scrim{background:color-mix(in srgb,#000 52%,transparent)}

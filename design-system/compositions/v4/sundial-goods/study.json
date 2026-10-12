@@ -1,0 +1,188 @@
+{
+  "id": "sundial-goods",
+  "revision": 2,
+  "title": "Sundial Goods / colour campaign",
+  "primaryFamily": "campaign",
+  "assetMinimum": "multiple-images",
+  "fitSignals": [
+    "collection",
+    "comparison",
+    "type-content",
+    "real-copy",
+    "action",
+    "sparse-media"
+  ],
+  "visitorTasks": [
+    "shop-collection",
+    "compare-options"
+  ],
+  "organizingIdea": "A cropped-looking but fully readable type field meets a bold product illustration; colour choices become broad navigable fields and the interior exposes product facts before options.",
+  "brief": {
+    "fictional": true,
+    "facts": {
+      "name": "Sundial Goods",
+      "offer": "Fictional everyday cotton carry bags",
+      "product": "Daily Carry",
+      "variants": [
+        "Brick",
+        "Ink",
+        "Leaf"
+      ],
+      "dimensions": "38 × 42 cm",
+      "material": "Cotton in invented brief",
+      "price": "24 teaching units",
+      "restriction": "No actual stock, certifications or purchasing system",
+      "contact": "sundial@example.test",
+      "development": "Expanded original fictional explanatory content and interaction detail; no measured client outcome"
+    },
+    "factsHash": "7bc2fd28f415d47b30e4472e89c51d487b103e16d7a36cc3985a2a3b8d0ef67c",
+    "mediaHash": "2abd9b2ddfa59ebd01110b472aa852d3fa93c93e4b897565aa9a8cce8276061d"
+  },
+  "provenance": {
+    "content": "Original fictional Vitris teaching brief and authored copy; operational details, dimensions and offers are invented and must never populate customer inventories.",
+    "media": "Original generated fictional raster concepts with tool/prompt/source lineage; editable text is separate.",
+    "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+  },
+  "storyboard": {
+    "homepage": [
+      "campaign type/object",
+      "wide colour choices",
+      "everyday-use explanation"
+    ],
+    "interior": [
+      "product illustration/facts",
+      "colour comparison",
+      "adaptation boundary"
+    ],
+    "mobile": "Original three-bag campaign gives way to differently coloured collection fields, then a single-object detail with dimensions, teaching price and colour descriptions. Mobile keeps the collection choices and full bag handles."
+  },
+  "designDecisions": "A cropped-looking but fully readable type field meets a bold product illustration; colour choices become broad navigable fields and the interior exposes product facts before options.",
+  "lessonIds": [
+    "cmp-image-art-direction",
+    "cmp-comparison",
+    "cmp-narrative-continuity"
+  ],
+  "referenceIds": [
+    "baggu",
+    "good-weird"
+  ],
+  "sourcePath": "sundial-goods",
+  "homepage": "/",
+  "interior": "/detail",
+  "status": "production compiled; assistant visually inspected; human preference unlabeled",
+  "humanPreference": null,
+  "renderEvidence": [
+    {
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-06T20:53:15.351Z",
+      "browser": "153.0.8010.12",
+      "compiledHash": "ecfcf35c8b0bfd4a33c36b4be4d52049d7c81ceb789ab7449b4eb0189b6b04b6",
+      "preview": {
+        "path": "previews/sundial-goods-home-1440.png",
+        "sha256": "ff1d5c321d58501d8e93d683ff00334d2fbaffd021f9b661915a9f97be485327"
+      },
+      "fullPreview": {
+        "path": "previews/full/sundial-goods-home-1440.png",
+        "sha256": "6708c380ad48a8e6001a1e8ae4bcea1317275c290215c88ab17334376ae6cf11"
+      },
+      "visualReview": {
+        "assessor": "agent",
+        "reviewedAt": "2026-10-06T21:00:13.933Z",
+        "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original three-bag campaign gives way to differently coloured collection fields, then a single-object detail with dimensions, teaching price and colour descriptions. Mobile keeps the collection choices and full bag handles. Remaining: Fictional teaching products, no stock, checkout or purchase capability. Illustrative scale does not certify dimensions."
+      }
+    },
+    {
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-06T20:53:16.506Z",
+      "browser": "153.0.8010.12",
+      "compiledHash": "ecfcf35c8b0bfd4a33c36b4be4d52049d7c81ceb789ab7449b4eb0189b6b04b6",
+      "preview": {
+        "path": "previews/sundial-goods-home-390.png",
+        "sha256": "3eb78ac5cb8ff6d78503a596296c0544100e49ffe31cce7ab77f62563edae126"
+      },
+      "fullPreview": {
+        "path": "previews/full/sundial-goods-home-390.png",
+        "sha256": "215266bc43262de7279fb9c2b30e2f336c8dd058312805d4f03b0e7d7f096c97"
+      },
+      "visualReview": {
+        "assessor": "agent",
+        "reviewedAt": "2026-10-06T21:00:13.933Z",
+        "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original three-bag campaign gives way to differently coloured collection fields, then a single-object detail with dimensions, teaching price and colour descriptions. Mobile keeps the collection choices and full bag handles. Remaining: Fictional teaching products, no stock, checkout or purchase capability. Illustrative scale does not certify dimensions."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-06T20:53:18.211Z",
+      "browser": "153.0.8010.12",
+      "compiledHash": "6ce767b1ca17313fdb6f1354f7c5df74e4915cd380bd3a616f7e8bc49761a186",
+      "preview": {
+        "path": "previews/sundial-goods-interior-1440.png",
+        "sha256": "8ae1bcbe16f37051ef77353131d59767e4b7a425d4c10d420cdefe8a13067fd9"
+      },
+      "fullPreview": {
+        "path": "previews/full/sundial-goods-interior-1440.png",
+        "sha256": "3622225d294ad8c5951d3ebc57367afe94e2bcdfa668d6031e6a8a1cca6bdef2"
+      },
+      "visualReview": {
+        "assessor": "agent",
+        "reviewedAt": "2026-10-06T21:00:13.933Z",
+        "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original three-bag campaign gives way to differently coloured collection fields, then a single-object detail with dimensions, teaching price and colour descriptions. Mobile keeps the collection choices and full bag handles. Remaining: Fictional teaching products, no stock, checkout or purchase capability. Illustrative scale does not certify dimensions."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-06T20:53:19.376Z",
+      "browser": "153.0.8010.12",
+      "compiledHash": "6ce767b1ca17313fdb6f1354f7c5df74e4915cd380bd3a616f7e8bc49761a186",
+      "preview": {
+        "path": "previews/sundial-goods-interior-390.png",
+        "sha256": "c70152962b1394ecbeba8715a3542d313766b031041387ece5f5fb62d2f99a1b"
+      },
+      "fullPreview": {
+        "path": "previews/full/sundial-goods-interior-390.png",
+        "sha256": "16fabc945fc7073ab6540de74fca3cfbd846ce6d133f2ea8c418d9bfe06c121a"
+      },
+      "visualReview": {
+        "assessor": "agent",
+        "reviewedAt": "2026-10-06T21:00:13.933Z",
+        "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original three-bag campaign gives way to differently coloured collection fields, then a single-object detail with dimensions, teaching price and colour descriptions. Mobile keeps the collection choices and full bag handles. Remaining: Fictional teaching products, no stock, checkout or purchase capability. Illustrative scale does not certify dimensions."
+      }
+    }
+  ],
+  "selectionProfile": {
+    "tasks": [
+      "shop-collection",
+      "compare-options",
+      "explore-product"
+    ],
+    "contexts": [
+      "retail"
+    ],
+    "contributions": [
+      "campaign-collection",
+      "variant-browsing"
+    ],
+    "expressions": [
+      "campaign"
+    ]
+  },
+  "exampleScope": "developed-homepage-interior-example",
+  "releaseNotes": "Original three-bag campaign gives way to differently coloured collection fields, then a single-object detail with dimensions, teaching price and colour descriptions. Mobile keeps the collection choices and full bag handles. Limitations: Fictional teaching products, no stock, checkout or purchase capability. Illustrative scale does not certify dimensions.",
+  "comparisonStatus": "not a controlled same-facts comparison"
+}

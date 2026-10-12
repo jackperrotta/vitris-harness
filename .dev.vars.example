@@ -1,0 +1,33 @@
+SESSION_SECRET=change-me-to-a-long-random-string
+APPROVE_SECRET=change-me-approve-hmac-secret
+DEV_LOGIN=1
+VITRIS_BACKEND_ORIGIN=http://127.0.0.1:8787
+ASSETS_ORIGIN=http://127.0.0.1:8787
+# Copy this file to .dev.vars (gitignored) and fill in real values.
+# Required for create-site --from image uploads to R2 (and remote stock).
+# CF_ACCOUNT_ID=
+# CF_API_TOKEN=
+# CF_ACCESS_KEY_ID=
+# CF_SECRET_ACCESS_KEY=
+# CF_S3_API_ENDPOINT=
+# GITHUB_TOKEN=
+# PUBLISH_ATTESTATION_SECRET=long-random-secret-shared-only-with-protected-CI
+# GMAIL_SA_CLIENT_EMAIL=
+# GMAIL_SA_PRIVATE_KEY=
+# GMAIL_IMPERSONATE=
+# MAIL_FROM=
+# ANTHROPIC_API_KEY=
+# OPENAI_API_KEY=
+# OPERATOR_NOTIFY_EMAIL=
+# MAIL_API_KEY=
+# PIXABAY_API_KEY=
+#TYPESAFE_API_KEY=
+
+# Shared contact forms (server-side only; live remains blocked until configured)
+# FORMS_ABUSE_SECRET=separate-random-secret-at-least-32-characters
+# FORMS_TURNSTILE_SECRETS={"pool_reference":"turnstile-secret"}
+# FORMS_SETUP_TOKENS={"tenant-id":"separate-scoped-secret-at-least-32-characters"}
+# FORMS_FROM=forms@your-vitris-domain.example
+# FORMS_SENDER_READY=1
+# FORMS_SANDBOX=1
+# Add the restricted FORMS_EMAIL send_email binding only after rollout review.

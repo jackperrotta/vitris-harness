@@ -1,0 +1,109 @@
+{
+  "version": 3,
+  "status": "pending",
+  "current": null,
+  "preview_ready": false,
+  "launched": false,
+  "iteration": 0,
+  "cumulativeSpend": {
+    "iterations": 0,
+    "calls": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "durationMs": 0
+  },
+  "nodes": {
+    "harvest": {
+      "status": "pending",
+      "attempts": 0
+    },
+    "business": {
+      "status": "pending",
+      "attempts": 0
+    },
+    "business-review": {
+      "status": "pending",
+      "attempts": 0
+    },
+    "media": {
+      "status": "pending",
+      "attempts": 0
+    },
+    "narrative": {
+      "status": "pending",
+      "attempts": 0
+    },
+    "narrative-review": {
+      "status": "pending",
+      "attempts": 0
+    },
+    "reference-analysis": {
+      "status": "pending",
+      "attempts": 0
+    },
+    "direction": {
+      "status": "pending",
+      "attempts": 0
+    },
+    "direction-review": {
+      "status": "pending",
+      "attempts": 0
+    },
+    "storyboard": {
+      "status": "pending",
+      "attempts": 0
+    },
+    "copy": {
+      "status": "pending",
+      "attempts": 0
+    },
+    "copy-review": {
+      "status": "pending",
+      "attempts": 0
+    },
+    "representative": {
+      "status": "pending",
+      "attempts": 0
+    },
+    "representative-browser": {
+      "status": "pending",
+      "attempts": 0
+    },
+    "representative-review": {
+      "status": "pending",
+      "attempts": 0
+    },
+    "representative-quality": {
+      "status": "pending",
+      "attempts": 0
+    },
+    "copy-expansion": {
+      "status": "pending",
+      "attempts": 0
+    },
+    "pages": {
+      "status": "pending",
+      "attempts": 0
+    },
+    "browser": {
+      "status": "pending",
+      "attempts": 0
+    },
+    "visual-review": {
+      "status": "pending",
+      "attempts": 0
+    },
+    "content-review": {
+      "status": "pending",
+      "attempts": 0
+    },
+    "preview": {
+      "status": "pending",
+      "attempts": 0
+    },
+    "launch": {
+      "status": "pending",
+      "attempts": 0
+    }
+  }
+}

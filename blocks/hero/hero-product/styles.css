@@ -1,0 +1,11 @@
+.c-hero-product__copy{display:grid;gap:var(--space-5);align-content:center}
+.c-hero-product__copy h1{max-width:18ch}
+.c-hero-product__copy .btn-group{margin-top:var(--space-2)}
+.c-hero-product__proof:empty{display:none}
+.c-hero-product__trust{display:grid;gap:var(--space-3);margin-top:var(--space-4);padding-top:var(--space-5);border-top:1px solid var(--color-border)}
+.c-hero-product__logos-label{font-size:.75rem}
+.c-hero-product__logos-label:empty{display:none}
+.c-hero-product__logos{justify-content:flex-start;gap:var(--space-4) var(--space-6)}
+.c-hero-product__logos:empty{display:none}
+.c-hero-product__media{box-shadow:var(--shadow-3)}
+.c-hero-product--reverse .split > :first-child{order:2}

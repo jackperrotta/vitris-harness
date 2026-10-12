@@ -1,0 +1,7 @@
+.c-feature-tabs__tabs .tabs__panel{padding-top:var(--space-4)}
+.c-feature-tabs__tabs .tabs__panel > div{display:grid;gap:var(--space-3);align-content:center}
+.c-feature-tabs__tabs .tabs__panel h3{font-size:var(--step-3)}
+.c-feature-tabs__tabs .tabs__panel p{color:var(--color-muted)}
+.c-feature-tabs--pill .tabs__list{border-bottom:0;gap:var(--space-1);padding:var(--space-1);background:var(--color-surface-2);border-radius:var(--radius-pill);width:fit-content}
+.c-feature-tabs--pill .tabs__tab{border:0;margin:0;min-height:2.5rem;padding:var(--space-2) var(--space-4);border-radius:var(--radius-pill)}
+.c-feature-tabs--pill .tabs__tab[aria-selected="true"]{background:var(--color-surface);box-shadow:var(--shadow-1)}

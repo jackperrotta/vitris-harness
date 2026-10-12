@@ -1,0 +1,20 @@
+.c-faq-grouped__grid{display:grid;gap:var(--space-6)}
+.c-faq-grouped__side{display:grid;gap:var(--space-5);align-content:start}
+.c-faq-grouped__nav{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+.c-faq-grouped__nav a{display:inline-flex;align-items:center;min-height:2.25rem;padding:.3rem .9rem;border:1px solid var(--color-border);border-radius:var(--radius-pill);font-size:var(--step-0);color:var(--color-muted);text-decoration:none}
+.c-faq-grouped__nav a:hover{color:var(--color-text);border-color:var(--color-text)}
+.c-faq-grouped__aside{display:none}
+.c-faq-grouped__aside .card__body{gap:var(--space-1);padding:var(--space-5)}
+.c-faq-grouped__aside .stat__value{font-size:var(--step-4)}
+.c-faq-grouped__aside p{margin:0;font-size:var(--step-0)}
+.c-faq-grouped__groups{display:grid;gap:var(--space-7)}
+.c-faq-grouped__groups > div{scroll-margin-top:calc(var(--header-h) + var(--space-4))}
+.c-faq-grouped__groups h3{font-size:var(--step-2);margin-bottom:var(--space-3)}
+@media(min-width:900px){
+  .c-faq-grouped__grid{grid-template-columns:minmax(0,14rem) minmax(0,1fr);gap:var(--space-9)}
+  .c-faq-grouped__nav{display:grid;gap:0}
+  .c-faq-grouped__nav a{min-height:0;padding:.45rem .85rem;border:0;border-left:2px solid var(--color-border);border-radius:0}
+  .c-faq-grouped__nav a:hover{border-left-color:var(--color-text)}
+  .c-faq-grouped__aside{display:block}
+  .c-faq-grouped__aside:empty{display:none}
+}

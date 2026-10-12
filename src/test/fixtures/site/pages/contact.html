@@ -1,0 +1,56 @@
+---
+title: Contact
+description: Get in touch with Fixture Shop.
+---
+<header variant="sticky">
+  <span slot="brand">Fixture Shop</span>
+  <a slot="links" href="/">Home</a>
+  <a slot="links" href="/about">About</a>
+  <a slot="links" href="/contact">Contact</a>
+  <a slot="actions" class="btn" href="/contact">Get a quote</a>
+</header>
+<hero motion="off">
+  <h1>Contact</h1>
+  <p>Tell us about the job.</p>
+  <img slot="media" src="/stock/images/barber-chair.jpg" alt="Storefront" width="1200" height="900" loading="lazy">
+</hero>
+<section class="section">
+  <div class="wrap split">
+    <div>
+      <div class="section__head">
+        <h2>Reach the crew</h2>
+        <p class="lede">Phone, email, or the form — we reply within one business day.</p>
+      </div>
+      <p><a href="tel:+18135550100">(813) 555-0100</a></p>
+      <p>12 Harbor St, Tampa, FL</p>
+    </div>
+    <div class="card card--bordered">
+      <div class="card__body">
+        <form data-lead-form>
+          <div class="field">
+            <label for="lead-name">Name</label>
+            <input class="input" id="lead-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="lead-email">Email</label>
+            <input class="input" id="lead-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="lead-message">Message</label>
+            <textarea class="textarea" id="lead-message" name="message" rows="4" required></textarea>
+          </div>
+          <p class="c-lead-hp" aria-hidden="true">
+            <label for="company_url">Company website</label>
+            <input id="company_url" name="company_url" type="text" tabindex="-1" autocomplete="off">
+          </p>
+          <button class="btn" type="submit">Send message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <strong slot="brand">Fixture Shop</strong>
+  <a slot="legal" href="/cookie-compliance">Cookie compliance</a>
+  <span slot="legal">© Fixture Shop</span>
+</footer>

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "blockId": "services/services-list",
+  "blockRevision": 1,
+  "sourceHash": "5b26a7c187d49a5ffe6d79fc5c099f6846529a748bc7b0a5127831fa3e132732",
+  "previewHtmlHash": "9bf6feafe0b5c6e3745063864d17287c03718665bdc489fc6b0e39f067499a8b",
+  "rendererHash": "adb9cf206350ec5e97bc41d8db13fe3ced203ffc9ec42bde236a81d53043bb46",
+  "content": "README example",
+  "assets": "inline placeholders",
+  "theme": "defaultTheme",
+  "browser": "Chromium 153.0.8010.12",
+  "renderer": "scripts/blocks-preview.ts",
+  "images": {
+    "mobile": {
+      "file": "services--services-list--mobile.jpg",
+      "hash": "6cdf4bafcb9ffe42c158bfa45b49c64ea9d7b23a7b03de43126b09773c5e2d87",
+      "width": 375,
+      "height": 900
+    },
+    "desktop": {
+      "file": "services--services-list--desktop.jpg",
+      "hash": "9fbfe24fa5ef7419482022a4e185c833e225de12a73686f113086d0f14ec4cd7",
+      "width": 1280,
+      "height": 800
+    }
+  }
+}

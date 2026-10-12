@@ -1,0 +1,3929 @@
+{
+  "schemaVersion": 1,
+  "release": "2026-10-06.2",
+  "status": "16 pairs compiled and assistant visually reviewed; human preference pending",
+  "studies": [
+    {
+      "id": "clearwell-directory",
+      "revision": 2,
+      "title": "Clearwell / task directory",
+      "primaryFamily": "civic",
+      "assetMinimum": "none",
+      "fitSignals": [
+        "professional-service",
+        "type-content",
+        "real-copy",
+        "process",
+        "comparison",
+        "sparse-media",
+        "action"
+      ],
+      "visitorTasks": [
+        "Evaluate a practice",
+        "Understand a process"
+      ],
+      "organizingIdea": "Start with the visitor’s bookkeeping decision; service choices lead before explanatory prose.",
+      "brief": {
+        "fictional": true,
+        "facts": {
+          "name": "Clearwell",
+          "offer": "Bookkeeping for independent studios",
+          "scope": [
+            "Monthly reconciliation",
+            "Monthly reporting",
+            "Year-end handover"
+          ],
+          "excludes": [
+            "Tax returns",
+            "Investment advice"
+          ],
+          "process": [
+            "Bring a sample of your records",
+            "Agree scope together",
+            "Set a monthly handover"
+          ],
+          "contact": "hello@example.test",
+          "media": [],
+          "development": "Expanded original fictional explanatory content and interaction detail; no measured client outcome"
+        },
+        "factsHash": "7124deb7e86ec94e7f3aaa5c22bbfc3574ef2a47f90f68eca9c9892016ad8c5f",
+        "mediaHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "provenance": {
+        "content": "Original fictional teaching content authored for Vitris; never customer facts",
+        "media": "Original editable HTML/CSS typographic specimens; no real client work.",
+        "rights": "Original Vitris teaching source; customer reuse requires adapting facts"
+      },
+      "storyboard": {
+        "homepage": [
+          "What needs clearing up?",
+          "Keep the month clear",
+          "Prepare the handover",
+          "A small start, with a clear scope."
+        ],
+        "interior": [
+          "A month you can read.",
+          "Monthly support",
+          "At year end",
+          "Before a conversation"
+        ],
+        "mobile": "Native decision disclosures, three-column responsibility comparison and contextual inquiry lead into reconcile/report/handover chapters and exclusions. Mobile table retains complete words after a reviewed repair."
+      },
+      "designDecisions": "Start with the visitor’s bookkeeping decision; service choices lead before explanatory prose.",
+      "lessonIds": [
+        "cmp-collection-structure",
+        "cmp-navigation",
+        "cmp-unequal-emphasis"
+      ],
+      "referenceIds": [
+        "gov-uk"
+      ],
+      "sourcePath": "clearwell-directory",
+      "homepage": "/",
+      "interior": "/detail",
+      "status": "production compiled; assistant visually inspected; human preference unlabeled",
+      "humanPreference": null,
+      "renderEvidence": [
+        {
+          "route": "/",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-06T20:54:23.724Z",
+          "browser": "153.0.8010.12",
+          "compiledHash": "fb18e97b29b050ba23122f89933f674784f04e5a72644c6a4c080f8bc9f87fc0",
+          "preview": {
+            "path": "previews/clearwell-directory-home-1440.png",
+            "sha256": "71705266c488f39dc5b2fecfe438cf900bdb1c70d3b67683aa450368a39ccfa1"
+          },
+          "fullPreview": {
+            "path": "previews/full/clearwell-directory-home-1440.png",
+            "sha256": "4e1f7b1088caac9c5ac548c85963952792f3ad9ba229bbc5219f7443e2c693c8"
+          },
+          "visualReview": {
+            "assessor": "agent",
+            "reviewedAt": "2026-10-06T21:00:13.933Z",
+            "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Native decision disclosures, three-column responsibility comparison and contextual inquiry lead into reconcile/report/handover chapters and exclusions. Mobile table retains complete words after a reviewed repair. Remaining: Fictional bookkeeping scope is not tax or investment advice. Email links demonstrate inquiry rather than a production form."
+          }
+        },
+        {
+          "route": "/",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-06T20:54:24.820Z",
+          "browser": "153.0.8010.12",
+          "compiledHash": "fb18e97b29b050ba23122f89933f674784f04e5a72644c6a4c080f8bc9f87fc0",
+          "preview": {
+            "path": "previews/clearwell-directory-home-390.png",
+            "sha256": "b9e47a8e219905d055e9d6c5070fe62b6f3d0787a4a6a6e5a48a76bb40de06d0"
+          },
+          "fullPreview": {
+            "path": "previews/full/clearwell-directory-home-390.png",
+            "sha256": "962b4f644e2ba6a1421acedcb0a5814ba0f99fe6830c3545b34ed3bc818d61c0"
+          },
+          "visualReview": {
+            "assessor": "agent",
+            "reviewedAt": "2026-10-06T21:00:13.933Z",
+            "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Native decision disclosures, three-column responsibility comparison and contextual inquiry lead into reconcile/report/handover chapters and exclusions. Mobile table retains complete words after a reviewed repair. Remaining: Fictional bookkeeping scope is not tax or investment advice. Email links demonstrate inquiry rather than a production form."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-06T20:54:25.943Z",
+          "browser": "153.0.8010.12",
+          "compiledHash": "77063288556c4c568f19108ec851e6edbff53e0f9af12e8779e53cd2d9a6f5c2",
+          "preview": {
+            "path": "previews/clearwell-directory-interior-1440.png",
+            "sha256": "93e582ba34b4fd2b5fa156b69656e09d8514aefb5ebfdf02963d300ca0b71306"
+          },
+          "fullPreview": {
+            "path": "previews/full/clearwell-directory-interior-1440.png",
+            "sha256": "782ce6fd8543066f94c1f9359da4c49782eceaad6e80bdc32b1d89fb055d8da8"
+          },
+          "visualReview": {
+            "assessor": "agent",
+            "reviewedAt": "2026-10-06T21:00:13.933Z",
+            "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Native decision disclosures, three-column responsibility comparison and contextual inquiry lead into reconcile/report/handover chapters and exclusions. Mobile table retains complete words after a reviewed repair. Remaining: Fictional bookkeeping scope is not tax or investment advice. Email links demonstrate inquiry rather than a production form."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-06T20:54:26.989Z",
+          "browser": "153.0.8010.12",
+          "compiledHash": "77063288556c4c568f19108ec851e6edbff53e0f9af12e8779e53cd2d9a6f5c2",
+          "preview": {
+            "path": "previews/clearwell-directory-interior-390.png",
+            "sha256": "57cd6a484b065ba37f978376d5b2d93871566655b6b0e697600c132754eb9ffb"
+          },
+          "fullPreview": {
+            "path": "previews/full/clearwell-directory-interior-390.png",
+            "sha256": "093ac585f7db9584e6ec44471b1fac2025ded7a82224e842b9862bc9270015cd"
+          },
+          "visualReview": {
+            "assessor": "agent",
+            "reviewedAt": "2026-10-06T21:00:13.933Z",
+            "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Native decision disclosures, three-column responsibility comparison and contextual inquiry lead into reconcile/report/handover chapters and exclusions. Mobile table retains complete words after a reviewed repair. Remaining: Fictional bookkeeping scope is not tax or investment advice. Email links demonstrate inquiry rather than a production form."
+          }
+        }
+      ],
+      "selectionProfile": {
+        "tasks": [
+          "evaluate-service",
+          "compare-options",
+          "understand-process",
+          "book-inquiry"
+        ],
+        "contexts": [
+          "financial-service"
+        ],
+        "contributions": [
+          "task-directory",
+          "scope-comparison",
+          "contextual-inquiry"
+        ],
+        "expressions": [
+          "civic"
+        ]
+      },
+      "exampleScope": "developed-homepage-interior-example",
+      "releaseNotes": "Native decision disclosures, three-column responsibility comparison and contextual inquiry lead into reconcile/report/handover chapters and exclusions. Mobile table retains complete words after a reviewed repair. Limitations: Fictional bookkeeping scope is not tax or investment advice. Email links demonstrate inquiry rather than a production form.",
+      "comparisonStatus": "v2 paired facts/media remain controlled there; v3 development is not a controlled same-facts pair"
+    },
+    {
+      "id": "clearwell-letter",
+      "revision": 1,
+      "title": "Clearwell / working letter",
+      "primaryFamily": "text-first",
+      "assetMinimum": "none",
+      "fitSignals": [
+        "professional-service",
+        "type-content",
+        "real-copy",
+        "process",
+        "comparison",
+        "sparse-media",
+        "action"
+      ],
+      "visitorTasks": [
+        "Evaluate a practice",
+        "Understand a process"
+      ],
+      "organizingIdea": "A personal explanatory letter develops the responsibility relationship; an attached scope note supports comparison.",
+      "brief": {
+        "fictional": true,
+        "facts": {
+          "name": "Clearwell",
+          "offer": "Bookkeeping for independent studios",
+          "scope": [
+            "Monthly reconciliation",
+            "Monthly reporting",
+            "Year-end handover"
+          ],
+          "excludes": [
+            "Tax returns",
+            "Investment advice"
+          ],
+          "process": [
+            "Bring a sample of your records",
+            "Agree scope together",
+            "Set a monthly handover"
+          ],
+          "contact": "hello@example.test",
+          "media": []
+        },
+        "factsHash": "a27aeea57fb381f20268557ae9c788abd1219ad30cc1b8b09c3177b633f782d5",
+        "mediaHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "provenance": {
+        "content": "Original fictional teaching content authored for Vitris; never customer facts",
+        "media": "No imagery required",
+        "rights": "Original Vitris teaching source; customer reuse requires adapting facts"
+      },
+      "storyboard": {
+        "homepage": [
+          "Let’s make senseof the month.",
+          "The scope note"
+        ],
+        "interior": [
+          "A month you can read.",
+          "Monthly support",
+          "At year end",
+          "Before a conversation"
+        ],
+        "mobile": "Content order is preserved; side navigation and supporting columns reflow into the document. No essential hover interactions."
+      },
+      "designDecisions": "A personal explanatory letter develops the responsibility relationship; an attached scope note supports comparison.",
+      "lessonIds": [
+        "cmp-type-roles",
+        "cmp-page-rhythm",
+        "cmp-sparse-media"
+      ],
+      "referenceIds": [
+        "gov-uk"
+      ],
+      "sourcePath": "clearwell-letter",
+      "homepage": "/",
+      "interior": "/detail",
+      "status": "compiled, automated checks passed, assistant visual review recorded; human preference pending",
+      "humanPreference": null,
+      "renderEvidence": [
+        {
+          "route": "/",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-05T15:53:13.575Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/clearwell-letter-home-1440.png",
+            "sha256": "d32fcd28eb0c63b8fc3e798752ae9b1614410cbfb36bb2d6944a06813e15b6c5"
+          },
+          "compiledHash": "7dfa963fc571965b983f088234cb2ba4da4ae291271aecd71d70c216f39a3f9e",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/detail",
+                "/detail"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            }
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T16:08:16.890952+00:00",
+            "scope": "desktop/mobile full-page contact-sheet inspection; text hierarchy, reading order, overflow and matched-pair distinction",
+            "assessment": "Clear organization and readable narrow layout; no visual collision observed. Functional checks are automated, human preference is pending."
+          }
+        },
+        {
+          "route": "/",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-05T15:53:14.622Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/clearwell-letter-home-390.png",
+            "sha256": "b55ad3915a88c22306d0d834b51cf1a6a4bae3d891b61af2e3d031c5c9c216f2"
+          },
+          "compiledHash": "7dfa963fc571965b983f088234cb2ba4da4ae291271aecd71d70c216f39a3f9e",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/detail",
+                "/detail"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            }
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T16:08:16.890952+00:00",
+            "scope": "desktop/mobile full-page contact-sheet inspection; text hierarchy, reading order, overflow and matched-pair distinction",
+            "assessment": "Clear organization and readable narrow layout; no visual collision observed. Functional checks are automated, human preference is pending."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-05T15:53:15.720Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/clearwell-letter-interior-1440.png",
+            "sha256": "5d5a7eeb2e01b74a381c42a4b6e75702db848306d9e6d146d7c3bfea4e29b94c"
+          },
+          "compiledHash": "f910fb4536f582d97d039789ee344a1a623108f01ffdea060d76d0945983dbaa",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            }
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T16:08:16.890952+00:00",
+            "scope": "desktop/mobile full-page contact-sheet inspection; text hierarchy, reading order, overflow and matched-pair distinction",
+            "assessment": "Clear organization and readable narrow layout; no visual collision observed. Functional checks are automated, human preference is pending."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-05T15:53:16.750Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/clearwell-letter-interior-390.png",
+            "sha256": "e3954d607bf5eff2200f67ff9b42d833731ec1b5236e9c1b94de655986f0a786"
+          },
+          "compiledHash": "f910fb4536f582d97d039789ee344a1a623108f01ffdea060d76d0945983dbaa",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            }
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T16:08:16.890952+00:00",
+            "scope": "desktop/mobile full-page contact-sheet inspection; text hierarchy, reading order, overflow and matched-pair distinction",
+            "assessment": "Clear organization and readable narrow layout; no visual collision observed. Functional checks are automated, human preference is pending."
+          }
+        }
+      ],
+      "selectionProfile": {
+        "tasks": [
+          "evaluate-service",
+          "understand-process",
+          "book-inquiry"
+        ],
+        "contexts": [
+          "financial-service"
+        ],
+        "contributions": [
+          "explanatory-letter",
+          "scope-note"
+        ],
+        "expressions": [
+          "text-first"
+        ]
+      },
+      "exampleScope": "focused-structural-lesson",
+      "releaseNotes": "Preserved original lesson; not a comprehensive finished-site exemplar or human-approved taste label.",
+      "comparisonStatus": "v2 paired facts/media remain controlled there; v3 development is not a controlled same-facts pair"
+    },
+    {
+      "id": "mara-specimen",
+      "revision": 2,
+      "title": "Mara Vale / typographic index",
+      "primaryFamily": "expressive-type",
+      "assetMinimum": "none",
+      "fitSignals": [
+        "professional-service",
+        "type-content",
+        "real-copy",
+        "process",
+        "collection",
+        "sparse-media",
+        "action"
+      ],
+      "visitorTasks": [
+        "Evaluate a practice",
+        "Understand a process"
+      ],
+      "organizingIdea": "Selected work is the introduction; large project titles function as a navigable index with quieter project metadata.",
+      "brief": {
+        "fictional": true,
+        "facts": {
+          "name": "Mara Vale",
+          "offer": "Independent information design",
+          "projects": [
+            {
+              "name": "Field Notes",
+              "type": "Wayfinding study",
+              "year": "2025"
+            },
+            {
+              "name": "Open Table",
+              "type": "Publication study",
+              "year": "2026"
+            }
+          ],
+          "method": [
+            "Collect the material",
+            "Find the hierarchy",
+            "Test the reading"
+          ],
+          "contact": "mara@example.test",
+          "media": [
+            "Original SVG reading diagram"
+          ],
+          "development": "Expanded original fictional explanatory content and interaction detail; no measured client outcome"
+        },
+        "factsHash": "6445ff7ffa6eeac3382ad89c6582267e2ca3f20dad0ad14ec9b89d3a55d90d04",
+        "mediaHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "provenance": {
+        "content": "Original fictional teaching content authored for Vitris; never customer facts",
+        "media": "Original editable HTML/CSS typographic specimens; no real client work.",
+        "rights": "Original Vitris teaching source; customer reuse requires adapting facts"
+      },
+      "storyboard": {
+        "homepage": [
+          "FieldNotes ↗",
+          "Open Table ↗",
+          "Collect. Order. Read."
+        ],
+        "interior": [
+          "Field Notes",
+          "Collect the material",
+          "Find the hierarchy",
+          "Test the reading",
+          "Open Table"
+        ],
+        "mobile": "Editable oversized mixed type introduces an unequal work index; four substantive case chapters, chapter navigation and original text specimens explain wayfinding hierarchy. Mobile type sizes and the stacked chapter directory preserve readable work hierarchy."
+      },
+      "designDecisions": "Selected work is the introduction; large project titles function as a navigable index with quieter project metadata.",
+      "lessonIds": [
+        "cmp-type-roles",
+        "cmp-collection-structure",
+        "cmp-image-art-direction"
+      ],
+      "referenceIds": [
+        "pangram-pangram",
+        "big"
+      ],
+      "sourcePath": "mara-specimen",
+      "homepage": "/",
+      "interior": "/detail",
+      "status": "production compiled; assistant visually inspected; human preference unlabeled",
+      "humanPreference": null,
+      "renderEvidence": [
+        {
+          "route": "/",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-06T20:53:10.375Z",
+          "browser": "153.0.8010.12",
+          "compiledHash": "2f5ad74092a6ca6f49c09e7817fb3d63e6e3fd370467345bbfca30f465d5c9a2",
+          "preview": {
+            "path": "previews/mara-specimen-home-1440.png",
+            "sha256": "afa2500524f510a4c3ff00812812b856085e1bf05f8d6a482d17cb8c6949bdd4"
+          },
+          "fullPreview": {
+            "path": "previews/full/mara-specimen-home-1440.png",
+            "sha256": "f43beb497e4e1a7f72545422f00f92d75297b4d33fe5d46787e1dea8d8b88a79"
+          },
+          "visualReview": {
+            "assessor": "agent",
+            "reviewedAt": "2026-10-06T21:00:13.933Z",
+            "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Editable oversized mixed type introduces an unequal work index; four substantive case chapters, chapter navigation and original text specimens explain wayfinding hierarchy. Mobile type sizes and the stacked chapter directory preserve readable work hierarchy. Remaining: Invented work examples cannot substantiate customer portfolio claims. Available system type limits cross-platform fidelity."
+          }
+        },
+        {
+          "route": "/",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-06T20:53:11.406Z",
+          "browser": "153.0.8010.12",
+          "compiledHash": "2f5ad74092a6ca6f49c09e7817fb3d63e6e3fd370467345bbfca30f465d5c9a2",
+          "preview": {
+            "path": "previews/mara-specimen-home-390.png",
+            "sha256": "bd2229f2aa7683804d8f67d51ce875b0f6e11c198f4877ebff276c20438f8214"
+          },
+          "fullPreview": {
+            "path": "previews/full/mara-specimen-home-390.png",
+            "sha256": "6d8ee227ea63ab5f08b8c90f3eb72632cb00e668dfede557702328ded766bc9a"
+          },
+          "visualReview": {
+            "assessor": "agent",
+            "reviewedAt": "2026-10-06T21:00:13.933Z",
+            "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Editable oversized mixed type introduces an unequal work index; four substantive case chapters, chapter navigation and original text specimens explain wayfinding hierarchy. Mobile type sizes and the stacked chapter directory preserve readable work hierarchy. Remaining: Invented work examples cannot substantiate customer portfolio claims. Available system type limits cross-platform fidelity."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-06T20:53:12.559Z",
+          "browser": "153.0.8010.12",
+          "compiledHash": "593de518fe6e4b438afb5bf12aa49e7a22a1a359e3c79f306ea627e6b1f6fe1a",
+          "preview": {
+            "path": "previews/mara-specimen-interior-1440.png",
+            "sha256": "599ac98d8f6cd0593c1fdd47cd35898a848df2aed25504185695be17977381bc"
+          },
+          "fullPreview": {
+            "path": "previews/full/mara-specimen-interior-1440.png",
+            "sha256": "e1ca051a1bd762ecd57e693fd11f48c0fdc5d0674279844bdc69d3329400fd24"
+          },
+          "visualReview": {
+            "assessor": "agent",
+            "reviewedAt": "2026-10-06T21:00:13.933Z",
+            "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Editable oversized mixed type introduces an unequal work index; four substantive case chapters, chapter navigation and original text specimens explain wayfinding hierarchy. Mobile type sizes and the stacked chapter directory preserve readable work hierarchy. Remaining: Invented work examples cannot substantiate customer portfolio claims. Available system type limits cross-platform fidelity."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-06T20:53:13.696Z",
+          "browser": "153.0.8010.12",
+          "compiledHash": "593de518fe6e4b438afb5bf12aa49e7a22a1a359e3c79f306ea627e6b1f6fe1a",
+          "preview": {
+            "path": "previews/mara-specimen-interior-390.png",
+            "sha256": "99908facf9422617a48ebd7976dc70ccd2f9794f46346f152baff27eeda86754"
+          },
+          "fullPreview": {
+            "path": "previews/full/mara-specimen-interior-390.png",
+            "sha256": "a263650feb783fc27f0c6caefb41d81f3672e70df0eea1b0a86a6fa7f7019f58"
+          },
+          "visualReview": {
+            "assessor": "agent",
+            "reviewedAt": "2026-10-06T21:00:13.933Z",
+            "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Editable oversized mixed type introduces an unequal work index; four substantive case chapters, chapter navigation and original text specimens explain wayfinding hierarchy. Mobile type sizes and the stacked chapter directory preserve readable work hierarchy. Remaining: Invented work examples cannot substantiate customer portfolio claims. Available system type limits cross-platform fidelity."
+          }
+        }
+      ],
+      "selectionProfile": {
+        "tasks": [
+          "inspect-work",
+          "read-deeply",
+          "book-inquiry"
+        ],
+        "contexts": [
+          "creative-practice"
+        ],
+        "contributions": [
+          "type-work-index",
+          "project-case",
+          "mobile-type"
+        ],
+        "expressions": [
+          "expressive-type"
+        ],
+        "interpretation": {
+          "assetMinimum": "none",
+          "scope": "Typographic work index and reading relationships can be adapted without borrowing the fictional SVG diagram; invent no client work.",
+          "missingDependencies": [
+            "Original study diagram is teaching material, not customer proof"
+          ]
+        }
+      },
+      "exampleScope": "developed-homepage-interior-example",
+      "releaseNotes": "Editable oversized mixed type introduces an unequal work index; four substantive case chapters, chapter navigation and original text specimens explain wayfinding hierarchy. Mobile type sizes and the stacked chapter directory preserve readable work hierarchy. Limitations: Invented work examples cannot substantiate customer portfolio claims. Available system type limits cross-platform fidelity.",
+      "comparisonStatus": "v2 paired facts/media remain controlled there; v3 development is not a controlled same-facts pair"
+    },
+    {
+      "id": "mara-reading-room",
+      "revision": 1,
+      "title": "Mara Vale / editorial reading room",
+      "primaryFamily": "editorial",
+      "assetMinimum": "one-image",
+      "fitSignals": [
+        "professional-service",
+        "type-content",
+        "real-copy",
+        "process",
+        "collection",
+        "sparse-media",
+        "action"
+      ],
+      "visitorTasks": [
+        "Evaluate a practice",
+        "Understand a process"
+      ],
+      "organizingIdea": "An editorial opening explains the reading practice, then pairs a feature diagram with a quiet publication index.",
+      "brief": {
+        "fictional": true,
+        "facts": {
+          "name": "Mara Vale",
+          "offer": "Independent information design",
+          "projects": [
+            {
+              "name": "Field Notes",
+              "type": "Wayfinding study",
+              "year": "2025"
+            },
+            {
+              "name": "Open Table",
+              "type": "Publication study",
+              "year": "2026"
+            }
+          ],
+          "method": [
+            "Collect the material",
+            "Find the hierarchy",
+            "Test the reading"
+          ],
+          "contact": "mara@example.test",
+          "media": [
+            "Original SVG reading diagram"
+          ]
+        },
+        "factsHash": "9545037fbd8c521a1bb28851165d50edb2cb39a42ddf48cf98dfa73d959bdf57",
+        "mediaHash": "67f1f059df254741da210de09c6b30d8a5073023a40c56d786e33b358a25af7f"
+      },
+      "provenance": {
+        "content": "Original fictional teaching content authored for Vitris; never customer facts",
+        "media": "Original authored SVG; no external assets or fonts",
+        "rights": "Original Vitris teaching source; customer reuse requires adapting facts"
+      },
+      "storyboard": {
+        "homepage": [
+          "A place forclear reading.",
+          "The words come first.",
+          "Open Table"
+        ],
+        "interior": [
+          "Field Notes",
+          "Collect the material",
+          "Find the hierarchy",
+          "Test the reading",
+          "Open Table"
+        ],
+        "mobile": "Content order is preserved; side navigation and supporting columns reflow into the document. No essential hover interactions."
+      },
+      "designDecisions": "An editorial opening explains the reading practice, then pairs a feature diagram with a quiet publication index.",
+      "lessonIds": [
+        "cmp-type-roles",
+        "cmp-page-rhythm",
+        "cmp-semantic-grouping"
+      ],
+      "referenceIds": [
+        "pangram-pangram",
+        "gov-uk"
+      ],
+      "sourcePath": "mara-reading-room",
+      "homepage": "/",
+      "interior": "/detail",
+      "status": "compiled, automated checks passed, assistant visual review recorded; human preference pending",
+      "humanPreference": null,
+      "renderEvidence": [
+        {
+          "route": "/",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-05T15:53:22.106Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/mara-reading-room-home-1440.png",
+            "sha256": "10becbd3cd86191681ab7b339d21f2294a5896c8d4f9b33f8e0b230e6335360e"
+          },
+          "compiledHash": "d6e61b142238664635d0fb9abc3330a9b24a7fa97ad957cda98f73c2d6a7397b",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/detail",
+                "/detail",
+                "/detail#reading"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            }
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T16:08:16.891949+00:00",
+            "scope": "desktop/mobile full-page contact-sheet inspection; text hierarchy, reading order, overflow and matched-pair distinction",
+            "assessment": "Clear organization and readable narrow layout; no visual collision observed. Functional checks are automated, human preference is pending."
+          }
+        },
+        {
+          "route": "/",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-05T15:53:23.136Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/mara-reading-room-home-390.png",
+            "sha256": "628943d761b44a0ff9ea6f67438644088dd4aea25ab3f94d682253dd5b282374"
+          },
+          "compiledHash": "d6e61b142238664635d0fb9abc3330a9b24a7fa97ad957cda98f73c2d6a7397b",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/detail",
+                "/detail",
+                "/detail#reading"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            }
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T16:08:16.891949+00:00",
+            "scope": "desktop/mobile full-page contact-sheet inspection; text hierarchy, reading order, overflow and matched-pair distinction",
+            "assessment": "Clear organization and readable narrow layout; no visual collision observed. Functional checks are automated, human preference is pending."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-05T15:53:24.219Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/mara-reading-room-interior-1440.png",
+            "sha256": "4c0e6792a4ea164e2508bd5f9effb2c6f5beb296ed5c204f6dfd5fbe4205e0f3"
+          },
+          "compiledHash": "334230bc6e564fccb2ead7487b90160cc85e9c906bb42c4b2b4726ad01fdb3df",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            }
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T16:08:16.891949+00:00",
+            "scope": "desktop/mobile full-page contact-sheet inspection; text hierarchy, reading order, overflow and matched-pair distinction",
+            "assessment": "Clear organization and readable narrow layout; no visual collision observed. Functional checks are automated, human preference is pending."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-05T15:53:25.285Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/mara-reading-room-interior-390.png",
+            "sha256": "3ba40e8377097ea807292773529bc01ef6415f04367eaec62c10fbf711739ae7"
+          },
+          "compiledHash": "334230bc6e564fccb2ead7487b90160cc85e9c906bb42c4b2b4726ad01fdb3df",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            }
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T16:08:16.891949+00:00",
+            "scope": "desktop/mobile full-page contact-sheet inspection; text hierarchy, reading order, overflow and matched-pair distinction",
+            "assessment": "Clear organization and readable narrow layout; no visual collision observed. Functional checks are automated, human preference is pending."
+          }
+        }
+      ],
+      "selectionProfile": {
+        "tasks": [
+          "inspect-work",
+          "read-deeply",
+          "book-inquiry"
+        ],
+        "contexts": [
+          "creative-practice"
+        ],
+        "contributions": [
+          "reading-room",
+          "chapter-navigation"
+        ],
+        "expressions": [
+          "editorial"
+        ],
+        "interpretation": {
+          "assetMinimum": "none",
+          "scope": "Typographic work index and reading relationships can be adapted without borrowing the fictional SVG diagram; invent no client work.",
+          "missingDependencies": [
+            "Original study diagram is teaching material, not customer proof"
+          ]
+        }
+      },
+      "exampleScope": "focused-structural-lesson",
+      "releaseNotes": "Preserved original lesson; not a comprehensive finished-site exemplar or human-approved taste label.",
+      "comparisonStatus": "v2 paired facts/media remain controlled there; v3 development is not a controlled same-facts pair"
+    },
+    {
+      "id": "fen-repair",
+      "revision": 1,
+      "title": "Fen Repair / documentary record",
+      "primaryFamily": "documentary",
+      "assetMinimum": "multiple-images",
+      "fitSignals": [
+        "real-copy",
+        "type-content",
+        "action",
+        "approved-image",
+        "multiple-images",
+        "proof",
+        "professional-service",
+        "process"
+      ],
+      "visitorTasks": [
+        "inspect-work",
+        "understand-process"
+      ],
+      "organizingIdea": "Lead with related work and finished-area views; the interior turns them into a documented process.",
+      "brief": {
+        "fictional": true,
+        "facts": {
+          "name": "Fen Repair",
+          "offer": "Slate roof repairs for small buildings",
+          "project": "A teaching repair sequence",
+          "scope": [
+            "Inspect the damaged area",
+            "Agree the repair scope",
+            "Replace affected slates",
+            "Document the completed area"
+          ],
+          "contact": "fen@example.test",
+          "restriction": "Synthetic teaching images; no actual customer work or performance claims"
+        },
+        "factsHash": "95b5b04b8b53b73b50d3047c653fbc92ce40955aeab4ad6b5a345c0e4095c23f",
+        "mediaHash": "7ecd23d3447a10474807e823bfd0a329f017f8ca7fe14e8d6a0e5fe3cb76bf7f"
+      },
+      "provenance": {
+        "content": "Original fictional Vitris teaching brief and copy; no customer claims.",
+        "media": "Existing original Vitris synthetic teaching roof images, with source provenance copied; never actual customer proof.",
+        "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+      },
+      "storyboard": {
+        "homepage": [
+          "work/finished relationship",
+          "repair scope",
+          "conversation preparation"
+        ],
+        "interior": [
+          "scope title",
+          "inspection/photo/process",
+          "completed area",
+          "handover"
+        ],
+        "mobile": "At narrow width, the repair-stage sequence stays intact while the photo mosaic and offset handover become document flow."
+      },
+      "designDecisions": "Lead with related work and finished-area views; the interior turns them into a documented process.",
+      "lessonIds": [
+        "cmp-image-sequence",
+        "cmp-process",
+        "cmp-proof-adjacency"
+      ],
+      "referenceIds": [
+        "studio-gerosa",
+        "baggu"
+      ],
+      "sourcePath": "fen-repair",
+      "homepage": "/",
+      "interior": "/detail",
+      "status": "compiled and automated/assistant visually reviewed; human preference pending",
+      "humanPreference": null,
+      "renderEvidence": [
+        {
+          "route": "/",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-05T16:48:35.472Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/fen-repair-home-1440.png",
+            "sha256": "9ae1f1bb988411134b0a590711b538b3c590853c8d9bb6c5ee69f512e0d1875f"
+          },
+          "compiledHash": "508d55108be5e945500bf7fb885dada6b9f948d11bbf8889b2d5521d14f3d656",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/detail",
+                "/detail"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            },
+            "disclosures": []
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+            "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+            "assessment": "Full-page desktop/mobile contact sheets inspected. Work/finished photo relationship and sequential mobile process are readable. Repaired mobile header spacing re-inspected at full resolution. Synthetic images remain explicitly teaching-only."
+          }
+        },
+        {
+          "route": "/",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-05T16:48:36.565Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/fen-repair-home-390.png",
+            "sha256": "a180d9ec0eb67df2d1d5f9d852753f6d50f8dd6ebfda80aa41376ac15adbcabb"
+          },
+          "compiledHash": "508d55108be5e945500bf7fb885dada6b9f948d11bbf8889b2d5521d14f3d656",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/detail",
+                "/detail"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            },
+            "disclosures": []
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+            "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+            "assessment": "Full-page desktop/mobile contact sheets inspected. Work/finished photo relationship and sequential mobile process are readable. Repaired mobile header spacing re-inspected at full resolution. Synthetic images remain explicitly teaching-only."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-05T16:48:37.916Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/fen-repair-interior-1440.png",
+            "sha256": "ae39e22c046db9eebf5ec67172777ba64aaefd26d002ca88bd256dc3ade86e31"
+          },
+          "compiledHash": "9101751ea03be6de05b1fb555d0f9fc50af0deeb9fd7d263767889dfe5b5667f",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            },
+            "disclosures": []
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+            "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+            "assessment": "Full-page desktop/mobile contact sheets inspected. Work/finished photo relationship and sequential mobile process are readable. Repaired mobile header spacing re-inspected at full resolution. Synthetic images remain explicitly teaching-only."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-05T16:48:39.017Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/fen-repair-interior-390.png",
+            "sha256": "c397fde8afb5e009104f3f324c7111454f5464ada9216c49d9947b52e50b7412"
+          },
+          "compiledHash": "9101751ea03be6de05b1fb555d0f9fc50af0deeb9fd7d263767889dfe5b5667f",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            },
+            "disclosures": []
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+            "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+            "assessment": "Full-page desktop/mobile contact sheets inspected. Work/finished photo relationship and sequential mobile process are readable. Repaired mobile header spacing re-inspected at full resolution. Synthetic images remain explicitly teaching-only."
+          }
+        }
+      ],
+      "selectionProfile": {
+        "tasks": [
+          "inspect-work",
+          "understand-process",
+          "evaluate-service",
+          "book-inquiry"
+        ],
+        "contexts": [
+          "project-service"
+        ],
+        "contributions": [
+          "documentary-sequence",
+          "work-caption"
+        ],
+        "expressions": [
+          "documentary"
+        ]
+      },
+      "exampleScope": "focused-structural-lesson",
+      "releaseNotes": "Preserved original lesson; not a comprehensive finished-site exemplar or human-approved taste label.",
+      "comparisonStatus": "not a controlled same-facts comparison"
+    },
+    {
+      "id": "rivet-components",
+      "revision": 1,
+      "title": "Rivet / specification system",
+      "primaryFamily": "industrial",
+      "assetMinimum": "none",
+      "fitSignals": [
+        "real-copy",
+        "type-content",
+        "action",
+        "sparse-media",
+        "collection",
+        "comparison"
+      ],
+      "visitorTasks": [
+        "compare-options",
+        "inspect-specification"
+      ],
+      "organizingIdea": "Make the dimensioned object and its specification the opening; explanations follow the selection task.",
+      "brief": {
+        "fictional": true,
+        "facts": {
+          "name": "Rivet Components",
+          "offer": "Invented workshop support brackets",
+          "series": "R-120",
+          "material": "Aluminium",
+          "dimensions": "120 × 60 mm",
+          "mounting": "Two 6 mm fixing holes",
+          "restriction": "Teaching specification, not a manufactured or certified product",
+          "contact": "rivet@example.test"
+        },
+        "factsHash": "73efccc366d34b7a78dcdd4076321f2a39e7687d1bdcb85c760f4f0aa24105f0",
+        "mediaHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "provenance": {
+        "content": "Original fictional Vitris teaching brief and copy; no customer claims.",
+        "media": "Original inline SVG diagrams and/or text; no external imagery or type assets.",
+        "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+      },
+      "storyboard": {
+        "homepage": [
+          "series identification",
+          "dimension diagram",
+          "facts table",
+          "selection explanation"
+        ],
+        "interior": [
+          "spec identity",
+          "drawing/ledger",
+          "application boundary",
+          "disclosure/inquiry"
+        ],
+        "mobile": "The drawing scales within its frame; specification stays a real table. Side identification stacks before drawing and application."
+      },
+      "designDecisions": "Make the dimensioned object and its specification the opening; explanations follow the selection task.",
+      "lessonIds": [
+        "cmp-comparison",
+        "cmp-interactive-explanation",
+        "cmp-evidence-form"
+      ],
+      "referenceIds": [],
+      "sourcePath": "rivet-components",
+      "homepage": "/",
+      "interior": "/detail",
+      "status": "compiled and automated/assistant visually reviewed; human preference pending",
+      "humanPreference": null,
+      "renderEvidence": [
+        {
+          "route": "/",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-05T16:48:40.156Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/rivet-components-home-1440.png",
+            "sha256": "2cf539d22d7e078ed27542da783c00a854fb35bd076f967513de0df1cbf058fc"
+          },
+          "compiledHash": "dec99b25b09f62a453a04a1209d4b967f9aebf5c1f0e7797a211d6cb3d7f92e9",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/detail",
+                "/detail"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            },
+            "disclosures": []
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+            "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+            "assessment": "Desktop/mobile home and interior inspected. Dimension diagram and specification ledger preserve order. Repaired second fixing hole re-inspected on desktop home and mobile interior. Diagram is fictional and supplies no manufacturing assurance."
+          }
+        },
+        {
+          "route": "/",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-05T16:48:41.185Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/rivet-components-home-390.png",
+            "sha256": "24d2ac431d17ccda5a4fd46357bd7c45537e8a4cb35cf21f629006fed8909871"
+          },
+          "compiledHash": "dec99b25b09f62a453a04a1209d4b967f9aebf5c1f0e7797a211d6cb3d7f92e9",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/detail",
+                "/detail"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            },
+            "disclosures": []
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+            "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+            "assessment": "Desktop/mobile home and interior inspected. Dimension diagram and specification ledger preserve order. Repaired second fixing hole re-inspected on desktop home and mobile interior. Diagram is fictional and supplies no manufacturing assurance."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-05T16:48:42.307Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/rivet-components-interior-1440.png",
+            "sha256": "244c0e17329969255367915592219ec220e6983d36467645e7f488d20e17a779"
+          },
+          "compiledHash": "e47ceb13b9ea81fb1ec044fcf641761912addeee09ab1566b430a882f2f15fc3",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Ask about the specification →",
+              "outline": "solid",
+              "width": "3px"
+            },
+            "disclosures": [
+              {
+                "label": "What this teaching specification does not establish",
+                "keyboardToggle": true,
+                "focusVisible": true
+              }
+            ]
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+            "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+            "assessment": "Desktop/mobile home and interior inspected. Dimension diagram and specification ledger preserve order. Repaired second fixing hole re-inspected on desktop home and mobile interior. Diagram is fictional and supplies no manufacturing assurance."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-05T16:48:43.401Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/rivet-components-interior-390.png",
+            "sha256": "7f56af78d0673218eebcb823d170ad66d375f14d8ef31739c7394e0336997141"
+          },
+          "compiledHash": "e47ceb13b9ea81fb1ec044fcf641761912addeee09ab1566b430a882f2f15fc3",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Ask about the specification →",
+              "outline": "solid",
+              "width": "3px"
+            },
+            "disclosures": [
+              {
+                "label": "What this teaching specification does not establish",
+                "keyboardToggle": true,
+                "focusVisible": true
+              }
+            ]
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+            "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+            "assessment": "Desktop/mobile home and interior inspected. Dimension diagram and specification ledger preserve order. Repaired second fixing hole re-inspected on desktop home and mobile interior. Diagram is fictional and supplies no manufacturing assurance."
+          }
+        }
+      ],
+      "selectionProfile": {
+        "tasks": [
+          "explore-product",
+          "compare-options"
+        ],
+        "contexts": [
+          "technical-product"
+        ],
+        "contributions": [
+          "specification-ledger",
+          "dimensioned-object"
+        ],
+        "expressions": [
+          "industrial"
+        ]
+      },
+      "exampleScope": "focused-structural-lesson",
+      "releaseNotes": "Preserved original lesson; not a comprehensive finished-site exemplar or human-approved taste label.",
+      "comparisonStatus": "not a controlled same-facts comparison"
+    },
+    {
+      "id": "relay-workflow",
+      "revision": 1,
+      "title": "Relay / workflow demonstration",
+      "primaryFamily": "technical",
+      "assetMinimum": "none",
+      "fitSignals": [
+        "real-copy",
+        "type-content",
+        "action",
+        "sparse-media",
+        "product-ui",
+        "process"
+      ],
+      "visitorTasks": [
+        "explore-product",
+        "understand-process"
+      ],
+      "organizingIdea": "Lead with a concrete workflow surface, then explain its state transitions; the interior is a guided demonstration.",
+      "brief": {
+        "fictional": true,
+        "facts": {
+          "name": "Relay",
+          "offer": "Fictional studio handover workflow",
+          "records": [
+            {
+              "task": "Outline",
+              "state": "Collected"
+            },
+            {
+              "task": "Review",
+              "state": "Ready"
+            },
+            {
+              "task": "Handover",
+              "state": "Next"
+            }
+          ],
+          "process": [
+            "Collect",
+            "Review",
+            "Handover"
+          ],
+          "restriction": "Static illustrative interface, no connected account or live project",
+          "contact": "relay@example.test"
+        },
+        "factsHash": "a2f658d0d6df23ba09277f5686471e2f98587c7178ee1ff30c924dbc2eb3353b",
+        "mediaHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "provenance": {
+        "content": "Original fictional Vitris teaching brief and copy; no customer claims.",
+        "media": "Original inline SVG diagrams and/or text; no external imagery or type assets.",
+        "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+      },
+      "storyboard": {
+        "homepage": [
+          "product proposition",
+          "illustrative workspace",
+          "state explanation",
+          "boundary"
+        ],
+        "interior": [
+          "guided disclosures",
+          "workspace recap",
+          "application notes"
+        ],
+        "mobile": "The workspace sidebar becomes a context strip above the table; guided state explanations stack. Native disclosure controls remain keyboard usable."
+      },
+      "designDecisions": "Lead with a concrete workflow surface, then explain its state transitions; the interior is a guided demonstration.",
+      "lessonIds": [
+        "cmp-evidence-form",
+        "cmp-interactive-explanation",
+        "cmp-process"
+      ],
+      "referenceIds": [
+        "linear"
+      ],
+      "sourcePath": "relay-workflow",
+      "homepage": "/",
+      "interior": "/detail",
+      "status": "compiled and automated/assistant visually reviewed; human preference pending",
+      "humanPreference": null,
+      "renderEvidence": [
+        {
+          "route": "/",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-05T16:48:44.572Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/relay-workflow-home-1440.png",
+            "sha256": "9f07b4e37cb8a0a73093bbe921859efc1b3248eac168d0f96e8b346bcd037e23"
+          },
+          "compiledHash": "0c30ccd3eebe5bba826196c012fc59f8b4adf9e1054288c206231109f5cea80a",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/detail",
+                "/detail",
+                "/detail"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            },
+            "disclosures": []
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+            "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+            "assessment": "Desktop/mobile home and interior contact sheets inspected. Workspace context precedes state table on narrow layouts; disclosures precede recap. Static demonstration boundary visible. Native disclosure keyboard activation and visible focus passed automated checks."
+          }
+        },
+        {
+          "route": "/",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-05T16:48:45.618Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/relay-workflow-home-390.png",
+            "sha256": "b1be668d42924fb73aba9d75a4eb98554147603533d66e539f627192188a30f4"
+          },
+          "compiledHash": "0c30ccd3eebe5bba826196c012fc59f8b4adf9e1054288c206231109f5cea80a",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/detail",
+                "/detail",
+                "/detail"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            },
+            "disclosures": []
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+            "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+            "assessment": "Desktop/mobile home and interior contact sheets inspected. Workspace context precedes state table on narrow layouts; disclosures precede recap. Static demonstration boundary visible. Native disclosure keyboard activation and visible focus passed automated checks."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-05T16:48:46.844Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/relay-workflow-interior-1440.png",
+            "sha256": "e4369f2b8ae94366e4227c44b25a5c16c5f66ccaa2d684af58c3c31a9b286f45"
+          },
+          "compiledHash": "ec6e79e93d0170efcb2fa375d1d31d3c3a4b733cb1791bd866dc70eb66251a4f",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/detail",
+                "/detail"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Inspect this workflow →",
+              "outline": "solid",
+              "width": "3px"
+            },
+            "disclosures": [
+              {
+                "label": "01 / Collect",
+                "keyboardToggle": true,
+                "focusVisible": true
+              },
+              {
+                "label": "02 / Review",
+                "keyboardToggle": true,
+                "focusVisible": true
+              },
+              {
+                "label": "03 / Handover",
+                "keyboardToggle": true,
+                "focusVisible": true
+              }
+            ]
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+            "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+            "assessment": "Desktop/mobile home and interior contact sheets inspected. Workspace context precedes state table on narrow layouts; disclosures precede recap. Static demonstration boundary visible. Native disclosure keyboard activation and visible focus passed automated checks."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-05T16:48:48.002Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/relay-workflow-interior-390.png",
+            "sha256": "3d69422afda4d559f60353dff28be99b31e3d83862cf37847a8cd72d27a2eb6e"
+          },
+          "compiledHash": "ec6e79e93d0170efcb2fa375d1d31d3c3a4b733cb1791bd866dc70eb66251a4f",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/detail",
+                "/detail"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Inspect this workflow →",
+              "outline": "solid",
+              "width": "3px"
+            },
+            "disclosures": [
+              {
+                "label": "01 / Collect",
+                "keyboardToggle": true,
+                "focusVisible": true
+              },
+              {
+                "label": "02 / Review",
+                "keyboardToggle": true,
+                "focusVisible": true
+              },
+              {
+                "label": "03 / Handover",
+                "keyboardToggle": true,
+                "focusVisible": true
+              }
+            ]
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+            "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+            "assessment": "Desktop/mobile home and interior contact sheets inspected. Workspace context precedes state table on narrow layouts; disclosures precede recap. Static demonstration boundary visible. Native disclosure keyboard activation and visible focus passed automated checks."
+          }
+        }
+      ],
+      "selectionProfile": {
+        "tasks": [
+          "explore-product",
+          "understand-process"
+        ],
+        "contexts": [
+          "technical-product"
+        ],
+        "contributions": [
+          "workflow-demo",
+          "state-transition"
+        ],
+        "expressions": [
+          "technical"
+        ]
+      },
+      "exampleScope": "focused-structural-lesson",
+      "releaseNotes": "Preserved original lesson; not a comprehensive finished-site exemplar or human-approved taste label.",
+      "comparisonStatus": "not a controlled same-facts comparison"
+    },
+    {
+      "id": "margin-journal",
+      "revision": 1,
+      "title": "Margin / annotated reading",
+      "primaryFamily": "editorial",
+      "assetMinimum": "none",
+      "fitSignals": [
+        "real-copy",
+        "type-content",
+        "action",
+        "sparse-media",
+        "collection"
+      ],
+      "visitorTasks": [
+        "read-deeply",
+        "find-article"
+      ],
+      "organizingIdea": "An issue contents list introduces the publication; interior marginal notes support a sustained reading column.",
+      "brief": {
+        "fictional": true,
+        "facts": {
+          "name": "Margin Journal",
+          "issue": "01",
+          "theme": "Reading the ordinary",
+          "essays": [
+            "A room for a paragraph",
+            "What a caption holds",
+            "The pause between pages"
+          ],
+          "restriction": "Fictional publication with original teaching essays; no attributed external author",
+          "contact": "margin@example.test"
+        },
+        "factsHash": "8b7b043dc169db75778163a813e38d726dc43dc7a0f3edcdd70d8703893081f4",
+        "mediaHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "provenance": {
+        "content": "Original fictional Vitris teaching brief and copy; no customer claims.",
+        "media": "Original inline SVG diagrams and/or text; no external imagery or type assets.",
+        "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+      },
+      "storyboard": {
+        "homepage": [
+          "issue identity",
+          "editor note",
+          "contents",
+          "colophon"
+        ],
+        "interior": [
+          "essay title",
+          "margin note and reading column",
+          "caption/reflection sections",
+          "contents return"
+        ],
+        "mobile": "Issue columns become editor introduction then contents; the margin note precedes the reading passage. Article measure remains readable without decorative imagery."
+      },
+      "designDecisions": "An issue contents list introduces the publication; interior marginal notes support a sustained reading column.",
+      "lessonIds": [
+        "cmp-type-roles",
+        "cmp-text-shape",
+        "cmp-page-rhythm",
+        "cmp-semantic-grouping"
+      ],
+      "referenceIds": [
+        "avery-review",
+        "good-and-common"
+      ],
+      "sourcePath": "margin-journal",
+      "homepage": "/",
+      "interior": "/detail",
+      "status": "compiled and automated/assistant visually reviewed; human preference pending",
+      "humanPreference": null,
+      "renderEvidence": [
+        {
+          "route": "/",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-05T16:48:49.124Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/margin-journal-home-1440.png",
+            "sha256": "d67228352002fb6f38830e9cd2652b48de11088593a095835f08b8f404861683"
+          },
+          "compiledHash": "945a0c92cef7279b20240e2695e75ee61a100a85b990a448bd4315fdbb159054",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/detail",
+                "/detail",
+                "/detail#caption",
+                "/detail#pause"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            },
+            "disclosures": []
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+            "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+            "assessment": "Desktop/mobile home and interior contact sheets inspected. Issue contents replace promotional sections; marginal note precedes narrow reading column. Title/body measures, section anchors and return-to-contents are clear."
+          }
+        },
+        {
+          "route": "/",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-05T16:48:50.137Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/margin-journal-home-390.png",
+            "sha256": "aa4e38f35f14cf3aa1ec143614d8ee7d47db20aafa9fc0bf1664891464500d9e"
+          },
+          "compiledHash": "945a0c92cef7279b20240e2695e75ee61a100a85b990a448bd4315fdbb159054",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/detail",
+                "/detail",
+                "/detail#caption",
+                "/detail#pause"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            },
+            "disclosures": []
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+            "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+            "assessment": "Desktop/mobile home and interior contact sheets inspected. Issue contents replace promotional sections; marginal note precedes narrow reading column. Title/body measures, section anchors and return-to-contents are clear."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-05T16:48:51.231Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/margin-journal-interior-1440.png",
+            "sha256": "72d05587c1aa8f3f102aac723c6e040c314fa8ebd31446063d7331aa5a8bd44e"
+          },
+          "compiledHash": "47f29c68faf9a4d6acb58e75aed07f350e83f627f62dbc443c26d8f4a86b6072",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/",
+                "/"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            },
+            "disclosures": []
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+            "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+            "assessment": "Desktop/mobile home and interior contact sheets inspected. Issue contents replace promotional sections; marginal note precedes narrow reading column. Title/body measures, section anchors and return-to-contents are clear."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-05T16:48:52.370Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/margin-journal-interior-390.png",
+            "sha256": "3a82447bbc918d2473de69bdc9a1085402322ffbd285ea2b2a4b76d0557e7934"
+          },
+          "compiledHash": "47f29c68faf9a4d6acb58e75aed07f350e83f627f62dbc443c26d8f4a86b6072",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/",
+                "/"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            },
+            "disclosures": []
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+            "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+            "assessment": "Desktop/mobile home and interior contact sheets inspected. Issue contents replace promotional sections; marginal note precedes narrow reading column. Title/body measures, section anchors and return-to-contents are clear."
+          }
+        }
+      ],
+      "selectionProfile": {
+        "tasks": [
+          "read-deeply"
+        ],
+        "contexts": [
+          "creative-practice"
+        ],
+        "contributions": [
+          "contents-index",
+          "marginal-reading"
+        ],
+        "expressions": [
+          "editorial"
+        ]
+      },
+      "exampleScope": "focused-structural-lesson",
+      "releaseNotes": "Preserved original lesson; not a comprehensive finished-site exemplar or human-approved taste label.",
+      "comparisonStatus": "not a controlled same-facts comparison"
+    },
+    {
+      "id": "hearth-plane",
+      "revision": 2,
+      "title": "Hearth Plane / project threshold",
+      "primaryFamily": "swiss",
+      "assetMinimum": "multiple-images",
+      "fitSignals": [
+        "professional-service",
+        "inspect-work",
+        "process",
+        "type-content",
+        "real-copy",
+        "action",
+        "sparse-media"
+      ],
+      "visitorTasks": [
+        "inspect-work",
+        "evaluate-service"
+      ],
+      "organizingIdea": "A persistent practice margin gives most of the opening to a project elevation; the interior develops constraints before design decisions.",
+      "brief": {
+        "fictional": true,
+        "facts": {
+          "name": "Hearth Plane",
+          "offer": "Small-building architecture practice",
+          "projects": [
+            "Courtyard study",
+            "Workshop canopy",
+            "Reading annex"
+          ],
+          "projectScope": "A shaded court and a shared threshold",
+          "projectStatus": "Fictional concept study",
+          "contact": "hearth@example.test",
+          "development": "Expanded original fictional explanatory content and interaction detail; no measured client outcome"
+        },
+        "factsHash": "cd240bb009f382346d414780b76ad32219e01898dd8d1753885c68f37f828ed2",
+        "mediaHash": "d02a3726d2fbbe768274d81e3892c43485e14048e47ee4b6a4dd4d43a8454ac6"
+      },
+      "provenance": {
+        "content": "Original fictional Vitris teaching brief and authored copy; operational details, dimensions and offers are invented and must never populate customer inventories.",
+        "media": "Original generated fictional raster concepts with tool/prompt/source lineage; editable text is separate.",
+        "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+      },
+      "storyboard": {
+        "homepage": [
+          "practice margin",
+          "courtyard illustration",
+          "project explanation",
+          "other studies",
+          "conversation preparation"
+        ],
+        "interior": [
+          "project metadata",
+          "elevation",
+          "decisions",
+          "return to studies"
+        ],
+        "mobile": "Original courtyard and coherent threshold detail develop a project sequence; persistent margin, project index, programme/material/status and three interior chapters make the practice idea visible. Mobile margin becomes task navigation before project."
+      },
+      "designDecisions": "A persistent practice margin gives most of the opening to a project elevation; the interior develops constraints before design decisions.",
+      "lessonIds": [
+        "cmp-collection-structure",
+        "cmp-image-sequence",
+        "cmp-responsive-recomposition"
+      ],
+      "referenceIds": [
+        "big",
+        "scullion"
+      ],
+      "sourcePath": "hearth-plane",
+      "homepage": "/",
+      "interior": "/detail",
+      "status": "production compiled; assistant visually inspected; human preference unlabeled",
+      "humanPreference": null,
+      "renderEvidence": [
+        {
+          "route": "/",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-06T20:51:44.489Z",
+          "browser": "153.0.8010.12",
+          "compiledHash": "99d26c5f4cf53af9b86ee5a898713931b7a03282cd501c425616d2fc338319bd",
+          "preview": {
+            "path": "previews/hearth-plane-home-1440.png",
+            "sha256": "b7eb698d86751f506cec621663df2435c67d6fdec61f4f782cb54967672cf002"
+          },
+          "fullPreview": {
+            "path": "previews/full/hearth-plane-home-1440.png",
+            "sha256": "254efe7313ba5aa1b8f1b4fa2d3ab1dcff108bec3c0e56ad3448211e4514e30b"
+          },
+          "visualReview": {
+            "assessor": "agent",
+            "reviewedAt": "2026-10-06T21:00:13.933Z",
+            "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original courtyard and coherent threshold detail develop a project sequence; persistent margin, project index, programme/material/status and three interior chapters make the practice idea visible. Mobile margin becomes task navigation before project. Remaining: Generated concept architecture is not completed work. Other indexed studies are scope summaries, not separate project routes."
+          }
+        },
+        {
+          "route": "/",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-06T20:51:45.619Z",
+          "browser": "153.0.8010.12",
+          "compiledHash": "99d26c5f4cf53af9b86ee5a898713931b7a03282cd501c425616d2fc338319bd",
+          "preview": {
+            "path": "previews/hearth-plane-home-390.png",
+            "sha256": "b779aaad21e394f86b243b106ce172c847b187de1276066dacde0777d8ba2b55"
+          },
+          "fullPreview": {
+            "path": "previews/full/hearth-plane-home-390.png",
+            "sha256": "d5d1033f2a25be86720a1dfd21bb606566af9984c2ac2ea7f3345296ae708648"
+          },
+          "visualReview": {
+            "assessor": "agent",
+            "reviewedAt": "2026-10-06T21:00:13.933Z",
+            "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original courtyard and coherent threshold detail develop a project sequence; persistent margin, project index, programme/material/status and three interior chapters make the practice idea visible. Mobile margin becomes task navigation before project. Remaining: Generated concept architecture is not completed work. Other indexed studies are scope summaries, not separate project routes."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-06T20:51:47.245Z",
+          "browser": "153.0.8010.12",
+          "compiledHash": "7fb623ec46b8a537c495f323ae27d42bd2fd9c0f4de09b12e8d060016fa26fc3",
+          "preview": {
+            "path": "previews/hearth-plane-interior-1440.png",
+            "sha256": "77dd4703500b40aeb9277f19e9b97aa09ee6794f157586f8980ee014f21c38f6"
+          },
+          "fullPreview": {
+            "path": "previews/full/hearth-plane-interior-1440.png",
+            "sha256": "2469874ea90256f8a9d70180338056f4527e104720e9cffdbadefb16d552a81c"
+          },
+          "visualReview": {
+            "assessor": "agent",
+            "reviewedAt": "2026-10-06T21:00:13.933Z",
+            "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original courtyard and coherent threshold detail develop a project sequence; persistent margin, project index, programme/material/status and three interior chapters make the practice idea visible. Mobile margin becomes task navigation before project. Remaining: Generated concept architecture is not completed work. Other indexed studies are scope summaries, not separate project routes."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-06T20:51:48.336Z",
+          "browser": "153.0.8010.12",
+          "compiledHash": "7fb623ec46b8a537c495f323ae27d42bd2fd9c0f4de09b12e8d060016fa26fc3",
+          "preview": {
+            "path": "previews/hearth-plane-interior-390.png",
+            "sha256": "3c0bcaa4a8eb28e73c469d7802adba8f3fbfdb899558c0c2b45ae95b9ce3ddc4"
+          },
+          "fullPreview": {
+            "path": "previews/full/hearth-plane-interior-390.png",
+            "sha256": "d4407202289a6bd49ebd915dba5accfea9d7e8794a5114b9b3d85feeb1c73746"
+          },
+          "visualReview": {
+            "assessor": "agent",
+            "reviewedAt": "2026-10-06T21:00:13.933Z",
+            "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original courtyard and coherent threshold detail develop a project sequence; persistent margin, project index, programme/material/status and three interior chapters make the practice idea visible. Mobile margin becomes task navigation before project. Remaining: Generated concept architecture is not completed work. Other indexed studies are scope summaries, not separate project routes."
+          }
+        }
+      ],
+      "selectionProfile": {
+        "tasks": [
+          "inspect-work",
+          "understand-process",
+          "book-inquiry"
+        ],
+        "contexts": [
+          "project-service"
+        ],
+        "contributions": [
+          "practice-margin",
+          "project-sequence"
+        ],
+        "expressions": [
+          "swiss"
+        ]
+      },
+      "exampleScope": "developed-homepage-interior-example",
+      "releaseNotes": "Original courtyard and coherent threshold detail develop a project sequence; persistent margin, project index, programme/material/status and three interior chapters make the practice idea visible. Mobile margin becomes task navigation before project. Limitations: Generated concept architecture is not completed work. Other indexed studies are scope summaries, not separate project routes.",
+      "comparisonStatus": "not a controlled same-facts comparison"
+    },
+    {
+      "id": "night-orchard",
+      "revision": 2,
+      "title": "Night Orchard / evening and visit",
+      "primaryFamily": "hospitality",
+      "assetMinimum": "none",
+      "fitSignals": [
+        "location",
+        "action",
+        "comparison",
+        "real-copy",
+        "type-content",
+        "sparse-media"
+      ],
+      "visitorTasks": [
+        "find-location",
+        "book-inquiry",
+        "compare-options"
+      ],
+      "organizingIdea": "A illustrated evening field carries identity and visit tasks; the interior becomes a legible menu sheet and practical access document.",
+      "brief": {
+        "fictional": true,
+        "facts": {
+          "name": "Night Orchard",
+          "offer": "Fictional garden supper room",
+          "address": "8 Lantern Walk, invented location",
+          "hours": "Thursday–Saturday, 18:00–22:00",
+          "menu": [
+            {
+              "dish": "Roast squash",
+              "description": "White beans, greens and herbs",
+              "price": "18 teaching units"
+            },
+            {
+              "dish": "Garden plate",
+              "description": "Seasonal leaves, grilled bread and house dressing",
+              "price": "14 teaching units"
+            },
+            {
+              "dish": "Pear pudding",
+              "description": "Warm pear and oat crumble",
+              "price": "8 teaching units"
+            }
+          ],
+          "access": "Step-free garden entrance in fictional brief; customer verification required",
+          "contact": "orchard@example.test",
+          "development": "Expanded original fictional explanatory content and interaction detail; no measured client outcome"
+        },
+        "factsHash": "8080e0fccb6f270cec082669107ff849c5d1c293a9da97f6e6a26fcc265d08bd",
+        "mediaHash": "fcd570a8f27800c22a6332e9ce6d984d4c573745ae7485134a195056bb35f08e"
+      },
+      "provenance": {
+        "content": "Original fictional Vitris teaching brief and authored copy; operational details, dimensions and offers are invented and must never populate customer inventories.",
+        "media": "Original generated fictional raster concepts with tool/prompt/source lineage; editable text is separate.",
+        "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+      },
+      "storyboard": {
+        "homepage": [
+          "evening scene and identity",
+          "invitation",
+          "visit strip"
+        ],
+        "interior": [
+          "menu title",
+          "dish/description/price sheet",
+          "access and hours",
+          "question before booking"
+        ],
+        "mobile": "Original gouache establishes a fictional evening garden, then menu preview and practical visit content; interior develops dishes, descriptions, teaching prices, access and native disclosures. Mobile actions remain in reading order."
+      },
+      "designDecisions": "A illustrated evening field carries identity and visit tasks; the interior becomes a legible menu sheet and practical access document.",
+      "lessonIds": [
+        "cmp-image-art-direction",
+        "cmp-contextual-action",
+        "cmp-narrative-continuity"
+      ],
+      "referenceIds": [
+        "bokman",
+        "big-mamma"
+      ],
+      "sourcePath": "night-orchard",
+      "homepage": "/",
+      "interior": "/detail",
+      "status": "production compiled; assistant visually inspected; human preference unlabeled",
+      "humanPreference": null,
+      "renderEvidence": [
+        {
+          "route": "/",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-06T20:51:49.699Z",
+          "browser": "153.0.8010.12",
+          "compiledHash": "048230c814a248544855c2619aa2bbe009903a99d81e575d0f837812e11b6484",
+          "preview": {
+            "path": "previews/night-orchard-home-1440.png",
+            "sha256": "a680563565a62db62e5db903c3b4f20a578862edd6001c3f668430eec4574b8d"
+          },
+          "fullPreview": {
+            "path": "previews/full/night-orchard-home-1440.png",
+            "sha256": "f20a35ebc96d0da1b8b073a7bcd6af5a24743c48df5438869c5804a28e6383e8"
+          },
+          "visualReview": {
+            "assessor": "agent",
+            "reviewedAt": "2026-10-06T21:00:13.933Z",
+            "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original gouache establishes a fictional evening garden, then menu preview and practical visit content; interior develops dishes, descriptions, teaching prices, access and native disclosures. Mobile actions remain in reading order. Remaining: Invented address/hours/prices and illustration are teaching only. No booking transaction, allergen certification or operational restaurant claim."
+          }
+        },
+        {
+          "route": "/",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-06T20:51:50.773Z",
+          "browser": "153.0.8010.12",
+          "compiledHash": "048230c814a248544855c2619aa2bbe009903a99d81e575d0f837812e11b6484",
+          "preview": {
+            "path": "previews/night-orchard-home-390.png",
+            "sha256": "09d9e41bda4c8b6cc3cdbe4503a9d3e723517761706d4269e3818980bbf3eef5"
+          },
+          "fullPreview": {
+            "path": "previews/full/night-orchard-home-390.png",
+            "sha256": "412162f32e466d01672821abc26a499425e3c167a965ece0f8898019fb5e6415"
+          },
+          "visualReview": {
+            "assessor": "agent",
+            "reviewedAt": "2026-10-06T21:00:13.933Z",
+            "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original gouache establishes a fictional evening garden, then menu preview and practical visit content; interior develops dishes, descriptions, teaching prices, access and native disclosures. Mobile actions remain in reading order. Remaining: Invented address/hours/prices and illustration are teaching only. No booking transaction, allergen certification or operational restaurant claim."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-06T20:51:52.027Z",
+          "browser": "153.0.8010.12",
+          "compiledHash": "4ac13828de61b226863c69c1503149785db63efc2850d932061341972a9ee007",
+          "preview": {
+            "path": "previews/night-orchard-interior-1440.png",
+            "sha256": "127c1cc7a53e7088de35606be9f927bd52c3a4ca48c0701d71dded9b3dc76572"
+          },
+          "fullPreview": {
+            "path": "previews/full/night-orchard-interior-1440.png",
+            "sha256": "e6cfb4d6457c2a97225947adc31cc83c24940d256d8e8269c077674a6d764439"
+          },
+          "visualReview": {
+            "assessor": "agent",
+            "reviewedAt": "2026-10-06T21:00:13.933Z",
+            "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original gouache establishes a fictional evening garden, then menu preview and practical visit content; interior develops dishes, descriptions, teaching prices, access and native disclosures. Mobile actions remain in reading order. Remaining: Invented address/hours/prices and illustration are teaching only. No booking transaction, allergen certification or operational restaurant claim."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-06T20:51:53.143Z",
+          "browser": "153.0.8010.12",
+          "compiledHash": "4ac13828de61b226863c69c1503149785db63efc2850d932061341972a9ee007",
+          "preview": {
+            "path": "previews/night-orchard-interior-390.png",
+            "sha256": "196b416d5a7af4ab916de403bd37a65af6c8b39267ce7bc9760aed970d0bc854"
+          },
+          "fullPreview": {
+            "path": "previews/full/night-orchard-interior-390.png",
+            "sha256": "1b7f05aa803c21ea2091addfaf657f28309fc4606b23cc1a94d723718401744b"
+          },
+          "visualReview": {
+            "assessor": "agent",
+            "reviewedAt": "2026-10-06T21:00:13.933Z",
+            "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original gouache establishes a fictional evening garden, then menu preview and practical visit content; interior develops dishes, descriptions, teaching prices, access and native disclosures. Mobile actions remain in reading order. Remaining: Invented address/hours/prices and illustration are teaching only. No booking transaction, allergen certification or operational restaurant claim."
+          }
+        }
+      ],
+      "selectionProfile": {
+        "tasks": [
+          "find-location",
+          "book-inquiry",
+          "compare-options"
+        ],
+        "contexts": [
+          "venue"
+        ],
+        "contributions": [
+          "atmosphere-menu",
+          "visit-actions"
+        ],
+        "expressions": [
+          "hospitality"
+        ],
+        "interpretation": {
+          "assetMinimum": "none",
+          "scope": "Adapt the menu/visit hierarchy and editable atmosphere type without copying the teaching illustration.",
+          "missingDependencies": [
+            "The original generated illustration is fictional; actual venue atmosphere requires approved or clearly illustrative assets."
+          ]
+        }
+      },
+      "exampleScope": "developed-homepage-interior-example",
+      "releaseNotes": "Original gouache establishes a fictional evening garden, then menu preview and practical visit content; interior develops dishes, descriptions, teaching prices, access and native disclosures. Mobile actions remain in reading order. Limitations: Invented address/hours/prices and illustration are teaching only. No booking transaction, allergen certification or operational restaurant claim.",
+      "comparisonStatus": "not a controlled same-facts comparison"
+    },
+    {
+      "id": "loop-room",
+      "revision": 1,
+      "title": "Loop Room / exhibition and access",
+      "primaryFamily": "civic",
+      "assetMinimum": "none",
+      "fitSignals": [
+        "location",
+        "collection",
+        "type-content",
+        "real-copy",
+        "action",
+        "sparse-media"
+      ],
+      "visitorTasks": [
+        "find-location",
+        "read-deeply",
+        "evaluate-service"
+      ],
+      "organizingIdea": "A bold exhibition title shares space with an original spatial diagram; practical visitor facts form a compact directory, and the interior joins interpretation with access.",
+      "brief": {
+        "fictional": true,
+        "facts": {
+          "name": "Loop Room",
+          "offer": "Fictional community exhibition space",
+          "exhibition": "Lines Between Us",
+          "period": "Teaching season / no real calendar dates",
+          "visitHours": "Tuesday–Sunday, 11:00–17:00",
+          "admission": "Free in the fictional brief",
+          "address": "12 Common Lane, invented location",
+          "access": "Step-free entry and seating in fictional brief; verification required",
+          "contact": "loop@example.test"
+        },
+        "factsHash": "91b40d8fd6d27fe6705108b6f77376840d28ee631fc70dab92e610f7c24d9064",
+        "mediaHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "provenance": {
+        "content": "Original fictional Vitris teaching brief and authored copy; operational details, dimensions and offers are invented and must never populate customer inventories.",
+        "media": "Original inline SVG illustrations authored for this release; no external photographs, branding or type assets.",
+        "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+      },
+      "storyboard": {
+        "homepage": [
+          "venue and tasks",
+          "exhibition title/diagram",
+          "visit essentials",
+          "shared question"
+        ],
+        "interior": [
+          "exhibition meaning",
+          "looking prompts",
+          "visit and access",
+          "return"
+        ],
+        "mobile": "Exhibition title precedes its diagram. Visitor facts become labeled rows; interpretation and visit remain separate reading tasks."
+      },
+      "designDecisions": "A bold exhibition title shares space with an original spatial diagram; practical visitor facts form a compact directory, and the interior joins interpretation with access.",
+      "lessonIds": [
+        "cmp-navigation",
+        "cmp-contextual-action",
+        "cmp-narrative-continuity"
+      ],
+      "referenceIds": [
+        "gov-uk",
+        "ny-historical",
+        "magazzino"
+      ],
+      "sourcePath": "loop-room",
+      "homepage": "/",
+      "interior": "/detail",
+      "status": "compiled and automated/assistant visually reviewed; human preference pending",
+      "humanPreference": null,
+      "renderEvidence": [
+        {
+          "route": "/",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-05T18:23:43.351Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/loop-room-home-1440.png",
+            "sha256": "78584586862f9b860bd085fc776ef0b3208f7cae461efb6816d53dc138bb030d"
+          },
+          "compiledHash": "cda090631380e44aaf7c87e07da8d4c3106b579deaf52b791d590ba7496dfbc5",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/detail#visit",
+                "/detail",
+                "/detail",
+                "/detail#visit"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            },
+            "disclosures": []
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T18:25:17.945223+00:00",
+            "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+            "assessment": "All four full-page views visually inspected in contact sheet. Exhibition type/diagram and compact visit directory support different tasks; narrow diagram follows title and essentials become labeled rows. Interior looking prompts develop the exhibition and access follows. Native disclosure Enter toggling and focus passed verifier. No real institution or access assertions supplied."
+          }
+        },
+        {
+          "route": "/",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-05T18:23:44.391Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/loop-room-home-390.png",
+            "sha256": "2dd1af9e349a94621b7433624073545e0b10aad5f4927129b8c728c54a019ddb"
+          },
+          "compiledHash": "cda090631380e44aaf7c87e07da8d4c3106b579deaf52b791d590ba7496dfbc5",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/detail#visit",
+                "/detail",
+                "/detail",
+                "/detail#visit"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            },
+            "disclosures": []
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T18:25:17.945223+00:00",
+            "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+            "assessment": "All four full-page views visually inspected in contact sheet. Exhibition type/diagram and compact visit directory support different tasks; narrow diagram follows title and essentials become labeled rows. Interior looking prompts develop the exhibition and access follows. Native disclosure Enter toggling and focus passed verifier. No real institution or access assertions supplied."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-05T18:23:45.615Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/loop-room-interior-1440.png",
+            "sha256": "65707345efe629ba0be040db2ede0c60d61f32e6d01f5fe12737d6480a01f064"
+          },
+          "compiledHash": "997da6abc8943cb4e6fc0d5b77793ef058d3ce6c3848b1589daa3948fa613c79",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Ask a visit question →",
+              "outline": "solid",
+              "width": "3px"
+            },
+            "disclosures": [
+              {
+                "label": "Access information in this fictional brief",
+                "keyboardToggle": true,
+                "focusVisible": true
+              }
+            ]
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T18:25:17.945223+00:00",
+            "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+            "assessment": "All four full-page views visually inspected in contact sheet. Exhibition type/diagram and compact visit directory support different tasks; narrow diagram follows title and essentials become labeled rows. Interior looking prompts develop the exhibition and access follows. Native disclosure Enter toggling and focus passed verifier. No real institution or access assertions supplied."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-05T18:23:46.708Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/loop-room-interior-390.png",
+            "sha256": "23e69c04837f05d2008cd3cf83d316679f7de0ad7e5979d262181d86d08cb012"
+          },
+          "compiledHash": "997da6abc8943cb4e6fc0d5b77793ef058d3ce6c3848b1589daa3948fa613c79",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/"
+              ]
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Ask a visit question →",
+              "outline": "solid",
+              "width": "3px"
+            },
+            "disclosures": [
+              {
+                "label": "Access information in this fictional brief",
+                "keyboardToggle": true,
+                "focusVisible": true
+              }
+            ]
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T18:25:17.945223+00:00",
+            "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+            "assessment": "All four full-page views visually inspected in contact sheet. Exhibition type/diagram and compact visit directory support different tasks; narrow diagram follows title and essentials become labeled rows. Interior looking prompts develop the exhibition and access follows. Native disclosure Enter toggling and focus passed verifier. No real institution or access assertions supplied."
+          }
+        }
+      ],
+      "selectionProfile": {
+        "tasks": [
+          "find-location",
+          "read-deeply"
+        ],
+        "contexts": [
+          "venue"
+        ],
+        "contributions": [
+          "exhibition-directory",
+          "access-information"
+        ],
+        "expressions": [
+          "civic"
+        ]
+      },
+      "exampleScope": "focused-structural-lesson",
+      "releaseNotes": "Preserved original lesson; not a comprehensive finished-site exemplar or human-approved taste label.",
+      "comparisonStatus": "not a controlled same-facts comparison"
+    },
+    {
+      "id": "sundial-goods",
+      "revision": 2,
+      "title": "Sundial Goods / colour campaign",
+      "primaryFamily": "campaign",
+      "assetMinimum": "multiple-images",
+      "fitSignals": [
+        "collection",
+        "comparison",
+        "type-content",
+        "real-copy",
+        "action",
+        "sparse-media"
+      ],
+      "visitorTasks": [
+        "shop-collection",
+        "compare-options"
+      ],
+      "organizingIdea": "A cropped-looking but fully readable type field meets a bold product illustration; colour choices become broad navigable fields and the interior exposes product facts before options.",
+      "brief": {
+        "fictional": true,
+        "facts": {
+          "name": "Sundial Goods",
+          "offer": "Fictional everyday cotton carry bags",
+          "product": "Daily Carry",
+          "variants": [
+            "Brick",
+            "Ink",
+            "Leaf"
+          ],
+          "dimensions": "38 × 42 cm",
+          "material": "Cotton in invented brief",
+          "price": "24 teaching units",
+          "restriction": "No actual stock, certifications or purchasing system",
+          "contact": "sundial@example.test",
+          "development": "Expanded original fictional explanatory content and interaction detail; no measured client outcome"
+        },
+        "factsHash": "7bc2fd28f415d47b30e4472e89c51d487b103e16d7a36cc3985a2a3b8d0ef67c",
+        "mediaHash": "2abd9b2ddfa59ebd01110b472aa852d3fa93c93e4b897565aa9a8cce8276061d"
+      },
+      "provenance": {
+        "content": "Original fictional Vitris teaching brief and authored copy; operational details, dimensions and offers are invented and must never populate customer inventories.",
+        "media": "Original generated fictional raster concepts with tool/prompt/source lineage; editable text is separate.",
+        "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+      },
+      "storyboard": {
+        "homepage": [
+          "campaign type/object",
+          "wide colour choices",
+          "everyday-use explanation"
+        ],
+        "interior": [
+          "product illustration/facts",
+          "colour comparison",
+          "adaptation boundary"
+        ],
+        "mobile": "Original three-bag campaign gives way to differently coloured collection fields, then a single-object detail with dimensions, teaching price and colour descriptions. Mobile keeps the collection choices and full bag handles."
+      },
+      "designDecisions": "A cropped-looking but fully readable type field meets a bold product illustration; colour choices become broad navigable fields and the interior exposes product facts before options.",
+      "lessonIds": [
+        "cmp-image-art-direction",
+        "cmp-comparison",
+        "cmp-narrative-continuity"
+      ],
+      "referenceIds": [
+        "baggu",
+        "good-weird"
+      ],
+      "sourcePath": "sundial-goods",
+      "homepage": "/",
+      "interior": "/detail",
+      "status": "production compiled; assistant visually inspected; human preference unlabeled",
+      "humanPreference": null,
+      "renderEvidence": [
+        {
+          "route": "/",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-06T20:53:15.351Z",
+          "browser": "153.0.8010.12",
+          "compiledHash": "ecfcf35c8b0bfd4a33c36b4be4d52049d7c81ceb789ab7449b4eb0189b6b04b6",
+          "preview": {
+            "path": "previews/sundial-goods-home-1440.png",
+            "sha256": "ff1d5c321d58501d8e93d683ff00334d2fbaffd021f9b661915a9f97be485327"
+          },
+          "fullPreview": {
+            "path": "previews/full/sundial-goods-home-1440.png",
+            "sha256": "6708c380ad48a8e6001a1e8ae4bcea1317275c290215c88ab17334376ae6cf11"
+          },
+          "visualReview": {
+            "assessor": "agent",
+            "reviewedAt": "2026-10-06T21:00:13.933Z",
+            "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original three-bag campaign gives way to differently coloured collection fields, then a single-object detail with dimensions, teaching price and colour descriptions. Mobile keeps the collection choices and full bag handles. Remaining: Fictional teaching products, no stock, checkout or purchase capability. Illustrative scale does not certify dimensions."
+          }
+        },
+        {
+          "route": "/",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-06T20:53:16.506Z",
+          "browser": "153.0.8010.12",
+          "compiledHash": "ecfcf35c8b0bfd4a33c36b4be4d52049d7c81ceb789ab7449b4eb0189b6b04b6",
+          "preview": {
+            "path": "previews/sundial-goods-home-390.png",
+            "sha256": "3eb78ac5cb8ff6d78503a596296c0544100e49ffe31cce7ab77f62563edae126"
+          },
+          "fullPreview": {
+            "path": "previews/full/sundial-goods-home-390.png",
+            "sha256": "215266bc43262de7279fb9c2b30e2f336c8dd058312805d4f03b0e7d7f096c97"
+          },
+          "visualReview": {
+            "assessor": "agent",
+            "reviewedAt": "2026-10-06T21:00:13.933Z",
+            "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original three-bag campaign gives way to differently coloured collection fields, then a single-object detail with dimensions, teaching price and colour descriptions. Mobile keeps the collection choices and full bag handles. Remaining: Fictional teaching products, no stock, checkout or purchase capability. Illustrative scale does not certify dimensions."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-06T20:53:18.211Z",
+          "browser": "153.0.8010.12",
+          "compiledHash": "6ce767b1ca17313fdb6f1354f7c5df74e4915cd380bd3a616f7e8bc49761a186",
+          "preview": {
+            "path": "previews/sundial-goods-interior-1440.png",
+            "sha256": "8ae1bcbe16f37051ef77353131d59767e4b7a425d4c10d420cdefe8a13067fd9"
+          },
+          "fullPreview": {
+            "path": "previews/full/sundial-goods-interior-1440.png",
+            "sha256": "3622225d294ad8c5951d3ebc57367afe94e2bcdfa668d6031e6a8a1cca6bdef2"
+          },
+          "visualReview": {
+            "assessor": "agent",
+            "reviewedAt": "2026-10-06T21:00:13.933Z",
+            "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original three-bag campaign gives way to differently coloured collection fields, then a single-object detail with dimensions, teaching price and colour descriptions. Mobile keeps the collection choices and full bag handles. Remaining: Fictional teaching products, no stock, checkout or purchase capability. Illustrative scale does not certify dimensions."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-06T20:53:19.376Z",
+          "browser": "153.0.8010.12",
+          "compiledHash": "6ce767b1ca17313fdb6f1354f7c5df74e4915cd380bd3a616f7e8bc49761a186",
+          "preview": {
+            "path": "previews/sundial-goods-interior-390.png",
+            "sha256": "c70152962b1394ecbeba8715a3542d313766b031041387ece5f5fb62d2f99a1b"
+          },
+          "fullPreview": {
+            "path": "previews/full/sundial-goods-interior-390.png",
+            "sha256": "16fabc945fc7073ab6540de74fca3cfbd846ce6d133f2ea8c418d9bfe06c121a"
+          },
+          "visualReview": {
+            "assessor": "agent",
+            "reviewedAt": "2026-10-06T21:00:13.933Z",
+            "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original three-bag campaign gives way to differently coloured collection fields, then a single-object detail with dimensions, teaching price and colour descriptions. Mobile keeps the collection choices and full bag handles. Remaining: Fictional teaching products, no stock, checkout or purchase capability. Illustrative scale does not certify dimensions."
+          }
+        }
+      ],
+      "selectionProfile": {
+        "tasks": [
+          "shop-collection",
+          "compare-options",
+          "explore-product"
+        ],
+        "contexts": [
+          "retail"
+        ],
+        "contributions": [
+          "campaign-collection",
+          "variant-browsing"
+        ],
+        "expressions": [
+          "campaign"
+        ]
+      },
+      "exampleScope": "developed-homepage-interior-example",
+      "releaseNotes": "Original three-bag campaign gives way to differently coloured collection fields, then a single-object detail with dimensions, teaching price and colour descriptions. Mobile keeps the collection choices and full bag handles. Limitations: Fictional teaching products, no stock, checkout or purchase capability. Illustrative scale does not certify dimensions.",
+      "comparisonStatus": "not a controlled same-facts comparison"
+    },
+    {
+      "id": "lacuna-objects",
+      "revision": 2,
+      "title": "Lacuna Objects / quiet object story",
+      "primaryFamily": "quiet-luxury",
+      "assetMinimum": "multiple-images",
+      "fitSignals": [
+        "collection",
+        "type-content",
+        "real-copy",
+        "action",
+        "sparse-media"
+      ],
+      "visitorTasks": [
+        "inspect-work",
+        "explore-product"
+      ],
+      "organizingIdea": "The object occupies a centered field beneath restrained identity; the interior changes from isolated form to material facts rather than product-card repetition.",
+      "brief": {
+        "fictional": true,
+        "facts": {
+          "name": "Lacuna Objects",
+          "offer": "Fictional small objects for living spaces",
+          "object": "Arc wall shelf",
+          "material": "Timber in teaching brief",
+          "width": "80 cm teaching dimension",
+          "finish": "Natural finish in invented brief",
+          "contact": "lacuna@example.test",
+          "restriction": "No real product, load rating or certification",
+          "development": "Expanded original fictional explanatory content and interaction detail; no measured client outcome"
+        },
+        "factsHash": "a3eb033202a625e546ad84834c6e5100302b938c86839029490750365174d040",
+        "mediaHash": "c77d776411369bafcceceab7edd0fd7c53e759b695c712cfb0f37f25ca191e92"
+      },
+      "provenance": {
+        "content": "Original fictional Vitris teaching brief and copy; no customer claims.",
+        "media": "Original generated fictional raster concepts with tool/prompt/source lineage; editable text is separate.",
+        "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+      },
+      "storyboard": {
+        "homepage": [
+          "quiet identity",
+          "centered object proposition/diagram",
+          "object story"
+        ],
+        "interior": [
+          "object name",
+          "isolated form",
+          "form explanation",
+          "specification questions"
+        ],
+        "mobile": "Original room/object and coherent edge detail show scale, surface and shadow; three interior chapters develop these relationships. Mobile preserves complete room object after crop repair."
+      },
+      "designDecisions": "The object occupies a centered field beneath restrained identity; the interior changes from isolated form to material facts rather than product-card repetition.",
+      "lessonIds": [
+        "cmp-unequal-emphasis",
+        "cmp-image-art-direction",
+        "cmp-narrative-continuity"
+      ],
+      "referenceIds": [
+        "r100",
+        "doc"
+      ],
+      "sourcePath": "lacuna-objects",
+      "homepage": "/",
+      "interior": "/detail",
+      "status": "production compiled; assistant visually inspected; human preference unlabeled",
+      "humanPreference": null,
+      "renderEvidence": [
+        {
+          "route": "/",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-06T20:54:28.616Z",
+          "browser": "153.0.8010.12",
+          "compiledHash": "3f3761f17854e49798afbd1fe80a92faa1ffe56e61d03eeedf907c9d2f5ff328",
+          "preview": {
+            "path": "previews/lacuna-objects-home-1440.png",
+            "sha256": "ca8339f6cb909ad0ac9d1dab79d4cef6e72850e576ef7dae09286c9f76ca49d3"
+          },
+          "fullPreview": {
+            "path": "previews/full/lacuna-objects-home-1440.png",
+            "sha256": "1ed06a9bd1e46d1f76d1297f4ec5e14cf647deb51ae9c29312496a812c6db895"
+          },
+          "visualReview": {
+            "assessor": "agent",
+            "reviewedAt": "2026-10-06T21:00:13.933Z",
+            "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original room/object and coherent edge detail show scale, surface and shadow; three interior chapters develop these relationships. Mobile preserves complete room object after crop repair. Remaining: Generated shelf image is not a manufactured product, verified dimension, load rating or mounting instruction."
+          }
+        },
+        {
+          "route": "/",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-06T20:54:29.738Z",
+          "browser": "153.0.8010.12",
+          "compiledHash": "3f3761f17854e49798afbd1fe80a92faa1ffe56e61d03eeedf907c9d2f5ff328",
+          "preview": {
+            "path": "previews/lacuna-objects-home-390.png",
+            "sha256": "c65f237e879acf2559ba0afa10683a04e0d5de6eb7d386bce4d405ac9b662edc"
+          },
+          "fullPreview": {
+            "path": "previews/full/lacuna-objects-home-390.png",
+            "sha256": "f5b9e313b4c787751f066ddc9aa847e89a478650d396a921efeb0de9c5ac2793"
+          },
+          "visualReview": {
+            "assessor": "agent",
+            "reviewedAt": "2026-10-06T21:00:13.933Z",
+            "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original room/object and coherent edge detail show scale, surface and shadow; three interior chapters develop these relationships. Mobile preserves complete room object after crop repair. Remaining: Generated shelf image is not a manufactured product, verified dimension, load rating or mounting instruction."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-06T20:54:31.411Z",
+          "browser": "153.0.8010.12",
+          "compiledHash": "fc6516d0b0b1dcecb52c57a3ad769b4efe58ecd17bd869a8105e9a663c66a5f5",
+          "preview": {
+            "path": "previews/lacuna-objects-interior-1440.png",
+            "sha256": "ce7359ed18f9226e6d8642421faa08f85d4879103761ef2dc08b7cc89cf38605"
+          },
+          "fullPreview": {
+            "path": "previews/full/lacuna-objects-interior-1440.png",
+            "sha256": "0a727ee3ae7523ab61939c183becc150c46097455a63eb18417d0de1e14948a6"
+          },
+          "visualReview": {
+            "assessor": "agent",
+            "reviewedAt": "2026-10-06T21:00:13.933Z",
+            "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original room/object and coherent edge detail show scale, surface and shadow; three interior chapters develop these relationships. Mobile preserves complete room object after crop repair. Remaining: Generated shelf image is not a manufactured product, verified dimension, load rating or mounting instruction."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-06T20:54:32.554Z",
+          "browser": "153.0.8010.12",
+          "compiledHash": "fc6516d0b0b1dcecb52c57a3ad769b4efe58ecd17bd869a8105e9a663c66a5f5",
+          "preview": {
+            "path": "previews/lacuna-objects-interior-390.png",
+            "sha256": "a17f7e092994d97a633486226ab9d6c3c47c2c4f97a096da0f9119298a369201"
+          },
+          "fullPreview": {
+            "path": "previews/full/lacuna-objects-interior-390.png",
+            "sha256": "0edad202cd9ce40201756c8946f5e5dde9f1c064ecdb9f1e4e7ea45b6c949f36"
+          },
+          "visualReview": {
+            "assessor": "agent",
+            "reviewedAt": "2026-10-06T21:00:13.933Z",
+            "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original room/object and coherent edge detail show scale, surface and shadow; three interior chapters develop these relationships. Mobile preserves complete room object after crop repair. Remaining: Generated shelf image is not a manufactured product, verified dimension, load rating or mounting instruction."
+          }
+        }
+      ],
+      "selectionProfile": {
+        "tasks": [
+          "shop-collection",
+          "explore-product"
+        ],
+        "contexts": [
+          "retail"
+        ],
+        "contributions": [
+          "object-scale",
+          "material-story"
+        ],
+        "expressions": [
+          "quiet-luxury"
+        ]
+      },
+      "exampleScope": "developed-homepage-interior-example",
+      "releaseNotes": "Original room/object and coherent edge detail show scale, surface and shadow; three interior chapters develop these relationships. Mobile preserves complete room object after crop repair. Limitations: Generated shelf image is not a manufactured product, verified dimension, load rating or mounting instruction.",
+      "comparisonStatus": "not a controlled same-facts comparison"
+    },
+    {
+      "id": "signal-fair",
+      "revision": 1,
+      "title": "Signal Fair / graphic programme",
+      "primaryFamily": "maximalism",
+      "assetMinimum": "none",
+      "fitSignals": [
+        "collection",
+        "comparison",
+        "location",
+        "type-content",
+        "real-copy",
+        "action",
+        "sparse-media"
+      ],
+      "visitorTasks": [
+        "compare-options",
+        "find-location",
+        "read-deeply"
+      ],
+      "organizingIdea": "A typographic poster makes room for a small programme directory; the interior becomes one session with practical participation information.",
+      "brief": {
+        "fictional": true,
+        "facts": {
+          "name": "Signal Fair",
+          "offer": "Fictional neighbourhood ideas gathering",
+          "theme": "Make room for a new idea",
+          "sessions": [
+            {
+              "time": "10:00",
+              "name": "Paper Cities",
+              "purpose": "Draw the spaces we share"
+            },
+            {
+              "time": "12:00",
+              "name": "Repair Table",
+              "purpose": "Talk through the life of an everyday object"
+            },
+            {
+              "time": "14:00",
+              "name": "Open Signals",
+              "purpose": "Share a small idea with the room"
+            }
+          ],
+          "venue": "Assembly Hall, invented location",
+          "access": "Seating and step-free access in invented brief",
+          "contact": "signal@example.test"
+        },
+        "factsHash": "74a5cfc24d536f4cbee526dd5f5545fd98ec74a298a488f68b89ad2026cd7bb2",
+        "mediaHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "provenance": {
+        "content": "Original fictional Vitris teaching brief and copy; no customer claims.",
+        "media": "Original inline SVG diagrams or authored text, no external images, branding or type assets.",
+        "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+      },
+      "storyboard": {
+        "homepage": [
+          "graphic poster",
+          "time-based programme",
+          "location/access"
+        ],
+        "interior": [
+          "session poster",
+          "participation process",
+          "visit questions"
+        ],
+        "mobile": "Poster typography remains complete and readable; programme time precedes session name and purpose, with one clear detail link."
+      },
+      "designDecisions": "A typographic poster makes room for a small programme directory; the interior becomes one session with practical participation information.",
+      "lessonIds": [
+        "cmp-type-roles",
+        "cmp-page-rhythm",
+        "cmp-contextual-action"
+      ],
+      "referenceIds": [
+        "oatly",
+        "the-blimp"
+      ],
+      "sourcePath": "signal-fair",
+      "homepage": "/",
+      "interior": "/detail",
+      "status": "compiled and automated/assistant visually reviewed; human preference pending",
+      "humanPreference": null,
+      "renderEvidence": [
+        {
+          "route": "/",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-05T18:34:54.114Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/signal-fair-home-1440.png",
+            "sha256": "ef26a30878766f5391a967697f4667dc132615c3ae21c813a4899e9edef0276d"
+          },
+          "compiledHash": "551353fcdaaebf3abf44006b5aef5ffefc1c77076089a898c7563a1ad87c239e",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/detail#visit",
+                "/detail",
+                "/detail#visit"
+              ]
+            },
+            "audio": [],
+            "captureGeometry": null,
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            },
+            "disclosures": []
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+            "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+            "assessment": "All four full-page views inspected, then inspected again after repairing misleading links and narrow row placement. Bold poster/ornament leads to programme times and purpose. Only authored Paper Cities session links to its detail; other session entries remain honest static summaries. Native Visit disclosure keyboard/focus passed. Narrow static Repair Table row initially broke into letters despite no automated overflow; repaired selector treats static and linked rows alike. Final contact sheet shows readable time/title/purpose rows at both widths."
+          }
+        },
+        {
+          "route": "/",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-05T18:34:55.163Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/signal-fair-home-390.png",
+            "sha256": "2c5b06ff467bd3fe35c742ac54a5ad4122b510d58d56a055ab96397d7aa8052c"
+          },
+          "compiledHash": "551353fcdaaebf3abf44006b5aef5ffefc1c77076089a898c7563a1ad87c239e",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/detail#visit",
+                "/detail",
+                "/detail#visit"
+              ]
+            },
+            "audio": [],
+            "captureGeometry": null,
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            },
+            "disclosures": []
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+            "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+            "assessment": "All four full-page views inspected, then inspected again after repairing misleading links and narrow row placement. Bold poster/ornament leads to programme times and purpose. Only authored Paper Cities session links to its detail; other session entries remain honest static summaries. Native Visit disclosure keyboard/focus passed. Narrow static Repair Table row initially broke into letters despite no automated overflow; repaired selector treats static and linked rows alike. Final contact sheet shows readable time/title/purpose rows at both widths."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-05T18:34:56.269Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/signal-fair-interior-1440.png",
+            "sha256": "d92e12d2ba26729f02ab1add1ab49a9630d49904183316bcd958fe131c7f05f1"
+          },
+          "compiledHash": "1fcb10cc800dc34488c2781c7c6196ce08c8b656c29e90c1a250da13fa2a23ab",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/"
+              ]
+            },
+            "audio": [],
+            "captureGeometry": null,
+            "firstFocus": {
+              "tag": "A",
+              "text": "Ask a programme question →",
+              "outline": "solid",
+              "width": "3px"
+            },
+            "disclosures": [
+              {
+                "label": "Access and participation",
+                "keyboardToggle": true,
+                "focusVisible": true
+              }
+            ]
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+            "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+            "assessment": "All four full-page views inspected, then inspected again after repairing misleading links and narrow row placement. Bold poster/ornament leads to programme times and purpose. Only authored Paper Cities session links to its detail; other session entries remain honest static summaries. Native Visit disclosure keyboard/focus passed. Narrow static Repair Table row initially broke into letters despite no automated overflow; repaired selector treats static and linked rows alike. Final contact sheet shows readable time/title/purpose rows at both widths."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-05T18:34:57.314Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/signal-fair-interior-390.png",
+            "sha256": "22289add335dc1d61c60cb297e00652e8437b8e2856998e0a74e2e9ab94a1b91"
+          },
+          "compiledHash": "1fcb10cc800dc34488c2781c7c6196ce08c8b656c29e90c1a250da13fa2a23ab",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/"
+              ]
+            },
+            "audio": [],
+            "captureGeometry": null,
+            "firstFocus": {
+              "tag": "A",
+              "text": "Ask a programme question →",
+              "outline": "solid",
+              "width": "3px"
+            },
+            "disclosures": [
+              {
+                "label": "Access and participation",
+                "keyboardToggle": true,
+                "focusVisible": true
+              }
+            ]
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+            "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+            "assessment": "All four full-page views inspected, then inspected again after repairing misleading links and narrow row placement. Bold poster/ornament leads to programme times and purpose. Only authored Paper Cities session links to its detail; other session entries remain honest static summaries. Native Visit disclosure keyboard/focus passed. Narrow static Repair Table row initially broke into letters despite no automated overflow; repaired selector treats static and linked rows alike. Final contact sheet shows readable time/title/purpose rows at both widths."
+          }
+        }
+      ],
+      "selectionProfile": {
+        "tasks": [
+          "find-location",
+          "read-deeply"
+        ],
+        "contexts": [
+          "venue"
+        ],
+        "contributions": [
+          "poster-programme",
+          "participation"
+        ],
+        "expressions": [
+          "maximalism"
+        ]
+      },
+      "exampleScope": "focused-structural-lesson",
+      "releaseNotes": "Preserved original lesson; not a comprehensive finished-site exemplar or human-approved taste label.",
+      "comparisonStatus": "not a controlled same-facts comparison"
+    },
+    {
+      "id": "thread-mender",
+      "revision": 1,
+      "title": "Thread Mender / drawn process",
+      "primaryFamily": "handmade",
+      "assetMinimum": "none",
+      "fitSignals": [
+        "professional-service",
+        "process",
+        "action",
+        "type-content",
+        "real-copy",
+        "sparse-media"
+      ],
+      "visitorTasks": [
+        "evaluate-service",
+        "understand-process",
+        "book-inquiry"
+      ],
+      "organizingIdea": "A winding thread connects three practical stages; the drawing is navigation support and the interior turns each stage into readable guidance.",
+      "brief": {
+        "fictional": true,
+        "facts": {
+          "name": "Thread Mender",
+          "offer": "Fictional clothing repair service",
+          "scope": [
+            "Hems",
+            "Small tears",
+            "Loose seams"
+          ],
+          "process": [
+            "Notice the damaged area",
+            "Agree the repair scope",
+            "Mend and return the garment"
+          ],
+          "restriction": "Repair suitability is assessed before agreement; no guaranteed restoration",
+          "location": "Local drop-off by arrangement, invented service",
+          "contact": "thread@example.test"
+        },
+        "factsHash": "479f3bb31e2059f7f96a90420defaf29da4774c646d732f4a27f88aef1c87e16",
+        "mediaHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "provenance": {
+        "content": "Original fictional Vitris teaching brief and copy; no customer claims.",
+        "media": "Original inline SVG diagrams or authored text, no external images, branding or type assets.",
+        "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+      },
+      "storyboard": {
+        "homepage": [
+          "drawn stage navigation",
+          "repair scope",
+          "conversation preparation"
+        ],
+        "interior": [
+          "process drawing",
+          "notice/agree/mend guidance",
+          "first conversation"
+        ],
+        "mobile": "Drawing shrinks but native stage links become a readable vertical list; decorative note rotation is removed; numbered guidance remains text, not diagram-only."
+      },
+      "designDecisions": "A winding thread connects three practical stages; the drawing is navigation support and the interior turns each stage into readable guidance.",
+      "lessonIds": [
+        "cmp-process",
+        "cmp-surfaces-motifs",
+        "cmp-contextual-action"
+      ],
+      "referenceIds": [
+        "gohar-world",
+        "on-air",
+        "bokman"
+      ],
+      "sourcePath": "thread-mender",
+      "homepage": "/",
+      "interior": "/detail",
+      "status": "compiled and automated/assistant visually reviewed; human preference pending",
+      "humanPreference": null,
+      "renderEvidence": [
+        {
+          "route": "/",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-05T18:33:11.059Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/thread-mender-home-1440.png",
+            "sha256": "43add004a81011c425afae190434be2d55a549d84eb18c7f0ef21b1da1b1a065"
+          },
+          "compiledHash": "4b62541793499d8da86db10d13451980850972ddad416a5c712cc6464dc433da",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/detail",
+                "/detail#notice",
+                "/detail#agree",
+                "/detail#mend"
+              ]
+            },
+            "audio": [],
+            "captureGeometry": null,
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            },
+            "disclosures": []
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+            "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+            "assessment": "All four full-page views inspected, then inspected again after moving decorative stitches below Notice/Agree/Mend lettering. Illustrated thread/process and scope precede invitation; interior numbered process develops the service. Narrow retains native text alongside the scaled illustration; stitches no longer cross labels. Original modest SVG media and invented service scope; no actual customer outcomes."
+          }
+        },
+        {
+          "route": "/",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-05T18:33:12.119Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/thread-mender-home-390.png",
+            "sha256": "f7b6810609c0add417a5f294dfd9f52fcc78790e094bcb3d6d9f8a54a932dedb"
+          },
+          "compiledHash": "4b62541793499d8da86db10d13451980850972ddad416a5c712cc6464dc433da",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/detail",
+                "/detail#notice",
+                "/detail#agree",
+                "/detail#mend"
+              ]
+            },
+            "audio": [],
+            "captureGeometry": null,
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            },
+            "disclosures": []
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+            "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+            "assessment": "All four full-page views inspected, then inspected again after moving decorative stitches below Notice/Agree/Mend lettering. Illustrated thread/process and scope precede invitation; interior numbered process develops the service. Narrow retains native text alongside the scaled illustration; stitches no longer cross labels. Original modest SVG media and invented service scope; no actual customer outcomes."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-05T18:33:13.224Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/thread-mender-interior-1440.png",
+            "sha256": "656d999e665244223c6cffabced8326217d8c19373056d89d6f9075e076b4356"
+          },
+          "compiledHash": "3a53720349e95b13479f47063ebacd4544e034905f04b5ef0e2e49e58bd3ef2a",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/"
+              ]
+            },
+            "audio": [],
+            "captureGeometry": null,
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            },
+            "disclosures": []
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+            "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+            "assessment": "All four full-page views inspected, then inspected again after moving decorative stitches below Notice/Agree/Mend lettering. Illustrated thread/process and scope precede invitation; interior numbered process develops the service. Narrow retains native text alongside the scaled illustration; stitches no longer cross labels. Original modest SVG media and invented service scope; no actual customer outcomes."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-05T18:33:14.255Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/thread-mender-interior-390.png",
+            "sha256": "05d7e0fd09f607254d4ea9cdb90d049f225aed1ed127b98194ce996dbd819c46"
+          },
+          "compiledHash": "3a53720349e95b13479f47063ebacd4544e034905f04b5ef0e2e49e58bd3ef2a",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/"
+              ]
+            },
+            "audio": [],
+            "captureGeometry": null,
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            },
+            "disclosures": []
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+            "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+            "assessment": "All four full-page views inspected, then inspected again after moving decorative stitches below Notice/Agree/Mend lettering. Illustrated thread/process and scope precede invitation; interior numbered process develops the service. Narrow retains native text alongside the scaled illustration; stitches no longer cross labels. Original modest SVG media and invented service scope; no actual customer outcomes."
+          }
+        }
+      ],
+      "selectionProfile": {
+        "tasks": [
+          "evaluate-service",
+          "understand-process",
+          "book-inquiry"
+        ],
+        "contexts": [
+          "project-service"
+        ],
+        "contributions": [
+          "illustrated-process",
+          "repair-suitability"
+        ],
+        "expressions": [
+          "handmade"
+        ]
+      },
+      "exampleScope": "focused-structural-lesson",
+      "releaseNotes": "Preserved original lesson; not a comprehensive finished-site exemplar or human-approved taste label.",
+      "comparisonStatus": "not a controlled same-facts comparison"
+    },
+    {
+      "id": "dock-radio",
+      "revision": 1,
+      "title": "Dock Radio / listening desk",
+      "primaryFamily": "retro",
+      "assetMinimum": "none",
+      "fitSignals": [
+        "product-ui",
+        "collection",
+        "type-content",
+        "real-copy",
+        "action",
+        "sparse-media"
+      ],
+      "visitorTasks": [
+        "explore-product",
+        "read-deeply"
+      ],
+      "organizingIdea": "Desktop window chrome groups a functioning native player and guide; the episode interior develops original audio credits and notes without changing the listening metaphor.",
+      "brief": {
+        "fictional": true,
+        "facts": {
+          "name": "Dock Radio",
+          "offer": "Fictional tiny listening desk",
+          "episode": "Evening Interval",
+          "duration": "8 seconds",
+          "media": "Original synthesized tone sequence; no external recording",
+          "restriction": "No broadcast, live schedule or catalogue of actual musicians"
+        },
+        "factsHash": "cafad57633f67d86bd40bbae0b4cc6071cc262904176bd348021ca0b962f7825",
+        "mediaHash": "e7dfaa456108ecc17bfa04542f5b1146053292d087ab7b4fd65ef05210d6858d"
+      },
+      "provenance": {
+        "content": "Original fictional Vitris teaching brief and copy; no customer claims.",
+        "media": "Original inline cassette SVG and locally synthesized eight-second sine-wave sequence. No external samples, music or photographs.",
+        "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+      },
+      "storyboard": {
+        "homepage": [
+          "listening desk identity",
+          "player window beside guide",
+          "taskbar"
+        ],
+        "interior": [
+          "episode player",
+          "original credits and notes",
+          "desk return"
+        ],
+        "mobile": "Windows stack with complete native audio controls; guide/credits follow listening content. No draggable chrome or tiny emulated controls required."
+      },
+      "designDecisions": "Desktop window chrome groups a functioning native player and guide; the episode interior develops original audio credits and notes without changing the listening metaphor.",
+      "lessonIds": [
+        "cmp-interactive-explanation",
+        "cmp-surfaces-motifs",
+        "cmp-contextual-action"
+      ],
+      "referenceIds": [
+        "poolsuite",
+        "beats-in-space"
+      ],
+      "sourcePath": "dock-radio",
+      "homepage": "/",
+      "interior": "/detail",
+      "status": "compiled and automated/assistant visually reviewed; human preference pending",
+      "humanPreference": null,
+      "renderEvidence": [
+        {
+          "route": "/",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-05T18:45:00.637Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/dock-radio-home-1440.png",
+            "sha256": "7589e4c06ded1a7c4032d113a9259f4b9708ecf39bb420753b90d5f2cc2e9854"
+          },
+          "compiledHash": "cf0c7972530c890db0b3549a282a880e292861f16206fca474cf1759c1d4ee94",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/media/teaching/original-tone-study.wav",
+                "/detail",
+                "/detail#notes",
+                "/",
+                "/detail"
+              ]
+            },
+            "audio": [
+              {
+                "source": "http://127.0.0.1:62139/media/teaching/original-tone-study.wav",
+                "readyState": 4,
+                "duration": 8,
+                "paused": true
+              }
+            ],
+            "captureGeometry": {
+              "beforeCaptureHeight": 994,
+              "afterCaptureHeight": 993,
+              "finalCaptureHeight": 993
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            },
+            "disclosures": []
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+            "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+            "assessment": "All four full-page views inspected and latest stable-capture contact sheet re-inspected. Native audio desk/player window and guide have different chrome from other studies; narrow stacks player, guide, taskbar and complete teaching footer. Interior player precedes recording notes. Initial Chromium full-page capture changed document height and clipped the narrow home footer; two-capture stabilization now retains complete footer with geometry recorded. Native CUA desktop play and narrow interior play/pause exercised (2026-10-05T18:30:54.837Z, 18:31:30.723Z, 18:31:36.473Z); narrow pause returned paused true at 5.667883 seconds of 8. No audible-quality, seek or volume exercise claimed. Audio is original synthesized tone study; no third-party sample or broadcast."
+          }
+        },
+        {
+          "route": "/",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-05T18:45:16.804Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/dock-radio-home-390.png",
+            "sha256": "e25822428259529afc3fad1aae111b60b8ddee31ff6b4106c4ae236a23b8f446"
+          },
+          "compiledHash": "cf0c7972530c890db0b3549a282a880e292861f16206fca474cf1759c1d4ee94",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/media/teaching/original-tone-study.wav",
+                "/detail",
+                "/detail#notes",
+                "/",
+                "/detail"
+              ]
+            },
+            "audio": [
+              {
+                "source": "http://127.0.0.1:62139/media/teaching/original-tone-study.wav",
+                "readyState": 4,
+                "duration": 8,
+                "paused": true
+              }
+            ],
+            "captureGeometry": {
+              "beforeCaptureHeight": 1180,
+              "afterCaptureHeight": 1239,
+              "finalCaptureHeight": 1239
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            },
+            "disclosures": []
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+            "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+            "assessment": "All four full-page views inspected and latest stable-capture contact sheet re-inspected. Native audio desk/player window and guide have different chrome from other studies; narrow stacks player, guide, taskbar and complete teaching footer. Interior player precedes recording notes. Initial Chromium full-page capture changed document height and clipped the narrow home footer; two-capture stabilization now retains complete footer with geometry recorded. Native CUA desktop play and narrow interior play/pause exercised (2026-10-05T18:30:54.837Z, 18:31:30.723Z, 18:31:36.473Z); narrow pause returned paused true at 5.667883 seconds of 8. No audible-quality, seek or volume exercise claimed. Audio is original synthesized tone study; no third-party sample or broadcast."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "capturedAt": "2026-10-05T18:45:33.102Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/dock-radio-interior-1440.png",
+            "sha256": "cc55732e747b8a32e3d21d5933c9966de977a65e52af47e9ba2565f440bb4b52"
+          },
+          "compiledHash": "216def017e7b53500680c24867a2cd24629ce899e740356e9684b3cbbb7d7e2a",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/media/teaching/original-tone-study.wav",
+                "/"
+              ]
+            },
+            "audio": [
+              {
+                "source": "http://127.0.0.1:62139/media/teaching/original-tone-study.wav",
+                "readyState": 4,
+                "duration": 8,
+                "paused": true
+              }
+            ],
+            "captureGeometry": {
+              "beforeCaptureHeight": 1626,
+              "afterCaptureHeight": 1624,
+              "finalCaptureHeight": 1624
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            },
+            "disclosures": []
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+            "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+            "assessment": "All four full-page views inspected and latest stable-capture contact sheet re-inspected. Native audio desk/player window and guide have different chrome from other studies; narrow stacks player, guide, taskbar and complete teaching footer. Interior player precedes recording notes. Initial Chromium full-page capture changed document height and clipped the narrow home footer; two-capture stabilization now retains complete footer with geometry recorded. Native CUA desktop play and narrow interior play/pause exercised (2026-10-05T18:30:54.837Z, 18:31:30.723Z, 18:31:36.473Z); narrow pause returned paused true at 5.667883 seconds of 8. No audible-quality, seek or volume exercise claimed. Audio is original synthesized tone study; no third-party sample or broadcast."
+          }
+        },
+        {
+          "route": "/detail",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "capturedAt": "2026-10-05T18:45:49.219Z",
+          "browser": "153.0.8010.12",
+          "preview": {
+            "path": "previews/dock-radio-interior-390.png",
+            "sha256": "ec6f7a5a0dddab2a3803204b893dd37944fbd285dacc76069cbb9ef98b13a410"
+          },
+          "compiledHash": "216def017e7b53500680c24867a2cd24629ce899e740356e9684b3cbbb7d7e2a",
+          "automated": {
+            "errors": [],
+            "axeViolations": [],
+            "metrics": {
+              "overflow": false,
+              "h1": 1,
+              "brokenImages": [],
+              "internalLinks": [
+                "/",
+                "/media/teaching/original-tone-study.wav",
+                "/"
+              ]
+            },
+            "audio": [
+              {
+                "source": "http://127.0.0.1:62139/media/teaching/original-tone-study.wav",
+                "readyState": 4,
+                "duration": 8,
+                "paused": true
+              }
+            ],
+            "captureGeometry": {
+              "beforeCaptureHeight": 1424,
+              "afterCaptureHeight": 1422,
+              "finalCaptureHeight": 1422
+            },
+            "firstFocus": {
+              "tag": "A",
+              "text": "Skip to content",
+              "outline": "solid",
+              "width": "2px"
+            },
+            "disclosures": []
+          },
+          "visualReview": {
+            "assessor": "assistant",
+            "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+            "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+            "assessment": "All four full-page views inspected and latest stable-capture contact sheet re-inspected. Native audio desk/player window and guide have different chrome from other studies; narrow stacks player, guide, taskbar and complete teaching footer. Interior player precedes recording notes. Initial Chromium full-page capture changed document height and clipped the narrow home footer; two-capture stabilization now retains complete footer with geometry recorded. Native CUA desktop play and narrow interior play/pause exercised (2026-10-05T18:30:54.837Z, 18:31:30.723Z, 18:31:36.473Z); narrow pause returned paused true at 5.667883 seconds of 8. No audible-quality, seek or volume exercise claimed. Audio is original synthesized tone study; no third-party sample or broadcast."
+          }
+        }
+      ],
+      "selectionProfile": {
+        "tasks": [
+          "play-audio",
+          "explore-product"
+        ],
+        "contexts": [
+          "technical-product"
+        ],
+        "contributions": [
+          "desktop-metaphor",
+          "native-task-controls"
+        ],
+        "expressions": [
+          "retro"
+        ]
+      },
+      "exampleScope": "focused-structural-lesson",
+      "releaseNotes": "Preserved original lesson; not a comprehensive finished-site exemplar or human-approved taste label.",
+      "comparisonStatus": "not a controlled same-facts comparison"
+    }
+  ]
+}

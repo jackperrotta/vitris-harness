@@ -1,0 +1,39 @@
+name: Harness checks
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  harness:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run typecheck
+      - run: npm run build:cli
+      - run: npm test
+      - run: npm run verify:package
+      - name: Install verified secret scanner
+        shell: pwsh
+        run: ./scripts/install-release-scanner.ps1
+      - name: Audit the packed release with credential checks and Gitleaks
+        run: npm run audit:package
+      - name: Scan all reachable source history
+        shell: pwsh
+        run: |
+          & $env:GITLEAKS_BIN git . --log-opts=--all --redact=100 --no-banner --ignore-gitleaks-allow --max-archive-depth 4 --max-decode-depth 3
+          if ($LASTEXITCODE -ne 0) { throw 'Source history credential scan failed' }

@@ -1,0 +1,242 @@
+{
+  "id": "lacuna-objects",
+  "revision": 1,
+  "title": "Lacuna Objects / quiet object story",
+  "primaryFamily": "quiet-luxury",
+  "assetMinimum": "none",
+  "fitSignals": [
+    "collection",
+    "type-content",
+    "real-copy",
+    "action",
+    "sparse-media"
+  ],
+  "visitorTasks": [
+    "inspect-work",
+    "explore-product"
+  ],
+  "organizingIdea": "The object occupies a centered field beneath restrained identity; the interior changes from isolated form to material facts rather than product-card repetition.",
+  "brief": {
+    "fictional": true,
+    "facts": {
+      "name": "Lacuna Objects",
+      "offer": "Fictional small objects for living spaces",
+      "object": "Arc wall shelf",
+      "material": "Timber in teaching brief",
+      "width": "80 cm teaching dimension",
+      "finish": "Natural finish in invented brief",
+      "contact": "lacuna@example.test",
+      "restriction": "No real product, load rating or certification"
+    },
+    "factsHash": "0b6b3e0ebd55929284a23a93f0df9f93e4b0f7bef64cf7925002008e452da4b2",
+    "mediaHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "provenance": {
+    "content": "Original fictional Vitris teaching brief and copy; no customer claims.",
+    "media": "Original inline SVG diagrams or authored text, no external images, branding or type assets.",
+    "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+  },
+  "storyboard": {
+    "homepage": [
+      "quiet identity",
+      "centered object proposition/diagram",
+      "object story"
+    ],
+    "interior": [
+      "object name",
+      "isolated form",
+      "form explanation",
+      "specification questions"
+    ],
+    "mobile": "Centered object field stays centered; story and labeled facts turn into a readable single-column document."
+  },
+  "designDecisions": "The object occupies a centered field beneath restrained identity; the interior changes from isolated form to material facts rather than product-card repetition.",
+  "lessonIds": [
+    "cmp-unequal-emphasis",
+    "cmp-image-art-direction",
+    "cmp-narrative-continuity"
+  ],
+  "referenceIds": [
+    "r100",
+    "doc"
+  ],
+  "sourcePath": "lacuna-objects",
+  "homepage": "/",
+  "interior": "/detail",
+  "status": "compiled and automated/assistant visually reviewed; human preference pending",
+  "humanPreference": null,
+  "renderEvidence": [
+    {
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T18:29:41.140Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/lacuna-objects-home-1440.png",
+        "sha256": "3a11bd19c4b02b5a99045f59aeedaf9a9617e51de4ba45bcd661fa208dc90a07"
+      },
+      "compiledHash": "08eaaace1cb7c94cb5a7a96f75d777e8a930008ef672413596a07d9df1f44d9d",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail",
+            "/detail"
+          ]
+        },
+        "audio": [],
+        "captureGeometry": null,
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views inspected in contact sheet. Isolated original shelf illustration and restrained centred identity replace a split hero; product interior develops the same form through material/dimension ledger. Narrow follows object, proposition, task then facts. Explicit teaching object facts carry no actual certification or load claims."
+      }
+    },
+    {
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T18:29:42.316Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/lacuna-objects-home-390.png",
+        "sha256": "7c31d9c10144c4d1b886f822d66b881bad511a70cadb36ba6efca503789b64fe"
+      },
+      "compiledHash": "08eaaace1cb7c94cb5a7a96f75d777e8a930008ef672413596a07d9df1f44d9d",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail",
+            "/detail"
+          ]
+        },
+        "audio": [],
+        "captureGeometry": null,
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views inspected in contact sheet. Isolated original shelf illustration and restrained centred identity replace a split hero; product interior develops the same form through material/dimension ledger. Narrow follows object, proposition, task then facts. Explicit teaching object facts carry no actual certification or load claims."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T18:29:43.449Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/lacuna-objects-interior-1440.png",
+        "sha256": "6c2c40c1b2d76a1aa11d454095f9f1a94d514ded844e90b4e5d07a4f463204c3"
+      },
+      "compiledHash": "4e0f57285dfe045b2b8e6854adf452a8e9c63ad6358497d340c65913347bcc26",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/"
+          ]
+        },
+        "audio": [],
+        "captureGeometry": null,
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views inspected in contact sheet. Isolated original shelf illustration and restrained centred identity replace a split hero; product interior develops the same form through material/dimension ledger. Narrow follows object, proposition, task then facts. Explicit teaching object facts carry no actual certification or load claims."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T18:29:44.529Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/lacuna-objects-interior-390.png",
+        "sha256": "fb5fe76f553050852b87e639acf6667dbab0e6abd6f70f4bb104c4becb2dfc70"
+      },
+      "compiledHash": "4e0f57285dfe045b2b8e6854adf452a8e9c63ad6358497d340c65913347bcc26",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/"
+          ]
+        },
+        "audio": [],
+        "captureGeometry": null,
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:47:03.298021+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views inspected in contact sheet. Isolated original shelf illustration and restrained centred identity replace a split hero; product interior develops the same form through material/dimension ledger. Narrow follows object, proposition, task then facts. Explicit teaching object facts carry no actual certification or load claims."
+      }
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "brand": {
+    "schemaVersion": 1,
+    "siteId": "dw-perrotta",
+    "name": "Archived deterministic fixture",
+    "colors": [
+      {
+        "value": "#2a5570",
+        "source": "C:\\Users\\jperr\\Documents\\Projects\\vitris-v3\\artifacts\\website-audit-2026-09-27\\pages\\www.dwperrotta.com.html: repeated inline navigation/action color",
+        "confidence": "captured"
+      },
+      {
+        "value": "#1c6383",
+        "source": "C:\\Users\\jperr\\Documents\\Projects\\vitris-v3\\artifacts\\website-audit-2026-09-27\\pages\\www.dwperrotta.com.html: repeated inline navigation/action color",
+        "confidence": "captured"
+      }
+    ],
+    "fallback": false
+  },
+  "themes": [
+    {
+      "id": "swiss-index",
+      "hash": "d117793f046ad14c5512da140c274ab8e46be8fa1c05fc89d67acaf3edcebda7",
+      "main": "e524f985692edb58a58c7cfe2523beaf17fcd34d1375934c1294510139df8203",
+      "interior": "6a2ba34c589fc5924afed20d62533523c52bc9b4ce71799ad868836fcd69d6ee"
+    },
+    {
+      "id": "rail-atlas",
+      "hash": "be1da04f28f8d407300e1a848300534fcffde26eab2b25ccc98d14d33d3946ce",
+      "main": "dee310a1edfe49567c490f3e04c3268ee343df6fdc64848196a1d42c3b3e8b57",
+      "interior": "73a64ec705b23456bffc014a7b6d26e58ed4b214b7643090a6ae821fabf10e34"
+    },
+    {
+      "id": "technical-manual",
+      "hash": "3aa0d3e613748d39287733e0acb1d70bd7d8387191baf859f7a6269c36ca0120",
+      "main": "566e8703ef595921e1af9ac700e7ec14098e9cf290143b73bcad0a9281b61850",
+      "interior": "8057e2936d2e394c5b91ddd7836192dcbabce10bc940f601910e8bc187b4b833"
+    },
+    {
+      "id": "utility-directory",
+      "hash": "5dc9d603b65752615e7377259d4fa9824b58473d3b6a574438ee94b9c0f7b7b2",
+      "main": "71556c6365aed0012cc96b89cbe046ca51a5b714fe7ec1ac60d566ff58a331b5",
+      "interior": "fec20a773ba140640f939fda4cae969889a3efe49c17595f4a63834fe49f3e9b"
+    },
+    {
+      "id": "literary-essay",
+      "hash": "d80682df6b9d0706b6c1dc3b0d6ab9fa4c208799c3ce79b5caa567a2150b009a",
+      "main": "152bf56aaebb3be0be4f0ea48a9348c0f7d8bbec90e8f28d7c85f25172480107",
+      "interior": "68f3208ec41070d18d7ffdef3cc7a7b189831a9ef97fa9a11603fb5bf6fddb4e"
+    },
+    {
+      "id": "newspaper",
+      "hash": "fb596b4893c0d9cb10c253ea6f748f84bd8b70e5783292f02d7d858958787760",
+      "main": "e8718ca618f7b8d80cb9386532ffa9fb15f0fc96e9bf534f2de57ee47d983d09",
+      "interior": "da7b83ea0e7c4d1f567c6087550e4ec85f8b3432dbbffdd69046a9b4b1d68964"
+    },
+    {
+      "id": "annotated-journal",
+      "hash": "fa0558aace93bc9bacd39fe8e8ce7931f2eb11c3a5c8ba0cafd17d6639536bb8",
+      "main": "822f259d2bf76abad8950cc15df76d95dcd2f8cd3344222bfc13013899974166",
+      "interior": "d735c83c4ebca648b4c5d4bde95f85163f0656581d6c6cdb765f9d10127c9c69"
+    },
+    {
+      "id": "quiet-folio",
+      "hash": "a39e1d38bb0c945c1cee40996fbf9b9bfae353d6a45428e706758d8284154a7e",
+      "main": "b264e8ada6ee5b48762bc9fc2fd727852c47bcbd3a952c82169373c0a2ee866e",
+      "interior": "1302080c43a50027ec813b0b54c01800ba26995c49a57285544030d45c776d85"
+    },
+    {
+      "id": "cinematic-panorama",
+      "hash": "138a9dcd3516234b23143c3318203db7fa2b9be6cd0d214323b1d3943f69cf45",
+      "main": "de8c6788e27f9dc5dc5fc70b270a4a468f3ca47b68b9aef4507362d2fc29ac42",
+      "interior": "ad50fdd531444572dc7e9ee101e98dace12af9220b08e0b6d7eae4054e206ef2"
+    },
+    {
+      "id": "contact-sheet",
+      "hash": "df9b279be6160cfa97b2a13a7d84fe6e16698b3d0bf8244a40156f9580cfef0b",
+      "main": "c675a6e945b8bc312502fcf756ccb919da7099c3bcaec4860aba7fab0e6c0b76",
+      "interior": "91834a6d9811212ee3767933e2881953dee5aecfea5bfd7306205766155e93ee"
+    },
+    {
+      "id": "architectural-frame",
+      "hash": "c66552b9023f41fa62b8b346de7d63d5f0552141b6c5bb137b5985322c920c42",
+      "main": "4a250376498567792ceb97ff785f5b95087315347a55c442753b6350f06a7d6c",
+      "interior": "1a9cdf1ec532a8a5f4d6413d7e718df3c14b0eeda8ba24d8888587c52161afb9"
+    },
+    {
+      "id": "immersive-exhibition",
+      "hash": "3f6d9024a3437bba21c3d5c6e5e32523bd5f9eaa1eaf09aa438945f4d1424af8",
+      "main": "6bf7b61786a48c96139f7cfafb537cf9063bc2df1f936ba0f13139d1e3b47f63",
+      "interior": "35937a6732218857ff67eabf6b7fd6bbededc963ec333cd10c6e5bde4d7ff9be"
+    },
+    {
+      "id": "poster",
+      "hash": "9f1deea28e2d482d70765db7ee11c7a92a18ee4587cb44453fa20c4e0e69adfd",
+      "main": "3dfd4783292f99ff5ba69423b4c295e327d63038b88d45f913675ec94d470d82",
+      "interior": "67ae3ee990cdfb3f2235721873ea3f39d44a407f371270c22dfeb4cea20a9b00"
+    },
+    {
+      "id": "hard-edge",
+      "hash": "24ece2f5f9eb4244e0071f76eacbdc4188f5505ce2cb958d9238b3342579cf9e",
+      "main": "7dcf43eb412b1879a97f590f8b5500397d48b82f10f708ddac518a789f5ef0e7",
+      "interior": "05f3a7822f7cb942604adec792485dfed9f0ec3ae07117e4a6a5d12b0c321a32"
+    },
+    {
+      "id": "modular-mosaic",
+      "hash": "eccbcbc0b7bac414b66f50dcf92fb26b71882e02a6b5f5cedc2ece1135072a8c",
+      "main": "2d10d75ba5c926cd88071f05c61da521495754311f40bd73b5db31832fb1e659",
+      "interior": "921119ba9f5d65aefd38eeae33ed65c31140fe011fe8636427beebaf52f5c367"
+    },
+    {
+      "id": "kinetic-type",
+      "hash": "27ce102d36b2c20adb8d6d73bbab465eeab39470f365413667de76134383720d",
+      "main": "5eae2911647356f53fee6b8bddf4415d308652aa44962432844db70cf4b1fa85",
+      "interior": "631276e89250cecbbe120dec88e2efdf275a40792735cd7bf910be3417b7dd5a"
+    },
+    {
+      "id": "organic-studio",
+      "hash": "6b1a113263858e5d7b8182e1d83f472f3649ff1fe6daab8d409149cb80061510",
+      "main": "b9a70ff2a287bd025d49396128a6651301b62ada0e5a62b9d699a8bbb83476e2",
+      "interior": "f3f45bad6a5d4985e350b824baa86ae338e1f7b15a4bc495099447c7ad7bb9b2"
+    },
+    {
+      "id": "paper-workshop",
+      "hash": "aba9dcf93d10fd7b4e0f5d5fa0d5368ef9aa837e6cca7dc0a59f91cc692240dd",
+      "main": "b637c30c5ed4d2e4f84d6ac291f6f28b7bd361ef9a78614986ece479b9a8457d",
+      "interior": "bb78aa1f4ab8e3af0bbb1ebc82b9afad60db5130f92935c766f82755045da7f9"
+    },
+    {
+      "id": "botanical",
+      "hash": "c9185a07fbbaed7736328443de09b7ae635d516aa75d288f0a7884de381e6ecb",
+      "main": "85c22208e655846c4fbd4f39eba020b95e23a6fe987b5a88ba0ac3c2098dade5",
+      "interior": "0e3171cb285585e49d34216a1113e42d13eccd85e392ecaa409b1d6cd7fed41e"
+    },
+    {
+      "id": "playful-shapes",
+      "hash": "d6d77acb9b7b25ca49d16dfa663c6f2d8e5228cef2a65c84793c17ed46ca548c",
+      "main": "4af30d10662e8cdef65eb16a9aad34f0b1d250bda67f29c9f61b2565865696c2",
+      "interior": "8bb268a28568fe85000b4197598e2a46731d09a15cea3505de8c86e8e9fff156"
+    },
+    {
+      "id": "formal-heritage",
+      "hash": "5c46ad17bc4b9f83c6e66e40c8875448ba762fcca28f1567cbcdfe4e2c02fac1",
+      "main": "f1ccbcae81df1f9ea77eea8461262a6be2efc6dd36aa09c515a6190c5c636440",
+      "interior": "1e1cec3d5cb737b602c4f6d5d5570de032fa85c3e899a1cd4c8ecbbf9379e11c"
+    },
+    {
+      "id": "art-deco",
+      "hash": "04517b2a426d3acb2d40df68cef36ba81f84775c5fae24d74575a4e28a796a1e",
+      "main": "16b63756acb0c7adec8fc0fc1e68e448d16b12b89a0ccbfbecc1a68f493c7dbc",
+      "interior": "0a83dbacea207580b8eff031bb5f17d7c9c8fc32be99b9c852ef944a757c5db5"
+    },
+    {
+      "id": "soft-modern",
+      "hash": "e15dc6616a71d79cc5cfca0976ef4f860d32ce02a57cde848f24fb50baec5261",
+      "main": "c68cb81d018440022e2c279dcf4730553aed2096bd520914cb0ebc38d8612f15",
+      "interior": "70276f0ac6ed5ef0137dd7be43306e8f95ca926bb6e691e6292e3a265e0535f6"
+    },
+    {
+      "id": "luminous-digital",
+      "hash": "04862f0eec9cc7d0763370a36f26b621c39888b057e198774b874f6d69e49f40",
+      "main": "e8d4a52bfd57027892dc3e4eb635f8ec55e4df6d40f15835032ce104b8248b32",
+      "interior": "e6ea796ee13e7d1fa7609b84a5e2710986a56622e8a6a6176814e241ea70670c"
+    }
+  ]
+}

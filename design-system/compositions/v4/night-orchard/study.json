@@ -1,0 +1,207 @@
+{
+  "id": "night-orchard",
+  "revision": 2,
+  "title": "Night Orchard / evening and visit",
+  "primaryFamily": "hospitality",
+  "assetMinimum": "none",
+  "fitSignals": [
+    "location",
+    "action",
+    "comparison",
+    "real-copy",
+    "type-content",
+    "sparse-media"
+  ],
+  "visitorTasks": [
+    "find-location",
+    "book-inquiry",
+    "compare-options"
+  ],
+  "organizingIdea": "A illustrated evening field carries identity and visit tasks; the interior becomes a legible menu sheet and practical access document.",
+  "brief": {
+    "fictional": true,
+    "facts": {
+      "name": "Night Orchard",
+      "offer": "Fictional garden supper room",
+      "address": "8 Lantern Walk, invented location",
+      "hours": "Thursday–Saturday, 18:00–22:00",
+      "menu": [
+        {
+          "dish": "Roast squash",
+          "description": "White beans, greens and herbs",
+          "price": "18 teaching units"
+        },
+        {
+          "dish": "Garden plate",
+          "description": "Seasonal leaves, grilled bread and house dressing",
+          "price": "14 teaching units"
+        },
+        {
+          "dish": "Pear pudding",
+          "description": "Warm pear and oat crumble",
+          "price": "8 teaching units"
+        }
+      ],
+      "access": "Step-free garden entrance in fictional brief; customer verification required",
+      "contact": "orchard@example.test",
+      "development": "Expanded original fictional explanatory content and interaction detail; no measured client outcome"
+    },
+    "factsHash": "8080e0fccb6f270cec082669107ff849c5d1c293a9da97f6e6a26fcc265d08bd",
+    "mediaHash": "fcd570a8f27800c22a6332e9ce6d984d4c573745ae7485134a195056bb35f08e"
+  },
+  "provenance": {
+    "content": "Original fictional Vitris teaching brief and authored copy; operational details, dimensions and offers are invented and must never populate customer inventories.",
+    "media": "Original generated fictional raster concepts with tool/prompt/source lineage; editable text is separate.",
+    "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+  },
+  "storyboard": {
+    "homepage": [
+      "evening scene and identity",
+      "invitation",
+      "visit strip"
+    ],
+    "interior": [
+      "menu title",
+      "dish/description/price sheet",
+      "access and hours",
+      "question before booking"
+    ],
+    "mobile": "Original gouache establishes a fictional evening garden, then menu preview and practical visit content; interior develops dishes, descriptions, teaching prices, access and native disclosures. Mobile actions remain in reading order."
+  },
+  "designDecisions": "A illustrated evening field carries identity and visit tasks; the interior becomes a legible menu sheet and practical access document.",
+  "lessonIds": [
+    "cmp-image-art-direction",
+    "cmp-contextual-action",
+    "cmp-narrative-continuity"
+  ],
+  "referenceIds": [
+    "bokman",
+    "big-mamma"
+  ],
+  "sourcePath": "night-orchard",
+  "homepage": "/",
+  "interior": "/detail",
+  "status": "production compiled; assistant visually inspected; human preference unlabeled",
+  "humanPreference": null,
+  "renderEvidence": [
+    {
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-06T20:51:49.699Z",
+      "browser": "153.0.8010.12",
+      "compiledHash": "048230c814a248544855c2619aa2bbe009903a99d81e575d0f837812e11b6484",
+      "preview": {
+        "path": "previews/night-orchard-home-1440.png",
+        "sha256": "a680563565a62db62e5db903c3b4f20a578862edd6001c3f668430eec4574b8d"
+      },
+      "fullPreview": {
+        "path": "previews/full/night-orchard-home-1440.png",
+        "sha256": "f20a35ebc96d0da1b8b073a7bcd6af5a24743c48df5438869c5804a28e6383e8"
+      },
+      "visualReview": {
+        "assessor": "agent",
+        "reviewedAt": "2026-10-06T21:00:13.933Z",
+        "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original gouache establishes a fictional evening garden, then menu preview and practical visit content; interior develops dishes, descriptions, teaching prices, access and native disclosures. Mobile actions remain in reading order. Remaining: Invented address/hours/prices and illustration are teaching only. No booking transaction, allergen certification or operational restaurant claim."
+      }
+    },
+    {
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-06T20:51:50.773Z",
+      "browser": "153.0.8010.12",
+      "compiledHash": "048230c814a248544855c2619aa2bbe009903a99d81e575d0f837812e11b6484",
+      "preview": {
+        "path": "previews/night-orchard-home-390.png",
+        "sha256": "09d9e41bda4c8b6cc3cdbe4503a9d3e723517761706d4269e3818980bbf3eef5"
+      },
+      "fullPreview": {
+        "path": "previews/full/night-orchard-home-390.png",
+        "sha256": "412162f32e466d01672821abc26a499425e3c167a965ece0f8898019fb5e6415"
+      },
+      "visualReview": {
+        "assessor": "agent",
+        "reviewedAt": "2026-10-06T21:00:13.933Z",
+        "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original gouache establishes a fictional evening garden, then menu preview and practical visit content; interior develops dishes, descriptions, teaching prices, access and native disclosures. Mobile actions remain in reading order. Remaining: Invented address/hours/prices and illustration are teaching only. No booking transaction, allergen certification or operational restaurant claim."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-06T20:51:52.027Z",
+      "browser": "153.0.8010.12",
+      "compiledHash": "4ac13828de61b226863c69c1503149785db63efc2850d932061341972a9ee007",
+      "preview": {
+        "path": "previews/night-orchard-interior-1440.png",
+        "sha256": "127c1cc7a53e7088de35606be9f927bd52c3a4ca48c0701d71dded9b3dc76572"
+      },
+      "fullPreview": {
+        "path": "previews/full/night-orchard-interior-1440.png",
+        "sha256": "e6cfb4d6457c2a97225947adc31cc83c24940d256d8e8269c077674a6d764439"
+      },
+      "visualReview": {
+        "assessor": "agent",
+        "reviewedAt": "2026-10-06T21:00:13.933Z",
+        "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original gouache establishes a fictional evening garden, then menu preview and practical visit content; interior develops dishes, descriptions, teaching prices, access and native disclosures. Mobile actions remain in reading order. Remaining: Invented address/hours/prices and illustration are teaching only. No booking transaction, allergen certification or operational restaurant claim."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-06T20:51:53.143Z",
+      "browser": "153.0.8010.12",
+      "compiledHash": "4ac13828de61b226863c69c1503149785db63efc2850d932061341972a9ee007",
+      "preview": {
+        "path": "previews/night-orchard-interior-390.png",
+        "sha256": "196b416d5a7af4ab916de403bd37a65af6c8b39267ce7bc9760aed970d0bc854"
+      },
+      "fullPreview": {
+        "path": "previews/full/night-orchard-interior-390.png",
+        "sha256": "1b7f05aa803c21ea2091addfaf657f28309fc4606b23cc1a94d723718401744b"
+      },
+      "visualReview": {
+        "assessor": "agent",
+        "reviewedAt": "2026-10-06T21:00:13.933Z",
+        "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original gouache establishes a fictional evening garden, then menu preview and practical visit content; interior develops dishes, descriptions, teaching prices, access and native disclosures. Mobile actions remain in reading order. Remaining: Invented address/hours/prices and illustration are teaching only. No booking transaction, allergen certification or operational restaurant claim."
+      }
+    }
+  ],
+  "selectionProfile": {
+    "tasks": [
+      "find-location",
+      "book-inquiry",
+      "compare-options"
+    ],
+    "contexts": [
+      "venue"
+    ],
+    "contributions": [
+      "atmosphere-menu",
+      "visit-actions"
+    ],
+    "expressions": [
+      "hospitality"
+    ],
+    "interpretation": {
+      "assetMinimum": "none",
+      "scope": "Adapt the menu/visit hierarchy and editable atmosphere type without copying the teaching illustration.",
+      "missingDependencies": [
+        "The original generated illustration is fictional; actual venue atmosphere requires approved or clearly illustrative assets."
+      ]
+    }
+  },
+  "exampleScope": "developed-homepage-interior-example",
+  "releaseNotes": "Original gouache establishes a fictional evening garden, then menu preview and practical visit content; interior develops dishes, descriptions, teaching prices, access and native disclosures. Mobile actions remain in reading order. Limitations: Invented address/hours/prices and illustration are teaching only. No booking transaction, allergen certification or operational restaurant claim.",
+  "comparisonStatus": "not a controlled same-facts comparison"
+}

@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.wrangler/
+.env
+.dev.vars
+scratch/
+agent/runs/traces/
+.cursor/vitris-trace-hooks.json
+.cursor/hooks.json.vitris-backup
+.cursor/hooks.json.malformed

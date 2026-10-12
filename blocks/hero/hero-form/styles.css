@@ -1,0 +1,11 @@
+.c-hero-form__copy{display:grid;gap:var(--space-5);align-content:center}
+.c-hero-form__copy h1{max-width:18ch}
+.c-hero-form__proof:empty{display:none}
+.c-hero-form__card{max-width:32rem;width:100%;justify-self:end}
+.c-hero-form__card .card__body{padding:var(--space-6);gap:var(--space-4)}
+.c-hero-form__card h3,.c-hero-form__card h2{font-size:var(--step-2)}
+.c-hero-form__card .btn{width:100%}
+.c-hero-form__card small{color:var(--color-muted)}
+@media(min-width:720px){.c-hero-form .split{align-items:center}}
+.c-hero-form--dark{--color-bg:#141210;--color-text:#F7F4EF;--color-muted:#B8B0A4;--color-surface:#1E1B18;--color-surface-2:#2A2622;--color-border:#3A342E;--color-focus:#F7F4EF;background:var(--color-bg);color:var(--color-text)}
+.c-hero-form--dark .card{box-shadow:none}

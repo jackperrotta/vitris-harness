@@ -1,0 +1,13 @@
+{
+  "version":2,"subjectHash":"1b90fea732831e0f682da5f2e768bc023bd879d54f209d84066d3132db8550b5",
+  "reviewer":"same-agent editorial review against synthetic source and storyboard",
+  "verdict":"pass",
+  "evidence":["onboarding/copy-plan.json","onboarding/storyboard.json","onboarding/business.json","onboarding/copy/synthetic-brief.md"],
+  "checks":[
+    {"criterion":"accuracy","verdict":"pass","evidence":"The monthly-work copy names only the four documented inclusions and explicitly excludes tax filing, audits, and legal advice."},
+    {"criterion":"clarity","verdict":"pass","evidence":"Home opens with recurring bookkeeping for small service companies; the interior expands the transaction-to-review sequence. The contact addition says a few sentences are enough to start, without changing the requested fields or response expectation."},
+    {"criterion":"specificity","verdict":"pass","evidence":"Profit-and-loss, balance sheet, reconciliation, and the two-business-day reply replace generic assurances; no client results or credentials appear."},
+    {"criterion":"continuity","verdict":"pass","evidence":"Every storyboard section has a matching copy section, and the contact stage retains the request-versus-booking distinction."},
+    {"criterion":"cta-behavior","verdict":"pass","evidence":"The contact copy now states that the form sends an inquiry without scheduling an appointment and offers direct email as an alternative. The current contact page uses that same behavior and wording."}
+  ],"findings":[]
+}

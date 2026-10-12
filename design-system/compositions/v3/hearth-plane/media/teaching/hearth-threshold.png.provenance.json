@@ -1,0 +1,33 @@
+{
+  "method": "generated-raster",
+  "tool": "built-in image_gen.imagegen",
+  "model": null,
+  "seed": null,
+  "providerReceipt": null,
+  "prompt": "Use case: precise-object-edit. Create a companion architectural concept photograph of exactly this fictional courtyard building: keep pale plaster, oak joinery, gravel court, timber sheltered bench, ceramic vessel and greenery coherent. Change the viewpoint to a close, low diagonal view along the sheltered oak bench and sliding-door threshold, showing the junction of warm timber, plaster and gravel. Frame the doorway and roof shelter with genuine spatial depth and modest indoor furniture visible. No added floors, new architecture, people, text or labels. Wide landscape image, calm architectural editorial detail, plausible geometry, same natural daylight. This remains an invented teaching concept, not completed customer work.",
+  "parents": [
+    {
+      "path": "media/teaching/hearth-courtyard.png",
+      "role": "reference and edit target",
+      "sha256": "2c708aff326fb67052dad1ee6c2be5e4dc21861937efbe3d15b839955330ea5b"
+    }
+  ],
+  "rights": "Original AI-generated fictional teaching material; package/generation teaching eligible. No third-party branding or customer proof.",
+  "forbiddenImplications": [
+    "Not real customer work, venue, manufactured product or verified result",
+    "No structural, material, safety or performance certification"
+  ],
+  "sha256": "6f12c8534ef1511806c2815e83b51a7053e40e0556c8b930d0fa74a2f5ed2249",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "recipe": {
+    "prompt": "Use case: precise-object-edit. Create a companion architectural concept photograph of exactly this fictional courtyard building: keep pale plaster, oak joinery, gravel court, timber sheltered bench, ceramic vessel and greenery coherent. Change the viewpoint to a close, low diagonal view along the sheltered oak bench and sliding-door threshold, showing the junction of warm timber, plaster and gravel. Frame the doorway and roof shelter with genuine spatial depth and modest indoor furniture visible. No added floors, new architecture, people, text or labels. Wide landscape image, calm architectural editorial detail, plausible geometry, same natural daylight. This remains an invented teaching concept, not completed customer work.",
+    "parent": {
+      "path": "hearth-plane/media/teaching/hearth-courtyard.png",
+      "sha256": "2c708aff326fb67052dad1ee6c2be5e4dc21861937efbe3d15b839955330ea5b",
+      "relativeTo": "teaching-release"
+    }
+  }
+}

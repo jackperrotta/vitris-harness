@@ -1,0 +1,8 @@
+.c-feature-stats-band__row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-6) var(--space-5)}
+.c-feature-stats-band__row .stat{text-align:center;justify-items:center;padding-inline:var(--space-4)}
+.c-feature-stats-band__row .stat__value{font-size:var(--step-5)}
+@media(min-width:720px){
+  .c-feature-stats-band__row{grid-template-columns:repeat(auto-fit,minmax(11rem,1fr))}
+  .c-feature-stats-band__row .stat + .stat{border-left:1px solid var(--color-border)}
+}
+.c-feature-stats-band--dark{--color-bg:#141210;--color-text:#F7F4EF;--color-muted:#B8B0A4;--color-surface:#1E1B18;--color-surface-2:#2A2622;--color-border:#3A342E;--color-focus:#F7F4EF;background:var(--color-bg);color:var(--color-text)}

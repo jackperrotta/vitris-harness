@@ -1,0 +1,15 @@
+{
+  "version":2,
+  "subjectHash":"05d64e1cb5d6e03989780cb2fd84a40f03d99b34a560be01983f635aa1c64321",
+  "reviewer":"same-agent critical review of synthetic brief and narrative",
+  "verdict":"pass",
+  "evidence":["onboarding/narrative-brief.json","onboarding/business.json","onboarding/copy/synthetic-brief.md"],
+  "checks":[
+    {"criterion":"customer","verdict":"pass","evidence":"Customer is the spreadsheet-dependent owner from the synthetic brief; no unsupported sector or size is added."},
+    {"criterion":"offer","verdict":"pass","evidence":"Monthly categorization, reconciliation, P&L, balance sheet, and review call match business facts."},
+    {"criterion":"proof","verdict":"pass","evidence":"Proof is explicitly missing; asset notes prohibit implied client work and no testimonial or credential is invented."},
+    {"criterion":"conversion","verdict":"pass","evidence":"Email requests a fit call; the brief preserves the two-business-day reply and says no slot is booked."},
+    {"criterion":"unsupported-claims","verdict":"pass","evidence":"Tax filing, audits, legal advice, guaranteed savings, staff photos, and fixed price remain outside the claims."}
+  ],
+  "findings":[]
+}

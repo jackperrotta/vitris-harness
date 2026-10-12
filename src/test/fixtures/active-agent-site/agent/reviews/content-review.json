@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "subjectHash": "696b02b16d581f284124e87de9ce80783804c1829c03cffc53d3ce11b4068433",
+  "reviewer": "Codex same-agent content review against the synthetic brief, copy plan, rendered routes, and browser checks",
+  "verdict": "pass",
+  "evidence": ["onboarding/copy/synthetic-brief.md", "onboarding/business.json", "onboarding/copy-plan.json", "pages/index.html", "pages/monthly-work/index.html", "pages/contact/index.html", "agent/reviews/browser.json"],
+  "checks": [
+    {"criterion":"accuracy","verdict":"pass","evidence":"Pages name only monthly bookkeeping, tax-ready reports, remote U.S. service, and the four included tasks supported by the source brief; no fabricated results appear."},
+    {"criterion":"clarity","verdict":"pass","evidence":"Home states the offer immediately; monthly-work separates included tasks from tax, audit, and legal exclusions; contact states that a request does not book a call."},
+    {"criterion":"specificity","verdict":"pass","evidence":"Categorization, reconciliation, P&L, balance sheet, monthly review, transaction-volume pricing, and two-business-day response are concrete supported details."},
+    {"criterion":"continuity","verdict":"pass","evidence":"The three routes share the same scope and fit-call promise. The contact form repeats the copy plan's new short-message reassurance and its submit behavior."},
+    {"criterion":"cta-behavior","verdict":"pass","evidence":"Home and monthly CTAs navigate to real local routes. The contact form POST and required fields passed the mocked endpoint browser check; the direct email link targets the declared pilot address. Real delivery remains untested because the brief uses .example."},
+    {"criterion":"coverage","verdict":"pass","evidence":"Every planned route and section is represented, including the monthly scope, pricing process, and contact fields."},
+    {"criterion":"audit-leakage","verdict":"pass","evidence":"Rendered copy contains no synthetic-pilot, screenshot, model, or internal evaluation commentary."}
+  ],
+  "findings": []
+}

@@ -1,0 +1,19 @@
+{
+  "method": "generated-raster",
+  "tool": "built-in image_gen.imagegen",
+  "model": null,
+  "seed": null,
+  "providerReceipt": null,
+  "prompt": "Use case: photorealistic-natural. Asset type: architectural concept visualization for an original fictional teaching website, not a customer's building. Primary request: a beautifully resolved small single-storey courtyard house in pale lime plaster and natural oak, a sheltered timber threshold around a planted gravel court, sliding glazed doors, an integrated bench, one understated ceramic vessel. Architectural editorial photography style, accurate coherent construction, human scale without people. Wide landscape composition viewed diagonally from the court with a readable roof edge and threshold, quiet daylight, green grey planting, no luxury mansion, no pool. Materially convincing grain, plaster, glazing and shadows. No text, labels, logos or watermarks. This is an invented concept, not completed architectural work or real project evidence.",
+  "parents": [],
+  "rights": "Original AI-generated fictional teaching material; package/generation teaching eligible. No third-party branding or customer proof.",
+  "forbiddenImplications": [
+    "Not real customer work, venue, manufactured product or verified result",
+    "No structural, material, safety or performance certification"
+  ],
+  "sha256": "2c708aff326fb67052dad1ee6c2be5e4dc21861937efbe3d15b839955330ea5b",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  }
+}

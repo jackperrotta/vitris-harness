@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "blockId": "hero/hero-service",
+  "blockRevision": 1,
+  "sourceHash": "a42eb489095bb023c481f496b83c27adcdcabacbd266915de550446fac384f8e",
+  "previewHtmlHash": "ed15445ede882fda052ac0641c34066c30ec682cb481168e5433fafc1373cf2d",
+  "rendererHash": "adb9cf206350ec5e97bc41d8db13fe3ced203ffc9ec42bde236a81d53043bb46",
+  "content": "README example",
+  "assets": "inline placeholders",
+  "theme": "defaultTheme",
+  "browser": "Chromium 153.0.8010.12",
+  "renderer": "scripts/blocks-preview.ts",
+  "images": {
+    "mobile": {
+      "file": "hero--hero-service--mobile.jpg",
+      "hash": "816f09e6a2d449efcc7ed5e23932ba313710eef9fa9dcbef094b5edb9a15da72",
+      "width": 375,
+      "height": 900
+    },
+    "desktop": {
+      "file": "hero--hero-service--desktop.jpg",
+      "hash": "1b3b6f66b5c8432ecfc3f946b0b22f9fec12ab85a1713d0077003bd95bb4add0",
+      "width": 1280,
+      "height": 800
+    }
+  }
+}

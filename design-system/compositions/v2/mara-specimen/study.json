@@ -1,0 +1,244 @@
+{
+  "id": "mara-specimen",
+  "revision": 1,
+  "title": "Mara Vale / typographic index",
+  "primaryFamily": "expressive-type",
+  "assetMinimum": "one-image",
+  "fitSignals": [
+    "professional-service",
+    "type-content",
+    "real-copy",
+    "process",
+    "collection",
+    "sparse-media",
+    "action"
+  ],
+  "visitorTasks": [
+    "Evaluate a practice",
+    "Understand a process"
+  ],
+  "organizingIdea": "Selected work is the introduction; large project titles function as a navigable index with quieter project metadata.",
+  "brief": {
+    "fictional": true,
+    "facts": {
+      "name": "Mara Vale",
+      "offer": "Independent information design",
+      "projects": [
+        {
+          "name": "Field Notes",
+          "type": "Wayfinding study",
+          "year": "2025"
+        },
+        {
+          "name": "Open Table",
+          "type": "Publication study",
+          "year": "2026"
+        }
+      ],
+      "method": [
+        "Collect the material",
+        "Find the hierarchy",
+        "Test the reading"
+      ],
+      "contact": "mara@example.test",
+      "media": [
+        "Original SVG reading diagram"
+      ]
+    },
+    "factsHash": "9545037fbd8c521a1bb28851165d50edb2cb39a42ddf48cf98dfa73d959bdf57",
+    "mediaHash": "67f1f059df254741da210de09c6b30d8a5073023a40c56d786e33b358a25af7f"
+  },
+  "provenance": {
+    "content": "Original fictional teaching content authored for Vitris; never customer facts",
+    "media": "Original authored SVG; no external assets or fonts",
+    "rights": "Original Vitris teaching source; customer reuse requires adapting facts"
+  },
+  "storyboard": {
+    "homepage": [
+      "FieldNotes ↗",
+      "Open Table ↗",
+      "Collect. Order. Read."
+    ],
+    "interior": [
+      "Field Notes",
+      "Collect the material",
+      "Find the hierarchy",
+      "Test the reading",
+      "Open Table"
+    ],
+    "mobile": "Content order is preserved; side navigation and supporting columns reflow into the document. No essential hover interactions."
+  },
+  "designDecisions": "Selected work is the introduction; large project titles function as a navigable index with quieter project metadata.",
+  "lessonIds": [
+    "cmp-type-roles",
+    "cmp-collection-structure",
+    "cmp-image-art-direction"
+  ],
+  "referenceIds": [
+    "pangram-pangram",
+    "big"
+  ],
+  "sourcePath": "mara-specimen",
+  "homepage": "/",
+  "interior": "/detail",
+  "status": "compiled, automated checks passed, assistant visual review recorded; human preference pending",
+  "humanPreference": null,
+  "renderEvidence": [
+    {
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T15:54:36.097Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/mara-specimen-home-1440.png",
+        "sha256": "870b84d710fb860f4574c28a34b7702816e3fc3bd673a45a76a8c87fc38b3f1a"
+      },
+      "compiledHash": "3550c2c0427190939af5e2c16fc3ca4b34e1cfaf580730b51f2e0034d60ed483",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail#reading"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        }
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:08:16.890952+00:00",
+        "scope": "desktop/mobile full-page contact-sheet inspection; text hierarchy, reading order, overflow and matched-pair distinction",
+        "assessment": "Clear organization and readable narrow layout; no visual collision observed. Functional checks are automated, human preference is pending."
+      }
+    },
+    {
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T15:54:37.062Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/mara-specimen-home-390.png",
+        "sha256": "3d99a6e7ebed0e109a836fc666d2201288fe1978527cdcf9e368ef981bfc1fdd"
+      },
+      "compiledHash": "3550c2c0427190939af5e2c16fc3ca4b34e1cfaf580730b51f2e0034d60ed483",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail#reading"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        }
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:08:16.890952+00:00",
+        "scope": "desktop/mobile full-page contact-sheet inspection; text hierarchy, reading order, overflow and matched-pair distinction",
+        "assessment": "Clear organization and readable narrow layout; no visual collision observed. Functional checks are automated, human preference is pending."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T15:54:38.097Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/mara-specimen-interior-1440.png",
+        "sha256": "4226936502a7e3a66d3583c8ad9a0ffe52a0eb95cd8cb95c145f7e5db72778a6"
+      },
+      "compiledHash": "0c529b140a31111b9ea69d9885a5ab579f061eecb9e0e1cacad1c8642dfe602d",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        }
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:08:16.890952+00:00",
+        "scope": "desktop/mobile full-page contact-sheet inspection; text hierarchy, reading order, overflow and matched-pair distinction",
+        "assessment": "Clear organization and readable narrow layout; no visual collision observed. Functional checks are automated, human preference is pending."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T15:54:39.130Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/mara-specimen-interior-390.png",
+        "sha256": "8f4946d321695e6ad527752a34242ea3dc28668d70a9016b30218e5fa685a437"
+      },
+      "compiledHash": "0c529b140a31111b9ea69d9885a5ab579f061eecb9e0e1cacad1c8642dfe602d",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        }
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:08:16.890952+00:00",
+        "scope": "desktop/mobile full-page contact-sheet inspection; text hierarchy, reading order, overflow and matched-pair distinction",
+        "assessment": "Clear organization and readable narrow layout; no visual collision observed. Functional checks are automated, human preference is pending."
+      }
+    }
+  ]
+}

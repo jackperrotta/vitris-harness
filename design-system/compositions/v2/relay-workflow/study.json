@@ -1,0 +1,283 @@
+{
+  "id": "relay-workflow",
+  "revision": 1,
+  "title": "Relay / workflow demonstration",
+  "primaryFamily": "technical",
+  "assetMinimum": "none",
+  "fitSignals": [
+    "real-copy",
+    "type-content",
+    "action",
+    "sparse-media",
+    "product-ui",
+    "process"
+  ],
+  "visitorTasks": [
+    "explore-product",
+    "understand-process"
+  ],
+  "organizingIdea": "Lead with a concrete workflow surface, then explain its state transitions; the interior is a guided demonstration.",
+  "brief": {
+    "fictional": true,
+    "facts": {
+      "name": "Relay",
+      "offer": "Fictional studio handover workflow",
+      "records": [
+        {
+          "task": "Outline",
+          "state": "Collected"
+        },
+        {
+          "task": "Review",
+          "state": "Ready"
+        },
+        {
+          "task": "Handover",
+          "state": "Next"
+        }
+      ],
+      "process": [
+        "Collect",
+        "Review",
+        "Handover"
+      ],
+      "restriction": "Static illustrative interface, no connected account or live project",
+      "contact": "relay@example.test"
+    },
+    "factsHash": "a2f658d0d6df23ba09277f5686471e2f98587c7178ee1ff30c924dbc2eb3353b",
+    "mediaHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "provenance": {
+    "content": "Original fictional Vitris teaching brief and copy; no customer claims.",
+    "media": "Original inline SVG diagrams and/or text; no external imagery or type assets.",
+    "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+  },
+  "storyboard": {
+    "homepage": [
+      "product proposition",
+      "illustrative workspace",
+      "state explanation",
+      "boundary"
+    ],
+    "interior": [
+      "guided disclosures",
+      "workspace recap",
+      "application notes"
+    ],
+    "mobile": "The workspace sidebar becomes a context strip above the table; guided state explanations stack. Native disclosure controls remain keyboard usable."
+  },
+  "designDecisions": "Lead with a concrete workflow surface, then explain its state transitions; the interior is a guided demonstration.",
+  "lessonIds": [
+    "cmp-evidence-form",
+    "cmp-interactive-explanation",
+    "cmp-process"
+  ],
+  "referenceIds": [
+    "linear"
+  ],
+  "sourcePath": "relay-workflow",
+  "homepage": "/",
+  "interior": "/detail",
+  "status": "compiled and automated/assistant visually reviewed; human preference pending",
+  "humanPreference": null,
+  "renderEvidence": [
+    {
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T16:48:44.572Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/relay-workflow-home-1440.png",
+        "sha256": "9f07b4e37cb8a0a73093bbe921859efc1b3248eac168d0f96e8b346bcd037e23"
+      },
+      "compiledHash": "0c30ccd3eebe5bba826196c012fc59f8b4adf9e1054288c206231109f5cea80a",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail",
+            "/detail"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+        "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+        "assessment": "Desktop/mobile home and interior contact sheets inspected. Workspace context precedes state table on narrow layouts; disclosures precede recap. Static demonstration boundary visible. Native disclosure keyboard activation and visible focus passed automated checks."
+      }
+    },
+    {
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T16:48:45.618Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/relay-workflow-home-390.png",
+        "sha256": "b1be668d42924fb73aba9d75a4eb98554147603533d66e539f627192188a30f4"
+      },
+      "compiledHash": "0c30ccd3eebe5bba826196c012fc59f8b4adf9e1054288c206231109f5cea80a",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail",
+            "/detail"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+        "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+        "assessment": "Desktop/mobile home and interior contact sheets inspected. Workspace context precedes state table on narrow layouts; disclosures precede recap. Static demonstration boundary visible. Native disclosure keyboard activation and visible focus passed automated checks."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T16:48:46.844Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/relay-workflow-interior-1440.png",
+        "sha256": "e4369f2b8ae94366e4227c44b25a5c16c5f66ccaa2d684af58c3c31a9b286f45"
+      },
+      "compiledHash": "ec6e79e93d0170efcb2fa375d1d31d3c3a4b733cb1791bd866dc70eb66251a4f",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Inspect this workflow →",
+          "outline": "solid",
+          "width": "3px"
+        },
+        "disclosures": [
+          {
+            "label": "01 / Collect",
+            "keyboardToggle": true,
+            "focusVisible": true
+          },
+          {
+            "label": "02 / Review",
+            "keyboardToggle": true,
+            "focusVisible": true
+          },
+          {
+            "label": "03 / Handover",
+            "keyboardToggle": true,
+            "focusVisible": true
+          }
+        ]
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+        "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+        "assessment": "Desktop/mobile home and interior contact sheets inspected. Workspace context precedes state table on narrow layouts; disclosures precede recap. Static demonstration boundary visible. Native disclosure keyboard activation and visible focus passed automated checks."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T16:48:48.002Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/relay-workflow-interior-390.png",
+        "sha256": "3d69422afda4d559f60353dff28be99b31e3d83862cf37847a8cd72d27a2eb6e"
+      },
+      "compiledHash": "ec6e79e93d0170efcb2fa375d1d31d3c3a4b733cb1791bd866dc70eb66251a4f",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Inspect this workflow →",
+          "outline": "solid",
+          "width": "3px"
+        },
+        "disclosures": [
+          {
+            "label": "01 / Collect",
+            "keyboardToggle": true,
+            "focusVisible": true
+          },
+          {
+            "label": "02 / Review",
+            "keyboardToggle": true,
+            "focusVisible": true
+          },
+          {
+            "label": "03 / Handover",
+            "keyboardToggle": true,
+            "focusVisible": true
+          }
+        ]
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+        "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+        "assessment": "Desktop/mobile home and interior contact sheets inspected. Workspace context precedes state table on narrow layouts; disclosures precede recap. Static demonstration boundary visible. Native disclosure keyboard activation and visible focus passed automated checks."
+      }
+    }
+  ]
+}

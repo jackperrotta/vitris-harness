@@ -1,0 +1,1232 @@
+{
+  "schemaVersion": 1,
+  "lessonRelease": "2026-09-28.1",
+  "lessons": [
+    {
+      "id": "cmp-evidence-form",
+      "version": 1,
+      "release": "2026-09-28.1",
+      "title": "Derive form from a business relationship",
+      "summary": "Teach a useful relationship in actual material: whole/detail, diagnosis/repair, source/result, local place/service reach, or preparation/meeting. Let it influence hierarchy across the page. Use verified facts and inspected assets; the visual metaphor remains a design hypothesis. Avoid imposing a metaphor on a straightforward task.",
+      "principle": "Derive form from a business relationship",
+      "scope": [
+        "section",
+        "page"
+      ],
+      "tasks": [
+        "business-relationship"
+      ],
+      "stages": [
+        "reference-analysis",
+        "direction",
+        "storyboard",
+        "representative",
+        "pages",
+        "representative-quality",
+        "refine"
+      ],
+      "evidenceNeeds": [],
+      "applicability": {
+        "positiveSignals": [
+          "business-relationship"
+        ],
+        "exclusions": [],
+        "uncertainty": "Check the actual page task and evidence before applying; unknown signals are not negative evidence."
+      },
+      "relationshipGroup": "identity",
+      "relationships": [
+        "derive form from a business relationship"
+      ],
+      "bodyPath": "lessons/cmp-evidence-form.md",
+      "sourceIds": [
+        "S07",
+        "S08"
+      ],
+      "requirementIds": [],
+      "demonstrationIds": [
+        "cmp-evidence-form-application-a",
+        "cmp-evidence-form-application-b",
+        "cmp-evidence-form-counterexample"
+      ],
+      "reviewProbeIds": [
+        "cmp-evidence-form-render"
+      ],
+      "contentHash": "7806e4e83bca268ed28bd66cc7655a22083f88dec7da3229392ce721a481af79"
+    },
+    {
+      "id": "cmp-semantic-grouping",
+      "version": 1,
+      "release": "2026-09-28.1",
+      "title": "Group by meaning before drawing containers",
+      "summary": "Teach grouping through proximity, shared alignment, whitespace, rules, or enclosure. Decide which items belong together before choosing a card or background. Use for labels, descriptions, captions, prices, actions, and proof. Avoid visually equating unrelated information.",
+      "principle": "Group by meaning before drawing containers",
+      "scope": [
+        "section",
+        "page"
+      ],
+      "tasks": [
+        "content-group"
+      ],
+      "stages": [
+        "reference-analysis",
+        "direction",
+        "storyboard",
+        "representative",
+        "pages",
+        "representative-quality",
+        "refine"
+      ],
+      "evidenceNeeds": [],
+      "applicability": {
+        "positiveSignals": [
+          "content-group"
+        ],
+        "exclusions": [],
+        "uncertainty": "Check the actual page task and evidence before applying; unknown signals are not negative evidence."
+      },
+      "relationshipGroup": "grouping",
+      "relationships": [
+        "group by meaning before drawing containers"
+      ],
+      "bodyPath": "lessons/cmp-semantic-grouping.md",
+      "sourceIds": [
+        "S01",
+        "S03"
+      ],
+      "requirementIds": [],
+      "demonstrationIds": [
+        "cmp-semantic-grouping-application-a",
+        "cmp-semantic-grouping-application-b",
+        "cmp-semantic-grouping-counterexample"
+      ],
+      "reviewProbeIds": [
+        "cmp-semantic-grouping-render"
+      ],
+      "contentHash": "5150a7d5aac832699eac3c0957182f45385a7f10427d11b5bf23a21e763b83b2"
+    },
+    {
+      "id": "cmp-unequal-emphasis",
+      "version": 1,
+      "release": "2026-09-28.1",
+      "title": "Allocate emphasis according to importance",
+      "summary": "Teach primary, supporting, and deliberately equal roles from visitor priorities. Adjust area, placement, contrast, type, image scale, and surrounding space together. Larger is not automatically better. Preserve equal treatment for neutral comparison and homogeneous indexes.",
+      "principle": "Allocate emphasis according to importance",
+      "scope": [
+        "section",
+        "page"
+      ],
+      "tasks": [
+        "priority"
+      ],
+      "stages": [
+        "reference-analysis",
+        "direction",
+        "storyboard",
+        "representative",
+        "pages",
+        "representative-quality",
+        "refine"
+      ],
+      "evidenceNeeds": [],
+      "applicability": {
+        "positiveSignals": [
+          "priority"
+        ],
+        "exclusions": [],
+        "uncertainty": "Check the actual page task and evidence before applying; unknown signals are not negative evidence."
+      },
+      "relationshipGroup": "hierarchy",
+      "relationships": [
+        "allocate emphasis according to importance"
+      ],
+      "bodyPath": "lessons/cmp-unequal-emphasis.md",
+      "sourceIds": [
+        "S02",
+        "S06"
+      ],
+      "requirementIds": [],
+      "demonstrationIds": [
+        "cmp-unequal-emphasis-application-a",
+        "cmp-unequal-emphasis-application-b",
+        "cmp-unequal-emphasis-counterexample"
+      ],
+      "reviewProbeIds": [
+        "cmp-unequal-emphasis-render"
+      ],
+      "contentHash": "eeda8f7da2bd3e073a3e11445587883e436d705099b0aeb605125c4f028bf493"
+    },
+    {
+      "id": "cmp-shared-alignment",
+      "version": 1,
+      "release": "2026-09-28.1",
+      "title": "Connect elements through shared alignment",
+      "summary": "Teach a site-owned alignment system across local component boundaries: a label rail, nested tracks, aligned baselines, or shared image edge. Use for metadata, editorial sequences, and comparison. Avoid elaborate grids for simple content.",
+      "principle": "Connect elements through shared alignment",
+      "scope": [
+        "section",
+        "page"
+      ],
+      "tasks": [
+        "alignment"
+      ],
+      "stages": [
+        "reference-analysis",
+        "direction",
+        "storyboard",
+        "representative",
+        "pages",
+        "representative-quality",
+        "refine"
+      ],
+      "evidenceNeeds": [],
+      "applicability": {
+        "positiveSignals": [
+          "alignment"
+        ],
+        "exclusions": [],
+        "uncertainty": "Check the actual page task and evidence before applying; unknown signals are not negative evidence."
+      },
+      "relationshipGroup": "alignment",
+      "relationships": [
+        "connect elements through shared alignment"
+      ],
+      "bodyPath": "lessons/cmp-shared-alignment.md",
+      "sourceIds": [
+        "S05",
+        "S13"
+      ],
+      "requirementIds": [],
+      "demonstrationIds": [
+        "cmp-shared-alignment-application-a",
+        "cmp-shared-alignment-application-b",
+        "cmp-shared-alignment-counterexample"
+      ],
+      "reviewProbeIds": [
+        "cmp-shared-alignment-render"
+      ],
+      "contentHash": "ec2ed8b15016f073d035025fec52458d44c0b8a43bce55f0c84c31f343263ec2"
+    },
+    {
+      "id": "cmp-page-rhythm",
+      "version": 1,
+      "release": "2026-09-28.1",
+      "title": "Shape rhythm across the page",
+      "summary": "Teach pacing through information density, visual area, reading effort, and emphasis. Follow visitor questions rather than mechanically alternating backgrounds. Repeated directories can remain regular because scanning is a repeated task.",
+      "principle": "Shape rhythm across the page",
+      "scope": [
+        "section",
+        "page"
+      ],
+      "tasks": [
+        "page-sequence"
+      ],
+      "stages": [
+        "reference-analysis",
+        "direction",
+        "storyboard",
+        "representative",
+        "pages",
+        "representative-quality",
+        "refine"
+      ],
+      "evidenceNeeds": [],
+      "applicability": {
+        "positiveSignals": [
+          "page-sequence"
+        ],
+        "exclusions": [],
+        "uncertainty": "Check the actual page task and evidence before applying; unknown signals are not negative evidence."
+      },
+      "relationshipGroup": "sequence",
+      "relationships": [
+        "shape rhythm across the page"
+      ],
+      "bodyPath": "lessons/cmp-page-rhythm.md",
+      "sourceIds": [
+        "S04"
+      ],
+      "requirementIds": [],
+      "demonstrationIds": [
+        "cmp-page-rhythm-application-a",
+        "cmp-page-rhythm-application-b",
+        "cmp-page-rhythm-counterexample"
+      ],
+      "reviewProbeIds": [
+        "cmp-page-rhythm-render"
+      ],
+      "contentHash": "c2ced0ab503b033c61c3283634e7bad9a55daf56977712230c8938b1fe25f1b1"
+    },
+    {
+      "id": "cmp-narrative-continuity",
+      "version": 1,
+      "release": "2026-09-28.1",
+      "title": "Let a narrative cross section boundaries",
+      "summary": "Teach that semantic sections need not appear as independent rectangular bands. A sustained story can connect an introduction, details, and action through a shared axis or annotation convention. Use when questions concern the same object; retain useful scanning boundaries.",
+      "principle": "Let a narrative cross section boundaries",
+      "scope": [
+        "section",
+        "page"
+      ],
+      "tasks": [
+        "page-sequence"
+      ],
+      "stages": [
+        "reference-analysis",
+        "direction",
+        "storyboard",
+        "representative",
+        "pages",
+        "representative-quality",
+        "refine"
+      ],
+      "evidenceNeeds": [],
+      "applicability": {
+        "positiveSignals": [
+          "page-sequence"
+        ],
+        "exclusions": [],
+        "uncertainty": "Check the actual page task and evidence before applying; unknown signals are not negative evidence."
+      },
+      "relationshipGroup": "sequence",
+      "relationships": [
+        "let a narrative cross section boundaries"
+      ],
+      "bodyPath": "lessons/cmp-narrative-continuity.md",
+      "sourceIds": [
+        "S01",
+        "S04"
+      ],
+      "requirementIds": [],
+      "demonstrationIds": [
+        "cmp-narrative-continuity-application-a",
+        "cmp-narrative-continuity-application-b",
+        "cmp-narrative-continuity-counterexample"
+      ],
+      "reviewProbeIds": [
+        "cmp-narrative-continuity-render"
+      ],
+      "contentHash": "701730c6686be2188c201daaf13c2b0446b5046a32036cb43d7ade60e9047a5c"
+    },
+    {
+      "id": "cmp-type-roles",
+      "version": 1,
+      "release": "2026-09-28.1",
+      "title": "Give typography distinct jobs",
+      "summary": "Teach roles for orienting labels, expressive statements, explanation, precise data, captions, and actions. Differentiate through width, weight, case, spacing, optical size, or family without requiring many fonts. Do not assign fonts by industry stereotype.",
+      "principle": "Give typography distinct jobs",
+      "scope": [
+        "section",
+        "page"
+      ],
+      "tasks": [
+        "type-content"
+      ],
+      "stages": [
+        "reference-analysis",
+        "direction",
+        "storyboard",
+        "representative",
+        "pages",
+        "representative-quality",
+        "refine"
+      ],
+      "evidenceNeeds": [],
+      "applicability": {
+        "positiveSignals": [
+          "type-content"
+        ],
+        "exclusions": [],
+        "uncertainty": "Check the actual page task and evidence before applying; unknown signals are not negative evidence."
+      },
+      "relationshipGroup": "typography",
+      "relationships": [
+        "give typography distinct jobs"
+      ],
+      "bodyPath": "lessons/cmp-type-roles.md",
+      "sourceIds": [
+        "S15",
+        "S16"
+      ],
+      "requirementIds": [],
+      "demonstrationIds": [
+        "cmp-type-roles-application-a",
+        "cmp-type-roles-application-b",
+        "cmp-type-roles-counterexample"
+      ],
+      "reviewProbeIds": [
+        "cmp-type-roles-render"
+      ],
+      "contentHash": "d210ce42c39dd714b71936752f92bd7d118ecfef7cf997b8751800c4c5d70bdb"
+    },
+    {
+      "id": "cmp-text-shape",
+      "version": 1,
+      "release": "2026-09-28.1",
+      "title": "Compose with real language and text shape",
+      "summary": "Teach composition with real headline lengths, qualifications, and action labels. Adjust measure, wrapping, layout, and scale together. Approved meaning constrains copy changes. Avoid brittle manual breaks; deliberate editorial breaks are acceptable when tested.",
+      "principle": "Compose with real language and text shape",
+      "scope": [
+        "section",
+        "page"
+      ],
+      "tasks": [
+        "real-copy"
+      ],
+      "stages": [
+        "reference-analysis",
+        "direction",
+        "storyboard",
+        "representative",
+        "pages",
+        "representative-quality",
+        "refine"
+      ],
+      "evidenceNeeds": [],
+      "applicability": {
+        "positiveSignals": [
+          "real-copy"
+        ],
+        "exclusions": [],
+        "uncertainty": "Check the actual page task and evidence before applying; unknown signals are not negative evidence."
+      },
+      "relationshipGroup": "typography",
+      "relationships": [
+        "compose with real language and text shape"
+      ],
+      "bodyPath": "lessons/cmp-text-shape.md",
+      "sourceIds": [
+        "S14"
+      ],
+      "requirementIds": [],
+      "demonstrationIds": [
+        "cmp-text-shape-application-a",
+        "cmp-text-shape-application-b",
+        "cmp-text-shape-counterexample"
+      ],
+      "reviewProbeIds": [
+        "cmp-text-shape-render"
+      ],
+      "contentHash": "37721184abe4b735d90888c68003d60ddd3e1047dd5fa37ed33569bd07491909"
+    },
+    {
+      "id": "cmp-image-art-direction",
+      "version": 1,
+      "release": "2026-09-28.1",
+      "title": "Treat crop as a semantic decision",
+      "summary": "Teach crop, focal point, framing, and copy placement according to what an image explains. Use approved media with a meaningful subject or context. Avoid enlarging weak assets or removing evidence needed for honest interpretation.",
+      "principle": "Treat crop as a semantic decision",
+      "scope": [
+        "section",
+        "page"
+      ],
+      "tasks": [
+        "approved-image"
+      ],
+      "stages": [
+        "reference-analysis",
+        "direction",
+        "storyboard",
+        "representative",
+        "pages",
+        "representative-quality",
+        "refine"
+      ],
+      "evidenceNeeds": [],
+      "applicability": {
+        "positiveSignals": [
+          "approved-image"
+        ],
+        "exclusions": [],
+        "uncertainty": "Check the actual page task and evidence before applying; unknown signals are not negative evidence."
+      },
+      "relationshipGroup": "media",
+      "relationships": [
+        "treat crop as a semantic decision"
+      ],
+      "bodyPath": "lessons/cmp-image-art-direction.md",
+      "sourceIds": [
+        "S17"
+      ],
+      "requirementIds": [],
+      "demonstrationIds": [
+        "cmp-image-art-direction-application-a",
+        "cmp-image-art-direction-application-b",
+        "cmp-image-art-direction-counterexample"
+      ],
+      "reviewProbeIds": [
+        "cmp-image-art-direction-render"
+      ],
+      "contentHash": "7ef0817c85ce8ba99335ccadbb4ddaf74e97fb174d3218d0b629293e0db41ef9"
+    },
+    {
+      "id": "cmp-image-sequence",
+      "version": 1,
+      "release": "2026-09-28.1",
+      "title": "Build an image sequence with a purpose",
+      "summary": "Teach editing across complementary images: context, detail, people, process, and outcome. Use actual inventory relationships. One good image can suffice; a mosaic does not justify redundant images.",
+      "principle": "Build an image sequence with a purpose",
+      "scope": [
+        "section",
+        "page"
+      ],
+      "tasks": [
+        "multiple-images"
+      ],
+      "stages": [
+        "reference-analysis",
+        "direction",
+        "storyboard",
+        "representative",
+        "pages",
+        "representative-quality",
+        "refine"
+      ],
+      "evidenceNeeds": [],
+      "applicability": {
+        "positiveSignals": [
+          "multiple-images"
+        ],
+        "exclusions": [],
+        "uncertainty": "Check the actual page task and evidence before applying; unknown signals are not negative evidence."
+      },
+      "relationshipGroup": "media",
+      "relationships": [
+        "build an image sequence with a purpose"
+      ],
+      "bodyPath": "lessons/cmp-image-sequence.md",
+      "sourceIds": [
+        "S07",
+        "S17"
+      ],
+      "requirementIds": [],
+      "demonstrationIds": [
+        "cmp-image-sequence-application-a",
+        "cmp-image-sequence-application-b",
+        "cmp-image-sequence-counterexample"
+      ],
+      "reviewProbeIds": [
+        "cmp-image-sequence-render"
+      ],
+      "contentHash": "09fd19983aeea78a0896564d93906c4b6f3cc2df4d3249fa4f42f5fb87278280"
+    },
+    {
+      "id": "cmp-proof-adjacency",
+      "version": 1,
+      "release": "2026-09-28.1",
+      "title": "Put proof beside the proposition it supports",
+      "summary": "Teach integration of captions, credentials, quotations, measurements, and project details with specific claims. Annotation may be inline, adjacent, below an image, or optional overlay. Use only factual associations supported by source evidence.",
+      "principle": "Put proof beside the proposition it supports",
+      "scope": [
+        "section",
+        "page"
+      ],
+      "tasks": [
+        "proof"
+      ],
+      "stages": [
+        "reference-analysis",
+        "direction",
+        "storyboard",
+        "representative",
+        "pages",
+        "representative-quality",
+        "refine"
+      ],
+      "evidenceNeeds": [],
+      "applicability": {
+        "positiveSignals": [
+          "proof"
+        ],
+        "exclusions": [],
+        "uncertainty": "Check the actual page task and evidence before applying; unknown signals are not negative evidence."
+      },
+      "relationshipGroup": "evidence",
+      "relationships": [
+        "put proof beside the proposition it supports"
+      ],
+      "bodyPath": "lessons/cmp-proof-adjacency.md",
+      "sourceIds": [
+        "S03",
+        "S27"
+      ],
+      "requirementIds": [],
+      "demonstrationIds": [
+        "cmp-proof-adjacency-application-a",
+        "cmp-proof-adjacency-application-b",
+        "cmp-proof-adjacency-counterexample"
+      ],
+      "reviewProbeIds": [
+        "cmp-proof-adjacency-render"
+      ],
+      "contentHash": "3c49560bcd5b98c8c6ba341bda25b404be6fa89da4f039fcb1b229465f42a83e"
+    },
+    {
+      "id": "cmp-collection-structure",
+      "version": 1,
+      "release": "2026-09-28.1",
+      "title": "Choose collections by how visitors inspect them",
+      "summary": "Teach distinctions among scanning a known category, browsing varied objects, ranking options, and opening details. Select lists, grids, cards, indexes, or editorial groups accordingly. Cards are neither mandatory nor forbidden.",
+      "principle": "Choose collections by how visitors inspect them",
+      "scope": [
+        "section",
+        "page"
+      ],
+      "tasks": [
+        "collection"
+      ],
+      "stages": [
+        "reference-analysis",
+        "direction",
+        "storyboard",
+        "representative",
+        "pages",
+        "representative-quality",
+        "refine"
+      ],
+      "evidenceNeeds": [],
+      "applicability": {
+        "positiveSignals": [
+          "collection"
+        ],
+        "exclusions": [],
+        "uncertainty": "Check the actual page task and evidence before applying; unknown signals are not negative evidence."
+      },
+      "relationshipGroup": "collection",
+      "relationships": [
+        "choose collections by how visitors inspect them"
+      ],
+      "bodyPath": "lessons/cmp-collection-structure.md",
+      "sourceIds": [
+        "S18"
+      ],
+      "requirementIds": [],
+      "demonstrationIds": [
+        "cmp-collection-structure-application-a",
+        "cmp-collection-structure-application-b",
+        "cmp-collection-structure-counterexample"
+      ],
+      "reviewProbeIds": [
+        "cmp-collection-structure-render"
+      ],
+      "contentHash": "035ae2c98c57e40be808740bf9f32ea1264978042ce41beaa63445face668cc9"
+    },
+    {
+      "id": "cmp-comparison",
+      "version": 1,
+      "release": "2026-09-28.1",
+      "title": "Make comparisons explicit and fair",
+      "summary": "Teach actual dimensions of a choice: scope, suitability, inclusions, supported timing, and next step. Use when comparable facts exist. Avoid invented tiers, superiority claims, or a default winner.",
+      "principle": "Make comparisons explicit and fair",
+      "scope": [
+        "section",
+        "page"
+      ],
+      "tasks": [
+        "comparison"
+      ],
+      "stages": [
+        "reference-analysis",
+        "direction",
+        "storyboard",
+        "representative",
+        "pages",
+        "representative-quality",
+        "refine"
+      ],
+      "evidenceNeeds": [],
+      "applicability": {
+        "positiveSignals": [
+          "comparison"
+        ],
+        "exclusions": [],
+        "uncertainty": "Check the actual page task and evidence before applying; unknown signals are not negative evidence."
+      },
+      "relationshipGroup": "comparison",
+      "relationships": [
+        "make comparisons explicit and fair"
+      ],
+      "bodyPath": "lessons/cmp-comparison.md",
+      "sourceIds": [
+        "S18",
+        "S22"
+      ],
+      "requirementIds": [],
+      "demonstrationIds": [
+        "cmp-comparison-application-a",
+        "cmp-comparison-application-b",
+        "cmp-comparison-counterexample"
+      ],
+      "reviewProbeIds": [
+        "cmp-comparison-render"
+      ],
+      "contentHash": "0a11390213b0289ff1b140b993bbe7b7cbd30be996e944259ff525875b321c27"
+    },
+    {
+      "id": "cmp-process",
+      "version": 1,
+      "release": "2026-09-28.1",
+      "title": "Explain sequence, dependencies, and responsibility",
+      "summary": "Teach the distinction among chronological stages, branches, parallel responsibilities, and simple lists. Numbers and connectors imply factual relationships. Use supported processes; do not turn every offer into an invented three-step sequence.",
+      "principle": "Explain sequence, dependencies, and responsibility",
+      "scope": [
+        "section",
+        "page"
+      ],
+      "tasks": [
+        "process"
+      ],
+      "stages": [
+        "reference-analysis",
+        "direction",
+        "storyboard",
+        "representative",
+        "pages",
+        "representative-quality",
+        "refine"
+      ],
+      "evidenceNeeds": [],
+      "applicability": {
+        "positiveSignals": [
+          "process"
+        ],
+        "exclusions": [],
+        "uncertainty": "Check the actual page task and evidence before applying; unknown signals are not negative evidence."
+      },
+      "relationshipGroup": "process",
+      "relationships": [
+        "explain sequence, dependencies, and responsibility"
+      ],
+      "bodyPath": "lessons/cmp-process.md",
+      "sourceIds": [
+        "S22",
+        "S20"
+      ],
+      "requirementIds": [],
+      "demonstrationIds": [
+        "cmp-process-application-a",
+        "cmp-process-application-b",
+        "cmp-process-counterexample"
+      ],
+      "reviewProbeIds": [
+        "cmp-process-render"
+      ],
+      "contentHash": "972b258304aac27af7a882d93edbddca6eefbd8626b14ffba1c885ae5a576ce2"
+    },
+    {
+      "id": "cmp-sparse-media",
+      "version": 1,
+      "release": "2026-09-28.1",
+      "title": "Give sparse-media sites useful visual artifacts",
+      "summary": "Teach expressive organization of real content through checklists, scope ledgers, document structures, decision maps, timelines, and carefully set language. Use when photography cannot carry the page. These possibilities do not define a sparse-site template.",
+      "principle": "Give sparse-media sites useful visual artifacts",
+      "scope": [
+        "section",
+        "page"
+      ],
+      "tasks": [
+        "sparse-media"
+      ],
+      "stages": [
+        "reference-analysis",
+        "direction",
+        "storyboard",
+        "representative",
+        "pages",
+        "representative-quality",
+        "refine"
+      ],
+      "evidenceNeeds": [],
+      "applicability": {
+        "positiveSignals": [
+          "sparse-media"
+        ],
+        "exclusions": [],
+        "uncertainty": "Check the actual page task and evidence before applying; unknown signals are not negative evidence."
+      },
+      "relationshipGroup": "sparse-content",
+      "relationships": [
+        "give sparse-media sites useful visual artifacts"
+      ],
+      "bodyPath": "lessons/cmp-sparse-media.md",
+      "sourceIds": [
+        "S01",
+        "S02"
+      ],
+      "requirementIds": [],
+      "demonstrationIds": [
+        "cmp-sparse-media-application-a",
+        "cmp-sparse-media-application-b",
+        "cmp-sparse-media-counterexample"
+      ],
+      "reviewProbeIds": [
+        "cmp-sparse-media-render"
+      ],
+      "contentHash": "46f738dab989b5847321a6fbd9556815ce2d51a84bce847f962af934ee411869"
+    },
+    {
+      "id": "cmp-navigation",
+      "version": 1,
+      "release": "2026-09-28.1",
+      "title": "Make navigation express the visitor's choices",
+      "summary": "Teach orientation through labels, location, grouping, and useful actions. Geometry follows route complexity and direction. Avoid fixed item counts and industry-specific header templates.",
+      "principle": "Make navigation express the visitor's choices",
+      "scope": [
+        "site",
+        "page"
+      ],
+      "tasks": [
+        "routes"
+      ],
+      "stages": [
+        "reference-analysis",
+        "direction",
+        "storyboard",
+        "representative",
+        "pages",
+        "representative-quality",
+        "refine"
+      ],
+      "evidenceNeeds": [],
+      "applicability": {
+        "positiveSignals": [
+          "routes"
+        ],
+        "exclusions": [],
+        "uncertainty": "Check the actual page task and evidence before applying; unknown signals are not negative evidence."
+      },
+      "relationshipGroup": "navigation",
+      "relationships": [
+        "make navigation express the visitor's choices"
+      ],
+      "bodyPath": "lessons/cmp-navigation.md",
+      "sourceIds": [
+        "S20",
+        "S06"
+      ],
+      "requirementIds": [],
+      "demonstrationIds": [
+        "cmp-navigation-application-a",
+        "cmp-navigation-application-b",
+        "cmp-navigation-counterexample"
+      ],
+      "reviewProbeIds": [
+        "cmp-navigation-render"
+      ],
+      "contentHash": "3fc58464abae2e48725cd7e7c09b0c01d0c172d8ea6d41d3209103095d77e806"
+    },
+    {
+      "id": "cmp-contextual-action",
+      "version": 1,
+      "release": "2026-09-28.1",
+      "title": "Position actions at decision moments",
+      "summary": "Teach actions as a reasonable next step with accurate labels and destinations. Placement and nearby evidence can provide emphasis. Use supported inquiry, call, visit, detail, or real booking behavior.",
+      "principle": "Position actions at decision moments",
+      "scope": [
+        "section",
+        "page"
+      ],
+      "tasks": [
+        "action"
+      ],
+      "stages": [
+        "reference-analysis",
+        "direction",
+        "storyboard",
+        "representative",
+        "pages",
+        "representative-quality",
+        "refine"
+      ],
+      "evidenceNeeds": [],
+      "applicability": {
+        "positiveSignals": [
+          "action"
+        ],
+        "exclusions": [],
+        "uncertainty": "Check the actual page task and evidence before applying; unknown signals are not negative evidence."
+      },
+      "relationshipGroup": "action",
+      "relationships": [
+        "position actions at decision moments"
+      ],
+      "bodyPath": "lessons/cmp-contextual-action.md",
+      "sourceIds": [
+        "S06",
+        "S24"
+      ],
+      "requirementIds": [],
+      "demonstrationIds": [
+        "cmp-contextual-action-application-a",
+        "cmp-contextual-action-application-b",
+        "cmp-contextual-action-counterexample"
+      ],
+      "reviewProbeIds": [
+        "cmp-contextual-action-render"
+      ],
+      "contentHash": "22029993d56769d37d22627a79eb024e9ba20980e9c3d5108f3c6a5eaa53d8ad"
+    },
+    {
+      "id": "cmp-local-information",
+      "version": 1,
+      "release": "2026-09-28.1",
+      "title": "Make practical local information usable",
+      "summary": "Teach address, hours, contact methods, service areas, directions, and access notes as a useful interface. Use verified facts that matter to the visit/contact task. Avoid invented availability, travel times, coordinates, or opening status.",
+      "principle": "Make practical local information usable",
+      "scope": [
+        "section",
+        "page"
+      ],
+      "tasks": [
+        "local-facts"
+      ],
+      "stages": [
+        "reference-analysis",
+        "direction",
+        "storyboard",
+        "representative",
+        "pages",
+        "representative-quality",
+        "refine"
+      ],
+      "evidenceNeeds": [],
+      "applicability": {
+        "positiveSignals": [
+          "local-facts"
+        ],
+        "exclusions": [],
+        "uncertainty": "Check the actual page task and evidence before applying; unknown signals are not negative evidence."
+      },
+      "relationshipGroup": "local-facts",
+      "relationships": [
+        "make practical local information usable"
+      ],
+      "bodyPath": "lessons/cmp-local-information.md",
+      "sourceIds": [
+        "S03",
+        "S19"
+      ],
+      "requirementIds": [],
+      "demonstrationIds": [
+        "cmp-local-information-application-a",
+        "cmp-local-information-application-b",
+        "cmp-local-information-counterexample"
+      ],
+      "reviewProbeIds": [
+        "cmp-local-information-render"
+      ],
+      "contentHash": "03d8168a9f76b8e7e7cbe1a5378b1c6d8c0221429d23485e6785e44ecfb8ea58"
+    },
+    {
+      "id": "cmp-surfaces-motifs",
+      "version": 1,
+      "release": "2026-09-28.1",
+      "title": "Derive surfaces and motifs from identity",
+      "summary": "Teach recurrence of geometry, rules, captions, texture, color relationships, or framing across different page purposes. Use when it clarifies identity or grouping. Avoid motif quotas and forced literal metaphors.",
+      "principle": "Derive surfaces and motifs from identity",
+      "scope": [
+        "section",
+        "page"
+      ],
+      "tasks": [
+        "identity"
+      ],
+      "stages": [
+        "reference-analysis",
+        "direction",
+        "storyboard",
+        "representative",
+        "pages",
+        "representative-quality",
+        "refine"
+      ],
+      "evidenceNeeds": [],
+      "applicability": {
+        "positiveSignals": [
+          "identity"
+        ],
+        "exclusions": [],
+        "uncertainty": "Check the actual page task and evidence before applying; unknown signals are not negative evidence."
+      },
+      "relationshipGroup": "identity",
+      "relationships": [
+        "derive surfaces and motifs from identity"
+      ],
+      "bodyPath": "lessons/cmp-surfaces-motifs.md",
+      "sourceIds": [
+        "S07",
+        "S08"
+      ],
+      "requirementIds": [],
+      "demonstrationIds": [
+        "cmp-surfaces-motifs-application-a",
+        "cmp-surfaces-motifs-application-b",
+        "cmp-surfaces-motifs-counterexample"
+      ],
+      "reviewProbeIds": [
+        "cmp-surfaces-motifs-render"
+      ],
+      "contentHash": "614fd6700b55e4de6a57e6c1e15f3090517c9133bef237a1fe9b89344a3974a3"
+    },
+    {
+      "id": "cmp-responsive-recomposition",
+      "version": 1,
+      "release": "2026-09-28.1",
+      "title": "Recompose for available space and reading order",
+      "summary": "Teach preservation of meaning as geometry changes. Plan reading order, subject visibility, grouping, and action access before breakpoints. Local container width may differ from the viewport.",
+      "principle": "Recompose for available space and reading order",
+      "scope": [
+        "section",
+        "page"
+      ],
+      "tasks": [
+        "responsive"
+      ],
+      "stages": [
+        "reference-analysis",
+        "direction",
+        "storyboard",
+        "representative",
+        "pages",
+        "representative-quality",
+        "refine"
+      ],
+      "evidenceNeeds": [],
+      "applicability": {
+        "positiveSignals": [
+          "responsive"
+        ],
+        "exclusions": [],
+        "uncertainty": "Check the actual page task and evidence before applying; unknown signals are not negative evidence."
+      },
+      "relationshipGroup": "responsive",
+      "relationships": [
+        "recompose for available space and reading order"
+      ],
+      "bodyPath": "lessons/cmp-responsive-recomposition.md",
+      "sourceIds": [
+        "S12",
+        "S21",
+        "S22"
+      ],
+      "requirementIds": [],
+      "demonstrationIds": [
+        "cmp-responsive-recomposition-application-a",
+        "cmp-responsive-recomposition-application-b",
+        "cmp-responsive-recomposition-counterexample"
+      ],
+      "reviewProbeIds": [
+        "cmp-responsive-recomposition-render"
+      ],
+      "contentHash": "9edf6a1227d0e571910eebdaad4afec134e01e6c9857176eae256c195e9686b1"
+    },
+    {
+      "id": "cmp-disclosure",
+      "version": 1,
+      "release": "2026-09-28.1",
+      "title": "Reveal optional detail without hiding the answer",
+      "summary": "Teach essential explanation versus optional depth. Use disclosures for exceptional conditions, extra specifications, or annotations. Keep the core decision understandable without opening everything.",
+      "principle": "Reveal optional detail without hiding the answer",
+      "scope": [
+        "section",
+        "page"
+      ],
+      "tasks": [
+        "optional-detail"
+      ],
+      "stages": [
+        "reference-analysis",
+        "direction",
+        "storyboard",
+        "representative",
+        "pages",
+        "representative-quality",
+        "refine"
+      ],
+      "evidenceNeeds": [],
+      "applicability": {
+        "positiveSignals": [
+          "optional-detail"
+        ],
+        "exclusions": [],
+        "uncertainty": "Check the actual page task and evidence before applying; unknown signals are not negative evidence."
+      },
+      "relationshipGroup": "disclosure",
+      "relationships": [
+        "reveal optional detail without hiding the answer"
+      ],
+      "bodyPath": "lessons/cmp-disclosure.md",
+      "sourceIds": [
+        "S19",
+        "S20",
+        "S28"
+      ],
+      "requirementIds": [],
+      "demonstrationIds": [
+        "cmp-disclosure-application-a",
+        "cmp-disclosure-application-b",
+        "cmp-disclosure-counterexample"
+      ],
+      "reviewProbeIds": [
+        "cmp-disclosure-render"
+      ],
+      "contentHash": "5ae12a63ff6cc25e338eba7022f23efaa7c21fc5c5d662600d802ffe0203c7cc"
+    },
+    {
+      "id": "cmp-motion-continuity",
+      "version": 1,
+      "release": "2026-09-28.1",
+      "title": "Use motion to explain continuity",
+      "summary": "Teach motion that explains a state change, progression, or relationship. Design the static experience first. Use consistent movement character where motion has a purpose.",
+      "principle": "Use motion to explain continuity",
+      "scope": [
+        "section",
+        "page"
+      ],
+      "tasks": [
+        "state-change"
+      ],
+      "stages": [
+        "reference-analysis",
+        "direction",
+        "storyboard",
+        "representative",
+        "pages",
+        "representative-quality",
+        "refine"
+      ],
+      "evidenceNeeds": [],
+      "applicability": {
+        "positiveSignals": [
+          "state-change"
+        ],
+        "exclusions": [],
+        "uncertainty": "Check the actual page task and evidence before applying; unknown signals are not negative evidence."
+      },
+      "relationshipGroup": "motion",
+      "relationships": [
+        "use motion to explain continuity"
+      ],
+      "bodyPath": "lessons/cmp-motion-continuity.md",
+      "sourceIds": [
+        "S25",
+        "S26",
+        "S23"
+      ],
+      "requirementIds": [],
+      "demonstrationIds": [
+        "cmp-motion-continuity-application-a",
+        "cmp-motion-continuity-application-b",
+        "cmp-motion-continuity-counterexample"
+      ],
+      "reviewProbeIds": [
+        "cmp-motion-continuity-render"
+      ],
+      "contentHash": "94cdc0445b40e97d4fb99a7d1df8265cc1fb1b6d1cb091c2d202f5f9437109ce"
+    },
+    {
+      "id": "cmp-interactive-explanation",
+      "version": 1,
+      "release": "2026-09-28.1",
+      "title": "Let visitors investigate a real question",
+      "summary": "Teach interaction as a way to compare supported options, inspect a real before/after, explore service reach, or understand a documented relationship. Define the model and its limits first.",
+      "principle": "Let visitors investigate a real question",
+      "scope": [
+        "section",
+        "page"
+      ],
+      "tasks": [
+        "interaction-model"
+      ],
+      "stages": [
+        "reference-analysis",
+        "direction",
+        "storyboard",
+        "representative",
+        "pages",
+        "representative-quality",
+        "refine"
+      ],
+      "evidenceNeeds": [],
+      "applicability": {
+        "positiveSignals": [
+          "interaction-model"
+        ],
+        "exclusions": [],
+        "uncertainty": "Check the actual page task and evidence before applying; unknown signals are not negative evidence."
+      },
+      "relationshipGroup": "interaction",
+      "relationships": [
+        "let visitors investigate a real question"
+      ],
+      "bodyPath": "lessons/cmp-interactive-explanation.md",
+      "sourceIds": [
+        "S20",
+        "S30",
+        "S32"
+      ],
+      "requirementIds": [],
+      "demonstrationIds": [
+        "cmp-interactive-explanation-application-a",
+        "cmp-interactive-explanation-application-b",
+        "cmp-interactive-explanation-counterexample"
+      ],
+      "reviewProbeIds": [
+        "cmp-interactive-explanation-render"
+      ],
+      "contentHash": "92cb076a7ed636b1cb6fbd103bd000c9084f4a5f997aa731afdb9ac2a911c070"
+    },
+    {
+      "id": "cmp-contrastive-critique",
+      "version": 1,
+      "release": "2026-09-28.1",
+      "title": "Compare alternatives and critique outcomes",
+      "summary": "Teach bounded comparison of different organizations of identical evidence. Compare how each serves the visitor. Exact user directions and routine controls need no invented alternatives.",
+      "principle": "Compare alternatives and critique outcomes",
+      "scope": [
+        "site",
+        "page"
+      ],
+      "tasks": [
+        "uncertain-choice"
+      ],
+      "stages": [
+        "reference-analysis",
+        "direction",
+        "storyboard",
+        "representative",
+        "pages",
+        "representative-quality",
+        "refine"
+      ],
+      "evidenceNeeds": [],
+      "applicability": {
+        "positiveSignals": [
+          "uncertain-choice"
+        ],
+        "exclusions": [],
+        "uncertainty": "Check the actual page task and evidence before applying; unknown signals are not negative evidence."
+      },
+      "relationshipGroup": "critique",
+      "relationships": [
+        "compare alternatives and critique outcomes"
+      ],
+      "bodyPath": "lessons/cmp-contrastive-critique.md",
+      "sourceIds": [
+        "S09",
+        "S10",
+        "S11",
+        "S29"
+      ],
+      "requirementIds": [],
+      "demonstrationIds": [
+        "cmp-contrastive-critique-application-a",
+        "cmp-contrastive-critique-application-b",
+        "cmp-contrastive-critique-counterexample"
+      ],
+      "reviewProbeIds": [
+        "cmp-contrastive-critique-render"
+      ],
+      "contentHash": "255c3699d3d3aea5ede174f1054c419650b01972a37765cb3241de1c590f077a"
+    }
+  ]
+}

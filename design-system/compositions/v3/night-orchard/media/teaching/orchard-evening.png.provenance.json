@@ -1,0 +1,19 @@
+{
+  "method": "generated-raster",
+  "tool": "built-in image_gen.imagegen",
+  "model": null,
+  "seed": null,
+  "providerReceipt": null,
+  "prompt": "Use case: illustration-story. Asset type: atmospheric original illustration for fictional garden supper-room teaching website. Primary request: sophisticated painterly gouache illustration of a long intimate outdoor supper table at blue hour beneath pear trees, ochre candlelight, deep aubergine tablecloth, simple plates and a bowl of pears, warm light from a small garden room beyond. No people. Dark ink green and deep violet foliage, vivid muted orange/coral and butter-yellow accents, intentional visible brush grain, elegant irregular shapes, editorial hospitality art direction. Wide horizontal composition with readable path and table rhythm, usable central crop for phone. No text, signage, logo or watermark. This is fictional atmosphere, not a photograph or evidence of a real restaurant.",
+  "parents": [],
+  "rights": "Original AI-generated fictional teaching material; package/generation teaching eligible. No third-party branding or customer proof.",
+  "forbiddenImplications": [
+    "Not real customer work, venue, manufactured product or verified result",
+    "No structural, material, safety or performance certification"
+  ],
+  "sha256": "af1ca09f68c2cf51fc96277d5d1e2332ce436033e1614f14fcfb81c509f32f12",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  }
+}

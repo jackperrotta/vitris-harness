@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "id": "work/case-alternating",
+  "revision": 1,
+  "status": "draft",
+  "owner": "Vitris design library",
+  "sourceHash": "ce5e6e7e56b617a2400c71e9a61c9e3cb83560165f174edd2303c97cb616056e",
+  "fit": {
+    "visitorJobs": [
+      "Inspect project evidence and outcomes"
+    ],
+    "pageRoles": [
+      "work index"
+    ],
+    "useWhen": [
+      "Inspect project evidence and outcomes"
+    ],
+    "avoidWhen": [
+      "The content or media cannot support this composition"
+    ]
+  },
+  "content": {
+    "requiredSlots": [
+      "heading",
+      "cases"
+    ],
+    "optionalSlots": [
+      "eyebrow",
+      "lede",
+      "actions"
+    ],
+    "testedItemCounts": [
+      1
+    ]
+  },
+  "media": {
+    "min": 1,
+    "max": 8,
+    "optionalBehavior": "Recompose without empty media frames when media is optional",
+    "aspect": [
+      "content-dependent"
+    ]
+  },
+  "composition": {
+    "hierarchy": "alternating narratives",
+    "alignment": "alternating",
+    "density": "medium",
+    "mediaProminence": "high",
+    "geometry": [
+      "alternating",
+      "image-led"
+    ],
+    "boundary": "section boundary adapts to adjacent content"
+  },
+  "adaptation": {
+    "flexible": [
+      "spacing",
+      "surface treatment",
+      "type scale"
+    ],
+    "invariants": [
+      "semantic reading order",
+      "one clear section purpose"
+    ],
+    "customWhen": [
+      "The visitor job needs a different hierarchy"
+    ]
+  },
+  "responsive": {
+    "readingOrder": "DOM order follows the visitor narrative",
+    "reflow": "Stack or resize according to content",
+    "crop": "Keep important subjects visible"
+  },
+  "interaction": {
+    "behavior": "Native links and controls",
+    "islands": []
+  },
+  "evidence": {
+    "provenance": [
+      "Original Vitris block source"
+    ],
+    "testedContexts": [],
+    "accessibility": [],
+    "previewManifest": "../../../design-system/block-previews/v1/work--case-alternating.json"
+  }
+}

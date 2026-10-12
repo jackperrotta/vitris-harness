@@ -1,0 +1,27 @@
+export type CloudPage={pageId:string;path:string;label:string;role:string;group:string;featured:boolean;compareRole:string|null;previewPriority:number;recipe:string};
+export type CloudManifest={version:1;id:string;release:string;revision:string;name:string;business:string;pages:CloudPage[];tokens:Record<string,string>};
+export type CloudRecipe={original:string;brand:string};
+export type DisplayBrand={name:string;colors:string[];logo?:string;original?:boolean};
+const esc=(s:string)=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
+const lum=(c:string)=>{const v=[1,3,5].map(i=>{const n=parseInt(c.slice(i,i+2),16)/255;return n<=.04045?n/12.92:((n+.055)/1.055)**2.4;});return .2126*v[0]!+.7152*v[1]!+.0722*v[2]!;};
+const contrast=(a:string,b:string)=>(Math.max(lum(a),lum(b))+.05)/(Math.min(lum(a),lum(b))+.05);
+export function brandVars(tokens:Record<string,string>,colors:string[]):string{
+ const brand=colors[0]||'#56636b',bg=tokens.colorBg!;let action=colors.find(c=>contrast(c,bg)>=4.5)||brand;
+ if(contrast(action,bg)<4.5){const target=lum(bg)<.2?255:0;for(let step=1;step<=20;step++){action='#'+[1,3,5].map(i=>Math.round(parseInt(brand.slice(i,i+2),16)*(1-step/20)+target*step/20).toString(16).padStart(2,'0')).join('');if(contrast(action,bg)>=4.5)break;}}
+ const t:Record<string,string>={...tokens,colorAccent:action,colorAccentText:contrast(action,'#ffffff')>=4.5?'#ffffff':contrast(action,'#111111')>=4.5?'#111111':'#000000',colorFocus:lum(bg)<.2?'#f4d788':'#365e85'};
+ const keys:Record<string,string>={'color-bg':'colorBg','color-text':'colorText','color-muted':'colorMuted','color-accent':'colorAccent','color-accent-text':'colorAccentText','color-surface':'colorSurface','color-surface-2':'colorSurface2','color-border':'colorBorder','color-focus':'colorFocus','font-body':'fontBody','font-display':'fontDisplay',radius:'radius',max:'maxWidth'};
+ return Object.entries(keys).map(([k,v])=>`--${k}:${t[v]}`).join(';')+`;--brand-original:${brand}`;
+}
+export function previewBridge(identity:string):string{
+ return `<style>html{overscroll-behavior:contain}</style><script>(()=>{const identity=${JSON.stringify(identity)},params=new URLSearchParams(location.hash.slice(1)),nonce=params.get('bridge'),origin=params.get('parent');let ready=false;const report=(kind,extra={})=>{if(parent!==window&&nonce&&origin)parent.postMessage({channel:'vitris-specimen-v1',identity,nonce,kind,...extra},origin);};addEventListener('click',e=>{const back=e.target.closest?.('a[href]');if(parent!==window&&nonce&&origin&&back?.href==='http://127.0.0.1:4390/'){e.preventDefault();report('close');return;}const a=e.target.closest?.('a[data-page-id],a[data-page-role]');if(a&&parent!==window&&nonce&&origin){e.preventDefault();const pageId=a.dataset.pageId||a.dataset.pageRole;report('navigate',{role:pageId,pageId});}});addEventListener('vitris-remember',e=>{const d=e.detail||{};if(typeof d.key==='string')report('memory',{key:d.key,value:d.value});});const metrics=()=>({y:scrollY,height:document.documentElement.scrollHeight,viewport:innerHeight});Promise.all([document.fonts.ready,...Array.from(document.images,i=>i.decode().catch(()=>null))]).then(()=>{if(document.body.getBoundingClientRect().height>0&&document.body.innerText.trim().length>20){ready=true;report('ready',metrics());}else report('error',{message:'Preview has no visible layout.'});});addEventListener('scroll',()=>{if(ready)report('scroll',metrics());},{passive:true});new ResizeObserver(()=>{if(ready)report('resize',metrics());}).observe(document.body);addEventListener('wheel',e=>{if(e.ctrlKey||e.metaKey)return;const max=document.documentElement.scrollHeight-innerHeight;if((e.deltaY<0&&scrollY<=1)||(e.deltaY>0&&scrollY>=max-1))report('edge',{delta:e.deltaY,mode:e.deltaMode});},{passive:true});addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();report('close');}});addEventListener('message',e=>{const m=e.data;if(e.source!==parent||!m||m.channel!=='vitris-specimen-v1'||m.nonce!==nonce||m.identity!==identity)return;if(m.kind==='memory'&&typeof m.key==='string'){dispatchEvent(new CustomEvent('vitris-apply',{detail:{key:m.key,value:m.value}}));return;}if(m.kind!=='scroll-to'||!Number.isFinite(m.y))return;scrollTo({top:Math.max(0,Math.min(m.y,document.documentElement.scrollHeight-innerHeight)),behavior:'instant'});if(ready)report('scroll',metrics());});})();</script>`;
+}
+export function renderCloudPage(recipe:CloudRecipe,manifest:CloudManifest,brand:DisplayBrand,base:string,identity?:string):string{
+ let html=brand.original?recipe.original:recipe.brand;
+ const logo=brand.logo?`<img src="${esc(brand.logo)}" alt="${esc(brand.name)}">`:`<span>${esc(brand.name)}</span>`;
+ html=html.replaceAll('__VITRIS_LOGO__',logo).replaceAll('__VITRIS_BRAND_NAME__',esc(brand.name)).replaceAll('__VITRIS_CSS_VARS__',brandVars(manifest.tokens,brand.colors));
+ const encoded=brand.original?'':btoa(unescape(encodeURIComponent(JSON.stringify(brand))));
+ for(const page of manifest.pages)html=html.replaceAll(new RegExp('__VITRIS_PAGE_'+page.pageId+'__(\\?[A-Za-z0-9%&=;,+|:-]*)?','g'),(_match,suffix:string='')=>{const params=new URLSearchParams(suffix.replaceAll('&amp;','&'));if(encoded)params.set('b',encoded);return esc(base+page.path+(params.size?'?'+params:''));});
+ html=html.replaceAll('__VITRIS_RETURN__','http://127.0.0.1:4390/');
+ if(identity)html=html.replaceAll('loading="lazy"','loading="eager"').replace('</body>',previewBridge(identity)+'</body>');
+ return html;
+}

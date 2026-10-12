@@ -1,0 +1,7 @@
+{
+  "purpose": "Teaching only, excluded from customer fact and media inventories",
+  "assets": [
+    {"path":"media/teaching/slate-roof-work.webp","role":"installation detail","provenance":"media/teaching/slate-roof-work.webp.provenance.json","synthetic":true},
+    {"path":"media/teaching/slate-roof-finished.webp","role":"finished roof context","provenance":"media/teaching/slate-roof-finished.webp.provenance.json","synthetic":true}
+  ]
+}

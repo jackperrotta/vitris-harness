@@ -1,0 +1,9 @@
+.c-feature-icon-list__copy .section__head{margin-bottom:var(--space-5)}
+.c-feature-icon-list__list{gap:var(--space-4);font-size:var(--step-1)}
+.c-feature-icon-list__list li{padding-bottom:var(--space-4);border-bottom:1px solid var(--color-border)}
+.c-feature-icon-list__list li:last-child{border-bottom:0;padding-bottom:0}
+.c-feature-icon-list__list li > .icon{width:1.35rem;height:1.35rem}
+.c-feature-icon-list__list strong{display:block;font-weight:600}
+.c-feature-icon-list__list span{color:var(--color-muted)}
+@media(min-width:720px){.c-feature-icon-list .split{grid-template-columns:2fr 3fr}}
+@media(min-width:900px){.c-feature-icon-list--two-col .c-feature-icon-list__list{grid-template-columns:1fr 1fr;column-gap:var(--space-6)}}

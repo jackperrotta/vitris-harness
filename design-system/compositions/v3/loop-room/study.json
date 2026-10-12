@@ -1,0 +1,272 @@
+{
+  "id": "loop-room",
+  "revision": 1,
+  "title": "Loop Room / exhibition and access",
+  "primaryFamily": "civic",
+  "assetMinimum": "none",
+  "fitSignals": [
+    "location",
+    "collection",
+    "type-content",
+    "real-copy",
+    "action",
+    "sparse-media"
+  ],
+  "visitorTasks": [
+    "find-location",
+    "read-deeply",
+    "evaluate-service"
+  ],
+  "organizingIdea": "A bold exhibition title shares space with an original spatial diagram; practical visitor facts form a compact directory, and the interior joins interpretation with access.",
+  "brief": {
+    "fictional": true,
+    "facts": {
+      "name": "Loop Room",
+      "offer": "Fictional community exhibition space",
+      "exhibition": "Lines Between Us",
+      "period": "Teaching season / no real calendar dates",
+      "visitHours": "Tuesday–Sunday, 11:00–17:00",
+      "admission": "Free in the fictional brief",
+      "address": "12 Common Lane, invented location",
+      "access": "Step-free entry and seating in fictional brief; verification required",
+      "contact": "loop@example.test"
+    },
+    "factsHash": "91b40d8fd6d27fe6705108b6f77376840d28ee631fc70dab92e610f7c24d9064",
+    "mediaHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "provenance": {
+    "content": "Original fictional Vitris teaching brief and authored copy; operational details, dimensions and offers are invented and must never populate customer inventories.",
+    "media": "Original inline SVG illustrations authored for this release; no external photographs, branding or type assets.",
+    "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+  },
+  "storyboard": {
+    "homepage": [
+      "venue and tasks",
+      "exhibition title/diagram",
+      "visit essentials",
+      "shared question"
+    ],
+    "interior": [
+      "exhibition meaning",
+      "looking prompts",
+      "visit and access",
+      "return"
+    ],
+    "mobile": "Exhibition title precedes its diagram. Visitor facts become labeled rows; interpretation and visit remain separate reading tasks."
+  },
+  "designDecisions": "A bold exhibition title shares space with an original spatial diagram; practical visitor facts form a compact directory, and the interior joins interpretation with access.",
+  "lessonIds": [
+    "cmp-navigation",
+    "cmp-contextual-action",
+    "cmp-narrative-continuity"
+  ],
+  "referenceIds": [
+    "gov-uk",
+    "ny-historical",
+    "magazzino"
+  ],
+  "sourcePath": "loop-room",
+  "homepage": "/",
+  "interior": "/detail",
+  "status": "compiled and automated/assistant visually reviewed; human preference pending",
+  "humanPreference": null,
+  "renderEvidence": [
+    {
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T18:23:43.351Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/loop-room-home-1440.png",
+        "sha256": "78584586862f9b860bd085fc776ef0b3208f7cae461efb6816d53dc138bb030d"
+      },
+      "compiledHash": "cda090631380e44aaf7c87e07da8d4c3106b579deaf52b791d590ba7496dfbc5",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail#visit",
+            "/detail",
+            "/detail",
+            "/detail#visit"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:25:17.945223+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views visually inspected in contact sheet. Exhibition type/diagram and compact visit directory support different tasks; narrow diagram follows title and essentials become labeled rows. Interior looking prompts develop the exhibition and access follows. Native disclosure Enter toggling and focus passed verifier. No real institution or access assertions supplied."
+      }
+    },
+    {
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T18:23:44.391Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/loop-room-home-390.png",
+        "sha256": "2dd1af9e349a94621b7433624073545e0b10aad5f4927129b8c728c54a019ddb"
+      },
+      "compiledHash": "cda090631380e44aaf7c87e07da8d4c3106b579deaf52b791d590ba7496dfbc5",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail#visit",
+            "/detail",
+            "/detail",
+            "/detail#visit"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:25:17.945223+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views visually inspected in contact sheet. Exhibition type/diagram and compact visit directory support different tasks; narrow diagram follows title and essentials become labeled rows. Interior looking prompts develop the exhibition and access follows. Native disclosure Enter toggling and focus passed verifier. No real institution or access assertions supplied."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T18:23:45.615Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/loop-room-interior-1440.png",
+        "sha256": "65707345efe629ba0be040db2ede0c60d61f32e6d01f5fe12737d6480a01f064"
+      },
+      "compiledHash": "997da6abc8943cb4e6fc0d5b77793ef058d3ce6c3848b1589daa3948fa613c79",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Ask a visit question →",
+          "outline": "solid",
+          "width": "3px"
+        },
+        "disclosures": [
+          {
+            "label": "Access information in this fictional brief",
+            "keyboardToggle": true,
+            "focusVisible": true
+          }
+        ]
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:25:17.945223+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views visually inspected in contact sheet. Exhibition type/diagram and compact visit directory support different tasks; narrow diagram follows title and essentials become labeled rows. Interior looking prompts develop the exhibition and access follows. Native disclosure Enter toggling and focus passed verifier. No real institution or access assertions supplied."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T18:23:46.708Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/loop-room-interior-390.png",
+        "sha256": "23e69c04837f05d2008cd3cf83d316679f7de0ad7e5979d262181d86d08cb012"
+      },
+      "compiledHash": "997da6abc8943cb4e6fc0d5b77793ef058d3ce6c3848b1589daa3948fa613c79",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Ask a visit question →",
+          "outline": "solid",
+          "width": "3px"
+        },
+        "disclosures": [
+          {
+            "label": "Access information in this fictional brief",
+            "keyboardToggle": true,
+            "focusVisible": true
+          }
+        ]
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:25:17.945223+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views visually inspected in contact sheet. Exhibition type/diagram and compact visit directory support different tasks; narrow diagram follows title and essentials become labeled rows. Interior looking prompts develop the exhibition and access follows. Native disclosure Enter toggling and focus passed verifier. No real institution or access assertions supplied."
+      }
+    }
+  ],
+  "selectionProfile": {
+    "tasks": [
+      "find-location",
+      "read-deeply"
+    ],
+    "contexts": [
+      "venue"
+    ],
+    "contributions": [
+      "exhibition-directory",
+      "access-information"
+    ],
+    "expressions": [
+      "civic"
+    ]
+  },
+  "exampleScope": "focused-structural-lesson",
+  "releaseNotes": "Preserved original lesson; not a comprehensive finished-site exemplar or human-approved taste label.",
+  "comparisonStatus": "not a controlled same-facts comparison"
+}

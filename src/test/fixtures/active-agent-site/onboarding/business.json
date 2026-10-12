@@ -1,0 +1,110 @@
+{
+  "version": 2,
+  "offer": "Monthly bookkeeping and tax-ready reporting for small service companies; tax filing, audits, and legal advice are outside scope.",
+  "audience": "Owners of small service companies who have outgrown spreadsheets and need understandable monthly figures.",
+  "trigger": "An owner cannot rely on current spreadsheets to see monthly profitability or make decisions confidently.",
+  "outcome": "Reconciled accounts and a monthly conversation about the company's financial position, without promising tax or financial outcomes.",
+  "includes": [
+    "Transaction categorization",
+    "Account reconciliation",
+    "Monthly profit-and-loss and balance-sheet reports",
+    "Monthly review call"
+  ],
+  "engagement": "Email a request for a 20-minute fit call. The firm replies within two business days to arrange a time; the request itself does not book a call. Pricing follows review of volume and complexity.",
+  "positioning": "Remote bookkeeping across the United States with plain-language monthly reporting; the pilot business is fictional.",
+  "facts": [
+    {
+      "id": "f-offer",
+      "claim": "Provides monthly bookkeeping and tax-ready reporting for small service companies.",
+      "evidence": [
+        "e-offer"
+      ]
+    },
+    {
+      "id": "f-includes",
+      "claim": "Includes transaction categorization, reconciliation, monthly P&L and balance sheet, and a monthly review call.",
+      "evidence": [
+        "e-includes"
+      ]
+    },
+    {
+      "id": "f-scope",
+      "claim": "Does not file tax returns, perform audits, or provide legal advice.",
+      "evidence": [
+        "e-scope"
+      ]
+    },
+    {
+      "id": "f-process",
+      "claim": "An email requests a 20-minute fit call and receives a reply within two business days to arrange it; it does not book a slot.",
+      "evidence": [
+        "e-process"
+      ]
+    },
+    {
+      "id": "f-price",
+      "claim": "Pricing follows a review of transaction volume and complexity; no fixed price is stated.",
+      "evidence": [
+        "e-price"
+      ]
+    },
+    {
+      "id": "f-area",
+      "claim": "Service is remote across the United States.",
+      "evidence": [
+        "e-area"
+      ]
+    },
+    {
+      "id": "f-contact",
+      "claim": "Contact email is hello@harborledger.example, an intentionally non-deliverable pilot address.",
+      "evidence": [
+        "e-contact"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e-offer",
+      "source": "onboarding/copy/synthetic-brief.md",
+      "excerpt": "provides monthly bookkeeping and tax-ready reporting for small service companies."
+    },
+    {
+      "id": "e-includes",
+      "source": "onboarding/copy/synthetic-brief.md",
+      "excerpt": "The core service includes transaction categorization, account reconciliation, monthly profit-and-loss and balance-sheet reports, and a monthly review call."
+    },
+    {
+      "id": "e-scope",
+      "source": "onboarding/copy/synthetic-brief.md",
+      "excerpt": "The firm does not file tax returns, perform audits, or provide legal advice."
+    },
+    {
+      "id": "e-process",
+      "source": "onboarding/copy/synthetic-brief.md",
+      "excerpt": "New clients begin with a 20-minute fit call request by email. The team replies within two business days to arrange a call; sending a request does not book a time."
+    },
+    {
+      "id": "e-price",
+      "source": "onboarding/copy/synthetic-brief.md",
+      "excerpt": "Pricing follows a review of transaction volume and complexity; no price or guaranteed saving is published."
+    },
+    {
+      "id": "e-area",
+      "source": "onboarding/copy/synthetic-brief.md",
+      "excerpt": "Service is remote across the United States."
+    },
+    {
+      "id": "e-contact",
+      "source": "onboarding/copy/synthetic-brief.md",
+      "excerpt": "Contact email: hello@harborledger.example. No address, phone, staff biographies, testimonials, or client work may be claimed. The .example address is intentionally non-deliverable; the local pilot must demonstrate the contact link and validation behavior, not real message delivery."
+    }
+  ],
+  "uncertainties": [
+    {
+      "question": "Actual staff identities, credentials, and client proof are unavailable.",
+      "blocking": false,
+      "resolution": "Avoid biographical, credential, testimonial, and client-work claims."
+    }
+  ]
+}

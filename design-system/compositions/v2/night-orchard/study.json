@@ -1,0 +1,247 @@
+{
+  "id": "night-orchard",
+  "revision": 1,
+  "title": "Night Orchard / evening and visit",
+  "primaryFamily": "hospitality",
+  "assetMinimum": "none",
+  "fitSignals": [
+    "location",
+    "action",
+    "comparison",
+    "real-copy",
+    "type-content",
+    "sparse-media"
+  ],
+  "visitorTasks": [
+    "find-location",
+    "book-inquiry",
+    "compare-options"
+  ],
+  "organizingIdea": "A illustrated evening field carries identity and visit tasks; the interior becomes a legible menu sheet and practical access document.",
+  "brief": {
+    "fictional": true,
+    "facts": {
+      "name": "Night Orchard",
+      "offer": "Fictional garden supper room",
+      "address": "8 Lantern Walk, invented location",
+      "hours": "Thursday–Saturday, 18:00–22:00",
+      "menu": [
+        {
+          "dish": "Roast squash",
+          "description": "White beans, greens and herbs",
+          "price": "18 teaching units"
+        },
+        {
+          "dish": "Garden plate",
+          "description": "Seasonal leaves, grilled bread and house dressing",
+          "price": "14 teaching units"
+        },
+        {
+          "dish": "Pear pudding",
+          "description": "Warm pear and oat crumble",
+          "price": "8 teaching units"
+        }
+      ],
+      "access": "Step-free garden entrance in fictional brief; customer verification required",
+      "contact": "orchard@example.test"
+    },
+    "factsHash": "893d665b3db6d6418be7562028e872ab22143fc7f346cd1dc2d0ab2f7d501a3d",
+    "mediaHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "provenance": {
+    "content": "Original fictional Vitris teaching brief and authored copy; operational details, dimensions and offers are invented and must never populate customer inventories.",
+    "media": "Original inline SVG illustrations authored for this release; no external photographs, branding or type assets.",
+    "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+  },
+  "storyboard": {
+    "homepage": [
+      "evening scene and identity",
+      "invitation",
+      "visit strip"
+    ],
+    "interior": [
+      "menu title",
+      "dish/description/price sheet",
+      "access and hours",
+      "question before booking"
+    ],
+    "mobile": "Illustration precedes identity/task block instead of obscuring it. Menu descriptions move under dish/price; access follows the menu."
+  },
+  "designDecisions": "A illustrated evening field carries identity and visit tasks; the interior becomes a legible menu sheet and practical access document.",
+  "lessonIds": [
+    "cmp-image-art-direction",
+    "cmp-contextual-action",
+    "cmp-narrative-continuity"
+  ],
+  "referenceIds": [
+    "bokman",
+    "big-mamma"
+  ],
+  "sourcePath": "night-orchard",
+  "homepage": "/",
+  "interior": "/detail",
+  "status": "compiled and automated/assistant visually reviewed; human preference pending",
+  "humanPreference": null,
+  "renderEvidence": [
+    {
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T18:23:38.960Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/night-orchard-home-1440.png",
+        "sha256": "6b253f8ebed288852c7c9f54d734e2dc6c4aed6c35ec68afd88216ae9d2b0168"
+      },
+      "compiledHash": "e51d915ed9557a37512e3cf8ca440fb4dc789250b1926044703a807a1e6587f7",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/detail",
+            "/detail#visit"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:25:17.945223+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views visually inspected in contact sheet. Dark illustrated evening scene gives way to short invitation and practical visit strip; narrow identity and actions follow the scene. Interior cream menu sheet preserves dish/description/price relation, moving descriptions below dish/price on narrow. Access and inquiry remain contextual. Some header overlay text crosses branches, but labels/actions remain legible."
+      }
+    },
+    {
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T18:23:40.025Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/night-orchard-home-390.png",
+        "sha256": "4e97cc97e262a630fdcb70e846d655d0445d79f97512bb10e265ba13b8b5b2fa"
+      },
+      "compiledHash": "e51d915ed9557a37512e3cf8ca440fb4dc789250b1926044703a807a1e6587f7",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/detail",
+            "/detail#visit"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:25:17.945223+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views visually inspected in contact sheet. Dark illustrated evening scene gives way to short invitation and practical visit strip; narrow identity and actions follow the scene. Interior cream menu sheet preserves dish/description/price relation, moving descriptions below dish/price on narrow. Access and inquiry remain contextual. Some header overlay text crosses branches, but labels/actions remain legible."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T18:23:41.156Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/night-orchard-interior-1440.png",
+        "sha256": "28d4b7710f4e7138af479074e57f3e0027314a9a8098e8fb6cc3e437b0801a40"
+      },
+      "compiledHash": "9f6f44c0a111533dbc61540100cd506f9a77a9ce5363c890adc0b1a1c22da38d",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:25:17.945223+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views visually inspected in contact sheet. Dark illustrated evening scene gives way to short invitation and practical visit strip; narrow identity and actions follow the scene. Interior cream menu sheet preserves dish/description/price relation, moving descriptions below dish/price on narrow. Access and inquiry remain contextual. Some header overlay text crosses branches, but labels/actions remain legible."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T18:23:42.212Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/night-orchard-interior-390.png",
+        "sha256": "f0a57a0c47a21eb40d4f6d037a680ca47a2f9b815160dbe04c8dac2b7af8dcc8"
+      },
+      "compiledHash": "9f6f44c0a111533dbc61540100cd506f9a77a9ce5363c890adc0b1a1c22da38d",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:25:17.945223+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views visually inspected in contact sheet. Dark illustrated evening scene gives way to short invitation and practical visit strip; narrow identity and actions follow the scene. Interior cream menu sheet preserves dish/description/price relation, moving descriptions below dish/price on narrow. Access and inquiry remain contextual. Some header overlay text crosses branches, but labels/actions remain legible."
+      }
+    }
+  ]
+}

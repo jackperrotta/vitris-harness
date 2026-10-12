@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "blockId": "contact/contact-phone-first",
+  "blockRevision": 1,
+  "sourceHash": "3623088d798410ade10459edfb313f50b0f28ce74b38f543c1eca2a08b61aee0",
+  "previewHtmlHash": "00de7ee3673eeeb9641af7741dd080a68e525f7016d738a0f2ad3baeccf4d7c3",
+  "rendererHash": "adb9cf206350ec5e97bc41d8db13fe3ced203ffc9ec42bde236a81d53043bb46",
+  "content": "README example",
+  "assets": "inline placeholders",
+  "theme": "defaultTheme",
+  "browser": "Chromium 153.0.8010.12",
+  "renderer": "scripts/blocks-preview.ts",
+  "images": {
+    "mobile": {
+      "file": "contact--contact-phone-first--mobile.jpg",
+      "hash": "aae7966a21ced9518a4f3cb3e371b7746670c3d07ce92764e76c5658a121eaaa",
+      "width": 375,
+      "height": 900
+    },
+    "desktop": {
+      "file": "contact--contact-phone-first--desktop.jpg",
+      "hash": "b960f0e10d24f543a09c10d363a8a8f0edbcd5cd143e11a45d1b94a888afd1c0",
+      "width": 1280,
+      "height": 800
+    }
+  }
+}

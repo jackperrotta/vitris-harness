@@ -1,0 +1,19 @@
+<section class="c-hero-before-after section section--roomy">
+  <div class="wrap split">
+    <div class="c-hero-before-after__copy">
+      <slot name="eyebrow"></slot>
+      <slot></slot>
+      <div class="btn-group"><slot name="actions"></slot></div>
+    </div>
+    <figure class="c-hero-before-after__figure">
+      <div class="before-after" data-island="before-after">
+        <slot name="before"></slot>
+        <slot name="after"></slot>
+        <span class="before-after__label before-after__label--before" aria-hidden="true">Before</span>
+        <span class="before-after__label before-after__label--after" aria-hidden="true">After</span>
+        <div class="before-after__handle" aria-hidden="true"></div>
+      </div>
+      <figcaption class="c-hero-before-after__caption"><slot name="caption"></slot></figcaption>
+    </figure>
+  </div>
+</section>

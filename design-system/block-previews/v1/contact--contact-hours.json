@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "blockId": "contact/contact-hours",
+  "blockRevision": 1,
+  "sourceHash": "19aa27804b5a70f29808a862c4ec108b865e787677edf07aa16c9a552dc033c2",
+  "previewHtmlHash": "3791e43665caf03a61ff2f38f5acfee6b48f8619215b7c8aa2eac8dab707fa4c",
+  "rendererHash": "adb9cf206350ec5e97bc41d8db13fe3ced203ffc9ec42bde236a81d53043bb46",
+  "content": "README example",
+  "assets": "inline placeholders",
+  "theme": "defaultTheme",
+  "browser": "Chromium 153.0.8010.12",
+  "renderer": "scripts/blocks-preview.ts",
+  "images": {
+    "mobile": {
+      "file": "contact--contact-hours--mobile.jpg",
+      "hash": "880becad7ae5c9984c43713753d06598520af8349fbf49c5fffc06bfa6e7af0d",
+      "width": 375,
+      "height": 900
+    },
+    "desktop": {
+      "file": "contact--contact-hours--desktop.jpg",
+      "hash": "48dd9f83ebc056fa33e6723eeef9526cf4236f868c52d266dc591eaa00b26270",
+      "width": 1280,
+      "height": 800
+    }
+  }
+}

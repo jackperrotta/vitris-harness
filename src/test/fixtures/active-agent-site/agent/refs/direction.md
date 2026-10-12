@@ -1,0 +1,17 @@
+# Art direction and themes
+
+Read the business, media inventory, and agent/request.json. Theme requests are first-class constraints. For a restyle, preserve supported facts, offers, and functional behavior; change the visual system coherently.
+
+When an explicit theme is present, copy its exact text into direction.json's request field. Put your interpretation and tradeoffs in the rationale, system fields, and the designContractVersion 1 decision trail: `centralIdea`, `opportunityIds`, `decisions`, `identityInvariants`, and `flexibleDecisions`. Add `rejectedAlternatives` only for alternatives you actually considered. A prescribed theme does not need invented alternatives. The system object remains the token contract. Novelty is not a gate.
+
+If `agent/assigned-direction.json` is present with mode assigned, elaborate that brief as its own visual system. Do not independently choose a different winner, and do not collapse it toward a generic editorial default. Still write the full system contract and theme/defaults.json. Homepage plus interior HTML studies may exist as private sketches; they are not the quality-approved implementation. The production representative compiled through pages/components/tokens is the artifact later expansion reuses. Diversity among other variants is owned by the parent design-run.
+
+In the single-site default workflow, establish the chosen visual direction, candidate proposal rationale, and complete system contract in `onboarding/direction.json`, and implement the semantic design tokens in `theme/defaults.json`. An intermediate rendered study stage is omitted in single-site generation; the direction contract and tokens are reviewed directly by `direction-review`, while real rendering is subsequently verified during representative-page authoring (`representative`) and browser verification. When running multi-candidate variant exploration with `agent/assigned-direction.json`, elaborate the assigned candidate brief and provide homepage and interior HTML studies under `onboarding/studies/` for the coordinator pipeline. Select the direction that best fits the business without inventing unharvested claims.
+
+Write the full system contract and implement theme/defaults.json. Semantic tokens are the interface; spacing/type values may be extended through site-owned CSS when the direction requires it. Establish recurring motifs and deliberate contrast in scale, density, alignment, surfaces, and media. Interior pages belong to the same brand but answer different questions.
+
+References are analyzed from the versioned calibration pack and `onboarding/reference-analysis.json`, not from remembered summaries. Inspect actual captures or the pack's first-view files before describing them. Do not import demo claims, portraits, awards, or pricing as business evidence.
+
+Avoid choosing every section independently. Explain why this system fits this business and its actual assets. No exact-one-motif, mandatory hero-photo, pill-button, or universal section-count rule.
+
+State the central idea in business terms: who the visitor is, what they need to decide, and which facts or assets carry the page. Name a few visual relationships and which choices stay flexible. A slate repair business can lead with project photos. An accounting firm without photos can lead with service distinctions and evidenced credentials. Neither example fixes the font or the section count. Accessibility constraints in `accessibility.md` still apply.

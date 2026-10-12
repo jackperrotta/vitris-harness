@@ -1,0 +1,14 @@
+{
+  "version":2,"subjectHash":"696b02b16d581f284124e87de9ce80783804c1829c03cffc53d3ce11b4068433",
+  "reviewer":"same-agent visual review after opening actual 375px and 1080px browser captures; no independent preference claim",
+  "verdict":"pass",
+  "evidence":["agent/screenshots/representative-browser/home-375.png","agent/screenshots/representative-browser/home-1080.png","agent/screenshots/representative-browser/monthly-work-375.png","agent/screenshots/representative-browser/monthly-work-1080.png","agent/reviews/representative-browser.json"],
+  "checks":[
+    {"criterion":"business-fit","verdict":"pass","evidence":"Home first screen names bookkeeping for service companies; the numbered cycle visualizes only documented monthly tasks and avoids fabricated client imagery."},
+    {"criterion":"hierarchy","verdict":"pass","evidence":"At 1080px the large serif offer dominates, the smaller right rail previews the process, and the monthly interior uses a separate detail mast and four service rows."},
+    {"criterion":"rhythm","verdict":"pass","evidence":"Open paper hero moves to a tinted three-step field, a quieter exclusion section, and a dark contact close; these sections are not equal cards."},
+    {"criterion":"media-treatment","verdict":"pass","evidence":"No harvested media exists. Empty areas, rules, and typography do the explanatory work rather than claiming client photos or example reports."},
+    {"criterion":"mobile","verdict":"pass","evidence":"The initial 375px capture shows consent notice in flow, a two-row navigation with all three links visible, and the offer before the action. Browser report records no overflow or contrast failures after the copper CTA repair."},
+    {"criterion":"interior","verdict":"pass","evidence":"The monthly-work page gives deliverables, exclusions, and price process their own space. It retains color and type identity without repeating the home hero."}
+  ],"findings":[]
+}

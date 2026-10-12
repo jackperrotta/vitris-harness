@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "kind": "design-quality",
+  "subjectHash": "e7af6f1bc2cea27957788a3fa56af8d1852a665c83069df158de7686eee3cb05",
+  "identities": {},
+  "verdict": "pass",
+  "reviewer": "Codex active agent, same author; provisional self-review",
+  "visualInspection": {
+    "available": true,
+    "probeHash": "604789a72fd8f4b1bf930341db1f7b7b2b7ec56981c43524d2736e38f66bd9a3",
+    "observedToken": "2E6BFF",
+    "captureHashes": [
+      "919acce55c8c299c98ff5b0b849537b086cf318c0a40f695a7560f272b5dc9a9",
+      "a61ba0349654f005a951f5f30d7a820932b870753fc27b366603f00ddd412f92",
+      "62c65d4d798b43a375de37d4fc664e012da95925efd6495f9f2b2d656edbcf7e",
+      "93f9bceadef4ea01788fe7688083582e94b83a808230dc93b56c0d06ec201feb",
+      "87fa0ef94ad3f4be1493f448dc02d4ca332537593852f5cc802804070f1a51c5",
+      "2cc2670b39daa00b0a1402a004878f2801668bc21516ae7ddca8e743f75c276c"
+    ],
+    "toolReads": [
+      {
+        "path": "agent/reviews/visual-probe.png",
+        "hash": "604789a72fd8f4b1bf930341db1f7b7b2b7ec56981c43524d2736e38f66bd9a3"
+      },
+      {
+        "path": "agent/screenshots/representative-browser/first-visit-1080.png",
+        "hash": "919acce55c8c299c98ff5b0b849537b086cf318c0a40f695a7560f272b5dc9a9"
+      },
+      {
+        "path": "agent/screenshots/representative-browser/first-visit-375.png",
+        "hash": "a61ba0349654f005a951f5f30d7a820932b870753fc27b366603f00ddd412f92"
+      },
+      {
+        "path": "agent/screenshots/representative-browser/home-1080.png",
+        "hash": "62c65d4d798b43a375de37d4fc664e012da95925efd6495f9f2b2d656edbcf7e"
+      },
+      {
+        "path": "agent/screenshots/representative-browser/home-375.png",
+        "hash": "93f9bceadef4ea01788fe7688083582e94b83a808230dc93b56c0d06ec201feb"
+      },
+      {
+        "path": "agent/screenshots/representative-browser/monthly-work-1080.png",
+        "hash": "87fa0ef94ad3f4be1493f448dc02d4ca332537593852f5cc802804070f1a51c5"
+      },
+      {
+        "path": "agent/screenshots/representative-browser/monthly-work-375.png",
+        "hash": "2cc2670b39daa00b0a1402a004878f2801668bc21516ae7ddca8e743f75c276c"
+      }
+    ]
+  },
+  "dimensions": [
+    {
+      "name": "business-specificity",
+      "score": 3,
+      "page": "/",
+      "viewport": "1080",
+      "section": "hero and monthly line",
+      "evidence": "The ledger line and service sequence frame a monthly bookkeeping offer, and the callout names the transaction-volume review before pricing."
+    },
+    {
+      "name": "composition",
+      "score": 3,
+      "page": "/",
+      "viewport": "1080",
+      "section": "hero through process",
+      "evidence": "A narrow index rail balances the large service statement; alternating ledger rows pull the eye from the offer into the three-step monthly process."
+    },
+    {
+      "name": "typography",
+      "score": 3,
+      "page": "/",
+      "viewport": "375",
+      "section": "hero and body",
+      "evidence": "The display serif distinguishes the proposition from the compact sans labels; paragraphs keep readable line lengths and the mobile headings do not clip."
+    },
+    {
+      "name": "media-integration",
+      "score": 3,
+      "page": "/monthly-work/",
+      "viewport": "1080",
+      "section": "process and ledger motif",
+      "evidence": "With no approved photography in the synthetic brief, ruled lines, numbered entries, and a restrained account-table pattern carry the visual evidence without implying a real client or product screen."
+    },
+    {
+      "name": "brand-coherence",
+      "score": 3,
+      "page": "/monthly-work/",
+      "viewport": "1080",
+      "section": "header through closing panel",
+      "evidence": "Warm paper, navy type, and copper accents recur on both routes; the interior applies the same ledger grid without repeating the home layout verbatim."
+    },
+    {
+      "name": "copy-design-integration",
+      "score": 3,
+      "page": "/",
+      "viewport": "1080",
+      "section": "scope and action",
+      "evidence": "The section hierarchy follows the offer, exclusions, monthly workflow, and fit-call action; the small-print scope stays beside its associated service statement."
+    },
+    {
+      "name": "responsive-craft",
+      "score": 3,
+      "page": "/monthly-work/",
+      "viewport": "375",
+      "section": "navigation and process",
+      "evidence": "The mobile capture uses a separate navigation row, keeps the numbered sequence in reading order, and shows no clipped text or sideways overflow."
+    }
+  ],
+  "findings": []
+}

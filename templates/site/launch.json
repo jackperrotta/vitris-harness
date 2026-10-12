@@ -1,0 +1,13 @@
+{
+  "slug": "__SLUG__",
+  "name": "__NAME__",
+  "sourceUrl": "",
+  "backendOrigin": "",
+  "ownerEmail": "",
+  "pagesProject": "__SLUG__",
+  "github": {
+    "owner": "",
+    "repo": ""
+  },
+  "publicOrigin": ""
+}

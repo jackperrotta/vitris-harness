@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "contractVersion": "2026-09-19.1",
+  "generatedAt": "2026-09-22T21:03:22.896Z",
+  "subjectHash": "eb96f16b3713375b8b180fac4eec2a1cc0f623ac4ab1ac4150a82004af001231",
+  "approvedSourceHash": "409aca7d685424bd2d2607c770606f7b26c9e538857b7af5c98ff60636ffbfc9",
+  "obligations": [
+    {
+      "kind": "offer",
+      "statement": "Monthly bookkeeping and tax-ready reporting for small service companies; tax filing, audits, and legal advice are outside scope.",
+      "priority": "must",
+      "sourceIds": [
+        "onboarding/business.json#offer"
+      ],
+      "dependencyIds": [
+        "business"
+      ],
+      "scope": "site",
+      "acceptance": "Rendered pages state the approved offer without inventing a new one.",
+      "owner": "agent",
+      "id": "goal_offer_e9dfb03b0d8e",
+      "sourceHash": "ce61c6ae523414e2c9722181aa3da966a27385d47b8747e6b54cbf95f7361d92",
+      "dependencyHash": "11d40417959631d3d2420e8cd8709893c11cd7a4db737af63e8d56cfa7866f85"
+    },
+    {
+      "kind": "audience",
+      "statement": "Owners of small service companies who have outgrown spreadsheets and need understandable monthly figures.",
+      "priority": "must",
+      "sourceIds": [
+        "onboarding/business.json#audience"
+      ],
+      "dependencyIds": [
+        "business"
+      ],
+      "scope": "site",
+      "acceptance": "Copy addresses the approved audience.",
+      "owner": "agent",
+      "id": "goal_audience_d2516bf6312e",
+      "sourceHash": "f574c4e7a5487ba3f4a6289fabc00af663edf2c97b4fb6e7171fddf77a811324",
+      "dependencyHash": "11d40417959631d3d2420e8cd8709893c11cd7a4db737af63e8d56cfa7866f85"
+    },
+    {
+      "kind": "business_outcome",
+      "statement": "Reconciled accounts and a monthly conversation about the company's financial position, without promising tax or financial outcomes.",
+      "priority": "must",
+      "sourceIds": [
+        "onboarding/business.json#outcome"
+      ],
+      "dependencyIds": [
+        "business"
+      ],
+      "scope": "site",
+      "acceptance": "The site makes the approved outcome understandable to a visitor.",
+      "owner": "agent",
+      "id": "goal_business_outcome_608a149d85e1",
+      "sourceHash": "da553aacc0435adca90d839b194791ba4aefd6ebffef5e0e6cb05364b2e6eb5c",
+      "dependencyHash": "11d40417959631d3d2420e8cd8709893c11cd7a4db737af63e8d56cfa7866f85"
+    },
+    {
+      "kind": "required_action",
+      "statement": "Email a request for a 20-minute fit call. The firm replies within two business days to arrange a time; the request itself does not book a call. Pricing follows review of volume and complexity.",
+      "priority": "must",
+      "sourceIds": [
+        "onboarding/business.json#engagement"
+      ],
+      "dependencyIds": [
+        "business",
+        "storyboard"
+      ],
+      "scope": "site",
+      "acceptance": "Primary CTA label and destination match the approved engagement action.",
+      "owner": "code",
+      "id": "goal_required_action_dffc69f2813d",
+      "sourceHash": "b07a272ddccad883ece194c4dd8fc08eae73e3db9a4ba425b074818d816f22bd",
+      "dependencyHash": "03961ffe754bdbffed98bfefc8a12648ec1477925a475ddc295b18fcfd639cac"
+    },
+    {
+      "kind": "visitor_question",
+      "statement": "What should Owner of a small service company moving beyond spreadsheets understand on arrival?",
+      "priority": "should",
+      "sourceIds": [
+        "onboarding/narrative-brief.json#customer"
+      ],
+      "dependencyIds": [
+        "narrative"
+      ],
+      "scope": "page",
+      "pagePath": "/",
+      "acceptance": "Home page copy answers the arrival job.",
+      "owner": "agent",
+      "id": "goal_visitor_question_ba597f6e7279",
+      "sourceHash": "a60b3547ad38831d672150b70c615146a034df04837bf6b26851b59b8ebacd76",
+      "dependencyHash": "b3c903c9c4a4065db673be60723d152a64cd8a181f35163670645e96ddd183e4"
+    },
+    {
+      "kind": "page_section",
+      "statement": "Page / must exist",
+      "priority": "must",
+      "sourceIds": [
+        "onboarding/storyboard.json#/"
+      ],
+      "dependencyIds": [
+        "storyboard"
+      ],
+      "scope": "page",
+      "pagePath": "/",
+      "acceptance": "Required page/route exists in the storyboard and compiled site.",
+      "owner": "code",
+      "id": "goal_page_section_8e7d1d9564f8",
+      "sourceHash": "6de24b5f5a544a3f6c0ad234a9a36976044222b8f44b7147adc09362c856025e",
+      "dependencyHash": "f364d46aa757c8c553ba8b9e7ac5f261cdddc265f56a370824ce789a33ff5886"
+    },
+    {
+      "kind": "page_section",
+      "statement": "Page /monthly-work/ must exist",
+      "priority": "must",
+      "sourceIds": [
+        "onboarding/storyboard.json#/monthly-work/"
+      ],
+      "dependencyIds": [
+        "storyboard"
+      ],
+      "scope": "page",
+      "pagePath": "/monthly-work/",
+      "acceptance": "Required page/route exists in the storyboard and compiled site.",
+      "owner": "code",
+      "id": "goal_page_section_26fced4efddd",
+      "sourceHash": "68974b5dc8ab72863d96aee61951d7b574f49f6c4229d3dacf74dcb4324f8c3f",
+      "dependencyHash": "f364d46aa757c8c553ba8b9e7ac5f261cdddc265f56a370824ce789a33ff5886"
+    },
+    {
+      "kind": "page_section",
+      "statement": "Page /contact/ must exist",
+      "priority": "must",
+      "sourceIds": [
+        "onboarding/storyboard.json#/contact/"
+      ],
+      "dependencyIds": [
+        "storyboard"
+      ],
+      "scope": "page",
+      "pagePath": "/contact/",
+      "acceptance": "Required page/route exists in the storyboard and compiled site.",
+      "owner": "code",
+      "id": "goal_page_section_f2fc29d974b0",
+      "sourceHash": "23a1bbab58485e0bc4de20eec93d72664a0ad57dab07e39a558ea584f8c46fc1",
+      "dependencyHash": "f364d46aa757c8c553ba8b9e7ac5f261cdddc265f56a370824ce789a33ff5886"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+name: Kernel Worker Preview
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+
+permissions:
+  contents: read
+
+jobs:
+  preview:
+    if: vars.VITRIS_WORKER_PREVIEW_ENABLED == 'true' && github.event.action != 'closed' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - name: Prepare isolated bindings
+        run: npm run preview:prepare
+        env:
+          CF_PREVIEW_D1_DATABASE_NAME: ${{ secrets.CF_PREVIEW_D1_DATABASE_NAME }}
+          CF_PREVIEW_D1_DATABASE_ID: ${{ secrets.CF_PREVIEW_D1_DATABASE_ID }}
+          CF_PREVIEW_KV_NAMESPACE_ID: ${{ secrets.CF_PREVIEW_KV_NAMESPACE_ID }}
+          CF_PREVIEW_R2_BUCKET: ${{ secrets.CF_PREVIEW_R2_BUCKET }}
+          CF_PREVIEW_AE_DATASET: ${{ secrets.CF_PREVIEW_AE_DATASET }}
+          CF_PREVIEW_SESSION_SECRET: ${{ secrets.CF_PREVIEW_SESSION_SECRET }}
+          CF_PREVIEW_APPROVE_SECRET: ${{ secrets.CF_PREVIEW_APPROVE_SECRET }}
+      - id: deploy
+        name: Deploy branch Preview
+        run: |
+          set -euo pipefail
+          output="$(npx wrangler preview --config .wrangler-preview.jsonc --ignore-base-config --secrets-file .wrangler-preview.secrets.json --name "pr-${{ github.event.pull_request.number }}" --json)"
+          preview_url="$(printf '%s' "$output" | jq -er '.preview_urls[0] // .preview.urls[0]')"
+          echo "preview_url=$preview_url" >> "$GITHUB_OUTPUT"
+          echo "Kernel Worker Preview: $preview_url" >> "$GITHUB_STEP_SUMMARY"
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      - name: Probe Preview
+        run: |
+          set -euo pipefail
+          curl --fail --show-error --silent "$PREVIEW_URL/" -o /dev/null
+          curl --fail --show-error --silent "$PREVIEW_URL/app/login" -o /dev/null
+          response="$(curl --silent --show-error --write-out '\n%{http_code}' -H 'content-type: application/json' --data '{}' "$PREVIEW_URL/api/publish-attested")"
+          test "$(printf '%s' "$response" | tail -n 1)" = 403
+          printf '%s' "$response" | grep -q 'disabled in Worker Previews'
+        env:
+          PREVIEW_URL: ${{ steps.deploy.outputs.preview_url }}
+
+  cleanup:
+    if: vars.VITRIS_WORKER_PREVIEW_ENABLED == 'true' && github.event.action == 'closed' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npx wrangler preview delete --name "pr-${{ github.event.pull_request.number }}" --skip-confirmation
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

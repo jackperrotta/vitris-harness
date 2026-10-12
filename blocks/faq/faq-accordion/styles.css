@@ -1,0 +1,6 @@
+.c-faq-accordion__list{max-width:46rem;margin-inline:auto}
+@media(min-width:900px){
+  .c-faq-accordion--two-col .c-faq-accordion__list{max-width:none;display:grid;grid-template-columns:1fr 1fr;gap:0 var(--space-8);border-top:0}
+  .c-faq-accordion--two-col .c-faq-accordion__list details{border-top:1px solid var(--color-border);border-bottom:0}
+  .c-faq-accordion--two-col .c-faq-accordion__list details:nth-last-child(-n+2){border-bottom:1px solid var(--color-border)}
+}

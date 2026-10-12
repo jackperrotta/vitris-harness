@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "blockId": "content/specification-ledger",
+  "blockRevision": 1,
+  "sourceHash": "f9d910387d0f2c82791502a76d178f2deb8e48e50387190fc15d1ad9611149f2",
+  "previewHtmlHash": "a81bb491597fdea4b09af9a65f9b40dfb5ec61e7ac4c08b52a4cd20c9c8c2a50",
+  "rendererHash": "adb9cf206350ec5e97bc41d8db13fe3ced203ffc9ec42bde236a81d53043bb46",
+  "content": "README example",
+  "assets": "inline placeholders",
+  "theme": "defaultTheme",
+  "browser": "Chromium 153.0.8010.12",
+  "renderer": "scripts/blocks-preview.ts",
+  "images": {
+    "mobile": {
+      "file": "content--specification-ledger--mobile.jpg",
+      "hash": "46b8bb477efb7376e4c75f5da330c682a8dbc0d1df445e0d185a08ff6a91c2bc",
+      "width": 375,
+      "height": 900
+    },
+    "desktop": {
+      "file": "content--specification-ledger--desktop.jpg",
+      "hash": "5cefdfe2aedc83792b750ec6f78f63e735d6cf5d4991ba38c0fb4635f59ab40f",
+      "width": 1280,
+      "height": 800
+    }
+  }
+}

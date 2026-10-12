@@ -1,0 +1,260 @@
+{
+  "id": "margin-journal",
+  "revision": 1,
+  "title": "Margin / annotated reading",
+  "primaryFamily": "editorial",
+  "assetMinimum": "none",
+  "fitSignals": [
+    "real-copy",
+    "type-content",
+    "action",
+    "sparse-media",
+    "collection"
+  ],
+  "visitorTasks": [
+    "read-deeply",
+    "find-article"
+  ],
+  "organizingIdea": "An issue contents list introduces the publication; interior marginal notes support a sustained reading column.",
+  "brief": {
+    "fictional": true,
+    "facts": {
+      "name": "Margin Journal",
+      "issue": "01",
+      "theme": "Reading the ordinary",
+      "essays": [
+        "A room for a paragraph",
+        "What a caption holds",
+        "The pause between pages"
+      ],
+      "restriction": "Fictional publication with original teaching essays; no attributed external author",
+      "contact": "margin@example.test"
+    },
+    "factsHash": "8b7b043dc169db75778163a813e38d726dc43dc7a0f3edcdd70d8703893081f4",
+    "mediaHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "provenance": {
+    "content": "Original fictional Vitris teaching brief and copy; no customer claims.",
+    "media": "Original inline SVG diagrams and/or text; no external imagery or type assets.",
+    "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+  },
+  "storyboard": {
+    "homepage": [
+      "issue identity",
+      "editor note",
+      "contents",
+      "colophon"
+    ],
+    "interior": [
+      "essay title",
+      "margin note and reading column",
+      "caption/reflection sections",
+      "contents return"
+    ],
+    "mobile": "Issue columns become editor introduction then contents; the margin note precedes the reading passage. Article measure remains readable without decorative imagery."
+  },
+  "designDecisions": "An issue contents list introduces the publication; interior marginal notes support a sustained reading column.",
+  "lessonIds": [
+    "cmp-type-roles",
+    "cmp-text-shape",
+    "cmp-page-rhythm",
+    "cmp-semantic-grouping"
+  ],
+  "referenceIds": [
+    "avery-review",
+    "good-and-common"
+  ],
+  "sourcePath": "margin-journal",
+  "homepage": "/",
+  "interior": "/detail",
+  "status": "compiled and automated/assistant visually reviewed; human preference pending",
+  "humanPreference": null,
+  "renderEvidence": [
+    {
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T16:48:49.124Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/margin-journal-home-1440.png",
+        "sha256": "d67228352002fb6f38830e9cd2652b48de11088593a095835f08b8f404861683"
+      },
+      "compiledHash": "945a0c92cef7279b20240e2695e75ee61a100a85b990a448bd4315fdbb159054",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail",
+            "/detail#caption",
+            "/detail#pause"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+        "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+        "assessment": "Desktop/mobile home and interior contact sheets inspected. Issue contents replace promotional sections; marginal note precedes narrow reading column. Title/body measures, section anchors and return-to-contents are clear."
+      }
+    },
+    {
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T16:48:50.137Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/margin-journal-home-390.png",
+        "sha256": "aa4e38f35f14cf3aa1ec143614d8ee7d47db20aafa9fc0bf1664891464500d9e"
+      },
+      "compiledHash": "945a0c92cef7279b20240e2695e75ee61a100a85b990a448bd4315fdbb159054",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail",
+            "/detail#caption",
+            "/detail#pause"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+        "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+        "assessment": "Desktop/mobile home and interior contact sheets inspected. Issue contents replace promotional sections; marginal note precedes narrow reading column. Title/body measures, section anchors and return-to-contents are clear."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T16:48:51.231Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/margin-journal-interior-1440.png",
+        "sha256": "72d05587c1aa8f3f102aac723c6e040c314fa8ebd31446063d7331aa5a8bd44e"
+      },
+      "compiledHash": "47f29c68faf9a4d6acb58e75aed07f350e83f627f62dbc443c26d8f4a86b6072",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/",
+            "/"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+        "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+        "assessment": "Desktop/mobile home and interior contact sheets inspected. Issue contents replace promotional sections; marginal note precedes narrow reading column. Title/body measures, section anchors and return-to-contents are clear."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T16:48:52.370Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/margin-journal-interior-390.png",
+        "sha256": "3a82447bbc918d2473de69bdc9a1085402322ffbd285ea2b2a4b76d0557e7934"
+      },
+      "compiledHash": "47f29c68faf9a4d6acb58e75aed07f350e83f627f62dbc443c26d8f4a86b6072",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/",
+            "/"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+        "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+        "assessment": "Desktop/mobile home and interior contact sheets inspected. Issue contents replace promotional sections; marginal note precedes narrow reading column. Title/body measures, section anchors and return-to-contents are clear."
+      }
+    }
+  ],
+  "selectionProfile": {
+    "tasks": [
+      "read-deeply"
+    ],
+    "contexts": [
+      "creative-practice"
+    ],
+    "contributions": [
+      "contents-index",
+      "marginal-reading"
+    ],
+    "expressions": [
+      "editorial"
+    ]
+  },
+  "exampleScope": "focused-structural-lesson",
+  "releaseNotes": "Preserved original lesson; not a comprehensive finished-site exemplar or human-approved taste label.",
+  "comparisonStatus": "not a controlled same-facts comparison"
+}

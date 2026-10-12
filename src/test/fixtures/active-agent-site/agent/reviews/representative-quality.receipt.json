@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "kind": "active-agent-visual",
+  "archivedAt": "2026-09-22T20:50:23.656Z",
+  "preparationId": "4e47d74d-0315-470e-a0c3-3248b4bee18f",
+  "probeRel": "agent/reviews/visual-probe.png",
+  "probeHash": "604789a72fd8f4b1bf930341db1f7b7b2b7ec56981c43524d2736e38f66bd9a3",
+  "captureRel": "agent/screenshots/representative-browser",
+  "captureHashes": [
+    {
+      "path": "agent/screenshots/representative-browser/first-visit-1080.png",
+      "hash": "919acce55c8c299c98ff5b0b849537b086cf318c0a40f695a7560f272b5dc9a9"
+    },
+    {
+      "path": "agent/screenshots/representative-browser/first-visit-375.png",
+      "hash": "a61ba0349654f005a951f5f30d7a820932b870753fc27b366603f00ddd412f92"
+    },
+    {
+      "path": "agent/screenshots/representative-browser/home-1080.png",
+      "hash": "62c65d4d798b43a375de37d4fc664e012da95925efd6495f9f2b2d656edbcf7e"
+    },
+    {
+      "path": "agent/screenshots/representative-browser/home-375.png",
+      "hash": "93f9bceadef4ea01788fe7688083582e94b83a808230dc93b56c0d06ec201feb"
+    },
+    {
+      "path": "agent/screenshots/representative-browser/monthly-work-1080.png",
+      "hash": "87fa0ef94ad3f4be1493f448dc02d4ca332537593852f5cc802804070f1a51c5"
+    },
+    {
+      "path": "agent/screenshots/representative-browser/monthly-work-375.png",
+      "hash": "2cc2670b39daa00b0a1402a004878f2801668bc21516ae7ddca8e743f75c276c"
+    }
+  ],
+  "toolEvents": [
+    {
+      "tool": "view_image",
+      "path": "agent/reviews/visual-probe.png",
+      "success": true,
+      "hash": "604789a72fd8f4b1bf930341db1f7b7b2b7ec56981c43524d2736e38f66bd9a3"
+    },
+    {
+      "tool": "view_image",
+      "path": "agent/screenshots/representative-browser/first-visit-1080.png",
+      "success": true,
+      "hash": "919acce55c8c299c98ff5b0b849537b086cf318c0a40f695a7560f272b5dc9a9"
+    },
+    {
+      "tool": "view_image",
+      "path": "agent/screenshots/representative-browser/first-visit-375.png",
+      "success": true,
+      "hash": "a61ba0349654f005a951f5f30d7a820932b870753fc27b366603f00ddd412f92"
+    },
+    {
+      "tool": "view_image",
+      "path": "agent/screenshots/representative-browser/home-1080.png",
+      "success": true,
+      "hash": "62c65d4d798b43a375de37d4fc664e012da95925efd6495f9f2b2d656edbcf7e"
+    },
+    {
+      "tool": "view_image",
+      "path": "agent/screenshots/representative-browser/home-375.png",
+      "success": true,
+      "hash": "93f9bceadef4ea01788fe7688083582e94b83a808230dc93b56c0d06ec201feb"
+    },
+    {
+      "tool": "view_image",
+      "path": "agent/screenshots/representative-browser/monthly-work-1080.png",
+      "success": true,
+      "hash": "87fa0ef94ad3f4be1493f448dc02d4ca332537593852f5cc802804070f1a51c5"
+    },
+    {
+      "tool": "view_image",
+      "path": "agent/screenshots/representative-browser/monthly-work-375.png",
+      "success": true,
+      "hash": "2cc2670b39daa00b0a1402a004878f2801668bc21516ae7ddca8e743f75c276c"
+    }
+  ],
+  "environment": "Codex active agent; events transcribed from this task’s successful view_image calls"
+}

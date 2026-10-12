@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "id": "contact/contact-hours",
+  "revision": 1,
+  "status": "draft",
+  "owner": "Vitris design library",
+  "sourceHash": "19aa27804b5a70f29808a862c4ec108b865e787677edf07aa16c9a552dc033c2",
+  "fit": {
+    "visitorJobs": [
+      "Find opening hours and contact the business"
+    ],
+    "pageRoles": [
+      "practical contact"
+    ],
+    "useWhen": [
+      "Find opening hours and contact the business"
+    ],
+    "avoidWhen": [
+      "The content or media cannot support this composition"
+    ]
+  },
+  "content": {
+    "requiredSlots": [
+      "heading",
+      "actions",
+      "hours"
+    ],
+    "optionalSlots": [
+      "eyebrow",
+      "lede",
+      "note"
+    ],
+    "testedItemCounts": [
+      1
+    ]
+  },
+  "media": {
+    "min": 0,
+    "max": 8,
+    "optionalBehavior": "Recompose without empty media frames when media is optional",
+    "aspect": [
+      "content-dependent"
+    ]
+  },
+  "composition": {
+    "hierarchy": "information split",
+    "alignment": "left",
+    "density": "compact",
+    "mediaProminence": "none",
+    "geometry": [
+      "split",
+      "table"
+    ],
+    "boundary": "section boundary adapts to adjacent content"
+  },
+  "adaptation": {
+    "flexible": [
+      "spacing",
+      "surface treatment",
+      "type scale"
+    ],
+    "invariants": [
+      "semantic reading order",
+      "one clear section purpose"
+    ],
+    "customWhen": [
+      "The visitor job needs a different hierarchy"
+    ]
+  },
+  "responsive": {
+    "readingOrder": "DOM order follows the visitor narrative",
+    "reflow": "Stack or resize according to content",
+    "crop": "Keep important subjects visible"
+  },
+  "interaction": {
+    "behavior": "Native links and controls",
+    "islands": []
+  },
+  "evidence": {
+    "provenance": [
+      "Original Vitris block source"
+    ],
+    "testedContexts": [],
+    "accessibility": [],
+    "previewManifest": "../../../design-system/block-previews/v1/contact--contact-hours.json"
+  }
+}

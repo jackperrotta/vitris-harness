@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "blockId": "hero/hero-editorial",
+  "blockRevision": 1,
+  "sourceHash": "c7523f6b19a0b7643a08fbb15054906ef4d53d0acec527dc7582519e00a5f0b0",
+  "previewHtmlHash": "350197324a0afef8fa5bd770d278b6f38ca71a1e0a1c37ab0bb668475a5d1d10",
+  "rendererHash": "adb9cf206350ec5e97bc41d8db13fe3ced203ffc9ec42bde236a81d53043bb46",
+  "content": "README example",
+  "assets": "inline placeholders",
+  "theme": "defaultTheme",
+  "browser": "Chromium 153.0.8010.12",
+  "renderer": "scripts/blocks-preview.ts",
+  "images": {
+    "mobile": {
+      "file": "hero--hero-editorial--mobile.jpg",
+      "hash": "12da60f01d0142ec939dfe9625851c9b38867a01a6723d27541c3f3da475ed6b",
+      "width": 375,
+      "height": 900
+    },
+    "desktop": {
+      "file": "hero--hero-editorial--desktop.jpg",
+      "hash": "98eaaec876a66bf6839bc5f94ff003b2d28425e23f979ff1a6f5db287a939629",
+      "width": 1280,
+      "height": 800
+    }
+  }
+}

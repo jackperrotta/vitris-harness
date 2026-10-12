@@ -1,0 +1,6 @@
+.c-testimonial-rating{border-block:1px solid var(--color-border)}
+.c-testimonial-rating__row{display:flex;flex-wrap:wrap;gap:var(--space-3) var(--space-5);align-items:center;justify-content:center;text-align:center}
+.c-testimonial-rating__row .rating .icon{width:1.25rem;height:1.25rem}
+.c-testimonial-rating__text{margin:0;color:var(--color-muted)}
+.c-testimonial-rating__text strong{color:var(--color-text)}
+.c-testimonial-rating--muted{background:var(--color-surface-2);border-block-color:transparent}

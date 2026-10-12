@@ -1,0 +1,236 @@
+{
+  "id": "fen-repair",
+  "revision": 1,
+  "title": "Fen Repair / documentary record",
+  "primaryFamily": "documentary",
+  "assetMinimum": "multiple-images",
+  "fitSignals": [
+    "real-copy",
+    "type-content",
+    "action",
+    "approved-image",
+    "multiple-images",
+    "proof",
+    "professional-service",
+    "process"
+  ],
+  "visitorTasks": [
+    "inspect-work",
+    "understand-process"
+  ],
+  "organizingIdea": "Lead with related work and finished-area views; the interior turns them into a documented process.",
+  "brief": {
+    "fictional": true,
+    "facts": {
+      "name": "Fen Repair",
+      "offer": "Slate roof repairs for small buildings",
+      "project": "A teaching repair sequence",
+      "scope": [
+        "Inspect the damaged area",
+        "Agree the repair scope",
+        "Replace affected slates",
+        "Document the completed area"
+      ],
+      "contact": "fen@example.test",
+      "restriction": "Synthetic teaching images; no actual customer work or performance claims"
+    },
+    "factsHash": "95b5b04b8b53b73b50d3047c653fbc92ce40955aeab4ad6b5a345c0e4095c23f",
+    "mediaHash": "7ecd23d3447a10474807e823bfd0a329f017f8ca7fe14e8d6a0e5fe3cb76bf7f"
+  },
+  "provenance": {
+    "content": "Original fictional Vitris teaching brief and copy; no customer claims.",
+    "media": "Existing original Vitris synthetic teaching roof images, with source provenance copied; never actual customer proof.",
+    "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+  },
+  "storyboard": {
+    "homepage": [
+      "work/finished relationship",
+      "repair scope",
+      "conversation preparation"
+    ],
+    "interior": [
+      "scope title",
+      "inspection/photo/process",
+      "completed area",
+      "handover"
+    ],
+    "mobile": "At narrow width, the repair-stage sequence stays intact while the photo mosaic and offset handover become document flow."
+  },
+  "designDecisions": "Lead with related work and finished-area views; the interior turns them into a documented process.",
+  "lessonIds": [
+    "cmp-image-sequence",
+    "cmp-process",
+    "cmp-proof-adjacency"
+  ],
+  "referenceIds": [
+    "studio-gerosa",
+    "baggu"
+  ],
+  "sourcePath": "fen-repair",
+  "homepage": "/",
+  "interior": "/detail",
+  "status": "compiled and automated/assistant visually reviewed; human preference pending",
+  "humanPreference": null,
+  "renderEvidence": [
+    {
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T16:48:35.472Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/fen-repair-home-1440.png",
+        "sha256": "9ae1f1bb988411134b0a590711b538b3c590853c8d9bb6c5ee69f512e0d1875f"
+      },
+      "compiledHash": "508d55108be5e945500bf7fb885dada6b9f948d11bbf8889b2d5521d14f3d656",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+        "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+        "assessment": "Full-page desktop/mobile contact sheets inspected. Work/finished photo relationship and sequential mobile process are readable. Repaired mobile header spacing re-inspected at full resolution. Synthetic images remain explicitly teaching-only."
+      }
+    },
+    {
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T16:48:36.565Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/fen-repair-home-390.png",
+        "sha256": "a180d9ec0eb67df2d1d5f9d852753f6d50f8dd6ebfda80aa41376ac15adbcabb"
+      },
+      "compiledHash": "508d55108be5e945500bf7fb885dada6b9f948d11bbf8889b2d5521d14f3d656",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+        "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+        "assessment": "Full-page desktop/mobile contact sheets inspected. Work/finished photo relationship and sequential mobile process are readable. Repaired mobile header spacing re-inspected at full resolution. Synthetic images remain explicitly teaching-only."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T16:48:37.916Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/fen-repair-interior-1440.png",
+        "sha256": "ae39e22c046db9eebf5ec67172777ba64aaefd26d002ca88bd256dc3ade86e31"
+      },
+      "compiledHash": "9101751ea03be6de05b1fb555d0f9fc50af0deeb9fd7d263767889dfe5b5667f",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+        "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+        "assessment": "Full-page desktop/mobile contact sheets inspected. Work/finished photo relationship and sequential mobile process are readable. Repaired mobile header spacing re-inspected at full resolution. Synthetic images remain explicitly teaching-only."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T16:48:39.017Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/fen-repair-interior-390.png",
+        "sha256": "c397fde8afb5e009104f3f324c7111454f5464ada9216c49d9947b52e50b7412"
+      },
+      "compiledHash": "9101751ea03be6de05b1fb555d0f9fc50af0deeb9fd7d263767889dfe5b5667f",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+        "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+        "assessment": "Full-page desktop/mobile contact sheets inspected. Work/finished photo relationship and sequential mobile process are readable. Repaired mobile header spacing re-inspected at full resolution. Synthetic images remain explicitly teaching-only."
+      }
+    }
+  ]
+}

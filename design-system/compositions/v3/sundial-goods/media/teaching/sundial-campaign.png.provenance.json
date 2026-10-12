@@ -1,0 +1,19 @@
+{
+  "method": "generated-raster",
+  "tool": "built-in image_gen.imagegen",
+  "model": null,
+  "seed": null,
+  "providerReceipt": null,
+  "prompt": "Use case: ads-marketing. Asset type: original fictional cotton bag campaign photograph for a teaching retail website. Primary request: three beautifully made unbranded cotton tote bags in brick red, ink navy and leaf green, casually arranged on a saturated butter-yellow studio set with folded paper blocks. Each bag has two practical sewn handles and visible natural canvas weave, one rests on its side to reveal depth, one upright, one suspended slightly higher without visible rigging. Graphic, playful independent retail art direction, warm hard sunlight and crisp shadows, generous room around shapes, no people, no logos, no text. Wide horizontal image, compelling asymmetrical arrangement with red bag dominant near center. Photographic fictional product visualization, not real manufactured stock, certification or customer proof.",
+  "parents": [],
+  "rights": "Original AI-generated fictional teaching material; package/generation teaching eligible. No third-party branding or customer proof.",
+  "forbiddenImplications": [
+    "Not real customer work, venue, manufactured product or verified result",
+    "No structural, material, safety or performance certification"
+  ],
+  "sha256": "adc442740a435262424b66d244183802cea31bac93d1f6e935f6ea01a6c2d19b",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  }
+}

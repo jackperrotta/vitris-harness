@@ -1,0 +1,273 @@
+{
+  "id": "mara-reading-room",
+  "revision": 1,
+  "title": "Mara Vale / editorial reading room",
+  "primaryFamily": "editorial",
+  "assetMinimum": "one-image",
+  "fitSignals": [
+    "professional-service",
+    "type-content",
+    "real-copy",
+    "process",
+    "collection",
+    "sparse-media",
+    "action"
+  ],
+  "visitorTasks": [
+    "Evaluate a practice",
+    "Understand a process"
+  ],
+  "organizingIdea": "An editorial opening explains the reading practice, then pairs a feature diagram with a quiet publication index.",
+  "brief": {
+    "fictional": true,
+    "facts": {
+      "name": "Mara Vale",
+      "offer": "Independent information design",
+      "projects": [
+        {
+          "name": "Field Notes",
+          "type": "Wayfinding study",
+          "year": "2025"
+        },
+        {
+          "name": "Open Table",
+          "type": "Publication study",
+          "year": "2026"
+        }
+      ],
+      "method": [
+        "Collect the material",
+        "Find the hierarchy",
+        "Test the reading"
+      ],
+      "contact": "mara@example.test",
+      "media": [
+        "Original SVG reading diagram"
+      ]
+    },
+    "factsHash": "9545037fbd8c521a1bb28851165d50edb2cb39a42ddf48cf98dfa73d959bdf57",
+    "mediaHash": "67f1f059df254741da210de09c6b30d8a5073023a40c56d786e33b358a25af7f"
+  },
+  "provenance": {
+    "content": "Original fictional teaching content authored for Vitris; never customer facts",
+    "media": "Original authored SVG; no external assets or fonts",
+    "rights": "Original Vitris teaching source; customer reuse requires adapting facts"
+  },
+  "storyboard": {
+    "homepage": [
+      "A place forclear reading.",
+      "The words come first.",
+      "Open Table"
+    ],
+    "interior": [
+      "Field Notes",
+      "Collect the material",
+      "Find the hierarchy",
+      "Test the reading",
+      "Open Table"
+    ],
+    "mobile": "Content order is preserved; side navigation and supporting columns reflow into the document. No essential hover interactions."
+  },
+  "designDecisions": "An editorial opening explains the reading practice, then pairs a feature diagram with a quiet publication index.",
+  "lessonIds": [
+    "cmp-type-roles",
+    "cmp-page-rhythm",
+    "cmp-semantic-grouping"
+  ],
+  "referenceIds": [
+    "pangram-pangram",
+    "gov-uk"
+  ],
+  "sourcePath": "mara-reading-room",
+  "homepage": "/",
+  "interior": "/detail",
+  "status": "compiled, automated checks passed, assistant visual review recorded; human preference pending",
+  "humanPreference": null,
+  "renderEvidence": [
+    {
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T15:53:22.106Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/mara-reading-room-home-1440.png",
+        "sha256": "10becbd3cd86191681ab7b339d21f2294a5896c8d4f9b33f8e0b230e6335360e"
+      },
+      "compiledHash": "d6e61b142238664635d0fb9abc3330a9b24a7fa97ad957cda98f73c2d6a7397b",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail",
+            "/detail#reading"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        }
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:08:16.891949+00:00",
+        "scope": "desktop/mobile full-page contact-sheet inspection; text hierarchy, reading order, overflow and matched-pair distinction",
+        "assessment": "Clear organization and readable narrow layout; no visual collision observed. Functional checks are automated, human preference is pending."
+      }
+    },
+    {
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T15:53:23.136Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/mara-reading-room-home-390.png",
+        "sha256": "628943d761b44a0ff9ea6f67438644088dd4aea25ab3f94d682253dd5b282374"
+      },
+      "compiledHash": "d6e61b142238664635d0fb9abc3330a9b24a7fa97ad957cda98f73c2d6a7397b",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail",
+            "/detail#reading"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        }
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:08:16.891949+00:00",
+        "scope": "desktop/mobile full-page contact-sheet inspection; text hierarchy, reading order, overflow and matched-pair distinction",
+        "assessment": "Clear organization and readable narrow layout; no visual collision observed. Functional checks are automated, human preference is pending."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T15:53:24.219Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/mara-reading-room-interior-1440.png",
+        "sha256": "4c0e6792a4ea164e2508bd5f9effb2c6f5beb296ed5c204f6dfd5fbe4205e0f3"
+      },
+      "compiledHash": "334230bc6e564fccb2ead7487b90160cc85e9c906bb42c4b2b4726ad01fdb3df",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        }
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:08:16.891949+00:00",
+        "scope": "desktop/mobile full-page contact-sheet inspection; text hierarchy, reading order, overflow and matched-pair distinction",
+        "assessment": "Clear organization and readable narrow layout; no visual collision observed. Functional checks are automated, human preference is pending."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T15:53:25.285Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/mara-reading-room-interior-390.png",
+        "sha256": "3ba40e8377097ea807292773529bc01ef6415f04367eaec62c10fbf711739ae7"
+      },
+      "compiledHash": "334230bc6e564fccb2ead7487b90160cc85e9c906bb42c4b2b4726ad01fdb3df",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        }
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:08:16.891949+00:00",
+        "scope": "desktop/mobile full-page contact-sheet inspection; text hierarchy, reading order, overflow and matched-pair distinction",
+        "assessment": "Clear organization and readable narrow layout; no visual collision observed. Functional checks are automated, human preference is pending."
+      }
+    }
+  ],
+  "selectionProfile": {
+    "tasks": [
+      "inspect-work",
+      "read-deeply",
+      "book-inquiry"
+    ],
+    "contexts": [
+      "creative-practice"
+    ],
+    "contributions": [
+      "reading-room",
+      "chapter-navigation"
+    ],
+    "expressions": [
+      "editorial"
+    ],
+    "interpretation": {
+      "assetMinimum": "none",
+      "scope": "Typographic work index and reading relationships can be adapted without borrowing the fictional SVG diagram; invent no client work.",
+      "missingDependencies": [
+        "Original study diagram is teaching material, not customer proof"
+      ]
+    }
+  },
+  "exampleScope": "focused-structural-lesson",
+  "releaseNotes": "Preserved original lesson; not a comprehensive finished-site exemplar or human-approved taste label.",
+  "comparisonStatus": "v2 paired facts/media remain controlled there; v3 development is not a controlled same-facts pair"
+}

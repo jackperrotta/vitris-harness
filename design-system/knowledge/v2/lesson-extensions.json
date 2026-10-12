@@ -1,0 +1,158 @@
+[
+  {
+    "id": "project-photography-transformations",
+    "version": 1,
+    "evidenceClass": "original-synthetic",
+    "uncertainty": "The demonstration is a generated teaching image, not a customer job and not a human preference score.",
+    "requirementIds": ["wcag-1.1.1-text-alternative", "teaching-creative-freedom"],
+    "alternatives": [
+      { "id": "dominant-plate", "summary": "One large finished-job photograph with a caption and the estimate action underneath." },
+      { "id": "indexed-jobs", "summary": "A short index of unequal jobs, with the strongest inspected job first and the others quieter." }
+    ],
+    "inspection": "project-strong.html shows the generated slope image, caption, and action. It is a teaching layout, not a full business site."
+  },
+  {
+    "id": "sparse-imagery-process",
+    "version": 1,
+    "evidenceClass": "original-synthetic",
+    "uncertainty": "A process sequence is only as specific as the harvested steps.",
+    "requirementIds": ["teaching-creative-freedom"],
+    "alternatives": [
+      { "id": "numbered-steps", "summary": "A numbered diagnostic column and one action." },
+      { "id": "question-led", "summary": "The visitor's first question as the heading, with the method in prose and no photo placeholder." }
+    ],
+    "inspection": "sparse-strong.html is synthetic. It does not prove a firm."
+  },
+  {
+    "id": "founder-team-credibility",
+    "version": 1,
+    "evidenceClass": "inspected-reference",
+    "uncertainty": "The inspected portrait reference is not this client's staff and is not a preference label.",
+    "requirementIds": ["wcag-1.1.1-text-alternative"],
+    "alternatives": [
+      { "id": "person-beside-scope", "summary": "One named person beside the work they actually do." },
+      { "id": "credentials-without-portrait", "summary": "Text credentials when no inspected portrait exists." }
+    ],
+    "inspection": "Do not import the reference face into a customer site."
+  },
+  {
+    "id": "unequal-services",
+    "version": 1,
+    "evidenceClass": "original-synthetic",
+    "uncertainty": "Priority comes from visitor questions, not from an alphabetical list.",
+    "requirementIds": ["teaching-creative-freedom"],
+    "alternatives": [
+      { "id": "primary-band", "summary": "The main service in a large band and the others in a quieter index." },
+      { "id": "primary-prose", "summary": "The main service as prose, with secondary services as a definition list." }
+    ],
+    "inspection": "Equal cards are the failure case, not a required pattern to avoid by adding decoration."
+  },
+  {
+    "id": "dense-practical-information",
+    "version": 1,
+    "evidenceClass": "original-synthetic",
+    "uncertainty": "Unverified hours and prices stay unpublished.",
+    "requirementIds": ["seo-structured-data-consistency"],
+    "alternatives": [
+      { "id": "definition-list", "summary": "A label and value list." },
+      { "id": "short-table", "summary": "A table when several comparable facts share columns." }
+    ],
+    "inspection": "The fact must be extractable without reading a slogan."
+  },
+  {
+    "id": "tangible-materials",
+    "version": 1,
+    "evidenceClass": "original-synthetic",
+    "uncertainty": "Material claims need harvested evidence.",
+    "requirementIds": ["wcag-1.1.1-text-alternative"],
+    "alternatives": [
+      { "id": "material-detail", "summary": "A close view of the material the visitor is hiring." },
+      { "id": "material-prose", "summary": "A written specification when no usable material photo exists." }
+    ],
+    "inspection": "Do not substitute a generated texture for proof."
+  },
+  {
+    "id": "location-hours-access",
+    "version": 1,
+    "evidenceClass": "original-synthetic",
+    "uncertainty": "Service geography is published only when the facts include it.",
+    "requirementIds": ["seo-structured-data-consistency"],
+    "alternatives": [
+      { "id": "visit-facts", "summary": "Address, hours, and access as a practical block." },
+      { "id": "service-area", "summary": "A service area in prose when there is no public storefront." }
+    ],
+    "inspection": "Do not invent a map pin."
+  },
+  {
+    "id": "comparison-decision-support",
+    "version": 1,
+    "evidenceClass": "original-synthetic",
+    "uncertainty": "Comparisons that need prices stay incomplete when prices were not harvested.",
+    "requirementIds": ["teaching-creative-freedom"],
+    "alternatives": [
+      { "id": "choice-table", "summary": "A table of real differences." },
+      { "id": "guided-question", "summary": "One question that routes the visitor to the fitting service." }
+    ],
+    "inspection": "Do not fabricate prices to fill a column."
+  },
+  {
+    "id": "longform-case-study",
+    "version": 1,
+    "evidenceClass": "original-synthetic",
+    "uncertainty": "Outcomes that were not verified stay omitted.",
+    "requirementIds": ["geo-visible-answers"],
+    "alternatives": [
+      { "id": "narrative-case", "summary": "A sequential account of the job, the constraint, and the evidenced result." },
+      { "id": "annotated-case", "summary": "The same facts as annotations beside the work, without a second hero." }
+    ],
+    "inspection": "Missing data is stated, not smoothed over."
+  },
+  {
+    "id": "typography-led-hierarchy",
+    "version": 1,
+    "evidenceClass": "original-synthetic",
+    "uncertainty": "Hierarchy is a relationship, not a font family.",
+    "requirementIds": ["wcag-1.4.3-contrast", "teaching-creative-freedom"],
+    "alternatives": [
+      { "id": "serif-editorial", "summary": "A quiet serif page with one display line and a practical action." },
+      { "id": "sans-brief", "summary": "A compact sans page with the same offer, proof, and action order." }
+    ],
+    "inspection": "Either expression can be right. Neither is a quota."
+  },
+  {
+    "id": "mobile-complex-composition",
+    "version": 1,
+    "evidenceClass": "original-synthetic",
+    "uncertainty": "Mobile order follows the visitor task, not a universal card stack.",
+    "requirementIds": ["wcag-2.4.11-focus-not-obscured"],
+    "alternatives": [
+      { "id": "stack-proof", "summary": "Offer, then proof, then action, full width." },
+      { "id": "stack-process", "summary": "The diagnostic steps remain in order, with the action after the step that justifies it." }
+    ],
+    "inspection": "Do not put the action above an unlabeled image."
+  },
+  {
+    "id": "purposeful-repetition",
+    "version": 1,
+    "evidenceClass": "original-synthetic",
+    "uncertainty": "Repetition is acceptable when each instance answers the same kind of question.",
+    "requirementIds": ["teaching-creative-freedom"],
+    "alternatives": [
+      { "id": "shared-project-row", "summary": "Project entries share a caption system because each is a job." },
+      { "id": "shared-service-list", "summary": "Secondary services share a list style because they are peers of each other, not of the primary offer." }
+    ],
+    "inspection": "Identical cards for unrelated jobs are the failure, not repetition itself."
+  },
+  {
+    "id": "contact-journey",
+    "version": 1,
+    "evidenceClass": "original-synthetic",
+    "uncertainty": "A form is not mandatory. Phone or email can be the right next step.",
+    "requirementIds": ["wcag-3.3.2-labels", "wcag-3.3.1-error-identification", "wcag-2.1.1-keyboard", "nng-plain-language-and-recovery"],
+    "alternatives": [
+      { "id": "labeled-form", "summary": "A short labeled form after the facts that justify the request, with errors associated to the fields." },
+      { "id": "direct-contact", "summary": "A visible phone or email as the primary action, with a form only if it reduces effort." }
+    ],
+    "inspection": "fixtures/contact-valid.html and fixtures/contact-alternate.html are both acceptable. fixtures/contact-broken.html is the failure."
+  }
+]

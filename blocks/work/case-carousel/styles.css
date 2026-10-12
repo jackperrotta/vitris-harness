@@ -1,0 +1,7 @@
+.c-case-carousel__carousel .carousel__track{gap:var(--space-6);scroll-padding-inline:0}
+.c-case-carousel__carousel .carousel__track > *{flex:0 0 100%;display:grid;gap:var(--space-5);align-items:center}
+.c-case-carousel__carousel .stack{gap:var(--space-4);justify-items:start}
+.c-case-carousel__carousel .stack h2{max-width:18ch}
+.c-case-carousel__carousel .stack > p:not(.eyebrow){color:var(--color-muted);max-width:34rem}
+.c-case-carousel__carousel .frame{box-shadow:none}
+@media(min-width:900px){.c-case-carousel__carousel .carousel__track > *{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:var(--space-8)}}

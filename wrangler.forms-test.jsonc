@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "vitris-forms-test",
+  "main": "src/worker/index.ts",
+  "compatibility_date": "2026-09-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "d1_databases": [{ "binding": "DB", "database_name": "vitris-forms-test", "database_id": "REPLACE_WITH_YOUR_D1_DATABASE_ID", "migrations_dir": "migrations" }],
+  "kv_namespaces": [{ "binding": "KV", "id": "forms-test-local-kv" }],
+  "r2_buckets": [{ "binding": "R2", "bucket_name": "vitris-forms-test-local" }],
+  "vars": {
+    "FORMS_SANDBOX": "1",
+    "FORMS_ABUSE_SECRET": "local-test-abuse-key-never-use-in-production",
+    "FORMS_TURNSTILE_SECRETS": "{\"test\":\"1x0000000000000000000000000000000AA\"}",
+    "FORMS_SETUP_TOKENS": "{\"dw-test\":\"local-test-setup-key-never-use-in-production\",\"custom-test\":\"local-test-setup-key-never-use-in-production\"}"
+  },
+  "triggers": { "crons": ["0 6 * * *", "*/5 * * * *"] }
+}

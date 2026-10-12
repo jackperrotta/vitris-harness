@@ -1,0 +1,182 @@
+[
+  {
+    "id": "src-wcag22-quickref",
+    "publisher": "W3C Web Accessibility Initiative",
+    "title": "How to Meet WCAG 2.2 (Quick Reference)",
+    "url": "https://www.w3.org/WAI/WCAG22/quickref/",
+    "sourceKind": "standard",
+    "versionDate": "WCAG 2.2",
+    "lastReviewed": "2026-09-22",
+    "reviewStatus": "live-checked",
+    "reviewOwner": "kernel-editorial",
+    "sectionAnchors": [
+      "1.1.1",
+      "1.4.3",
+      "2.1.1",
+      "2.4.11",
+      "3.3.1",
+      "3.3.2",
+      "4.1.3"
+    ],
+    "summary": "WCAG 2.2 success criteria are the normative accessibility requirements. Level A and AA are the launch target. Text alternatives, contrast, keyboard operation, focus, and form labels have stated exceptions. Meeting a technique is not the only way to meet a criterion, and this quick reference is not a certification.",
+    "summarySha256": "a8272d9cc862ce0b8267f7418beed0205bc7b8fa60f4e3b9f9ef60e487ad2be5",
+    "reuseNotes": "Link to the criterion. Do not copy the quick reference into a site."
+  },
+  {
+    "id": "src-wai-aria-apg",
+    "publisher": "W3C Web Accessibility Initiative",
+    "title": "ARIA Authoring Practices Guide",
+    "url": "https://www.w3.org/WAI/ARIA/apg/",
+    "sourceKind": "official-platform",
+    "lastReviewed": "2026-09-22",
+    "reviewStatus": "live-checked",
+    "reviewOwner": "kernel-editorial",
+    "sectionAnchors": [
+      "patterns",
+      "names",
+      "landmarks"
+    ],
+    "summary": "The APG shows how to apply ARIA names, states, and keyboard behavior to common widgets. Prefer a native HTML control when it already has the needed semantics. Widget guidance applies only to widgets the page actually uses.",
+    "summarySha256": "6b836a6450f682162b13729ffa92575e9ffd6f7f3b0338991e7308db942fff85",
+    "reuseNotes": "Patterns are implementation guidance, not a second copy of WCAG."
+  },
+  {
+    "id": "src-wai-evaluate",
+    "publisher": "W3C Web Accessibility Initiative",
+    "title": "Evaluating Web Accessibility",
+    "url": "https://www.w3.org/WAI/test-evaluate/",
+    "sourceKind": "standard",
+    "lastReviewed": "2026-09-22",
+    "reviewStatus": "live-checked",
+    "reviewOwner": "kernel-editorial",
+    "sectionAnchors": [
+      "tools",
+      "conformance"
+    ],
+    "summary": "Evaluation tools help find issues. No tool alone determines that a site meets accessibility standards. Knowledgeable human evaluation is required. Automated checks passing must not be worded as WCAG certification.",
+    "summarySha256": "9517afa5298da70d7a7c01ce4f4980c68f1588ab0d7d6af9f22a2f1d5743a7c8",
+    "reuseNotes": "Use this limit on every accessibility receipt."
+  },
+  {
+    "id": "src-nng-heuristics",
+    "publisher": "Nielsen Norman Group",
+    "title": "10 Usability Heuristics for User Interface Design",
+    "url": "https://www.nngroup.com/articles/ten-usability-heuristics/",
+    "sourceKind": "research-usability",
+    "versionDate": "1994, article last reviewed 2024-01-30",
+    "lastReviewed": "2026-09-22",
+    "reviewStatus": "live-checked",
+    "reviewOwner": "kernel-editorial",
+    "sectionAnchors": [
+      "1",
+      "2",
+      "5",
+      "9"
+    ],
+    "summary": "Nielsen's heuristics are broad rules of thumb, not specific usability guidelines and not a layout recipe. Status visibility, familiar language, error prevention, and recovery in plain language are the parts used for service-site tasks. Aesthetic and minimalist design does not require a particular visual style.",
+    "summarySha256": "8ef9af3362437b60233e9829b6dedafbd03ba7416dd3132b0a012a5c4978e8f6",
+    "reuseNotes": "Credit Jakob Nielsen and the article URL. Do not reproduce the article."
+  },
+  {
+    "id": "src-google-seo-starter",
+    "publisher": "Google Search Central",
+    "title": "SEO Starter Guide",
+    "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+    "sourceKind": "official-platform",
+    "lastReviewed": "2026-09-22",
+    "reviewStatus": "live-checked",
+    "reviewOwner": "kernel-editorial",
+    "sectionAnchors": [
+      "help-google-find",
+      "organize",
+      "canonical"
+    ],
+    "summary": "Google describes SEO as helping search engines understand content. There is no guaranteed ranking. Sitemaps are useful and not required. Descriptive URLs and a single preferred URL for duplicate content help users and crawlers. Title and description quality is guidance, not a character-count mandate.",
+    "summarySha256": "d3292ea0510b928d81b5095eb0b28def3473e8f76596c29a1ca90120cfd759cc",
+    "reuseNotes": "Official Google Search guidance. Do not treat it as a ranking promise."
+  },
+  {
+    "id": "src-google-site-move",
+    "publisher": "Google Search Central",
+    "title": "Site move with URL changes",
+    "url": "https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes",
+    "sourceKind": "official-platform",
+    "lastReviewed": null,
+    "reviewStatus": "cited-not-rechecked",
+    "reviewOwner": "kernel-editorial",
+    "sectionAnchors": [
+      "redirects"
+    ],
+    "summary": "Google's site-move documentation is the entry point for changing URLs. Vitris uses it to require an explicit keep, redirect, consolidate, or retire decision for discovered material URLs. This summary was not re-fetched on 2026-09-22.",
+    "summarySha256": "e1ada05fe8ecb78a95120dcea19d15ab1aeec1be69c1d9e08d0a165088f6b197",
+    "reuseNotes": "Re-check the live page before treating a detail as current."
+  },
+  {
+    "id": "src-google-ai-features",
+    "publisher": "Google Search Central",
+    "title": "AI features and your website",
+    "url": "https://developers.google.com/search/docs/appearance/ai-features",
+    "sourceKind": "official-platform",
+    "lastReviewed": null,
+    "reviewStatus": "cited-not-rechecked",
+    "reviewOwner": "kernel-editorial",
+    "sectionAnchors": [
+      "existing-seo"
+    ],
+    "summary": "Google's published position, as cited for this release, is that existing SEO foundations apply to its AI search features and that no special AI files or schema are required. This does not establish other providers' policies. The live page was not re-fetched on 2026-09-22.",
+    "summarySha256": "5f4d5e80e1b37377f6be836e6194a7d21c2916db02961c4e8c4b09ce06900391",
+    "reuseNotes": "Do not invent a launch requirement for llms.txt."
+  },
+  {
+    "id": "src-web-vitals",
+    "publisher": "web.dev / Google",
+    "title": "Web Vitals",
+    "url": "https://web.dev/articles/vitals",
+    "sourceKind": "official-platform",
+    "versionDate": "2024-10-31",
+    "lastReviewed": "2026-09-22",
+    "reviewStatus": "live-checked",
+    "reviewOwner": "kernel-editorial",
+    "sectionAnchors": [
+      "LCP",
+      "INP",
+      "CLS"
+    ],
+    "summary": "Good Core Web Vitals targets are LCP within 2.5 seconds, INP within 200 milliseconds, and CLS of 0.1 or less, at the 75th percentile of field page loads, segmented by device. Lab tools are not a substitute for field measurement. Lighthouse does not measure INP.",
+    "summarySha256": "b9792d1e355120237f1b35adcabde5db6c43e68368e49891411ade8e90738cc1",
+    "reuseNotes": "Do not report a lab run as field INP."
+  },
+  {
+    "id": "src-cloudflare-pages-redirects",
+    "publisher": "Cloudflare",
+    "title": "Redirects (Cloudflare Pages)",
+    "url": "https://developers.cloudflare.com/pages/configuration/redirects/",
+    "sourceKind": "official-platform",
+    "lastReviewed": null,
+    "reviewStatus": "cited-not-rechecked",
+    "reviewOwner": "kernel-editorial",
+    "sectionAnchors": [
+      "_redirects"
+    ],
+    "summary": "Cloudflare Pages documents platform redirect files. That behavior is not a substitute for testing the Worker publication path. The live page was not re-fetched on 2026-09-22.",
+    "summarySha256": "9d1369d42b09780ca4a8e440618654b53adc1eee3e7b9ab0c3693fb7a6e3afe9",
+    "reuseNotes": "Validate the selected deployment mode."
+  },
+  {
+    "id": "src-vitris-transfer-budget",
+    "publisher": "Vitris",
+    "title": "Starting transfer budgets",
+    "url": "design-system/knowledge/v2/requirements.json#perf-transfer-budget",
+    "sourceKind": "project-policy",
+    "versionDate": "2026-09-22",
+    "lastReviewed": "2026-09-22",
+    "reviewStatus": "live-checked",
+    "reviewOwner": "kernel-editorial",
+    "sectionAnchors": [
+      "perf-transfer-budget"
+    ],
+    "summary": "Vitris starting budgets are 100 KiB gzip first-party JavaScript, 100 KiB gzip CSS, 200 KiB of font bytes, and 1.5 MiB initial transfer on the chosen mobile fixture. These are project policies, not web standards. A stated media exception is allowed. Timing variance starts as a warning.",
+    "summarySha256": "8e52f4a09b35fa18f479a551037958cbf075d9add6623a7fea0c75bdef170776",
+    "reuseNotes": "Label the budget as Vitris policy wherever it is enforced."
+  }
+]

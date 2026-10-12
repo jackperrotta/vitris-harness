@@ -1,0 +1,17 @@
+scratch/
+artifacts/
+.cursor/
+.github/
+**/dist.previous-*/
+**/dist.failed-*/
+**/*.test.ts
+src/test/
+*.tgz
+
+scripts/theme-selection-demo.ts
+agent/template-responses.json
+agent/template-questions.json
+agent/template-decisions.json
+agent/theme-selection.json
+agent/theme-awaiting.json
+docs/baselines/*.zip

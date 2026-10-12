@@ -1,0 +1,19 @@
+{
+  "name": "my-vitris-forms-test",
+  "main": "../bin/cloudflare/forms-test.js",
+  "compatibility_date": "2026-10-11",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "my-vitris-test",
+      "database_id": "REPLACE_WITH_YOUR_TEST_D1_DATABASE_ID",
+      "migrations_dir": "../migrations"
+    }
+  ],
+  "vars": {
+    "FORMS_SANDBOX": "1"
+  }
+}

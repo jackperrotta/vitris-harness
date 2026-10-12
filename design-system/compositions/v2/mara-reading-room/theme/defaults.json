@@ -1,0 +1,16 @@
+{
+  "colorBg": "#ffffff",
+  "colorText": "#28262d",
+  "colorMuted": "#514d5c",
+  "colorAccent": "#5c3d7b",
+  "colorAccentText": "#ffffff",
+  "colorSurface": "#ffffff",
+  "colorSurface2": "#eaf4f0",
+  "colorBorder": "#9cb4ae",
+  "colorFocus": "#5c3d7b",
+  "fontBody": "ui-sans-serif, system-ui, sans-serif",
+  "fontDisplay": "ui-serif, Georgia, serif",
+  "radius": "0px",
+  "radiusLg": "0px",
+  "maxWidth": "1180px"
+}

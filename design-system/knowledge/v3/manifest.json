@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "lessonRelease": "2026-09-28.1",
+  "standardsRelease": "2026-09-22",
+  "labeledPreferenceData": false,
+  "releaseStatus": "teaching-material; visual-demonstrations-pending",
+  "files": [
+    {
+      "path": "catalog.json",
+      "sha256": "b28eb3fbdf62b903eb0721c66f74b7f10eb9029600ef382d38993f54ce50edeb"
+    },
+    {
+      "path": "examples/catalog.json",
+      "sha256": "8e1a0ebe82757fb7aa9471318ff9263be4b78096b5d5d74640a448c93071f2fa"
+    },
+    {
+      "path": "lessons/cmp-collection-structure.md",
+      "sha256": "035ae2c98c57e40be808740bf9f32ea1264978042ce41beaa63445face668cc9"
+    },
+    {
+      "path": "lessons/cmp-comparison.md",
+      "sha256": "0a11390213b0289ff1b140b993bbe7b7cbd30be996e944259ff525875b321c27"
+    },
+    {
+      "path": "lessons/cmp-contextual-action.md",
+      "sha256": "22029993d56769d37d22627a79eb024e9ba20980e9c3d5108f3c6a5eaa53d8ad"
+    },
+    {
+      "path": "lessons/cmp-contrastive-critique.md",
+      "sha256": "255c3699d3d3aea5ede174f1054c419650b01972a37765cb3241de1c590f077a"
+    },
+    {
+      "path": "lessons/cmp-disclosure.md",
+      "sha256": "5ae12a63ff6cc25e338eba7022f23efaa7c21fc5c5d662600d802ffe0203c7cc"
+    },
+    {
+      "path": "lessons/cmp-evidence-form.md",
+      "sha256": "7806e4e83bca268ed28bd66cc7655a22083f88dec7da3229392ce721a481af79"
+    },
+    {
+      "path": "lessons/cmp-image-art-direction.md",
+      "sha256": "7ef0817c85ce8ba99335ccadbb4ddaf74e97fb174d3218d0b629293e0db41ef9"
+    },
+    {
+      "path": "lessons/cmp-image-sequence.md",
+      "sha256": "09fd19983aeea78a0896564d93906c4b6f3cc2df4d3249fa4f42f5fb87278280"
+    },
+    {
+      "path": "lessons/cmp-interactive-explanation.md",
+      "sha256": "92cb076a7ed636b1cb6fbd103bd000c9084f4a5f997aa731afdb9ac2a911c070"
+    },
+    {
+      "path": "lessons/cmp-local-information.md",
+      "sha256": "03d8168a9f76b8e7e7cbe1a5378b1c6d8c0221429d23485e6785e44ecfb8ea58"
+    },
+    {
+      "path": "lessons/cmp-motion-continuity.md",
+      "sha256": "94cdc0445b40e97d4fb99a7d1df8265cc1fb1b6d1cb091c2d202f5f9437109ce"
+    },
+    {
+      "path": "lessons/cmp-narrative-continuity.md",
+      "sha256": "701730c6686be2188c201daaf13c2b0446b5046a32036cb43d7ade60e9047a5c"
+    },
+    {
+      "path": "lessons/cmp-navigation.md",
+      "sha256": "3fc58464abae2e48725cd7e7c09b0c01d0c172d8ea6d41d3209103095d77e806"
+    },
+    {
+      "path": "lessons/cmp-page-rhythm.md",
+      "sha256": "c2ced0ab503b033c61c3283634e7bad9a55daf56977712230c8938b1fe25f1b1"
+    },
+    {
+      "path": "lessons/cmp-process.md",
+      "sha256": "972b258304aac27af7a882d93edbddca6eefbd8626b14ffba1c885ae5a576ce2"
+    },
+    {
+      "path": "lessons/cmp-proof-adjacency.md",
+      "sha256": "3c49560bcd5b98c8c6ba341bda25b404be6fa89da4f039fcb1b229465f42a83e"
+    },
+    {
+      "path": "lessons/cmp-responsive-recomposition.md",
+      "sha256": "9edf6a1227d0e571910eebdaad4afec134e01e6c9857176eae256c195e9686b1"
+    },
+    {
+      "path": "lessons/cmp-semantic-grouping.md",
+      "sha256": "5150a7d5aac832699eac3c0957182f45385a7f10427d11b5bf23a21e763b83b2"
+    },
+    {
+      "path": "lessons/cmp-shared-alignment.md",
+      "sha256": "ec2ed8b15016f073d035025fec52458d44c0b8a43bce55f0c84c31f343263ec2"
+    },
+    {
+      "path": "lessons/cmp-sparse-media.md",
+      "sha256": "46f738dab989b5847321a6fbd9556815ce2d51a84bce847f962af934ee411869"
+    },
+    {
+      "path": "lessons/cmp-surfaces-motifs.md",
+      "sha256": "614fd6700b55e4de6a57e6c1e15f3090517c9133bef237a1fe9b89344a3974a3"
+    },
+    {
+      "path": "lessons/cmp-text-shape.md",
+      "sha256": "37721184abe4b735d90888c68003d60ddd3e1047dd5fa37ed33569bd07491909"
+    },
+    {
+      "path": "lessons/cmp-type-roles.md",
+      "sha256": "d210ce42c39dd714b71936752f92bd7d118ecfef7cf997b8751800c4c5d70bdb"
+    },
+    {
+      "path": "lessons/cmp-unequal-emphasis.md",
+      "sha256": "eeda8f7da2bd3e073a3e11445587883e436d705099b0aeb605125c4f028bf493"
+    },
+    {
+      "path": "sources.json",
+      "sha256": "0b1b773be48760d85f6a5fa575d6350196f2fcf4ef443f2e80892951d6b97094"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+.c-feature-grid-3__grid{--gap:var(--space-6)}
+.c-feature-grid-3__grid > *{display:grid;gap:var(--space-3);align-content:start}
+.c-feature-grid-3__grid > * > p{margin:0;color:var(--color-muted)}
+.c-feature-grid-3__grid > * > .icon-tile{margin-bottom:var(--space-2)}
+.c-feature-grid-3--center .section__head{margin-inline:auto;text-align:center;justify-items:center}
+.c-feature-grid-3--center .c-feature-grid-3__grid > *{text-align:center;justify-items:center}
+.c-feature-grid-3--cards .c-feature-grid-3__grid{--gap:var(--space-5)}
+.c-feature-grid-3--cards .c-feature-grid-3__grid > *{padding:var(--space-5);background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg)}

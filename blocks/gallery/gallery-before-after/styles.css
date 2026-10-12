@@ -1,0 +1,6 @@
+.c-gallery-before-after__grid{--gap:var(--space-6)}
+.c-gallery-before-after__case{margin:0;display:grid;gap:var(--space-4)}
+.c-gallery-before-after__case .before-after{box-shadow:var(--shadow-2)}
+.c-gallery-before-after__case figcaption{display:grid;gap:var(--space-1)}
+.c-gallery-before-after__case h3{font-size:var(--step-1)}
+.c-gallery-before-after__case p{margin:0;color:var(--color-muted);font-size:var(--step-0)}

@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "release": "2026-10-06.1",
+  "status": "immutable; technically validated; no human preference labels",
+  "selectorVersion": "task-expression-complementarity-1",
+  "catalog": {
+    "path": "catalog.json",
+    "sha256": "3ac325ad46046481a5e71cb83000131be5c8fba7932d9aafeade341ecbb49b6e"
+  },
+  "labeledPreferenceData": false
+}

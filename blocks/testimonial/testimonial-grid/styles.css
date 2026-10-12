@@ -1,0 +1,5 @@
+.c-testimonial-grid .card blockquote{margin:0;gap:var(--space-4)}
+.c-testimonial-grid .card .quote{color:var(--color-text)}
+.c-testimonial-grid .card .card__footer{border-top:1px solid var(--color-border);background:color-mix(in srgb,var(--color-surface-2) 60%,transparent)}
+.c-testimonial-grid .card .rating .icon{width:1rem;height:1rem}
+.c-testimonial-grid__grid{align-items:stretch}

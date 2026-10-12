@@ -1,0 +1,5 @@
+.c-process-carousel__head{display:flex;align-items:end;justify-content:space-between;gap:var(--space-5)}
+.c-process-carousel__head .section__head,.c-process-carousel__head .carousel__nav{margin-bottom:var(--space-6)}
+.c-process-carousel__carousel .carousel__track > *{flex-basis:min(85%,18rem)}
+.c-process-carousel__carousel .card__body{padding:var(--space-6);gap:var(--space-3)}
+.c-process-carousel__carousel .card__body .eyebrow{color:var(--color-accent);font-size:.75rem}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "blockId": "hero/hero-evidence",
+  "blockRevision": 1,
+  "sourceHash": "a6e4e590acd369d516d3d67301ff5b0bd1383850ec797a3826e713ae0e380099",
+  "previewHtmlHash": "538086fc1d1c502eddaabee72e7fde802b8f476ededd733fbf754d604664bd17",
+  "rendererHash": "adb9cf206350ec5e97bc41d8db13fe3ced203ffc9ec42bde236a81d53043bb46",
+  "content": "README example",
+  "assets": "inline placeholders",
+  "theme": "defaultTheme",
+  "browser": "Chromium 153.0.8010.12",
+  "renderer": "scripts/blocks-preview.ts",
+  "images": {
+    "mobile": {
+      "file": "hero--hero-evidence--mobile.jpg",
+      "hash": "2673677aa220d93f0df285eadbf0ae17955fac6aeb31b8ff76087eb83f66a480",
+      "width": 375,
+      "height": 900
+    },
+    "desktop": {
+      "file": "hero--hero-evidence--desktop.jpg",
+      "hash": "5b4a6350de71179ff4a251e0449929d2a14a4cdd882ebf77a0cba09148001a6b",
+      "width": 1280,
+      "height": 800
+    }
+  }
+}

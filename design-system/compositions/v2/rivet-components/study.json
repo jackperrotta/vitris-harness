@@ -1,0 +1,241 @@
+{
+  "id": "rivet-components",
+  "revision": 1,
+  "title": "Rivet / specification system",
+  "primaryFamily": "industrial",
+  "assetMinimum": "none",
+  "fitSignals": [
+    "real-copy",
+    "type-content",
+    "action",
+    "sparse-media",
+    "collection",
+    "comparison"
+  ],
+  "visitorTasks": [
+    "compare-options",
+    "inspect-specification"
+  ],
+  "organizingIdea": "Make the dimensioned object and its specification the opening; explanations follow the selection task.",
+  "brief": {
+    "fictional": true,
+    "facts": {
+      "name": "Rivet Components",
+      "offer": "Invented workshop support brackets",
+      "series": "R-120",
+      "material": "Aluminium",
+      "dimensions": "120 × 60 mm",
+      "mounting": "Two 6 mm fixing holes",
+      "restriction": "Teaching specification, not a manufactured or certified product",
+      "contact": "rivet@example.test"
+    },
+    "factsHash": "73efccc366d34b7a78dcdd4076321f2a39e7687d1bdcb85c760f4f0aa24105f0",
+    "mediaHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "provenance": {
+    "content": "Original fictional Vitris teaching brief and copy; no customer claims.",
+    "media": "Original inline SVG diagrams and/or text; no external imagery or type assets.",
+    "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+  },
+  "storyboard": {
+    "homepage": [
+      "series identification",
+      "dimension diagram",
+      "facts table",
+      "selection explanation"
+    ],
+    "interior": [
+      "spec identity",
+      "drawing/ledger",
+      "application boundary",
+      "disclosure/inquiry"
+    ],
+    "mobile": "The drawing scales within its frame; specification stays a real table. Side identification stacks before drawing and application."
+  },
+  "designDecisions": "Make the dimensioned object and its specification the opening; explanations follow the selection task.",
+  "lessonIds": [
+    "cmp-comparison",
+    "cmp-interactive-explanation",
+    "cmp-evidence-form"
+  ],
+  "referenceIds": [],
+  "sourcePath": "rivet-components",
+  "homepage": "/",
+  "interior": "/detail",
+  "status": "compiled and automated/assistant visually reviewed; human preference pending",
+  "humanPreference": null,
+  "renderEvidence": [
+    {
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T16:48:40.156Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/rivet-components-home-1440.png",
+        "sha256": "2cf539d22d7e078ed27542da783c00a854fb35bd076f967513de0df1cbf058fc"
+      },
+      "compiledHash": "dec99b25b09f62a453a04a1209d4b967f9aebf5c1f0e7797a211d6cb3d7f92e9",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+        "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+        "assessment": "Desktop/mobile home and interior inspected. Dimension diagram and specification ledger preserve order. Repaired second fixing hole re-inspected on desktop home and mobile interior. Diagram is fictional and supplies no manufacturing assurance."
+      }
+    },
+    {
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T16:48:41.185Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/rivet-components-home-390.png",
+        "sha256": "24d2ac431d17ccda5a4fd46357bd7c45537e8a4cb35cf21f629006fed8909871"
+      },
+      "compiledHash": "dec99b25b09f62a453a04a1209d4b967f9aebf5c1f0e7797a211d6cb3d7f92e9",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+        "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+        "assessment": "Desktop/mobile home and interior inspected. Dimension diagram and specification ledger preserve order. Repaired second fixing hole re-inspected on desktop home and mobile interior. Diagram is fictional and supplies no manufacturing assurance."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T16:48:42.307Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/rivet-components-interior-1440.png",
+        "sha256": "244c0e17329969255367915592219ec220e6983d36467645e7f488d20e17a779"
+      },
+      "compiledHash": "e47ceb13b9ea81fb1ec044fcf641761912addeee09ab1566b430a882f2f15fc3",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Ask about the specification →",
+          "outline": "solid",
+          "width": "3px"
+        },
+        "disclosures": [
+          {
+            "label": "What this teaching specification does not establish",
+            "keyboardToggle": true,
+            "focusVisible": true
+          }
+        ]
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+        "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+        "assessment": "Desktop/mobile home and interior inspected. Dimension diagram and specification ledger preserve order. Repaired second fixing hole re-inspected on desktop home and mobile interior. Diagram is fictional and supplies no manufacturing assurance."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T16:48:43.401Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/rivet-components-interior-390.png",
+        "sha256": "7f56af78d0673218eebcb823d170ad66d375f14d8ef31739c7394e0336997141"
+      },
+      "compiledHash": "e47ceb13b9ea81fb1ec044fcf641761912addeee09ab1566b430a882f2f15fc3",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Ask about the specification →",
+          "outline": "solid",
+          "width": "3px"
+        },
+        "disclosures": [
+          {
+            "label": "What this teaching specification does not establish",
+            "keyboardToggle": true,
+            "focusVisible": true
+          }
+        ]
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:49:42.892180+00:00",
+        "scope": "desktop/mobile homepage/interior full-page render review; batch contact-sheet comparison",
+        "assessment": "Desktop/mobile home and interior inspected. Dimension diagram and specification ledger preserve order. Repaired second fixing hole re-inspected on desktop home and mobile interior. Diagram is fictional and supplies no manufacturing assurance."
+      }
+    }
+  ]
+}

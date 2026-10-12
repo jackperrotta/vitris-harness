@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "release": "2026-10-05.1",
+  "status": "curated; technically validated; not human-approved taste data",
+  "catalog": {
+    "path": "catalog.json",
+    "sha256": "3ab1aa744c462725e8429ea92ff468f8186a9c9bec2c47698c3ea298084333b5"
+  },
+  "labeledPreferenceData": false
+}

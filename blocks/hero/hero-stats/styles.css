@@ -1,0 +1,10 @@
+.c-hero-stats__copy{display:grid;gap:var(--space-5);max-width:46rem}
+.c-hero-stats__copy h1{max-width:16ch}
+.c-hero-stats__copy .btn-group{margin-top:var(--space-2)}
+.c-hero-stats__row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-5);margin-top:var(--space-8);padding-top:var(--space-6);border-top:1px solid var(--color-border)}
+.c-hero-stats__row .stat--sm .stat__value{font-size:var(--step-3)}
+@media(min-width:720px){
+  .c-hero-stats__row{grid-template-columns:repeat(auto-fit,minmax(10rem,1fr))}
+  .c-hero-stats__row .stat + .stat{border-left:1px solid var(--color-border);padding-left:var(--space-5)}
+}
+.c-hero-stats--dark{--color-bg:#141210;--color-text:#F7F4EF;--color-muted:#B8B0A4;--color-surface:#1E1B18;--color-surface-2:#2A2622;--color-border:#3A342E;--color-focus:#F7F4EF;background:var(--color-bg);color:var(--color-text)}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "blockId": "work/project-evidence",
+  "blockRevision": 1,
+  "sourceHash": "1a4977448d8eff5dfdb483b44ae62737cc4a74d387db07f430e227d8169f9593",
+  "previewHtmlHash": "8a54bb12c0a9c429c52cd27b90fea90989bfa238d60740be516dfb188d900561",
+  "rendererHash": "adb9cf206350ec5e97bc41d8db13fe3ced203ffc9ec42bde236a81d53043bb46",
+  "content": "README example",
+  "assets": "inline placeholders",
+  "theme": "defaultTheme",
+  "browser": "Chromium 153.0.8010.12",
+  "renderer": "scripts/blocks-preview.ts",
+  "images": {
+    "mobile": {
+      "file": "work--project-evidence--mobile.jpg",
+      "hash": "b78366d92597c3430cf8897733c77134c86bf2363c9781d67841e0f0ed9ce7a1",
+      "width": 375,
+      "height": 900
+    },
+    "desktop": {
+      "file": "work--project-evidence--desktop.jpg",
+      "hash": "006ab5a6efde1a8179855e8c5517c2b531fac918687c38c1907754e632e4e7d1",
+      "width": 1280,
+      "height": 800
+    }
+  }
+}

@@ -1,0 +1,3 @@
+.c-about-values__grid .card{background:var(--color-surface)}
+.c-about-values__grid .card__body{padding:var(--space-6);gap:var(--space-3)}
+.c-about-values__grid .card__body > .icon-tile{margin-bottom:var(--space-2)}

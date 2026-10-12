@@ -1,0 +1,6 @@
+.c-hero-editorial__copy{display:grid;gap:var(--space-5);max-width:46rem}
+.c-hero-editorial__copy h1{font-size:clamp(2.8rem,1.8rem + 4vw,5.5rem);max-width:16ch}
+.c-hero-editorial__copy .btn-group{margin-top:var(--space-2)}
+.c-hero-editorial__media{margin-top:var(--space-8)}
+.c-hero-editorial__media:not(:has(img,video)){display:none}
+.c-hero-editorial--center .c-hero-editorial__copy{margin-inline:auto;text-align:center;justify-items:center}

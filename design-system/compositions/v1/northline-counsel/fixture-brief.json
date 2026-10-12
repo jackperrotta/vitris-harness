@@ -1,0 +1,10 @@
+{
+  "fictional": true,
+  "name": "Northline Counsel",
+  "businessType": "small professional legal practice",
+  "visitorJobs": ["understand practice focus", "prepare for a planning conversation", "contact the office"],
+  "routes": ["/", "/planning/"],
+  "factsPolicy": "All business and legal-service statements are fictional teaching copy. The example provides no legal advice and no verified credentials.",
+  "availableMedia": [],
+  "requiredActions": ["open planning detail", "call the fictional example number"]
+}

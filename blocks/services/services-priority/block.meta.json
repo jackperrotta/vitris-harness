@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "id": "services/services-priority",
+  "revision": 1,
+  "status": "draft",
+  "owner": "Vitris design library",
+  "sourceHash": "538a84d99d4dc98cf0e725ccfba0749f71d254cabe70be9015354c017bc674a6",
+  "fit": {
+    "visitorJobs": [
+      "Compare primary and supporting services"
+    ],
+    "pageRoles": [
+      "service index"
+    ],
+    "useWhen": [
+      "Compare primary and supporting services"
+    ],
+    "avoidWhen": [
+      "The content or media cannot support this composition"
+    ]
+  },
+  "content": {
+    "requiredSlots": [
+      "heading",
+      "featured",
+      "items"
+    ],
+    "optionalSlots": [
+      "eyebrow",
+      "intro"
+    ],
+    "testedItemCounts": [
+      1
+    ]
+  },
+  "media": {
+    "min": 0,
+    "max": 8,
+    "optionalBehavior": "Recompose without empty media frames when media is optional",
+    "aspect": [
+      "content-dependent"
+    ]
+  },
+  "composition": {
+    "hierarchy": "one lead offer and supporting rows",
+    "alignment": "asymmetric",
+    "density": "medium",
+    "mediaProminence": "none",
+    "geometry": [
+      "priority",
+      "rows"
+    ],
+    "boundary": "section boundary adapts to adjacent content"
+  },
+  "adaptation": {
+    "flexible": [
+      "spacing",
+      "surface treatment",
+      "type scale"
+    ],
+    "invariants": [
+      "semantic reading order",
+      "one clear section purpose"
+    ],
+    "customWhen": [
+      "The visitor job needs a different hierarchy"
+    ]
+  },
+  "responsive": {
+    "readingOrder": "DOM order follows the visitor narrative",
+    "reflow": "Stack or resize according to content",
+    "crop": "Keep important subjects visible"
+  },
+  "interaction": {
+    "behavior": "Native links and controls",
+    "islands": []
+  },
+  "evidence": {
+    "provenance": [
+      "Original Vitris block source"
+    ],
+    "testedContexts": [],
+    "accessibility": [],
+    "previewManifest": "../../../design-system/block-previews/v1/services--services-priority.json"
+  }
+}

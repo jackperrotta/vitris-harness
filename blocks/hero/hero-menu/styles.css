@@ -1,0 +1,7 @@
+.c-hero-menu__copy{display:grid;gap:var(--space-5);max-width:42rem;margin-bottom:var(--space-8)}
+.c-hero-menu__copy h1{max-width:16ch}
+.c-hero-menu__copy .btn-group{margin-top:var(--space-2)}
+.c-hero-menu__cards .card__body{grid-template-columns:1fr auto;align-items:start}
+.c-hero-menu__cards .card__body > p:not(.price){grid-column:1 / -1}
+.c-hero-menu__cards .price__amount{font-size:var(--step-2)}
+.c-hero-menu--center .c-hero-menu__copy{margin-inline:auto;text-align:center;justify-items:center}

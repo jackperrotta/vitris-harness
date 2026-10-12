@@ -1,0 +1,238 @@
+{
+  "id": "hearth-plane",
+  "revision": 1,
+  "title": "Hearth Plane / project threshold",
+  "primaryFamily": "swiss",
+  "assetMinimum": "none",
+  "fitSignals": [
+    "professional-service",
+    "inspect-work",
+    "process",
+    "type-content",
+    "real-copy",
+    "action",
+    "sparse-media"
+  ],
+  "visitorTasks": [
+    "inspect-work",
+    "evaluate-service"
+  ],
+  "organizingIdea": "A persistent practice margin gives most of the opening to a project elevation; the interior develops constraints before design decisions.",
+  "brief": {
+    "fictional": true,
+    "facts": {
+      "name": "Hearth Plane",
+      "offer": "Small-building architecture practice",
+      "projects": [
+        "Courtyard study",
+        "Workshop canopy",
+        "Reading annex"
+      ],
+      "projectScope": "A shaded court and a shared threshold",
+      "projectStatus": "Fictional concept study",
+      "contact": "hearth@example.test"
+    },
+    "factsHash": "1c82cc3c52aad5dd5bf400219cd38866454b5e759a9786d52c329d644e0e9148",
+    "mediaHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "provenance": {
+    "content": "Original fictional Vitris teaching brief and authored copy; operational details, dimensions and offers are invented and must never populate customer inventories.",
+    "media": "Original inline SVG illustrations authored for this release; no external photographs, branding or type assets.",
+    "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+  },
+  "storyboard": {
+    "homepage": [
+      "practice margin",
+      "courtyard illustration",
+      "project explanation",
+      "other studies",
+      "conversation preparation"
+    ],
+    "interior": [
+      "project metadata",
+      "elevation",
+      "decisions",
+      "return to studies"
+    ],
+    "mobile": "Practice margin becomes compact identity/task strip before project; project diagram stays above caption and interpretation."
+  },
+  "designDecisions": "A persistent practice margin gives most of the opening to a project elevation; the interior develops constraints before design decisions.",
+  "lessonIds": [
+    "cmp-collection-structure",
+    "cmp-image-sequence",
+    "cmp-responsive-recomposition"
+  ],
+  "referenceIds": [
+    "big",
+    "scullion"
+  ],
+  "sourcePath": "hearth-plane",
+  "homepage": "/",
+  "interior": "/detail",
+  "status": "compiled and automated/assistant visually reviewed; human preference pending",
+  "humanPreference": null,
+  "renderEvidence": [
+    {
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T18:23:34.351Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/hearth-plane-home-1440.png",
+        "sha256": "4596a48562e1b56b47c73a5508026c6f4dcfcac34cb4a5dec7d0599dc602e07c"
+      },
+      "compiledHash": "3b3a6cbfcb16ea809a1a712e7281342ad6e56a43675b76cb90b1d3b724c1bb0f",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:25:17.945223+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views visually inspected in contact sheet. Wide practice margin and project elevation carry opening; narrow practice tasks precede project and caption. Project metadata and design decisions stay readable at both sizes. The sketch is explicitly invented and has no dimensions/performance claims."
+      }
+    },
+    {
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T18:23:35.443Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/hearth-plane-home-390.png",
+        "sha256": "bcc267d7335f0bdec1247a79061c4596e9817b1bde2e52d3ba6a27132b3afc9a"
+      },
+      "compiledHash": "3b3a6cbfcb16ea809a1a712e7281342ad6e56a43675b76cb90b1d3b724c1bb0f",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:25:17.945223+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views visually inspected in contact sheet. Wide practice margin and project elevation carry opening; narrow practice tasks precede project and caption. Project metadata and design decisions stay readable at both sizes. The sketch is explicitly invented and has no dimensions/performance claims."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T18:23:36.598Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/hearth-plane-interior-1440.png",
+        "sha256": "85fc84324227b4a32325d664e1099d34b0e25b1d6721b55b32dab5afbde5e597"
+      },
+      "compiledHash": "943976eb2aa05cdae5af4d51d4780ba7fd06c5e9da45909d5ce188a7d00ec2e5",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:25:17.945223+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views visually inspected in contact sheet. Wide practice margin and project elevation carry opening; narrow practice tasks precede project and caption. Project metadata and design decisions stay readable at both sizes. The sketch is explicitly invented and has no dimensions/performance claims."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T18:23:37.743Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/hearth-plane-interior-390.png",
+        "sha256": "8f9b1ebd34bf0707e224628690108d5f4bca9d3cbbea8dd59dcbcf70171cacf7"
+      },
+      "compiledHash": "943976eb2aa05cdae5af4d51d4780ba7fd06c5e9da45909d5ce188a7d00ec2e5",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        },
+        "disclosures": []
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T18:25:17.945223+00:00",
+        "scope": "desktop/mobile homepage/interior full-page contact-sheet review; batch comparison",
+        "assessment": "All four full-page views visually inspected in contact sheet. Wide practice margin and project elevation carry opening; narrow practice tasks precede project and caption. Project metadata and design decisions stay readable at both sizes. The sketch is explicitly invented and has no dimensions/performance claims."
+      }
+    }
+  ]
+}

@@ -1,0 +1,1853 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "id": "seven-maple-conversation",
+      "kind": "image",
+      "file": "seven-maple-conversation.jpg",
+      "mime": "image/jpeg",
+      "sha256": "3e992ecf9fdce2616d8969c2289e2be693a6bb5985f1b72b815d08ec9ff3085f",
+      "bytes": 118237,
+      "source": "https://www.pexels.com/photo/8460095/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Los Muertos Crew",
+      "alt": "Doctor and patient in a bright office",
+      "continuity": "maple",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      }
+    },
+    {
+      "id": "seven-maple-clinician",
+      "kind": "image",
+      "file": "seven-maple-clinician.jpg",
+      "mime": "image/jpeg",
+      "sha256": "9120a4cd8aea3034f6f39c6b6f665fed45e9e0bbb165ff1ce84158193bce6dab",
+      "bytes": 166026,
+      "source": "https://www.pexels.com/photo/8460094/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Los Muertos Crew",
+      "alt": "Senior physician outside a clinic",
+      "continuity": "maple",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 1920
+      }
+    },
+    {
+      "id": "seven-maple-office",
+      "kind": "image",
+      "file": "seven-maple-office.jpg",
+      "mime": "image/jpeg",
+      "sha256": "6c32da70a93e432c12d752be5f22c67dd97db39fbc1894e9ac01991900360648",
+      "bytes": 193277,
+      "source": "https://www.pexels.com/photo/6129107/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Photo by RDNE Stock project on Pexels",
+      "alt": "Person seated in a clinic corridor with people in the background.",
+      "continuity": "maple",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "description": "Person seated in a clinic corridor with people in the background.",
+        "evidence": [
+          "artifacts/stock/2026-09-23-inspect-existing/sheet-3.jpg"
+        ],
+        "subjects": [
+          "Person seated in a clinic corridor with people in the background."
+        ],
+        "activities": [],
+        "settings": [],
+        "industries": [
+          "health"
+        ],
+        "roles": [
+          "context"
+        ],
+        "palette": [
+          "cool neutrals",
+          "blue"
+        ],
+        "lighting": "bright diffuse",
+        "density": "medium",
+        "focalPoint": "center",
+        "negativeSpace": [],
+        "cropNotes": "Preserve subject and hands/tools where present; verify phone crop.",
+        "visibleText": false,
+        "uncertainty": [
+          "Initial contact-sheet inspection; final placement requires full-size crop review."
+        ],
+        "version": 1,
+        "assetHash": "6c32da70a93e432c12d752be5f22c67dd97db39fbc1894e9ac01991900360648",
+        "observedAt": "2026-09-23T18:12:35.730Z",
+        "observer": "Codex visual inspection; sampled video frames"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1880,
+        "height": 1253
+      }
+    },
+    {
+      "id": "seven-continuum-conversation",
+      "kind": "image",
+      "file": "seven-continuum-conversation.jpg",
+      "mime": "image/jpeg",
+      "sha256": "1a21957ff73fc268143dea90fcd60d4480fc1c6e708504ff63d04d8b0709c679",
+      "bytes": 183228,
+      "source": "https://www.pexels.com/photo/7108327/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Pavel Danilyuk",
+      "alt": "Consultation across an office desk",
+      "continuity": "continuum",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 1917
+      }
+    },
+    {
+      "id": "seven-continuum-clinician",
+      "kind": "image",
+      "file": "seven-continuum-clinician.jpg",
+      "mime": "image/jpeg",
+      "sha256": "1df6a66dd60a2e24c632a1470de2e7c41f85552296d872989476d7156138090c",
+      "bytes": 144779,
+      "source": "https://www.pexels.com/photo/15752232/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Yasin Ayd\u0131n",
+      "alt": "Doctor portrait on a light background",
+      "continuity": "continuum",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 1920
+      }
+    },
+    {
+      "id": "seven-continuum-reading",
+      "kind": "image",
+      "file": "seven-continuum-reading.jpg",
+      "mime": "image/jpeg",
+      "sha256": "65e92edc6f0219932bcb456341e6002f943c4c4d2622827bb788655e247b5cd5",
+      "bytes": 90690,
+      "source": "https://www.pexels.com/photo/8092466/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "https://kaboompics.com/ / Pexels",
+      "alt": "Minimal wooden desk below a pale paneled wall with abundant open space.",
+      "continuity": "continuum",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "description": "Minimal wooden desk below a pale paneled wall with abundant open space.",
+        "evidence": [
+          "artifacts/stock/2026-09-23-inspect-expansion/sheet-2.jpg"
+        ],
+        "subjects": [
+          "Minimal wooden desk below a pale paneled wall with abundant open space."
+        ],
+        "activities": [],
+        "settings": [],
+        "industries": [
+          "professional-services"
+        ],
+        "roles": [
+          "context",
+          "hero"
+        ],
+        "palette": [
+          "neutral"
+        ],
+        "lighting": "bright diffuse",
+        "density": "low",
+        "focalPoint": "lower third desk",
+        "negativeSpace": [
+          "top"
+        ],
+        "cropNotes": "Preserve subject and hands/tools where present; verify phone crop.",
+        "visibleText": false,
+        "uncertainty": [
+          "Initial contact-sheet inspection; final placement requires full-size crop review."
+        ],
+        "version": 1,
+        "assetHash": "65e92edc6f0219932bcb456341e6002f943c4c4d2622827bb788655e247b5cd5",
+        "observedAt": "2026-09-23T18:12:35.846Z",
+        "observer": "Codex visual inspection; sampled video frames"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1880,
+        "height": 1253
+      }
+    },
+    {
+      "id": "seven-motion-conversation",
+      "kind": "image",
+      "file": "seven-motion-conversation.jpg",
+      "mime": "image/jpeg",
+      "sha256": "253e927e8a941f5ab0479dc1248673ab264b1e31c96ab363e72ecb852e83511c",
+      "bytes": 96509,
+      "source": "https://www.pexels.com/photo/8312841/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "RDNE Stock project",
+      "alt": "Doctor and visitor talking",
+      "continuity": "motion",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      }
+    },
+    {
+      "id": "seven-motion-clinician",
+      "kind": "image",
+      "file": "seven-motion-clinician.jpg",
+      "mime": "image/jpeg",
+      "sha256": "205df6d8d91bffecb527f2d0a1c1313cb6798cb28648015756cef29418993e1b",
+      "bytes": 144675,
+      "source": "https://www.pexels.com/photo/5722163/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "cottonbro studio",
+      "alt": "Physician portrait in studio light",
+      "continuity": "motion",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 1920
+      }
+    },
+    {
+      "id": "seven-atlas-garden",
+      "kind": "image",
+      "file": "seven-atlas-garden.jpg",
+      "mime": "image/jpeg",
+      "sha256": "c8acd7d965a5bc7f9d61232ada937e72909eb16c6825e2bb136c2a1d59eb6230",
+      "bytes": 207064,
+      "source": "https://www.pexels.com/photo/5991527/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Hakim Santoso",
+      "alt": "Contemporary courtyard with vertical planters",
+      "continuity": "atlas",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 848
+      }
+    },
+    {
+      "id": "seven-atlas-field",
+      "kind": "image",
+      "file": "seven-atlas-field.jpg",
+      "mime": "image/jpeg",
+      "sha256": "e741edaab8310b855366fb359622bce11bc85096ab6793f63ecf5c0c72fc30c7",
+      "bytes": 217985,
+      "source": "https://www.pexels.com/photo/5476052/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Lezgin Epik / Pexels",
+      "alt": "Overhead plans, notebook, coffee cup, pencil and highlighter.",
+      "continuity": "atlas",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "description": "Overhead plans, notebook, coffee cup, pencil and highlighter.",
+        "evidence": [
+          "artifacts/stock/2026-09-23-inspect-expansion/sheet-2.jpg"
+        ],
+        "subjects": [
+          "Overhead plans, notebook, coffee cup, pencil and highlighter."
+        ],
+        "activities": [],
+        "settings": [],
+        "industries": [
+          "professional-services"
+        ],
+        "roles": [
+          "context"
+        ],
+        "palette": [
+          "neutral"
+        ],
+        "lighting": "mixed directional light",
+        "density": "medium",
+        "focalPoint": "center",
+        "negativeSpace": [],
+        "cropNotes": "Use contain for text-bearing imagery; inspect selected crop at full size.",
+        "visibleText": true,
+        "uncertainty": [
+          "Initial contact-sheet inspection; final placement requires full-size crop review."
+        ],
+        "version": 1,
+        "assetHash": "e741edaab8310b855366fb359622bce11bc85096ab6793f63ecf5c0c72fc30c7",
+        "observedAt": "2026-09-23T18:12:35.844Z",
+        "observer": "Codex visual inspection; sampled video frames"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 977,
+        "height": 1300
+      }
+    },
+    {
+      "id": "seven-season-planting",
+      "kind": "image",
+      "file": "seven-season-planting.jpg",
+      "mime": "image/jpeg",
+      "sha256": "6560d161e24e80b6ad9ee359c939d557561e9e5454a46ddd94420127abac9e4a",
+      "bytes": 214380,
+      "source": "https://www.pexels.com/photo/32460001/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Photo by Haberdoedas Photography on Pexels",
+      "alt": "Trimmed hedge beside a blurred garden path and lamps.",
+      "continuity": "season",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "description": "Trimmed hedge beside a blurred garden path and lamps.",
+        "evidence": [
+          "artifacts/stock/2026-09-23-inspect-existing/sheet-2.jpg"
+        ],
+        "subjects": [
+          "Trimmed hedge beside a blurred garden path and lamps."
+        ],
+        "activities": [],
+        "settings": [],
+        "industries": [
+          "outdoor"
+        ],
+        "roles": [
+          "context"
+        ],
+        "palette": [
+          "neutral"
+        ],
+        "lighting": "mixed directional light",
+        "density": "medium",
+        "focalPoint": "center",
+        "negativeSpace": [],
+        "cropNotes": "Preserve subject and hands/tools where present; verify phone crop.",
+        "visibleText": false,
+        "uncertainty": [
+          "Initial contact-sheet inspection; final placement requires full-size crop review."
+        ],
+        "version": 1,
+        "assetHash": "6560d161e24e80b6ad9ee359c939d557561e9e5454a46ddd94420127abac9e4a",
+        "observedAt": "2026-09-23T18:12:35.702Z",
+        "observer": "Codex visual inspection; sampled video frames"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1880,
+        "height": 1253
+      }
+    },
+    {
+      "id": "seven-season-garden",
+      "kind": "image",
+      "file": "seven-season-garden.jpg",
+      "mime": "image/jpeg",
+      "sha256": "967fa491557c4c993ba0b16588167d1a3572b6dd631bbbfba5dc695d22e93877",
+      "bytes": 581991,
+      "source": "https://www.pexels.com/photo/38203211/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Fiona Pr\u00f6ll",
+      "alt": "Flower beds and paths in a garden courtyard",
+      "continuity": "season",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 1707
+      }
+    },
+    {
+      "id": "seven-court-space",
+      "kind": "image",
+      "file": "seven-court-space.jpg",
+      "mime": "image/jpeg",
+      "sha256": "bf11cfc2917e382d5bcd381753cd5f12bbb45aea2a8b379af939b15811c154ce",
+      "bytes": 578592,
+      "source": "https://www.pexels.com/photo/5037182/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Kate Holovacheva",
+      "alt": "Enclosed garden with stone walls and fountain",
+      "continuity": "court",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 1927
+      }
+    },
+    {
+      "id": "seven-court-material",
+      "kind": "image",
+      "file": "seven-court-material.jpg",
+      "mime": "image/jpeg",
+      "sha256": "74ba94e093e284adc2602df312f20a75cfdbe1676e309674f48b9d7b59a32fdd",
+      "bytes": 968812,
+      "source": "https://www.pexels.com/photo/14982351/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Photo by Jan van der Wolf on Pexels",
+      "alt": "Full-frame red and tan brick wall texture.",
+      "continuity": "court",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "description": "Full-frame red and tan brick wall texture.",
+        "evidence": [
+          "artifacts/stock/2026-09-23-inspect-existing/sheet-4.jpg"
+        ],
+        "subjects": [
+          "Full-frame red and tan brick wall texture."
+        ],
+        "activities": [],
+        "settings": [],
+        "industries": [
+          "general"
+        ],
+        "roles": [
+          "atmosphere",
+          "hero"
+        ],
+        "palette": [
+          "neutral"
+        ],
+        "lighting": "mixed directional light",
+        "density": "low",
+        "focalPoint": "distributed texture",
+        "negativeSpace": [
+          "all"
+        ],
+        "cropNotes": "Preserve subject and hands/tools where present; verify phone crop.",
+        "visibleText": false,
+        "uncertainty": [
+          "Initial contact-sheet inspection; final placement requires full-size crop review."
+        ],
+        "version": 1,
+        "assetHash": "74ba94e093e284adc2602df312f20a75cfdbe1676e309674f48b9d7b59a32fdd",
+        "observedAt": "2026-09-23T18:12:35.739Z",
+        "observer": "Codex visual inspection; sampled video frames"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1880,
+        "height": 1253
+      }
+    },
+    {
+      "id": "seven-built-site",
+      "kind": "image",
+      "file": "seven-built-site.jpg",
+      "mime": "image/jpeg",
+      "sha256": "04e93d1626b7cead9012d90a82ab13a3ad0244ed6869df4f1484a8bfe4604506",
+      "bytes": 140012,
+      "source": "https://www.pexels.com/photo/10202865/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "This Vikt\u1ecd",
+      "alt": "Construction crew and structural work on site",
+      "continuity": "built",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 796
+      }
+    },
+    {
+      "id": "seven-built-plans",
+      "kind": "image",
+      "file": "seven-built-plans.jpg",
+      "mime": "image/jpeg",
+      "sha256": "8e62c1ccc1e861cf9f153e9e72ce4f774339cbe99ddb21b6d5264897d59d112c",
+      "bytes": 186971,
+      "source": "https://www.pexels.com/photo/34573691/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Marina Zvada / Pexels",
+      "alt": "Overlapping architectural drawings and plans in bright neutral light.",
+      "continuity": "built",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "description": "Overlapping architectural drawings and plans in bright neutral light.",
+        "evidence": [
+          "artifacts/stock/2026-09-23-inspect-expansion/sheet-2.jpg"
+        ],
+        "subjects": [
+          "Overlapping architectural drawings and plans in bright neutral light."
+        ],
+        "activities": [],
+        "settings": [],
+        "industries": [
+          "professional-services"
+        ],
+        "roles": [
+          "context"
+        ],
+        "palette": [
+          "neutral"
+        ],
+        "lighting": "bright diffuse",
+        "density": "medium",
+        "focalPoint": "center",
+        "negativeSpace": [],
+        "cropNotes": "Use contain for text-bearing imagery; inspect selected crop at full size.",
+        "visibleText": true,
+        "uncertainty": [
+          "Initial contact-sheet inspection; final placement requires full-size crop review."
+        ],
+        "version": 1,
+        "assetHash": "8e62c1ccc1e861cf9f153e9e72ce4f774339cbe99ddb21b6d5264897d59d112c",
+        "observedAt": "2026-09-23T18:12:35.841Z",
+        "observer": "Codex visual inspection; sampled video frames"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 975,
+        "height": 1300
+      }
+    },
+    {
+      "id": "seven-craft-room",
+      "kind": "image",
+      "file": "seven-craft-room.jpg",
+      "mime": "image/jpeg",
+      "sha256": "46f80f66bb107c178b1264a9b688d415bdb514ed7e16f3175cf461ca7d81a9fe",
+      "bytes": 155052,
+      "source": "https://www.pexels.com/photo/13009887/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Photo by Alesha on Pexels",
+      "alt": "Bright empty white kitchen with stove, cabinets and daylight.",
+      "continuity": "craft",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "description": "Bright empty white kitchen with stove, cabinets and daylight.",
+        "evidence": [
+          "artifacts/stock/2026-09-23-inspect-existing/sheet-2.jpg"
+        ],
+        "subjects": [
+          "Bright empty white kitchen with stove, cabinets and daylight."
+        ],
+        "activities": [],
+        "settings": [],
+        "industries": [
+          "cleaning"
+        ],
+        "roles": [
+          "context"
+        ],
+        "palette": [
+          "neutral"
+        ],
+        "lighting": "bright diffuse",
+        "density": "medium",
+        "focalPoint": "center",
+        "negativeSpace": [],
+        "cropNotes": "Preserve subject and hands/tools where present; verify phone crop.",
+        "visibleText": false,
+        "uncertainty": [
+          "Initial contact-sheet inspection; final placement requires full-size crop review."
+        ],
+        "version": 1,
+        "assetHash": "46f80f66bb107c178b1264a9b688d415bdb514ed7e16f3175cf461ca7d81a9fe",
+        "observedAt": "2026-09-23T18:12:35.697Z",
+        "observer": "Codex visual inspection; sampled video frames"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1880,
+        "height": 1253
+      }
+    },
+    {
+      "id": "seven-craft-hands",
+      "kind": "image",
+      "file": "seven-craft-hands.jpg",
+      "mime": "image/jpeg",
+      "sha256": "714bd9c988f129793573ba2771200cc012ba30cd26e0043660b37eba610af57e",
+      "bytes": 204757,
+      "source": "https://www.pexels.com/photo/5974285/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Photo by Ono  Kosuki on Pexels",
+      "alt": "Hands using a chisel on wood over a bench with shavings.",
+      "continuity": "craft",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "description": "Hands using a chisel on wood over a bench with shavings.",
+        "evidence": [
+          "artifacts/stock/2026-09-23-inspect-existing/sheet-2.jpg"
+        ],
+        "subjects": [
+          "Hands using a chisel on wood over a bench with shavings."
+        ],
+        "activities": [],
+        "settings": [],
+        "industries": [
+          "trades"
+        ],
+        "roles": [
+          "detail"
+        ],
+        "palette": [
+          "warm browns",
+          "cream"
+        ],
+        "lighting": "mixed directional light",
+        "density": "medium",
+        "focalPoint": "center",
+        "negativeSpace": [],
+        "cropNotes": "Preserve subject and hands/tools where present; verify phone crop.",
+        "visibleText": false,
+        "uncertainty": [
+          "Initial contact-sheet inspection; final placement requires full-size crop review."
+        ],
+        "version": 1,
+        "assetHash": "714bd9c988f129793573ba2771200cc012ba30cd26e0043660b37eba610af57e",
+        "observedAt": "2026-09-23T18:12:35.692Z",
+        "observer": "Codex visual inspection; sampled video frames"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1880,
+        "height": 1253
+      }
+    },
+    {
+      "id": "seven-siteworks-build",
+      "kind": "image",
+      "file": "seven-siteworks-build.jpg",
+      "mime": "image/jpeg",
+      "sha256": "93e8308d1253a218db9e624369615288ad4657a8cc0091c983a21c0afc6f044b",
+      "bytes": 214794,
+      "source": "https://www.pexels.com/photo/4692281/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Brett Jordan",
+      "alt": "Brick home with an extension in progress",
+      "continuity": "siteworks",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 960
+      }
+    },
+    {
+      "id": "seven-siteworks-tools",
+      "kind": "image",
+      "file": "seven-siteworks-tools.jpg",
+      "mime": "image/jpeg",
+      "sha256": "a4af85d56efa32704e63ef4db90dcd20e52c63a10cd3ff59536457c6a1a3a760",
+      "bytes": 261219,
+      "source": "https://www.pexels.com/photo/5974239/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Ono  Kosuki / Pexels",
+      "alt": "Hands using a wooden plane with curling wood shavings.",
+      "continuity": "siteworks",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "description": "Hands using a wooden plane with curling wood shavings.",
+        "evidence": [
+          "artifacts/stock/2026-09-23-inspect-expansion/sheet-1.jpg"
+        ],
+        "subjects": [
+          "Hands using a wooden plane with curling wood shavings."
+        ],
+        "activities": [],
+        "settings": [],
+        "industries": [
+          "trades"
+        ],
+        "roles": [
+          "detail"
+        ],
+        "palette": [
+          "warm browns",
+          "cream"
+        ],
+        "lighting": "mixed directional light",
+        "density": "medium",
+        "focalPoint": "center",
+        "negativeSpace": [],
+        "cropNotes": "Preserve subject and hands/tools where present; verify phone crop.",
+        "visibleText": false,
+        "uncertainty": [
+          "Initial contact-sheet inspection; final placement requires full-size crop review."
+        ],
+        "version": 1,
+        "assetHash": "a4af85d56efa32704e63ef4db90dcd20e52c63a10cd3ff59536457c6a1a3a760",
+        "observedAt": "2026-09-23T18:12:35.822Z",
+        "observer": "Codex visual inspection; sampled video frames"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1880,
+        "height": 1253
+      }
+    },
+    {
+      "id": "seven-air-service",
+      "kind": "image",
+      "file": "seven-air-service.jpg",
+      "mime": "image/jpeg",
+      "sha256": "1e7a729201db6aacf284e34782cbe351f9131207f07018ae57abe13072acaa32",
+      "bytes": 246182,
+      "source": "https://www.pexels.com/photo/5463575/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Jos\u00e9 Andr\u00e9s Pacheco Cortes",
+      "alt": "Technician beside an outdoor air-conditioning unit",
+      "continuity": "air",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 909
+      }
+    },
+    {
+      "id": "seven-air-equipment",
+      "kind": "image",
+      "file": "seven-air-equipment.jpg",
+      "mime": "image/jpeg",
+      "sha256": "c9b4341ac5ab323470030451013b82357e75f7aa3a1c7dace6c39090d4b78032",
+      "bytes": 145141,
+      "source": "https://www.pexels.com/photo/32497161/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Kathleen Austin Kuhn",
+      "alt": "Outdoor equipment inspection",
+      "continuity": "air",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      }
+    },
+    {
+      "id": "seven-climate-room",
+      "kind": "image",
+      "file": "seven-climate-room.jpg",
+      "mime": "image/jpeg",
+      "sha256": "d27da4d2c83085d9a0e6b5ded4337ed13377d82c52439f9bfadc1854cdfe8970",
+      "bytes": 227363,
+      "source": "https://www.pexels.com/photo/29012628/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Beyza K\u0131l\u0131\u00e7dere",
+      "alt": "Bright living room with pendant lights",
+      "continuity": "climate",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 1920
+      }
+    },
+    {
+      "id": "seven-climate-system",
+      "kind": "image",
+      "file": "seven-climate-system.jpg",
+      "mime": "image/jpeg",
+      "sha256": "d9389dae087505202d60a44592cbeb355868fbe0273719e34981e5610b8c1345",
+      "bytes": 104772,
+      "source": "https://www.pexels.com/photo/7347538/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Richard Low Hong",
+      "alt": "Wall-mounted outdoor air-conditioning work",
+      "continuity": "climate",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      }
+    },
+    {
+      "id": "seven-seasonal-work",
+      "kind": "image",
+      "file": "seven-seasonal-work.jpg",
+      "mime": "image/jpeg",
+      "sha256": "937c46c65a64be3443d1b7a9b70719c583237020b8a526f7db67170dc1ebd7af",
+      "bytes": 196445,
+      "source": "https://www.pexels.com/photo/29226620/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Sergei Starostin / Pexels",
+      "alt": "Gloved worker and pipe fittings beside a radiator on a bench.",
+      "continuity": "seasonal",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "description": "Gloved worker and pipe fittings beside a radiator on a bench.",
+        "evidence": [
+          "artifacts/stock/2026-09-23-inspect-expansion/sheet-1.jpg"
+        ],
+        "subjects": [
+          "Gloved worker and pipe fittings beside a radiator on a bench."
+        ],
+        "activities": [],
+        "settings": [],
+        "industries": [
+          "trades"
+        ],
+        "roles": [
+          "detail"
+        ],
+        "palette": [
+          "neutral"
+        ],
+        "lighting": "mixed directional light",
+        "density": "medium",
+        "focalPoint": "center",
+        "negativeSpace": [],
+        "cropNotes": "Preserve subject and hands/tools where present; verify phone crop.",
+        "visibleText": false,
+        "uncertainty": [
+          "Initial contact-sheet inspection; final placement requires full-size crop review."
+        ],
+        "version": 1,
+        "assetHash": "937c46c65a64be3443d1b7a9b70719c583237020b8a526f7db67170dc1ebd7af",
+        "observedAt": "2026-09-23T18:12:35.812Z",
+        "observer": "Codex visual inspection; sampled video frames"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1880,
+        "height": 1253
+      }
+    },
+    {
+      "id": "seven-seasonal-home",
+      "kind": "image",
+      "file": "seven-seasonal-home.jpg",
+      "mime": "image/jpeg",
+      "sha256": "9331c15ead81622fcf8c181bf171474e71fb9a5f242ab8e55f7524794b546fcd",
+      "bytes": 128949,
+      "source": "https://www.pexels.com/photo/36777533/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Curtis Adams",
+      "alt": "Daylit living room with neutral furniture",
+      "continuity": "seasonal",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      }
+    },
+    {
+      "id": "seven-circuit-work",
+      "kind": "image",
+      "file": "seven-circuit-work.jpg",
+      "mime": "image/jpeg",
+      "sha256": "17e70a3bf8994c27d025edd9bb4deb316a2f1309527a98083e54c8e73d90d0fc",
+      "bytes": 245331,
+      "source": "https://www.pexels.com/photo/17842832/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Photo by Fatih Yurtman on Pexels",
+      "alt": "Worker in a hard hat beside an open electrical cabinet.",
+      "continuity": "circuit",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "description": "Worker in a hard hat beside an open electrical cabinet.",
+        "evidence": [
+          "artifacts/stock/2026-09-23-inspect-existing/sheet-2.jpg"
+        ],
+        "subjects": [
+          "Worker in a hard hat beside an open electrical cabinet."
+        ],
+        "activities": [],
+        "settings": [],
+        "industries": [
+          "trades"
+        ],
+        "roles": [
+          "context"
+        ],
+        "palette": [
+          "cool neutrals",
+          "blue"
+        ],
+        "lighting": "mixed directional light",
+        "density": "medium",
+        "focalPoint": "center",
+        "negativeSpace": [],
+        "cropNotes": "Preserve subject and hands/tools where present; verify phone crop.",
+        "visibleText": false,
+        "uncertainty": [
+          "Initial contact-sheet inspection; final placement requires full-size crop review."
+        ],
+        "version": 1,
+        "assetHash": "17e70a3bf8994c27d025edd9bb4deb316a2f1309527a98083e54c8e73d90d0fc",
+        "observedAt": "2026-09-23T18:12:35.687Z",
+        "observer": "Codex visual inspection; sampled video frames"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1880,
+        "height": 1253
+      }
+    },
+    {
+      "id": "seven-circuit-install",
+      "kind": "image",
+      "file": "seven-circuit-install.jpg",
+      "mime": "image/jpeg",
+      "sha256": "b7666e708ac09bd57f4251d29ff13eea1e183daf8461f5159f392151415c39db",
+      "bytes": 124657,
+      "source": "https://www.pexels.com/photo/5691588/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Ksenia Chernaya / Pexels",
+      "alt": "Hands fitting electrical outlets against a dark gray wall.",
+      "continuity": "circuit",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "description": "Hands fitting electrical outlets against a dark gray wall.",
+        "evidence": [
+          "artifacts/stock/2026-09-23-inspect-expansion/sheet-1.jpg"
+        ],
+        "subjects": [
+          "Hands fitting electrical outlets against a dark gray wall."
+        ],
+        "activities": [],
+        "settings": [],
+        "industries": [
+          "trades"
+        ],
+        "roles": [
+          "detail"
+        ],
+        "palette": [
+          "neutral"
+        ],
+        "lighting": "mixed directional light",
+        "density": "medium",
+        "focalPoint": "center",
+        "negativeSpace": [],
+        "cropNotes": "Preserve subject and hands/tools where present; verify phone crop.",
+        "visibleText": false,
+        "uncertainty": [
+          "Initial contact-sheet inspection; final placement requires full-size crop review."
+        ],
+        "version": 1,
+        "assetHash": "b7666e708ac09bd57f4251d29ff13eea1e183daf8461f5159f392151415c39db",
+        "observedAt": "2026-09-23T18:12:35.804Z",
+        "observer": "Codex visual inspection; sampled video frames"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 868,
+        "height": 1300
+      }
+    },
+    {
+      "id": "seven-light-room",
+      "kind": "image",
+      "file": "seven-light-room.jpg",
+      "mime": "image/jpeg",
+      "sha256": "31b12042ecc0550905c2b5df494e919e6b23fe82a4cc35352779097ebe75e74f",
+      "bytes": 116810,
+      "source": "https://www.pexels.com/photo/31234947/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Joel de la cruz",
+      "alt": "Living room with layered ambient light",
+      "continuity": "light",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 850
+      }
+    },
+    {
+      "id": "seven-light-detail",
+      "kind": "image",
+      "file": "seven-light-detail.jpg",
+      "mime": "image/jpeg",
+      "sha256": "5f8d1e696d991db0191754d88c485a936438d1f9c863b7e709e2fea99687ef46",
+      "bytes": 118406,
+      "source": "https://www.pexels.com/photo/6207817/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Max Vakhtbovych",
+      "alt": "Living room with layered soft lighting",
+      "continuity": "light",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      }
+    },
+    {
+      "id": "seven-power-home",
+      "kind": "image",
+      "file": "seven-power-home.jpg",
+      "mime": "image/jpeg",
+      "sha256": "22978c581b34dee44723641ed304643d65c493a3417e1290ddd40cc977954d88",
+      "bytes": 81261,
+      "source": "https://www.pexels.com/photo/11296221/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Vidal Balielo Jr.",
+      "alt": "Contemporary home interior",
+      "continuity": "power",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 719
+      }
+    },
+    {
+      "id": "seven-power-work",
+      "kind": "image",
+      "file": "seven-power-work.jpg",
+      "mime": "image/jpeg",
+      "sha256": "56cd0a4540bbdaa558a3710094f49deb3019a24e0ad1b23317be5b94bb2e790c",
+      "bytes": 171402,
+      "source": "https://www.pexels.com/photo/9679179/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Aizat Ramlan / Pexels",
+      "alt": "Person working inside a dark electrical cabinet.",
+      "continuity": "power",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "description": "Person working inside a dark electrical cabinet.",
+        "evidence": [
+          "artifacts/stock/2026-09-23-inspect-expansion/sheet-1.jpg"
+        ],
+        "subjects": [
+          "Person working inside a dark electrical cabinet."
+        ],
+        "activities": [],
+        "settings": [],
+        "industries": [
+          "trades"
+        ],
+        "roles": [
+          "context"
+        ],
+        "palette": [
+          "neutral"
+        ],
+        "lighting": "dim or strongly shadowed",
+        "density": "medium",
+        "focalPoint": "center",
+        "negativeSpace": [],
+        "cropNotes": "Preserve subject and hands/tools where present; verify phone crop.",
+        "visibleText": false,
+        "uncertainty": [
+          "Initial contact-sheet inspection; final placement requires full-size crop review."
+        ],
+        "version": 1,
+        "assetHash": "56cd0a4540bbdaa558a3710094f49deb3019a24e0ad1b23317be5b94bb2e790c",
+        "observedAt": "2026-09-23T18:12:35.801Z",
+        "observer": "Codex visual inspection; sampled video frames"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 975,
+        "height": 1300
+      }
+    },
+    {
+      "id": "seven-counsel-meeting",
+      "kind": "image",
+      "file": "seven-counsel-meeting.jpg",
+      "mime": "image/jpeg",
+      "sha256": "a8cd5524bab0dd303abae52745f45d9c35c0fed9833c1d65633f711dd18bcf5f",
+      "bytes": 125800,
+      "source": "https://www.pexels.com/photo/4427505/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "August de Richelieu",
+      "alt": "Office discussion around documents",
+      "continuity": "counsel",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 854
+      }
+    },
+    {
+      "id": "seven-counsel-person",
+      "kind": "image",
+      "file": "seven-counsel-person.jpg",
+      "mime": "image/jpeg",
+      "sha256": "37042ca0687aa1e086e4b6866d2723572c4072853414773a8bc07c6d7ea8f33a",
+      "bytes": 67045,
+      "source": "https://www.pexels.com/photo/7875863/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Kaboompics",
+      "alt": "Professional reading at an office desk",
+      "continuity": "counsel",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      }
+    },
+    {
+      "id": "seven-table-office",
+      "kind": "image",
+      "file": "seven-table-office.jpg",
+      "mime": "image/jpeg",
+      "sha256": "202162ddc57dfb43a005ec4bd8ea974f17b1a2774e54f0fe38ceb6bdd60e37fb",
+      "bytes": 115179,
+      "source": "https://www.pexels.com/photo/8297849/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Mikhail Nilov / Pexels",
+      "alt": "Two green chairs and a narrow desk beside a city-facing window.",
+      "continuity": "table",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "description": "Two green chairs and a narrow desk beside a city-facing window.",
+        "evidence": [
+          "artifacts/stock/2026-09-23-inspect-expansion/sheet-2.jpg"
+        ],
+        "subjects": [
+          "Two green chairs and a narrow desk beside a city-facing window."
+        ],
+        "activities": [],
+        "settings": [],
+        "industries": [
+          "professional-services"
+        ],
+        "roles": [
+          "context"
+        ],
+        "palette": [
+          "neutral"
+        ],
+        "lighting": "mixed directional light",
+        "density": "medium",
+        "focalPoint": "center",
+        "negativeSpace": [],
+        "cropNotes": "Preserve subject and hands/tools where present; verify phone crop.",
+        "visibleText": false,
+        "uncertainty": [
+          "Initial contact-sheet inspection; final placement requires full-size crop review."
+        ],
+        "version": 1,
+        "assetHash": "202162ddc57dfb43a005ec4bd8ea974f17b1a2774e54f0fe38ceb6bdd60e37fb",
+        "observedAt": "2026-09-23T18:12:35.848Z",
+        "observer": "Codex visual inspection; sampled video frames"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 867,
+        "height": 1300
+      }
+    },
+    {
+      "id": "seven-table-person",
+      "kind": "image",
+      "file": "seven-table-person.jpg",
+      "mime": "image/jpeg",
+      "sha256": "1d2842f5dbd9c0486fb4aadd0adfbb97b62fd7771af5062f4ed6c0fcdc5221a4",
+      "bytes": 157020,
+      "source": "https://www.pexels.com/photo/8111870/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Pavel Danilyuk",
+      "alt": "Professional at a bright desk",
+      "continuity": "table",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 855
+      }
+    },
+    {
+      "id": "seven-case-office",
+      "kind": "image",
+      "file": "seven-case-office.jpg",
+      "mime": "image/jpeg",
+      "sha256": "5677495d8b2ec7bab127e707700ac73f6f2ba8263c8285abe7a5561c4c312ff7",
+      "bytes": 106743,
+      "source": "https://www.pexels.com/photo/9615249/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Ron Lach / Pexels",
+      "alt": "Drawings and rolled plans in a dim workspace; portrait composition.",
+      "continuity": "case",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "description": "Drawings and rolled plans in a dim workspace; portrait composition.",
+        "evidence": [
+          "artifacts/stock/2026-09-23-inspect-expansion/sheet-2.jpg"
+        ],
+        "subjects": [
+          "Drawings and rolled plans in a dim workspace"
+        ],
+        "activities": [],
+        "settings": [],
+        "industries": [
+          "professional-services"
+        ],
+        "roles": [
+          "context"
+        ],
+        "palette": [
+          "neutral"
+        ],
+        "lighting": "dim or strongly shadowed",
+        "density": "medium",
+        "focalPoint": "center",
+        "negativeSpace": [],
+        "cropNotes": "Preserve subject and hands/tools where present; verify phone crop.",
+        "visibleText": false,
+        "uncertainty": [
+          "Initial contact-sheet inspection; final placement requires full-size crop review."
+        ],
+        "version": 1,
+        "assetHash": "5677495d8b2ec7bab127e707700ac73f6f2ba8263c8285abe7a5561c4c312ff7",
+        "observedAt": "2026-09-23T18:12:35.839Z",
+        "observer": "Codex visual inspection; sampled video frames"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 867,
+        "height": 1300
+      }
+    },
+    {
+      "id": "seven-case-person",
+      "kind": "image",
+      "file": "seven-case-person.jpg",
+      "mime": "image/jpeg",
+      "sha256": "38abc9ae76ca558597fb7f61415902d964cdf105294f989d1c3e935b5073a548",
+      "bytes": 191778,
+      "source": "https://www.pexels.com/photo/8730366/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Mikhail Nilov",
+      "alt": "Professional reviewing documents",
+      "continuity": "case",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 1917
+      }
+    },
+    {
+      "id": "seven-corner-shop",
+      "kind": "image",
+      "file": "seven-corner-shop.jpg",
+      "mime": "image/jpeg",
+      "sha256": "2b626e79add64f5254105e7e3023fe081eac62b2c4057c4887ed3defac42468c",
+      "bytes": 278624,
+      "source": "https://www.pexels.com/photo/4969838/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Photo by Maria Orlova on Pexels",
+      "alt": "Barber chairs below a wall of framed photographs and a large clock.",
+      "continuity": "corner",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "description": "Barber chairs below a wall of framed photographs and a large clock.",
+        "evidence": [
+          "artifacts/stock/2026-09-23-inspect-existing/sheet-1.jpg"
+        ],
+        "subjects": [
+          "Barber chairs below a wall of framed photographs and a large clock."
+        ],
+        "activities": [],
+        "settings": [],
+        "industries": [
+          "barber"
+        ],
+        "roles": [
+          "context"
+        ],
+        "palette": [
+          "warm browns",
+          "cream"
+        ],
+        "lighting": "mixed directional light",
+        "density": "medium",
+        "focalPoint": "center",
+        "negativeSpace": [],
+        "cropNotes": "Use contain for text-bearing imagery; inspect selected crop at full size.",
+        "visibleText": true,
+        "uncertainty": [
+          "Initial contact-sheet inspection; final placement requires full-size crop review."
+        ],
+        "version": 1,
+        "assetHash": "2b626e79add64f5254105e7e3023fe081eac62b2c4057c4887ed3defac42468c",
+        "observedAt": "2026-09-23T18:12:35.649Z",
+        "observer": "Codex visual inspection; sampled video frames"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1880,
+        "height": 1253
+      }
+    },
+    {
+      "id": "seven-corner-cut",
+      "kind": "image",
+      "file": "seven-corner-cut.jpg",
+      "mime": "image/jpeg",
+      "sha256": "9b805fdf040281c5ea40174ba5bf89998af175fceda9558fd5d9e9ba0eb95a3c",
+      "bytes": 251018,
+      "source": "https://www.pexels.com/photo/37533244/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Photo by Gizem toprak on Pexels",
+      "alt": "Hands cutting the back of a person's hair with scissors.",
+      "continuity": "corner",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "description": "Hands cutting the back of a person's hair with scissors.",
+        "evidence": [
+          "artifacts/stock/2026-09-23-inspect-existing/sheet-1.jpg"
+        ],
+        "subjects": [
+          "Hands cutting the back of a person's hair with scissors."
+        ],
+        "activities": [],
+        "settings": [],
+        "industries": [
+          "barber"
+        ],
+        "roles": [
+          "detail"
+        ],
+        "palette": [
+          "warm browns",
+          "cream"
+        ],
+        "lighting": "dim or strongly shadowed",
+        "density": "medium",
+        "focalPoint": "center",
+        "negativeSpace": [],
+        "cropNotes": "Preserve subject and hands/tools where present; verify phone crop.",
+        "visibleText": false,
+        "uncertainty": [
+          "Initial contact-sheet inspection; final placement requires full-size crop review."
+        ],
+        "version": 1,
+        "assetHash": "9b805fdf040281c5ea40174ba5bf89998af175fceda9558fd5d9e9ba0eb95a3c",
+        "observedAt": "2026-09-23T18:12:35.651Z",
+        "observer": "Codex visual inspection; sampled video frames"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1880,
+        "height": 1253
+      }
+    },
+    {
+      "id": "seven-corner-chair",
+      "kind": "image",
+      "file": "seven-corner-chair.jpg",
+      "mime": "image/jpeg",
+      "sha256": "ce7eb23983cc0d6b1f430e23c3c03228e5d35e8cb71ffd0a3f60b9113bbeb4da",
+      "bytes": 139988,
+      "source": "https://www.pexels.com/photo/18702143/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Photo by Marcelo Verfe on Pexels",
+      "alt": "Single leather barber chair against mirrors and shop tools.",
+      "continuity": "corner",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "description": "Single leather barber chair against mirrors and shop tools.",
+        "evidence": [
+          "artifacts/stock/2026-09-23-inspect-existing/sheet-1.jpg"
+        ],
+        "subjects": [
+          "Single leather barber chair against mirrors and shop tools."
+        ],
+        "activities": [],
+        "settings": [],
+        "industries": [
+          "barber"
+        ],
+        "roles": [
+          "context"
+        ],
+        "palette": [
+          "warm browns",
+          "cream"
+        ],
+        "lighting": "dim or strongly shadowed",
+        "density": "medium",
+        "focalPoint": "center",
+        "negativeSpace": [],
+        "cropNotes": "Preserve subject and hands/tools where present; verify phone crop.",
+        "visibleText": false,
+        "uncertainty": [
+          "Initial contact-sheet inspection; final placement requires full-size crop review."
+        ],
+        "version": 1,
+        "assetHash": "ce7eb23983cc0d6b1f430e23c3c03228e5d35e8cb71ffd0a3f60b9113bbeb4da",
+        "observedAt": "2026-09-23T18:12:35.644Z",
+        "observer": "Codex visual inspection; sampled video frames"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 867,
+        "height": 1300
+      }
+    },
+    {
+      "id": "seven-corner-person",
+      "kind": "image",
+      "file": "seven-corner-person.jpg",
+      "mime": "image/jpeg",
+      "sha256": "b2d1197219ef26548dfc2a95e810b9f690f6ff6d722a16db21c813c4ad22d788",
+      "bytes": 122324,
+      "source": "https://www.pexels.com/photo/12946033/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Jimmy Maffio",
+      "alt": "Barber portrait in a shop",
+      "continuity": "corner",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      }
+    },
+    {
+      "id": "seven-form-shop",
+      "kind": "image",
+      "file": "seven-form-shop.jpg",
+      "mime": "image/jpeg",
+      "sha256": "b090400309fbc50f7d3bd2fc3db12a082075cc2f122f9226c50803dee09552c5",
+      "bytes": 328147,
+      "source": "https://www.pexels.com/photo/7518728/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Pavel Danilyuk",
+      "alt": "Minimal barber shop interior",
+      "continuity": "form",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 1917
+      }
+    },
+    {
+      "id": "seven-form-style",
+      "kind": "image",
+      "file": "seven-form-style.jpg",
+      "mime": "image/jpeg",
+      "sha256": "06b78bdb5fbc35b6628af8cc124b99709b9eba68816960a96751faf2c641646f",
+      "bytes": 352302,
+      "source": "https://www.pexels.com/photo/9992818/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Alex Urezkov",
+      "alt": "Close view of a haircut in progress",
+      "continuity": "form",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 1920
+      }
+    },
+    {
+      "id": "seven-form-person",
+      "kind": "image",
+      "file": "seven-form-person.jpg",
+      "mime": "image/jpeg",
+      "sha256": "31a96f2e7747338f2dac0b944367804a1e6b0fd992f83f1b3b4b50ab6929b29d",
+      "bytes": 194093,
+      "source": "https://www.pexels.com/photo/18483774/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Marcelo Verfe",
+      "alt": "Barber standing beside a chair",
+      "continuity": "form",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 1600
+      }
+    },
+    {
+      "id": "seven-club-shop",
+      "kind": "image",
+      "file": "seven-club-shop.jpg",
+      "mime": "image/jpeg",
+      "sha256": "ad40336b65945f689e215c32a0c82660670246149d7fb984d965d10d0191317f",
+      "bytes": 406949,
+      "source": "https://www.pexels.com/photo/37764947/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Photo by wal_ 172619 on Pexels",
+      "alt": "Row of green vintage barber chairs and a checkerboard floor.",
+      "continuity": "club",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "description": "Row of green vintage barber chairs and a checkerboard floor.",
+        "evidence": [
+          "artifacts/stock/2026-09-23-inspect-existing/sheet-3.jpg"
+        ],
+        "subjects": [
+          "Row of green vintage barber chairs and a checkerboard floor."
+        ],
+        "activities": [],
+        "settings": [],
+        "industries": [
+          "salon"
+        ],
+        "roles": [
+          "context"
+        ],
+        "palette": [
+          "neutral"
+        ],
+        "lighting": "mixed directional light",
+        "density": "medium",
+        "focalPoint": "center",
+        "negativeSpace": [],
+        "cropNotes": "Preserve subject and hands/tools where present; verify phone crop.",
+        "visibleText": false,
+        "uncertainty": [
+          "Initial contact-sheet inspection; final placement requires full-size crop review."
+        ],
+        "version": 1,
+        "assetHash": "ad40336b65945f689e215c32a0c82660670246149d7fb984d965d10d0191317f",
+        "observedAt": "2026-09-23T18:12:35.718Z",
+        "observer": "Codex visual inspection; sampled video frames"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1880,
+        "height": 1253
+      }
+    },
+    {
+      "id": "seven-club-style",
+      "kind": "image",
+      "file": "seven-club-style.jpg",
+      "mime": "image/jpeg",
+      "sha256": "c1ee224a96633421a3d2936a323cf952f9962342199e513093d1b825930488c3",
+      "bytes": 372615,
+      "source": "https://www.pexels.com/photo/31654275/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Ciromaa_shots Umar",
+      "alt": "Short haircut and patterned barber cape",
+      "continuity": "club",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 1920
+      }
+    },
+    {
+      "id": "seven-club-person",
+      "kind": "image",
+      "file": "seven-club-person.jpg",
+      "mime": "image/jpeg",
+      "sha256": "218d91d2bcc5cefd187ed4bdfe7e3b5d5a164c02e69dbeb5ce745f79c3ddbde7",
+      "bytes": 207314,
+      "source": "https://www.pexels.com/photo/27497935/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstrations; no stock redistribution service or endorsement",
+      "credit": "Clark Enzzo",
+      "alt": "Barber working beside a chair",
+      "continuity": "club",
+      "crop": "Authored per-page; preserve subject and inspect 390/1440 crops",
+      "inspection": {
+        "status": "awaiting local visual review"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 2275
+      }
+    },
+    {
+      "id": "seven-motion-walk",
+      "kind": "image",
+      "file": "seven-motion-walk.jpg",
+      "mime": "image/jpeg",
+      "sha256": "cd0fb7ab80f76ca9964bf371856431887a928fe8684908e6f8bc8f6ee7f29c65",
+      "bytes": 820005,
+      "source": "https://www.pexels.com/photo/20023699/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstration, no endorsement",
+      "credit": "Sara mazin",
+      "alt": "Two adults walking together in a sunlit green park",
+      "continuity": "motion",
+      "crop": "Inspect authored desktop/mobile crop",
+      "inspection": {
+        "status": "awaiting local inspection"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 1920
+      }
+    },
+    {
+      "id": "seven-season-meadow",
+      "kind": "image",
+      "file": "seven-season-meadow.jpg",
+      "mime": "image/jpeg",
+      "sha256": "135f253af8349b2a4de72911c7e8bba941c6c328fad148241f7284ef0b9ef319",
+      "bytes": 320008,
+      "source": "https://www.pexels.com/photo/8921806/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstration, no endorsement",
+      "credit": "Vera Silkina",
+      "alt": "Wildflowers and meadow grasses in natural light",
+      "continuity": "season",
+      "crop": "Inspect authored desktop/mobile crop",
+      "inspection": {
+        "status": "awaiting local inspection"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 1916
+      }
+    },
+    {
+      "id": "seven-season-grass",
+      "kind": "image",
+      "file": "seven-season-grass.jpg",
+      "mime": "image/jpeg",
+      "sha256": "5d8f4bcd18be91a7e05bc6de3e46a2cabe9ee2115aae75d1dcf7cc71a558674e",
+      "bytes": 208327,
+      "source": "https://www.pexels.com/photo/17361410/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstration, no endorsement",
+      "credit": "Aliaksei Semirski",
+      "alt": "Tall grasses as a seasonal planting texture",
+      "continuity": "season",
+      "crop": "Inspect authored desktop/mobile crop",
+      "inspection": {
+        "status": "awaiting local inspection"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 1920
+      }
+    },
+    {
+      "id": "seven-corner-beard",
+      "kind": "image",
+      "file": "seven-corner-beard.jpg",
+      "mime": "image/jpeg",
+      "sha256": "66e78c1dc35b22eaa1638707362f877a727ae57c21ec541e1cdbb5f5df6bbbf0",
+      "bytes": 190811,
+      "source": "https://www.pexels.com/photo/4625624/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstration, no endorsement",
+      "credit": "Antoni Shkraba",
+      "alt": "Barber shaping an adult client\u2019s beard",
+      "continuity": "corner",
+      "crop": "Inspect authored desktop/mobile crop",
+      "inspection": {
+        "status": "awaiting local inspection"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      }
+    },
+    {
+      "id": "seven-club-adult-style",
+      "kind": "image",
+      "file": "seven-club-adult-style.jpg",
+      "mime": "image/jpeg",
+      "sha256": "709939e48728f9f9542b3613636175d0094f5faf15371ad93e92979e21ae3f9e",
+      "bytes": 324997,
+      "source": "https://www.pexels.com/photo/27467943/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original website demonstration, no endorsement",
+      "credit": "Clark Enzzo",
+      "alt": "Adult short haircut in profile",
+      "continuity": "club",
+      "crop": "Inspect authored desktop/mobile crop",
+      "inspection": {
+        "status": "awaiting local inspection"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 2275
+      }
+    },
+    {
+      "id": "seven-form-texture",
+      "kind": "image",
+      "file": "seven-form-texture.jpg",
+      "mime": "image/jpeg",
+      "sha256": "bc483064216d8692e2abcc76396456ea4340baf01db76fb0b6f55336fd842a37",
+      "bytes": 282516,
+      "source": "https://www.pexels.com/photo/27468018/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original demonstration, no endorsement",
+      "credit": "Clark Enzzo",
+      "alt": "Adult curly hairstyle in profile at a barbershop",
+      "continuity": "Form style-reference studies, not completed studio clients",
+      "crop": "Authored object-fit crop preserves the hair silhouette",
+      "inspection": {
+        "status": "awaiting local inspection"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 2275
+      }
+    },
+    {
+      "id": "seven-form-natural",
+      "kind": "image",
+      "file": "seven-form-natural.jpg",
+      "mime": "image/jpeg",
+      "sha256": "ac07eaee2541339c5d9d86140e466db3ea10fed5e85fe8c85b8714b25a151aa9",
+      "bytes": 296984,
+      "source": "https://www.pexels.com/photo/19028067/",
+      "terms": "https://www.pexels.com/license/",
+      "license": "Pexels License; incorporated into original demonstration, no endorsement",
+      "credit": "Kinz-studio Photographe",
+      "alt": "A barber shaping a Black adult client\u2019s natural-texture haircut",
+      "continuity": "Form style-reference studies, not completed studio clients",
+      "crop": "Authored object-fit crop preserves the hair silhouette",
+      "inspection": {
+        "status": "awaiting local inspection"
+      },
+      "usage": [],
+      "dimensions": {
+        "width": 1280,
+        "height": 1919
+      }
+    }
+  ]
+}

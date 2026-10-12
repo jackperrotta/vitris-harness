@@ -1,0 +1,5 @@
+{
+  "name": "Fixture Shop",
+  "slug": "fixture",
+  "motion": { "strength": "editorial", "stagger": true }
+}

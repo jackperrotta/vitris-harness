@@ -1,0 +1,244 @@
+{
+  "id": "clearwell-directory",
+  "revision": 1,
+  "title": "Clearwell / task directory",
+  "primaryFamily": "civic",
+  "assetMinimum": "none",
+  "fitSignals": [
+    "professional-service",
+    "type-content",
+    "real-copy",
+    "process",
+    "comparison",
+    "sparse-media",
+    "action"
+  ],
+  "visitorTasks": [
+    "Evaluate a practice",
+    "Understand a process"
+  ],
+  "organizingIdea": "Start with the visitor’s bookkeeping decision; service choices lead before explanatory prose.",
+  "brief": {
+    "fictional": true,
+    "facts": {
+      "name": "Clearwell",
+      "offer": "Bookkeeping for independent studios",
+      "scope": [
+        "Monthly reconciliation",
+        "Monthly reporting",
+        "Year-end handover"
+      ],
+      "excludes": [
+        "Tax returns",
+        "Investment advice"
+      ],
+      "process": [
+        "Bring a sample of your records",
+        "Agree scope together",
+        "Set a monthly handover"
+      ],
+      "contact": "hello@example.test",
+      "media": []
+    },
+    "factsHash": "a27aeea57fb381f20268557ae9c788abd1219ad30cc1b8b09c3177b633f782d5",
+    "mediaHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "provenance": {
+    "content": "Original fictional teaching content authored for Vitris; never customer facts",
+    "media": "No imagery required",
+    "rights": "Original Vitris teaching source; customer reuse requires adapting facts"
+  },
+  "storyboard": {
+    "homepage": [
+      "What needs clearing up?",
+      "Keep the month clear",
+      "Prepare the handover",
+      "A small start, with a clear scope."
+    ],
+    "interior": [
+      "A month you can read.",
+      "Monthly support",
+      "At year end",
+      "Before a conversation"
+    ],
+    "mobile": "Content order is preserved; side navigation and supporting columns reflow into the document. No essential hover interactions."
+  },
+  "designDecisions": "Start with the visitor’s bookkeeping decision; service choices lead before explanatory prose.",
+  "lessonIds": [
+    "cmp-collection-structure",
+    "cmp-navigation",
+    "cmp-unequal-emphasis"
+  ],
+  "referenceIds": [
+    "gov-uk"
+  ],
+  "sourcePath": "clearwell-directory",
+  "homepage": "/",
+  "interior": "/detail",
+  "status": "compiled, automated checks passed, assistant visual review recorded; human preference pending",
+  "humanPreference": null,
+  "renderEvidence": [
+    {
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T15:54:32.050Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/clearwell-directory-home-1440.png",
+        "sha256": "87d3936eca6c20977ba4a5a6c16691d0e96f1c52dbc5537d21bf5e8f0ff0d5bd"
+      },
+      "compiledHash": "8017741066cfe8419fea6c635774f2917fc0c231693fac3618b419c1ef4a613a",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail#monthly",
+            "/detail#handover",
+            "/detail"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        }
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:08:16.889952+00:00",
+        "scope": "desktop/mobile full-page contact-sheet inspection; text hierarchy, reading order, overflow and matched-pair distinction",
+        "assessment": "Clear organization and readable narrow layout; no visual collision observed. Functional checks are automated, human preference is pending."
+      }
+    },
+    {
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T15:54:33.029Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/clearwell-directory-home-390.png",
+        "sha256": "1d0f0bf4a0fd0bd0ccf306077a9062aeda56efa0495d148df1502615a11ed67e"
+      },
+      "compiledHash": "8017741066cfe8419fea6c635774f2917fc0c231693fac3618b419c1ef4a613a",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail",
+            "/detail#monthly",
+            "/detail#handover",
+            "/detail"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        }
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:08:16.889952+00:00",
+        "scope": "desktop/mobile full-page contact-sheet inspection; text hierarchy, reading order, overflow and matched-pair distinction",
+        "assessment": "Clear organization and readable narrow layout; no visual collision observed. Functional checks are automated, human preference is pending."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-05T15:54:34.048Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/clearwell-directory-interior-1440.png",
+        "sha256": "5941cac13da2891565504e803fb74afae65119ce7898032c736eb7d3b70d954b"
+      },
+      "compiledHash": "da9297a73504f383348cedd14bc1f208638bfabae48bcd7560bd88ba53b69b33",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        }
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:08:16.889952+00:00",
+        "scope": "desktop/mobile full-page contact-sheet inspection; text hierarchy, reading order, overflow and matched-pair distinction",
+        "assessment": "Clear organization and readable narrow layout; no visual collision observed. Functional checks are automated, human preference is pending."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-05T15:54:35.016Z",
+      "browser": "153.0.8010.12",
+      "preview": {
+        "path": "previews/clearwell-directory-interior-390.png",
+        "sha256": "1a18a58c78c8d59b0569b73a9ec7f2e74f337a584b01738bb82c50fbe75f8899"
+      },
+      "compiledHash": "da9297a73504f383348cedd14bc1f208638bfabae48bcd7560bd88ba53b69b33",
+      "automated": {
+        "errors": [],
+        "axeViolations": [],
+        "metrics": {
+          "overflow": false,
+          "h1": 1,
+          "brokenImages": [],
+          "internalLinks": [
+            "/",
+            "/detail"
+          ]
+        },
+        "firstFocus": {
+          "tag": "A",
+          "text": "Skip to content",
+          "outline": "solid",
+          "width": "2px"
+        }
+      },
+      "visualReview": {
+        "assessor": "assistant",
+        "reviewedAt": "2026-10-05T16:08:16.889952+00:00",
+        "scope": "desktop/mobile full-page contact-sheet inspection; text hierarchy, reading order, overflow and matched-pair distinction",
+        "assessment": "Clear organization and readable narrow layout; no visual collision observed. Functional checks are automated, human preference is pending."
+      }
+    }
+  ]
+}

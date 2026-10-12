@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 2,
+  "businessHash": "5b5f8667a5c3bb8d30c28d9bcdbbb3952e72e93750a120ab057ed76b52e66c5c",
+  "mediaHash": "b1c04c496ca91c516c7b056abff54a9889195f380373b24cae19f9bd9806fe7b",
+  "customer": "Owner of a small service company moving beyond spreadsheets",
+  "problem": "Monthly accounts need reconciliation and understandable reports before decisions.",
+  "offer": "Remote monthly bookkeeping and tax-ready reporting.",
+  "serviceScope": "Categorization, account reconciliation, monthly P&L and balance sheet, and a review call. No tax filing, audit, or legal advice.",
+  "proof": {"statement":"The source is a synthetic operator brief. There is no observed client outcome, testimonial, credential, or project image.","evidenceIds":["e-offer","e-includes"],"status":"missing"},
+  "conversion": "Email a fit-call request; the team replies within two business days to arrange a 20-minute conversation. Sending does not book a time.",
+  "objections": [
+    {"claim":"What is included each month?","evidenceIds":["f-includes"]},
+    {"claim":"Will you file my taxes?","evidenceIds":["f-scope"]},
+    {"claim":"What will it cost?","evidenceIds":["f-price"]}
+  ],
+  "unsupportedClaims": ["Verified credentials", "Client testimonials", "Guaranteed savings", "Fixed price", "Real staff portraits"],
+  "facts": [
+    {"id":"f-offer","claim":"Monthly bookkeeping and tax-ready reporting for small service companies.","evidenceIds":["e-offer"]},
+    {"id":"f-includes","claim":"Categorization, reconciliation, P&L, balance sheet, review call.","evidenceIds":["e-includes"]},
+    {"id":"f-scope","claim":"No tax filing, audits, or legal advice.","evidenceIds":["e-scope"]},
+    {"id":"f-process","claim":"Email request followed by a reply within two business days to arrange a fit call.","evidenceIds":["e-process"]}
+  ],
+  "visitorQuestions": [
+    {"id":"q-scope","question":"What exactly is handled each month?","relationshipToConversion":"Clarifies whether service fits before inquiry.","priority":1},
+    {"id":"q-boundary","question":"Does this include tax filing?","relationshipToConversion":"Prevents misqualified inquiries.","priority":2},
+    {"id":"q-next","question":"What happens when I make contact?","relationshipToConversion":"Sets honest next-step expectations.","priority":1},
+    {"id":"q-price","question":"How is pricing determined?","relationshipToConversion":"Explains absence of a public fixed price.","priority":2}
+  ],
+  "assetNotes": [{"strength":"A sparse-media presentation can make the reporting process legible through type, tables, and a simple diagram.","limitation":"No observed customer photographs or documents exist; generated visuals cannot imply client work."}],
+  "toneConstraints": ["Clear and measured", "Explain finance terms plainly", "No invented authority or guaranteed result"],
+  "recordedUserGoals": ["Evaluate the staged installed-package workflow on a clearly synthetic professional firm."],
+  "designOpportunities": [
+    {"id":"opp-ledger","visitorNeed":"Understand monthly work without financial jargon","businessRelevance":"The stated service is recurring reporting","evidenceIds":["e-includes"],"mediaIds":[],"presentationOpportunity":"Use a calm ledger-like visual rhythm to separate what arrives, what is reconciled, and what is discussed.","constraints":["Do not present fabricated client data"],"basis":"evidence-backed"},
+    {"id":"opp-proof","visitorNeed":"Know whether the service can be trusted","businessRelevance":"No client proof or credentials are available","evidenceIds":[],"mediaIds":[],"presentationOpportunity":"Explain process transparently and avoid proxy credibility claims.","constraints":["Do not imply experience or outcomes"],"basis":"design-hypothesis","uncertainty":"This transparent process may help confidence, but no user preference evidence exists."}
+  ]
+}

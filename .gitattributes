@@ -1,0 +1,2 @@
+# Preserve pinned fixture and manifest bytes across Windows/Linux clones.
+* -text

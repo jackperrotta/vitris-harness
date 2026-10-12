@@ -1,0 +1,8 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "vitris-templates",
+  "main": "src/template-cloud/worker.ts",
+    "compatibility_date": "2026-10-09",
+  "workers_dev": true,
+  "r2_buckets": [{ "binding": "R2", "bucket_name": "vitris-assets" }]
+}

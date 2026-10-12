@@ -1,0 +1,8 @@
+.c-contact-offices__grid{--gap:var(--space-4)}
+.c-contact-offices__grid .card__body{gap:var(--space-3)}
+.c-contact-offices__grid .card__body h3{font-size:var(--step-2)}
+.c-contact-offices__grid .card__body p{line-height:1.6}
+.c-contact-offices__grid .card__body a{color:var(--color-text);text-decoration:none}
+.c-contact-offices__grid .card__body a:hover{color:var(--color-accent)}
+@media(min-width:720px){.c-contact-offices__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1080px){.c-contact-offices__grid{grid-template-columns:repeat(3,minmax(0,1fr));--gap:var(--space-5)}}

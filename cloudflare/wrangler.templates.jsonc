@@ -1,0 +1,6 @@
+{
+  "name":"my-vitris-templates",
+  "main":"../bin/cloudflare/templates.js",
+  "compatibility_date":"2026-10-11",
+  "r2_buckets":[{"binding":"R2","bucket_name":"my-vitris-assets"}]
+}

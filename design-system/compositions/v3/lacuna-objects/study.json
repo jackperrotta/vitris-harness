@@ -1,0 +1,182 @@
+{
+  "id": "lacuna-objects",
+  "revision": 2,
+  "title": "Lacuna Objects / quiet object story",
+  "primaryFamily": "quiet-luxury",
+  "assetMinimum": "multiple-images",
+  "fitSignals": [
+    "collection",
+    "type-content",
+    "real-copy",
+    "action",
+    "sparse-media"
+  ],
+  "visitorTasks": [
+    "inspect-work",
+    "explore-product"
+  ],
+  "organizingIdea": "The object occupies a centered field beneath restrained identity; the interior changes from isolated form to material facts rather than product-card repetition.",
+  "brief": {
+    "fictional": true,
+    "facts": {
+      "name": "Lacuna Objects",
+      "offer": "Fictional small objects for living spaces",
+      "object": "Arc wall shelf",
+      "material": "Timber in teaching brief",
+      "width": "80 cm teaching dimension",
+      "finish": "Natural finish in invented brief",
+      "contact": "lacuna@example.test",
+      "restriction": "No real product, load rating or certification",
+      "development": "Expanded original fictional explanatory content and interaction detail; no measured client outcome"
+    },
+    "factsHash": "a3eb033202a625e546ad84834c6e5100302b938c86839029490750365174d040",
+    "mediaHash": "c77d776411369bafcceceab7edd0fd7c53e759b695c712cfb0f37f25ca191e92"
+  },
+  "provenance": {
+    "content": "Original fictional Vitris teaching brief and copy; no customer claims.",
+    "media": "Original generated fictional raster concepts with tool/prompt/source lineage; editable text is separate.",
+    "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+  },
+  "storyboard": {
+    "homepage": [
+      "quiet identity",
+      "centered object proposition/diagram",
+      "object story"
+    ],
+    "interior": [
+      "object name",
+      "isolated form",
+      "form explanation",
+      "specification questions"
+    ],
+    "mobile": "Original room/object and coherent edge detail show scale, surface and shadow; three interior chapters develop these relationships. Mobile preserves complete room object after crop repair."
+  },
+  "designDecisions": "The object occupies a centered field beneath restrained identity; the interior changes from isolated form to material facts rather than product-card repetition.",
+  "lessonIds": [
+    "cmp-unequal-emphasis",
+    "cmp-image-art-direction",
+    "cmp-narrative-continuity"
+  ],
+  "referenceIds": [
+    "r100",
+    "doc"
+  ],
+  "sourcePath": "lacuna-objects",
+  "homepage": "/",
+  "interior": "/detail",
+  "status": "production compiled; assistant visually inspected; human preference unlabeled",
+  "humanPreference": null,
+  "renderEvidence": [
+    {
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-06T20:54:28.616Z",
+      "browser": "153.0.8010.12",
+      "compiledHash": "3f3761f17854e49798afbd1fe80a92faa1ffe56e61d03eeedf907c9d2f5ff328",
+      "preview": {
+        "path": "previews/lacuna-objects-home-1440.png",
+        "sha256": "ca8339f6cb909ad0ac9d1dab79d4cef6e72850e576ef7dae09286c9f76ca49d3"
+      },
+      "fullPreview": {
+        "path": "previews/full/lacuna-objects-home-1440.png",
+        "sha256": "1ed06a9bd1e46d1f76d1297f4ec5e14cf647deb51ae9c29312496a812c6db895"
+      },
+      "visualReview": {
+        "assessor": "agent",
+        "reviewedAt": "2026-10-06T21:00:13.933Z",
+        "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original room/object and coherent edge detail show scale, surface and shadow; three interior chapters develop these relationships. Mobile preserves complete room object after crop repair. Remaining: Generated shelf image is not a manufactured product, verified dimension, load rating or mounting instruction."
+      }
+    },
+    {
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-06T20:54:29.738Z",
+      "browser": "153.0.8010.12",
+      "compiledHash": "3f3761f17854e49798afbd1fe80a92faa1ffe56e61d03eeedf907c9d2f5ff328",
+      "preview": {
+        "path": "previews/lacuna-objects-home-390.png",
+        "sha256": "c65f237e879acf2559ba0afa10683a04e0d5de6eb7d386bce4d405ac9b662edc"
+      },
+      "fullPreview": {
+        "path": "previews/full/lacuna-objects-home-390.png",
+        "sha256": "f5b9e313b4c787751f066ddc9aa847e89a478650d396a921efeb0de9c5ac2793"
+      },
+      "visualReview": {
+        "assessor": "agent",
+        "reviewedAt": "2026-10-06T21:00:13.933Z",
+        "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original room/object and coherent edge detail show scale, surface and shadow; three interior chapters develop these relationships. Mobile preserves complete room object after crop repair. Remaining: Generated shelf image is not a manufactured product, verified dimension, load rating or mounting instruction."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-06T20:54:31.411Z",
+      "browser": "153.0.8010.12",
+      "compiledHash": "fc6516d0b0b1dcecb52c57a3ad769b4efe58ecd17bd869a8105e9a663c66a5f5",
+      "preview": {
+        "path": "previews/lacuna-objects-interior-1440.png",
+        "sha256": "ce7359ed18f9226e6d8642421faa08f85d4879103761ef2dc08b7cc89cf38605"
+      },
+      "fullPreview": {
+        "path": "previews/full/lacuna-objects-interior-1440.png",
+        "sha256": "0a727ee3ae7523ab61939c183becc150c46097455a63eb18417d0de1e14948a6"
+      },
+      "visualReview": {
+        "assessor": "agent",
+        "reviewedAt": "2026-10-06T21:00:13.933Z",
+        "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original room/object and coherent edge detail show scale, surface and shadow; three interior chapters develop these relationships. Mobile preserves complete room object after crop repair. Remaining: Generated shelf image is not a manufactured product, verified dimension, load rating or mounting instruction."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-06T20:54:32.554Z",
+      "browser": "153.0.8010.12",
+      "compiledHash": "fc6516d0b0b1dcecb52c57a3ad769b4efe58ecd17bd869a8105e9a663c66a5f5",
+      "preview": {
+        "path": "previews/lacuna-objects-interior-390.png",
+        "sha256": "a17f7e092994d97a633486226ab9d6c3c47c2c4f97a096da0f9119298a369201"
+      },
+      "fullPreview": {
+        "path": "previews/full/lacuna-objects-interior-390.png",
+        "sha256": "0edad202cd9ce40201756c8946f5e5dde9f1c064ecdb9f1e4e7ea45b6c949f36"
+      },
+      "visualReview": {
+        "assessor": "agent",
+        "reviewedAt": "2026-10-06T21:00:13.933Z",
+        "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original room/object and coherent edge detail show scale, surface and shadow; three interior chapters develop these relationships. Mobile preserves complete room object after crop repair. Remaining: Generated shelf image is not a manufactured product, verified dimension, load rating or mounting instruction."
+      }
+    }
+  ],
+  "selectionProfile": {
+    "tasks": [
+      "shop-collection",
+      "explore-product"
+    ],
+    "contexts": [
+      "retail"
+    ],
+    "contributions": [
+      "object-scale",
+      "material-story"
+    ],
+    "expressions": [
+      "quiet-luxury"
+    ]
+  },
+  "exampleScope": "developed-homepage-interior-example",
+  "releaseNotes": "Original room/object and coherent edge detail show scale, surface and shadow; three interior chapters develop these relationships. Mobile preserves complete room object after crop repair. Limitations: Generated shelf image is not a manufactured product, verified dimension, load rating or mounting instruction.",
+  "comparisonStatus": "not a controlled same-facts comparison"
+}

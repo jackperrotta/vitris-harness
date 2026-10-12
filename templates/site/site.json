@@ -1,0 +1,10 @@
+{
+  "name": "__NAME__",
+  "slug": "__SLUG__",
+  "sourceFormatVersion": 1,
+  "capabilities": [],
+  "knowledgeRelease": "2026-09-22",
+  "motion": { "strength": "off", "stagger": false },
+  "scrollMotion": { "version": 1, "policy": "enabled" },
+  "motionComposition": { "version": 2, "routes": "all-authored" }
+}

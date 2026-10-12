@@ -1,0 +1,33 @@
+{
+  "method": "generated-raster",
+  "tool": "built-in image_gen.imagegen",
+  "model": null,
+  "seed": null,
+  "providerReceipt": null,
+  "prompt": "Use case: precise-object-edit. Create a close companion material photograph of exactly this invented oak wall shelf. Preserve the same rounded front edge, thin shelf, arched underside, natural oak finish and chalk plaster wall. View its left front corner diagonally at close range, revealing end grain, continuous softened edge, subtle curve of the underside and its shadow on the wall. Crop away most of the room and bowl; keep enough wall and shelf to understand the mounting. Side daylight, refined warm natural material detail, wide horizontal composition. No text, logos, people or technical/load claims. Fictional teaching object, no real manufactured product.",
+  "parents": [
+    {
+      "path": "media/teaching/lacuna-object.png",
+      "role": "reference and edit target",
+      "sha256": "7c4c15e40efe33828111f0b94e01ac2feba22bdf7f79bf211f006b79ea9eb79a"
+    }
+  ],
+  "rights": "Original AI-generated fictional teaching material; package/generation teaching eligible. No third-party branding or customer proof.",
+  "forbiddenImplications": [
+    "Not real customer work, venue, manufactured product or verified result",
+    "No structural, material, safety or performance certification"
+  ],
+  "sha256": "9e90c2474e41031990242529735062c2600fd45bd546089567c595f5409c06cb",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "recipe": {
+    "prompt": "Use case: precise-object-edit. Create a close companion material photograph of exactly this invented oak wall shelf. Preserve the same rounded front edge, thin shelf, arched underside, natural oak finish and chalk plaster wall. View its left front corner diagonally at close range, revealing end grain, continuous softened edge, subtle curve of the underside and its shadow on the wall. Crop away most of the room and bowl; keep enough wall and shelf to understand the mounting. Side daylight, refined warm natural material detail, wide horizontal composition. No text, logos, people or technical/load claims. Fictional teaching object, no real manufactured product.",
+    "parent": {
+      "path": "lacuna-objects/media/teaching/lacuna-object.png",
+      "sha256": "7c4c15e40efe33828111f0b94e01ac2feba22bdf7f79bf211f006b79ea9eb79a",
+      "relativeTo": "teaching-release"
+    }
+  }
+}

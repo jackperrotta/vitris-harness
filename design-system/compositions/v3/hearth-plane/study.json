@@ -1,0 +1,189 @@
+{
+  "id": "hearth-plane",
+  "revision": 2,
+  "title": "Hearth Plane / project threshold",
+  "primaryFamily": "swiss",
+  "assetMinimum": "multiple-images",
+  "fitSignals": [
+    "professional-service",
+    "inspect-work",
+    "process",
+    "type-content",
+    "real-copy",
+    "action",
+    "sparse-media"
+  ],
+  "visitorTasks": [
+    "inspect-work",
+    "evaluate-service"
+  ],
+  "organizingIdea": "A persistent practice margin gives most of the opening to a project elevation; the interior develops constraints before design decisions.",
+  "brief": {
+    "fictional": true,
+    "facts": {
+      "name": "Hearth Plane",
+      "offer": "Small-building architecture practice",
+      "projects": [
+        "Courtyard study",
+        "Workshop canopy",
+        "Reading annex"
+      ],
+      "projectScope": "A shaded court and a shared threshold",
+      "projectStatus": "Fictional concept study",
+      "contact": "hearth@example.test",
+      "development": "Expanded original fictional explanatory content and interaction detail; no measured client outcome"
+    },
+    "factsHash": "cd240bb009f382346d414780b76ad32219e01898dd8d1753885c68f37f828ed2",
+    "mediaHash": "d02a3726d2fbbe768274d81e3892c43485e14048e47ee4b6a4dd4d43a8454ac6"
+  },
+  "provenance": {
+    "content": "Original fictional Vitris teaching brief and authored copy; operational details, dimensions and offers are invented and must never populate customer inventories.",
+    "media": "Original generated fictional raster concepts with tool/prompt/source lineage; editable text is separate.",
+    "rights": "Original Vitris teaching material; factual adaptation required for customer use."
+  },
+  "storyboard": {
+    "homepage": [
+      "practice margin",
+      "courtyard illustration",
+      "project explanation",
+      "other studies",
+      "conversation preparation"
+    ],
+    "interior": [
+      "project metadata",
+      "elevation",
+      "decisions",
+      "return to studies"
+    ],
+    "mobile": "Original courtyard and coherent threshold detail develop a project sequence; persistent margin, project index, programme/material/status and three interior chapters make the practice idea visible. Mobile margin becomes task navigation before project."
+  },
+  "designDecisions": "A persistent practice margin gives most of the opening to a project elevation; the interior develops constraints before design decisions.",
+  "lessonIds": [
+    "cmp-collection-structure",
+    "cmp-image-sequence",
+    "cmp-responsive-recomposition"
+  ],
+  "referenceIds": [
+    "big",
+    "scullion"
+  ],
+  "sourcePath": "hearth-plane",
+  "homepage": "/",
+  "interior": "/detail",
+  "status": "production compiled; assistant visually inspected; human preference unlabeled",
+  "humanPreference": null,
+  "renderEvidence": [
+    {
+      "route": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-06T20:51:44.489Z",
+      "browser": "153.0.8010.12",
+      "compiledHash": "99d26c5f4cf53af9b86ee5a898713931b7a03282cd501c425616d2fc338319bd",
+      "preview": {
+        "path": "previews/hearth-plane-home-1440.png",
+        "sha256": "b7eb698d86751f506cec621663df2435c67d6fdec61f4f782cb54967672cf002"
+      },
+      "fullPreview": {
+        "path": "previews/full/hearth-plane-home-1440.png",
+        "sha256": "254efe7313ba5aa1b8f1b4fa2d3ab1dcff108bec3c0e56ad3448211e4514e30b"
+      },
+      "visualReview": {
+        "assessor": "agent",
+        "reviewedAt": "2026-10-06T21:00:13.933Z",
+        "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original courtyard and coherent threshold detail develop a project sequence; persistent margin, project index, programme/material/status and three interior chapters make the practice idea visible. Mobile margin becomes task navigation before project. Remaining: Generated concept architecture is not completed work. Other indexed studies are scope summaries, not separate project routes."
+      }
+    },
+    {
+      "route": "/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-06T20:51:45.619Z",
+      "browser": "153.0.8010.12",
+      "compiledHash": "99d26c5f4cf53af9b86ee5a898713931b7a03282cd501c425616d2fc338319bd",
+      "preview": {
+        "path": "previews/hearth-plane-home-390.png",
+        "sha256": "b779aaad21e394f86b243b106ce172c847b187de1276066dacde0777d8ba2b55"
+      },
+      "fullPreview": {
+        "path": "previews/full/hearth-plane-home-390.png",
+        "sha256": "d5d1033f2a25be86720a1dfd21bb606566af9984c2ac2ea7f3345296ae708648"
+      },
+      "visualReview": {
+        "assessor": "agent",
+        "reviewedAt": "2026-10-06T21:00:13.933Z",
+        "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original courtyard and coherent threshold detail develop a project sequence; persistent margin, project index, programme/material/status and three interior chapters make the practice idea visible. Mobile margin becomes task navigation before project. Remaining: Generated concept architecture is not completed work. Other indexed studies are scope summaries, not separate project routes."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "capturedAt": "2026-10-06T20:51:47.245Z",
+      "browser": "153.0.8010.12",
+      "compiledHash": "7fb623ec46b8a537c495f323ae27d42bd2fd9c0f4de09b12e8d060016fa26fc3",
+      "preview": {
+        "path": "previews/hearth-plane-interior-1440.png",
+        "sha256": "77dd4703500b40aeb9277f19e9b97aa09ee6794f157586f8980ee014f21c38f6"
+      },
+      "fullPreview": {
+        "path": "previews/full/hearth-plane-interior-1440.png",
+        "sha256": "2469874ea90256f8a9d70180338056f4527e104720e9cffdbadefb16d552a81c"
+      },
+      "visualReview": {
+        "assessor": "agent",
+        "reviewedAt": "2026-10-06T21:00:13.933Z",
+        "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original courtyard and coherent threshold detail develop a project sequence; persistent margin, project index, programme/material/status and three interior chapters make the practice idea visible. Mobile margin becomes task navigation before project. Remaining: Generated concept architecture is not completed work. Other indexed studies are scope summaries, not separate project routes."
+      }
+    },
+    {
+      "route": "/detail",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "capturedAt": "2026-10-06T20:51:48.336Z",
+      "browser": "153.0.8010.12",
+      "compiledHash": "7fb623ec46b8a537c495f323ae27d42bd2fd9c0f4de09b12e8d060016fa26fc3",
+      "preview": {
+        "path": "previews/hearth-plane-interior-390.png",
+        "sha256": "3c0bcaa4a8eb28e73c469d7802adba8f3fbfdb899558c0c2b45ae95b9ce3ddc4"
+      },
+      "fullPreview": {
+        "path": "previews/full/hearth-plane-interior-390.png",
+        "sha256": "d4407202289a6bd49ebd915dba5accfea9d7e8794a5114b9b3d85feeb1c73746"
+      },
+      "visualReview": {
+        "assessor": "agent",
+        "reviewedAt": "2026-10-06T21:00:13.933Z",
+        "assessment": "Actual full-page contact sheet viewed for both routes and both widths. Original courtyard and coherent threshold detail develop a project sequence; persistent margin, project index, programme/material/status and three interior chapters make the practice idea visible. Mobile margin becomes task navigation before project. Remaining: Generated concept architecture is not completed work. Other indexed studies are scope summaries, not separate project routes."
+      }
+    }
+  ],
+  "selectionProfile": {
+    "tasks": [
+      "inspect-work",
+      "understand-process",
+      "book-inquiry"
+    ],
+    "contexts": [
+      "project-service"
+    ],
+    "contributions": [
+      "practice-margin",
+      "project-sequence"
+    ],
+    "expressions": [
+      "swiss"
+    ]
+  },
+  "exampleScope": "developed-homepage-interior-example",
+  "releaseNotes": "Original courtyard and coherent threshold detail develop a project sequence; persistent margin, project index, programme/material/status and three interior chapters make the practice idea visible. Mobile margin becomes task navigation before project. Limitations: Generated concept architecture is not completed work. Other indexed studies are scope summaries, not separate project routes.",
+  "comparisonStatus": "not a controlled same-facts comparison"
+}

@@ -1,0 +1,20 @@
+{
+  "version":2,"storyboardHash":"ec27f88dc836d026eaa2e18b9f185ae55e3a5b2b435e3f89abe60b41b84e20e2",
+  "pages":[
+    {"path":"/","sections":[
+      {"id":"home-offer","heading":"Know where the month stands.","body":"Monthly bookkeeping and tax-ready reporting for small service companies. Harbor Ledger works remotely across the United States, turning recurring accounting tasks into a monthly set of figures you can review.","factIds":["f-offer","f-area"]},
+      {"id":"home-cycle","heading":"A clear line through each month","body":"Transactions are categorized. Accounts are reconciled. A profit-and-loss statement and balance sheet are prepared, then discussed in a monthly review call. The point is a repeatable view of the month, not a stack of unexplained reports.","factIds":["f-includes"]},
+      {"id":"home-boundary","heading":"Clear about the boundary","body":"The reports are tax-ready, but this service does not include filing tax returns, audits, or legal advice. If you need those services, we will not describe them as part of bookkeeping.","factIds":["f-scope"]},
+      {"id":"home-contact","heading":"Start with a fit conversation","body":"Send a brief inquiry for a 20-minute fit call. The team replies within two business days to arrange a time. Your request starts a conversation; it does not reserve an appointment.","factIds":["f-process"]}
+    ]},
+    {"path":"/monthly-work/","sections":[
+      {"id":"work-intro","heading":"What the monthly work includes","body":"Bookkeeping is most useful when the close, reports, and conversation belong to one repeatable process. Here is the work Harbor Ledger includes each month.","factIds":["f-includes"]},
+      {"id":"work-included","heading":"From transactions to a useful review","body":"Transaction categorization organizes the activity. Account reconciliation checks it against the accounts. Monthly profit-and-loss and balance-sheet reports show the position. A review call gives you a chance to discuss those figures.","factIds":["f-includes"]},
+      {"id":"work-boundaries","heading":"The scope, and the price conversation","body":"Tax filing, audits, and legal advice are outside this service. Pricing is discussed after the team reviews your transaction volume and complexity, so there is no fixed price on this page. Ask about fit and the next conversation can cover both scope and price.","factIds":["f-scope","f-price"]}
+    ]},
+    {"path":"/contact/","sections":[
+      {"id":"contact-intro","heading":"Ask about a fit call","body":"Tell us a little about the bookkeeping need. The team replies within two business days to arrange a 20-minute conversation. Sending this request does not book a time.","factIds":["f-process"]},
+      {"id":"contact-form","heading":"A short first note is enough","body":"Include your name, email, and a short description of the work you need. A few sentences are enough to start; details can wait for the call. The form sends an inquiry; it does not schedule an appointment. You can also write directly to hello@harborledger.example. Please leave account numbers and other financial details out of an initial message.","factIds":["f-contact","f-process"]}
+    ]}
+  ]
+}

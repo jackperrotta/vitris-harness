@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "engine": "playwright",
+  "startUrl": "",
+  "pages": [],
+  "media": {
+    "files": [],
+    "failed": []
+  },
+  "exclusions": [],
+  "unvisited": []
+}

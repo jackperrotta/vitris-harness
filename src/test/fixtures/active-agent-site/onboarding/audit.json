@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "sourceUrl": "",
+  "crawledAt": "2026-09-22T20:04:22.820Z",
+  "pages": [],
+  "summary": {
+    "pageCount": 0,
+    "pagesMissingTitle": 0,
+    "pagesMissingDescription": 0,
+    "pagesMultipleH1": 0,
+    "pagesZeroH1": 0,
+    "totalMissingAlts": 0,
+    "totalUnlabeledInputs": 0
+  },
+  "webVitals": null
+}

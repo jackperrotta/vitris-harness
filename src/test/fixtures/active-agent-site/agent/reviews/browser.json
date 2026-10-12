@@ -1,0 +1,104 @@
+{
+  "version": 2,
+  "sourceHash": "78207999cab663cfa5b2e014b53823177d66e708cf07dbe9abe9f9bad36ee8ce",
+  "distHash": "fad6e1e6d4799243533221b09e00e95a93fb517d1a6dc4d6a3ea1f09f1dac45c",
+  "scope": "browser",
+  "checks": [
+    {
+      "path": "/",
+      "width": 375,
+      "screenshot": "agent/screenshots/browser/home-375.png",
+      "screenshotHash": "8d0633a1fd09caddf513953b15af3da7561aa9098e835b8d14af53ae51216d32",
+      "initialTransferBytes": 59916,
+      "firstVisit": {
+        "screenshot": "agent/screenshots/browser/first-visit-375.png",
+        "screenshotHash": "498b984d1008ad22f89a78a1f57529785e681c6e4d4821cc8e3018c10446eb84"
+      },
+      "failures": [],
+      "warnings": []
+    },
+    {
+      "path": "/",
+      "width": 1080,
+      "screenshot": "agent/screenshots/browser/home-1080.png",
+      "screenshotHash": "ab15922367965f3bb6c648457d5ec3b577e5b1d8a82dfe25db1bfe7e11afd035",
+      "initialTransferBytes": 59916,
+      "firstVisit": {
+        "screenshot": "agent/screenshots/browser/first-visit-1080.png",
+        "screenshotHash": "d71799f74b1f2abf3a4f364c034ee0dda90eb834857a58f4abf5190e5535c0ff"
+      },
+      "failures": [],
+      "warnings": []
+    },
+    {
+      "path": "/monthly-work/",
+      "width": 375,
+      "screenshot": "agent/screenshots/browser/monthly-work-375.png",
+      "screenshotHash": "5797fd7eac8b4926d260b6afa272a96abca1da99c924961deeb30dc627e3dae6",
+      "initialTransferBytes": 58956,
+      "failures": [],
+      "warnings": []
+    },
+    {
+      "path": "/monthly-work/",
+      "width": 1080,
+      "screenshot": "agent/screenshots/browser/monthly-work-1080.png",
+      "screenshotHash": "e8791184ee3b99f8d4e89e7d12790c9ff15a07207279cc89dd0061015d609f8f",
+      "initialTransferBytes": 58956,
+      "failures": [],
+      "warnings": []
+    },
+    {
+      "path": "/contact/",
+      "width": 375,
+      "screenshot": "agent/screenshots/browser/contact-375.png",
+      "screenshotHash": "6fe6e74f5dfb92b9c6cbd0c30b5bb3fc08debf87860792a97c83caeca45f0640",
+      "initialTransferBytes": 58546,
+      "failures": [],
+      "warnings": [
+        "1 unexpected form-time network request(s) blocked"
+      ]
+    },
+    {
+      "path": "/contact/",
+      "width": 1080,
+      "screenshot": "agent/screenshots/browser/contact-1080.png",
+      "screenshotHash": "6313bdfc254bc7fbbc9b06428de02f84cf6c33d9da9c0932ed9f35812eea37a7",
+      "initialTransferBytes": 58546,
+      "failures": [],
+      "warnings": [
+        "1 unexpected form-time network request(s) blocked"
+      ]
+    },
+    {
+      "path": "/cookie-compliance",
+      "width": 375,
+      "screenshot": "agent/screenshots/browser/cookie-compliance-375.png",
+      "screenshotHash": "e8ee14038280c082ad5d77f21423059d61348ce6280e341baa586922efe2e570",
+      "initialTransferBytes": 58421,
+      "failures": [],
+      "warnings": []
+    },
+    {
+      "path": "/cookie-compliance",
+      "width": 1080,
+      "screenshot": "agent/screenshots/browser/cookie-compliance-1080.png",
+      "screenshotHash": "2490f51a9e6a50f3a709c2f0c09fb097f13485f63d7ce45f5b96e2ca76f22812",
+      "initialTransferBytes": 58421,
+      "failures": [],
+      "warnings": []
+    }
+  ],
+  "consentChecks": [
+    {
+      "width": 375,
+      "passed": true,
+      "failures": []
+    },
+    {
+      "width": 1080,
+      "passed": true,
+      "failures": []
+    }
+  ]
+}

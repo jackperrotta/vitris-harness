@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "knowledgeVersion": "v1",
+  "labeledPreferenceData": false,
+  "purpose": "Transferable teaching principles for Vitris generation. Not a statistically validated preference dataset. Synthetic demonstrations are marked original-synthetic.",
+  "catalogFile": "catalog.json",
+  "catalogSha256": "43ebbd260ff52ae807a6ad8fa2d655b7c049608d989f93e4f212d6b7b885b0fd",
+  "demonstrations": [
+    {
+      "file": "demonstrations/project-strong.html",
+      "sha256": "07105f436077de0aeb035db9ca94b211c250f32444ee7100075ea7d414755d40",
+      "pair": "project",
+      "role": "strong"
+    },
+    {
+      "file": "demonstrations/project-weak.html",
+      "sha256": "3fe30305567728ad9d471dbfa9a6d207da2a6cce5adf3c840100ca462d9e027d",
+      "pair": "project",
+      "role": "weak"
+    },
+    {
+      "file": "demonstrations/sparse-strong.html",
+      "sha256": "aa617ceba7f12f369ac25511aa672a80525bea088817924a791520fabdca82c4",
+      "pair": "sparse",
+      "role": "strong"
+    },
+    {
+      "file": "demonstrations/sparse-weak.html",
+      "sha256": "3808c7512c6889a25b1240d4872b8279bc22b4d9edda4ea165716b270518557d",
+      "pair": "sparse",
+      "role": "weak"
+    },
+    {
+      "file": "demonstrations/services-strong.html",
+      "sha256": "fd15fc21bfff7680641a025e81c9db294378093619768a6a45372ce2982c05dc",
+      "pair": "services",
+      "role": "strong"
+    },
+    {
+      "file": "demonstrations/services-weak.html",
+      "sha256": "3895930e33a6d314db178cd2efa0c51047307517a194c377613b0b4ed018f84b",
+      "pair": "services",
+      "role": "weak"
+    },
+    {
+      "file": "demonstrations/type-strong.html",
+      "sha256": "8a5865ebea846db15e020569ac71e2be46f10628795ab460bb43ddfc03e52318",
+      "pair": "type",
+      "role": "strong"
+    },
+    {
+      "file": "demonstrations/type-weak.html",
+      "sha256": "ef6bed53327a70e251ee11244dada5ddea1e3b903d4cb4df909711b3a95f5e5b",
+      "pair": "type",
+      "role": "weak"
+    },
+    {
+      "file": "demonstrations/mobile-strong.html",
+      "sha256": "10c4fda2ec93711c74538738017e3bc2d8c1f5437a905de50b6543ddbd067eef",
+      "pair": "mobile",
+      "role": "strong"
+    },
+    {
+      "file": "demonstrations/mobile-weak.html",
+      "sha256": "ce6d5c2a513d26c5d73d1ff3497f0537b6c8643836af363935ea0709e2fec501",
+      "pair": "mobile",
+      "role": "weak"
+    },
+    {
+      "file": "demonstrations/repeat-strong.html",
+      "sha256": "9e945a5b9b998d31717e8751d03379eadfa92c4fe74f94e82236fe6acb218ef0",
+      "pair": "repeat",
+      "role": "strong"
+    },
+    {
+      "file": "demonstrations/repeat-weak.html",
+      "sha256": "351fc0a1a8798ee259c516c05dd61b7f921f4f8dfd4b8b1a9fd139932688a8eb",
+      "pair": "repeat",
+      "role": "weak"
+    },
+    {
+      "file": "demonstrations/assets/teaching-slate-slope.png",
+      "sha256": "577c5abb185108b12c76d0165fc699e006c6aa7b14ab930011cde59e9a578d9f",
+      "pair": "project",
+      "role": "photograph"
+    }
+  ]
+}

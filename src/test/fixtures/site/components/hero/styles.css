@@ -1,0 +1,4 @@
+.c-hero__copy{display:grid;gap:var(--space-4);align-content:center}
+.c-hero__copy h1{margin:0}
+.c-hero--reverse .split > :first-child{order:2}
+.c-hero.section--dark,.c-hero--dark{background:#141210;color:#F7F4EF}
