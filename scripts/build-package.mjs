@@ -10,6 +10,7 @@ const cloud=JSON.parse(readFileSync(new URL('../src/agent/theme-cloud.json',impo
 for(const e of cloud.entries){if(!e.revision||!e.pages.length||!e.base.startsWith('https://'))throw Error('Invalid hosted template catalog: '+e.theme.id);}
 await import('./build-motion-runtime.mjs');
 const bins = {
+  'vitris-icons': 'scripts/icons.ts',
   vitris: 'bin/vitris.ts', 'vitris-go': 'scripts/workflow.ts',
   'vitris-eval': 'scripts/eval-site.ts', 'vitris-build': 'src/build/cli.ts',
   'vitris-harvest': 'scripts/harvest.ts', 'vitris-prepare-media': 'scripts/prepare-media.ts',

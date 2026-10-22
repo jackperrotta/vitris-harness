@@ -72,3 +72,5 @@ New authored sites and reauthored routes compose the entire temporal journey wit
 ## Performance
 
 Used-component CSS only, islands only when needed. Give the actual LCP image priority when there is one; lazy-load images outside the initial view. Avoid `transition: all`.
+
+New builds use original Vitris SVG icons through paired `<vitris-icon name="phone"></vitris-icon>` tags. Read `agent/refs/icons.md`; use `vitris-icons inspect NAME --json` for supported families and sizing. Choose by meaning, keep a coherent family and visible service labels, and verify actual desktop/mobile rendering. The compiler emits only the geometry used by each route, with no client catalog. Studio industry support is curated to eight symbols; never synthesize unavailable variants.

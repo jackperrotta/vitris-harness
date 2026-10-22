@@ -136,3 +136,5 @@ Jev defaults to off. `--jev-mode off` on `vitris-go`, `vitris resume`, or `vitri
 ## Media library
 
 See [Stock and customer media](docs/STOCK-MEDIA.md) for inspected stock retrieval, customer identity preservation, local imports, and Jev classification/selection. `npm run stock -- --help` lists the staged acquisition and explicit publication commands.
+
+Original SVG icons are included at build time. Use paired `<vitris-icon name="phone"></vitris-icon>` tags in pages or components; each route receives only the icons it uses, without an icon font or browser runtime. Explore with `npm run icons:gallery`, discover with `vitris-icons search QUERY`, and inspect supported styles and sizing with `vitris-icons inspect NAME --json`. The collection contains 381 symbols, four core styles, and five studio families for a curated 24-symbol selection. See [the icon guide](agent/refs/icons.md).

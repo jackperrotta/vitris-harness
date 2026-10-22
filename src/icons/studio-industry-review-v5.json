@@ -1,0 +1,154 @@
+{
+  "solar-panel": {
+    "version": 5,
+    "rationale": "A pitched panel and sun remain legible across open, heavy, separated-cell and ink treatments.",
+    "note": "Use for solar installation or generation features; keep the service label. Cell patterns are illustrations, not a product specification.",
+    "minSizes": {
+      "soft": 24,
+      "block": 24,
+      "cutout": 32,
+      "imprint": 24,
+      "sketch": 24
+    },
+    "geometrySha256": {
+      "soft": "cb2826a1f553a7c4a5f4024cac65c2f75f9860829f8449db99d69eb624815203",
+      "block": "4f75ce75916fdc4a28c5d8af6147ae59ac753ec23af5a20ad56d5b3427155877",
+      "cutout": "036953083f81e7a38710c519212eca01f5d94e8bbbc170096c6b24b86863cefd",
+      "imprint": "b00cac9a6ce4fc2a4e552728a1a9b6c328348df923688e84ff20121c44b8a7f6",
+      "sketch": "e741f2f2350d5e0c893f8ab24e091148cec2e399f7b919c980cb6c7a88d3fadd"
+    }
+  },
+  "faucet": {
+    "version": 5,
+    "rationale": "The tap, shutoff handle and water drop provide distinct functional parts without fine mechanical detail.",
+    "note": "Use for plumbing or fixture services. Preserve the open space below the spout; use a core icon in compact controls.",
+    "minSizes": {
+      "soft": 24,
+      "block": 24,
+      "cutout": 24,
+      "imprint": 24,
+      "sketch": 24
+    },
+    "geometrySha256": {
+      "soft": "319a9fef6abdac0a0eb687a2a1c7c208ddceb382f32bc3fabbe4ba426a383c36",
+      "block": "e95875a7fe2c17dbdab6777234f4dffc31cda939cdc58cb9a45583d9a5174142",
+      "cutout": "4d640c3746a8e4efecc66feaa2607b8f969ef1066c82228fae7fce6a7b3f95b6",
+      "imprint": "4b11736d850909d77e32d913403778abcc19899637cd50be3c75c6e0a77ac38e",
+      "sketch": "667a921fdf1e8119509cb1349a9aec385e15e6d45b259c40f3f96ca85e409034"
+    }
+  },
+  "house-key": {
+    "version": 5,
+    "rationale": "A home silhouette and a key with lateral teeth communicate property access and transactions.",
+    "note": "Use beside property access, letting or purchase text. The symbol does not establish ownership or verification.",
+    "minSizes": {
+      "soft": 24,
+      "block": 32,
+      "cutout": 32,
+      "imprint": 24,
+      "sketch": 24
+    },
+    "geometrySha256": {
+      "soft": "3ea217f8fc7470773b1d078e9ac9a8ec83369ffe6cea374651f659e5113c5c52",
+      "block": "51b410a4139008971aff6687547ff185f82c51de07a0778ca7f8e3a9f8bf58c6",
+      "cutout": "6f53b00599d89393c379c08fc169ae23cc09c8a0bf2cbb758331486a87c0f5ec",
+      "imprint": "d76ea5c3962c89be6895eb509d59af4ffa9e004d770d61282c92b086a8caa074",
+      "sketch": "464af66fc3869b6c8983f1537993454581554285bccbbc0616c91a1206f5b0a5"
+    }
+  },
+  "croissant": {
+    "version": 5,
+    "rationale": "A curved crescent and restrained folds support expressive food styles without a faceted silhouette.",
+    "note": "Use for bakery features beside the menu or service label. Cutout needs room for its separated pastry segments.",
+    "minSizes": {
+      "soft": 24,
+      "block": 32,
+      "cutout": 32,
+      "imprint": 24,
+      "sketch": 24
+    },
+    "geometrySha256": {
+      "soft": "abc224834a4a57f96baf4d57dc6d3d6664d745b25640836e33a43ce670a2d0ad",
+      "block": "79479f1fb36458e4c9cd14b7eebab5ca88b7923947cc32c09e848e5a3b2fd6cc",
+      "cutout": "063a8d62f8e7eb7c7559d957897c2973a6d265852ede91f69bdca7e0d57c3537",
+      "imprint": "6691f9bf23743288a3ea869f71f91ea5cb94f4032bd224c097835fb1530b139b",
+      "sketch": "1688ed2ed52aaa02fc0090d1a89053aae9aab29d1a52c28cd96268b3863da708"
+    }
+  },
+  "paw": {
+    "version": 5,
+    "rationale": "Four separated toes and a rounded pad remain recognizable while allowing softer and geometric treatments.",
+    "note": "Use for pet services with a visible label; a paw is species-neutral and is not a substitute for an exact animal where that matters.",
+    "minSizes": {
+      "soft": 24,
+      "block": 24,
+      "cutout": 24,
+      "imprint": 24,
+      "sketch": 24
+    },
+    "geometrySha256": {
+      "soft": "56282054f06c40ac017127f8efa771f2d7cc2bc57d9661d60e6151a4bd5fb180",
+      "block": "8ce4d9c0777c8d3949df3f77957744f396789c07bdab924b0ff5a02cd0d0dd3f",
+      "cutout": "f6398c15f426dca202cfa58163d736ee29ae7204fd2caaf1eaa1b1af20959304",
+      "imprint": "e2d17440cf567f5a020e04c899014a88273b8d9e56c2bc69205c6443c8b2ee78",
+      "sketch": "15bee8a1d0d418318dbc2236d9b5807ca990e24278c46354ac2bd3061850615a"
+    }
+  },
+  "hair-dryer": {
+    "version": 5,
+    "rationale": "A barrel, outlet and handle identify salon equipment with few deliberate shapes.",
+    "note": "Use for hair styling or salon features. Preserve the barrel vent and outlet gaps; avoid a 16px fragmented illustration.",
+    "minSizes": {
+      "soft": 24,
+      "block": 24,
+      "cutout": 32,
+      "imprint": 24,
+      "sketch": 24
+    },
+    "geometrySha256": {
+      "soft": "aba0e5b0ba81f375f65e98999096052c6f0567c05f8c7f10527db8196a3e514b",
+      "block": "4c08715d07ee66c4108e169be4dcfaa11065780f6867c5f2fa64c71c9d9538e9",
+      "cutout": "836f70b64669c41a79aea42fdd196162879696b88e65df2a5bb4e9bdb2ba8106",
+      "imprint": "6c404d2d96eb4c743d5f5f0c410a72137f5cc49bd0e0daa55aa511d2b2b89d8d",
+      "sketch": "a75ace5c4c9533b2fa284757baacf46b15d7453f034b4aedd2c1bc4fbf2e978b"
+    }
+  },
+  "tractor": {
+    "version": 5,
+    "rationale": "A large rear wheel, smaller front wheel and cab distinguish farm machinery.",
+    "note": "Use as an agricultural feature illustration with text. Cutout, Imprint and Sketch need extra space for the cab and wheel relationship.",
+    "minSizes": {
+      "soft": 24,
+      "block": 32,
+      "cutout": 32,
+      "imprint": 32,
+      "sketch": 32
+    },
+    "geometrySha256": {
+      "soft": "75d59202eac2db33952f57381f5d68922a69da1530b0316ee47543ab5fa91f0c",
+      "block": "83945d2c53e393defcc1388d25875cd0704c22c63d162169db303be7ad77ed64",
+      "cutout": "2cd955b5cc212dccdb760e189325f8402986d716ae10f765854d393188010eae",
+      "imprint": "859212cb39ed93614c67fc20d962233a775cd78eaeedc04b89a5dca508b9efe1",
+      "sketch": "3465ac1d2768ebb0e578d01ca7917a276c4c8a509035468773c4ea0a96eae8f0"
+    }
+  },
+  "hands-care": {
+    "version": 5,
+    "rationale": "Two cupped palms and a heart express supportive care through functional pieces and restrained ink lines.",
+    "note": "Use beside the actual care or support service. Keep the heart and palms separate; this is a service illustration, not an accreditation mark.",
+    "minSizes": {
+      "soft": 24,
+      "block": 32,
+      "cutout": 32,
+      "imprint": 24,
+      "sketch": 24
+    },
+    "geometrySha256": {
+      "soft": "43817ac5fb2375f9e2898bc7328769d8e96865552f9f74c6c364752b43c59df1",
+      "block": "db85331e88df58ca624402857a5881338c6c138d11cc038f6870ae4bb580521e",
+      "cutout": "c48ce0b706711dfeb355c15934be2e31337a9e2403e851920bdcba1a31b8f8cd",
+      "imprint": "1137e6bf70312eb33683a5ffe3d8ebd7a5919744ef718372cae9e53c21ec97df",
+      "sketch": "ef1cc9bdcb3e8b0d5661081b15c80e9d0bd142c8a7198cd63b584d7af86bde79"
+    }
+  }
+}

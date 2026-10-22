@@ -14,6 +14,8 @@ import { flattenBody, instrumentSections, rewriteLeadForms, wrapMain } from "./f
 import { defaultTitleFromPath } from "./paths.ts";
 import { primitivesCss } from "./primitives.ts";
 import { prepareMotion } from "./scroll-motion.ts";
+import { compileIcons } from "./icons.ts";
+import { iconCss } from "../icons/index.ts";
 
 export { beaconJs };
 
@@ -335,6 +337,7 @@ export function compilePage(
   const flat = flattenBody(withVars, catalog, site);
   // Also expand vars inside component templates that survived flatten
   let body = applySiteVars(wrapMain(flat.html, catalog), site);
+  body = compileIcons(body, page.path);
   body = instrumentSections(body, site);
   body = rewriteLeadForms(body, kernelOrigin, page.path);
   const motion = prepareMotion(body, site);
@@ -370,6 +373,7 @@ export function usedComponents(pages: CompiledPage[]): string[] {
 
 export function siteCss(pages: CompiledPage[], catalog: Catalog): string {
   const chunks = [baseCss, primitivesCss];
+  if (pages.some(page => page.bodyHtml.includes("data-vitris-icon="))) chunks.push(iconCss);
   for (const name of usedComponents(pages)) {
     const css = catalog[name]?.css;
     if (css) chunks.push(css);

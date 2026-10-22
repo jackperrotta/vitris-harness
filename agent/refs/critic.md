@@ -25,3 +25,5 @@ Motion decision for new authoring: explicitly consider business character, usefu
 
 
 Whole-page motion responsibility: for new/reauthored routes use motionPlan v2 and read `motion-page`. Cover every authored route, including expansion/contact; locate opening, development, connected quiet intervals and closing in actual IDs. Keep essential content/actions static and readable. Representative runtime success or two colocated effects is insufficient. Inspect normal desktop/mobile full journeys and reduced/static views; critique distribution, continuity, inert stretches, competition and meaningful differences among routes with located evidence. Return actionable repairs, preserving operator off and historical records. Human preference stays unset.
+
+When reviewing new-build icons, use `icons.md`: inspect semantic fit, visible service labels, coherent supported families, actual display size, counters and duotone contrast. A reviewed master can still be used badly. An illustrative shield/check/certificate is not proof of business credentials. Locate actionable issues by route, viewport and icon.

@@ -266,7 +266,8 @@
         "design-calibration",
         "seo",
         "media",
-        "motion"
+        "motion",
+        "icons"
       ],
       "optionalRefs": [
         "design-synthesis",
@@ -364,7 +365,8 @@
         "accessibility",
         "usability",
         "media",
-        "motion"
+        "motion",
+        "icons"
       ],
       "tools": [],
       "eval": "representative",
@@ -409,7 +411,8 @@
       ],
       "refs": [
         "browser",
-        "motion"
+        "motion",
+        "icons"
       ],
       "tools": [],
       "eval": "representative-browser",
@@ -449,7 +452,8 @@
         "critic",
         "contracts",
         "design-calibration",
-        "motion"
+        "motion",
+        "icons"
       ],
       "tools": [],
       "eval": "representative-review",
@@ -559,7 +563,8 @@
         "implement",
         "accessibility",
         "performance",
-        "motion"
+        "motion",
+        "icons"
       ],
       "optionalRefs": [
         "design-synthesis",
@@ -601,7 +606,8 @@
       ],
       "refs": [
         "browser",
-        "motion"
+        "motion",
+        "icons"
       ],
       "tools": [],
       "eval": "browser",
@@ -641,7 +647,8 @@
         "contracts",
         "design-calibration",
         "media",
-        "motion"
+        "motion",
+        "icons"
       ],
       "tools": [],
       "eval": "visual-review",

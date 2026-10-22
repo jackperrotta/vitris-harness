@@ -38,3 +38,5 @@ No `schema.json`. No shared runtime catalog — uniqueness lives in this repo af
 
 
 For scroll motion, use the stage-scoped `motion.md` contract. Choose business-specific scenes and quiet intervals; preserve operator policies. Carry motionPlan v2 for every new/reauthored route (historical v1 remains compatible) from direction/storyboard to unique native/component target IDs, then inspect before/during/after normal and reduced scrolling. Temporal claims require live observations or recordings; agent review is not human preference.
+
+Use paired `<vitris-icon name="phone"></vitris-icon>` tags inside component templates or slots. Compilation resolves them after component expansion; no runtime icon registration is needed. Read `icons.md` and check exact family availability before authoring.

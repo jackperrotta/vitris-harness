@@ -4,6 +4,10 @@
   "description": "Vitris agent harness for building and verifying customer websites, with a static compiler, media tools, and optional Cloudflare backend.",
   "type": "module",
   "exports": {
+    "./icons": {
+      "types": "./bin/types/src/icons/index.d.ts",
+      "import": "./bin/api/icons.js"
+    },
     ".": {
       "types": "./bin/types/src/build/index.d.ts",
       "import": "./bin/api/index.js"
@@ -91,7 +95,8 @@
     "vitris-templates": "bin/vitris-templates.js",
     "vitris-motion-view": "bin/vitris-motion-view.js",
     "vitris-media-serve": "bin/vitris-media-serve.js",
-    "vitris-cursor-hook": "bin/vitris-cursor-hook.js"
+    "vitris-cursor-hook": "bin/vitris-cursor-hook.js",
+    "vitris-icons": "bin/vitris-icons.js"
   },
   "files": [
     "bin/**/*.js",
@@ -146,7 +151,7 @@
     "preview:prepare": "node scripts/prepare-worker-preview.mjs",
     "preview:worker": "wrangler preview --config .wrangler-preview.jsonc --ignore-base-config",
     "typecheck": "tsc --noEmit",
-    "test": "node --experimental-strip-types --test --test-concurrency=4 src/engine.test.ts src/upgrade.test.ts src/hosting.test.ts src/render.test.ts src/analytics.test.ts src/cookie-compliance.test.ts src/schema.test.ts src/patch.test.ts src/jobs.test.ts src/onboard.test.ts src/github-preview.test.ts src/agent.test.ts src/blocks.test.ts src/workflow.test.ts src/design-run.test.ts src/creative-profile.test.ts src/creative-efficiency.test.ts src/refine.test.ts src/critic-calibration.test.ts src/cli.test.ts src/jev.test.ts src/lifecycle.test.ts src/theme-lifecycle-policy.test.ts src/template-adaptation.test.ts src/adaptation-checkpoint.test.ts src/template-motion.test.ts src/template-motion-browser.test.ts src/experience-browser.test.ts src/jev-capabilities.test.ts src/jev-phase8.test.ts src/jev-prepilot.test.ts src/jev-phase0.test.ts src/jev-sept20.test.ts src/trace.test.ts src/cursor-hook.test.ts src/design-intelligence.test.ts src/design-context-integration.test.ts src/package-bin.test.ts src/knowledge-layers.test.ts src/launch-preflight.test.ts src/worker-publish.test.ts src/worker-preview.test.ts src/harness-upgrades.test.ts src/stock-media.test.ts src/harness-distribution.test.ts src/storyboard-media.test.ts src/added-media.test.ts src/lead-forms.test.ts src/composition.test.ts src/reference-library.test.ts src/art-direction.test.ts src/scroll-motion.test.ts src/scroll-motion-browser.test.ts src/artistic-motion-browser.test.ts src/page-composition.test.ts src/reference-quality.test.ts src/production-quality.test.ts src/browser-focus.test.ts src/browser-work-queue.test.ts src/quality-subject.test.ts src/preview-cli.test.ts src/theme-selection.test.ts src/site-inputs.test.ts src/fieldwell.test.ts src/still-field.test.ts src/current-craft.test.ts src/copper-chair.test.ts src/clearline.test.ts src/template-cloud.test.ts src/contact-forms.test.ts src/contact-forms-operations.test.ts src/contact-forms-browser.test.ts src/preserve.test.ts src/release-safety.test.ts",
+    "test": "node --experimental-strip-types --test --test-concurrency=4 src/icons.test.ts src/template-icon-migration.test.ts src/engine.test.ts src/upgrade.test.ts src/hosting.test.ts src/render.test.ts src/analytics.test.ts src/cookie-compliance.test.ts src/schema.test.ts src/patch.test.ts src/jobs.test.ts src/onboard.test.ts src/github-preview.test.ts src/agent.test.ts src/blocks.test.ts src/workflow.test.ts src/design-run.test.ts src/creative-profile.test.ts src/creative-efficiency.test.ts src/refine.test.ts src/critic-calibration.test.ts src/cli.test.ts src/jev.test.ts src/lifecycle.test.ts src/theme-lifecycle-policy.test.ts src/template-adaptation.test.ts src/adaptation-checkpoint.test.ts src/template-motion.test.ts src/template-motion-browser.test.ts src/experience-browser.test.ts src/jev-capabilities.test.ts src/jev-phase8.test.ts src/jev-prepilot.test.ts src/jev-phase0.test.ts src/jev-sept20.test.ts src/trace.test.ts src/cursor-hook.test.ts src/design-intelligence.test.ts src/design-context-integration.test.ts src/package-bin.test.ts src/knowledge-layers.test.ts src/launch-preflight.test.ts src/worker-publish.test.ts src/worker-preview.test.ts src/harness-upgrades.test.ts src/stock-media.test.ts src/harness-distribution.test.ts src/storyboard-media.test.ts src/added-media.test.ts src/lead-forms.test.ts src/composition.test.ts src/reference-library.test.ts src/art-direction.test.ts src/scroll-motion.test.ts src/scroll-motion-browser.test.ts src/artistic-motion-browser.test.ts src/page-composition.test.ts src/reference-quality.test.ts src/production-quality.test.ts src/browser-focus.test.ts src/browser-work-queue.test.ts src/quality-subject.test.ts src/preview-cli.test.ts src/theme-selection.test.ts src/site-inputs.test.ts src/fieldwell.test.ts src/still-field.test.ts src/current-craft.test.ts src/copper-chair.test.ts src/clearline.test.ts src/template-cloud.test.ts src/contact-forms.test.ts src/contact-forms-operations.test.ts src/contact-forms-browser.test.ts src/preserve.test.ts src/release-safety.test.ts",
     "eval:jev": "node --experimental-strip-types scripts/eval-jev.ts",
     "benchmark": "node --experimental-strip-types scripts/benchmark.ts",
     "refresh-agent": "node --experimental-strip-types scripts/refresh-agent.ts",
@@ -168,7 +173,14 @@
     "templates:gallery": "node --experimental-strip-types scripts/template-gallery.ts",
     "templates:artifact": "node --experimental-strip-types scripts/template-cloud-artifact.ts",
     "audit:package": "node scripts/audit-package.mjs",
-    "prepublishOnly": "node scripts/guard-publish.mjs"
+    "prepublishOnly": "node scripts/guard-publish.mjs",
+    "icons": "node --experimental-strip-types scripts/icons.ts",
+    "icons:artifact": "node --experimental-strip-types scripts/icons.ts gallery",
+    "icons:gallery": "node --experimental-strip-types scripts/icons.ts gallery --serve",
+    "test:icons": "node --experimental-strip-types --test src/icons.test.ts",
+    "verify:icons": "node --experimental-strip-types scripts/verify-icons.ts",
+    "icons:review-industry-studio": "node --experimental-strip-types scripts/review-industry-studio.ts",
+    "templates:icons": "node --experimental-strip-types scripts/migrate-template-icons.ts"
   },
   "engines": {
     "node": ">=24"

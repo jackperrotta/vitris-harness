@@ -1,0 +1,1794 @@
+{
+  "power-outlet": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "99c65f4ebe5baf20c0903d34902d9117c957277ec39a7fbae0eb18404b82da3d",
+    "minSize": 24,
+    "compactAlternative": "bolt",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Socket and test-equipment details are contextual; the socket is a two-slot convention, not a universal outlet standard."
+  },
+  "power-plug": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "475bf63a2fb1b7a23b011ee1ab48771da521b64f64bcadb050d703cbe3b5f662",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Socket and test-equipment details are contextual; the socket is a two-slot convention, not a universal outlet standard."
+  },
+  "circuit-breaker": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "9f0470a18a9f7d5884b615d083365fe42c2783cbd9922c5441c0c482a6de8b4b",
+    "minSize": 24,
+    "compactAlternative": "bolt",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Socket and test-equipment details are contextual; the socket is a two-slot convention, not a universal outlet standard."
+  },
+  "battery-charge": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "0a9f7332db0c1e1455083dfb9b2730c920df1a9baacc7fffe897acd7af0dc4c1",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Socket and test-equipment details are contextual; the socket is a two-slot convention, not a universal outlet standard."
+  },
+  "solar-panel": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "2b180dfd1aa00ed47b61903b5a2f95fd5c8916fc3860a0a5fa6104dc2611cf53",
+    "minSize": 24,
+    "compactAlternative": "bolt",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Socket and test-equipment details are contextual; the socket is a two-slot convention, not a universal outlet standard."
+  },
+  "pendant-light": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "1b53fcdbe8667b30303e7aa54b2ba890887b2ea129a175aa47c6dd10b574bb7f",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Socket and test-equipment details are contextual; the socket is a two-slot convention, not a universal outlet standard."
+  },
+  "ev-charger": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "73bd317302702fbe38b7fd6db4112bc86c8518dce0fd41040e8dab75c92331a2",
+    "minSize": 24,
+    "compactAlternative": "bolt",
+    "note": "Restored LCD and charging-bolt counters, and rounded the hose. Socket and test-equipment details are contextual; the socket is a two-slot convention, not a universal outlet standard."
+  },
+  "multimeter": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "33b55413454b1cf65a3c7893b45bf0c53fa7f758f00fb97e8e789c5d158e8958",
+    "minSize": 24,
+    "compactAlternative": "bolt",
+    "note": "Opened the LCD and dial counters; aligned the probes. Socket and test-equipment details are contextual; the socket is a two-slot convention, not a universal outlet standard."
+  },
+  "faucet": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "323e00415a76aaeadd6e7c51681db9412f6f564fac1737412a4c60305eb3109d",
+    "minSize": 24,
+    "compactAlternative": "droplet",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use beside the named plumbing service; valve and sewer symbols are schematic, not operating instructions."
+  },
+  "sink": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "c1247b599249a6ec1f00da8b8ab944cee4963915d65306c8b1041ddbdd0408e9",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use beside the named plumbing service; valve and sewer symbols are schematic, not operating instructions."
+  },
+  "toilet": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "acaca70f015d3e19a56d81d1a097f0cdfbd6d8ba0dd6aa6a9bcaa1dd45f945a8",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Rebalanced tank, bowl and foot, with a clear tank-to-bowl gap. Use beside the named plumbing service; valve and sewer symbols are schematic, not operating instructions."
+  },
+  "shower": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "de3eafa54140dd44b0260b39fc8eea3745485e4d870bfad9cd50a0cf717bd161",
+    "minSize": 24,
+    "compactAlternative": "droplet",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use beside the named plumbing service; valve and sewer symbols are schematic, not operating instructions."
+  },
+  "valve": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "03c465faabe21fdcc1ce45c6689c0a8eb7dcbaaeb8b3baa00349e277f12e645f",
+    "minSize": 24,
+    "compactAlternative": "droplet",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use beside the named plumbing service; valve and sewer symbols are schematic, not operating instructions."
+  },
+  "water-heater": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "00732ca2826f53e444e41b26dfff5ab1624e459d1c5f7e6a9ef11b57b7842f7a",
+    "minSize": 24,
+    "compactAlternative": "droplet",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use beside the named plumbing service; valve and sewer symbols are schematic, not operating instructions."
+  },
+  "drain": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "116129a726325f833bf069d0c6ad3e7e1a5a5161604c58d22f1bf9ac4c57ff22",
+    "minSize": 24,
+    "compactAlternative": "droplet",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use beside the named plumbing service; valve and sewer symbols are schematic, not operating instructions."
+  },
+  "sewer": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "71e24d475a2ba727a97bbddcc23760cd59a99e9521969f8967c8a2ea7e9d5290",
+    "minSize": 24,
+    "compactAlternative": "droplet",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use beside the named plumbing service; valve and sewer symbols are schematic, not operating instructions."
+  },
+  "air-conditioner": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "4ff2abf652637de525135356071de60a009e12a5f5e41cb89c249350ed2beb31",
+    "minSize": 24,
+    "compactAlternative": "thermometer",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Unit, filter and duct diagrams identify services; do not imply a specific product model or certified performance."
+  },
+  "fan": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "223eb97ed47ae84b37e21e57026f2654f1416610517cfbef0e0c30ed2aa316de",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Unit, filter and duct diagrams identify services; do not imply a specific product model or certified performance."
+  },
+  "heat-pump": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "ba645cffe7ab0458f1120ca8bfad33637d5ccd2391092dc9e09fb466ce966592",
+    "minSize": 24,
+    "compactAlternative": "thermometer",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Unit, filter and duct diagrams identify services; do not imply a specific product model or certified performance."
+  },
+  "radiator": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "226a8da3179727fe97dfd57cb2eb875c55dae8fb726e9e73c103305007627129",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Unit, filter and duct diagrams identify services; do not imply a specific product model or certified performance."
+  },
+  "ductwork": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "47a93679a1c45db95aa9ed2038b73021522c1480727dd23aa4c43ed90feea933",
+    "minSize": 24,
+    "compactAlternative": "thermometer",
+    "note": "Exposed elbow joints and bands in the filled master. Unit, filter and duct diagrams identify services; do not imply a specific product model or certified performance."
+  },
+  "air-filter": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "58f39f59834d835d87940fa7363aea37199086771dce1bb710d42e8512e7069c",
+    "minSize": 24,
+    "compactAlternative": "thermometer",
+    "note": "Contained the pleats in a roomier frame. Unit, filter and duct diagrams identify services; do not imply a specific product model or certified performance."
+  },
+  "thermostat": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "a9237f332beb1b8dd8b9b0e81a784be0953c5c91c31634a88811b917676c74ea",
+    "minSize": 24,
+    "compactAlternative": "thermometer",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Unit, filter and duct diagrams identify services; do not imply a specific product model or certified performance."
+  },
+  "airflow": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "e09e85242917d7344e20bf0a706d0ac60766450b44f858639a88ae7b3d213357",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Unit, filter and duct diagrams identify services; do not imply a specific product model or certified performance."
+  },
+  "roof-tiles": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "6b0e2ecd293686e56bc420fdd3ea3e9b9a5ea4ec170050d44d8040df3d9e0cac",
+    "minSize": 24,
+    "compactAlternative": "roof",
+    "note": "Unified the pitched covering silhouette and separated tile counters. Roof covering and drainage glyphs need service labels; gutter is a section view, not a wash basin."
+  },
+  "shingles": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "d883041cf3629df71c4ba061a4d40127661683e5ffe4b66714db64b38577b67c",
+    "minSize": 24,
+    "compactAlternative": "roof",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Roof covering and drainage glyphs need service labels; gutter is a section view, not a wash basin."
+  },
+  "gutter": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "c72e6b73dd2b3973d5ccf7492ed448036861018df2cede5a75986a2ad685a10b",
+    "minSize": 24,
+    "compactAlternative": "roof",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Roof covering and drainage glyphs need service labels; gutter is a section view, not a wash basin."
+  },
+  "downspout": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "c3433b4c37aa49899ecbb2998cea879e91b5911457296479578ce4e396cd5531",
+    "minSize": 24,
+    "compactAlternative": "roof",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Roof covering and drainage glyphs need service labels; gutter is a section view, not a wash basin."
+  },
+  "chimney": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "41d7209ef59374f3bc744fd89aa018a591578f71b860ce02b22ddb7e7a689230",
+    "minSize": 24,
+    "compactAlternative": "roof",
+    "note": "Separated roofline, shaft and cap to remove the flask-like silhouette. Roof covering and drainage glyphs need service labels; gutter is a section view, not a wash basin."
+  },
+  "siding": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "a4617ba3b573ab88d5b2cbf9c5852fd10dcd0e107d0e241c3af464869420a6d3",
+    "minSize": 24,
+    "compactAlternative": "roof",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Roof covering and drainage glyphs need service labels; gutter is a section view, not a wash basin."
+  },
+  "ladder": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "93465a5e12b3dc414232a0871bf85b8e182bdb29def9381eb43682b43ea5f5df",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Roof covering and drainage glyphs need service labels; gutter is a section view, not a wash basin."
+  },
+  "roof-inspection": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "63a7802295f0c7b59574c66005ce186bed80771fb7e01425b493e6f8b01d4688",
+    "minSize": 24,
+    "compactAlternative": "roof",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Roof covering and drainage glyphs need service labels; gutter is a section view, not a wash basin."
+  },
+  "brick-wall": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "a67621370d709eac8a7ec8a844e86559d5abd7e21433003937e408a3f9a0777a",
+    "minSize": 24,
+    "compactAlternative": "hard-hat",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Technical drawings are feature illustrations, not usable building plans or safety instructions."
+  },
+  "cement-mixer": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "294f36a5a6f7503917b705ca50bd92d45a5d1e7eb6f1a66b6209abb9af900786",
+    "minSize": 24,
+    "compactAlternative": "hard-hat",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Technical drawings are feature illustrations, not usable building plans or safety instructions."
+  },
+  "scaffold": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "11efba4ad9e9d2dda203d7fb525ecd9845d66f535be2aba6619bcfc245572d86",
+    "minSize": 24,
+    "compactAlternative": "hard-hat",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Technical drawings are feature illustrations, not usable building plans or safety instructions."
+  },
+  "blueprint": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "7cf59e1e61a35dc59c24a10976fedff89943a0637e0c5514a28ac06d5402ef4e",
+    "minSize": 32,
+    "compactAlternative": "hard-hat",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Technical drawings are feature illustrations, not usable building plans or safety instructions."
+  },
+  "workbench": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "22eec73e59307055a190e980b9acdadfd57235eac560dbf0c0b44672f2b4fd23",
+    "minSize": 24,
+    "compactAlternative": "hard-hat",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Technical drawings are feature illustrations, not usable building plans or safety instructions."
+  },
+  "wheelbarrow": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "64f60c10bee4e0b1a7a13acc3b7b4932df2c0481f6d1c6baa7854625b9aac4eb",
+    "minSize": 24,
+    "compactAlternative": "hard-hat",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Technical drawings are feature illustrations, not usable building plans or safety instructions."
+  },
+  "house-frame": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "68f0f768e11998aa4093d7576e3b7dfae3d4727a313efdeef20496f4f0b40814",
+    "minSize": 32,
+    "compactAlternative": "hard-hat",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Technical drawings are feature illustrations, not usable building plans or safety instructions."
+  },
+  "drywall": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "7cfbe8a47667043c5f95b062e11e38eb07bed69b11e3586ab6619cdaf305a455",
+    "minSize": 24,
+    "compactAlternative": "hard-hat",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Technical drawings are feature illustrations, not usable building plans or safety instructions."
+  },
+  "excavator": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "f7610ec6753e71a3f10ec7d6bf8902b07e8c52e83e12b633a6c44b12f2131803",
+    "minSize": 24,
+    "compactAlternative": "hard-hat",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Keep machine silhouettes beside their equipment or service names; use a simpler construction symbol for compact navigation."
+  },
+  "bulldozer": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "e2d54711c9ac448e9de56ab00ad11a6535cc5ab805801007b468e77bac4f6971",
+    "minSize": 24,
+    "compactAlternative": "hard-hat",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Keep machine silhouettes beside their equipment or service names; use a simpler construction symbol for compact navigation."
+  },
+  "dump-truck": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "5786c875c19c4b699f205588e52a470467f26ef33a22131f8c5c665039a3d358",
+    "minSize": 24,
+    "compactAlternative": "hard-hat",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Keep machine silhouettes beside their equipment or service names; use a simpler construction symbol for compact navigation."
+  },
+  "road-roller": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "82e91b05e4453823e28e1d1d816aa4af601e3f0bfeffdbe00a79cc69f49b01b5",
+    "minSize": 24,
+    "compactAlternative": "hard-hat",
+    "note": "Added cab-window space and separated the drum and wheel. Keep machine silhouettes beside their equipment or service names; use a simpler construction symbol for compact navigation."
+  },
+  "shovel": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "f9b11d5a981d4c1b94ee3c899f27b2588bcee2b344a83297759639a600ba3b20",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Keep machine silhouettes beside their equipment or service names; use a simpler construction symbol for compact navigation."
+  },
+  "traffic-cone": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "b68d2271d3fbcf44c5938cd6b1ebb5b61219cc8bf23d342a2c0dd838948a20da",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Keep machine silhouettes beside their equipment or service names; use a simpler construction symbol for compact navigation."
+  },
+  "road": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "0cd6b9f8f121f3f1a5f9aeedd908a7943dc51cc8537ff62024edb3efe03c2875",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Keep machine silhouettes beside their equipment or service names; use a simpler construction symbol for compact navigation."
+  },
+  "foundation": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "400b26c9282b38ba965248638d552b05001d9ba16866ed708a1af2754d6d7b45",
+    "minSize": 32,
+    "compactAlternative": "hard-hat",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Keep machine silhouettes beside their equipment or service names; use a simpler construction symbol for compact navigation."
+  },
+  "broom": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "74b16938ab8d6a353c6eaee3f4f6ef3a35f63049228289c766e29b36380a145e",
+    "minSize": 24,
+    "compactAlternative": "sparkles",
+    "note": "Fanned the bristle head and opened bristle slots. Select the actual tool or service; mop, broom and squeegee are different tools, not interchangeable decoration."
+  },
+  "mop": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "c621e3a5dd9475dd1e128b5c95749afe2551af4bf924e736159277a93fb25970",
+    "minSize": 24,
+    "compactAlternative": "sparkles",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Select the actual tool or service; mop, broom and squeegee are different tools, not interchangeable decoration."
+  },
+  "bucket": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "a0d03ce0d9ce134ac709767963a6526649f6b3912a644e4369709c5ed2e1ee48",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Select the actual tool or service; mop, broom and squeegee are different tools, not interchangeable decoration."
+  },
+  "spray-bottle": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "23a1aeb2765f007c892307a6ce6a73945127e1b1b8eeefbaec0871693da0e010",
+    "minSize": 24,
+    "compactAlternative": "sparkles",
+    "note": "Connected trigger, neck and bottle; opened the label counter. Select the actual tool or service; mop, broom and squeegee are different tools, not interchangeable decoration."
+  },
+  "vacuum": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "8eaca7aa7b8e4c0c10270633a0cd79232f0fb8ae50f13f5bbfbcc0dbd83b84e6",
+    "minSize": 24,
+    "compactAlternative": "sparkles",
+    "note": "Redrew canister, curved hose and floor head as distinct parts. Select the actual tool or service; mop, broom and squeegee are different tools, not interchangeable decoration."
+  },
+  "squeegee": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "9febe1ddb86e2c0ee27cc8beb3b72256255a3575ed80924dbf0f965f2ef399e9",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Select the actual tool or service; mop, broom and squeegee are different tools, not interchangeable decoration."
+  },
+  "laundry": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "a857b2aabe5718113613cd635783f5019d6996e353a36033639b914502368121",
+    "minSize": 24,
+    "compactAlternative": "sparkles",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Select the actual tool or service; mop, broom and squeegee are different tools, not interchangeable decoration."
+  },
+  "pressure-washer": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "5d4ae6ce68a0584535d51fff5918572310b5a435a6f884f4e945f7cf765aeac7",
+    "minSize": 24,
+    "compactAlternative": "sparkles",
+    "note": "Separated the hose, spray gun, spray marks and wheels. Select the actual tool or service; mop, broom and squeegee are different tools, not interchangeable decoration."
+  },
+  "lawnmower": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "6a7b8da1a39d1b067c0c873ffecadd8259b0f86728e70c1d28a32065baf0c55d",
+    "minSize": 24,
+    "compactAlternative": "leaf",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use the named garden service or tool; diagrams belong at feature scale."
+  },
+  "hedge-trimmer": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "8c7cf9f21b2fe35b71a6d799703cdfc3dd953081a2c96d54b99bb845fe482629",
+    "minSize": 24,
+    "compactAlternative": "leaf",
+    "note": "Replaced the flag-like blade with alternating cutting teeth. Use the named garden service or tool; diagrams belong at feature scale."
+  },
+  "watering-can": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "b37e6dd0a02a68973c56596610b74a042b2a4cbe2cd0f6957f5e915c9f486f6b",
+    "minSize": 24,
+    "compactAlternative": "leaf",
+    "note": "Narrowed the spout and separated its rose from the body. Use the named garden service or tool; diagrams belong at feature scale."
+  },
+  "sprinkler": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "89406496720556f52c6641ddd238c8f1938923051683c6583f2b654b3e154d14",
+    "minSize": 24,
+    "compactAlternative": "leaf",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use the named garden service or tool; diagrams belong at feature scale."
+  },
+  "chainsaw": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "c3208f2ba2672427206cb85cdffa81a0e21e739d379dfc2ab0e3b391683485ed",
+    "minSize": 24,
+    "compactAlternative": "leaf",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use the named garden service or tool; diagrams belong at feature scale."
+  },
+  "garden-fork": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "649e5c10b29f4ac97a763991a659eb97777df80bfd7323970a0f8f3cbc5cc13b",
+    "minSize": 24,
+    "compactAlternative": "leaf",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use the named garden service or tool; diagrams belong at feature scale."
+  },
+  "tree-stump": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "8d2814ff3cda587ea05246713fe5c15b8b99e10268508e8ac2c69fbbd9511155",
+    "minSize": 24,
+    "compactAlternative": "leaf",
+    "note": "Added an elliptical cut face and controlled bark grooves. Use the named garden service or tool; diagrams belong at feature scale."
+  },
+  "landscape-plan": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "626a2250125fd31a3991fc07f16d25d4506809aebe15e8fc6443d6c6b6472d5b",
+    "minSize": 32,
+    "compactAlternative": "leaf",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use the named garden service or tool; diagrams belong at feature scale."
+  },
+  "for-sale": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "005e69f6e8ced98fe425ed85219f49b9188a76c7a6dbb7fc4bd2c02a7e81f815",
+    "minSize": 24,
+    "compactAlternative": "house",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Pair property and document glyphs with the actual offering; a deed or check does not establish ownership or verification."
+  },
+  "floor-plan": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "578a84497a48360cdc1285f72f91d6055a02f5abebfcebc53df651001b185cbe",
+    "minSize": 32,
+    "compactAlternative": "house",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Pair property and document glyphs with the actual offering; a deed or check does not establish ownership or verification."
+  },
+  "apartments": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "123d8cad5b60b66239538cada05f55f03de58e57222418b1955c65fd32049ad1",
+    "minSize": 24,
+    "compactAlternative": "house",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Pair property and document glyphs with the actual offering; a deed or check does not establish ownership or verification."
+  },
+  "house-key": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "070435538c07e64da6ca014ca524fe3a16b98f71f962710db47b78d5fb4f2153",
+    "minSize": 24,
+    "compactAlternative": "house",
+    "note": "Separated the house and key; added clear lateral key teeth. Pair property and document glyphs with the actual offering; a deed or check does not establish ownership or verification."
+  },
+  "house-check": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "b97f3ac87ce67c1c0612354a3b54d7ce99f397c48ce7bfc2650184625ad5efd7",
+    "minSize": 24,
+    "compactAlternative": "house",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Pair property and document glyphs with the actual offering; a deed or check does not establish ownership or verification."
+  },
+  "open-house": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "00f8522342f61d9330b8dd92e770820557a13882605ac07cd3b6f29a167a7779",
+    "minSize": 24,
+    "compactAlternative": "house",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Pair property and document glyphs with the actual offering; a deed or check does not establish ownership or verification."
+  },
+  "location-house": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "2cc48f36e8baf7e1873d3dd8873e3a207cdd6b047968a9a56f179f8f89d58d69",
+    "minSize": 24,
+    "compactAlternative": "house",
+    "note": "Opened a recognizable house counter within the filled pin. Pair property and document glyphs with the actual offering; a deed or check does not establish ownership or verification."
+  },
+  "property-deed": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "7155804c85afbfe54533ffcc0ff88be6f32710ad380be1583f4ae6bbec8431b2",
+    "minSize": 24,
+    "compactAlternative": "house",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Pair property and document glyphs with the actual offering; a deed or check does not establish ownership or verification."
+  },
+  "scales": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "7ba5be25f45f84631f8e1a267cc50de29ef52b815423b9e741f2bca7fc3f833d",
+    "minSize": 24,
+    "compactAlternative": "document",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use beside the named legal service; these are illustrations, not endorsements, legal status or accreditation marks."
+  },
+  "gavel": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "9bc723f05a37e5042286baf65644c6606d82bf25bba66ced24005dd3ef77c530",
+    "minSize": 24,
+    "compactAlternative": "document",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use beside the named legal service; these are illustrations, not endorsements, legal status or accreditation marks."
+  },
+  "courthouse": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "3ed184cf4ed05f7cd2de19f562a8d1dac3faab4c0b96497d7f23cb9c88e44497",
+    "minSize": 24,
+    "compactAlternative": "document",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use beside the named legal service; these are illustrations, not endorsements, legal status or accreditation marks."
+  },
+  "legal-contract": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "b8c219794ecb87164b28d3dd67eb819ad8f05d93745c53964aa1a62798d212ad",
+    "minSize": 24,
+    "compactAlternative": "document",
+    "note": "Opened document space and separated the diagonal signing pen. Use beside the named legal service; these are illustrations, not endorsements, legal status or accreditation marks."
+  },
+  "law-book": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "5d61992edc30fc71e43fe7e410c3ceda9115a645601bffa703aea9c818783e39",
+    "minSize": 24,
+    "compactAlternative": "document",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use beside the named legal service; these are illustrations, not endorsements, legal status or accreditation marks."
+  },
+  "justice": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "7ad5af88c05e8ea327d339fdab979cf1296e932dfd247fa1e8b22e54a7e12a1d",
+    "minSize": 24,
+    "compactAlternative": "document",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use beside the named legal service; these are illustrations, not endorsements, legal status or accreditation marks."
+  },
+  "consultation": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "dc38006fe1728bf47ad71062828cb055b31faa8071c814f6b6865796b4094d0b",
+    "minSize": 24,
+    "compactAlternative": "document",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use beside the named legal service; these are illustrations, not endorsements, legal status or accreditation marks."
+  },
+  "estate-plan": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "deff9854cab3978a62e3ddada8adea3f087ac3fba50f0a0fea343a8934b8ac88",
+    "minSize": 24,
+    "compactAlternative": "document",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use beside the named legal service; these are illustrations, not endorsements, legal status or accreditation marks."
+  },
+  "hospital": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "053ea173c4e9284b80ff13fe4cb8cd4dae050dc548627f8baf6705f44e151d8b",
+    "minSize": 24,
+    "compactAlternative": "medical-cross",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use only for the stated service; a symbol alone must not communicate diagnosis, clinical advice or patient eligibility."
+  },
+  "syringe": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "82b40695c7fb4ddb723c791bda406420ff45c599b91403ba6649f5d388452c4a",
+    "minSize": 24,
+    "compactAlternative": "medical-cross",
+    "note": "Aligned barrel, plunger, graduations and needle. Use only for the stated service; a symbol alone must not communicate diagnosis, clinical advice or patient eligibility."
+  },
+  "ultrasound": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "1cf62213ec7bf6d2aa6e846abe7ec1070b855f7677a83c5d9b3ae5076101b6d3",
+    "minSize": 24,
+    "compactAlternative": "medical-cross",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use only for the stated service; a symbol alone must not communicate diagnosis, clinical advice or patient eligibility."
+  },
+  "maternity": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "e0679e43e8539432df224ff779789a6bc0b9767e6326325d51ab539a73e4b6c7",
+    "minSize": 24,
+    "compactAlternative": "medical-cross",
+    "note": "Rebalanced the side profile, belly and cradling arm. Use only for the stated service; a symbol alone must not communicate diagnosis, clinical advice or patient eligibility."
+  },
+  "womens-health": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "8dacec074e889000511df0d19825a8d7c2f32181f6ac1071f525b2d0a06ac5b8",
+    "minSize": 24,
+    "compactAlternative": "medical-cross",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use only for the stated service; a symbol alone must not communicate diagnosis, clinical advice or patient eligibility."
+  },
+  "dental-implant": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "3d9f8f55f45d605de76c9b92fdad2c106fa02c18d533be156ee60ef6cfebe06b",
+    "minSize": 24,
+    "compactAlternative": "medical-cross",
+    "note": "Separated the crown and threaded post with intentional counters. Use only for the stated service; a symbol alone must not communicate diagnosis, clinical advice or patient eligibility."
+  },
+  "brain": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "7875907e49216dd437024eb5a520b7e9e3fffc4c61434ed39b8bceec06521ce5",
+    "minSize": 24,
+    "compactAlternative": "medical-cross",
+    "note": "Replaced clover-like lobes with curved cerebral hemispheres. Use only for the stated service; a symbol alone must not communicate diagnosis, clinical advice or patient eligibility."
+  },
+  "bone-joint": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "6ef69f2867505c31c98436cfa53c86c6aa63f98d72a080b4a3eae962b390d383",
+    "minSize": 24,
+    "compactAlternative": "medical-cross",
+    "note": "Replaced the single bone with two separated articulating ends. Use only for the stated service; a symbol alone must not communicate diagnosis, clinical advice or patient eligibility."
+  },
+  "walking-aid": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "6c47d4d28aa0d8986caf52bf0af63e14c2f3ee29569d810948b4c0d8b35f6c06",
+    "minSize": 24,
+    "compactAlternative": "heart",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Describe the actual care offering in text; accessibility and professional-care symbols do not establish compliance or qualifications."
+  },
+  "wheelchair": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "ebeb92f05cf3f7a0346da679e2a765282cc0403533aa8e2d263fa2c4bbc19754",
+    "minSize": 24,
+    "compactAlternative": "heart",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Describe the actual care offering in text; accessibility and professional-care symbols do not establish compliance or qualifications."
+  },
+  "home-care": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "286bca3005229f6f0a2fe5c583b9c4a2baeeacbccb3342d07852b3f96ad70627",
+    "minSize": 24,
+    "compactAlternative": "heart",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Describe the actual care offering in text; accessibility and professional-care symbols do not establish compliance or qualifications."
+  },
+  "nurse": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "3a750f2b4f61f12202fc5df533999ded104498917424bbe1f0dee9d542cf9280",
+    "minSize": 24,
+    "compactAlternative": "heart",
+    "note": "Rebalanced cap, head and shoulders, with a single cross counter. Describe the actual care offering in text; accessibility and professional-care symbols do not establish compliance or qualifications."
+  },
+  "hands-care": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "d44d8eed03ef5ec2e4627a123c99ea1c582f1764759c1cabf8dd9e16a92df933",
+    "minSize": 24,
+    "compactAlternative": "heart",
+    "note": "Replaced crossed shapes with two cupped palms beneath a heart. Describe the actual care offering in text; accessibility and professional-care symbols do not establish compliance or qualifications."
+  },
+  "pill-organizer": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "28c83d2f4c11b6669007ec594bc49b4cc86760fdff1b31bab1de1e99bf2838e8",
+    "minSize": 24,
+    "compactAlternative": "heart",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Describe the actual care offering in text; accessibility and professional-care symbols do not establish compliance or qualifications."
+  },
+  "meal-care": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "82aaf229756314672d9f027a5528c4a3df08ef1f71c6eb3100710997f2074c2d",
+    "minSize": 24,
+    "compactAlternative": "heart",
+    "note": "Replaced plain side bars with recognizable fork and spoon. Describe the actual care offering in text; accessibility and professional-care symbols do not establish compliance or qualifications."
+  },
+  "accessible-bath": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "470535eb85e942ab30d7ee792ef3e3f2570029bbe5961c316177ccd1b3797a9a",
+    "minSize": 24,
+    "compactAlternative": "heart",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Describe the actual care offering in text; accessibility and professional-care symbols do not establish compliance or qualifications."
+  },
+  "razor": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "fcd7bf1e8c710e39ac6db6bc9997cc32ac7ecb30989075ac90ade29c14a861dc",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Choose the treatment or equipment actually offered; keep product and tool glyphs beside a readable label."
+  },
+  "hair-clipper": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "27cbb41cddc89e374cf630e852217c4131ca26ee66a8d2eb93b380aede3ed381",
+    "minSize": 24,
+    "compactAlternative": "scissors",
+    "note": "Added comb teeth, blade separation and a switch counter. Choose the treatment or equipment actually offered; keep product and tool glyphs beside a readable label."
+  },
+  "comb": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "69c478358f376fd884758ad31cd499007d9b7404cc415e1c466a289b5ea58122",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Choose the treatment or equipment actually offered; keep product and tool glyphs beside a readable label."
+  },
+  "hair-dryer": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "16ba457ed32070d604e6aea486521acd5ab3516aeeadc694bd4d58d0903135b2",
+    "minSize": 24,
+    "compactAlternative": "scissors",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Choose the treatment or equipment actually offered; keep product and tool glyphs beside a readable label."
+  },
+  "salon-chair": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "7237b44b6210837d89bf66b5043f05434bd9e709ae57e82996c9cf2a7f9f80fe",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Choose the treatment or equipment actually offered; keep product and tool glyphs beside a readable label."
+  },
+  "manicure": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "3249eb61d8a914ec533a1a10dcbfc9f2f71cd9ea4a80ac80288a05af5b60343b",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Choose the treatment or equipment actually offered; keep product and tool glyphs beside a readable label."
+  },
+  "mirror": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "ca6be61d3f41d93d5c3bc46258682c048e830c250d4d58b65a5e8dae3d706e17",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Choose the treatment or equipment actually offered; keep product and tool glyphs beside a readable label."
+  },
+  "hair-color": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "44f24410452ef0f0faeda3fa58afd07e51f614d6d0b7091f430e6c7dcfd4ccec",
+    "minSize": 24,
+    "compactAlternative": "scissors",
+    "note": "Replaced flag-like containers with a pump bottle and capped applicator. Choose the treatment or equipment actually offered; keep product and tool glyphs beside a readable label."
+  },
+  "massage": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "3d402afb5660db7e3eae8b313006406d046f6f71c2a9a65be565bb625fa2cd0b",
+    "minSize": 24,
+    "compactAlternative": "spa",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use alongside the named treatment; illustrations must not imply unsupported health outcomes."
+  },
+  "hot-stones": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "1d6385b1e28fb123f40e8f0170ef489f88443486735856d378bc579e0aa19cbd",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use alongside the named treatment; illustrations must not imply unsupported health outcomes."
+  },
+  "aroma": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "3e9b3f71f7977f5749ae7ba4ecf50d664cdff62084b13bcbc9921b99ef259e11",
+    "minSize": 24,
+    "compactAlternative": "spa",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use alongside the named treatment; illustrations must not imply unsupported health outcomes."
+  },
+  "candle": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "550b2f38eed364d3b6e57683c6725f8c31e95018697862107107f8469252396f",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use alongside the named treatment; illustrations must not imply unsupported health outcomes."
+  },
+  "yoga": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "fe4c08afe7423cded64eb3ea67426f5184925184320372bdf8f95a5fbee81098",
+    "minSize": 24,
+    "compactAlternative": "spa",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use alongside the named treatment; illustrations must not imply unsupported health outcomes."
+  },
+  "acupuncture": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "e80d6445d9f42aa6ceb406ece04dccea7fc9a67037d3262863bf5975d24c4341",
+    "minSize": 24,
+    "compactAlternative": "spa",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use alongside the named treatment; illustrations must not imply unsupported health outcomes."
+  },
+  "sauna": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "c5eac1fe3e651dd3d5546afaae7bff4267f6de51eb786f83c535f60c979b3b6e",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use alongside the named treatment; illustrations must not imply unsupported health outcomes."
+  },
+  "facial": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "312e4ae8968a165f6a7fb1f5fe56518f0665eb8448c311b1d326fb0aced40809",
+    "minSize": 24,
+    "compactAlternative": "spa",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use alongside the named treatment; illustrations must not imply unsupported health outcomes."
+  },
+  "chip-repair": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "685ac4217c9c54db09f3f175d00dffc6dcdaeacf43fac81b5bc8ba4233d8da09",
+    "minSize": 24,
+    "compactAlternative": "wrench",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Select the device or repair process accurately; cracked screens and diagnostic traces are illustrative."
+  },
+  "soldering-iron": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "b3826fde591c9daae8554e2b1f63c68bb138ee833218354371116424d6cac28f",
+    "minSize": 24,
+    "compactAlternative": "wrench",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Select the device or repair process accurately; cracked screens and diagnostic traces are illustrative."
+  },
+  "screen-repair": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "e47d7d7ce6dc9769e4e4041802a53e2d4b8e79a0f479ae6f61eb4f6382887a9b",
+    "minSize": 24,
+    "compactAlternative": "wrench",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Select the device or repair process accurately; cracked screens and diagnostic traces are illustrative."
+  },
+  "phone-repair": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "38cd4edc4921c4f0b2fee8f4f785a772fd231025c1d193b8650f6176634655ec",
+    "minSize": 24,
+    "compactAlternative": "wrench",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Select the device or repair process accurately; cracked screens and diagnostic traces are illustrative."
+  },
+  "battery-replace": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "6b05f4891d26008b391c95ef4b3a1007bfc63bfc2203fb55cb2e62a1f6a2386f",
+    "minSize": 24,
+    "compactAlternative": "wrench",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Select the device or repair process accurately; cracked screens and diagnostic traces are illustrative."
+  },
+  "hard-drive": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "0fbcf43647d0d49014cdf0d70da31adad0bbdbb06ee6edd48d7c69bebd86cd96",
+    "minSize": 24,
+    "compactAlternative": "wrench",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Select the device or repair process accurately; cracked screens and diagnostic traces are illustrative."
+  },
+  "diagnostics": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "697635bb97876a080a225ad8bc7e8db9901ad32ee19ffb43ed91a8796dbf1c89",
+    "minSize": 24,
+    "compactAlternative": "wrench",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Select the device or repair process accurately; cracked screens and diagnostic traces are illustrative."
+  },
+  "repair-tools": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "16ded9c91e78d3e1a794cb2755e82610c68603092d561c6dd5339d32daee8c16",
+    "minSize": 24,
+    "compactAlternative": "wrench",
+    "note": "Opened the wrench jaw and balanced the crossed tool silhouettes. Select the device or repair process accurately; cracked screens and diagnostic traces are illustrative."
+  },
+  "api": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "83ef6ae7d0c6b844ac47b2afe6f2f23286db22c7c42015d79d06bb443e7cdfec",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Technical metaphors need labels; a network diagram does not establish AI capability or security."
+  },
+  "cloud-code": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "7047cc401cdee1bab4cbfeb146f1d02e35abf3e6673124cef3e309266f9559dd",
+    "minSize": 24,
+    "compactAlternative": "code",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Technical metaphors need labels; a network diagram does not establish AI capability or security."
+  },
+  "ai-network": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "f49fd8f74ae8cd6d241ae3a4fb0e63edb540334f1d62d2c785da06c95e0dc4e6",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Technical metaphors need labels; a network diagram does not establish AI capability or security."
+  },
+  "workflow": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "3c1f226d9f2edb32e5ce4d004ce5d44045a5f97ce2820cc614be99199cb7a009",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Technical metaphors need labels; a network diagram does not establish AI capability or security."
+  },
+  "subscription": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "5ee1d5095f22c52d59dddf9a76f320ef3f92b9e4118c248279f88755ca017298",
+    "minSize": 24,
+    "compactAlternative": "code",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Technical metaphors need labels; a network diagram does not establish AI capability or security."
+  },
+  "dashboard": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "2c403f1f10161c5845969182003cc3667dd4bd00735f7c4cfbd913e4562116c1",
+    "minSize": 24,
+    "compactAlternative": "code",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Technical metaphors need labels; a network diagram does not establish AI capability or security."
+  },
+  "code-branch": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "a5dfb67a7ac22235730b472a11e46a4ad31d09391209cca3013f72668f7d19d1",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Technical metaphors need labels; a network diagram does not establish AI capability or security."
+  },
+  "bug": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "8f7d2f34764bfcfe3419e9f9d357d0739dc8f03fd8820f95e4f14de917870aef",
+    "minSize": 24,
+    "compactAlternative": "code",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Technical metaphors need labels; a network diagram does not establish AI capability or security."
+  },
+  "vector-pen": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "029e90b64288de39befb2defbf24b3d36d254005bdcb9790550b6fb5ede2040c",
+    "minSize": 24,
+    "compactAlternative": "palette",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the named creative discipline; the generic brand-mark illustration is not a customer logo."
+  },
+  "layers": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "6888374fead7b0b92b7193f43bd384a5c76c88329d4ff778c35b15b5772c7b59",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the named creative discipline; the generic brand-mark illustration is not a customer logo."
+  },
+  "color-swatches": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "c05ab8166a09a462a2d297631032eab4626e07dad3934f8f527f17e1aff479a8",
+    "minSize": 24,
+    "compactAlternative": "palette",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the named creative discipline; the generic brand-mark illustration is not a customer logo."
+  },
+  "typography": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "894346cdd1b4af2fb598f770976f9467e96114c6b891e0b1256ab4afdeff3b47",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the named creative discipline; the generic brand-mark illustration is not a customer logo."
+  },
+  "motion-design": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "6c486ef04cead1878d5ad8014776b05852964375a44c9690a3a832abaccf293a",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the named creative discipline; the generic brand-mark illustration is not a customer logo."
+  },
+  "film-camera": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "d215d7a80a7ec1b4a48459648a6b9e742d82167baa63d622faaacbf772166002",
+    "minSize": 24,
+    "compactAlternative": "palette",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the named creative discipline; the generic brand-mark illustration is not a customer logo."
+  },
+  "storyboard": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "82f62d01d288c65b54d82cd9e4e44a66d6ee0979de6a85737b699c9636f96fb2",
+    "minSize": 24,
+    "compactAlternative": "palette",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the named creative discipline; the generic brand-mark illustration is not a customer logo."
+  },
+  "brand-mark": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "3d65b0aa79c8e4d84a2a2be76e2db93291aff27cfeaf06cf48edaac28a506870",
+    "minSize": 24,
+    "compactAlternative": "palette",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the named creative discipline; the generic brand-mark illustration is not a customer logo."
+  },
+  "burger": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "48d6fc1d950e13fad2b7f0a356b394b15bd6cf8c5ecf50af7d74115c592a89c0",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Pair with menu or service text; food silhouettes must not serve as allergen or dietary claims."
+  },
+  "fish": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "952e117d7806a16f8fe222c796a8d1218d794de1b08e17c714195c2accb93116",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Pair with menu or service text; food silhouettes must not serve as allergen or dietary claims."
+  },
+  "bread": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "561d19c724f76b993b850033d385daf46b8f6f01dc0440bc657d8e10f77b2363",
+    "minSize": 24,
+    "compactAlternative": "utensils",
+    "note": "Reshaped the loaf and opened two scoring cuts. Pair with menu or service text; food silhouettes must not serve as allergen or dietary claims."
+  },
+  "croissant": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "8d743df0ae512881a91ddc155d852964565048f98e62a4a944bb09355f30735b",
+    "minSize": 24,
+    "compactAlternative": "utensils",
+    "note": "Replaced the faceted gem silhouette with a curved crescent and pastry folds. Pair with menu or service text; food silhouettes must not serve as allergen or dietary claims."
+  },
+  "sushi": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "fa14b04b5333dca1e47649c94b5a44cf5765b9332260c3a53418e775d5cb79ef",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Pair with menu or service text; food silhouettes must not serve as allergen or dietary claims."
+  },
+  "taco": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "a5bd8fb2a24cb2b93eaeb19c5e2015f098fcd4393c44ce8083732b4dfbf8fba2",
+    "minSize": 24,
+    "compactAlternative": "utensils",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Pair with menu or service text; food silhouettes must not serve as allergen or dietary claims."
+  },
+  "takeaway": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "4dbd0437abb26050bb2b6b97a1beba0b3fee53910ec1177d171030c95f18c5e5",
+    "minSize": 24,
+    "compactAlternative": "utensils",
+    "note": "Preserved folded flaps in the filled carton. Pair with menu or service text; food silhouettes must not serve as allergen or dietary claims."
+  },
+  "restaurant-menu": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "6c17654e3dc10dbba3418aef1423afa66c7fe4bd940a2a7d1bb66c7037b1beba",
+    "minSize": 24,
+    "compactAlternative": "utensils",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Pair with menu or service text; food silhouettes must not serve as allergen or dietary claims."
+  },
+  "hanger": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "9eee5e38abcb8a207fb9d8bec6bad2bb1572fba015e9edf8e61d52eb5ac81144",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the actual product category or shopping action; keep transactional actions clearly labelled."
+  },
+  "shoe": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "bc471796beaf966a1f81baf12a1c25f96b7919aa9f9e86548e4e1ab28e8ac6e3",
+    "minSize": 24,
+    "compactAlternative": "bag",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the actual product category or shopping action; keep transactional actions clearly labelled."
+  },
+  "necklace": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "e433acb617c6d1e64350247d6559a25397f5d8afb9328a3309ec513684920c4a",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the actual product category or shopping action; keep transactional actions clearly labelled."
+  },
+  "perfume": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "97d46d38f16d168a79ed9e9a8003285ddc0d55460789d0236c8d2fa04694f82e",
+    "minSize": 24,
+    "compactAlternative": "bag",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the actual product category or shopping action; keep transactional actions clearly labelled."
+  },
+  "cosmetics": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "9bb2eb88c978f7ab51384711548eb00458d3c90a7a70df9f67ee46143b40eb93",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the actual product category or shopping action; keep transactional actions clearly labelled."
+  },
+  "cash-register": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "0e44feee1d3739a35e072af87f82146430da3c8a3931e233408382bee414c630",
+    "minSize": 24,
+    "compactAlternative": "bag",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the actual product category or shopping action; keep transactional actions clearly labelled."
+  },
+  "product-shelves": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "82e9cc75c3e084a67385596f77e161d2e045730d9424d513a99bc90336c63215",
+    "minSize": 24,
+    "compactAlternative": "bag",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the actual product category or shopping action; keep transactional actions clearly labelled."
+  },
+  "returns": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "883305b93519556970023342efc9dbd35134500b94382c6854c65d4aef9d655a",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the actual product category or shopping action; keep transactional actions clearly labelled."
+  },
+  "bank": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "9cbc40ba95f2a5c7972a01205a2db32cf809ad9fb3d5ee47267802249c1296be",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use beside the stated finance service; shields, checks and documents are not guarantees or verified credentials."
+  },
+  "calculator": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "6b8b4b83034e5633c7d133a5992e4c8c9dc533c0bd1a7672355445bbd426a97b",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use beside the stated finance service; shields, checks and documents are not guarantees or verified credentials."
+  },
+  "piggy-bank": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "d5a269d1a9e78625232d1686f6574658c2a0a283b128cc3a742a83249e79c135",
+    "minSize": 24,
+    "compactAlternative": "wallet",
+    "note": "Rounded the body and separated feet, snout, ear and coin slot. Use beside the stated finance service; shields, checks and documents are not guarantees or verified credentials."
+  },
+  "safe": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "05ae4c7ff523652648275b1ce5d4cf96c4075b62d723d6971e886170740bc271",
+    "minSize": 24,
+    "compactAlternative": "wallet",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use beside the stated finance service; shields, checks and documents are not guarantees or verified credentials."
+  },
+  "tax-report": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "6df92080b2a59074bed2158964b5d44eaab778e186c119bf856ec720c768c5bd",
+    "minSize": 24,
+    "compactAlternative": "wallet",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use beside the stated finance service; shields, checks and documents are not guarantees or verified credentials."
+  },
+  "insurance": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "7bc04396dc36916297fddf1d71ab1ec16c2378c1e6a876c030bb66f81849ea59",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use beside the stated finance service; shields, checks and documents are not guarantees or verified credentials."
+  },
+  "mortgage": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "dbfbcecc87ed4467de40bc0714c705df71fd8d058f13b72f04780517ba6faa9a",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use beside the stated finance service; shields, checks and documents are not guarantees or verified credentials."
+  },
+  "financial-contract": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "4189bb036fa44943f9cd49ad206e1a168fff0702d21beb765c6e9b6bb021d248",
+    "minSize": 24,
+    "compactAlternative": "wallet",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use beside the stated finance service; shields, checks and documents are not guarantees or verified credentials."
+  },
+  "book-open": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "fc6d1bf6249d84e8625976c26d04f6da0200c0160ca85310d52ee99284ef2ed1",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the subject or learning action; certificates and caps do not establish accreditation."
+  },
+  "graduation-cap": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "9a14b9a10bac5d545c258112a4da4d2f882def27cbb27127a45113177878b274",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the subject or learning action; certificates and caps do not establish accreditation."
+  },
+  "school": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "0d0c04f21941b1a909c35cd5aac3a6f7b519f09b78d74bdd4a9af52f21fb7c3b",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the subject or learning action; certificates and caps do not establish accreditation."
+  },
+  "microscope": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "b419a38fdd9aac573c216c333ec6cff205f596776fd0aead97f2eec020f56d45",
+    "minSize": 24,
+    "compactAlternative": "book-open",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the subject or learning action; certificates and caps do not establish accreditation."
+  },
+  "atom": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "05a7d1654e7d2e2baba8bd266180be275d225130670c2cbf5ace38666cc456ae",
+    "minSize": 24,
+    "compactAlternative": "book-open",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the subject or learning action; certificates and caps do not establish accreditation."
+  },
+  "puzzle": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "0ddeefd79feea8143b97aa743cddfb62a6a27f32311ad634d3d9ad80431aef0b",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the subject or learning action; certificates and caps do not establish accreditation."
+  },
+  "chalkboard": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "b8281ff9590ac64a1778fd20c91fa98b61f5c1a167c557dc366ef9c66b9e1eee",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the subject or learning action; certificates and caps do not establish accreditation."
+  },
+  "certificate": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "8f0dd005a655b2814f778e8bab7792aae59e676570f015bb23e3be1c11d0e5a8",
+    "minSize": 24,
+    "compactAlternative": "book-open",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the subject or learning action; certificates and caps do not establish accreditation."
+  },
+  "paw": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "4bcd49be9a20a01261e3c46c5a469ce693a863fab5e0546a262a6543d0516aec",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Select species or care service accurately; dog and cat silhouettes remain distinct."
+  },
+  "dog": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "9d473309162ff9bdab895fdc354595c94d98018e65b6936cd081ae837eb772ab",
+    "minSize": 24,
+    "compactAlternative": "paw",
+    "note": "Added dropped ears and a muzzle to distinguish the dog from the cat. Select species or care service accurately; dog and cat silhouettes remain distinct."
+  },
+  "cat": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "9aaf64ae55a6fa328ce2dc5d379d62b39be6681c7ca7eb6640b53f7f4c85a0c3",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Select species or care service accurately; dog and cat silhouettes remain distinct."
+  },
+  "pet-bone": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "5bfb495b74cc6ec7727083d08c2f234b776f90cce94b9c536449efd8cb4a186a",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Select species or care service accurately; dog and cat silhouettes remain distinct."
+  },
+  "pet-collar": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "1cbf1920244d53a3e07900486ba4372673aca2e32c0bc8986b74d8daf428f94c",
+    "minSize": 24,
+    "compactAlternative": "paw",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Select species or care service accurately; dog and cat silhouettes remain distinct."
+  },
+  "pet-bowl": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "de5e3beb4cc3f299731d4e88ff03d9f01e7675342eb51c26f3a2de9c1cec6251",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Select species or care service accurately; dog and cat silhouettes remain distinct."
+  },
+  "veterinary": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "e3d9ace60ac65d75e0aae6a74d63680c7e0498c9a148f33bffd19507fa894fa7",
+    "minSize": 24,
+    "compactAlternative": "paw",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Select species or care service accurately; dog and cat silhouettes remain distinct."
+  },
+  "aquarium": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "bb6682309961186176249f24967a3cbc49ea26a69484fb48df553316353f45bc",
+    "minSize": 24,
+    "compactAlternative": "paw",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Select species or care service accurately; dog and cat silhouettes remain distinct."
+  },
+  "balloons": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "c0a01e314a56c1972a69e91a1aee8c81949417d02ec87d56685a70dc539da13b",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the actual event, equipment or booking action; keep the event description visible."
+  },
+  "wedding-rings": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "5d68cb95661f9b1c5e6feebb4e77c12eba090337214e97ef351c63c1775f2d9a",
+    "minSize": 24,
+    "compactAlternative": "ticket",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the actual event, equipment or booking action; keep the event description visible."
+  },
+  "bouquet": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "740b9f5f144a4b647d4e3dcc05e5f73daab43abef62002e17725806dead6b97e",
+    "minSize": 24,
+    "compactAlternative": "ticket",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the actual event, equipment or booking action; keep the event description visible."
+  },
+  "confetti": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "7d96b659cf703bd00ef001d4c379f2c7fa2145a8bdc058562863301ecb104049",
+    "minSize": 24,
+    "compactAlternative": "ticket",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the actual event, equipment or booking action; keep the event description visible."
+  },
+  "stage": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "b9f46b46c4499025949c966332e47e81a06db926b5f878b5768807ca2311d43f",
+    "minSize": 24,
+    "compactAlternative": "ticket",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the actual event, equipment or booking action; keep the event description visible."
+  },
+  "spotlight": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "c05a2fce7b85fb3cb75e65937d1afbde2cda010d7446a1409bb47806433c8787",
+    "minSize": 24,
+    "compactAlternative": "ticket",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the actual event, equipment or booking action; keep the event description visible."
+  },
+  "champagne": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "5608ad517125ab642e41c5e7b4ae2005cb49f234ee4b23e035f0b837e58d0147",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the actual event, equipment or booking action; keep the event description visible."
+  },
+  "wedding-arch": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "e71a0ec200be63d0a5de78003088a06af39d9b04327940155d2586b98f93ed02",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Match the actual event, equipment or booking action; keep the event description visible."
+  },
+  "piston": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "9bc3d9d5037d3612cbaa0b6ca733941c1eebe4cb4d48b36c76d388028211e229",
+    "minSize": 24,
+    "compactAlternative": "car",
+    "note": "Opened piston bands and the connecting-rod counter. Use the relevant vehicle service; mechanical glyphs are not maintenance instructions or live warning lights."
+  },
+  "tire": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "43878c5b052a2924d9ba44e1e4468f26c7cc5bb88e01f688a9be1fe2db907e35",
+    "minSize": 24,
+    "compactAlternative": "car",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use the relevant vehicle service; mechanical glyphs are not maintenance instructions or live warning lights."
+  },
+  "engine": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "b4ccefda0dbce1cc0ee873707ea6c157f1c09c0eed03273844ff63c7fe7fbf7d",
+    "minSize": 24,
+    "compactAlternative": "car",
+    "note": "Opened the internal engine trace in the filled silhouette. Use the relevant vehicle service; mechanical glyphs are not maintenance instructions or live warning lights."
+  },
+  "car-battery": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "7b6208bce06cb171bb69a031b66ac05ca87f8b973d6de71226a8d9a020eb87ed",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use the relevant vehicle service; mechanical glyphs are not maintenance instructions or live warning lights."
+  },
+  "car-lift": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "bee032c373c332e1dc42051d753db95ea2265702b702f8526789c20d590c87d9",
+    "minSize": 24,
+    "compactAlternative": "car",
+    "note": "Preserved windshield and lamp counters between lift posts. Use the relevant vehicle service; mechanical glyphs are not maintenance instructions or live warning lights."
+  },
+  "steering-wheel": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "1f8bd0fe4514df6beb075ea1281ef28876d1b365462d24aeafed68fa559020e5",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use the relevant vehicle service; mechanical glyphs are not maintenance instructions or live warning lights."
+  },
+  "oil-can": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "ad32584e9041f586a4d32985c2d4bfb77e0b84205b5282a38141ee171476beff",
+    "minSize": 24,
+    "compactAlternative": "car",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use the relevant vehicle service; mechanical glyphs are not maintenance instructions or live warning lights."
+  },
+  "brake-disc": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "6178c04ffcdff29a5ee0425e1904092b4e30de67507b57c2fd77a89d99d36e8c",
+    "minSize": 24,
+    "compactAlternative": "car",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use the relevant vehicle service; mechanical glyphs are not maintenance instructions or live warning lights."
+  },
+  "barn": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "5006042714c921a56a0a8f71206ce7fd96fc7f503751ad43b19942869405fffe",
+    "minSize": 24,
+    "compactAlternative": "leaf",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Select the actual crop, animal or equipment; a produce illustration does not establish organic certification."
+  },
+  "tractor": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "eabaa0c30a0c1c847b784a2886da3cd8ff3ecbc490fc7e94ac1a85e115e2b9d4",
+    "minSize": 24,
+    "compactAlternative": "leaf",
+    "note": "Rebalanced the cab, bonnet and large rear wheel. Select the actual crop, animal or equipment; a produce illustration does not establish organic certification."
+  },
+  "wheat": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "bea599031c435b5b7cc775a694d8b54fe35a4cb933c795a697d37a2b28d99509",
+    "minSize": 24,
+    "compactAlternative": "leaf",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Select the actual crop, animal or equipment; a produce illustration does not establish organic certification."
+  },
+  "apple": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "e6d25ff0335af8b105c60b00f49eb93fa1a6ad5f3cf2767ab7552a5aaf98173f",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Select the actual crop, animal or equipment; a produce illustration does not establish organic certification."
+  },
+  "seedling": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "f27aa5b97ae3e4d2b5515a1d4719a516cbd25f93136b613276bfb224b94444df",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Select the actual crop, animal or equipment; a produce illustration does not establish organic certification."
+  },
+  "beehive": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "73d23a7f57d1be1c88aa0b9c346d88e03ed9f2bb9efe82be7907fdc0e4cbeb25",
+    "minSize": 24,
+    "compactAlternative": "leaf",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Select the actual crop, animal or equipment; a produce illustration does not establish organic certification."
+  },
+  "chicken": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "89cdb429017a93d172bb2da177fff19f9668a9e127ce0fa20da28d69511d141b",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Select the actual crop, animal or equipment; a produce illustration does not establish organic certification."
+  },
+  "produce-basket": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "7322121b0df5e13011d140248df2a4f9220f2c1040030fb4eee05e402c149c5f",
+    "minSize": 24,
+    "compactAlternative": "leaf",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Select the actual crop, animal or equipment; a produce illustration does not establish organic certification."
+  },
+  "soccer-ball": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "e2e8e0edcbdff4c8feba389dd527f0f37fd2be5c40d362b594c3af934efecd89",
+    "minSize": 24,
+    "compactAlternative": "dumbbell",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use the named sport or activity; detailed equipment glyphs need enough display space."
+  },
+  "basketball": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "2c7e07abdfd2b19ea6cd388c3e0a15a66b164b0504425128e2b7503a889189c8",
+    "minSize": 24,
+    "compactAlternative": "dumbbell",
+    "note": "Replaced straight radial spokes with curved panel seams. Use the named sport or activity; detailed equipment glyphs need enough display space."
+  },
+  "tennis": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "d432623d7d6509f8699a5cb231353a57a29a1c05c4d37b42ad2b4db58d6c6359",
+    "minSize": 24,
+    "compactAlternative": "dumbbell",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use the named sport or activity; detailed equipment glyphs need enough display space."
+  },
+  "golf": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "e6177cb3d1aab406496e24ad33d2230b18bbdf2c57cdc6a81f19a671972e63d0",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use the named sport or activity; detailed equipment glyphs need enough display space."
+  },
+  "swimming": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "65e99c76618cdf813ccdeab1a1f7b5e741e4db011cdb75c77866b9d5e5232546",
+    "minSize": 24,
+    "compactAlternative": "dumbbell",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use the named sport or activity; detailed equipment glyphs need enough display space."
+  },
+  "runner": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "783606bdd26c561b678e4697b737817fe94920926ae76d8af200784478a95b22",
+    "minSize": 24,
+    "compactAlternative": "dumbbell",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use the named sport or activity; detailed equipment glyphs need enough display space."
+  },
+  "weightlifting": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "c56ca7d3c01577ce3d50b8d40cc41cdd73641fcfa09239e2c56986201eb4ede2",
+    "minSize": 24,
+    "compactAlternative": "dumbbell",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use the named sport or activity; detailed equipment glyphs need enough display space."
+  },
+  "hiking": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "769192a7485f6a1220268e200af3f1d0a566deb2065fa27b6be48195de2822bf",
+    "minSize": 24,
+    "compactAlternative": "dumbbell",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use the named sport or activity; detailed equipment glyphs need enough display space."
+  },
+  "cctv": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "caa94b8000ca4699344991aa62ba621c1dd42244af830b9f6eda45b2751896fa",
+    "minSize": 24,
+    "compactAlternative": "shield",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use alongside the actual service; shields and badges do not imply certification, guaranteed protection or official authority."
+  },
+  "alarm": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "25722a28734a7beef3742514aa84de59058cb67750169e1d8571b9a486670b90",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use alongside the actual service; shields and badges do not imply certification, guaranteed protection or official authority."
+  },
+  "fingerprint": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "c1d6be79d7fccbe1f825da67ea674f23c8e7b05feaa27b31f03ba184a5ad2e14",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use alongside the actual service; shields and badges do not imply certification, guaranteed protection or official authority."
+  },
+  "security-badge": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "52bb572e40a5115410223c7b87f8f944c1970a5f6ef1d256e4df7f3d7f1a87bb",
+    "minSize": 24,
+    "compactAlternative": "shield",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use alongside the actual service; shields and badges do not imply certification, guaranteed protection or official authority."
+  },
+  "fire-extinguisher": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "936c8db75d7e7939e4d521145ecfe64b2c9c44d4e181ed88e3b5eae4891d4158",
+    "minSize": 24,
+    "compactAlternative": "shield",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use alongside the actual service; shields and badges do not imply certification, guaranteed protection or official authority."
+  },
+  "access-card": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "fbe75794f47d33c98d40e079bee36aa012c5f8c48bd698634672c7450bfd7028",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use alongside the actual service; shields and badges do not imply certification, guaranteed protection or official authority."
+  },
+  "doorbell": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "6bea4942dad158f61968ffbd5b999cf03dbf21951bcbfe68db64227f831fd1fc",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use alongside the actual service; shields and badges do not imply certification, guaranteed protection or official authority."
+  },
+  "security-house": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "2482d923a4cb573d69c0e5dbc15912a7e605639fa96af959fc8eca85fcf731d1",
+    "minSize": 24,
+    "compactAlternative": "shield",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Use alongside the actual service; shields and badges do not imply certification, guaranteed protection or official authority."
+  },
+  "forklift": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "fcc1e433a1110dd2eff1e796414672592c03e391d0ca67705877914836b1f1a4",
+    "minSize": 24,
+    "compactAlternative": "package",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Distinguish delivery, storage and equipment services; keep shipment status and action labels explicit."
+  },
+  "pallet": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "50d83a67a3835b1d93737554e978dd02cbdc9f4086768cdcb0a2cd03bfc5fedc",
+    "minSize": 24,
+    "compactAlternative": "package",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Distinguish delivery, storage and equipment services; keep shipment status and action labels explicit."
+  },
+  "dolly": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "dac4c6ba2e870a3929dbd7add6e8b9790dbee7609b174c269451575a754ec8eb",
+    "minSize": 24,
+    "compactAlternative": "package",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Distinguish delivery, storage and equipment services; keep shipment status and action labels explicit."
+  },
+  "warehouse": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "9b044bf134101b0d4c41439c37ea05cbbc743905c4958509db6d762937024012",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Distinguish delivery, storage and equipment services; keep shipment status and action labels explicit."
+  },
+  "delivery-van": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "fcb22d2afdeb3960ed64d0ab9f25121dd213e214a290149cfb7eeb5871cc1279",
+    "minSize": 24,
+    "compactAlternative": "package",
+    "note": "Preserved windshield and cargo details in the filled body. Distinguish delivery, storage and equipment services; keep shipment status and action labels explicit."
+  },
+  "shipping-container": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "39c6ce0f3657c1e26bdd551510e2ef5a0305efacf5da39581aab94cc0a4691a3",
+    "minSize": 24,
+    "compactAlternative": "package",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Distinguish delivery, storage and equipment services; keep shipment status and action labels explicit."
+  },
+  "crane": {
+    "version": 4,
+    "decision": "retained",
+    "geometrySha256": "d3da56abadd1803be2fa5806cf3f2b19e10031a4b8278cc3d22660aa8040e756",
+    "minSize": 24,
+    "compactAlternative": "package",
+    "note": "Retained after inspecting silhouette, spacing and all four core variants on light/dark canvases and at 16px. Distinguish delivery, storage and equipment services; keep shipment status and action labels explicit."
+  },
+  "courier": {
+    "version": 4,
+    "decision": "redrawn",
+    "geometrySha256": "910dc1bd70047f63787d34ad8eabae277990cdc01504a588b142f4768838f45d",
+    "minSize": 16,
+    "compactAlternative": null,
+    "note": "Opened package seams and separated the delivery motion marks. Distinguish delivery, storage and equipment services; keep shipment status and action labels explicit."
+  }
+}
