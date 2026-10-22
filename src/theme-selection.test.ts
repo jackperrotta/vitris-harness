@@ -219,7 +219,7 @@ test('ridgeline adds nineteen pages and keeps the previous catalog lookup',()=>{
 });
 
 test('Alongside has twelve exact routes and preserves every pre-existing release identity',async()=>{
- const theme=visualTheme('medical-alongside');
+ const theme=visualTheme('medical-alongside','2026-10-09.4');
  const pages=manifestPages(theme);
  assert.equal(theme.release,'2026-10-09.4');
  assert.equal(pages.length,12);
@@ -243,7 +243,7 @@ test('Alongside has twelve exact routes and preserves every pre-existing release
 
 test('Record Counsel has twenty-five routes and preserves the complete former catalog',async()=>{
  const previous=JSON.parse(readFileSync(join(kernel,'src/test/fixtures/theme-pre-record-counsel-identities.json'),'utf8'));
- const theme=visualTheme('legal-record-counsel'),pages=manifestPages(theme);
+ const theme=visualTheme('legal-record-counsel','2026-10-09.5'),pages=manifestPages(theme);
  assert.equal(RECORD_CATALOG.length,previous.count+1);assert.equal(RECORD_CATALOG.reduce((n,t)=>n+manifestPages(t).length,0),previous.pages+25);
  assert.equal(theme.release,'2026-10-09.5');assert.equal(pages.length,25);assert.equal(new Set(pages.map(p=>p.path)).size,25);
  assert.deepEqual(pages.filter(p=>p.featured).sort((a,b)=>a.previewPriority-b.previewPriority).map(p=>p.pageId),['home','services','service-detail','about','contact']);

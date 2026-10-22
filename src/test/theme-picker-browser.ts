@@ -1,4 +1,4 @@
-import {VISUAL_THEMES} from '../agent/theme-library.ts';
+import {VISUAL_THEMES,visualTheme} from '../agent/theme-library.ts';
 import assert from 'node:assert/strict';
 import {chromium,type Page} from 'playwright';
 async function pickerControl(page:Page,id:string){if(id==='story'||id==='guide'){const roles=await page.locator('#detailpage option').evaluateAll(es=>es.map(e=>(e as any).value));await page.locator('#detailpage').selectOption(id==='story'?(roles.includes('home')?'home':'story'):(roles.includes('service-detail')?'service-detail':'guide'));}else await page.locator('#'+id).click();}
@@ -23,7 +23,9 @@ export async function sweepThemePicker(url:string):Promise<{transitions:number;n
   for(const id of ['mobile','guide','desktop','story']){await pickerControl(page,id);await ready();}
   const gallery=await page.evaluate(()=>(globalThis as any).scrollY);await page.locator('#close').click();assert.equal(await page.evaluate(()=>(globalThis as any).scrollY),gallery);assert.equal(await page.evaluate(()=>(globalThis as any).document.activeElement?.textContent),'Explore '+name);
   await card.getByRole('button',{name:'Explore '+name,exact:true}).click();await ready();await page.locator('#close').click();
-  await card.getByRole('button',{name:'Choose '+name,exact:true}).click();assert.match(await page.locator('#draftlabel').innerText(),new RegExp(name));assert.equal(await page.locator('#submit').isEnabled(),true);
+  const choose=card.getByRole('button',{name:'Choose '+name,exact:true}),id=(await card.getAttribute('data-theme'))!;
+  if(visualTheme(id).release!=='2026-10-08.4'){assert.equal(await choose.isDisabled(),true);assert.equal(await choose.getAttribute('title'),'Preserved for accepted historical choices.');}
+  else{await choose.click();assert.match(await page.locator('#draftlabel').innerText(),new RegExp(name));assert.equal(await page.locator('#submit').isEnabled(),true);}
  }
  console.log('Gallery transition sweep: archive, scroll restoration and retry');
  // Original reported sequence, on the preserved collection in the same running shell.
