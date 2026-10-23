@@ -761,6 +761,16 @@ export function categorizeNodeDependencies(opts: {
 } {
   const { root, node } = opts;
   const expectedOutputs = [...node.writes];
+  // The full browser tool owns the Lighthouse reports it must produce. Older
+  // copied graphs predate those paths; preserve their graph while declaring the
+  // actual outputs of the opted-in check. Acceptance criteria stay unchanged.
+  const launchPath = join(root, 'launch.json');
+  if (node.id === 'browser' && node.kind === 'tool' && existsSync(launchPath)
+      && json<{performance?:{enabled?:boolean}}>(launchPath).performance?.enabled === true) {
+    for (const path of ['agent/reviews/performance.json', 'agent/reviews/performance-runs']) {
+      if (!expectedOutputs.includes(path)) expectedOutputs.push(path);
+    }
+  }
   const writeSet = new Set(expectedOutputs.map(p => p.replaceAll("\\", "/")));
 
   const allInputs = [

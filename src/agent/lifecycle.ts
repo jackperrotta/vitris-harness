@@ -1053,7 +1053,7 @@ export async function prepareStage(opts: PrepareStageOptions): Promise<PrepareSt
       `# ACTIVE STAGE: ${node.id} (${node.kind})`,
       `Preparation ID: ${preparationId}`,
       `Graph Version: ${graph.version}`,
-      `Allowed Writes: ${node.writes.join(", ") || "None"}`,
+      `Allowed Writes: ${deps.expectedOutputs.join(", ") || "None"}`,
       `Complete this stage with: npm run go -- --complete --preparation ${preparationId}`,
       ...(node.id === "representative-quality" && productionQuality(root) ? [
         `For an active-agent visual review, complete with: npm run go -- --complete --preparation ${preparationId} --visual-tool-events ABSOLUTE_EVENTS_JSON`,
