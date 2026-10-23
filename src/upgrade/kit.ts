@@ -31,7 +31,8 @@ const manifestPath = (root: string) => join(root, "agent/managed-files.json");
 
 function kitFiles(agentRoot: string): Record<string, string> {
   const result: Record<string, string> = {};
-  for (const file of files(agentRoot)) {
+  const managedRoots = ["graph.yaml", "PROMPT.md", "WORKFLOW.md", "EVALUATION.md", "workflow.json", "refs", "evals"];
+  for (const file of managedRoots.flatMap(path => existsSync(join(agentRoot, path)) ? files(join(agentRoot, path)) : [])) {
     const path = relative(agentRoot, file).replaceAll("\\", "/");
     if (managedPath(path)) result[path] = hash(readFileSync(file));
   }
@@ -84,8 +85,10 @@ export function planKitUpgrade(siteRoot: string, targetHarnessRoot: string): Kit
   const currentGraphVersion = graphVersion(currentGraph);
   const targetGraphVersion = graphVersion(targetGraph);
   const completed = existsSync(join(root, "agent/STATE.json")) && Boolean(json<{ preview_ready?: boolean }>(join(root, "agent/STATE.json")).preview_ready);
+  const graphOverride = join(root, "agent/overrides/graph.yaml");
+  const pinnedGraph = existsSync(graphOverride) && readFileSync(graphOverride, "utf8") === currentGraph;
   const deferGraph = currentGraphVersion > 0 && targetGraphVersion > 0 && currentGraph !== targetGraph
-    && (currentGraphVersion !== targetGraphVersion || completed);
+    && (currentGraphVersion !== targetGraphVersion || completed || pinnedGraph);
   for (const [path, targetHash] of Object.entries(targetFiles)) {
     if (path === "graph.yaml" && deferGraph) continue;
     const currentHash = siteFiles[path];
@@ -96,7 +99,7 @@ export function planKitUpgrade(siteRoot: string, targetHarnessRoot: string): Kit
   }
   return { schemaVersion: 1, targetVersion, sourceRevision: sourceRevision(root).digest,
     kitDigest: hash(JSON.stringify(siteFiles)), targetDigest: hash(JSON.stringify(targetFiles)),
-    updates, additions, conflicts, migrations: deferGraph ? [`Graph v${currentGraphVersion} to v${targetGraphVersion} deferred; existing workflow progress remains pinned until explicit audit`] : [],
+    updates, additions, conflicts, migrations: deferGraph ? [pinnedGraph ? "Explicit site graph override retained; existing workflow progress remains pinned" : `Graph v${currentGraphVersion} to v${targetGraphVersion} deferred; existing workflow progress remains pinned until explicit audit`] : [],
     requiredChecks: ["typecheck", "build", "relevant-site-audit"],
     evidenceInvalidation: ["New or changed checks remain unevaluated until an explicit audit or applicable edit"] };
 }

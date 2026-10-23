@@ -37,3 +37,18 @@ test('mixed portrait captions preserve their names and inherit ink through actua
  assert.match(result.html,/\.portrait-btn:hover>\.vitris-portrait-caption\{opacity:1\}/);
  assert.doesNotMatch(result.html,/↗|attr\(data-first\)/);
 });
+
+test('noscript fallback markup remains HTML while its pictogram becomes SVG',()=>{
+ const html='<noscript><a href="/contact">Email us ↗</a></noscript>';
+ const result=migrateHtml(html,{fragment:true,addStyle:false});
+ assert.match(result.html,/<noscript><a href="\/contact">Email us <svg/);
+ assert.doesNotMatch(result.html,/&lt;a|&lt;svg/);
+});
+
+test('interpolated text assignments remain text for explicit DOM migration',()=>{
+ const html='<script>count.textContent = `Items ${n} ↗`;</script>';
+ const result=migrateHtml(html,{fragment:true,addStyle:false});
+ assert.equal(result.html,html);
+ assert.equal(result.scriptIcons,0);
+ assert.equal(result.preserved,1);
+});

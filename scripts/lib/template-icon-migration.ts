@@ -11,7 +11,7 @@ type Edit={start:number;end:number;text:string};
 export type MigrationReport={html:string;icons:number;cssIcons:number;scriptIcons:number;labels:number;preserved:number};
 const pictograms=/[\u2190-\u2BFF\u2161\u00D7\u00BB\u{1F000}-\u{1FAFF}]/gu;
 const names:Record<string,string>={
- '→':'arrow-right','←':'arrow-left','↑':'arrow-up','↓':'arrow-down','↗':'arrow-right','↘':'arrow-right','↝':'arrow-right','↺':'refresh','⇄':'refresh','↔':'arrow-right',
+ '→':'arrow-right','←':'arrow-left','↑':'arrow-up','↓':'arrow-down','↗':'arrow-right','↘':'arrow-right','↝':'arrow-right','↺':'refresh','↻':'refresh','⇄':'refresh','↔':'arrow-right',
  '★':'star','×':'close','✕':'close','☰':'menu','≡':'menu','⌄':'chevron-down','▾':'chevron-down','⌃':'chevron-up','−':'minus','✓':'check',
  '●':'circle','◯':'circle','○':'circle','◌':'circle','◉':'circle','⊙':'circle','◎':'target','◐':'moon','◒':'moon','◕':'eye','□':'grid',
  '✦':'sparkles','✧':'sparkles','✳':'sparkles','✨':'sparkles','▶':'play','▷':'play','Ⅱ':'pause','▦':'grid','⌂':'house','⌕':'search','◈':'layers',
@@ -85,6 +85,10 @@ function migrateScript(code:string,count:()=>void):string {
    if(updated!==undefined&&updated!==node.text){if(!safe.has(node))count();edits.push({start:node.getStart(file),end:node.end,text:JSON.stringify(updated)});}
   }else if([ts.SyntaxKind.TemplateHead,ts.SyntaxKind.TemplateMiddle,ts.SyntaxKind.TemplateTail].includes(node.kind)){
    const part=node as ts.TemplateLiteralLikeNode;
+   let expression=node.parent;
+   while(expression&&!ts.isTemplateExpression(expression)&&expression.kind!==ts.SyntaxKind.SourceFile)expression=expression.parent;
+   const assignment=expression?.parent;
+   if(expression&&assignment&&ts.isTemplateExpression(expression)&&ts.isBinaryExpression(assignment)&&assignment.right===expression&&ts.isPropertyAccessExpression(assignment.left)&&['textContent','innerText'].includes(assignment.left.name.text))return;
    if(new RegExp(pictograms.source,'u').test(part.text)){
     const updated=migrateHtml(part.text,{fragment:true,script:false,addStyle:false,preserveMultiplication:true}).html;
     if(updated!==part.text){const escaped=updated.replaceAll('\\','\\\\').replaceAll('`','\\`').replaceAll('${','\\${');edits.push({start:node.getStart(file),end:node.end,text:(node.kind===ts.SyntaxKind.TemplateHead?'`':'}')+escaped+(node.kind===ts.SyntaxKind.TemplateTail?'`':'${')});count();}
@@ -102,7 +106,7 @@ export function migrateHtml(html:string,options:{fragment?:boolean;script?:boole
  // person's name, and a data-URL image cannot inherit the caption's ink color.
  // Materialize the same caption as real HTML so both text and SVG inherit it.
  if(/content\s*:\s*'Meet '\s*\+\s*attr\(data-first\)\s*\+\s*' ↗'/.test(html)){
-  const tree=parse(html,{sourceCodeLocationInfo:true}),captions:Edit[]=[];
+  const tree=parse(html,{sourceCodeLocationInfo:true,scriptingEnabled:false}),captions:Edit[]=[];
   const visit=(node:any)=>{
    const attributes=attrs(node);
    if(attributes.class?.split(/\s+/).includes('portrait-btn')&&attributes['data-first']&&node.sourceCodeLocation?.endTag){
@@ -113,7 +117,7 @@ export function migrateHtml(html:string,options:{fragment?:boolean;script?:boole
   };visit(tree);
   html=apply(html,captions).replace(/content\s*:\s*'Meet '\s*\+\s*attr\(data-first\)\s*\+\s*' ↗'\s*;?/g,'').replace(/(\.portrait-btn(?::hover|:focus-visible)?):{1,2}after/g,'$1>.vitris-portrait-caption');
  }
- const tree=options.fragment?parseFragment(html,{sourceCodeLocationInfo:true}):parse(html,{sourceCodeLocationInfo:true});
+ const tree=options.fragment?parseFragment(html,{sourceCodeLocationInfo:true,scriptingEnabled:false}):parse(html,{sourceCodeLocationInfo:true,scriptingEnabled:false});
  const edits:Edit[]=[],labelled=new Set<any>();
  const walk=(node:any,ancestors:any[])=>{
   const parent=ancestors.at(-1),location=node.sourceCodeLocation;

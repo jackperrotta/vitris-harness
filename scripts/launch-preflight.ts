@@ -131,7 +131,7 @@ if (!existsSync(dist)) {
     return {
       path: route,
       html: file.html,
-      intendedIndex: route !== COOKIE_COMPLIANCE_PATH && siteConfig.indexing !== "noindex" && pageIndexing !== "noindex",
+      intendedIndex: route !== "/404.html" && route !== "/404" && route !== COOKIE_COMPLIANCE_PATH && siteConfig.indexing !== "noindex" && pageIndexing !== "noindex",
     };
   });
   findings.push(...auditIndexing({ environment, pages, publicOrigin, sitemap: existsSync(join(dist, "sitemap.xml")) ? readFileSync(join(dist, "sitemap.xml"), "utf8") : undefined }));

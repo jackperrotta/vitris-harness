@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 import { checkFocusOcclusion } from "../src/agent/browser-focus.ts";
+import { measurePerformance, performancePolicy } from '../src/agent/performance.ts';
 import { hasAnalyticsRuntime, productionQuality } from "../src/agent/production-quality.ts";
 import { previewServer } from "../src/build/serve.ts";
-import { checkPageVideos, checkSharedMedia, checkHeadingWordBreaks } from "../src/stock/browser-checks.ts";
+import { checkPageVideos, checkSharedMedia, checkHeadingWordBreaks, checkResponsiveImages } from "../src/stock/browser-checks.ts";
 import AxeBuilder from "@axe-core/playwright";
 import type { Route } from "playwright";
 import { existsSync, mkdirSync, readFileSync, rmSync, statSync, copyFileSync } from "node:fs";
@@ -23,7 +24,7 @@ declare function getComputedStyle(element: any): any; // Only in serialized brow
 declare const document:any; // Only in serialized browser callbacks.
 const arg = (key: string) => { const i = process.argv.indexOf(key); return i < 0 ? undefined : process.argv[i + 1]; };
 const root = resolve(arg("--site") || "."), representative = process.argv.includes("--representative");
-const concurrency=Number(arg("--concurrency")||"1");
+const concurrency=Number(arg("--concurrency")||process.env.VITRIS_BROWSER_CONCURRENCY||"1");
 if(!Number.isInteger(concurrency)||concurrency<1||concurrency>4)throw new Error('--concurrency must be an integer from 1 to 4');
 const extraViewports = (arg("--extra-viewports") || "").split(",").filter(Boolean).map(Number);
 if (extraViewports.some(width => !Number.isSafeInteger(width) || width < 320 || width > 2560)) throw new Error("--extra-viewports must be comma-separated integer widths from 320 to 2560");
@@ -49,7 +50,7 @@ const compositionMode = resolveDesignAuthoring(root).mode === "composition-v1";
 const mediaInventory = existsSync(join(root, "onboarding/media-inventory.json"))
   ? json<MediaInventory>(join(root, "onboarding/media-inventory.json"))
   : { version: 2, harvestHash: "", assets: [] } as MediaInventory;
-const server = previewServer(dist);
+const server = previewServer(dist, { compress: true });
 await new Promise<void>(r => server.listen(0, "127.0.0.1", r));
 const address = server.address() as { port: number };
 let browser;
@@ -81,17 +82,31 @@ try {
     const warnings: string[] = [];
     if (!representative && analyticsRequired && p.path === "/cookie-compliance") await prepareConsentCheck(page, `http://127.0.0.1:${address.port}`);
     page.on("pageerror", (e: Error) => failures.push(`Runtime: ${e.message}`));
+    await page.addInitScript(`(() => { try { new PerformanceObserver(list => { const e=list.getEntries().at(-1); if(e?.element) window.__vitrisLcpImage={tag:e.element.tagName,loading:e.element.getAttribute('loading'),source:e.element.getAttribute('src')}; }).observe({type:'largest-contentful-paint',buffered:true}); } catch {} })()`);
     page.on("response", (r: { status: () => number; url: () => string }) => { if (r.status() >= 400 && r.url().startsWith(`http://127.0.0.1:${address.port}`)) failures.push(`HTTP ${r.status()}: ${r.url()}`); });
     await page.goto(`http://127.0.0.1:${address.port}${p.path}`, { waitUntil: "domcontentloaded", timeout: 30000 });
     await page.waitForLoadState("load");
     // Settled layout/focus checks follow the real first-visit reveal. Its
     // navigation-start evidence is captured separately by a load moment.
     await page.waitForFunction(()=>!document.documentElement.dataset.experienceArrival,{},{timeout:5000});
+    // Capture the opening before motion verification scrolls through the route.
+    // Later resource loads and synthetic scrolls must not be reported as the first viewport.
+    const initialTransferBytes = await page.evaluate(`(() => performance.getEntriesByType('resource').concat(performance.getEntriesByType('navigation')).reduce((sum,e)=>sum+(e.transferSize||e.encodedBodySize||e.decodedBodySize||0),0))()`) as number;
+    const lcpImage = await page.evaluate('window.__vitrisLcpImage') as { tag?: string; loading?: string; source?: string } | undefined;
+    if (performancePolicy(root).enabled && lcpImage?.tag === 'IMG' && lcpImage.loading === 'lazy') failures.push(`LCP image is lazy-loaded: ${lcpImage.source}; mark the actual critical image data-media-priority="critical"`);
+    if (performancePolicy(root).enabled) {
+      const lazyOpeningImages = await page.evaluate(`(() => [...document.images].filter(img => {
+        if(img.loading!=='lazy')return false;
+        const r=img.getBoundingClientRect(),s=getComputedStyle(img);
+        const visibleWidth=Math.max(0,Math.min(r.right,innerWidth)-Math.max(r.left,0)),visibleHeight=Math.max(0,Math.min(r.bottom,innerHeight)-Math.max(r.top,0));
+        return s.visibility!=='hidden'&&s.display!=='none'&&visibleWidth*visibleHeight>innerWidth*innerHeight*.08;
+      }).map(img=>img.getAttribute('data-media-source')||img.getAttribute('src')))()` ) as string[];
+      failures.push(...lazyOpeningImages.map(src => `Large above-fold image is lazy-loaded: ${src}; use eager loading, and critical priority only for the actual LCP image`));
+    }
     const temporal = await observeMotion(page, root, p.path, width, motion, directory);
     temporalMotion.push(temporal);
     failures.push(...temporal.failures);
     failures.push(...await checkPageVideos(page));
-    const initialTransferBytes = await page.evaluate(`(() => performance.getEntriesByType('resource').concat(performance.getEntriesByType('navigation')).reduce((sum,e)=>sum+(e.transferSize||e.encodedBodySize||e.decodedBodySize||0),0))()`) as number;
     await page.evaluate(`(async () => { for(let y=0;y<Math.min(document.documentElement.scrollHeight,50000);y+=700){ window.scrollTo(0,y); await new Promise(r=>setTimeout(r,80)); } window.scrollTo(0,0); await Promise.race([document.fonts.ready,new Promise(r=>setTimeout(r,5000))]); await Promise.race([Promise.all([...document.images].filter(i=>i.getClientRects().length).map(i=>{i.loading='eager';return i.decode().catch(()=>{});})),new Promise(r=>setTimeout(r,5000))]); })()`);
     let firstVisit: { screenshot: string; screenshotHash: string } | undefined;
     const cookieBanner = page.locator("#vitris-cookie-banner");
@@ -121,7 +136,7 @@ try {
     }
     await page.evaluate("history.replaceState(null, '', location.pathname + location.search); document.body.removeAttribute('tabindex')");
     const accessibility = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]).analyze();
-    for (const violation of accessibility.violations) if (["critical", "serious"].includes(violation.impact || "")) {
+    for (const violation of accessibility.violations) if (violation.id === 'label-content-name-mismatch' || ["critical", "serious"].includes(violation.impact || "")) {
       failures.push(`Accessibility: ${violation.id}: ${violation.nodes.map(node => node.target.join(" ")).join(", ")}`);
     }
     const focusableCount = await page.locator('a[href]:visible,button:visible,input:visible,textarea:visible,select:visible,[tabindex]:visible').count();
@@ -146,7 +161,8 @@ try {
     })()`) as { errors: string[]; links: string[] };
     failures.push(...observed.errors);
     if (width === 375) failures.push(...await checkHeadingWordBreaks(page));
-    failures.push(...await checkSharedMedia(page, plan, mediaInventory, p.path));
+    failures.push(...await checkSharedMedia(page, plan, mediaInventory, p.path, existsSync(join(dist, 'media-manifest.json')) ? json(join(dist, 'media-manifest.json')) : undefined));
+    if (performancePolicy(root).enabled && existsSync(join(dist, 'media-manifest.json'))) failures.push(...await checkResponsiveImages(page, json(join(dist, 'media-manifest.json'))));
     const tabs = page.locator('[role="tab"]:visible');
     for (let i = 0; i < await tabs.count(); i++) {
       const tab = tabs.nth(i); await tab.click();
@@ -332,12 +348,17 @@ try {
     if (harmlessBlocked) warnings.push(`${harmlessBlocked} external read request(s) blocked during form verification; inspect blockedFormRequests`);
     checks.push({ visibleText, path: p.path, width, motion, screenshot, screenshotHash: fingerprint(root, [screenshot]), initialTransferBytes, ...(firstVisit ? { firstVisit } : {}), mockedLeadPosts, blockedFormRequests, failures, warnings });
     console.log(`${name}: ${checks.length}/${pagesToCheck.length * viewports.length * motionModes.length} ${p.path} (${width}px, ${motion}), ${failures.length ? `${failures.length} failures` : "checked"}`);
+    for (const failure of failures) console.log(`  ${failure}`);
     await context.close();
   });
   const compare=(a:{path:string;width:number;motion?:string;mode?:string},b:{path:string;width:number;motion?:string;mode?:string})=>a.path.localeCompare(b.path)||a.width-b.width||String(a.motion||a.mode).localeCompare(String(b.motion||b.mode));
   checks.sort(compare);routeJourneys.sort(compare);
   const templateMotion=existsSync(join(root,TEMPLATE_MOTION_PATH))?await captureTemplateMotion(browser,root,`http://127.0.0.1:${address.port}/`,directory+'/template-motion',json<TemplateMotionPlan>(join(root,TEMPLATE_MOTION_PATH))):undefined;
   save(join(root, `agent/reviews/${name}.json`), { version: 4, sourceHash: sourceHash(root), distHash: fingerprint(root, ["dist"]), scope: name, concurrency, viewports, motionModes, staticMotionState: 'complete-after-teardown', motionScenarioHash: MOTION_SCENARIO_HASH, temporalMotion, routeJourneys, checks, routeChecks, consentChecks, ...(templateMotion?{templateMotion}:{}), ...(compositionMode ? { compositionTargets } : {}) });
+  if (!representative && performancePolicy(root).enabled) {
+    const performance = await measurePerformance(root, `http://127.0.0.1:${address.port}`, { log: console.log });
+    if (performance.failures.length) { console.error(performance.failures.join('\n')); process.exitCode = 1; }
+  }
   console.log(`${name}: ${checks.length} route/viewport checks`);
   if (checks.some(c => c.failures.length)||routeJourneys.some(j=>j.failures.length)||templateMotion?.captures.some(c=>c.failures.length)) process.exitCode = 1;
 } finally { await browser?.close(); await new Promise<void>(r => server.close(() => r())); }

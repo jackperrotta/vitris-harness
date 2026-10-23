@@ -1808,13 +1808,15 @@ function verifyFulfillment(root: string, request: ChangeRequest, baseline: Refin
 
   if (intentKeywords.length > 0) {
     const isRemoval = /\b(remove|delete|drop|hide|eliminate)\b/i.test(request.instruction);
-    const currentAllText = htmlFiles.map(f => readFileSync(f, "utf8").toLowerCase()).join(" ");
+    // Content-addressed asset names and runtime code are not authored copy.
+    const visibleText = (node: any): string => ["script", "style", "svg", "noscript"].includes(node.tagName) ? "" : node.nodeName === "#text" ? node.value : (node.childNodes || []).map(visibleText).join(" ");
+    const currentAllText = htmlFiles.map(f => visibleText(parseFragment(readFileSync(f, "utf8"))).toLowerCase()).join(" ");
     const copyPlanPath = join(root, "onboarding/copy-plan.json");
     const copyText = existsSync(copyPlanPath) ? readFileSync(copyPlanPath, "utf8").toLowerCase() : "";
     const fullText = currentAllText + " " + copyText;
 
     if (!isRemoval) {
-      const matched = intentKeywords.some(kw => fullText.includes(kw));
+      const matched = intentKeywords.some(kw => new RegExp("\\b" + kw + "\\b").test(fullText));
       if (!matched) {
         errors.push(`Refinement content does not fulfill instruction: expected content related to [${intentKeywords.join(", ")}] not found in updated pages or copy plan.`);
       }

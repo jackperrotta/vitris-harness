@@ -1,3 +1,4 @@
+import { performanceEvidenceFailures } from './performance.ts';
 import { productionQuality, productionQualityFailures, CONTENT_LEDGER, CONTENT_OPERATOR, hasAnalyticsRuntime } from "./production-quality.ts";
 import { templateAdaptationFailures } from './template-adaptation.ts';
 import { artDirectionPolicy, applyArtDirectionGraph } from "./art-direction-policy.ts";
@@ -525,6 +526,7 @@ export function evaluateV2(root: string, node: string): GradeResult {
         if (!existsSync(within(root, path)) && !existsSync(within(root, alternative))) errors.push(`Missing planned page: ${p.path}`);
       }
     } else if (node === "browser" || node === "representative-browser") {
+      if (node === 'browser') errors.push(...performanceEvidenceFailures(root));
       const report = json<{ sourceHash: string; distHash: string; scope: string; motionScenarioHash?: string; temporalMotion?: TemporalMotionEvidence[]; routeJourneys?:MotionJourney[]; checksModes?: string[]; consentChecks?: { width: number; passed: boolean; failures: string[] }[]; routeChecks?: { source: string; width: number; disposition: string; target?: string; status: number; location?: string; destination?: string; mechanism: string; failures: string[] }[]; checks: { path: string; width: number; screenshot: string; screenshotHash: string; firstVisit?: { screenshot: string; screenshotHash: string }; failures: string[] }[] }>(join(root, "agent/reviews", `${node}.json`));
       if (report.sourceHash !== sourceHash(root) || report.distHash !== fingerprint(root, ["dist"])) errors.push("Browser evidence is stale");
       const plan = json<Storyboard>(join(root, "onboarding/storyboard.json"));

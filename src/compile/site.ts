@@ -14,8 +14,8 @@ import { flattenBody, instrumentSections, rewriteLeadForms, wrapMain } from "./f
 import { defaultTitleFromPath } from "./paths.ts";
 import { primitivesCss } from "./primitives.ts";
 import { prepareMotion } from "./scroll-motion.ts";
-import { compileIcons } from "./icons.ts";
-import { iconCss } from "../icons/index.ts";
+import { compileIcons } from './icons.ts';
+import { iconCss } from '../icons/index.ts';
 
 export { beaconJs };
 
@@ -373,7 +373,7 @@ export function usedComponents(pages: CompiledPage[]): string[] {
 
 export function siteCss(pages: CompiledPage[], catalog: Catalog): string {
   const chunks = [baseCss, primitivesCss];
-  if (pages.some(page => page.bodyHtml.includes("data-vitris-icon="))) chunks.push(iconCss);
+  if (pages.some(page => page.bodyHtml.includes('data-vitris-icon='))) chunks.push(iconCss);
   for (const name of usedComponents(pages)) {
     const css = catalog[name]?.css;
     if (css) chunks.push(css);
@@ -439,6 +439,8 @@ export function renderDocument(opts: {
   assetsPrefix?: string;
   publicOrigin?: string;
   islandsHref?: string | null;
+  styleHref?: string;
+  webAnalyticsToken?: string;
 }): string {
   const { site, page, kernelOrigin, themeHref } = opts;
   const prefix = opts.assetsPrefix ?? "";
@@ -465,6 +467,8 @@ export function renderDocument(opts: {
   const noindex = site.environment === "preview" || page.indexing === "noindex" || site.indexing === "noindex";
   const robots = noindex ? `\n  <meta name="robots" content="noindex">` : "";
   const lang = page.lang || "en";
+  if (opts.webAnalyticsToken && !/^[a-f0-9]{32}$/i.test(opts.webAnalyticsToken)) throw new Error('webAnalyticsToken must be a Cloudflare public 32-character hexadecimal token');
+  const webAnalytics = opts.webAnalyticsToken && site.environment !== 'preview' ? `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='${JSON.stringify({ token: opts.webAnalyticsToken })}'></script>` : '';
 
   return `<!DOCTYPE html>
 <html lang="${escapeHtml(lang)}"${site.scrollMotion?.policy ? ` data-motion-policy="${site.scrollMotion.policy}"` : ""}${kernelOrigin ? ` data-backend="${escapeHtml(kernelOrigin)}" data-kernel="${escapeHtml(kernelOrigin)}"` : ""}>
@@ -478,7 +482,7 @@ export function renderDocument(opts: {
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:type" content="website">
   ${canonical}
-  <link rel="stylesheet" href="${prefix}/site.css">
+  <link rel="stylesheet" href="${prefix}${opts.styleHref || '/site.css'}">
   <link rel="stylesheet" href="${themeHref}">
   ${jsonLdTag}
 </head>
@@ -488,21 +492,22 @@ ${body}
 ${islandTag}
 ${kernelOrigin ? `<script src="${prefix}/beacon.js" defer></script>` : ""}
 ${motionTag}
+${webAnalytics}
 </body>
 </html>
 `;
 }
 
-export function robotsTxt(): string {
+export function robotsTxt(publicOrigin?: string): string {
   return `User-agent: *
 Allow: /
 
-Sitemap: /sitemap.xml
+${publicOrigin ? `Sitemap: ${publicOrigin.replace(/\/$/, '')}/sitemap.xml\n` : ''}
 `;
 }
 
 export function sitemapXml(paths: string[], publicOrigin?: string, exclude: string[] = [], includeCookie = true): string {
-  const omitted = new Set(exclude.map(path => (path === "/" ? "/" : path.replace(/\/$/, ""))));
+  const omitted = new Set([...exclude, '/404', '/404.html'].map(path => (path === "/" ? "/" : path.replace(/\/$/, ""))));
   const all = (includeCookie && !paths.includes(COOKIE_COMPLIANCE_PATH) ? [...paths, COOKIE_COMPLIANCE_PATH] : paths)
     .filter(path => !omitted.has(path === "/" ? "/" : path.replace(/\/$/, "")));
   const origin = (publicOrigin || "").replace(/\/$/, "");
@@ -528,6 +533,8 @@ export function compileSite(opts: {
   themeHref: string;
   assetsPrefix?: string;
   publicOrigin?: string;
+  pageAssets?: Record<string, { css: string; js: string | null }>;
+  webAnalyticsToken?: string;
 }): { path: string; html: string }[] {
   const compiled = opts.pages.map((page) =>
     compilePage(page, opts.catalog, opts.site, opts.kernelOrigin),
@@ -544,7 +551,9 @@ export function compileSite(opts: {
       themeHref: opts.themeHref,
       assetsPrefix: opts.assetsPrefix,
       publicOrigin: opts.publicOrigin,
-      islandsHref,
+      islandsHref: opts.pageAssets?.[page.path]?.js ?? (opts.pageAssets ? null : islandsHref),
+      styleHref: opts.pageAssets?.[page.path]?.css,
+      webAnalyticsToken: opts.webAnalyticsToken,
     }),
   }));
 

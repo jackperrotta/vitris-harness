@@ -1,12 +1,37 @@
 import type { Page } from "playwright";
 import type { MediaInventory, Storyboard } from "../agent/artifacts.ts";
+import type { MediaBuildReport } from '../build/responsive-media.ts';
 
 /** Check the rendered region and visibility, rather than matching asset paths in HTML text. */
-export async function checkSharedMedia(page: Page, story: Storyboard, inventory: MediaInventory, route: string): Promise<string[]> {
+export async function checkSharedMedia(page: Page, story: Storyboard, inventory: MediaInventory, route: string, derivatives?: MediaBuildReport): Promise<string[]> {
   if (story.version !== 3) return [];
   const required = (story.globalMedia || []).filter(row => row.routes.includes(route));
-  const rows = required.map(row => ({ assetId: row.assetId, placement: row.placement, route, path: inventory.assets.find(asset => asset.id === row.assetId)?.path || "" }));
-  return page.evaluate("(() => { const rows = " + JSON.stringify(rows) + "; const errors = []; for (const row of rows) { const region = document.querySelector(row.placement === 'header' ? 'header, [role=\"banner\"]' : row.placement); const image = region && [...region.querySelectorAll('img')].find(img => { if (!row.path) return false; const source = img.currentSrc || img.src || ''; if (!source.includes(row.path) && !(img.getAttribute('src') || '').includes(row.path)) return false; if (!img.complete || img.naturalWidth <= 0) return false; let element = img; while (element) { const style = getComputedStyle(element); if (style.display === 'none' || style.visibility === 'hidden' || Number(style.opacity) === 0) return false; element = element.parentElement; } const rect = img.getBoundingClientRect(); return rect.width > 1 && rect.height > 1; }); if (!image) errors.push('Shared media ' + row.assetId + ' missing or hidden in ' + row.placement + ' on ' + row.route); } return errors; })()") as Promise<string[]>;
+  const rows = required.map(row => {
+    const path = inventory.assets.find(asset => asset.id === row.assetId)?.path || '';
+    return { assetId: row.assetId, placement: row.placement, route, path, paths: [path, ...(derivatives?.images.filter(image => image.source === path).flatMap(image => image.variants.map(v => v.url)) || [])] };
+  });
+  return page.evaluate("(() => { const rows = " + JSON.stringify(rows) + "; const errors = []; for (const row of rows) { const region = document.querySelector(row.placement === 'header' ? 'header, [role=\"banner\"]' : row.placement); const image = region && [...region.querySelectorAll('img')].find(img => { if (!row.path) return false; const source = img.currentSrc || img.src || ''; if (!row.paths.some(path => path && (source.includes(path) || (img.getAttribute('src') || '').includes(path)))) return false; if (!img.complete || img.naturalWidth <= 0) return false; let element = img; while (element) { const style = getComputedStyle(element); if (style.display === 'none' || style.visibility === 'hidden' || Number(style.opacity) === 0) return false; element = element.parentElement; } const rect = img.getBoundingClientRect(); return rect.width > 1 && rect.height > 1; }); if (!image) errors.push('Shared media ' + row.assetId + ' missing or hidden in ' + row.placement + ' on ' + row.route); } return errors; })()") as Promise<string[]>;
+}
+
+/** A cover crop can need more source pixels than its element's CSS width. */
+export async function checkResponsiveImages(page: Page, derivatives: MediaBuildReport): Promise<string[]> {
+  return page.evaluate((manifest: any) => {
+    const errors: string[] = [];
+    const doc = (globalThis as any).document, win = globalThis as any;
+    for (const img of doc.images) {
+      const rect = img.getBoundingClientRect();
+      if (!rect.width || !rect.height || !img.currentSrc) continue;
+      const pathname = new URL(img.currentSrc).pathname;
+      const image = manifest.images.find((i: any) => i.variants.some((v: any) => v.url === pathname));
+      const variant = image?.variants.find((v: any) => v.url === pathname);
+      if (!variant) continue;
+      const style = win.getComputedStyle(img);
+      if (style.objectFit !== 'cover') continue;
+      const needed = Math.min(Math.max(rect.width, rect.height * variant.width / variant.height) * win.devicePixelRatio, Math.max(...image.variants.map((v: any) => v.width)));
+      if (variant.width < needed * 0.8) errors.push(`Responsive cover image is undersized: ${image.source}; sizes must account for the crop (${variant.width}px supplied, ${Math.round(needed)}px needed)`);
+    }
+    return errors;
+  }, derivatives);
 }
 
 /** Flag long heading words split across lines at phone width for visual review. */

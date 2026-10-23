@@ -3,8 +3,9 @@ import { createHash } from "node:crypto";
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { within } from "../agent/artifacts.ts";
+import { gzipSync } from 'node:zlib';
 export const previewIdentity = (dist: string) => createHash("sha256").update(resolve(dist)).digest("hex");
-export function previewServer(dist: string) {
+export function previewServer(dist: string, options: { compress?: boolean } = {}) {
   return createServer((req, res) => {
     try {
       const pathname = new URL(req.url || "/", "http://localhost").pathname;
@@ -14,10 +15,23 @@ export function previewServer(dist: string) {
       if (redirect && redirect[2] !== '200') { res.writeHead(Number(redirect[2] || 301), { location: redirect[1]! }); res.end(); return; }
       let file = within(dist, "." + decodeURIComponent(redirect?.[1] || pathname));
       if (existsSync(file) && statSync(file).isDirectory()) file = join(file, "index.html");
-      if (!existsSync(file)) { res.writeHead(404); res.end("Not found"); return; }
+      if (!existsSync(file)) {
+        res.statusCode = 404;
+        const fallback = join(dist, '404.html');
+        if (existsSync(fallback)) { res.setHeader('content-type', 'text/html'); res.end(readFileSync(fallback)); }
+        else res.end('Not found');
+        return;
+      }
       const ext = file.split(".").pop()!;
       res.setHeader("content-type", ({ html: "text/html", css: "text/css", js: "text/javascript", json: "application/json", png: "image/png", jpg: "image/jpeg", jpeg: "image/jpeg", gif: "image/gif", avif: "image/avif", svg: "image/svg+xml", webp: "image/webp", woff2: "font/woff2", mp4: "video/mp4", webm:"video/webm" } as Record<string,string>)[ext] || "application/octet-stream");
-      res.end(readFileSync(file));
+      const bytes = readFileSync(file);
+      const etag = `W/"${createHash('sha256').update(bytes).digest('hex')}"`;
+      res.setHeader('etag', etag);
+      res.setHeader('cache-control', /^\/(?:assets\/immutable|media\/optimized)\//.test(pathname) ? 'public, max-age=31536000, immutable' : 'public, max-age=0, must-revalidate');
+      if (req.headers['if-none-match'] === etag) { res.writeHead(304); res.end(); return; }
+      if (options.compress && /^(html|css|js|json|xml|svg|txt)$/.test(ext) && req.headers['accept-encoding']?.includes('gzip')) {
+        res.setHeader('content-encoding', 'gzip'); res.setHeader('vary', 'Accept-Encoding'); res.end(gzipSync(bytes));
+      } else res.end(bytes);
     } catch { res.writeHead(403); res.end(); }
   });
 }

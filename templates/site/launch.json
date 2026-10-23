@@ -9,5 +9,6 @@
     "owner": "",
     "repo": ""
   },
-  "publicOrigin": ""
+  "publicOrigin": "",
+  "performance": { "enabled": true, "runs": 3 }
 }

@@ -13,6 +13,7 @@
     "preflight": "node ./node_modules/@vitris/harness/bin/vitris-launch-preflight.js --environment production",
     "deploy": "npm run build && npm run preflight && wrangler pages deploy dist --project-name=__SLUG__",
     "verify:browser": "node ./node_modules/@vitris/harness/bin/vitris-verify-browser.js",
+    "verify:performance": "node ./node_modules/@vitris/harness/bin/vitris-verify-performance.js --site .",
     "refresh-agent": "node ./node_modules/@vitris/harness/bin/vitris-refresh.js --site .",
     "preview": "node ./node_modules/@vitris/harness/bin/vitris-preview.js"
   },

@@ -1,5 +1,6 @@
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { join, relative } from "node:path";
+import { createHash } from 'node:crypto';
 import { parseFrontmatter } from "../compile/frontmatter.ts";
 import { fileToPath, defaultTitleFromPath } from "../compile/paths.ts";
 import {
@@ -30,6 +31,7 @@ export type BuildSiteInput = {
   themeHref?: string;
   publicOrigin?: string;
   forms?: PublicForm[];
+  webAnalyticsToken?: string;
 };
 
 async function walkHtmlFiles(dir: string, base = dir): Promise<string[]> {
@@ -94,7 +96,7 @@ export async function loadSitePages(siteDir: string): Promise<PageSource[]> {
       file,
       title: meta.title || defaultTitleFromPath(path),
       description: meta.description,
-      indexing: meta.indexing === "noindex" || meta.indexing === "index" ? meta.indexing : undefined,
+      indexing: path === '/404' ? 'noindex' : meta.indexing === "noindex" || meta.indexing === "index" ? meta.indexing : undefined,
       lang: meta.lang,
       body,
     });
@@ -127,6 +129,16 @@ export async function buildSite(input: BuildSiteInput): Promise<string[]> {
   const envName = process.env.VITRIS_SITE_ENVIRONMENT;
   const site: SiteConfig = envName === "preview" || envName === "production" ? { ...input.site, environment: envName } : input.site;
   const compiled = compileAllPages(site, input.pages, input.catalog, backendOrigin);
+  const pageAssets: Record<string, { css: string; js: string | null }> = {};
+  const routeAssets = new Map<string, string>();
+  const asset = (body: string, ext: string) => {
+    const path = `/assets/immutable/${createHash('sha256').update(body).digest('hex')}.${ext}`;
+    routeAssets.set(path, body); return path;
+  };
+  for (const page of compiled) {
+    const js = siteIslands([page], input.catalog);
+    pageAssets[page.path] = { css: asset(siteCss([page], input.catalog), 'css'), js: js ? asset(js, 'js') : null };
+  }
   const files = compileSite({
     site,
     pages: input.pages,
@@ -134,10 +146,14 @@ export async function buildSite(input: BuildSiteInput): Promise<string[]> {
     kernelOrigin: backendOrigin,
     themeHref,
     publicOrigin: input.publicOrigin,
+    pageAssets,
+    webAnalyticsToken: input.webAnalyticsToken,
   });
 
   const written: string[] = [];
   await mkdir(input.outDir, { recursive: true });
+  await mkdir(join(input.outDir, 'assets/immutable'), { recursive: true });
+  for (const [path, body] of routeAssets) await writeFile(join(input.outDir, path.slice(1)), body, 'utf8');
 
   for (const file of files) {
     const rel =
@@ -153,7 +169,7 @@ export async function buildSite(input: BuildSiteInput): Promise<string[]> {
   await writeFile(join(input.outDir, "site.css"), siteCss(compiled, input.catalog), "utf8");
   await writeFile(join(input.outDir, "theme.css"), themeCss(theme), "utf8");
   if (backendOrigin) await writeFile(join(input.outDir, "beacon.js"), beaconJs, "utf8");
-  await writeFile(join(input.outDir, "robots.txt"), robotsTxt(), "utf8");
+  await writeFile(join(input.outDir, "robots.txt"), robotsTxt(input.publicOrigin), "utf8");
   await writeFile(
     join(input.outDir, "sitemap.xml"),
     sitemapXml(

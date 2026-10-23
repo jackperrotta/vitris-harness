@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { cpSync, existsSync, mkdtempSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, mkdtempSync, mkdirSync, readFileSync, writeFileSync, symlinkSync, lstatSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { createHash } from "node:crypto";
@@ -148,4 +148,33 @@ test("a completed fictional creation graph upgrades and handles an ordinary stru
   assert.equal(result.technical, "pass", JSON.stringify(result.unresolved));
   assert.equal(result.fulfillment, "pass", JSON.stringify(result.unresolved));
   assert.equal(JSON.parse(readFileSync(join(site, "agent/STATE.json"), "utf8")).nodes.harvest.status, "done");
+});
+
+
+test("managed upgrades leave archived screenshot junctions untouched", () => {
+  const {site,target}=setup(),archive=temp();
+  writeFileSync(join(archive,"historical.png"),"immutable archived evidence");
+  symlinkSync(archive,join(site,"agent/screenshots"),"junction");
+  writeFileSync(join(target,"agent/refs/refine.md"),"New package guidance");
+  const plan=planKitUpgrade(site,target);
+  assert.equal(plan.conflicts.length,0);
+  applyKitUpgrade(site,target,plan);
+  assert.equal(lstatSync(join(site,"agent/screenshots")).isSymbolicLink(),true);
+  assert.equal(readFileSync(join(archive,"historical.png"),"utf8"),"immutable archived evidence");
+});
+
+test("an explicit matching graph override pins an in-progress site without hiding drift", () => {
+  const {site,target}=setup();
+  save(join(site,"agent/STATE.json"),{version:3,preview_ready:false,nodes:{preview:{status:"pending",attempts:2}}});
+  const graph=readFileSync(join(site,"agent/graph.yaml"),"utf8").replace("refs: [refine]","refs: [refine, local]");
+  writeFileSync(join(site,"agent/graph.yaml"),graph);
+  mkdirSync(join(site,"agent/overrides"),{recursive:true});
+  writeFileSync(join(site,"agent/overrides/graph.yaml"),graph);
+  const state=readFileSync(join(site,"agent/STATE.json"),"utf8"),plan=planKitUpgrade(site,target);
+  assert.equal(plan.conflicts.length,0);assert.match(plan.migrations.join(" "),/Explicit site graph override/);
+  applyKitUpgrade(site,target,plan);
+  assert.equal(readFileSync(join(site,"agent/graph.yaml"),"utf8"),graph);
+  assert.equal(readFileSync(join(site,"agent/STATE.json"),"utf8"),state);
+  writeFileSync(join(site,"agent/graph.yaml"),graph+"# later customization\n");
+  assert.ok(planKitUpgrade(site,target).conflicts.some(c=>c.path==="graph.yaml"));
 });
