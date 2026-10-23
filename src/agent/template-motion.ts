@@ -6,7 +6,7 @@ import {digest} from './theme-library.ts';
 export const TEMPLATE_MOTION_PATH='agent/decisions/template-motion.json';
 export type MotionMoment={id:string;kind:'load'|'marquee'|'pointer-follow'|'magnetic'|'scroll'|'route'|'drawer'|'sequence';intent:string;reference:{path:string;target:string;observe:string;requiredPhases?:string[]};implementation:{path:string;target:string;observe:string;requiredPhases?:string[]};width:number;departure?:string};
 export type TemplateMotionPlan={version:1;selectionHash:string;referenceUrl:string;moments:MotionMoment[]};
-export type MotionCapture={momentId:string;side:'reference'|'implementation';width:number;video:string;frames:string[];samples:Array<{at:number;requestedAt?:number;state:string}>;phaseStates?:Array<{at:number;phase:string;path:string}>;failures:string[]};
+export type MotionCapture={momentId:string;side:'reference'|'implementation';width:number;video:string;frames:string[];samples:Array<{at:number;requestedAt?:number;state:string;captureRetries?:number}>;phaseStates?:Array<{at:number;phase:string;path:string}>;failures:string[]};
 export type TemplateMotionEvidence={version:1;planHash:string;selectionHash:string;distHash:string;captures:MotionCapture[];files:Array<{path:string;hash:string}>};
 export const templateMotionHash=(plan:TemplateMotionPlan)=>digest(plan);
 export function validateTemplateMotionPlan(plan:TemplateMotionPlan):string[]{

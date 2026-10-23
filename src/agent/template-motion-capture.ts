@@ -1,10 +1,26 @@
 import {mkdirSync} from 'node:fs';
 import {join} from 'node:path';
-import type {Browser} from 'playwright';
+import type {Browser,Page} from 'playwright';
 import {fingerprint} from './artifacts.ts';
 import {templateMotionHash,validateTemplateMotionPlan,type MotionCapture,type TemplateMotionEvidence,type TemplateMotionPlan} from './template-motion.ts';
 declare const document:any,window:any;
 declare function getComputedStyle(element:any):any;
+
+/** A cross-document route can commit between screenshot transport and DOM sampling. */
+export async function captureMotionFrame(page:Page,path:string,selector:string):Promise<{state:string;captureRetries:number}>{
+ for(let attempt=0;;attempt++){
+  try{
+   await page.screenshot({path});
+   const state=await page.evaluate(selector=>JSON.stringify([...document.querySelectorAll(selector)].map(el=>{const s=getComputedStyle(el),r=el.getBoundingClientRect();return {transform:s.transform,opacity:s.opacity,visibility:s.visibility,x:Math.round(r.x),y:Math.round(r.y),width:Math.round(r.width),height:Math.round(r.height),text:(el.innerText||el.textContent)?.trim().slice(0,160),open:el.hasAttribute('open'),animations:el.getAnimations().map((a:any)=>({time:Math.round(Number(a.currentTime)),state:a.playState}))};})),selector);
+   return {state,captureRetries:attempt};
+  }catch(error){
+   const message=error instanceof Error?error.message:String(error);
+   if(attempt>=2||page.isClosed()||!/Execution context was destroyed|Cannot find context with specified id|Unable to capture screenshot/.test(message))throw error;
+   await page.waitForLoadState('domcontentloaded');
+   await page.waitForTimeout(32);
+  }
+ }
+}
 
 /** Scoped temporal evidence complements, rather than replaces, whole-route journeys. */
 export async function captureTemplateMotion(browser:Browser,root:string,currentUrl:string,directory:string,plan:TemplateMotionPlan):Promise<TemplateMotionEvidence>{
@@ -30,11 +46,11 @@ export async function captureTemplateMotion(browser:Browser,root:string,currentU
    const rect=await locator.boundingBox();if(!rect)throw Error('Missing target geometry');
    const snapshot=async(at:number)=>{
     if(start){const remaining=at-(Date.now()-start);if(remaining>0)await page.waitForTimeout(remaining);}
-    const path=directory+'/'+moment.id+'-'+side+'-'+at+'.png';await page.screenshot({path:join(root,path)});frames.push(path);
-    const state=await page.evaluate(selector=>JSON.stringify([...document.querySelectorAll(selector)].map(el=>{const s=getComputedStyle(el),r=el.getBoundingClientRect();return {transform:s.transform,opacity:s.opacity,visibility:s.visibility,x:Math.round(r.x),y:Math.round(r.y),width:Math.round(r.width),height:Math.round(r.height),text:(el.innerText||el.textContent)?.trim().slice(0,160),open:el.hasAttribute('open'),animations:el.getAnimations().map((a:any)=>({time:Math.round(Number(a.currentTime)),state:a.playState}))};})),target.observe);
+    const path=directory+'/'+moment.id+'-'+side+'-'+at+'.png';
+    const {state,captureRetries}=await captureMotionFrame(page,join(root,path),target.observe);frames.push(path);
     // Screenshot transport can overrun a nominal checkpoint. Record the
     // actual elapsed time so reviewers do not infer timing from its filename.
-    samples.push({at:start?Date.now()-start:-1,requestedAt:at,state});
+    samples.push({at:start?Date.now()-start:-1,requestedAt:at,state,...(captureRetries?{captureRetries}:{})});
    };
    await snapshot(-1);if(moment.kind!=='load'){start=Date.now();phaseStates=[];}
    if(moment.kind==='pointer-follow'){await page.mouse.move(rect.x+rect.width*.4,rect.y+rect.height/2);await page.waitForTimeout(140);await page.mouse.move(rect.x+rect.width*.7,rect.y+rect.height/2);start=Date.now();}
