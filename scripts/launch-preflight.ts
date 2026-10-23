@@ -13,6 +13,7 @@ import { LAUNCH_POLICY_ID } from "../src/knowledge/contracts.ts";
 import { parseFrontmatter } from "../src/compile/frontmatter.ts";
 import { COOKIE_COMPLIANCE_PATH } from "../src/runtime/cookie-compliance.ts";
 import { templateAdaptationFailures } from '../src/agent/template-adaptation.ts';
+import { browserVerificationTimeoutMs } from '../src/agent/browser-timeout.ts';
 
 function arg(name: string): string | undefined {
   const index = process.argv.indexOf(name);
@@ -54,7 +55,7 @@ if (environment === "production" && existsSync(dist)) {
   const run = spawnSync(process.execPath, [
     ...(verifier.endsWith(".ts") ? ["--experimental-strip-types"] : []),
     verifier, "--site", root,
-  ], { encoding: "utf8", env: { ...process.env, VITRIS_SITE_ENVIRONMENT: environment }, timeout: 180_000 });
+  ], { encoding: "utf8", env: { ...process.env, VITRIS_SITE_ENVIRONMENT: environment }, timeout: browserVerificationTimeoutMs() });
   if (run.status === 0) {
     try {
       const report = JSON.parse(readFileSync(join(root, "agent/reviews/browser.json"), "utf8")) as {

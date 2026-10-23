@@ -7,6 +7,7 @@ import { buildVerified } from "../build/verified.ts";
 import { EXIT_CODES, type CommandResult } from "./types.ts";
 import { isPreserveSite } from "../preserve/config.ts";
 import { verifyPreservedSite } from "../preserve/verify.ts";
+import { productionPreflightTimeoutMs } from '../agent/browser-timeout.ts';
 
 export type VerifyOptions = {
   site?: string;
@@ -79,7 +80,7 @@ export async function verifySite(opts: VerifyOptions = {}): Promise<CommandResul
     const result = spawnSync(process.execPath, [
       ...(preflight.endsWith(".ts") ? ["--experimental-strip-types"] : []),
       preflight, "--site", root, "--environment", "production",
-    ], { encoding: "utf8", timeout: 180_000 });
+    ], { encoding: "utf8", timeout: productionPreflightTimeoutMs() });
     if (result.status !== 0) {
       const path = join(root, "agent/reviews/launch-preflight.json");
       const receipt = existsSync(path) ? JSON.parse(readFileSync(path, "utf8")) as { blockerIds?: string[] } : undefined;

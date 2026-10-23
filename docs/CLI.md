@@ -150,6 +150,8 @@ vitris resume [--site <dir>] [--run <run-id>] [--dry-run]
 
 ---
 
+Production browser verification defaults to a one-hour subprocess timeout. Set `VITRIS_BROWSER_TIMEOUT_MS` to a bounded integer from 1000 to 86400000 milliseconds when the full route and motion suite needs a different limit. The outer production verifier allows an additional minute for preflight to seal its report. This changes only the runtime allowance; every browser, accessibility, motion and performance check still runs.
+
 ### `vitris cancel`
 Safely terminates an active workflow run, releases process locks (`agent/RUN.lock`), and cleans up stale temporary files.
 ```bash
