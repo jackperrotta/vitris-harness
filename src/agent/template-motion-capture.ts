@@ -29,12 +29,13 @@ export async function captureTemplateMotion(browser:Browser,root:string,currentU
  for(const moment of plan.moments)for(const side of ['reference','implementation'] as const){
   const context=await browser.newContext({viewport:{width:moment.width,height:900},reducedMotion:'no-preference',recordVideo:{dir:join(root,directory),size:{width:moment.width,height:900}}});
   const page=await context.newPage();const target=moment[side],base=side==='reference'?plan.referenceUrl:currentUrl;
-  const frames:string[]=[],samples:MotionCapture['samples']=[],failures:string[]=[];let start=0,phaseStates:NonNullable<MotionCapture['phaseStates']>=[];
+  const frames:string[]=[],samples:MotionCapture['samples']=[],failures:string[]=[];let start=0,loadReadyAt=0,phaseStates:NonNullable<MotionCapture['phaseStates']>=[];
   if(target.requiredPhases?.length){await page.exposeFunction('__vitrisMotionPhase',({phase,path,at}:{phase:string;path:string;at:number})=>{if(start)phaseStates.push({at:at-start,phase,path});});await page.addInitScript(({selector})=>{let previous='';const timer=setInterval(()=>{const phases=[...document.querySelectorAll(selector)].map(el=>el.dataset.state).filter(Boolean);const signature=phases.join('|');if(signature&&signature!==previous){previous=signature;phases.forEach(phase=>window.__vitrisMotionPhase({phase,path:window.location.pathname,at:Date.now()}));}},16);setTimeout(()=>clearInterval(timer),6000);},{selector:target.observe});}
   try{
    // References use directory-relative routes; a customer preview uses root routes.
    if(moment.kind==='load')start=Date.now();
    await page.goto(target.path==='/'?base:new URL(target.path.replace(/^\//,''),base.endsWith('/')?base:base+'/').href,{waitUntil:moment.kind==='load'?'domcontentloaded':'networkidle'});
+   if(moment.kind==='load')loadReadyAt=Date.now();
    if(moment.kind!=='load'){await page.evaluate(()=>document.fonts.ready);await page.waitForFunction(()=>!document.documentElement.dataset.experienceArrival&&!document.querySelector('.curtain.covering'));await page.waitForTimeout(250);}
    const locator=page.locator(target.target).first();await locator.waitFor({state:'visible'});
    if(!['load','scroll','marquee'].includes(moment.kind))await locator.scrollIntoViewIfNeeded();
@@ -45,7 +46,10 @@ export async function captureTemplateMotion(browser:Browser,root:string,currentU
    }
    const rect=await locator.boundingBox();if(!rect)throw Error('Missing target geometry');
    const snapshot=async(at:number)=>{
-    if(start){const remaining=at-(Date.now()-start);if(remaining>0)await page.waitForTimeout(remaining);}
+    // Keep elapsed evidence anchored to navigation start, but space load
+    // checkpoints after DOM readiness. Network latency must not consume every
+    // opening sample before the page can render its first frame.
+    if(start){const remaining=at-(Date.now()-(loadReadyAt||start));if(remaining>0)await page.waitForTimeout(remaining);}
     const path=directory+'/'+moment.id+'-'+side+'-'+at+'.png';
     const {state,captureRetries}=await captureMotionFrame(page,join(root,path),target.observe);frames.push(path);
     // Screenshot transport can overrun a nominal checkpoint. Record the

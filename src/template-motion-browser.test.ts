@@ -20,3 +20,16 @@ test('a fast opening draw is observed before delayed font settlement, without in
   assert.ok(result.checkpoints.some(c=>c.timeMs<800));assert.ok(result.videoHash);
  }finally{await browser.close();await new Promise<void>(r=>server.close(()=>r()));}
 });
+
+test('native traversal includes the last two pixels before a fractional closing edge',async()=>{
+ const root=mkdtempSync(join(tmpdir(),'vitris-closing-edge-'));mkdirSync(join(root,'dist'));
+ writeFileSync(join(root,'dist/index.html'),'<style>body{margin:0}main{height:1162px}footer{height:100.35px}</style><main></main><footer id="closing">Closing content</footer>');
+ const server=previewServer(join(root,'dist'));await new Promise<void>(r=>server.listen(0,'127.0.0.1',r));const url='http://127.0.0.1:'+(server.address() as {port:number}).port+'/';const browser=await chromium.launch();
+ try{
+  const result=await captureMotionJourney(browser,root,url,'/',1080,'static','evidence',{version:2,scenes:[],routes:[{route:'/',beats:[{sectionId:'closing'}]}]} as any,true);
+  assert.deepEqual(result.failures,[]);
+  assert.ok(result.checkpoints.some(c=>c.y===360),'the regular wheel step must be observed');
+  assert.ok(result.checkpoints.at(-1)!.y>360,'capture must include the final wheel remainder');
+  assert.ok(result.sections[0]!.bottom-result.checkpoints.at(-1)!.y-900<1,'the fractional closing edge must fit inside the final viewport');
+ }finally{await browser.close();await new Promise<void>(r=>server.close(()=>r()));}
+});
