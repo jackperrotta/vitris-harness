@@ -527,10 +527,10 @@ export function auditTransfer(files: { path: string; bytes: Buffer }[]): Quality
   let total = 0;
   for (const file of files) {
     total += file.bytes.length;
-    if (file.path.endsWith(".js")) js += gzipSize(file.bytes);
-    if (file.path.endsWith(".css")) css += gzipSize(file.bytes);
+    if (/\.m?js$/i.test(file.path)) js += gzipSize(file.bytes);
+    if (/\.css$/i.test(file.path)) css += gzipSize(file.bytes);
     if (/\.(woff2?|ttf|otf)$/i.test(file.path)) fonts += file.bytes.length;
-    if (file.bytes.length === 0 && /\.(js|css|png|jpg|webp|woff2?)$/i.test(file.path)) {
+    if (file.bytes.length === 0 && /\.(m?js|css|png|jpg|webp|woff2?)$/i.test(file.path)) {
       findings.push(finding({
         id: `empty-${file.path}`,
         requirementId: "perf-broken-resource",

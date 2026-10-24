@@ -4,9 +4,12 @@ import { tmpdir } from 'node:os';
 import { launch, type LaunchedChrome } from 'chrome-launcher';
 
 /** One CDP client controls Lighthouse; a Playwright browser also attaches to every target. */
+export function lighthouseChromeFlags(platform = process.platform, ci = process.env.CI === 'true'): string[] {
+  return ['--headless=new', '--no-first-run', '--disable-dev-shm-usage', ...(platform === 'linux' && ci ? ['--no-sandbox'] : [])];
+}
 export async function lighthouseBrowser(chromePath?: string): Promise<LaunchedChrome> {
   const executable = chromePath || process.env.CHROME_PATH || (await import('playwright')).chromium.executablePath();
-  return launch({ chromePath: executable, chromeFlags: ['--headless=new', '--no-first-run', '--disable-dev-shm-usage'] });
+  return launch({ chromePath: executable, chromeFlags: lighthouseChromeFlags() });
 }
 
 export async function closeLighthouseBrowser(chrome: LaunchedChrome): Promise<void> {

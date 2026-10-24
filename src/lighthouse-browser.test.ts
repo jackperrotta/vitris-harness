@@ -1,6 +1,10 @@
 import {test}from'node:test';import assert from'node:assert/strict';
 import {mkdtempSync,writeFileSync,existsSync}from'node:fs';import{join}from'node:path';import{tmpdir}from'node:os';
-import type{LaunchedChrome}from'chrome-launcher';import{closeLighthouseBrowser}from'./agent/lighthouse-browser.ts';
+import type{LaunchedChrome}from'chrome-launcher';import{closeLighthouseBrowser,lighthouseChromeFlags}from'./agent/lighthouse-browser.ts';
+test('only isolated Linux CI opts out of the Chrome sandbox',()=>{
+ assert(lighthouseChromeFlags('linux',true).includes('--no-sandbox'));
+ for(const [platform,ci] of [['linux',false],['win32',true],['darwin',true]] as const)assert(!lighthouseChromeFlags(platform,ci).includes('--no-sandbox'));
+});
 const locked=(profile:string)=>({process:{spawnargs:['chrome','--user-data-dir='+profile]},kill(){throw Object.assign(new Error('Windows profile lock'),{code:'EPERM'})}} as unknown as LaunchedChrome);
 test('Lighthouse profile cleanup retries only an owned launcher directory',async()=>{
  const owned=mkdtempSync(join(tmpdir(),'lighthouse.'));writeFileSync(join(owned,'chrome.log'),'temporary');

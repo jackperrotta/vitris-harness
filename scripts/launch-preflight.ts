@@ -6,7 +6,8 @@ import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
 import { artifactManifest } from "../src/knowledge/artifact.ts";
 import { fingerprint } from "../src/agent/artifacts.ts";
-import { auditFragment, auditIndexing, auditTransfer, contentHash, TRANSFER_BUDGETS } from "../src/knowledge/checks.ts";
+import { auditFragment, auditIndexing, contentHash, TRANSFER_BUDGETS } from "../src/knowledge/checks.ts";
+import { auditPageTransfers } from '../src/knowledge/page-transfer.ts';
 import { evaluateLaunchDecision } from "../src/knowledge/launch-policy.ts";
 import { sealReceipt } from "../src/knowledge/evidence.ts";
 import { LAUNCH_POLICY_ID } from "../src/knowledge/contracts.ts";
@@ -14,6 +15,8 @@ import { parseFrontmatter } from "../src/compile/frontmatter.ts";
 import { COOKIE_COMPLIANCE_PATH } from "../src/runtime/cookie-compliance.ts";
 import { templateAdaptationFailures } from '../src/agent/template-adaptation.ts';
 import { browserVerificationTimeoutMs } from '../src/agent/browser-timeout.ts';
+import { performancePolicy } from '../src/agent/performance.ts';
+import { lighthouseBrowser, closeLighthouseBrowser } from '../src/agent/lighthouse-browser.ts';
 
 function arg(name: string): string | undefined {
   const index = process.argv.indexOf(name);
@@ -46,7 +49,17 @@ let evidenceTrusted = false;
 let initialTransferBytes: number | undefined;
 let browserReportHash: string | undefined;
 let screenshotSetHash: string | undefined;
-if (environment === "production" && existsSync(dist)) {
+let browserPrerequisite = true;
+if (environment === 'production' && existsSync(dist) && performancePolicy(root).enabled) {
+  try { const chrome = await lighthouseBrowser(); await closeLighthouseBrowser(chrome); }
+  catch (error) {
+    browserPrerequisite = false;
+    findings.push({ id:'performance-browser-unavailable', requirementId:'perf-field-cwv', domain:'performance', severity:'serious' as const,
+      confidence:'confirmed' as const,status:'tool-error' as const,evidence:`Lighthouse Chrome could not start: ${error instanceof Error ? error.message : String(error)}`,
+      verifier:'lighthouse-readiness',verifierVersion:'2026-10-24',repairOwner:'browser',verifiedAt:new Date().toISOString() });
+  }
+}
+if (environment === "production" && existsSync(dist) && browserPrerequisite) {
   // The local verifier runs inside this command's trusted process tree. A
   // caller-authored browser.json cannot assert success on its own.
   const sibling = dirname(fileURLToPath(import.meta.url));
@@ -103,16 +116,7 @@ if (!existsSync(dist)) {
   };
   walk(dist);
   for (const file of htmlFiles) findings.push(...auditFragment(file.html, file.path));
-  const assets: { path: string; bytes: Buffer }[] = [];
-  const walkAssets = (dir: string) => {
-    for (const name of readdirSync(dir)) {
-      const path = join(dir, name);
-      if (statSync(path).isDirectory()) walkAssets(path);
-      else if (/\.(js|css|woff2?|ttf|otf)$/i.test(name)) assets.push({ path, bytes: readFileSync(path) });
-    }
-  };
-  walkAssets(dist);
-  findings.push(...auditTransfer(assets));
+  findings.push(...auditPageTransfers(dist, htmlFiles, publicOrigin));
   if (environment === "production" && browserStatus === "ok" && initialTransferBytes !== undefined && initialTransferBytes > TRANSFER_BUDGETS.initialTransfer) findings.push({
     id: "budget-initial-transfer", requirementId: "perf-transfer-budget", domain: "performance",
     severity: "serious" as const, confidence: "confirmed" as const, status: "fail" as const,
