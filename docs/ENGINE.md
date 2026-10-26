@@ -1,9 +1,9 @@
 # Engine API and local refinement
 
-Install an exact `@vitris/harness` dependency in each website. `@vitris/harness/contracts` is browser-safe validation; `@vitris/harness/engine` executes Node filesystem operations. Legacy `@vitris/harness/cli/api` exports remain available.
+Install an exact `@tryvitris/website-harness` dependency in each website. `@tryvitris/website-harness/contracts` is browser-safe validation; `@tryvitris/website-harness/engine` executes Node filesystem operations. Legacy `@tryvitris/website-harness/cli/api` exports remain available.
 
 ```js
-import { inspectSite, prepareChange, applyOperations, buildSiteDraft, verifyChange } from "@vitris/harness/engine";
+import { inspectSite, prepareChange, applyOperations, buildSiteDraft, verifyChange } from "@tryvitris/website-harness/engine";
 const site = inspectSite(process.cwd());
 const request = { schemaVersion: 1, id: "headline-1", instruction: "Update the headline", origin: "operator",
   baseRevision: site.revision.digest, requestedScopes: ["copy"], explicitPreferences: [], evidence: [] };

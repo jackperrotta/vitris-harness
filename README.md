@@ -2,13 +2,13 @@
 
 Vitris gives your coding agent the business context, design judgment, and verification process to build distinctive websites on a consistent technical foundation.
 
-This repository produces **`@vitris/harness`**, an agent harness for building and verifying customer websites. It includes a static site compiler, design tokens, an optional Cloudflare backend for owner admin, leads, and analytics, harvest tools, and an agent kit. Each customer website is a separate git repo started from `templates/site`. Normal generation stops at a verified local preview. Cloudflare launch is a separate explicit operation. Built-in design lessons live in `design-system/knowledge/v1` and do not require a user reference.
+This repository produces **`@tryvitris/website-harness`**, an agent harness for building and verifying customer websites. It includes a static site compiler, design tokens, an optional Cloudflare backend for owner admin, leads, and analytics, harvest tools, and an agent kit. Each customer website is a separate git repo started from `templates/site`. Normal generation stops at a verified local preview. Cloudflare launch is a separate explicit operation. Built-in design lessons live in `design-system/knowledge/v1` and do not require a user reference.
 
 Sites own their visual components. The optional harness block library supplies source material to copy and adapt into each site.
 
 The default template gallery is `artifacts/templates/gallery.html`. Run `npm run templates:gallery` and open `http://127.0.0.1:4390/`. It displays the live Cloudflare library and automatically includes future publications. Publish complete new demonstrations with `npm run templates -- publish --bundle ABSOLUTE_TRANSIENT_DIRECTORY`; see `agent/refs/template-library.md`. Source fixtures contain original Vitris instructional material; external demonstrations remain hosted with their own provenance records.
 
-MIT licensed. The `0.1.0-beta.3` package is prepared locally; registry publication is currently disabled. Bring your own coding agent. Optional hosting uses your own Cloudflare account; see [Cloudflare setup](docs/CLOUDFLARE.md) and [credential safety](docs/SECURITY.md).
+MIT licensed. The public npm package is `@tryvitris/website-harness`; prerelease `0.1.0-beta.5` uses the `beta` dist-tag. Bring your own coding agent. Optional hosting uses your own Cloudflare account; see [Cloudflare setup](docs/CLOUDFLARE.md) and [credential safety](docs/SECURITY.md).
 
 Requires Node 24 or newer. Hosted demonstrations and third-party media have their own license records; see NOTICE.
 
@@ -16,12 +16,12 @@ Requires Node 24 or newer. Hosted demonstrations and third-party media have thei
 
 Each client gets an independent site directory and Git repository. **That client directory is where you open your coding agent and build the website.** This source repository maintains the reusable harness, compiler, knowledge, media catalog, and optional backend.
 
-Before the first registry release, build and pack this checkout, then generate a site:
+To use a local checkout, build and pack it, then generate a site:
 
 ```bash
 npm ci
 npm pack
-node bin/vitris.js site create --dir ../acme --slug acme --name "Acme Shop" --from https://old-site.example --harness ../vitris-harness/vitris-harness-0.1.0-beta.3.tgz
+node bin/vitris.js site create --dir ../acme --slug acme --name "Acme Shop" --from https://old-site.example --harness ../vitris-harness/tryvitris-website-harness-0.1.0-beta.5.tgz
 cd ../acme
 npm install
 npx playwright install chromium
@@ -30,15 +30,15 @@ npm run go
 
 The tarball path is relative to the generated site directory. Adjust it for your directory layout. Open the **acme directory** in your coding agent and follow `AGENTS.md` and `agent/CURRENT.md`. Commit its generated lockfile with the client source. Before using the client repo on another computer, switch the dependency to a published version or distribute the tarball with it.
 
-After the package is published, the portable starter command will be:
+The public beta starter command is:
 
 ```bash
-npx --package @vitris/harness@0.1.0-beta.3 vitris site create --dir acme --slug acme --from https://old-site.example
+npx --package @tryvitris/website-harness@0.1.0-beta.5 vitris site create --dir acme --slug acme --from https://old-site.example
 ```
 
 Use `--blank` when there is no existing website. New sites pin the creating harness version. `--harness file:../vitris-harness` explicitly opts into local development; run `npm run build:cli` in that checkout first. Jev is optional and off by default. Backend and Cloudflare credentials are not required to author and preview a static site locally.
 
-See [distribution and migration](docs/DISTRIBUTION.md) for existing clients and release preparation. No registry release or hosted deployment has been performed by this rename.
+See [distribution and migration](docs/DISTRIBUTION.md) for existing clients and release preparation. Cloudflare hosting is configured and deployed separately from installing the npm package.
 
 ## Local demo
 
@@ -57,9 +57,9 @@ Then:
 - Owner admin: http://127.0.0.1:8787/app/login — `owner@demo.test`
 - Operator: http://127.0.0.1:8787/ops — `ops@demo.test`
 
-`/preview/{slug}/` loads the tenant’s **GitHub** `pages/` + `components/` (requires `github_owner` / `github_repo` + `GITHUB_TOKEN`).
+`/preview/{slug}/` requires an owner/operator session and opens the tenant’s **GitHub** `pages/` + `components/` on its own preview hostname. Hosted previews require `PREVIEW_HOST_SUFFIX`, `github_owner` / `github_repo` and `GITHUB_TOKEN`; see [Cloudflare setup](docs/CLOUDFLARE.md). Local CLI previews need none of these.
 
-`DEV_LOGIN=1` skips email only on local loopback or `.localhost` requests. The deployable Wrangler config does not set it.
+`DEV_LOGIN=1` skips email and seeds demo users only on local loopback or `.localhost` requests. The deployable Wrangler config does not set it. Production sign-in requires email delivery and the authentication D1 migration; production never displays sign-in links or creates demo accounts.
 
 ## Site source layout
 

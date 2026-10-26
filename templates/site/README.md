@@ -1,6 +1,6 @@
 # __NAME__
 
-This is the starting directory for this customer website. Open this directory in your coding agent. The versioned `@vitris/harness` dependency supplies the tools; this repository owns the customer content, components, brand, and workflow progress.
+This is the starting directory for this customer website. Open this directory in your coding agent. The versioned `@tryvitris/website-harness` dependency supplies the tools; this repository owns the customer content, components, brand, and workflow progress.
 
 Vitris site repo. The harness compiles `pages/` + `components/` to static `dist/`.
 
@@ -35,7 +35,7 @@ To ignore local Cursor-chat traces in an existing site, add `agent/runs/traces/`
 
 If this site publishes through the backend Worker, protected CI needs `VITRIS_TENANT_ID`, `VITRIS_PUBLISH_ATTESTATION_SECRET`, and `VITRIS_BACKEND_ORIGIN`; the Worker needs the matching `PUBLISH_ATTESTATION_SECRET` and its Cloudflare API credentials. The generated workflow signs the exact verified `dist/` bundle and posts it to `/api/publish-attested`. The Worker rejects stale, altered, or mismatched evidence before changing hosted content. A Pages project using Git integration can continue using its normal build path; avoid configuring both paths for the same production release.
 
-For interactive workflow commands on Windows, call the installed bin directly when forwarding flags, for example `node ./node_modules/@vitris/harness/bin/vitris-go.js --prepare --jev-mode off`. `npm run go -- --prepare` may be parsed differently by some npm/PowerShell versions. A prepared `agent/CURRENT.md` is the active stage; complete it with the recorded preparation ID, then prepare the next stage. Do not edit `agent/STATE.json`.
+For interactive workflow commands on Windows, call the installed bin directly when forwarding flags, for example `node ./node_modules/@tryvitris/website-harness/bin/vitris-go.js --prepare --jev-mode off`. `npm run go -- --prepare` may be parsed differently by some npm/PowerShell versions. A prepared `agent/CURRENT.md` is the active stage; complete it with the recorded preparation ID, then prepare the next stage. Do not edit `agent/STATE.json`.
 
 ## Authoring
 

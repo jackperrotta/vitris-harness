@@ -1,7 +1,7 @@
 import { escapeHtml } from "../../html.ts";
 import { readSession, type Session } from "../auth.ts";
 import { kernelOrigin, type Env } from "../env.ts";
-import { html, json, readBody, redirect } from "../http.ts";
+import { html, json, readBody, redirect, sameOriginMutation } from "../http.ts";
 import {
   findAuthorizedSender,
   getUpdateJob,
@@ -87,6 +87,7 @@ export async function handleUpdatesApi(env: Env, request: Request): Promise<Resp
   if (request.method !== "POST") return json({ error: "Method not allowed" }, 405);
 
   const session = await readSession(env, request);
+  if (session && !sameOriginMutation(request)) return json({error:'Invalid request origin'},403);
 
   if (!session) {
     const body = (await request.json().catch(() => null)) as {

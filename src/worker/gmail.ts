@@ -125,13 +125,23 @@ export type SendMailOpts = {
   from?: string;
 };
 
+export function mailConfigured(env: Env): boolean {
+  return !!((env.GMAIL_SA_CLIENT_EMAIL && env.GMAIL_SA_PRIVATE_KEY && (env.GMAIL_IMPERSONATE || env.MAIL_FROM)) || (env.MAIL_API_KEY && env.MAIL_FROM));
+}
+
 export async function sendMail(env: Env, opts: SendMailOpts): Promise<void> {
   const from = opts.from || env.GMAIL_IMPERSONATE || env.MAIL_FROM;
   if (!from) throw new Error("No MAIL_FROM / GMAIL_IMPERSONATE configured");
 
-  // Dev / missing SA: log instead of failing the whole job hard when possible.
+  if ([from,...opts.to,opts.subject].some(value=>/[\r\n]/.test(value))) throw new Error('Invalid mail headers');
+  // Never log message bodies: authentication messages contain bearer tokens.
   if (!env.GMAIL_SA_CLIENT_EMAIL || !env.GMAIL_SA_PRIVATE_KEY) {
-    console.log("[gmail:dev]", { from, to: opts.to, subject: opts.subject, text: opts.text });
+    if (!env.MAIL_API_KEY || !env.MAIL_FROM) throw new Error('Email delivery is not configured');
+    const response=await fetch('https://api.resend.com/emails', {
+      method:'POST',headers:{authorization:`Bearer ${env.MAIL_API_KEY}`,'content-type':'application/json'},
+      body:JSON.stringify({from,to:opts.to,subject:opts.subject,text:opts.text}),
+    });
+    if (!response.ok) throw new Error('Email delivery failed');
     return;
   }
 
@@ -146,7 +156,6 @@ export async function sendMail(env: Env, opts: SendMailOpts): Promise<void> {
     body: JSON.stringify({ raw }),
   });
   if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`Gmail send failed: ${res.status} ${text.slice(0, 400)}`);
+    throw new Error(`Gmail send failed: ${res.status}`);
   }
 }

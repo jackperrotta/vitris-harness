@@ -25,7 +25,7 @@ test('new starter pins the harness version, escapes business names, and starts w
   const site = temp(), name = 'Sam\'s "Workshop" \\ Studio';
   assert.equal((await createSite({ dir: site, slug: 'workshop', name, blank: true, backendOrigin: 'https://backend.example/' })).ok, true);
   const pkg = read(site, 'package.json');
-  assert.equal(pkg.dependencies['@vitris/harness'], read(resolve(import.meta.dirname, '..'), 'package.json').version);
+  assert.equal(pkg.dependencies['@tryvitris/website-harness'], read(resolve(import.meta.dirname, '..'), 'package.json').version);
   assert.equal(pkg.dependencies['@vitris/kernel'], undefined);
   assert.equal(read(site, 'site.json').name, name);
   assert.equal(read(site, 'launch.json').backendOrigin, 'https://backend.example');
@@ -40,7 +40,7 @@ test('new starter pins the harness version, escapes business names, and starts w
 test('legacy create options remain usable and local dependencies are explicit', async () => {
   const site = temp();
   await createSite({ dir: site, slug: 'legacy', from: 'https://old.example', kernelOrigin: 'https://legacy.example', kernelSpec: 'file:../harness' });
-  assert.equal(read(site, 'package.json').dependencies['@vitris/harness'], 'file:../harness');
+  assert.equal(read(site, 'package.json').dependencies['@tryvitris/website-harness'], 'file:../harness');
   assert.equal(read(site, 'launch.json').backendOrigin, 'https://legacy.example');
   assert.notEqual(read(site, 'agent/STATE.json').nodes.harvest.status, 'done');
 });
@@ -68,11 +68,11 @@ test('migration previews without edits, backs up configuration, preserves conten
   assert.equal(readFileSync(join(site, 'package.json'), 'utf8'), before);
   const result = migrateSite({ site, apply: true });
   assert.equal(readFileSync(join(result.backup!, 'package.json'), 'utf8'), before);
-  assert.equal(read(site, 'package.json').dependencies['@vitris/harness'], 'file:../source');
+  assert.equal(read(site, 'package.json').dependencies['@tryvitris/website-harness'], 'file:../source');
   assert.equal(read(site, 'package.json').scripts.custom, 'echo custom');
   assert.match(read(site, 'package.json').scripts['refresh-agent'], /vitris-refresh\.js/);
-  assert.equal(read(site, 'package.json').scripts.go, 'node ./node_modules/@vitris/harness/bin/vitris-go.js');
-  assert.equal(read(site, 'package.json').scripts.build, 'node ./node_modules/@vitris/harness/bin/vitris-build.js --site . --out dist --slug migrate');
+  assert.equal(read(site, 'package.json').scripts.go, 'node ./node_modules/@tryvitris/website-harness/bin/vitris-go.js');
+  assert.equal(read(site, 'package.json').scripts.build, 'node ./node_modules/@tryvitris/website-harness/bin/vitris-build.js --site . --out dist --slug migrate');
   assert.equal(read(site, 'launch.json').backendOrigin, 'https://existing.example');
   assert.equal(readFileSync(join(site, 'agent/STATE.json'), 'utf8'), state);
   assert.equal(readFileSync(join(site, 'pages/index.html'), 'utf8'), '<h1>Customer content</h1>');
@@ -90,17 +90,41 @@ test('migration refuses conflicting configuration and active workflows before wr
   assert.throws(() => migrateSite({ site }), /Stop the active workflow/);
 });
 
-test('package discovery accepts both installed names and prefers the new one', () => {
+test('package discovery accepts all installed names and prefers the public npm scope', () => {
   const root = temp();
-  for (const name of ['kernel', 'harness']) {
-    const installed = join(root, 'node_modules/@vitris', name);
-    save(installed, 'package.json', { name: `@vitris/${name}` });
+  for (const name of ['@vitris/kernel', '@vitris/harness', '@tryvitris/harness', '@tryvitris/website-harness']) {
+    const installed = join(root, 'node_modules', name);
+    save(installed, 'package.json', { name });
     save(installed, 'design-system/calibration/v1/manifest.json', {});
   }
   const previous = [process.env.VITRIS_HARNESS, process.env.VITRIS_KERNEL];
   delete process.env.VITRIS_HARNESS; delete process.env.VITRIS_KERNEL;
-  try { assert.equal(resolveHarnessRoot(root), join(root, 'node_modules/@vitris/harness')); }
+  try { assert.equal(resolveHarnessRoot(root), join(root, 'node_modules/@tryvitris/website-harness')); }
   finally { for (const [i, key] of ['VITRIS_HARNESS', 'VITRIS_KERNEL'].entries()) { if (previous[i] === undefined) delete process.env[key]; else process.env[key] = previous[i]; } }
+});
+
+test('migration moves the previous harness scope in either dependency section and rejects conflicts before writing', async () => {
+  for (const section of ['dependencies', 'devDependencies']) {
+    const site = temp(); await createSite({dir:site,slug:'scope-migration',blank:true});
+    save(site,'package.json',{name:'scope-migration',private:true,[section]:{'@vitris/harness':'file:../source'},scripts:{build:'node --experimental-strip-types ./node_modules/@vitris/harness/src/build/cli.ts --site .',custom:'node ./node_modules/@vitris/harness/bin/vitris-icons.js search house'}});
+    writeFileSync(join(site,'README.md'),'Use @vitris/harness/icons');
+    const state=readFileSync(join(site,'agent/STATE.json'),'utf8');
+    migrateSite({site,apply:true});
+    const migrated=read(site,'package.json');
+    assert.equal(migrated[section]['@tryvitris/website-harness'],'file:../source');
+    assert.equal(migrated[section]['@vitris/harness'],undefined);
+    assert.match(migrated.scripts.build,/@tryvitris\/website-harness\/bin\/vitris-build\.js/);
+    assert.equal(migrated.scripts.custom,'node ./node_modules/@tryvitris/website-harness/bin/vitris-icons.js search house');
+    assert.equal(readFileSync(join(site,'README.md'),'utf8'),'Use @tryvitris/website-harness/icons');
+    assert.equal(readFileSync(join(site,'agent/STATE.json'),'utf8'),state);
+    assert.deepEqual(migrateSite({site,apply:true}).files,[]);
+    save(site,'package.json',{name:'scope-migration',[section]:{'@tryvitris/website-harness':'1.0.0','@vitris/harness':'0.9.0'}});
+    const before=readFileSync(join(site,'package.json'),'utf8');
+    assert.throws(()=>migrateSite({site,apply:true}),/Conflicting package dependencies/);
+    assert.equal(readFileSync(join(site,'package.json'),'utf8'),before);
+    migrateSite({site,apply:true,harnessSpec:'0.1.0-beta.5'});
+    assert.deepEqual(read(site,'package.json')[section],{'@tryvitris/website-harness':'0.1.0-beta.5'});
+  }
 });
 
 test('new backend configuration reaches compiled forms and the beacon while legacy settings remain supported', async () => {

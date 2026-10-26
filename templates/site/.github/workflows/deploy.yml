@@ -27,9 +27,9 @@ jobs:
       - name: Launch preflight
         run: |
           if [ "${{ github.ref }}" = "refs/heads/main" ]; then
-            node ./node_modules/@vitris/harness/bin/vitris-launch-preflight.js --environment production --site .
+            node ./node_modules/@tryvitris/website-harness/bin/vitris-launch-preflight.js --environment production --site .
           else
-            node ./node_modules/@vitris/harness/bin/vitris-launch-preflight.js --environment preview --site .
+            node ./node_modules/@tryvitris/website-harness/bin/vitris-launch-preflight.js --environment preview --site .
           fi
       - name: Deploy to Cloudflare Pages
         if: github.ref != 'refs/heads/main' || env.VITRIS_TENANT_ID == ''
@@ -50,7 +50,7 @@ jobs:
           VITRIS_PUBLISH_ATTESTATION_SECRET: ${{ secrets.VITRIS_PUBLISH_ATTESTATION_SECRET }}
           VITRIS_BACKEND_ORIGIN: ${{ secrets.VITRIS_BACKEND_ORIGIN || secrets.KERNEL_ORIGIN }}
         run: |
-          node ./node_modules/@vitris/harness/bin/vitris-sign-publish-bundle.js \
+          node ./node_modules/@tryvitris/website-harness/bin/vitris-sign-publish-bundle.js \
             --site . --tenant-id "$VITRIS_TENANT_ID" --slug __SLUG__ --project __SLUG__ \
             --out "$RUNNER_TEMP/vitris-publish-bundle.json"
           curl --fail-with-body --silent --show-error \

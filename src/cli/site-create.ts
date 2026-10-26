@@ -103,11 +103,11 @@ export async function createSite(opts: CreateSiteOptions): Promise<CommandResult
   const pkgPath = join(dest, "package.json");
   const pkg = JSON.parse(readFileSync(pkgPath, "utf8"));
   pkg.name = slug;
-  pkg.dependencies["@vitris/harness"] = harnessSpec;
+  pkg.dependencies["@tryvitris/website-harness"] = harnessSpec;
   if (mode === "preserve") {
-    pkg.scripts.go = "node ./node_modules/@vitris/harness/bin/vitris.js run --site .";
-    pkg.scripts.eval = "node ./node_modules/@vitris/harness/bin/vitris.js verify --site .";
-    pkg.scripts.deploy = "node ./node_modules/@vitris/harness/bin/vitris.js deploy --site . --environment preview";
+    pkg.scripts.go = "node ./node_modules/@tryvitris/website-harness/bin/vitris.js run --site .";
+    pkg.scripts.eval = "node ./node_modules/@tryvitris/website-harness/bin/vitris.js verify --site .";
+    pkg.scripts.deploy = "node ./node_modules/@tryvitris/website-harness/bin/vitris.js deploy --site . --environment preview";
     pkg.scripts["verify:browser"] = pkg.scripts.eval;
   }
   for (const [key, value] of Object.entries(pkg.scripts as Record<string, string>)) pkg.scripts[key] = value.replaceAll("__SLUG__", slug);

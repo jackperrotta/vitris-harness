@@ -3,6 +3,8 @@ APPROVE_SECRET=change-me-approve-hmac-secret
 DEV_LOGIN=1
 VITRIS_BACKEND_ORIGIN=http://127.0.0.1:8787
 ASSETS_ORIGIN=http://127.0.0.1:8787
+# Hosted GitHub previews need a dedicated wildcard domain routed to this Worker.
+# PREVIEW_HOST_SUFFIX=previews.your-domain.example
 # Copy this file to .dev.vars (gitignored) and fill in real values.
 # Required for create-site --from image uploads to R2 (and remote stock).
 # CF_ACCOUNT_ID=

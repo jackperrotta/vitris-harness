@@ -14,7 +14,7 @@ export function findHarnessRoot(startDir?: string): string {
     if (existsSync(candidateTmpl) && existsSync(candidatePkg)) {
       try {
         const pkg = JSON.parse(readFileSync(candidatePkg, "utf8"));
-        if (["@vitris/harness", "@vitris/kernel"].includes(pkg.name)) {
+        if (["@tryvitris/website-harness", "@tryvitris/harness", "@vitris/harness", "@vitris/kernel"].includes(pkg.name)) {
           return curr;
         }
       } catch {}
@@ -32,7 +32,7 @@ export function findHarnessRoot(startDir?: string): string {
     }
   }
 
-  throw new Error("Could not locate @vitris/harness root directory containing templates/site");
+  throw new Error("Could not locate @tryvitris/website-harness root directory containing templates/site");
 }
 /** @deprecated Use findHarnessRoot. */
 export const findKernelRoot = findHarnessRoot;

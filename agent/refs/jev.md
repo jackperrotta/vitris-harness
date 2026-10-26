@@ -1,7 +1,7 @@
 # Skill: jev
 # Jev Decision Service & Compact Context Operations
 
-This reference documents the bounded decision service and compact packet mechanisms powered by TypeSafe's Jev model (`jev-1.13.0`) in `@vitris/harness`.
+This reference documents the bounded decision service and compact packet mechanisms powered by TypeSafe's Jev model (`jev-1.13.0`) in `@tryvitris/website-harness`.
 
 ## Core Philosophy
 

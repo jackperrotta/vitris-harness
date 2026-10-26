@@ -7,7 +7,9 @@ export function migrateSite(options: { site: string; harnessSpec?: string; apply
   const leases = join(root, 'agent/leases');
   if (existsSync(join(root, 'agent/RUN.lock')) || (existsSync(leases) && readdirSync(leases).some(name => name.endsWith('.json')))) throw new Error('Stop the active workflow before migrating the site');
   const pkg = JSON.parse(readFileSync(join(root, 'package.json'), 'utf8'));
-  if (!existsSync(join(root, 'site.json')) || ['@vitris/harness', '@vitris/kernel'].includes(pkg.name)) throw new Error('Migration requires a customer site directory');
+  const harnessNames = ['@tryvitris/website-harness', '@tryvitris/harness', '@vitris/harness', '@vitris/kernel'];
+  const legacyNames = harnessNames.slice(1);
+  if (!existsSync(join(root, 'site.json')) || harnessNames.includes(pkg.name)) throw new Error('Migration requires a customer site directory');
   const edits: { path: string; before: string; after: string }[] = [];
   const edit = (path: string, change: (text: string) => string) => {
     if (!existsSync(join(root, path))) return;
@@ -21,26 +23,27 @@ export function migrateSite(options: { site: string; harnessSpec?: string; apply
     for (const section of ['dependencies', 'devDependencies']) {
       const deps = value[section];
       if (!deps) continue;
-      if (deps['@vitris/kernel'] && deps['@vitris/harness'] && deps['@vitris/kernel'] !== deps['@vitris/harness'] && !options.harnessSpec) throw new Error('Conflicting package dependencies; supply --harness SPEC');
-      if (deps['@vitris/kernel'] || deps['@vitris/harness']) {
-        deps['@vitris/harness'] = options.harnessSpec || deps['@vitris/harness'] || deps['@vitris/kernel'];
-        delete deps['@vitris/kernel'];
+      const specs = harnessNames.map(name => deps[name]).filter(spec => typeof spec === 'string');
+      if (new Set(specs).size > 1 && !options.harnessSpec) throw new Error('Conflicting package dependencies; supply --harness SPEC');
+      if (specs.length) {
+        deps['@tryvitris/website-harness'] = options.harnessSpec || specs[0];
+        for (const name of legacyNames) delete deps[name];
       }
     }
     const currentScripts: Record<string, string> = {
-      build: `node ./node_modules/@vitris/harness/bin/vitris-build.js --site . --out dist --slug ${slug}`,
-      go: 'node ./node_modules/@vitris/harness/bin/vitris-go.js',
-      harvest: 'node ./node_modules/@vitris/harness/bin/vitris-harvest.js',
-      eval: 'node ./node_modules/@vitris/harness/bin/vitris-eval.js',
+      build: `node ./node_modules/@tryvitris/website-harness/bin/vitris-build.js --site . --out dist --slug ${slug}`,
+      go: 'node ./node_modules/@tryvitris/website-harness/bin/vitris-go.js',
+      harvest: 'node ./node_modules/@tryvitris/website-harness/bin/vitris-harvest.js',
+      eval: 'node ./node_modules/@tryvitris/website-harness/bin/vitris-eval.js',
     };
     for (const [key, script] of Object.entries(value.scripts || {})) {
       if (typeof script !== 'string') continue;
-      value.scripts[key] = (script.includes('@vitris/kernel') || script.includes('@vitris/harness/src/build/cli.ts')) && currentScripts[key]
+      value.scripts[key] = (legacyNames.some(name => script.includes(name)) || script.includes('@tryvitris/website-harness/src/build/cli.ts')) && currentScripts[key]
         ? currentScripts[key]
-        : script.replaceAll('@vitris/kernel', '@vitris/harness');
+        : legacyNames.reduce((text, name) => text.replaceAll(name, '@tryvitris/website-harness'), script);
     }
     value.scripts ||= {};
-    value.scripts['refresh-agent'] ||= 'node ./node_modules/@vitris/harness/bin/vitris-refresh.js --site .';
+    value.scripts['refresh-agent'] ||= 'node ./node_modules/@tryvitris/website-harness/bin/vitris-refresh.js --site .';
     return JSON.stringify(value, null, 2) + '\n';
   });
   edit('launch.json', text => {
@@ -50,7 +53,7 @@ export function migrateSite(options: { site: string; harnessSpec?: string; apply
     return JSON.stringify(value, null, 2) + '\n';
   });
   for (const path of ['README.md', 'AGENTS.md', 'CLAUDE.md', 'GEMINI.md', '.github/workflows/deploy.yml']) {
-    edit(path, text => text.replaceAll('@vitris/kernel', '@vitris/harness'));
+    edit(path, text => legacyNames.reduce((text, name) => text.replaceAll(name, '@tryvitris/website-harness'), text));
   }
   let backup: string | undefined;
   if (options.apply && edits.length) {

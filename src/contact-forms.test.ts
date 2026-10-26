@@ -8,6 +8,7 @@ import { handleApp } from './worker/surfaces/app.ts';
 import { validateFormConfig, type FormConfig } from './forms/config.ts';
 import { allocateWidget, reconcileWidget, provisionWidgetSecrets, listWidgets } from './forms/cloudflare.ts';
 import { connectForms, inspectForms } from './forms/frontend.ts';
+import { createSession, SESSION_COOKIE } from './worker/auth.ts';
 
 export const config=(tenant:string,mode:FormConfig['mode']='test'):FormConfig=>({id:`${tenant}_contact`,mode,origins:[`https://${tenant}.example.test`],recipients:mode==='live'?['owner@example.invalid']:[],turnstile:{sitekey:'sitekey_live',secretRef:mode==='live'?'live':'test',action:'contact'},fields:[{name:'name',type:'text',maxLength:64,required:true,map:'name'},{name:'email',type:'email',required:true,maxLength:254,map:'email'},{name:'number',type:'tel',maxLength:14,map:'phone'},{name:'message',type:'textarea',maxLength:5000,required:true,map:'message'},{name:'trade',type:'select',maxLength:30,options:['carpentry','masonry']},{name:'services',type:'checkbox',maxLength:30,options:['design','build']}]});
 
@@ -21,6 +22,7 @@ test('provisioning rejects malformed secret maps before API calls and omits secr
 
 test('shared forms: real local D1 migrations, isolation, security, atomic acceptance, durable outbox', {timeout:120000},async t=>{
   const backend=await formsBackend(), {env}=backend; t.after(backend.dispose);
+  let ownerA='',ownerB='';
   await configureForms(env,'a',[config('a')],{slug:'a',name:'Tenant A'});
   await configureForms(env,'b',[config('b')],{slug:'b',name:'Tenant B'});
   let verifications=0;
@@ -71,9 +73,9 @@ test('shared forms: real local D1 migrations, isolation, security, atomic accept
     assert.equal((await handleFormsAdmin(env,new Request('https://backend.test/api/forms/b/retry',{method:'POST',headers:{authorization:`Bearer ${aToken}`,'content-type':'application/json'},body:'{"id":"other"}'}))).status,401);
     await assert.rejects(configureForms(env,'b',[config('a')]),/another tenant/);
     await assert.rejects(configureForms(env,'b',[{...config('b'),origins:config('a').origins}]),/another tenant/);
-    backend.sessions.set('sess:owner-a',JSON.stringify({userId:'owner-a',email:'a@example.invalid',tenantId:'a',role:'owner'}));
-    assert.equal((await handleFormsAdmin(env,new Request('https://backend.test/api/forms/a',{method:'POST',headers:{cookie:'vitris_sid=owner-a',origin:'https://evil.test','content-type':'application/json'},body:'{}'}))).status,401);
-    assert.equal((await handleFormsAdmin(env,new Request('https://backend.test/api/forms/b',{headers:{cookie:'vitris_sid=owner-a'}}))).status,401);
+    ownerA=await createSession(env,{userId:'owner-a',email:'a@example.invalid',tenantId:'a',role:'owner'});
+    assert.equal((await handleFormsAdmin(env,new Request('https://backend.test/api/forms/a',{method:'POST',headers:{cookie:`${SESSION_COOKIE}=${ownerA}`,origin:'https://evil.test','content-type':'application/json'},body:'{}'}))).status,401);
+    assert.equal((await handleFormsAdmin(env,new Request('https://backend.test/api/forms/b',{headers:{cookie:`${SESSION_COOKIE}=${ownerA}`}}))).status,401);
   });
   await t.test('exact origins, tenant mismatch, content types and preflight',async()=>{
     for (const origin of ['https://b.example.test','https://unapproved.pages.dev','https://a.example.test.evil.test','']) assert.equal((await handleApi(env,submit({}, {origin}))).status,403);
@@ -141,10 +143,10 @@ test('shared forms: real local D1 migrations, isolation, security, atomic accept
     await Promise.all([processFormOutbox(env,provider),processFormOutbox(env,provider)]);
     const out=await env.DB.prepare('SELECT status,test_output FROM form_outbox').first<{status:string;test_output:string}>(); assert.equal(out?.status,'captured'); assert.match(out!.test_output,/Fictional test inquiry/);
     assert.equal(await retryNotification(env,'b',(await env.DB.prepare('SELECT id FROM form_outbox').first<{id:string}>())!.id),false);
-    const a=await handleApp(env,new Request('https://backend.test/app/leads?mode=test',{headers:{cookie:'vitris_sid=owner-a'}}));
+    const a=await handleApp(env,new Request('https://backend.test/app/leads?mode=test',{headers:{cookie:`${SESSION_COOKIE}=${ownerA}`}}));
     assert.equal(a.status,200); assert.match(await a.text(),/Fictional Visitor/);
-    backend.sessions.set('sess:owner-b',JSON.stringify({userId:'owner-b',email:'b@example.invalid',tenantId:'b',role:'owner'}));
-    const b=await handleApp(env,new Request('https://backend.test/app/leads?mode=test',{headers:{cookie:'vitris_sid=owner-b'}}));
+    ownerB=await createSession(env,{userId:'owner-b',email:'b@example.invalid',tenantId:'b',role:'owner'});
+    const b=await handleApp(env,new Request('https://backend.test/app/leads?mode=test',{headers:{cookie:`${SESSION_COOKIE}=${ownerB}`}}));
     assert.equal(b.status,200); assert.doesNotMatch(await b.text(),/Fictional Visitor/);
   });
   await t.test('live transaction includes one compatible lead, conversion, outbox; notifications retry and terminate',async()=>{

@@ -15,8 +15,23 @@ import { kernelOrigin } from "../env.ts";
 import { html, text } from "../http.ts";
 import { loadTenantSiteFromGithub } from "../publish.ts";
 import { tenantBySlug } from "../tenant.ts";
+import { isPreviewHost, previewHandoff, previewRequest } from '../preview-access.ts';
 
 export async function handlePreview(env: Env, request: Request): Promise<Response> {
+  if (!isPreviewHost(env,request)) return previewHandoff(env,request);
+  const access=await previewRequest(env,request);
+  if (access instanceof Response) return access;
+  // Customer code cannot register a credential-intercepting service worker.
+  if (request.headers.has('service-worker')) return text('Service workers are disabled in hosted previews',403);
+  const response=await renderPreview(env,access.request);
+  response.headers.set('cache-control','no-store');
+  response.headers.set('referrer-policy','no-referrer');
+  response.headers.set('x-content-type-options','nosniff');
+  response.headers.set('content-security-policy',"frame-ancestors 'none'; worker-src 'none'; object-src 'none'");
+  return response;
+}
+
+async function renderPreview(env:Env,request:Request):Promise<Response> {
   const url = new URL(request.url);
   const match = url.pathname.match(/^\/preview\/([^/]+)(?:\/(.*))?$/);
   if (!match) return text("Not found", 404);

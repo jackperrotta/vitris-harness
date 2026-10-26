@@ -1,6 +1,6 @@
 # Vitris Unified CLI & Automation Contracts
 
-The `vitris` CLI (`@vitris/harness`) provides a unified, operator-friendly command line interface and automation harness for creating, running, refining, evaluating, sharing, and deploying static websites.
+The `vitris` CLI (`@tryvitris/website-harness`) provides a unified, operator-friendly command line interface and automation harness for creating, running, refining, evaluating, sharing, and deploying static websites.
 
 ---
 
@@ -9,11 +9,11 @@ The `vitris` CLI (`@vitris/harness`) provides a unified, operator-friendly comma
 After the first registry release, install as a dependency or run via `npx`. Until then use the tarball instructions in [distribution](DISTRIBUTION.md):
 
 ```bash
-npm install --save-dev @vitris/harness
+npm install --save-dev @tryvitris/website-harness
 npx vitris --help
 ```
 
-Within the `@vitris/harness` repository itself:
+Within the `@tryvitris/website-harness` repository itself:
 ```bash
 npm run build:cli
 node bin/vitris.js --help
@@ -276,7 +276,7 @@ import {
   deploySite,
   shareSite,
   EXIT_CODES,
-} from "@vitris/harness/cli";
+} from "@tryvitris/website-harness/cli";
 
 // Example: Run doctor preflight
 const doctorResult = await runDoctor({ site: "./my-site", provider: "cloudflare" });

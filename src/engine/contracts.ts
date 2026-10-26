@@ -8,7 +8,7 @@ export interface SiteIdentity {
   schemaVersion: 1;
   siteId: string;
   sourceFormatVersion: number;
-  harness: { name: "@vitris/harness"; version: string };
+  harness: { name: "@tryvitris/website-harness" | "@tryvitris/harness" | "@vitris/harness"; version: string };
   capabilities: string[];
 }
 
@@ -115,10 +115,10 @@ const version = (record: Record<string, unknown>, name: string) => {
 export function parseSiteIdentity(value: unknown): SiteIdentity {
   const r = object(value, "site identity"); version(r, "site identity");
   const h = object(r.harness, "harness");
-  if (h.name !== "@vitris/harness") throw new Error("harness name must be @vitris/harness");
+  const name = oneOf(h.name, "harness.name", ["@tryvitris/website-harness", "@tryvitris/harness", "@vitris/harness"] as const);
   if (!Number.isInteger(r.sourceFormatVersion) || Number(r.sourceFormatVersion) < 1) throw new Error("sourceFormatVersion must be positive");
   return { schemaVersion: 1, siteId: string(r.siteId, "siteId"), sourceFormatVersion: Number(r.sourceFormatVersion),
-    harness: { name: "@vitris/harness", version: string(h.version, "harness.version") }, capabilities: strings(r.capabilities, "capabilities") };
+    harness: { name, version: string(h.version, "harness.version") }, capabilities: strings(r.capabilities, "capabilities") };
 }
 
 export function parseSourceRevision(value: unknown): SourceRevision {

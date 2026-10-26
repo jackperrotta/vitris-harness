@@ -122,7 +122,7 @@ export async function runCli(argv: string[]): Promise<number> {
   const stream = new EventStream(outputMode);
 
   if (flags.version || flags.v) {
-    stream.log(`@vitris/harness v${JSON.parse(readFileSync(resolve(findHarnessRoot(), "package.json"), "utf8")).version}`);
+    stream.log(`@tryvitris/website-harness v${JSON.parse(readFileSync(resolve(findHarnessRoot(), "package.json"), "utf8")).version}`);
     return EXIT_CODES.SUCCESS;
   }
 

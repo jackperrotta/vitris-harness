@@ -20,7 +20,7 @@ function setup() {
   mkdirSync(join(target, "agent/refs"), { recursive: true });
   writeFileSync(join(site, "site.json"), '{"siteId":"fictional-upgrade","name":"Test","slug":"test"}');
   writeFileSync(join(site, "pages/index.html"), '<h1 id="headline">Before</h1>');
-  writeFileSync(join(target, "package.json"), '{"name":"@vitris/harness","version":"0.1.0"}');
+  writeFileSync(join(target, "package.json"), '{"name":"@tryvitris/website-harness","version":"0.1.0"}');
   for (const root of [site, target]) {
     writeFileSync(join(root, "agent/graph.yaml"), 'version: 3\nstop_at: preview\nnodes:\n  - id: preview\n    kind: agent\n    needs: []\n    refs: [refine]\n    writes: [pages/index.html]\n    eval: preview\n');
     writeFileSync(join(root, "agent/PROMPT.md"), "Original prompt");
@@ -126,7 +126,7 @@ test("a completed fictional creation graph upgrades and handles an ordinary stru
   const site = temp(), target = temp();
   cpSync(resolve("src/test/fixtures/active-agent-site"), site, { recursive: true });
   cpSync(join(site, "agent"), join(target, "agent"), { recursive: true });
-  writeFileSync(join(target, "package.json"), '{"name":"@vitris/harness","version":"0.2.0"}');
+  writeFileSync(join(target, "package.json"), '{"name":"@tryvitris/website-harness","version":"0.2.0"}');
   const stateBefore = readFileSync(join(site, "agent/STATE.json"), "utf8");
   const authoredBefore = readFileSync(join(site, "pages/index.html"), "utf8");
   recordManagedKit(site, target);

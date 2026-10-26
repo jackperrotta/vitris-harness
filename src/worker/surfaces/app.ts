@@ -1,14 +1,14 @@
 import { escapeHtml } from "../../html.ts";
-import { consumeMagic, createSession, logoutCookie, magicToken, readSession, sessionCookie, type Session } from "../auth.ts";
-import { isDevLogin, kernelOrigin, type Env } from "../env.ts";
-import { html, json, query, readBody, redirect } from "../http.ts";
+import { allowLogin, consumeMagic, createSession, discardMagic, logoutCookie, magicToken, readSession, revokeSession, sessionCookie, type Session } from "../auth.ts";
+import { isDevLogin, isLocalRequest, kernelOrigin, type Env } from "../env.ts";
+import { html, json, query, readBody, redirect, sameOriginMutation } from "../http.ts";
 import { addPagesDomain } from "../publish.ts";
 import { liveVisitors, rollupDay } from "../cron.ts";
 import { loadSiteSnapshot, tenantById } from "../tenant.ts";
 import { renderAnalyticsPage, type DailyRow } from "../ui/analytics.ts";
 import { page } from "../ui/layout.ts";
 import { handleRequestsDecide, renderRequestsPage } from "./updates.ts";
-import { sendMail } from "../gmail.ts";
+import { mailConfigured, sendMail } from "../gmail.ts";
 import { formAdminAuthorized, formReadiness, retryNotification } from '../forms.ts';
 import { validateFormConfig } from '../../forms/config.ts';
 
@@ -31,7 +31,7 @@ async function requireUser(env: Env, request: Request): Promise<Session | Respon
 function noticeFrom(request: Request): { notice?: string; error?: string } {
   const q = query(request);
   if (q.get("saved")) return { notice: "Saved." };
-  if (q.get("sent")) return { notice: "Request queued. We’ll handle it in the site repo and share a preview." };
+  if (q.get("sent")) return { notice: new URL(request.url).pathname === '/app/login' ? 'If an account exists, a sign-in link has been sent.' : "Request queued. We’ll handle it in the site repo and share a preview." };
   if (q.get("published")) return { notice: q.get("msg") || "Published." };
   if (q.get("error")) return { error: q.get("error") || "Something went wrong." };
   return {};
@@ -42,6 +42,8 @@ export async function handleApp(env: Env, request: Request): Promise<Response> {
   let path = url.pathname;
   if (path === "/app") path = "/app/";
   const method = request.method;
+  if (!isLocalRequest(request) && url.protocol !== 'https:') return new Response('HTTPS required',{status:403});
+  if (!sameOriginMutation(request)) return new Response('Invalid request origin',{status:403});
 
   if (path === "/app/login" && method === "GET") {
     return html(
@@ -66,48 +68,34 @@ export async function handleApp(env: Env, request: Request): Promise<Response> {
   if (path === "/app/login" && method === "POST") {
     const body = await readBody(request);
     const email = (body.email || "").trim().toLowerCase();
+    const accepted=()=>redirect('/app/login?sent=1');
+    if (!isLocalRequest(request) && !env.VITRIS_BACKEND_ORIGIN && !env.KERNEL_ORIGIN) return new Response('Sign-in is temporarily unavailable',{status:503});
+    if (!isDevLogin(env,request) && !mailConfigured(env)) return new Response('Sign-in is temporarily unavailable',{status:503});
+    if (email.length>254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return accepted();
+    if (!await allowLogin(env,request,email)) return new Response('Please try again later',{status:429,headers:{'retry-after':'900'}});
     const member = await membership(env, email);
-    if (!member) return redirect("/app/login?error=" + encodeURIComponent("No account for that email."));
+    if (!member) return accepted();
     if (isDevLogin(env, request)) {
       const sid = await createSession(env, member);
       const res = redirect("/app");
-      res.headers.append("set-cookie", sessionCookie(sid));
+      res.headers.append("set-cookie", sessionCookie(sid,request));
       return res;
     }
     const token = await magicToken(env, email);
-    const link = `${kernelOrigin(env, request)}/app/auth?token=${token}`;
+    const configuredOrigin=new URL(kernelOrigin(env, request));
+    if (configuredOrigin.protocol!=='https:' && !isLocalRequest(request)) { await discardMagic(env,token); return new Response('Sign-in is temporarily unavailable',{status:503}); }
+    const link = `${configuredOrigin.origin}/app/auth?token=${token}`;
     try {
       await sendMail(env, {
         to: [email],
         subject: "Sign in to Vitris",
         text: `Open this link to sign in:\n${link}\n`,
       });
-      if (env.GMAIL_SA_CLIENT_EMAIL || env.MAIL_API_KEY) {
-        return redirect("/app/login?sent=1");
-      }
     } catch {
-      /* fall through to inline link */
+      await discardMagic(env,token);
+      // Keep the same response for known and unknown accounts; never expose a token.
     }
-    if (env.MAIL_API_KEY && env.MAIL_FROM) {
-      await fetch("https://api.resend.com/emails", {
-        method: "POST",
-        headers: { authorization: `Bearer ${env.MAIL_API_KEY}`, "content-type": "application/json" },
-        body: JSON.stringify({
-          from: env.MAIL_FROM,
-          to: [email],
-          subject: "Sign in to Vitris",
-          text: `Open this link to sign in:\n${link}\n`,
-        }),
-      });
-      return redirect("/app/login?sent=1");
-    }
-    return html(
-      page({
-        title: "Sign in · Vitris",
-        notice: "Email is not configured. Use this one-time link (dev).",
-        body: `<div class="login"><div class="card"><p><a href="${escapeHtml(link)}">Sign in as ${escapeHtml(email)}</a></p></div></div>`,
-      }),
-    );
+    return accepted();
   }
 
   if (path === "/app/auth" && method === "GET") {
@@ -115,16 +103,19 @@ export async function handleApp(env: Env, request: Request): Promise<Response> {
     const email = await consumeMagic(env, token);
     if (!email) return redirect("/app/login?error=" + encodeURIComponent("That link expired."));
     const member = await membership(env, email);
-    if (!member) return redirect("/app/login?error=" + encodeURIComponent("No account for that email."));
+    if (!member) return redirect("/app/login?error=" + encodeURIComponent("That link expired."));
+    await revokeSession(env,request);
     const sid = await createSession(env, member);
     const res = redirect("/app");
-    res.headers.append("set-cookie", sessionCookie(sid));
+    res.headers.append("set-cookie", sessionCookie(sid,request));
     return res;
   }
 
   if (path === "/app/logout") {
+    if (method !== 'POST') return new Response('Use POST to log out',{status:405,headers:{allow:'POST'}});
+    await revokeSession(env,request);
     const res = redirect("/app/login");
-    res.headers.append("set-cookie", logoutCookie());
+    res.headers.append("set-cookie", logoutCookie(request));
     return res;
   }
 

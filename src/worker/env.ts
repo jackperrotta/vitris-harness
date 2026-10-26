@@ -7,6 +7,8 @@ export interface Env {
   SITE_UPDATE?: Workflow;
   APP_HOST?: string;
   OPS_HOST?: string;
+  /** Dedicated wildcard preview domain, with one hostname per tenant. */
+  PREVIEW_HOST_SUFFIX?: string;
   VITRIS_BACKEND_ORIGIN?: string;
   /** @deprecated Use VITRIS_BACKEND_ORIGIN. */
   KERNEL_ORIGIN?: string;

@@ -324,7 +324,7 @@ export function validateTeachingPrinciples(root: string, analysis: ReferenceAnal
   }
   const catalog = loadKnowledgeCatalog(root);
   if (!catalog) {
-    errors.push("Harness design-knowledge catalog is unavailable. Set VITRIS_HARNESS or depend on @vitris/harness.");
+    errors.push("Harness design-knowledge catalog is unavailable. Set VITRIS_HARNESS or depend on @tryvitris/website-harness.");
     return errors;
   }
   const seen = new Set<string>();

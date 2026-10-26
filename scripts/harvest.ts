@@ -35,7 +35,7 @@ function findKernelRoot(siteRoot: string): string {
     const pkg = JSON.parse(readFileSync(pkgPath, "utf8")) as {
       dependencies?: Record<string, string>;
     };
-    const spec = pkg.dependencies?.["@vitris/harness"] || pkg.dependencies?.["@vitris/kernel"];
+    const spec = pkg.dependencies?.["@tryvitris/website-harness"] || pkg.dependencies?.["@tryvitris/harness"] || pkg.dependencies?.["@vitris/harness"] || pkg.dependencies?.["@vitris/kernel"];
     if (typeof spec === "string" && spec.startsWith("file:")) {
       return resolve(siteRoot, spec.slice("file:".length));
     }

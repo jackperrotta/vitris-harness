@@ -8,11 +8,14 @@ import { html } from "./http.ts";
 import { handleStock } from "./stock.ts";
 import { publishAttestedBundle } from "./publish.ts";
 import type { SignedPublishBundle } from "../knowledge/publish-attestation.ts";
+import { isPreviewHost, previewHandoff } from './preview-access.ts';
 
 export async function route(env: Env, request: Request): Promise<Response> {
   const url = new URL(request.url);
   const host = url.hostname;
   const path = url.pathname;
+  if (isPreviewHost(env,request)) return handlePreview(env,request);
+  if (path.startsWith('/preview/')) return previewHandoff(env,request);
 
   const approve = await handleApproveReject(env, request);
   if (approve) return approve;
@@ -67,14 +70,17 @@ export async function route(env: Env, request: Request): Promise<Response> {
   if (path.startsWith("/api/")) return handleApi(env, request);
   if (path.startsWith("/app")) return handleApp(env, request);
   if (path.startsWith("/ops")) return handleOps(env, request);
-  if (path.startsWith("/preview/")) return handlePreview(env, request);
 
   if (path.startsWith("/assets/")) {
     const rest = path.slice("/assets/".length);
+    // Do not expose private cached source bundles or active documents on the admin origin.
+    if (!/\.(?:png|jpe?g|webp|avif|gif|svg|mp4|webm)$/i.test(rest) || rest.includes('..')) return new Response('Not found',{status:404});
+    const types:Record<string,string>={png:'image/png',jpg:'image/jpeg',jpeg:'image/jpeg',webp:'image/webp',avif:'image/avif',gif:'image/gif',svg:'image/svg+xml',mp4:'video/mp4',webm:'video/webm'};
+    const type=types[rest.split('.').pop()!.toLowerCase()]!;
     const object = await env.R2.get(rest.startsWith("sites/") ? rest : `sites/${rest}`);
     if (!object) return new Response("Not found", { status: 404 });
     return new Response(object.body, {
-      headers: { "content-type": object.httpMetadata?.contentType || "application/octet-stream", "cache-control": "public, max-age=60" },
+      headers: { "content-type": type, "cache-control": "public, max-age=60",'x-content-type-options':'nosniff','content-security-policy':"sandbox; default-src 'none'; style-src 'unsafe-inline'" },
     });
   }
 

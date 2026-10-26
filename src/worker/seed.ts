@@ -32,6 +32,7 @@ async function refreshDemoSnapshot(env: Env): Promise<void> {
 }
 
 export async function ensureSeed(env: Env, request?: Request): Promise<void> {
+  if (!isDevLogin(env,request)) return;
   const row = await env.DB.prepare("SELECT COUNT(*) AS n FROM tenants").first<{ n: number }>();
   const siteJson = JSON.stringify(demoSite);
   const contentJson = JSON.stringify(demoContent);

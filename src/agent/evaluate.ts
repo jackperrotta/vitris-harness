@@ -34,7 +34,7 @@ function confinedCalibrationEvidence(root: string, paths: unknown, label: string
   const errors: string[] = [];
   if (!Array.isArray(paths) || !paths.length) return [`${label} needs evidence paths`];
   const kernel = resolveKernelRoot(root);
-  if (!kernel) return [`${label}: Copied kit cannot discover harness calibration pack; set VITRIS_HARNESS or depend on @vitris/harness`];
+  if (!kernel) return [`${label}: Copied kit cannot discover harness calibration pack; set VITRIS_HARNESS or depend on @tryvitris/website-harness`];
   const manifest = loadCalibrationManifest(kernel);
   const dir = calibrationPackDir(kernel);
   const allowed = new Map(manifest.records.map(record => [record.file.replaceAll("\\", "/"), record]));
@@ -617,7 +617,7 @@ export function evaluateV2(root: string, node: string): GradeResult {
       if (analysis.schemaVersion !== 1) errors.push("Reference analysis schema mismatch");
       if (analysis.narrativeHash !== fingerprint(root, ["onboarding/narrative-brief.json"])) errors.push("Reference analysis is stale versus narrative");
       const kernel = resolveKernelRoot(root);
-      if (!kernel) errors.push("Copied kit cannot discover harness calibration pack; set VITRIS_HARNESS or depend on @vitris/harness");
+      if (!kernel) errors.push("Copied kit cannot discover harness calibration pack; set VITRIS_HARNESS or depend on @tryvitris/website-harness");
       else if (analysis.packHash !== calibrationPackHash(kernel) || analysis.packVersion !== loadCalibrationManifest(kernel).packVersion) errors.push("Reference analysis pack version/hash is not current");
       if (!analysis.applicable?.length || !analysis.avoided?.length) errors.push("Reference analysis needs applicable and avoided principles");
       requireText(analysis.plannedApplication || {}, ["homepage", "interior"], errors, "plannedApplication");

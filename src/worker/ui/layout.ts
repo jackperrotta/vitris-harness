@@ -47,7 +47,7 @@ export function page(opts: {
         <div class="side-foot">
           <p class="who">
             <span class="nav-label who-email">${escapeHtml(opts.session.email)}</span>
-            <a class="side-icon" href="/app/logout" title="Log out">${ICONS.logout}<span class="nav-label">Log out</span></a>
+            <form method="post" action="/app/logout"><button class="side-icon" type="submit" title="Log out">${ICONS.logout}<span class="nav-label">Log out</span></button></form>
           </p>
           <button type="button" class="nav-toggle" id="nav-toggle" aria-controls="app-shell" title="Collapse navigation">
             ${ICONS.collapse}

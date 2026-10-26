@@ -11,7 +11,7 @@ export async function loadPlaywrightChromium(): Promise<{
     const message = error instanceof Error ? error.message : String(error);
     const missing = (error as NodeJS.ErrnoException).code === "ERR_MODULE_NOT_FOUND" || /Cannot find package ['"]playwright['"]/.test(message);
     if (missing) {
-      throw new Error("The playwright npm package is not installed. @vitris/harness depends on it for browser capture. Reinstall the package so its dependencies are installed. Browser binaries are separate: after the package is present, run `npx playwright install chromium`.");
+      throw new Error("The playwright npm package is not installed. @tryvitris/website-harness depends on it for browser capture. Reinstall the package so its dependencies are installed. Browser binaries are separate: after the package is present, run `npx playwright install chromium`.");
     }
     throw error;
   }

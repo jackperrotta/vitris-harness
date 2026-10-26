@@ -118,7 +118,7 @@ export function scaffoldNestedSite(opts: {
   const pkgPath = join(dest, "package.json");
   const pkg = json<{ name: string; scripts: Record<string, string>; dependencies: Record<string, string> }>(pkgPath);
   pkg.name = opts.slug;
-  pkg.dependencies["@vitris/harness"] = relKernel;
+  pkg.dependencies["@tryvitris/website-harness"] = relKernel;
   for (const [key, value] of Object.entries(pkg.scripts)) pkg.scripts[key] = value.replaceAll("__SLUG__", opts.slug);
   writeFileSync(pkgPath, `${JSON.stringify(pkg, null, 2)}\n`);
   for (const file of ["site.json", "README.md", "AGENTS.md"]) {

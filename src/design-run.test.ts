@@ -1655,7 +1655,12 @@ console.log(JSON.stringify({ type: "turn.completed", usage: { input_tokens: 1, o
 process.exit(0);
 `);
   const codexShim = join(dest, "codex.exe");
-  linkSync(process.execPath, codexShim);
+  try { linkSync(process.execPath, codexShim); }
+  catch (error) {
+    // Temporary directories may be on a different volume from Node.
+    if ((error as NodeJS.ErrnoException).code !== 'EXDEV') throw error;
+    cpSync(process.execPath, codexShim);
+  }
   const adapter = { command: codexShim, args: [join(dest, "quality-adapter.mjs"), "-"], prompt: "stdin" };
   save(join(dest, "agent/adapter.json"), adapter);
   save(join(dest, "agent/adapter.reviewer.json"), adapter);

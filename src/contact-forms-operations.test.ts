@@ -6,7 +6,7 @@ import { processFormOutbox } from './worker/form-outbox.ts';
 import type { FormConfig } from './forms/config.ts';
 
 test('slow earlier notifications do not shorten later leases or retry backoff', {timeout:60000},async t=>{
-  const fixture=await formsBackend(),{env}=fixture;t.after(fixture.dispose);
+  const fixture=await formsBackend(),{env}=fixture;t.after(async()=>{t.mock.restoreAll();await fixture.dispose();});
   const config:FormConfig={id:'slow_contact',mode:'live',origins:['https://slow.example.test'],recipients:['operator@example.invalid'],turnstile:{sitekey:'public_key',secretRef:'live',action:'contact'},fields:[{name:'email',type:'email',map:'email',required:true,maxLength:254}]};
   await configureForms(env,'slow',[config],{slug:'slow',name:'Isolated slow mail'});
   t.mock.method(globalThis,'fetch',async()=>new Response(JSON.stringify({success:true,hostname:'slow.example.test',action:'contact'})));
@@ -29,7 +29,7 @@ test('slow earlier notifications do not shorten later leases or retry backoff', 
 });
 
 test('outbox mode pauses, abandoned claims, immutable field snapshots and test retention', {timeout:60000},async t=>{
-  const fixture=await formsBackend(),{env}=fixture;t.after(fixture.dispose);
+  const fixture=await formsBackend(),{env}=fixture;t.after(async()=>{t.mock.restoreAll();await fixture.dispose();});
   const config:FormConfig={id:'ops_contact',mode:'test',origins:['https://ops.example.test'],recipients:[],turnstile:{sitekey:'public_key',secretRef:'test',action:'contact'},fields:[{name:'email',type:'email',map:'email',required:true,maxLength:254},{name:'trade',label:'Original trade label',type:'select',options:['carpentry','masonry'],maxLength:30}]};
   await configureForms(env,'ops',[config],{slug:'ops',name:'Isolated operations'});
   t.mock.method(globalThis,'fetch',async()=>new Response(JSON.stringify({success:true,hostname:'ops.example.test',action:'contact'})));

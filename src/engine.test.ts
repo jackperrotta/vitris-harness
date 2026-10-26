@@ -5,7 +5,7 @@ import { existsSync, mkdtempSync, mkdirSync, readFileSync, writeFileSync } from 
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { inspectSite, prepareChange, applyOperations, sourceRevision, verifyChange, discardChange, generateEditManifest, publicEditManifest } from "./engine/index.ts";
-import { parseChangePlan, parseChangeRequest } from "./engine/contracts.ts";
+import { parseChangePlan, parseChangeRequest, parseSiteIdentity } from "./engine/contracts.ts";
 
 function site() {
   const root = mkdtempSync(join(tmpdir(), "vitris-engine-"));
@@ -25,6 +25,15 @@ function records(root: string, id = "change-1") {
     requiredChecks: ["render-375", "render-1080"], assumptions: [], evidence: [], proposedBy: "active_agent" };
   return { request, plan };
 }
+
+test('site identities use the public scope while preserving legacy identity records', () => {
+  const current=inspectSite(site()).identity;
+  assert.equal(current.harness.name,'@tryvitris/website-harness');
+  assert.equal(parseSiteIdentity(current).harness.name,'@tryvitris/website-harness');
+  assert.equal(parseSiteIdentity({...current,harness:{...current.harness,name:'@tryvitris/harness'}}).harness.name,'@tryvitris/harness');
+  assert.equal(parseSiteIdentity({...current,harness:{...current.harness,name:'@vitris/harness'}}).harness.name,'@vitris/harness');
+  assert.throws(()=>parseSiteIdentity({...current,harness:{...current.harness,name:'@other/harness'}}),/harness.name/);
+});
 
 test("contracts reject incomplete plans and unknown origin", () => {
   const root = site();

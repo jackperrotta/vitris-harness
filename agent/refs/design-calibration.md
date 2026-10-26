@@ -2,7 +2,7 @@
 
 The operator values thoughtful, creative, business-specific websites; coherent visual variety; natural and substantive copy; and faithful recovery of source media. These are stated preferences, not a learned preference model or permission to claim personal approval.
 
-A versioned internal calibration pack lives in the harness at `design-system/calibration/v2/`. It is not customer production media. Copied site kits discover it through the harness location (`VITRIS_HARNESS` or the `@vitris/harness` file dependency). Do not copy giant full-page captures into every site.
+A versioned internal calibration pack lives in the harness at `design-system/calibration/v2/`. It is not customer production media. Copied site kits discover it through the harness location (`VITRIS_HARNESS` or the `@tryvitris/website-harness` file dependency). Do not copy giant full-page captures into every site.
 
 For new design-library work and `slice-v1` sites, inspect only the original `vitris-*` records in this pack. The older Verdict, Apex, and Munch images are third-party template marketplace captures retained for historical compatibility; do not use them as generation inputs. Their demo claims and people are never customer evidence. Original Vitris examples are also fictional teaching material, never customer facts.
 

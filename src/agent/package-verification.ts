@@ -61,7 +61,7 @@ export function verifyPackage(root: string, out = mkdtempSync(join(tmpdir(), "vi
 
   runCommand(process.execPath, [npm, "install", "--ignore-scripts", "--no-audit", "--no-fund", archive], install, join(out, "install.log"));
 
-  const installed = join(install, "node_modules/@vitris/harness");
+  const installed = join(install, "node_modules/@tryvitris/website-harness");
 
   runCommand(process.execPath, [join(installed, "bin/vitris-go.js"), "--help"], install, join(out, "help.log"));
   runCommand(process.execPath,[join(installed,'bin/vitris-media-serve.js'),'--help'],install,join(out,'media-help.log'));
@@ -76,7 +76,7 @@ export function verifyPackage(root: string, out = mkdtempSync(join(tmpdir(), "vi
   if (!existsSync(join(site, ".gitignore")) || !readFileSync(join(site, ".gitignore"), "utf8").includes(".env")) throw new Error("Installed starter is missing its Git ignore rules");
   runCommand(process.execPath, [npm, "install", "--ignore-scripts", "--no-audit", "--no-fund"], site, join(out, "site-install.log"));
 
-  runCommand(process.execPath, ["--input-type=module", "-e", "const api = await import('@vitris/harness/cli/api'); if (typeof api.createSite !== 'function' || typeof api.migrateSite !== 'function') process.exit(1); await import('@vitris/harness');"], site, join(out, "api-import.log"));
+  runCommand(process.execPath, ["--input-type=module", "-e", "const api = await import('@tryvitris/website-harness/cli/api'); if (typeof api.createSite !== 'function' || typeof api.migrateSite !== 'function') process.exit(1); await import('@tryvitris/website-harness');"], site, join(out, "api-import.log"));
 
   // Scaffolding deliberately leaves pages empty. Author an actual smoke input before testing compilation.
 
@@ -130,8 +130,8 @@ export function verifyPackage(root: string, out = mkdtempSync(join(tmpdir(), "vi
   if(!existsSync(motionRef)||JSON.parse(readFileSync(siteConfigPath,"utf8")).scrollMotion.policy!=="enabled")throw new Error("Packaged upgrade omitted motion guidance or changed operator policy");
 
   if(!existsSync(pageRef)||readFileSync(siteConfigPath,"utf8")!==configBeforeUpgrade)throw new Error("Managed upgrade omitted page guidance or migrated site policy");
-  runCommand(process.execPath, ["--input-type=module", "-e", "const {verifySite} = await import('@vitris/harness/cli/api'); const {existsSync} = await import('node:fs'); await verifySite({site:process.cwd(), environment:'production'}); if (!existsSync('agent/reviews/launch-preflight.json')) throw new Error('Packaged API did not execute production preflight');"], site, join(out, "api-preflight.log"));
-  runCommand(process.execPath, [join(site, "node_modules/@vitris/harness/bin/vitris-go.js"), "--prepare", "--jev-mode", "off"], site, join(out, "site-prepare.log"));
+  runCommand(process.execPath, ["--input-type=module", "-e", "const {verifySite} = await import('@tryvitris/website-harness/cli/api'); const {existsSync} = await import('node:fs'); await verifySite({site:process.cwd(), environment:'production'}); if (!existsSync('agent/reviews/launch-preflight.json')) throw new Error('Packaged API did not execute production preflight');"], site, join(out, "api-preflight.log"));
+  runCommand(process.execPath, [join(site, "node_modules/@tryvitris/website-harness/bin/vitris-go.js"), "--prepare", "--jev-mode", "off"], site, join(out, "site-prepare.log"));
 
   if (!existsSync(join(site, "agent/CURRENT.md"))) throw new Error("Installed starter did not prepare a stage");
 

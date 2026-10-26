@@ -117,7 +117,7 @@ test("trial accepts provenanced stock and permanently rejects original media cha
   const created = createTrialSession({kernel, capture, out, runs: 1});
   const root = created.results[0]!.root;
   const pkg = JSON.parse(readFileSync(join(root, "package.json"), "utf8"));
-  assert.equal(pkg.dependencies["@vitris/harness"].startsWith("file:"), true);
+  assert.equal(pkg.dependencies["@tryvitris/website-harness"].startsWith("file:"), true);
   assert.equal(existsSync(join(root, ".gitignore")), true);
   assert.equal(existsSync(join(root, "gitignore")), false);
   assert.equal(JSON.parse(readFileSync(join(root, "site.json"), "utf8")).name, 'Sam\'s "Studio"');

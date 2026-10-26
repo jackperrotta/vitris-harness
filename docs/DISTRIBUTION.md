@@ -2,7 +2,7 @@
 
 ## Repository boundaries
 
-`@vitris/harness` is the reusable package maintained here. `vitris` is the command. The workflow graph schedules agent, tool, and critic stages; skills and references supply stage-specific knowledge. The compiler builds static websites. The optional backend Worker supplies owner administration, leads, and analytics.
+`@tryvitris/website-harness` is the reusable package maintained here. `vitris` is the command. The workflow graph schedules agent, tool, and critic stages; skills and references supply stage-specific knowledge. The compiler builds static websites. The optional backend Worker supplies owner administration, leads, and analytics.
 
 Generate a separate directory for each customer with `vitris site create`. Open that directory in the coding agent, initialize its Git repository, and commit its authored source and lockfile. Keep customer secrets and captures out of the public harness repository. A second starter repository is unnecessary: `templates/site` is the versioned starter shipped with the npm package.
 
@@ -12,7 +12,7 @@ New sites depend on the exact creating package version, avoiding paths into an e
 
 | Current name | Accepted legacy name |
 | --- | --- |
-| `@vitris/harness` | Existing `@vitris/kernel` installations continue running their installed version; migrate dependencies explicitly |
+| `@tryvitris/website-harness` | Existing `@tryvitris/harness`, `@vitris/harness` and `@vitris/kernel` installations continue running their installed version; migrate dependencies explicitly |
 | `--harness`, `harnessSpec` | `--kernel`, `kernelSpec` |
 | `VITRIS_HARNESS` | `VITRIS_KERNEL` |
 | `launch.json.backendOrigin`, `--backend-origin` | `launch.json.kernelOrigin`, `--kernel-origin` |
@@ -27,7 +27,7 @@ At the same configuration level, current names take precedence. CLI build overri
 Stop its workflow first. From the harness checkout, preview changes:
 
 ```bash
-node bin/vitris-migrate-site.js --site ../acme --harness ../vitris-harness/vitris-harness-0.1.0-beta.3.tgz
+node bin/vitris-migrate-site.js --site ../acme --harness ../vitris-harness/tryvitris-website-harness-0.1.0-beta.5.tgz
 ```
 
 Add `--apply` to perform the displayed changes. The command backs up affected files under the client's `agent-backups/`, renames the package dependency and known script paths, and converts the backend origin key. Conflicting old/new origins fail before writes. Client pages, components, media, secrets, existing lockfile, and workflow state are preserved. Repeating it makes no further edits.
@@ -40,7 +40,7 @@ npm run refresh-agent
 npm run build
 ```
 
-Review the migration diff and regenerated lockfile before committing. `refresh-agent` now plans and applies only managed instruction files whose previous hashes are known. Older copied kits without provenance keep customized or unknown files and report conflicts. Existing graph progress is retained; a graph-version change is deferred for explicit audit. Use `vitris upgrade --site . --plan` to inspect the plan and `--apply` to apply an unchanged plan. This managed-kit operation does not install npm dependencies. Custom imports of `@vitris/kernel` must also be updated; the migration only handles known configuration and command paths. An npm alias under the old dependency name can temporarily support a custom integration. No compatibility package has been published under the old name.
+Review the migration diff and regenerated lockfile before committing. `refresh-agent` now plans and applies only managed instruction files whose previous hashes are known. Older copied kits without provenance keep customized or unknown files and report conflicts. Existing graph progress is retained; a graph-version change is deferred for explicit audit. Use `vitris upgrade --site . --plan` to inspect the plan and `--apply` to apply an unchanged plan. This managed-kit operation does not install npm dependencies. Custom imports of `@vitris/harness` or `@vitris/kernel` must also be updated; the migration only handles known configuration and command paths. An npm alias under the old dependency name can temporarily support a custom integration. No compatibility package has been published under the old name.
 
 ## Backend deployment identity
 
@@ -59,7 +59,7 @@ These are rollout steps, not completed migrations. This package does not automat
 
 ## Public release preparation
 
-The owner selected MIT. The beta has public npm metadata, but prepublishOnly deliberately refuses publication. Local packing and tarball installation work; no publication has occurred. See SECURITY.md for the release audit and CLOUDFLARE.md for user-owned infrastructure.
+The owner selected MIT and public npm publication under `@tryvitris/website-harness`. The `prepublishOnly` guard verifies the package identity, public registry and visibility, beta dist-tag, and packed-release audit before allowing publication. See SECURITY.md for the release audit and CLOUDFLARE.md for user-owned infrastructure.
 
 MIT licensing and intended repository metadata are included. Before public release, review third-party provenance and dependency notices, confirm npm scope ownership/authentication, and repeat the source, Git-history, and tarball credential checks. The dedicated `vitris-harness` repository starts with fresh history. Keep the original private development repository and customer repositories private. Creating a remote repository, changing visibility, and publishing npm are separate explicitly authorized operations.
 

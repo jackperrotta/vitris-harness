@@ -17,7 +17,7 @@ import type { Business, MediaInventory, QualityReview, Storyboard } from "./agen
 const kernel = resolve(import.meta.dirname, "..");
 const fixture = () => {
   const root = mkdtempSync(join(tmpdir(), "vitris-composition-"));
-  writeFileSync(join(root, "package.json"), JSON.stringify({ dependencies: { "@vitris/harness": `file:${kernel.replaceAll("\\", "/")}` } }));
+  writeFileSync(join(root, "package.json"), JSON.stringify({ dependencies: { "@tryvitris/website-harness": `file:${kernel.replaceAll("\\", "/")}` } }));
   return root;
 };
 const write = (root: string, path: string, data: unknown) => { const target = join(root, path); mkdirSync(resolve(target, ".."), { recursive: true }); writeFileSync(target, JSON.stringify(data)); };
@@ -47,7 +47,7 @@ test("the pinned pack rejects changed body and example metadata", () => {
     // Direct kernel discovery uses the real calibration version; a file dependency
     // from a site resolves the fake kernel without requiring the full pack.
     const site = join(root, "site"); mkdirSync(site);
-    write(site, "package.json", { dependencies: { "@vitris/harness": "file:.." } });
+    write(site, "package.json", { dependencies: { "@tryvitris/website-harness": "file:.." } });
     const lessonPath = join(root, "design-system/knowledge/v3", source.lessons[0]!.bodyPath);
     writeFileSync(lessonPath, readFileSync(lessonPath, "utf8") + "changed");
     assert.throws(() => loadCompositionPack(site), /hash mismatch/i);

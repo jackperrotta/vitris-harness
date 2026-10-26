@@ -92,7 +92,7 @@ test('creative preparation includes motion material or required hashed expansion
   cpSync(join(kernel, 'agent'), join(root, 'agent'), { recursive: true });
   writeFileSync(join(root, 'site.json'), JSON.stringify({ name: 'Motion workflow' }));
   writeFileSync(join(root, 'launch.json'), JSON.stringify({ designAuthoring:{mode:'composition-v1',lessonRelease:'2026-09-28.1'} }));
-  writeFileSync(join(root, 'package.json'), JSON.stringify({ dependencies:{'@vitris/harness':`file:${kernel.replaceAll('\\','/')}`} }));
+  writeFileSync(join(root, 'package.json'), JSON.stringify({ dependencies:{'@tryvitris/website-harness':`file:${kernel.replaceAll('\\','/')}`} }));
   const policy = createCreativeEfficiencyPolicy(root, ['--creative-efficiency', '--jev-mode', 'off']);
   const result = await buildCreativeContextPacket({ root, kernel, node: { id: 'motion-plan', needs: [], tools: [], refs: [], writes: [], eval: '', maxAttempts: 1 }, role: 'plan', objective: 'Choose useful movement', sourceRevision: 'test', baseContract: 'Plan', policy, config: policy.config, evidence: { schemaVersion: 1, inputHash: 'test', nodes: [], edges: [], unresolvedAliases: [] }, retrievedIds: [], mandatorySkillIds: [], optionalSkillIds: ['motion-statistics'], constraints: [], obligations: [], findings: [], renderIds: [] });
   assert.ok((result.manifest.selectedSkillIds as string[]).includes('motion-direction'));

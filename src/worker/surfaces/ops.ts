@@ -1,13 +1,14 @@
 import { escapeHtml } from "../../html.ts";
 import { readSession } from "../auth.ts";
 import { type Env } from "../env.ts";
-import { html, readBody, redirect } from "../http.ts";
+import { html, readBody, redirect, sameOriginMutation } from "../http.ts";
 import { localServiceContent, localServiceSite, localServiceTheme } from "../seed.ts";
 import { getUpdateJob } from "../jobs.ts";
 import { applyTicketAction, renderOperatorInbox } from "./updates.ts";
 import { page } from "../ui/layout.ts";
 
 export async function handleOps(env: Env, request: Request): Promise<Response> {
+  if (!sameOriginMutation(request)) return new Response('Invalid request origin',{status:403});
   const session = await readSession(env, request);
   if (!session) return redirect("/app/login");
   if (session.role !== "operator") return html(page({ title: "Forbidden", session, error: "Operator only.", body: "<p>You do not have operator access.</p>" }), 403);

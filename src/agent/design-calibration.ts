@@ -79,8 +79,8 @@ export function resolveKernelRoot(siteOrKernel: string): string | undefined {
   if (env && existsSync(join(calibrationPackDir(env), "manifest.json"))) return resolve(env);
   let cursor = resolve(siteOrKernel);
   for (let i = 0; i < 8; i++) {
-    for (const packageName of ["harness", "kernel"]) {
-    const installed = join(cursor, "node_modules", "@vitris", packageName);
+    for (const packageName of ["@tryvitris/website-harness", "@tryvitris/harness", "@vitris/harness", "@vitris/kernel"]) {
+    const installed = join(cursor, "node_modules", packageName);
     if (existsSync(join(calibrationPackDir(installed), "manifest.json")) &&
         existsSync(join(installed, "package.json"))) return installed;
     }
@@ -91,8 +91,8 @@ export function resolveKernelRoot(siteOrKernel: string): string | undefined {
     if (existsSync(pkgPath)) {
       try {
         const pkg = json<{ name?: string; dependencies?: Record<string, string> }>(pkgPath);
-        if (["@vitris/harness", "@vitris/kernel"].includes(pkg.name || "") && existsSync(join(calibrationPackDir(cursor), "manifest.json"))) return cursor;
-        const dep = pkg.dependencies?.["@vitris/harness"] || pkg.dependencies?.["@vitris/kernel"];
+        if (["@tryvitris/website-harness", "@tryvitris/harness", "@vitris/harness", "@vitris/kernel"].includes(pkg.name || "") && existsSync(join(calibrationPackDir(cursor), "manifest.json"))) return cursor;
+        const dep = pkg.dependencies?.["@tryvitris/website-harness"] || pkg.dependencies?.["@tryvitris/harness"] || pkg.dependencies?.["@vitris/harness"] || pkg.dependencies?.["@vitris/kernel"];
         if (typeof dep === "string" && dep.startsWith("file:")) {
           const kernel = resolve(cursor, dep.slice("file:".length));
           if (existsSync(join(calibrationPackDir(kernel), "manifest.json"))) return kernel;

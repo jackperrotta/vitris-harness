@@ -36,7 +36,7 @@ export function inspectSite(siteRoot: string): SiteInspection {
   const siteId = typeof site.siteId === "string" && site.siteId ? site.siteId : `legacy:${String(site.slug || "unknown")}`;
   const identity = parseSiteIdentity({ schemaVersion: 1, siteId,
     sourceFormatVersion: typeof site.sourceFormatVersion === "number" ? site.sourceFormatVersion : 1,
-    harness: { name: "@vitris/harness", version: harness.version },
+    harness: { name: "@tryvitris/website-harness", version: harness.version },
     capabilities: Array.isArray(site.capabilities) ? site.capabilities : [],
   });
   const pendingPath = join(root, "agent/refine-pending.json");

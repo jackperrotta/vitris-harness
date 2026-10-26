@@ -9,7 +9,7 @@ function headerMap(headers?: HeadersInit): Record<string, string> {
 export function html(body: string, status = 200, headers?: HeadersInit): Response {
   return new Response(body, {
     status,
-    headers: { "content-type": "text/html; charset=utf-8", ...headerMap(headers) },
+    headers: { "content-type": "text/html; charset=utf-8", 'cache-control':'no-store', 'referrer-policy':'no-referrer', 'x-frame-options':'DENY', ...headerMap(headers) },
   });
 }
 
@@ -25,7 +25,7 @@ export function json(data: unknown, status = 200, headers?: HeadersInit): Respon
 }
 
 export function redirect(location: string, status = 303): Response {
-  return new Response(null, { status, headers: { location } });
+  return new Response(null, { status, headers: { location,'cache-control':'no-store','referrer-policy':'no-referrer' } });
 }
 
 export function cookies(request: Request): Record<string, string> {
@@ -36,7 +36,7 @@ export function cookies(request: Request): Record<string, string> {
     if (!trimmed) continue;
     const eq = trimmed.indexOf("=");
     if (eq === -1) continue;
-    out[trimmed.slice(0, eq)] = decodeURIComponent(trimmed.slice(eq + 1));
+    try { out[trimmed.slice(0, eq)] = decodeURIComponent(trimmed.slice(eq + 1)); } catch { /* Ignore malformed cookies. */ }
   }
   return out;
 }
@@ -61,10 +61,14 @@ export function query(request: Request): URLSearchParams {
   return new URL(request.url).searchParams;
 }
 
-export function cookieHeader(name: string, value: string, maxAge: number): string {
-  return `${name}=${encodeURIComponent(value)}; Path=/; HttpOnly; SameSite=Lax; Max-Age=${maxAge}`;
+export function cookieHeader(name: string, value: string, maxAge: number, secure = true): string {
+  return `${name}=${encodeURIComponent(value)}; Path=/; HttpOnly; SameSite=Lax; Max-Age=${maxAge}${secure ? '; Secure' : ''}`;
 }
 
-export function clearCookie(name: string): string {
-  return `${name}=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0`;
+export function clearCookie(name: string, secure = true): string {
+  return cookieHeader(name,'',0,secure);
+}
+
+export function sameOriginMutation(request: Request): boolean {
+  return ['GET','HEAD','OPTIONS'].includes(request.method) || request.headers.get('origin') === new URL(request.url).origin;
 }
