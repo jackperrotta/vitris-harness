@@ -27,7 +27,7 @@ At the same configuration level, current names take precedence. CLI build overri
 Stop its workflow first. From the harness checkout, preview changes:
 
 ```bash
-node bin/vitris-migrate-site.js --site ../acme --harness ../vitris-harness/tryvitris-website-harness-0.1.0-beta.5.tgz
+node bin/vitris-migrate-site.js --site ../acme --harness ../vitris-harness/tryvitris-website-harness-0.1.0-beta.6.tgz
 ```
 
 Add `--apply` to perform the displayed changes. The command backs up affected files under the client's `agent-backups/`, renames the package dependency and known script paths, and converts the backend origin key. Conflicting old/new origins fail before writes. Client pages, components, media, secrets, existing lockfile, and workflow state are preserved. Repeating it makes no further edits.
