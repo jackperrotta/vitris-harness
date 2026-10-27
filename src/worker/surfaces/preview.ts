@@ -131,7 +131,7 @@ async function renderPreview(env:Env,request:Request):Promise<Response> {
           kernelOrigin: origin,
           themeHref: `${prefix}/theme.css`,
           assetsPrefix: prefix,
-          islandsHref: islands ? "/islands.js" : null,
+          islandsHref: null,
         })
       : renderDocument({
           site: bundle.site,

@@ -1,5 +1,11 @@
 # Engine API and local refinement
 
+The harness includes the full Vitris icon catalog, motion recipes/runtime, and optional analytics. Agent guidance lives in `agent/refs/icons.md`, `motion.md`, `analytics.md`, and `performance.md`, loaded by the relevant workflow stages. Icons compile to only the selected inline SVGs; no icon catalog or font reaches the browser. Motion uses the measured engine recorded in `docs/scroll-motion-engine.json`, bundled and minified into a self-hosted asset requested only by active motion routes. The current engine is vanilla JavaScript; third-party animation engines are not required by sites.
+
+Static builds compile source pages once, deduplicate identical content-addressed CSS/islands, and select assets per route. The generated cookie preference page gets base styles and its first-party beacon without site widgets or motion. Compatibility `site.css`/`islands.js` files remain available, while authored routes reference their selected bundles. `buildSite()` returns the files actually written, including route assets and excluding the beacon when no backend is configured.
+
+`launch.json.backendOrigin` connects first-party analytics (visits, attribution, engagement, contact clicks, accepted form conversions and presence); collection requires a configured backend and registered site. Optional `webAnalyticsToken` adds Cloudflare field-performance tracking on production pages. Tracking configuration does not provision services or imply measured results. See the analytics reference for selectors, preferences and test practices. The package smoke check renders every supported icon variant from an installed tarball and compares its coverage with source.
+
 Install an exact `@tryvitris/website-harness` dependency in each website. `@tryvitris/website-harness/contracts` is browser-safe validation; `@tryvitris/website-harness/engine` executes Node filesystem operations. Legacy `@tryvitris/website-harness/cli/api` exports remain available.
 
 ```js

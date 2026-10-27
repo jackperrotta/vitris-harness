@@ -7,6 +7,7 @@ import { tmpdir } from "node:os";
 import { spawnSync } from "node:child_process";
 
 import { createHash } from "node:crypto";
+import { iconNames, iconVariantCount } from '../icons/index.ts';
 
 import { save } from "./artifacts.ts";
 
@@ -63,6 +64,17 @@ export function verifyPackage(root: string, out = mkdtempSync(join(tmpdir(), "vi
 
   const installed = join(install, "node_modules/@tryvitris/website-harness");
 
+  const packagedIcons = JSON.parse(runCommand(process.execPath, ['--input-type=module', '-e', `
+    const {iconNames, availableIconVariants, renderIcon} = await import('@tryvitris/website-harness/icons');
+    let variants = 0;
+    for (const name of iconNames) for (const variant of availableIconVariants(name)) {
+      if (!renderIcon(name, {variant}).includes('<svg')) throw new Error('Missing packaged icon: '+name+'/'+variant);
+      variants++;
+    }
+    console.log(JSON.stringify({names:iconNames, variants}));
+  `], install, join(out, 'icon-coverage.log')));
+  if (JSON.stringify(packagedIcons.names) !== JSON.stringify(iconNames) || packagedIcons.variants !== iconVariantCount) throw new Error('Installed icon catalog differs from source coverage');
+
   runCommand(process.execPath, [join(installed, "bin/vitris-go.js"), "--help"], install, join(out, "help.log"));
   runCommand(process.execPath,[join(installed,'bin/vitris-media-serve.js'),'--help'],install,join(out,'media-help.log'));
   const previewHelp=spawnSync(process.execPath,[join(installed,"bin/vitris-preview.js"),"--help"],{cwd:install,encoding:"utf8",timeout:5000,windowsHide:true});
@@ -73,6 +85,12 @@ export function verifyPackage(root: string, out = mkdtempSync(join(tmpdir(), "vi
   runCommand(process.execPath, [join(installed, "bin/vitris-create-site.js"), "--dir", join(out, "site"), "--slug", "official-smoke", "--blank", "--no-prompt", "--harness", archive], install, join(out, "scaffold.log"));
 
   const site = join(out, "site");
+  const analyticsRef = join(site, 'agent/refs/analytics.md');
+  const installedGraph = JSON.parse(readFileSync(join(site, 'agent/graph.yaml'), 'utf8'));
+  if (!existsSync(analyticsRef) || !readFileSync(analyticsRef, 'utf8').includes('webAnalyticsToken') ||
+      ['storyboard', 'representative', 'pages', 'browser', 'launch'].some(id => !installedGraph.nodes.find((node: { id: string; refs: string[] }) => node.id === id)?.refs.includes('analytics'))) {
+    throw new Error('Installed starter omitted stage-scoped analytics guidance');
+  }
   if (!existsSync(join(site, ".gitignore")) || !readFileSync(join(site, ".gitignore"), "utf8").includes(".env")) throw new Error("Installed starter is missing its Git ignore rules");
   runCommand(process.execPath, [npm, "install", "--ignore-scripts", "--no-audit", "--no-fund"], site, join(out, "site-install.log"));
 
@@ -139,7 +157,7 @@ export function verifyPackage(root: string, out = mkdtempSync(join(tmpdir(), "vi
 
   if (sourceManifest(root).hash !== source.hash) throw new Error("Source changed during package verification");
 
-  const report = {version: 1, ok: true, sourceHash: source.hash, packagePath: archive, packageSha256: fileDigest(archive), packageFiles: packed.files.length, installed, checkedAt: new Date().toISOString(), node: process.version};
+  const report = {version: 1, ok: true, sourceHash: source.hash, packagePath: archive, packageSha256: fileDigest(archive), packageFiles: packed.files.length, iconCoverage: { icons: packagedIcons.names.length, variants: packagedIcons.variants }, installed, checkedAt: new Date().toISOString(), node: process.version};
 
   save(join(out, "verification.json"), report);
 

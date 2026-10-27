@@ -267,7 +267,8 @@
         "seo",
         "media",
         "motion",
-        "icons"
+        "icons",
+        "analytics"
       ],
       "optionalRefs": [
         "design-synthesis",
@@ -365,7 +366,8 @@
         "usability",
         "media",
         "motion",
-        "icons"
+        "icons",
+        "analytics"
       ],
       "tools": [],
       "eval": "representative",
@@ -411,7 +413,8 @@
       "refs": [
         "browser",
         "motion",
-        "icons"
+        "icons",
+        "analytics"
       ],
       "tools": [],
       "eval": "representative-browser",
@@ -562,7 +565,8 @@
         "accessibility",
         "performance",
         "motion",
-        "icons"
+        "icons",
+        "analytics"
       ],
       "optionalRefs": [
         "design-synthesis",
@@ -605,7 +609,8 @@
       "refs": [
         "browser",
         "motion",
-        "icons"
+        "icons",
+        "analytics"
       ],
       "tools": [],
       "eval": "browser",
@@ -738,7 +743,8 @@
         "launch.json"
       ],
       "refs": [
-        "launch"
+        "launch",
+        "analytics"
       ],
       "tools": [],
       "eval": "launch",

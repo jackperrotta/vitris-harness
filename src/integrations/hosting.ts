@@ -8,6 +8,7 @@ import { json, save } from "../agent/artifacts.ts";
 import { verifySite } from "../cli/verify.ts";
 import { findHarnessRoot } from "../cli/root.ts";
 import { isPreserveSite } from "../preserve/config.ts";
+import { buildVerified } from "../build/verified.ts";
 
 export interface VerifiedArtifact {
   schemaVersion: 1;
@@ -41,6 +42,20 @@ export async function prepareVerifiedRelease(siteRoot: string, environment: "pre
   const root = resolve(siteRoot);
   const verified = await verifySite({ site: root, environment });
   if (!verified.ok) throw new Error(`Release verification failed: ${verified.error || verified.summary}`);
+  return stageRelease(root, environment, isPreserveSite(root) ? "preserve-preview-v1" : environment === "production" ? "launch-preflight" : "preview-gates");
+}
+
+/** Explicit build-only release: policyId records that review gates were skipped. */
+export async function prepareQuickRelease(siteRoot: string, environment: "preview" | "production" = "preview"): Promise<VerifiedArtifact> {
+  const root = resolve(siteRoot);
+  if (isPreserveSite(root) && environment !== "preview") throw new Error("Preserve mode supports temporary previews only");
+  const revision = sourceRevision(root).digest;
+  await buildVerified(root);
+  if (sourceRevision(root).digest !== revision) throw new Error("Source changed during quick release build");
+  return stageRelease(root, environment, "quick-publish-build-only-v1");
+}
+
+function stageRelease(root: string, environment: "preview" | "production", policyId: string): VerifiedArtifact {
   const distDirectory = join(root, "dist");
   const evidence = json<{ compilerHash: string }>(join(distDirectory, "build-evidence.json"));
   const version = json<{ version: string }>(join(findHarnessRoot(), "package.json")).version;
@@ -51,7 +66,7 @@ export async function prepareVerifiedRelease(siteRoot: string, environment: "pre
   if (artifactManifest(outputDirectory).sha256 !== artifactDigest) throw new Error("Staged release bytes differ from verified build");
   const artifact: VerifiedArtifact = { schemaVersion: 1, sourceRevision: sourceRevision(root).digest,
     artifactDigest, compilerDigest: evidence.compilerHash,
-    harnessVersion: version, environment, policyId: isPreserveSite(root) ? "preserve-preview-v1" : environment === "production" ? "launch-preflight" : "preview-gates",
+    harnessVersion: version, environment, policyId,
     outputDirectory, checkedAt: new Date().toISOString() };
   save(join(root, "agent/release-candidate.json"), artifact);
   return artifact;

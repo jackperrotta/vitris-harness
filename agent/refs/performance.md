@@ -1,4 +1,4 @@
-# Performance
+# PerformanceFor built-in tracking, configuration and event coverage, read `analytics.md`. Use `motion.md` for the self-hosted motion runtime and `icons.md` for the full build-time icon catalog. Compile only the features a route uses: static builds select content-addressed route CSS/islands; icons become inline SVG; quiet routes need no motion script. The generated preference page uses base styles and the first-party beacon without site widgets. Verify actual requests rather than adding a second client library to reproduce an existing harness feature.
 
 Ship static HTML, the CSS of components that are used, and islands only when a page needs them. The Vitris starting budgets are project policy: 100 KiB gzip of first-party JavaScript, 100 KiB gzip of CSS, 200 KiB of fonts, and 1.5 MiB initial transfer. They are not Core Web Vitals.
 

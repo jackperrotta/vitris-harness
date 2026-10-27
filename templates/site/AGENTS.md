@@ -27,7 +27,7 @@ When making later-life changes in Cursor or chat:
 
 ## Operator Guardrails
 
-- Never mark checks passed by hand or bypass gates.
+- Never mark checks passed by hand. Skip deployment review gates only when the user explicitly requests quick publish, using `vitris deploy --quick` (production requires `--environment production`); record this as build-only verification.
 - Site-specific preferences belong in `agent/request.json` or site memory.
 - Plan managed-kit updates with `vitris upgrade --site . --plan`, inspect conflicts, then use `--apply`. `npm run refresh-agent` is a compatibility alias. Package defaults are selected only when their recorded hashes match `agent/managed-files.json`; place site-specific instructions under `agent/overrides/`. Unknown copied-kit edits remain conflicts. `launch.json`, authored files, `agent/STATE.json`, preparations, leases, and receipts are preserved.
 - Cloudflare deployment is explicit via `vitris deploy` (or `wrangler deploy`).

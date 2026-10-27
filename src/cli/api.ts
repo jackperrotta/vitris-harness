@@ -14,5 +14,5 @@ export { EXIT_CODES, type ExitCode, type CommandResult, type OutputMode, type Vi
 export { migrateSite } from "./site-migrate.ts";
 export { inspectSite, prepareChange, applyOperations, buildSiteDraft, verifyChange, discardChange } from "../engine/index.ts";
 export { upgradeSite, type UpgradeOptions } from "./upgrade.ts";
-export { prepareVerifiedRelease, deployVerifiedArtifact } from "../integrations/hosting.ts";
+export { prepareVerifiedRelease, prepareQuickRelease, deployVerifiedArtifact } from "../integrations/hosting.ts";
 export { runPreserve } from "./preserve.ts";

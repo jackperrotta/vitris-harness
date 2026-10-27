@@ -55,3 +55,6 @@ description: …
 ```
 
 Build flattens `<hero>` into ordinary HTML. Lead forms use `data-lead-form` and POST to the backend (`VITRIS_BACKEND_ORIGIN`).
+
+
+For an explicitly requested quick publish, use `vitris deploy --quick --environment production` (`npm run deploy:quick` in newly scaffolded sites). This rebuilds and deploys without browser, graph or launch review gates. Compilation, Cloudflare credentials, staged-file integrity and an HTTP smoke check still run. Receipts record build-only verification. Preservation sites use `--environment preview` and also skip screenshot comparisons. Ordinary deployment retains full preflight.

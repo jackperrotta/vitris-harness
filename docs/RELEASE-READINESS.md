@@ -1,6 +1,8 @@
 # Beta release checks
 
-The `0.1.0-beta.7` release is configured as public `@tryvitris/website-harness` with the `beta` dist-tag. Verification creates local artifacts and never publishes a package. `prepublishOnly` enforces the intended identity, public registry and visibility, prerelease tag, and packed-release audit.
+The `0.1.0-beta.8` release is configured as public `@tryvitris/website-harness` with the `beta` dist-tag. Verification creates local artifacts and never publishes a package. `prepublishOnly` enforces the intended identity, public registry and visibility, prerelease tag, and packed-release audit.
+
+This release adds explicit quick publication, stage-scoped analytics guidance, lean cookie-page assets, single-pass page compilation, accurate asset inventories, and installed-package coverage checks for all 381 icons and 1,644 variants. Normal publication retains its full review gates.
 
 Before publishing an owner-authorized release:
 

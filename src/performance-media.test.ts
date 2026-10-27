@@ -5,6 +5,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import sharp from 'sharp';
 import { buildVerified } from './build/verified.ts';
+import { buildSite } from './build/index.ts';
 import { responsiveMedia } from './build/responsive-media.ts';
 import { performancePolicy, performanceRoutes, summarizePerformance, performanceEvidenceFailures } from './agent/performance.ts';
 import { createSite } from './cli/site-create.ts';
@@ -18,6 +19,41 @@ import { chromium } from 'playwright';
 import { previewServer } from './build/serve.ts';
 import { checkResponsiveImages, checkSharedMedia } from './stock/browser-checks.ts';
 import { finalizeStaticOutput } from './build/static-output.ts';
+import { files } from './agent/artifacts.ts';
+
+test('built-in libraries deliver only route features and return an exact asset inventory', async () => {
+  const root = mkdtempSync(join(tmpdir(), 'vitris-runtime-delivery-'));
+  const input = {
+    site: { name: 'Runtime delivery', environment: 'production' as const, scrollMotion: { version: 1 as const, policy: 'enabled' as const } },
+    theme: {},
+    catalog: { 'feature-widget': { html: '<section class="feature-marker">Feature widget</section>', css: '.feature-marker{color:rebeccapurple}', island: 'window.__featureWidgetLoaded = true;' } },
+    pages: [
+      { path: '/', file: 'index.html', title: 'Quiet', body: '<h1>Quiet page</h1><p>Static content.</p>' },
+      { path: '/active', file: 'active.html', title: 'Active', body: '<h1>Active page</h1><feature-widget></feature-widget><section id="proof" data-motion="entrance"><vitris-icon name="phone"></vitris-icon><p>Contact options</p></section>' },
+    ],
+    backendOrigin: 'https://backend.example.invalid', outDir: join(root, 'connected'),
+  };
+  const written = await buildSite(input);
+  assert.deepEqual([...written].sort(), files(input.outDir).map(p => p.slice(input.outDir.length + 1).replaceAll('\\', '/')).sort());
+  const quiet = readFileSync(join(input.outDir, 'index.html'), 'utf8');
+  const active = readFileSync(join(input.outDir, 'active/index.html'), 'utf8');
+  const cookie = readFileSync(join(input.outDir, 'cookie-compliance/index.html'), 'utf8');
+  assert.match(active, /data-vitris-icon="phone"/);
+  assert.doesNotMatch(quiet + cookie, /data-vitris-icon=|motion-[a-f0-9]+\.js|type="module"/);
+  assert.match(active, /motion-[a-f0-9]+\.js/);
+  assert.match(active, /type="module" src="\/assets\/immutable\/[a-f0-9]+\.js"/);
+  for (const html of [quiet, active, cookie]) assert.equal((html.match(/src="\/beacon\.js"/g) || []).length, 1);
+  const cssFor = (html: string) => readFileSync(join(input.outDir, html.match(/rel="stylesheet" href="\/([^"]+)"/)![1]!), 'utf8');
+  assert.match(cssFor(active), /feature-marker/);
+  assert.match(cssFor(active), /\.vitris-icon/);
+  assert.equal(cssFor(quiet), cssFor(cookie));
+  assert.doesNotMatch(cssFor(quiet) + cssFor(cookie), /feature-marker|\.vitris-icon/);
+  const offline = join(root, 'offline');
+  const offlineFiles = await buildSite({ ...input, backendOrigin: '', outDir: offline, site: { ...input.site, scrollMotion: { version: 1, policy: 'off' } } });
+  assert.ok(!offlineFiles.includes('beacon.js'));
+  assert.ok(!existsSync(join(offline, 'cookie-compliance/index.html')));
+  assert.doesNotMatch(readFileSync(join(offline, 'active/index.html'), 'utf8'), /beacon\.js|motion-[a-f0-9]+\.js/);
+});
 
 function site() {
   const root = mkdtempSync(join(tmpdir(), 'vitris-media-performance-'));

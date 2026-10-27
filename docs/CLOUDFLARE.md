@@ -51,3 +51,6 @@ Cloudflare references: [configuration](https://developers.cloudflare.com/workers
 The Worker preview GitHub workflow is disabled by default. A repository owner may opt in with the `VITRIS_WORKER_PREVIEW_ENABLED=true` repository variable after provisioning their own isolated preview resources and GitHub secrets. No account credentials are included in source.
 
 Template library maintainers also configure their own `VITRIS_TEMPLATE_ORIGIN`, `VITRIS_TEMPLATE_BUCKET`, R2 S3 endpoint, and access credentials; see `agent/refs/template-library.md`. Static-site users can use the public gallery without those credentials.
+
+
+For an explicitly requested quick publish, use `vitris deploy --quick --environment production` (`npm run deploy:quick` in newly scaffolded sites). This rebuilds and deploys without browser, graph or launch review gates. Compilation, Cloudflare credentials, staged-file integrity and an HTTP smoke check still run. Receipts record build-only verification. Preservation sites use `--environment preview` and also skip screenshot comparisons. Ordinary deployment retains full preflight.

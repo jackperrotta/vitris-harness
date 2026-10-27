@@ -1,0 +1,17 @@
+# Built-in analytics and delivery
+
+Read this when planning calls to action, implementing pages, checking browser behavior, or launching a site. The harness already owns tracking; do not add a second analytics SDK to components or islands.
+
+## Configure and use
+
+- `launch.json.backendOrigin` connects the optional Vitris backend. Compilation adds one deferred first-party beacon and the generated `/cookie-compliance` preference page. Without a backend, neither is emitted. A backend must be provisioned and the site's hostname registered before real collection works; compiling a URL alone does not provision it.
+- The beacon records pageviews, referrer/UTM source and medium, session/device/channel summaries, elapsed time and maximum scroll depth, navigation/button/image/carousel engagement, and telephone, email and map clicks. Use actual `tel:`/`mailto:` links, readable labels, semantic navigation, and the built-in components. Engagement is bounded to 25 events per page; live presence uses a 15-second timer while visible and permitted by the current preference.
+- Successful lead conversions are recorded by the server after acceptance. Use registered `launch.json.forms` bindings and the shared `data-lead-form` runtime; see the installed `docs/CONTACT-FORMS.md`. Never count a submit click or a mocked browser response as a real accepted lead. Never send field values, message contents or other customer details to analytics.
+- Optional `launch.json.webAnalyticsToken` is the public 32-character hexadecimal Cloudflare Web Analytics token. It adds a separate deferred field-performance beacon on production pages; preview builds omit it. Use either Cloudflare dashboard injection or this manual hook, avoiding duplicate collection. This hook does not create an account resource or establish field results without visitor data.
+- The preference page and banner are owned by the first-party beacon. Preserve Accept/Reject controls and GPC/DNT handling. Reject clears the visitor cookie and stops presence pings; cookieless measurement can remain. Do not describe the existing implementation as sending no requests after Reject. Hosted `/preview/SLUG` traffic is tagged separately; do not claim a production analytics result from local mocks or previews.
+
+## Compile only what the route uses
+
+Read `motion.md` and its selected recipes for the motion library, `icons.md` for the complete searchable icon catalog, and `performance.md` for delivery and measurement. Motion is a minified, self-hosted runtime requested only by active motion routes. Explicit off and quiet routes need no motion script. Icons compile to the selected inline SVG geometry, with no client catalog, icon font or JavaScript. Static builds emit content-addressed CSS and islands per route; shared bytes deduplicate. A route without interactions needs no islands module. The generated preference page needs the beacon and base styles, not another route's widgets or motion.
+
+Inspect actual desktop/mobile routes and network requests. Verify calls to action, synthetic form states, preference persistence and optional tracking requests using interception; do not create real leads or contaminate production analytics during tests. Check that unused motion, widgets and icon geometry are absent, that immutable asset references resolve, and that measured performance meets the configured gate. Do not infer a field performance pass from a successful build.

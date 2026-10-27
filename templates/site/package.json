@@ -12,6 +12,7 @@
     "go": "node ./node_modules/@tryvitris/website-harness/bin/vitris-go.js",
     "preflight": "node ./node_modules/@tryvitris/website-harness/bin/vitris-launch-preflight.js --environment production",
     "deploy": "npm run build && npm run preflight && wrangler pages deploy dist --project-name=__SLUG__",
+    "deploy:quick": "node ./node_modules/@tryvitris/website-harness/bin/vitris.js deploy --site . --environment production --quick",
     "verify:browser": "node ./node_modules/@tryvitris/website-harness/bin/vitris-verify-browser.js",
     "verify:performance": "node ./node_modules/@tryvitris/website-harness/bin/vitris-verify-performance.js --site .",
     "refresh-agent": "node ./node_modules/@tryvitris/website-harness/bin/vitris-refresh.js --site .",

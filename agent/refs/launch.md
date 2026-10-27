@@ -9,3 +9,5 @@ Only when the operator asks after `preview_ready`.
 5. Owner admin: `{backendOrigin}/app/login` with `ownerEmail`.
 
 Do not merge secrets into git. Use `.env` for Cloudflare tokens.
+
+For an explicitly requested quick publish, use `vitris deploy --quick --environment production` (`npm run deploy:quick` in newly scaffolded sites). This rebuilds and deploys without browser, graph or launch review gates. Compilation, Cloudflare credentials, staged-file integrity and an HTTP smoke check still run. Receipts record build-only verification. Preservation sites use `--environment preview` and also skip screenshot comparisons. Ordinary deployment retains full preflight.

@@ -139,6 +139,8 @@ export async function buildSite(input: BuildSiteInput): Promise<string[]> {
     const js = siteIslands([page], input.catalog);
     pageAssets[page.path] = { css: asset(siteCss([page], input.catalog), 'css'), js: js ? asset(js, 'js') : null };
   }
+  // The generated preference page needs primitives and the beacon, not site widgets.
+  if (backendOrigin) pageAssets[COOKIE_COMPLIANCE_PATH] = { css: asset(siteCss([], input.catalog), 'css'), js: null };
   const files = compileSite({
     site,
     pages: input.pages,
@@ -148,12 +150,15 @@ export async function buildSite(input: BuildSiteInput): Promise<string[]> {
     publicOrigin: input.publicOrigin,
     pageAssets,
     webAnalyticsToken: input.webAnalyticsToken,
-  });
+  }, compiled);
 
   const written: string[] = [];
   await mkdir(input.outDir, { recursive: true });
   await mkdir(join(input.outDir, 'assets/immutable'), { recursive: true });
-  for (const [path, body] of routeAssets) await writeFile(join(input.outDir, path.slice(1)), body, 'utf8');
+  for (const [path, body] of routeAssets) {
+    await writeFile(join(input.outDir, path.slice(1)), body, 'utf8');
+    written.push(path.slice(1));
+  }
 
   for (const file of files) {
     const rel =
@@ -168,7 +173,10 @@ export async function buildSite(input: BuildSiteInput): Promise<string[]> {
 
   await writeFile(join(input.outDir, "site.css"), siteCss(compiled, input.catalog), "utf8");
   await writeFile(join(input.outDir, "theme.css"), themeCss(theme), "utf8");
-  if (backendOrigin) await writeFile(join(input.outDir, "beacon.js"), beaconJs, "utf8");
+  if (backendOrigin) {
+    await writeFile(join(input.outDir, "beacon.js"), beaconJs, "utf8");
+    written.push("beacon.js");
+  }
   await writeFile(join(input.outDir, "robots.txt"), robotsTxt(input.publicOrigin), "utf8");
   await writeFile(
     join(input.outDir, "sitemap.xml"),
@@ -187,7 +195,7 @@ export async function buildSite(input: BuildSiteInput): Promise<string[]> {
     written.push(motionAssetHref.slice(1));
   }
   if (islands) written.push("islands.js");
-  written.push("site.css", "theme.css", "beacon.js", "robots.txt", "sitemap.xml");
+  written.push("site.css", "theme.css", "robots.txt", "sitemap.xml");
   return written;
 }
 

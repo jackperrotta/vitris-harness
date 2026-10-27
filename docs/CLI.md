@@ -197,13 +197,15 @@ vitris preview [--site <dir>] [--port <number>] [--dry-run]
 ### `vitris deploy`
 Builds a verified production bundle and deploys it to Cloudflare Pages.
 ```bash
-vitris deploy [--site <dir>] [--provider cloudflare] [--environment preview|production] [--branch <branch>] [--dry-run]
+vitris deploy [--site <dir>] [--provider cloudflare] [--environment preview|production] [--branch <branch>] [--quick] [--dry-run]
 ```
 Workflow:
 1. Scoped preflight check verifying Cloudflare credentials (`CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID` or `wrangler login`).
 2. Build verified static `dist/` bundle (aborts if build fails or is dirty).
 3. Executes `npx wrangler pages deploy dist --project-name=<slug>`.
 4. Executes automated remote smoke check against the deployed `*.pages.dev` URL.
+
+Quick publish: `vitris deploy --quick --environment production` rebuilds and uploads without graph gates, browser reviews, or launch preflight. New sites also include `npm run deploy:quick`. The CLI still defaults to preview; preservation sites support previews only and quick mode also skips screenshot comparisons. Compilation, Cloudflare credentials, staged-bundle integrity and the remote HTTP smoke check still apply. Receipts use policy `quick-publish-build-only-v1` and results report `verification: "build-only"`. Skipped reviews are never marked passed. Ordinary deployment retains full verification.
 
 ---
 

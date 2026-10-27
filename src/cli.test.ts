@@ -115,6 +115,13 @@ test("CLI preview and deploy validate options and scoped credentials", async () 
     assert.equal(docPass.ok, true);
     const deployDry = await runCli(["deploy", "--site", root, "--provider", "cloudflare", "--dry-run"]);
     assert.equal(deployDry, EXIT_CODES.SUCCESS);
+    const quickDry = await api.deploySite({ site: root, quick: true, environment: "production", dryRun: true });
+    assert.equal(quickDry.ok, true);
+    assert.equal(quickDry.data?.verification, "build-only");
+    assert.match(quickDry.summary || "", /without review gates/);
+    assert.equal(await runCli(["deploy", "--site", root, "--quick", "--environment", "production", "--dry-run"]), EXIT_CODES.SUCCESS);
+    const pkg = JSON.parse(readFileSync(join(root, "package.json"), "utf8"));
+    assert.match(pkg.scripts["deploy:quick"], /--environment production --quick/);
   } finally {
     delete process.env.CLOUDFLARE_API_TOKEN;
     delete process.env.CLOUDFLARE_ACCOUNT_ID;

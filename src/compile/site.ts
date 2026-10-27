@@ -535,8 +535,8 @@ export function compileSite(opts: {
   publicOrigin?: string;
   pageAssets?: Record<string, { css: string; js: string | null }>;
   webAnalyticsToken?: string;
-}): { path: string; html: string }[] {
-  const compiled = opts.pages.map((page) =>
+}, preparedPages?: CompiledPage[]): { path: string; html: string }[] {
+  const compiled = preparedPages ?? opts.pages.map((page) =>
     compilePage(page, opts.catalog, opts.site, opts.kernelOrigin),
   );
   const islands = siteIslands(compiled, opts.catalog);
@@ -577,7 +577,8 @@ export function compileSite(opts: {
       themeHref: opts.themeHref,
       assetsPrefix: opts.assetsPrefix,
       publicOrigin: opts.publicOrigin,
-      islandsHref,
+      islandsHref: null,
+      styleHref: opts.pageAssets?.[COOKIE_COMPLIANCE_PATH]?.css,
     }),
   });
 
