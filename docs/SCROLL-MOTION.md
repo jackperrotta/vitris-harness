@@ -1,6 +1,6 @@
 # Opt-in scroll motion v1
 
-Set `site.json.scrollMotion` to `{"version":1,"policy":"enabled"}` and use stable `id` plus `data-motion` attributes. Read `agent/refs/motion.md` for the complete engine-independent contract and original recipe command. Native HTML, blocks-v0 components and composition-v1 share the contract after flattening.
+Set `site.json.scrollMotion` to `{"version":1,"policy":"enabled"}` and use stable `id` plus `data-motion` attributes. Read `agent/refs/motion.md` for the complete engine-independent contract and original recipe command. Native HTML and site-owned components share the contract after flattening.
 
 Keep the site's operator restrictions. `scrollMotion.policy:"off"` disables all effects. Legacy `motion.strength:"off"` remains a default which a legacy per-instance `motion` overrides. Omitted new configuration preserves legacy behavior and does not enable new markers. Component roots with explicit new markers avoid automatic reveal wrappers. Do not hide a primary hero or entire page.
 

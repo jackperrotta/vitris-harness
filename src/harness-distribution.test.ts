@@ -1,12 +1,13 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { existsSync, mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { tmpdir } from 'node:os';
 import { createSite } from './cli/site-create.ts';
 import { migrateSite } from './cli/site-migrate.ts';
 import { resolveHarnessRoot } from './agent/design-calibration.ts';
 import { buildVerified } from './build/verified.ts';
+import { archivePreviousBuild } from './build/archives.ts';
 import { backendOrigin } from './worker/env.ts';
 import { build as bundle } from 'esbuild';
 import { spawnSync } from 'node:child_process';
@@ -14,6 +15,27 @@ import { spawnSync } from 'node:child_process';
 const temp = () => mkdtempSync(join(tmpdir(), 'vitris-distribution-'));
 const read = (root: string, path: string) => JSON.parse(readFileSync(join(root, path), 'utf8'));
 const save = (root: string, path: string, data: unknown) => { mkdirSync(resolve(root, path, '..'), { recursive: true }); writeFileSync(join(root, path), JSON.stringify(data)); };
+
+test('managed build retention keeps three archives and preserves unrecognized or modified folders', () => {
+  const root = temp(), archiveRoot = join(root, '.vitris/build-archives');
+  mkdirSync(join(archiveRoot, 'customer-notes'), { recursive: true });
+  writeFileSync(join(archiveRoot, 'customer-notes', 'note.txt'), 'keep');
+  for (let i = 0; i < 5; i++) {
+    const previous = join(root, `dist.previous-${i}`);
+    mkdirSync(previous); writeFileSync(join(previous, 'index.html'), `version ${i}`);
+    archivePreviousBuild(root, previous);
+  }
+  const names = readdirSync(archiveRoot).filter(name => /^[0-9a-f-]{36}$/.test(name));
+  assert.equal(names.length, 3);
+  assert.deepEqual(names.map(name => readFileSync(join(archiveRoot, name, 'dist/index.html'), 'utf8')).sort(), ['version 2','version 3','version 4']);
+  assert.equal(readFileSync(join(archiveRoot, 'customer-notes', 'note.txt'), 'utf8'), 'keep');
+  const edited = join(archiveRoot, names[0]!, 'dist/index.html');
+  writeFileSync(edited, 'user edited');
+  const previous = join(root, 'dist.previous-next'); mkdirSync(previous); writeFileSync(join(previous, 'index.html'), 'next');
+  archivePreviousBuild(root, previous);
+  assert.equal(readFileSync(edited, 'utf8'), 'user edited');
+  assert.equal(readdirSync(archiveRoot).filter(name => /^[0-9a-f-]{36}$/.test(name)).length, 4);
+});
 
 test('packaged catalog initializes without workstation asset archives and defers unavailable bytes until requested',async()=>{
  const out=temp(),script=join(out,'metadata-smoke.mjs');
@@ -54,6 +76,10 @@ test('a fresh customer opts into shared choreography without inheriting portfoli
  assert.match(readFileSync(join(site,'dist/islands.js'),'utf8'),/VitrisExperience/);assert.match(opted,/data-experience-magnetic/);assert.doesNotMatch(opted,/jack@tryvitris|Jack Perrotta|Hydroponic gardening/);
  writeFileSync(join(site,'pages/index.html'),'<h1>Studio Example</h1><a href="#work">Explore</a>');await buildVerified(site);
  assert.equal(existsSync(join(site,'dist/islands.js')),false);
+ const archives=readdirSync(join(site,'.vitris/build-archives')).filter(name=>/^[0-9a-f-]{36}$/.test(name));
+ assert.equal(archives.length,1);
+ assert.match(readFileSync(join(site,'.vitris/build-archives',archives[0]!,'dist/index.html'),'utf8'),/data-experience-magnetic/);
+ assert.equal(readdirSync(site).some(name=>name.startsWith('dist.previous-')),false);
 });
 
 test('migration previews without edits, backs up configuration, preserves content and state, and is idempotent', async () => {

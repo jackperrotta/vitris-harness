@@ -1,5 +1,0 @@
-.c-faq-split__copy .section__head{margin-bottom:var(--space-5)}
-@media(min-width:720px){.c-faq-split .split{grid-template-columns:2fr 3fr}.c-faq-split__copy{position:sticky;top:calc(var(--header-h) + var(--space-5))}}
-.c-faq-split__card{padding:0 var(--space-6)}
-.c-faq-split__list{border-top:0}
-.c-faq-split__list details:last-child{border-bottom:0}

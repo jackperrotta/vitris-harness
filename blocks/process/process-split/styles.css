@@ -1,6 +1,0 @@
-.c-process-split__copy .section__head{margin-bottom:var(--space-5)}
-.c-process-split__list{list-style:none;margin:0;padding:0;display:grid;gap:var(--space-4);counter-reset:step}
-.c-process-split__list > *{counter-increment:step;display:grid;grid-template-columns:2rem 1fr;gap:var(--space-3);align-items:start;color:var(--color-muted)}
-.c-process-split__list > *::before{content:counter(step);display:inline-grid;place-items:center;width:2rem;height:2rem;border-radius:var(--radius-pill);background:color-mix(in srgb,var(--color-accent) 12%,transparent);color:var(--color-accent);font-weight:600;font-size:var(--step-0)}
-.c-process-split__list strong{display:block;color:var(--color-text);font-weight:600}
-.c-process-split--reverse .split > :first-child{order:2}

@@ -115,8 +115,6 @@ export interface JevCapabilityConfig {
   coverageCheck?: JevMode;
   // Workstream 7
   creativeScoring?: JevMode;
-  /** Phase 2: rank library blocks after copy-review / changed pages. Off in the matched quality profile. */
-  componentSelection?: JevMode;
   /** Advisory storyboard repetition check. Off unless the design-assist preset or an explicit capability enables it. */
   compositionCheck?: JevMode;
   /** Rank eligible lessons. Cannot drop mandatory requirements. */

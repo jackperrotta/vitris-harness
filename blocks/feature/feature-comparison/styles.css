@@ -1,6 +1,0 @@
-.c-feature-comparison__grid{max-width:56rem;margin-inline:auto}
-.c-feature-comparison .card__body{padding:var(--space-6);gap:var(--space-4)}
-.c-feature-comparison .card__body > h3{padding-bottom:var(--space-3);border-bottom:1px solid var(--color-border)}
-.c-feature-comparison .list-check{gap:var(--space-3)}
-.c-feature-comparison__them{color:var(--color-muted)}
-.c-feature-comparison__them .list-check li > .icon{color:var(--color-muted)}

@@ -356,7 +356,6 @@
       "writes": [
         "pages",
         "components",
-        "agent/decisions/component-selection.json",
         "agent/decisions/authoring-decisions.json",
         "site.json"
       ],
@@ -556,7 +555,6 @@
       "writes": [
         "pages",
         "components",
-        "agent/decisions/component-selection.json",
         "agent/decisions/authoring-decisions.json"
       ],
       "refs": [

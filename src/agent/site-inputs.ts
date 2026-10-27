@@ -1,8 +1,11 @@
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { join, resolve } from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { save } from './artifacts.ts';
 import { CLOUD_CATALOG } from './theme-cloud.ts';
+import type { CloudEntry } from './theme-cloud.ts';
+import { catalogEntryHash, fetchTemplateCatalog, pinnedTemplateEntry, type TemplateCatalog } from './template-catalog.ts';
 import { visualTheme } from './theme-library.ts';
 import { currentSelectionHash, selectionDraft, selectionStore, submitSelection } from './theme-selection.ts';
 import { hasActiveStageLease, withMutationLock } from './preparation.ts';
@@ -11,7 +14,7 @@ import type { AdaptationPreferences } from './template-adaptation.ts';
 export const ADDITIONAL_CONTENT_PATH = 'onboarding/additional-content.md';
 export const TEMPLATE_INPUT_PATH = 'agent/template-input.json';
 export type SiteInputOptions = { template?: string; templateRelease?: string; content?: string; contentFile?: string };
-export type TemplateInput = { version: 1; id: string; release: string; instruction: string };
+export type TemplateInput = { version: 1; id: string; release: string; instruction: string; catalogEntry?: CloudEntry; catalogHash?: string; catalogAssets?: NonNullable<TemplateCatalog['assets']>; catalogAssetsHash?: string };
 export type ResolvedSiteInputs = { template?: TemplateInput; content?: string };
 
 export function additionalContentGuidance(root: string): string {
@@ -21,7 +24,7 @@ export function additionalContentGuidance(root: string): string {
 }
 
 /** Resolve and validate everything before scaffolding or mutating a site. */
-export function resolveSiteInputs(opts: SiteInputOptions): ResolvedSiteInputs {
+export function resolveSiteInputs(opts: SiteInputOptions, catalog: TemplateCatalog = CLOUD_CATALOG): ResolvedSiteInputs {
   if (opts.templateRelease && !opts.template) throw Error('--template-release requires --template');
   if (opts.content !== undefined && opts.contentFile !== undefined) throw Error('Use either --content or --content-file, not both');
   const content = opts.contentFile !== undefined ? readFileSync(resolve(opts.contentFile), 'utf8') : opts.content;
@@ -35,7 +38,7 @@ export function resolveSiteInputs(opts: SiteInputOptions): ResolvedSiteInputs {
       const url = new URL(input);
       if (url.username || url.password) throw Error('Template URLs cannot contain credentials');
       const requested = url.origin + url.pathname.replace(/\/+$/, '');
-      const entry = [...CLOUD_CATALOG.entries, ...(CLOUD_CATALOG.history || [])].find(e => {
+      const entry = [...catalog.entries, ...(catalog.history || [])].find(e => {
         const base = e.base.replace(/\/+$/, '');
         return e.pages.some(p => requested === (base + `/templates/demo/${e.revision}/${e.theme.id}` + p.path).replace(/\/+$/, ''))
           || e.pages.some(p => requested.startsWith(base + `/templates/preview/${e.revision}/${e.theme.id}/${p.pageId}/`));
@@ -45,10 +48,24 @@ export function resolveSiteInputs(opts: SiteInputOptions): ResolvedSiteInputs {
       if (release && release !== entry.theme.release) throw Error('Template URL and --template-release refer to different revisions');
       release = entry.theme.release;
     }
-    const theme = visualTheme(id, release);
-    template = { version: 1, id: theme.id, release: theme.release, instruction: opts.template };
+    const entry = [...catalog.entries, ...(catalog.history || [])].find(e => (e.theme.id === id || e.theme.name.toLowerCase() === id.toLowerCase()) && (!release || e.theme.release === release));
+    const theme = entry?.theme || visualTheme(id, release);
+    const assets = entry ? (catalog.assets || []).filter(a => (entry.theme.fontAssets || []).some(f => typeof f === 'string' ? f === a.id : f.file === a.file && f.sha256 === a.sha256)) : [];
+    template = { version: 1, id: theme.id, release: theme.release, instruction: opts.template, ...(entry ? { catalogEntry: entry, catalogHash: catalogEntryHash(entry), catalogAssets: assets, catalogAssetsHash: createHash('sha256').update(JSON.stringify(assets)).digest('hex') } : {}) };
   }
   return { template, content };
+}
+
+/** Prefer the same hosted catalog as the gallery. The bundled snapshot is an explicit offline fallback. */
+export async function resolveSiteInputsLive(opts: SiteInputOptions, fetcher: typeof fetch = fetch): Promise<ResolvedSiteInputs> {
+  if (opts.template === undefined) return resolveSiteInputs(opts);
+  let catalog: TemplateCatalog;
+  try { catalog = await fetchTemplateCatalog(fetcher); }
+  catch (error) {
+    console.warn(`Hosted template catalog unavailable; using the bundled snapshot, which may be stale: ${error instanceof Error ? error.message : String(error)}`);
+    return resolveSiteInputs(opts);
+  }
+  return resolveSiteInputs(opts, catalog);
 }
 
 export function persistSiteInputs(root: string, inputs: ResolvedSiteInputs): void {
@@ -62,7 +79,7 @@ export function persistSiteInputs(root: string, inputs: ResolvedSiteInputs): voi
       const inputPath = join(root, TEMPLATE_INPUT_PATH);
       const prior = existsSync(inputPath) ? JSON.parse(readFileSync(inputPath, 'utf8')) : undefined;
       const current = selectionStore(root)?.current;
-      if (!prior || prior.id !== inputs.template.id || prior.release !== inputs.template.release || prior.instruction !== inputs.template.instruction
+      if (!prior || prior.id !== inputs.template.id || prior.release !== inputs.template.release || prior.instruction !== inputs.template.instruction || prior.catalogHash !== inputs.template.catalogHash || prior.catalogAssetsHash !== inputs.template.catalogAssetsHash
         || current && current.operationId !== prior.operationId && currentSelectionHash(root) !== prior.previousSelectionHash) {
         save(inputPath, { ...inputs.template, operationId: randomUUID(), previousSelectionHash: currentSelectionHash(root) });
       }
@@ -82,7 +99,7 @@ export function acceptTemplateInput(root: string): void {
   const input = JSON.parse(readFileSync(join(root, TEMPLATE_INPUT_PATH), 'utf8')) as TemplateInput & {operationId: string; previousSelectionHash: string | null};
   if (!input || input.version !== 1 || typeof input.instruction !== 'string' || !input.instruction.trim() || !/^[\w-]{8,100}$/.test(input.operationId)
     || !(input.previousSelectionHash === null || typeof input.previousSelectionHash === 'string' && /^[a-f0-9]{64}$/.test(input.previousSelectionHash))) throw Error('Invalid direct template input');
-  const theme = visualTheme(input.id, input.release);
+  const theme = pinnedTemplateEntry(root, input.id, input.release)?.theme || visualTheme(input.id, input.release);
   const current = selectionStore(root)?.current;
   // A later picker/chat choice wins. Repeating the CLI request is idempotent.
   const notes = `Direct template input: ${JSON.stringify(input.instruction)}. Build through local preview automatically; retain quality checks.`;

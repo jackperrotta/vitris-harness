@@ -532,7 +532,6 @@ async function main() {
       }
       const result = prepareArm({
         trialId, arm, root: site as string, kernel, peerRoot: argFrom("--peer-site"), host,
-        profileName: argv.includes("--component-select") ? "assist-quality-plus-component-select" : undefined,
         argv,
       });
       console.log(JSON.stringify(result, null, 2));

@@ -9,6 +9,7 @@ import { preserveRuntime } from './runtime.ts';
 import { preserveConfig, type PreserveManifest } from "./config.ts";
 import {iframeSources,readOnlyEmbedProvider,approvedEmbedUrl} from './embeds.ts';
 import {preserveManifest} from './supplement.ts';
+import { archivePreviousBuild } from '../build/archives.ts';
 
 export async function buildPreservedSite(siteRoot: string, output = join(siteRoot, "dist")): Promise<void> {
   const root = resolve(siteRoot), out = resolve(output), source = join(root, "preserved");
@@ -51,4 +52,8 @@ export async function buildPreservedSite(siteRoot: string, output = join(siteRoo
   const previous = `${out}.previous-${randomUUID()}`;
   if (existsSync(out)) replacePath(out, previous);
   try { replacePath(stage, out); } catch (error) { if (existsSync(previous)) replacePath(previous, out); throw error; }
+  if (out === join(root, 'dist') && existsSync(previous)) {
+    try { archivePreviousBuild(root, previous); }
+    catch (error) { console.warn(`Could not finish archiving previous build; inspect the previous-build and archive folders: ${String(error)}`); }
+  }
 }

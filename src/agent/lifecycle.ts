@@ -38,13 +38,12 @@ import {
   evaluateDelegationEligibility,
   type TrustedPilotContext,
 } from "./jev/ownership.ts";
-import { GROUNDING_SEMANTICS_HASH, FIELD_SELECTION_SEMANTICS_HASH, COMPONENT_FIT_SEMANTICS_HASH } from "./jev/questions.ts";
+import { GROUNDING_SEMANTICS_HASH, FIELD_SELECTION_SEMANTICS_HASH } from "./jev/questions.ts";
 import { capabilityForTask } from "./jev/calibration.ts";
 import { aggregateJevReceiptSpend, remainingPilotBudget, type JevAggregatedSpend } from "./jev/budget.ts";
 import { applyBusinessAuthorPacketReduction, formatMachineDraft, formatTranscriptionObligations, fieldTranscriptionRemovable, runBusinessSourceSelection, type MachineBusinessDraft } from "./jev/business-draft.ts";
 import { rankOptionalEvidenceWithJev, type RankedEvidenceItem } from "./jev/ranking.ts";
 import { runQualityChecks, formatQualityFindings, QUALITY_TASK_SEMANTICS, reconcileQualityWithReview, verifyQualityTaskReceipts } from "./jev/content-checks.ts";
-import { attachComponentRecommendations } from "./jev/component-select.ts";
 import { resolveDesignAuthoring } from "./composition-authoring.ts";
 import { writeNodeObservation } from "./jev/observations.ts";
 import { syncGoalContract } from "./jev/goals.ts";
@@ -240,13 +239,11 @@ const ASSIST_TASK_IDS = new Set([
   "cross-stage-consistency-check",
   "creative-dimension-scoring",
   "media-fit-scoring",
-  "component-fit-check",
 ]);
 
 function questionSemanticsForTask(taskId: string, taskType: string): string {
   if (QUALITY_TASK_SEMANTICS[taskId]) return QUALITY_TASK_SEMANTICS[taskId]!;
   if (taskId === "business-source-selection") return FIELD_SELECTION_SEMANTICS_HASH;
-  if (taskId === "component-fit-check") return COMPONENT_FIT_SEMANTICS_HASH;
   return GROUNDING_SEMANTICS_HASH;
 }
 
@@ -502,7 +499,6 @@ export async function prepareStage(opts: PrepareStageOptions): Promise<PrepareSt
 
     let qualitySummary = "";
     let creativeSummary = "";
-    let componentSummary = "";
     const qualityCapsOn =
       (effectiveCapabilities.coverageCheck !== "off")
       || (effectiveCapabilities.ctaFidelity !== "off")
@@ -538,22 +534,6 @@ export async function prepareStage(opts: PrepareStageOptions): Promise<PrepareSt
         }
       } catch {
         /* restore full critic obligation */
-      }
-    }
-
-    if (resolveDesignAuthoring(root).mode === "blocks-v0" && jevClient && effectiveCapabilities.componentSelection === "assist" && ["representative", "pages"].includes(node.id)) {
-      try {
-        componentSummary = await attachComponentRecommendations({
-          root,
-          kernel,
-          client: jevClient,
-          nodeId: node.id,
-          preparationId,
-          inputHash: subjectHash ?? immutableHash,
-          signal: opts.signal,
-        });
-      } catch {
-        componentSummary = "";
       }
     }
 
@@ -691,7 +671,7 @@ export async function prepareStage(opts: PrepareStageOptions): Promise<PrepareSt
       }
     }
     let preSelectedLessons: ReturnType<typeof selectLessonsForStage> | undefined;
-    if (resolveDesignAuthoring(root).mode === "blocks-v0" && ["narrative", "reference-analysis", "direction"].includes(node.id)) {
+    if (resolveDesignAuthoring(root).mode === "theme-v1" && ["narrative", "reference-analysis", "direction"].includes(node.id)) {
       preSelectedLessons = selectLessonsForStage(root, node.id === "narrative" ? "narrative" : node.id, node.id === "reference-analysis" ? 4 : 3);
       if (preSelectedLessons.length) {
         try {
@@ -821,9 +801,6 @@ export async function prepareStage(opts: PrepareStageOptions): Promise<PrepareSt
     }
     if (creativeSummary.trim()) {
       prompt += `\n\n${creativeSummary}\n`;
-    }
-    if (componentSummary.trim()) {
-      prompt += `\n\n${componentSummary}\n`;
     }
 
     // Assist source-selection: additive machine draft + full transcription list.

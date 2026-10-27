@@ -12,18 +12,51 @@ import { prepareStage, cancelStage } from './agent/lifecycle.ts';
 import { inputHash, contextPacket, reconcile } from './agent/runner.ts';
 import { findActivePreparation } from './agent/preparation.ts';
 import { save } from './agent/artifacts.ts';
-import { currentSelectionHash, selectionDraft, selectionStore, submitSelection } from './agent/theme-selection.ts';
+import { currentSelectionHash, selectedThemeContext, selectionDraft, selectionStore, submitSelection } from './agent/theme-selection.ts';
 import { adaptationQuestions, inventoryFailures } from './agent/adaptation-checkpoint.ts';
 import { templateAdaptationGuidance, assertTemplateImageAuthorization } from './agent/template-adaptation.ts';
 import { CLOUD_CATALOG } from './agent/theme-cloud.ts';
-import { ADDITIONAL_CONTENT_PATH, acceptTemplateInput, persistSiteInputs, resolveSiteInputs } from './agent/site-inputs.ts';
+import { catalogEntryHash } from './agent/template-catalog.ts';
+import { ADDITIONAL_CONTENT_PATH, acceptTemplateInput, persistSiteInputs, resolveSiteInputs, resolveSiteInputsLive } from './agent/site-inputs.ts';
 import { applyTemplateAdaptationGraph } from './agent/template-adaptation.ts';
+import { resolveDesignAuthoring } from './agent/composition-authoring.ts';
 import { gatherBlankOnboard, persistOnboard } from '../scripts/onboard/run.ts';
 
 const kernel = resolve(import.meta.dirname, '..');
 const read = (root: string, path: string) => JSON.parse(readFileSync(join(root, path), 'utf8'));
 const rootDir = () => join(mkdtempSync(join(tmpdir(), 'vitris-direct-input-')), 'site');
 const content = '  Owner-supplied fixture text.\nWeekend hours: 10–4.\nKeep this exact wording. 🌿\n';
+
+test('live catalog selection is pinned for later stages and detects changed pinned evidence', async () => {
+  const entry = structuredClone(CLOUD_CATALOG.entries[0]!);
+  entry.theme.id = 'synthetic-new-template'; entry.theme.name = 'Synthetic New Template';
+  entry.theme.release = '2099-01-01.1';
+  const catalog = { ...CLOUD_CATALOG, entries: [entry], history: [] };
+  const inputs = await resolveSiteInputsLive({ template: entry.theme.name }, async () => new Response(JSON.stringify(catalog)));
+  assert.equal(inputs.template?.id, entry.theme.id);
+  const root = rootDir(); await createSite({ dir: root, slug: 'live-catalog-fixture', blank: true });
+  persistSiteInputs(root, inputs);
+  const gathered = await gatherBlankOnboard({ slug: 'live-catalog-fixture', name: 'Fixture', noPrompt: true });
+  persistOnboard(root, gathered.brief, { pages: gathered.pages, copyMarkdown: gathered.copyMarkdown });
+  acceptTemplateInput(root);
+  assert.equal(selectionStore(root)?.current.themeId, entry.theme.id);
+  assert.match(selectedThemeContext(root), new RegExp(entry.revision));
+  const record = read(root, 'agent/template-input.json'); record.catalogEntry.theme.name = 'Changed after selection';
+  save(join(root, 'agent/template-input.json'), record);
+  assert.throws(() => acceptTemplateInput(root), /catalog entry has changed/);
+  record.catalogHash = catalogEntryHash(record.catalogEntry); save(join(root, 'agent/template-input.json'), record);
+  assert.throws(() => selectedThemeContext(root), /Pinned template revision changed/);
+});
+
+test('catalog fallback uses bundled data when the live service is unavailable', async () => {
+  const original = console.warn; const warnings: string[] = [];
+  console.warn = (...items) => warnings.push(items.join(' '));
+  try {
+    const result = await resolveSiteInputsLive({ template: 'Still & Field' }, async () => { throw Error('offline'); });
+    assert.equal(result.template?.id, 'real-estate-still-field');
+    assert.match(warnings.join('\n'), /bundled snapshot.*stale/);
+  } finally { console.warn = original; }
+});
 function graph(): SkillGraph {
   return { version: 3, stop_at: 'reference-analysis', nodes: ['harvest', 'media', 'reference-analysis'].map(id => ({
     id, kind: 'agent', eval: id, needs: [], refs: [], tools: [], inputs: [], writes: [], maxAttempts: 3,
@@ -34,6 +67,8 @@ test('source URL, direct template, and supplied content prepare reference work w
   const root = rootDir();
   const created = await createSite({ dir: root, slug: 'input-fixture', from: 'https://example.com/', template: 'Still & Field', content });
   assert.equal(created.ok, true, created.error);
+  assert.equal(resolveDesignAuthoring(root).mode, 'theme-v1');
+  assert.equal(existsSync(join(root, 'blocks')), false);
   assert.equal(read(root, 'launch.json').sourceUrl, 'https://example.com/');
   assert.equal(read(root, 'agent/template-input.json').id, 'real-estate-still-field');
   assert.equal(selectionStore(root), undefined); // Wait for captured branding.
@@ -52,6 +87,7 @@ test('source URL, direct template, and supplied content prepare reference work w
     assert.equal(selectionStore(root)!.current.adaptation!.checkpoints, 'automatic');
     assert.equal(selectionStore(root)!.current.adaptation!.aiImages, 'no-ai');
     assert.match(readFileSync(join(root, 'agent/CURRENT.md'), 'utf8'), /Supplied business content/);
+    assert.match(readFileSync(join(root, 'agent/CURRENT.md'), 'utf8'), /theme-v1/);
     assert.match(templateAdaptationGuidance(root), /continue automatically through local preview/);
     assert.deepEqual(adaptationQuestions(root, 'copy-expansion'), []);
     assert.match(inventoryFailures(root).join('\n'), /inventory/); // Gates still require real reference evidence.

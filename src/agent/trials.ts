@@ -100,7 +100,7 @@ export function completedMediaCoversAdditions(root: string, graph: SkillGraph, s
   });
 }
 
-export function createTrialSession(opts: { kernel: string; capture: string; out: string; runs: number; theme?: string; reviewer?: unknown; jev?: Partial<JevConfig>; workflowArgv?: string[]; sitePolicy?: {artDirection?: {mode:"media-v1";release:string}; designReferences?: {mode:"lessons";release:string;manifestHash?:string;teachingManifestHash?:string}; designAuthoring?: {mode:"blocks-v0"|"composition-v1";lessonRelease?:string}} }): TrialSession {
+export function createTrialSession(opts: { kernel: string; capture: string; out: string; runs: number; theme?: string; reviewer?: unknown; jev?: Partial<JevConfig>; workflowArgv?: string[]; sitePolicy?: {artDirection?: {mode:"media-v1";release:string}; designReferences?: {mode:"lessons";release:string;manifestHash?:string;teachingManifestHash?:string}; designAuthoring?: {mode:"theme-v1"|"composition-v1";lessonRelease?:string}} }): TrialSession {
   if (!Number.isSafeInteger(opts.runs) || opts.runs < 1 || opts.runs > 10) throw new Error("runs must be 1–10");
   const kernel = resolve(opts.kernel), capture = resolve(opts.capture), out = resolve(opts.out);
   const rel = relative(capture, out);

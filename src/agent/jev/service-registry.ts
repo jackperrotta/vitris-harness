@@ -729,17 +729,7 @@ for (const task of MEDIA_TASKS) registerTask({taskId: task.id, taskType: "custom
     delegationEligible: false,
   });
 
-  registerTask({
-    taskId: "component-fit-check",
-    taskType: "coverage",
-    lifecycleCaller: ["representative", "pages"],
-    inputSchema: "ComponentFitItem[]",
-    outputConsumer: "component-select-packet",
-    fallback: "Active agent chooses blocks from the library without a Jev shortlist",
-    testId: "component fit: current cache key, hard filters, advisory shortlist only",
-    description: "Optional shortlist for representative/pages. Never auto-edits pages/ or components/.",
-    delegationEligible: false,
-  });
+
 }
 
 // Auto-initialize standard tasks on module load

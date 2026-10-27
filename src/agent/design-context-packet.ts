@@ -68,7 +68,7 @@ export const DESIGN_CONTEXT_STAGES = new Set([
 ]);
 
 const STAGE_INCLUDE: Record<string, { required: string[]; omit: string[] }> = {
-  narrative: { required: ["objective", "constraints", "business", "uncertainty"], omit: ["block-catalog", "unrelated-lessons"] },
+  narrative: { required: ["objective", "constraints", "business", "uncertainty"], omit: ["unrelated-lessons"] },
   "reference-analysis": { required: ["objective", "constraints", "opportunities", "lessons"], omit: ["full-copy"] },
   direction: { required: ["objective", "constraints", "opportunities", "lessons"], omit: ["full-copy"] },
   storyboard: { required: ["objective", "constraints", "direction", "lessons", "media"], omit: ["component-examples"] },
@@ -133,7 +133,7 @@ export function buildDesignContextPacket(opts: {
     ...MANDATORY_OBLIGATIONS.map(item => `- ${item.id}: ${item.text}`),
   ];
   required.push(constraints.join("\n"));
-  required.push(`## Authoring policy\n${authoringPolicy.mode}; lesson release ${authoringPolicy.lessonRelease || "none"}; policy hash ${authoringPolicy.hash}. ${authoringPolicy.mode === "composition-v1" ? "Author site-owned content relationships; use selected lessons as advisory teaching and inspect the current render." : "Use the compatible block-led authoring instructions."}`);
+  required.push(`## Authoring policy\n${authoringPolicy.mode}; lesson release ${authoringPolicy.lessonRelease || "none"}; policy hash ${authoringPolicy.hash}. ${authoringPolicy.mode === "composition-v1" ? "Author site-owned content relationships; use selected lessons as advisory teaching and inspect the current render." : "Build site-owned components using the selected theme and business evidence."}`);
   if (!pack) {
     required.push("## Knowledge integrity\nThe sourced v2 pack is unavailable. Do not treat its requirements as verified or silently substitute them.");
   } else if (pack.errors.length) {

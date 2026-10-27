@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { GROUNDING_SEMANTICS_HASH, FIELD_SELECTION_SEMANTICS_HASH, COMPONENT_FIT_SEMANTICS_HASH, QUESTION_VERSION, canonicalJsonStringify } from "./questions.ts";
+import { GROUNDING_SEMANTICS_HASH, FIELD_SELECTION_SEMANTICS_HASH, QUESTION_VERSION, canonicalJsonStringify } from "./questions.ts";
 import { POLICY_VERSION } from "./policy.ts";
 import type { JevMode } from "./types.ts";
 
@@ -102,7 +102,6 @@ export const DELEGATION_PRIORITY_ORDER = [
   "intent-coverage-check",
   "creative-dimension-scoring",
   "media-fit-scoring",
-  "component-fit-check",
 ] as const;
 
 export interface CalibrationMetrics {
@@ -267,7 +266,6 @@ const KERNEL_ARTIFACTS: KernelCalibrationArtifact[] = [
   uncalibratedArtifact("intent-coverage-check", GROUNDING_SEMANTICS_HASH),
   uncalibratedArtifact("creative-dimension-scoring", GROUNDING_SEMANTICS_HASH),
   uncalibratedArtifact("media-fit-scoring", GROUNDING_SEMANTICS_HASH),
-  uncalibratedArtifact("component-fit-check", COMPONENT_FIT_SEMANTICS_HASH),
 ];
 
 let testOverlay: Map<string, KernelCalibrationArtifact> | undefined;
@@ -394,7 +392,7 @@ export function modelFamilyOf(model: string): string {
   return dash > 0 ? m.slice(0, dash) : m;
 }
 
-export function capabilityForTask(taskId: string): "grounding" | "ctaFidelity" | "claimStrengthening" | "crossStageContinuity" | "coverageCheck" | "creativeScoring" | "sourceSelection" | "retrievalRanking" | "repairAssistance" | "componentSelection" {
+export function capabilityForTask(taskId: string): "grounding" | "ctaFidelity" | "claimStrengthening" | "crossStageContinuity" | "coverageCheck" | "creativeScoring" | "sourceSelection" | "retrievalRanking" | "repairAssistance" {
   switch (taskId) {
     case "business-source-selection":
       return "sourceSelection";
@@ -414,8 +412,6 @@ export function capabilityForTask(taskId: string): "grounding" | "ctaFidelity" |
     case "creative-dimension-scoring":
     case "media-fit-scoring":
       return "creativeScoring";
-    case "component-fit-check":
-      return "componentSelection";
     default:
       return "grounding";
   }

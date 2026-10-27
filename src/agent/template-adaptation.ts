@@ -1,4 +1,5 @@
 import { existsSync, readFileSync } from 'node:fs';
+import { parse, type DefaultTreeAdapterMap } from 'parse5';
 import { join } from 'node:path';
 import { currentSelectionHash, selectionStore, themeSelectionEnabled, themeDependentNode } from './theme-selection.ts';
 import type { SkillGraph } from './graph.ts';
@@ -28,6 +29,34 @@ export type TemplateAdaptation = {
 export type TemplateDecision = { kind: 'remove-section' | 'generate-image'; id: string; proposalHash: string; source: 'user-chat' | 'user-ui'; instruction: string };
 const read = <T>(root: string, path: string): T | undefined => existsSync(join(root,path)) ? JSON.parse(readFileSync(join(root,path),'utf8')) as T : undefined;
 const text = (value: unknown): value is string => typeof value === 'string' && Boolean(value.trim());
+
+/** Check actual parsed elements, not strings that can occur in scripts or unrelated attributes. */
+function sectionStructure(html: string, targetId: string, gapId?: string): { targets: number; gaps: number } {
+  const root = parse(html);
+  type Node = DefaultTreeAdapterMap['node'];
+  let targets = 0, gaps = 0;
+  const visit = (node: Node, inTarget: boolean) => {
+    const element = node as DefaultTreeAdapterMap['element'];
+    const attrs = element.attrs || [];
+    const attr = (name: string) => attrs.find(item => item.name === name)?.value;
+    const target = attr('id') === targetId;
+    if (target) targets++;
+    if ((target || inTarget) && gapId !== undefined && attr('data-content-gap') === gapId) gaps++;
+    for (const child of ('childNodes' in node ? node.childNodes : []) || []) visit(child, inTarget || target);
+  };
+  visit(root, false);
+  return { targets, gaps };
+}
+
+function imageEvidence(root: string, path: unknown, expectedHash: unknown): path is string {
+  if (!text(path) || typeof expectedHash !== 'string' || !/^[a-f0-9]{64}$/.test(expectedHash)) return false;
+  try {
+    const full = within(root, path);
+    if (!existsSync(full) || fingerprint(root, [path]) !== expectedHash) return false;
+    const bytes = readFileSync(full);
+    return bytes.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10])) || bytes.subarray(0, 3).equals(Buffer.from([255, 216, 255]));
+  } catch { return false; }
+}
 export function validateAdaptationPreferences(value: unknown): asserts value is AdaptationPreferences {
   const p = value as AdaptationPreferences;
   if (!p || p.version !== 1 || !['preserve-ask','agent-decides'].includes(p.sections) || !['ask-each','no-ai','agent-decides'].includes(p.aiImages) || typeof p.priorities !== 'string' || p.priorities.length > 8000) throw new Error('Invalid template adaptation preferences');
@@ -127,8 +156,9 @@ export function templateAdaptationFailures(root: string, node: string): string[]
       if (['representative','representative-quality','pages','visual-review','content-review'].includes(node) && (section.route==='/' || node==='pages'||node==='visual-review'||node==='content-review')) {
         const path = join(root,'dist',section.route==='/'?'index.html':section.route.replace(/^\//,'').replace(/\/$/,'')+'/index.html');
         const html = existsSync(path)?readFileSync(path,'utf8'):'';
-        if (!html.includes('id="'+section.targetId+'"') && !html.includes("id='"+section.targetId+"'")) errors.push('Retained template section missing from rendered route: '+section.id);
-        if (section.content !== 'ready' && !html.includes('data-content-gap="'+section.id+'"')) errors.push('Draft/placeholder needs a visible, located content gap: '+section.id);
+        const found = sectionStructure(html, section.targetId, section.content !== 'ready' ? section.id : undefined);
+        if (found.targets !== 1) errors.push('Retained template section missing from rendered route or duplicated: '+section.id);
+        if (section.content !== 'ready' && found.gaps !== 1) errors.push('Draft/placeholder needs a visible, located content gap: '+section.id);
       }
     }
   }
@@ -139,11 +169,17 @@ export function templateAdaptationFailures(root: string, node: string): string[]
     if (proposal.output && !existsSync(within(root,proposal.output))) errors.push('Missing approved image output: '+proposal.id);
   }
   if (['representative-review','visual-review'].includes(node)) {
-    const fidelity = read<{templateFidelity?:{selectionHash:string;distHash:string;qualities:Array<{id:string;referenceEvidence:string;implementedEvidence:string;observation:string;verdict:string}>}}>(root,'agent/reviews/'+node+'.json')?.templateFidelity;
+    const fidelity = read<{templateFidelity?:{selectionHash:string;distHash:string;qualities:Array<{id:string;referenceEvidence:string;referenceHash:string;implementedEvidence:string;implementedHash:string;observation:string;verdict:string}>}}>(root,'agent/reviews/'+node+'.json')?.templateFidelity;
+    const browser = read<{distHash:string;checks:Array<{screenshot:string;screenshotHash:string;failures:string[]}>}>(root, `agent/reviews/${node === 'representative-review' ? 'representative-browser' : 'browser'}.json`);
+    const inventory = read<{selectionHash:string;evidence:Array<{path:string;sha256:string}>}>(root, 'onboarding/template-inventory.json');
     if (!fidelity || fidelity.selectionHash!==currentSelectionHash(root) || fidelity.distHash!==fingerprint(root,['dist'])) errors.push('Template fidelity comparison missing or stale');
     else for (const quality of brief.qualities || []) {
       const comparison=fidelity.qualities?.find(q=>q.id===quality.id);
-      if (!comparison || comparison.verdict!=='pass' || !text(comparison.observation) || !brief.reference.evidence.includes(comparison.referenceEvidence) || !existsSync(within(root,comparison.implementedEvidence))) errors.push('Template quality lacks located reference/build comparison: '+quality.id);
+      if (!comparison || comparison.verdict!=='pass' || !text(comparison.observation) || !brief.reference.evidence.includes(comparison.referenceEvidence)
+        || !imageEvidence(root, comparison.referenceEvidence, comparison.referenceHash)
+        || !imageEvidence(root, comparison.implementedEvidence, comparison.implementedHash)
+        || (adaptationCheckpointEnabled(root) && (inventory?.selectionHash !== currentSelectionHash(root) || !inventory.evidence?.some(e => e.path === comparison.referenceEvidence && e.sha256 === digest(readFileSync(within(root,e.path))))))
+        || browser?.distHash !== fidelity.distHash || !browser.checks?.some(c => c.screenshot === comparison.implementedEvidence && c.screenshotHash === comparison.implementedHash && Array.isArray(c.failures) && c.failures.length === 0)) errors.push('Template quality lacks current captured reference/build comparison: '+quality.id);
     }
   }
   return errors;
@@ -151,5 +187,5 @@ export function templateAdaptationFailures(root: string, node: string): string[]
 export function templateAdaptationGuidance(root: string): string {
   const prefs = adaptationPreferences(root);
   if (!prefs) return '';
-  return `\n## Template adaptation contract\nExact adaptation preferences: ${JSON.stringify(prefs)}\nInventory the inspected template's major sections, page rhythm, media roles and defining interactions in ${ADAPTATION_PATH} during reference-analysis. Bind to the current selection hash. Preserve emotional relationships as well as tokens. Missing source content is a visible draft/placeholder with a concrete next step; it is not a reason to erase a section. Do not import fictional template claims or pass drafts as facts. Record exact human decisions in ${TEMPLATE_DECISIONS_PATH}; never infer approval. Ask about each proposed AI image before production when requested; approvals bind the treatment and identity, and changed proposals require a new answer. Compare the representative page to the reference for each quality before expansion; ${prefs.checkpoints === 'automatic' ? 'use the critic comparison to repair defects and continue automatically through local preview; do not stop to ask for representative feedback or claim human approval.' : 'show the comparison to the user and carry feedback into refinement.'} When motion defines a selected quality, author ${TEMPLATE_MOTION_PATH} at representative/pages: locate reference/customer targets, interaction kinds, viewport, intent and explained departures. Browser verification records paired videos and frames; critic templateMotion observations assess timing, easing, continuity and input alternatives against those current captures. Use data-island="experience" only for appropriate declared choreography; do not add every interaction to every site. Runtime motion checks and agent reviews are not human design approval. Unresolved gaps can appear in a local refinement preview but block launch.\n${JSON.stringify(read<TemplateAdaptation>(root,ADAPTATION_PATH) || {status:'brief-needed'})}\n${adaptationCheckpointEnabled(root)?JSON.stringify(contentRefinementQueue(root)):''}\n`;
+  return `\n## Template adaptation contract\nExact adaptation preferences: ${JSON.stringify(prefs)}\nInventory the inspected template's major sections, page rhythm, media roles and defining interactions in ${ADAPTATION_PATH} during reference-analysis. Bind to the current selection hash. Preserve emotional relationships as well as tokens. Missing source content is a visible draft/placeholder with a concrete next step; it is not a reason to erase a section. Do not import fictional template claims or pass drafts as facts. Record exact human decisions in ${TEMPLATE_DECISIONS_PATH}; never infer approval. Ask about each proposed AI image before production when requested; approvals bind the treatment and identity, and changed proposals require a new answer. Compare reference PNG/JPEG captures to successful current browser-report screenshots for each quality, recording referenceHash and implementedHash as fingerprint(siteRoot, [path]); ${prefs.checkpoints === 'automatic' ? 'use the critic comparison to repair defects and continue automatically through local preview; do not stop to ask for representative feedback or claim human approval.' : 'show the comparison to the user and carry feedback into refinement.'} When motion defines a selected quality, author ${TEMPLATE_MOTION_PATH} at representative/pages: locate reference/customer targets, interaction kinds, viewport, intent and explained departures. Browser verification records paired videos and frames; critic templateMotion observations assess timing, easing, continuity and input alternatives against those current captures. Use data-island="experience" only for appropriate declared choreography; do not add every interaction to every site. Runtime motion checks and agent reviews are not human design approval. Unresolved gaps can appear in a local refinement preview but block launch.\n${JSON.stringify(read<TemplateAdaptation>(root,ADAPTATION_PATH) || {status:'brief-needed'})}\n${adaptationCheckpointEnabled(root)?JSON.stringify(contentRefinementQueue(root)):''}\n`;
 }

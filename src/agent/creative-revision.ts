@@ -19,7 +19,7 @@ import type { TrustedPilotContext } from "./jev/calibration.ts";
 import { creativeMethod } from "./creative-prompts.ts";
 import { selectCreativeChangeContext } from "./creative-change-context.ts";
 
-export const CREATIVE_REVISION_WRITES = ["onboarding/direction.json", "onboarding/studies", "onboarding/storyboard.json", "onboarding/copy-plan.json", "onboarding/media-selection.json", "pages", "components", "theme", "site.json", "agent/decisions/component-selection.json", "dist"];
+export const CREATIVE_REVISION_WRITES = ["onboarding/direction.json", "onboarding/studies", "onboarding/storyboard.json", "onboarding/copy-plan.json", "onboarding/media-selection.json", "pages", "components", "theme", "site.json", "dist"];
 const PRODUCERS = ["direction", "storyboard", "copy", "representative"];
 
 function authoredFiles(root: string): Record<string, string> {

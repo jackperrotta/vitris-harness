@@ -60,7 +60,6 @@ export const ASSIST_QUALITY_CAPABILITIES: JevCapabilityConfig = {
   crossStageContinuity: "assist",
   coverageCheck: "assist",
   creativeScoring: "off",
-  componentSelection: "off",
 };
 
 export const ASSIST_QUALITY_PROFILE = {
@@ -75,13 +74,6 @@ export const ASSIST_QUALITY_PROFILE = {
   workOwnership: "agent" as const,
   jevBudget: { ...DEFAULT_PILOT_BUDGET },
   stopNode: "preview" as const,
-};
-
-export const COMPONENT_ASSIST_PROFILE = {
-  ...ASSIST_QUALITY_PROFILE,
-  version: `${ASSIST_QUALITY_PROFILE_VERSION}+component-select`,
-  name: "assist-quality-plus-component-select",
-  capabilities: { ...ASSIST_QUALITY_CAPABILITIES, componentSelection: "assist" as JevMode },
 };
 
 export function plannedJevCallsForProfile(profile: { capabilities: JevCapabilityConfig; model: string }): Array<{ nodeId: string; taskId: string }> {
@@ -113,8 +105,6 @@ export function plannedJevCallsForProfile(profile: { capabilities: JevCapability
   if (callers.includes("business-review")) calls.push({ nodeId: "business-review", taskId: "business-review-grounding" });
   if (callers.includes("narrative-review")) calls.push({ nodeId: "narrative-review", taskId: "narrative-review-grounding" });
   if (callers.includes("business")) calls.push({ nodeId: "business", taskId: "business-source-selection" });
-  if (callers.includes("pages")) calls.push({ nodeId: "pages", taskId: "component-fit-check" });
-  if (callers.includes("representative")) calls.push({ nodeId: "representative", taskId: "component-fit-check" });
   return calls;
 }
 
@@ -253,7 +243,7 @@ export function kernelIdentity(kernel: string): KernelIdentity {
   const gitCommit = git.status === 0 ? git.stdout.trim() : "unavailable";
   const dirty = porcelain.status === 0 ? porcelain.stdout.trim().length > 0 : true;
   const h = createHash("sha256");
-  for (const rel of ["src", "agent", "scripts", "blocks", "package.json"]) {
+  for (const rel of ["src", "agent", "scripts", "package.json"]) {
     const full = join(kernel, rel);
     if (!existsSync(full)) continue;
     const st = statSync(full);

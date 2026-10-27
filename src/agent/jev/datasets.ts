@@ -318,7 +318,6 @@ TASK_DATASETS["cta-fidelity-check"] = sevenKinds("cta-fidelity-check", "Schedule
 TASK_DATASETS["intent-coverage-check"] = sevenKinds("intent-coverage-check", "Do you offer financing?", "Financing is not mentioned");
 TASK_DATASETS["creative-dimension-scoring"] = sevenKinds("creative-dimension-scoring", "Direction A audience fit", "Warm editorial for local trade");
 TASK_DATASETS["media-fit-scoring"] = sevenKinds("media-fit-scoring", "Hero photo of crew", "Stock office handshake");
-TASK_DATASETS["component-fit-check"] = sevenKinds("component-fit-check", "Hero needs a phone CTA and 4x3 media", "Block is a static quote with no actions slot");
 
 function extraHeldOutCases(taskId: string): LabeledPolicyCase[] {
   return [

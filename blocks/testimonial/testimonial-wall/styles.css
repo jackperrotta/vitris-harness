@@ -1,7 +1,0 @@
-.c-testimonial-wall__grid{display:grid;gap:var(--space-4)}
-@media(min-width:720px){.c-testimonial-wall__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(min-width:1080px){.c-testimonial-wall__grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-.c-testimonial-wall__grid .quote{padding:var(--space-5);background:var(--color-surface-2);border-radius:var(--radius-lg);display:grid;gap:var(--space-3);align-content:start}
-.c-testimonial-wall__grid .quote p{margin:0}
-.c-testimonial-wall__grid .quote cite{margin-top:0;font-weight:600;color:var(--color-text)}
-.c-testimonial-wall__grid .quote cite span{display:block;font-weight:400;color:var(--color-muted)}

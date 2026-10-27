@@ -3,7 +3,6 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync
 import { join, resolve } from "node:path";
 import {
   ASSIST_QUALITY_PROFILE,
-  COMPONENT_ASSIST_PROFILE,
   MATCHED_AB_COMPACT,
   inheritedJevState,
   kernelIdentity,
@@ -28,14 +27,14 @@ import { isPreviewReady, parseGraphYaml, type AgentState, type SkillGraph } from
 import { json } from "../artifacts.ts";
 import { allTasks, loadTaskExecution, verifyTaskExecution } from "./service-registry.ts";
 import { QUALITY_TASK_SEMANTICS } from "./content-checks.ts";
-import { COMPONENT_FIT_SEMANTICS_HASH, FIELD_SELECTION_SEMANTICS_HASH, GROUNDING_SEMANTICS_HASH } from "./questions.ts";
+import { FIELD_SELECTION_SEMANTICS_HASH, GROUNDING_SEMANTICS_HASH } from "./questions.ts";
 
 export const PILOT_TRIAL_MARKER = "agent/pilot-trial.json";
 export const PILOT_PREPARE_MANIFEST = (arm: "A" | "B") => `agent/runs/arm-${arm}-prepare.json`;
 export const PILOT_FINAL_MANIFEST = (arm: "A" | "B") => `agent/runs/arm-${arm}-execution.json`;
 
 export type PilotArm = "A" | "B";
-export type PilotProfileName = "assist-quality-matched-ab" | "assist-quality-plus-component-select";
+export type PilotProfileName = "assist-quality-matched-ab";
 
 export interface PilotTrialMarker {
   schemaVersion: 1;
@@ -193,9 +192,7 @@ export function prepareArm(opts: {
     }
   }
 
-  const profile = opts.profileName === "assist-quality-plus-component-select"
-    ? COMPONENT_ASSIST_PROFILE
-    : ASSIST_QUALITY_PROFILE;
+  const profile = ASSIST_QUALITY_PROFILE;
   const payload = profileFileConfig(opts.arm, profile);
   let resolved: ReturnType<typeof mergeJevConfig>;
   try {
@@ -310,7 +307,6 @@ export function observedJevCalls(root: string): ObservedJevCall[] {
 function questionSemanticsForPilotTask(taskId: string): string {
   if (QUALITY_TASK_SEMANTICS[taskId]) return QUALITY_TASK_SEMANTICS[taskId]!;
   if (taskId === "business-source-selection") return FIELD_SELECTION_SEMANTICS_HASH;
-  if (taskId === "component-fit-check") return COMPONENT_FIT_SEMANTICS_HASH;
   return GROUNDING_SEMANTICS_HASH;
 }
 
@@ -358,7 +354,7 @@ export function finalizeArm(opts: {
   if (kernelRevision(opts.kernel) !== marker.kernelRevision) {
     return { ok: false, reason: "Kernel revision drifted after preparation. Refusing to finalize." };
   }
-  const profile = marker.profile === "assist-quality-plus-component-select" ? COMPONENT_ASSIST_PROFILE : ASSIST_QUALITY_PROFILE;
+  const profile = ASSIST_QUALITY_PROFILE;
   if (loaded.model !== profile.model || Boolean(loaded.compactPackets) !== Boolean(profile.compactPackets) || (loaded.workOwnership ?? "agent") !== "agent") {
     return { ok: false, reason: "Profile model, compact packets, or ownership drifted after preparation." };
   }
@@ -431,7 +427,7 @@ export function finalizeArm(opts: {
     finalSnapshotHash,
     siteSnapshotHash: finalSnapshotHash,
     note: "initialSnapshotHash is the common starting point; finalSnapshotHash is post-run and cannot stand for it.",
-    profile: marker.profile === "assist-quality-plus-component-select" ? COMPONENT_ASSIST_PROFILE : ASSIST_QUALITY_PROFILE,
+    profile: ASSIST_QUALITY_PROFILE,
     effectiveConfigHash: effectiveConfigHash(loaded),
     preparedConfigHash: marker.effectiveConfigHash,
     effectiveConfig: {

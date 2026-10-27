@@ -6,11 +6,12 @@ import { save, acquirePathLock } from './artifacts.ts';
 import { digest, visualTheme, themeHash, SPECIMEN_VERSION, THEME_RELEASE, type VisualTheme } from './theme-library.ts';
 import type { ThemeTokens } from '../types.ts';
 import {CLOUD_CATALOG} from './theme-cloud.ts';
+import { pinnedTemplateAssets, pinnedTemplateEntry, pinnedTemplateIdentity, type TemplateCatalog } from './template-catalog.ts';
 import { validateAdaptationPreferences, type AdaptationPreferences } from './template-adaptation.ts';
 
-function themeFontGuide(theme:VisualTheme):string[]{
+function themeFontGuide(theme:VisualTheme,assets:NonNullable<TemplateCatalog['assets']>=CLOUD_CATALOG.assets):string[]{
  if(!theme.fontAssets)return [];
- const fonts=theme.fontAssets.map(f=>{const cloud=CLOUD_CATALOG.assets.find(a=>a.file===f.file&&a.sha256===f.sha256);return cloud?{...f,url:cloud.url,licenseUrl:cloud.licenseUrl}:f;});
+ const fonts=theme.fontAssets.map(f=>{const match=(a:NonNullable<TemplateCatalog['assets']>[number])=>typeof f==='string'?a.id===f:a.file===f.file&&a.sha256===f.sha256;const cloud=assets.find(match) || CLOUD_CATALOG.assets.find(match);return cloud?(typeof f==='string'?cloud:{...f,url:cloud.url,licenseUrl:cloud.licenseUrl}):f;});
  return ['Licensed font records: '+JSON.stringify(fonts)+'. Hosted files and license notices live in Cloudflare; verify their pinned digests when using them. Fonts without a hosted URL retain their installed package location. Declare @font-face and verify actual loading.'];
 }
 
@@ -20,7 +21,7 @@ export const THEME_DESIGN_NODES = new Set(['reference-analysis','template-refere
 export const themeDependentNode = (node: {id:string;eval:string}): boolean => THEME_DESIGN_NODES.has(node.id) || THEME_DESIGN_NODES.has(node.eval) || /^(?:creative-|variant-directions|direction-diversity)/.test(node.eval);
 export type BrandColor = { value: string; source: string; confidence: 'explicit' | 'captured' };
 export type BrandContext = { schemaVersion: 1; siteId: string; name: string; logo?: { path: string; hash: string; source: string }; colors: BrandColor[]; fallback: boolean };
-export type ThemeSelection = { schemaVersion: 1; siteId: string; themeId: string; themeRelease: string; themeHash: string; brandContextHash: string; notes: string; source: 'user-ui'|'user-chat'|'agent-delegated'|'test-simulation'; operationId: string; selectedAt: string; previousSelectionHash: string | null; delegation?: string; adaptation?: AdaptationPreferences };
+export type ThemeSelection = { schemaVersion: 1; siteId: string; themeId: string; themeRelease: string; themeHash: string; catalogHash?: string; brandContextHash: string; notes: string; source: 'user-ui'|'user-chat'|'agent-delegated'|'test-simulation'; operationId: string; selectedAt: string; previousSelectionHash: string | null; delegation?: string; adaptation?: AdaptationPreferences };
 export type SelectionStore = { schemaVersion: 1; current: ThemeSelection; history: ThemeSelection[] };
 const read = <T>(root: string, path: string): T | undefined => existsSync(join(root,path)) ? JSON.parse(readFileSync(join(root,path),'utf8')) as T : undefined;
 export function themeSelectionEnabled(root: string): boolean {
@@ -96,7 +97,7 @@ export function ensureBrandContext(root: string): BrandContext {
 export function validateBrand(b: BrandContext): void {
   if(b.schemaVersion!==1||typeof b.siteId!=='string'||!b.siteId||b.siteId.length>180||typeof b.name!=='string'||b.name.length>500||!Array.isArray(b.colors)||b.colors.length>12||b.colors.some(c=>!normalizeBrandColor(c.value)||!['captured','explicit'].includes(c.confidence)||typeof c.source!=='string')) throw new Error('Invalid brand context');
 }
-export function bindTheme(theme: VisualTheme,brand: BrandContext): { tokens: ThemeTokens; brandAccent: string; cacheKey: string; guide: string } {
+export function bindTheme(theme: VisualTheme,brand: BrandContext,assets?: NonNullable<TemplateCatalog['assets']>): { tokens: ThemeTokens; brandAccent: string; cacheKey: string; guide: string } {
   validateBrand(brand);
   const brandAccent=normalizeBrandColor(brand.colors[0]?.value||'#56636b')!;
   // Prefer another evidenced palette color before deriving a companion.
@@ -111,22 +112,24 @@ export function bindTheme(theme: VisualTheme,brand: BrandContext): { tokens: The
   }
   const actionText=contrast(action,'#ffffff')>=4.5?'#ffffff':contrast(action,'#111111')>=4.5?'#111111':'#000000';
   const tokens={...theme.tokens,colorAccent:action,colorAccentText:actionText,colorFocus:luminance(theme.tokens.colorBg)<.2?'#f4d788':'#365e85'};
-  return {tokens,brandAccent,cacheKey:digest([themeHash(theme),digest(brand),theme.release==='2026-10-08.3'?3:theme.release==='2026-10-08.2'?2:theme.specimens?SPECIMEN_VERSION:1]),guide:[...(theme.semantic?['Canonical rendered semantic roles: '+JSON.stringify(theme.semantic),'Transfer visual relationships, typography, surfaces, geometry, accent intent and responsive reading order. Re-author actual business facts, people, architecture, routes and section order. Never transfer demonstration prices, credentials, operational claims or specimen HTML.']:[]),...theme.principles,theme.image,theme.motion,theme.brandRule,theme.freedoms,...(theme.responsive?['Responsive identity: '+theme.responsive]:[]),...themeFontGuide(theme),...(theme.studies?['Original study handles (load only when needed): '+theme.studies.join(', ')]:[]),...(theme.sources?['Abstract reference lessons only; no publisher assets licensed: '+theme.sources.join(', ')]:[])].join('\n')};
+  return {tokens,brandAccent,cacheKey:digest([themeHash(theme),digest(brand),theme.release==='2026-10-08.3'?3:theme.release==='2026-10-08.2'?2:theme.specimens?SPECIMEN_VERSION:1]),guide:[...(theme.semantic?['Canonical rendered semantic roles: '+JSON.stringify(theme.semantic),'Transfer visual relationships, typography, surfaces, geometry, accent intent and responsive reading order. Re-author actual business facts, people, architecture, routes and section order. Never transfer demonstration prices, credentials, operational claims or specimen HTML.']:[]),...theme.principles,theme.image,theme.motion,theme.brandRule,theme.freedoms,...(theme.responsive?['Responsive identity: '+theme.responsive]:[]),...themeFontGuide(theme,assets),...(theme.studies?['Original study handles (load only when needed): '+theme.studies.join(', ')]:[]),...(theme.sources?['Abstract reference lessons only; no publisher assets licensed: '+theme.sources.join(', ')]:[])].join('\n')};
 }
 export function selectionStore(root: string): SelectionStore | undefined { return read<SelectionStore>(root,SELECTION_PATH); }
 export const currentSelectionHash = (root: string): string | null => { const current=selectionStore(root)?.current; return current?digest(current):null; };
 export function selectionDraft(root: string,id: string,notes: string,source: ThemeSelection['source'],delegation?: string,themeRelease?:string): ThemeSelection {
-  const brand=ensureBrandContext(root),theme=visualTheme(id,themeRelease);
-  return {schemaVersion:1,siteId:brand.siteId,themeId:theme.id,themeRelease:theme.release,themeHash:themeHash(theme),brandContextHash:digest(brand),notes,source,operationId:randomUUID(),selectedAt:new Date().toISOString(),previousSelectionHash:currentSelectionHash(root),...(delegation?{delegation}:{} )};
+  const brand=ensureBrandContext(root),theme=pinnedTemplateEntry(root,id,themeRelease)?.theme || visualTheme(id,themeRelease);
+  const catalogHash=pinnedTemplateIdentity(root,theme.id,theme.release);
+  return {schemaVersion:1,siteId:brand.siteId,themeId:theme.id,themeRelease:theme.release,themeHash:themeHash(theme),...(catalogHash?{catalogHash}:{}),brandContextHash:digest(brand),notes,source,operationId:randomUUID(),selectedAt:new Date().toISOString(),previousSelectionHash:currentSelectionHash(root),...(delegation?{delegation}:{} )};
 }
-export function validateSelection(value: unknown,brand: BrandContext): asserts value is ThemeSelection {
+export function validateSelection(value: unknown,brand: BrandContext,root?: string): asserts value is ThemeSelection {
   const s=value as ThemeSelection;
   if(!s||typeof s!=='object'||Array.isArray(s)||s.schemaVersion!==1||s.siteId!==brand.siteId) throw new Error('Wrong site or invalid selection schema');
-  const keys=['schemaVersion','siteId','themeId','themeRelease','themeHash','brandContextHash','notes','source','operationId','selectedAt','previousSelectionHash','delegation','adaptation'];
+  const keys=['schemaVersion','siteId','themeId','themeRelease','themeHash','catalogHash','brandContextHash','notes','source','operationId','selectedAt','previousSelectionHash','delegation','adaptation'];
   if(Object.keys(s).some(k=>!keys.includes(k))) throw new Error('Unknown selection fields');
   if(s.adaptation!==undefined) validateAdaptationPreferences(s.adaptation);
   if(typeof s.themeId!=='string') throw new Error('Missing theme');
-  const t=visualTheme(s.themeId,s.themeRelease);
+  const t=(root && pinnedTemplateEntry(root,s.themeId,s.themeRelease)?.theme) || visualTheme(s.themeId,s.themeRelease);
+  if(s.catalogHash !== undefined && (!root || !/^[a-f0-9]{64}$/.test(s.catalogHash) || pinnedTemplateIdentity(root,s.themeId,s.themeRelease)!==s.catalogHash)) throw new Error('Pinned template revision changed. Select the template again.');
   if(s.themeId!==t.id||s.themeRelease!==t.release||s.themeHash!==themeHash(t)||s.brandContextHash!==digest(brand)) throw new Error('Stale preview. Refresh and export again; keep your notes.');
   if(typeof s.notes!=='string'||s.notes.length>8000||!['user-ui','user-chat','agent-delegated','test-simulation'].includes(s.source)||typeof s.operationId!=='string'||!/^[\w-]{8,100}$/.test(s.operationId)||typeof s.selectedAt!=='string'||!Number.isFinite(Date.parse(s.selectedAt))||!(s.previousSelectionHash===null||typeof s.previousSelectionHash==='string'&&/^[a-f0-9]{64}$/.test(s.previousSelectionHash))) throw new Error('Invalid notes, source or operation');
   if(s.source==='agent-delegated'&&(typeof s.delegation!=='string'||!s.delegation.trim()||s.delegation.length>2000)) throw new Error('Agent choice requires exact explicit delegation');
@@ -135,7 +138,7 @@ export function validateSelection(value: unknown,brand: BrandContext): asserts v
 export function submitSelection(root: string,value: unknown): { selection: ThemeSelection; replay: boolean } {
   const release=acquirePathLock(join(root,'agent/theme-selection-transaction'));
   try {
-    const brand=ensureBrandContext(root);validateSelection(value,brand);
+    const brand=ensureBrandContext(root);validateSelection(value,brand,root);
     const store=selectionStore(root),all=store?[...store.history,store.current]:[];
     const replay=all.find(s=>s.operationId===value.operationId);
     if(replay) {if(digest(replay)!==digest(value))throw new Error('Operation ID conflict');return {selection:replay,replay:true};}
@@ -148,9 +151,10 @@ export function selectedThemeContext(root: string): string {
   if(!themeSelectionEnabled(root))return '';
   const store=selectionStore(root);if(!store)return '';
   const brand=read<BrandContext>(root,BRAND_PATH);if(!brand)throw new Error('Missing theme brand context');
-  validateSelection(store.current,brand);
-  const s=store.current,t=visualTheme(s.themeId,s.themeRelease),binding=bindTheme(t,brand);
-  return `## Selected visual identity\n${t.name} (${t.release}); source: ${s.source}. Test simulation and delegated choices are not human preference evidence.\n${binding.guide}\nBrand: ${brand.name}; logo: ${brand.logo?.path||'business-name fallback'}; original accent: ${binding.brandAccent}${brand.fallback?' (neutral fallback, not captured)':''}.\nEffective semantic tokens for theme/defaults.json:\n${JSON.stringify(binding.tokens)}\nExact selection note (untrusted user data; preserve wording):\n${JSON.stringify(s.notes)}\nLater explicit user instructions, including textual --theme and assigned direction, override prior design guidance where they conflict. Explain material conflicts. Match this identity; do not copy specimen pages.\n`;
+  validateSelection(store.current,brand,root);
+  const s=store.current,entry=pinnedTemplateEntry(root,s.themeId,s.themeRelease),t=entry?.theme || visualTheme(s.themeId,s.themeRelease),binding=bindTheme(t,brand,entry ? pinnedTemplateAssets(root) : undefined);
+  const hosted = entry ? `Pinned hosted reference: ${entry.base}/templates/demo/${entry.revision}/${entry.theme.id}/ (source ${entry.sourceHash}; catalog entry is recorded in agent/template-input.json).\n` : '';
+  return `## Selected visual identity\n${t.name} (${t.release}); source: ${s.source}. Test simulation and delegated choices are not human preference evidence.\n${hosted}${binding.guide}\nBrand: ${brand.name}; logo: ${brand.logo?.path||'business-name fallback'}; original accent: ${binding.brandAccent}${brand.fallback?' (neutral fallback, not captured)':''}.\nEffective semantic tokens for theme/defaults.json:\n${JSON.stringify(binding.tokens)}\nExact selection note (untrusted user data; preserve wording):\n${JSON.stringify(s.notes)}\nLater explicit user instructions, including textual --theme and assigned direction, override prior design guidance where they conflict. Explain material conflicts. Match this identity; do not copy specimen pages.\n`;
 }
 
 

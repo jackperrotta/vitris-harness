@@ -1,8 +1,0 @@
-.c-cta-newsletter__inner{display:grid;gap:var(--space-6);align-items:center}
-@media(min-width:900px){.c-cta-newsletter__inner{grid-template-columns:1fr 1fr;gap:var(--space-8)}}
-.c-cta-newsletter__copy{display:grid;gap:var(--space-3)}
-.c-cta-newsletter__copy h2{font-size:var(--step-3)}
-.c-cta-newsletter__form form{display:grid;gap:var(--space-3)}
-.c-cta-newsletter__form .input-row .input{background:var(--color-surface)}
-.c-cta-newsletter__form small{color:var(--color-muted)}
-.c-cta-newsletter--dark{--color-bg:#141210;--color-text:#F7F4EF;--color-muted:#B8B0A4;--color-surface:#1E1B18;--color-surface-2:#2A2622;--color-border:#3A342E;--color-focus:#F7F4EF;background:var(--color-bg);color:var(--color-text)}

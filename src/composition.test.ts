@@ -22,11 +22,13 @@ const fixture = () => {
 };
 const write = (root: string, path: string, data: unknown) => { const target = join(root, path); mkdirSync(resolve(target, ".."), { recursive: true }); writeFileSync(target, JSON.stringify(data)); };
 
-test("authoring policy keeps existing sites on blocks and rejects unknown releases", () => {
+test("authoring policy defaults to theme-led authoring and rejects unknown releases", () => {
   const root = fixture();
   try {
-    assert.equal(resolveDesignAuthoring(root).mode, "blocks-v0");
-    write(root, "launch.json", { designLibraryProfile: "slice-v1", designAuthoring: { mode: "composition-v1", lessonRelease: "2026-09-28.1" } });
+    assert.equal(resolveDesignAuthoring(root).mode, "theme-v1");
+    write(root, "launch.json", { designAuthoring: { mode: "blocks-v0" } });
+    assert.equal(resolveDesignAuthoring(root).mode, "theme-v1");
+    write(root, "launch.json", { designAuthoring: { mode: "composition-v1", lessonRelease: "2026-09-28.1" } });
     assert.equal(resolveDesignAuthoring(root).mode, "composition-v1");
     write(root, "launch.json", { designAuthoring: { mode: "composition-v1", lessonRelease: "missing" } });
     assert.throws(() => resolveDesignAuthoring(root), /Unsupported/);

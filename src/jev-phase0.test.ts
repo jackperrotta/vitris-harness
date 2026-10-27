@@ -42,8 +42,6 @@ import {
   loadAgentAttemptReceipts,
 } from "./agent/jev/agent-usage.ts";
 import { loadArmUsageMetrics } from "./agent/jev/evaluation.ts";
-import { auditBlockCoverage, hardFilterBlocks, lexicalShortlist, loadBlockLibrary, validateBlockLibrary } from "./agent/jev/block-catalog.ts";
-import { recommendComponents, CUSTOM_CANDIDATE_ID } from "./agent/jev/component-select.ts";
 import { initialState, isPreviewReady, parseGraphYaml } from "./agent/graph.ts";
 
 const kernel = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -283,46 +281,4 @@ test("Usage logical keys refuse duplicates; missing critic coverage is incomplet
   assert.equal(recon.coverage, "incomplete");
   const loaded = loadArmUsageMetrics(root, [{ nodeId: "copy", kind: "agent" }, { nodeId: "pages", kind: "agent" }]);
   assert.equal(loaded.coverage, "incomplete");
-});
-
-test("Block library manifest is generated from README/examples and can shortlist without all READMEs", () => {
-  const lib = loadBlockLibrary(kernel);
-  assert.ok(lib.blocks.length >= 110);
-  const failures = validateBlockLibrary(lib, kernel);
-  assert.equal(failures.length, 0, failures.slice(0, 8).join("\n"));
-  assert.ok(lib.blocks.every(b => b.seesImages === false));
-  const coverage = auditBlockCoverage(lib);
-  assert.ok(coverage.gaps.some(g => g.missingJob === "interactive-configurator"));
-  const short = lexicalShortlist(lib, {
-    sectionId: "hero", pagePath: "/", visitorJob: "see the offer and call", requiredActions: ["call"],
-    textLength: 80, mediaCount: 1, pageRole: "hero",
-  }, 8);
-  assert.ok(short.length > 0 && short.length <= 7);
-  assert.ok(short.some(b => b.id.startsWith("hero/")));
-  const filtered = hardFilterBlocks(lib, {
-    sectionId: "hero", pagePath: "/", visitorJob: "see the offer", requiredActions: [],
-    textLength: 10, mediaCount: 0, pageRole: "hero",
-  });
-  assert.ok(filtered.every(b => !b.meta || b.meta.media.min === 0));
-  assert.ok(filtered.some(b => b.id === "hero/hero-split"), "legacy media wording is advisory until explicitly validated");
-});
-
-test("Component recommendation returns ranked packet plus custom and routes ties/low confidence", async () => {
-  const root = temp();
-  mkdirSync(join(root, "agent/runs"), { recursive: true });
-  const client = new JevClient({
-    root, apiKey: "k", fetch: async (_i, init) => fetchOk(init),
-    config: { ...DEFAULT_JEV_CONFIG, model: "jev-1.13.0" },
-  });
-  const result = await recommendComponents({
-    root, kernel, client,
-    state: {
-      sectionId: "hero", pagePath: "/", visitorJob: "see the offer and call",
-      requiredActions: ["call"], textLength: 90, mediaCount: 1, mediaAspect: "4x3",
-      pageRole: "hero", sourceIds: ["f1"], sourceHashes: ["abc"],
-    },
-  });
-  assert.ok(result.ranked.some(r => r.custom && r.id === CUSTOM_CANDIDATE_ID));
-  assert.ok(result.ranked.length <= 4);
-  assert.ok(result.ranked.filter(r => !r.custom).length <= 3);
 });

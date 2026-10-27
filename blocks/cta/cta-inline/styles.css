@@ -1,9 +1,0 @@
-.c-cta-inline{border-top:1px solid var(--color-border)}
-.c-cta-inline__row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--space-5) var(--space-7)}
-.c-cta-inline__copy{display:grid;gap:var(--space-2);max-width:36rem}
-.c-cta-inline__copy h2{font-size:var(--step-3)}
-.c-cta-inline__action .btn-outline,.c-cta-inline__action .btn{padding-left:.6rem}
-.c-cta-inline__action .avatar-group{margin-right:.25rem}
-.c-cta-inline__action .avatar{width:1.75rem;height:1.75rem;box-shadow:0 0 0 2px var(--color-bg)}
-.c-cta-inline--center .c-cta-inline__row{flex-direction:column;justify-content:center;text-align:center}
-.c-cta-inline--center .c-cta-inline__copy{justify-items:center}

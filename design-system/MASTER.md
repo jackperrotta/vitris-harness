@@ -2,9 +2,9 @@
 
 Each site owns its art direction: typography, spacing, composition, imagery, surface treatment, and motion. Derive these from the business brief and selected theme in onboarding/direction.json. Kernel primitives are implementation defaults, not a house style.
 
-Operator knowledge: `agent/refs/*`, the compatible teaching collection at `design-system/knowledge/v1`, sourced requirements at `design-system/knowledge/v2`, and the opt-in composition teaching release at `design-system/knowledge/v3`. The block library at `blocks/` remains an optional implementation source. Composition lessons are advisory design hypotheses; applicable v2 requirements retain their separate authority. The calibration pack contains inspected references, not a preference model.
+Operator knowledge: `agent/refs/*`, the compatible teaching collection at `design-system/knowledge/v1`, sourced requirements at `design-system/knowledge/v2`, and the opt-in composition teaching release at `design-system/knowledge/v3`. Composition lessons are advisory design hypotheses; applicable v2 requirements retain their separate authority. The calibration pack contains inspected references, not a preference model.
 
-Each site authors its own `components/` and `pages/*.html`. In `composition-v1`, design the relationships among the site's actual content elements, then implement site-owned markup and styles. In `blocks-v0`, the compatible block selection method remains available. The kernel compiles source to flat HTML/CSS/JS; it does **not** ship a runtime section catalog.
+Each site authors its own `components/` and `pages/*.html`. In `composition-v1`, design the relationships among the site's actual content elements, then implement site-owned markup and styles. The kernel compiles source to flat HTML/CSS/JS; it does **not** ship a runtime section catalog.
 
 ## Contrast
 

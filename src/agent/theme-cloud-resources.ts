@@ -1,5 +1,6 @@
 import {Buffer} from 'node:buffer';
 import {cloudEntry} from './theme-cloud.ts';
+import {pinnedTemplateEntry} from './template-catalog.ts';
 import {digest,type VisualTheme} from './theme-library.ts';
 import {logoData,normalizeBrandColor} from './theme-selection.ts';
 import type {PickerSite} from './theme-picker.ts';
@@ -10,9 +11,9 @@ function displayQuery(site:PickerSite){
  const logo=logoData(site.root,site.brand),value={name:site.brand.name,colors:site.brand.colors.map(c=>normalizeBrandColor(c.value)).filter(Boolean),...(logo?{logo}:{})};
  return '?'+new URLSearchParams({b:Buffer.from(JSON.stringify(value)).toString('base64')});
 }
-export function cloudLinks(site:PickerSite,t:VisualTheme):Record<string,string>{const e=cloudEntry(t.id,t.release)!;return Object.fromEntries(e.pages.map(p=>[p.pageId,e.base+`/templates/demo/${e.revision}/${t.id}`+p.path+displayQuery(site)]));}
+export function cloudLinks(site:PickerSite,t:VisualTheme):Record<string,string>{const e=pinnedTemplateEntry(site.root,t.id,t.release)||cloudEntry(t.id,t.release)!;return Object.fromEntries(e.pages.map(p=>[p.pageId,e.base+`/templates/demo/${e.revision}/${t.id}`+p.path+displayQuery(site)]));}
 export function cloudPreview(site:PickerSite,t:VisualTheme,example:string,viewport:PreviewViewport):PreviewResource{
- const e=cloudEntry(t.id,t.release)!,key=example==='guide'&&t.id==='electrical-current-and-craft'?'ev':example==='guide'&&t.id==='cleaning-clearline'?'deep-cleaning':example;
+ const e=pinnedTemplateEntry(site.root,t.id,t.release)||cloudEntry(t.id,t.release)!,key=example==='guide'&&t.id==='electrical-current-and-craft'?'ev':example==='guide'&&t.id==='cleaning-clearline'?'deep-cleaning':example;
  const p=e.pages.find(p=>p.pageId===key)||e.pages.find(p=>example==='story'?p.compareRole==='home':example==='guide'?p.compareRole==='detail':false);
  if(!p)throw Error('Unknown hosted template page '+t.id+'/'+example);
  const brandHash=digest(site.brand),id=digest([e.revision,t.id,p.pageId,brandHash,viewport]),url=e.base+`/templates/preview/${e.revision}/${t.id}/${p.pageId}/${viewport}/${id}`+displayQuery(site);

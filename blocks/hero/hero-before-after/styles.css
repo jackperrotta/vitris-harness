@@ -1,8 +1,0 @@
-.c-hero-before-after__copy{display:grid;gap:var(--space-5);align-content:center}
-.c-hero-before-after__copy h1{max-width:18ch}
-.c-hero-before-after__copy .btn-group{margin-top:var(--space-2)}
-.c-hero-before-after__figure{margin:0;display:grid;gap:var(--space-3)}
-.c-hero-before-after__figure .before-after{box-shadow:var(--shadow-2)}
-.c-hero-before-after__caption{font-size:var(--step-0);color:var(--color-muted);text-align:center}
-.c-hero-before-after__caption:empty{display:none}
-.c-hero-before-after--reverse .split > :first-child{order:2}

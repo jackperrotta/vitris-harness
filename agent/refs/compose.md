@@ -1,6 +1,6 @@
 # Page composition
 
-Use storyboard.md and implement.md. Choose components after page purpose, narrative, media, and emphasis are planned. Blocks are optional copy sources. Change geometry, density, media scale, and alignment when the story benefits; maintain the chosen theme across routes.
+Use storyboard.md and implement.md. Choose components after page purpose, narrative, media, and emphasis are planned. Change geometry, density, media scale, and alignment when the story benefits; maintain the chosen theme across routes.
 
 In `composition-v1`, start with relationships among actual content elements and the page's organizing relationship. Use stage-selected lessons conditionally, then check whether those relationships remain legible after compilation and at narrow widths. Sections may share an alignment or narrative thread without becoming identical bands. Repeated structures can serve repeated scanning tasks. Do not vary layout labels merely to manufacture diversity.
 

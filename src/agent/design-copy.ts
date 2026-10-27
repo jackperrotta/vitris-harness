@@ -9,7 +9,7 @@ import { applyDesignContractMigration, assessDesignContractMigration, importStag
 import { sourceManifest } from "./source-manifest.ts";
 import { AGENT_RUNTIME_HISTORY_ENTRIES } from "./kit-runtime.ts";
 
-export const KERNEL_CONTRACT_PATHS = ["agent", "scripts", "src", "templates", "blocks", "design-system", "package.json", "package-lock.json"];
+export const KERNEL_CONTRACT_PATHS = ["agent", "scripts", "src", "templates", "design-system", "package.json", "package-lock.json"];
 export const SHARED_EVIDENCE_PATHS = [
   'onboarding/additional-content.md',
   'agent/template-input.json',

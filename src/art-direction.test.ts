@@ -29,7 +29,7 @@ import { evaluateV2 } from "./agent/evaluate.ts";
 const kernel=resolve(import.meta.dirname,"..");
 const svg='<svg xmlns="http://www.w3.org/2000/svg" width="600" height="200"><rect width="600" height="200" fill="#edf0f2"/><text x="30" y="100">Discuss → Review → Choose</text></svg>';
 const commission:VisualCommission={id:"process",purpose:"Understand the next step",route:"/",factIds:["f1"],sourceAssetIds:[],role:"explanation",medium:"authored-vector",idea:"A supported relationship",composition:"Three equal editable labels",responsive:{desktop:"Horizontal",mobile:"Stack with explicit edges",minimumReadableSize:"18px"},acceptance:["Relationships remain readable at 375px"],fallback:"A short ordered list",forbiddenImplications:["No measured duration or fabricated outcome"],referenceRelationships:["Reading order supports the next action"],diagram:{nodes:[{id:"discuss",label:"Discuss",factIds:["f1"]},{id:"review",label:"Review",factIds:["f1"]},{id:"choose",label:"Choose",factIds:["f1"]}],edges:[{from:"discuss",to:"review",label:"Then",factIds:["f1"]},{from:"review",to:"choose",label:"Then",factIds:["f1"]}],description:"Discuss needs, review options, then choose."}};
-async function fixture(mode:"blocks-v0"|"composition-v1"="blocks-v0"){
+async function fixture(mode:"theme-v1"|"composition-v1"="theme-v1"){
   const root=mkdtempSync(join(tmpdir(),"vitris-art-"));
   scaffoldNestedSite({dest:root,kernel,parent:root,slug:"fictional-art-test",name:"Fictional engineering test"});
   save(join(root,"launch.json"),{artDirection:{mode:"media-v1",release:"2026-10-05.1"},...(mode==="composition-v1"?{designAuthoring:{mode,lessonRelease:"2026-09-28.1"}}:{})});
@@ -52,7 +52,7 @@ async function fixture(mode:"blocks-v0"|"composition-v1"="blocks-v0"){
 test("policy is independent and absent policy leaves the legacy graph byte-for-byte",()=>{
   const root=mkdtempSync(join(tmpdir(),"vitris-art-policy-")), graph=parseGraphYaml(readFileSync(join(kernel,"agent/graph.yaml"),"utf8")), before=JSON.stringify(graph);
   assert.equal(JSON.stringify(applyArtDirectionGraph(root,graph)),before);
-  save(join(root,"launch.json"),{artDirection:{mode:"media-v1",release:"2026-10-05.1"},designAuthoring:{mode:"blocks-v0"}});
+  save(join(root,"launch.json"),{artDirection:{mode:"media-v1",release:"2026-10-05.1"},designAuthoring:{mode:"theme-v1"}});
   applyArtDirectionGraph(root,graph);assert.deepEqual(graph.nodes.find(n=>n.id==="storyboard")!.needs,["asset-production"]);assert.equal(graph.nodes.filter(n=>n.id==="asset-production").length,1);
 });
 

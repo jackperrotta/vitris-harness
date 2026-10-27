@@ -8,7 +8,7 @@ import { findHarnessRoot } from "./root.ts";
 import { stripAgentRuntimeHistory } from "../agent/kit-runtime.ts";
 import { EXIT_CODES, type CommandResult } from "./types.ts";
 import { recordManagedKit } from "../upgrade/kit.ts";
-import { persistSiteInputs, resolveSiteInputs, type SiteInputOptions } from '../agent/site-inputs.ts';
+import { persistSiteInputs, resolveSiteInputsLive, type SiteInputOptions } from '../agent/site-inputs.ts';
 
 const harnessRoot = findHarnessRoot();
 
@@ -66,7 +66,7 @@ export async function createSite(opts: CreateSiteOptions): Promise<CommandResult
 
   let inputs;
   try {
-    inputs = resolveSiteInputs(opts);
+    inputs = await resolveSiteInputsLive(opts);
     if (mode === 'preserve' && (inputs.template || inputs.content !== undefined)) throw Error('Template and additional content inputs require redesign mode');
   } catch (error) {
     return { ok: false, exitCode: EXIT_CODES.CONFIG_OR_CLI_ERROR, error: error instanceof Error ? error.message : String(error) };

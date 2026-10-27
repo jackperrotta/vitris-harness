@@ -1,6 +1,0 @@
-.c-services-carousel__head{display:flex;align-items:end;justify-content:space-between;gap:var(--space-5)}
-.c-services-carousel__head .section__head{margin-bottom:var(--space-6)}
-.c-services-carousel__head .carousel__nav{margin-bottom:var(--space-6);flex-shrink:0}
-.c-services-carousel__carousel .carousel__track{gap:var(--space-5);padding-bottom:var(--space-3)}
-.c-services-carousel__carousel .carousel__track > *{flex-basis:min(85%,20rem)}
-.c-services-carousel__carousel .card__body{gap:var(--space-2)}

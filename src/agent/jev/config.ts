@@ -40,7 +40,6 @@ export const DEFAULT_JEV_CAPABILITIES: JevCapabilityConfig = {
   coverageCheck: "off",
   // Workstream 7
   creativeScoring: "off",
-  componentSelection: "off",
   compositionCheck: "off",
   lessonRanking: "off",
   visitorQuestionCheck: "off",
@@ -51,7 +50,7 @@ export const DEFAULT_JEV_CAPABILITIES: JevCapabilityConfig = {
 };
 
 /** Advisory design checks. Does not enable delegation or override an explicit off. */
-export const DESIGN_ASSIST_CAPABILITIES = ["creativeScoring", "componentSelection", "compositionCheck", "mediaClassification", "mediaSelection", "mediaSetReview", "mediaProvenance"] as const;
+export const DESIGN_ASSIST_CAPABILITIES = ["creativeScoring", "compositionCheck", "mediaClassification", "mediaSelection", "mediaSetReview", "mediaProvenance"] as const;
 /** Creative efficiency routes optional context and repair hints; it never delegates work. */
 export const CREATIVE_EFFICIENCY_CAPABILITIES = ["retrievalRanking", "repairAssistance"] as const;
 
@@ -305,7 +304,6 @@ export function resolveEffectiveCapabilities(config: JevConfig): JevCapabilityCo
     coverageCheck: resolveCapability(config, "coverageCheck"),
     // Workstream 7
     creativeScoring: resolveCapability(config, "creativeScoring"),
-    componentSelection: resolveCapability(config, "componentSelection"),
     compositionCheck: resolveCapability(config, "compositionCheck"),
     lessonRanking: resolveCapability(config, "lessonRanking"),
     visitorQuestionCheck: resolveCapability(config, "visitorQuestionCheck"),
@@ -320,7 +318,7 @@ const TREATMENT_CAP_KEYS: (keyof JevCapabilityConfig)[] = [
   "mediaClassification", "mediaSelection", "mediaSetReview", "mediaProvenance",
   "grounding", "sourceSelection", "retrievalRanking", "consistency", "repairAssistance",
   "preferenceScoring", "claimStrengthening", "ctaFidelity", "crossStageContinuity",
-  "coverageCheck", "creativeScoring", "componentSelection", "compositionCheck",
+  "coverageCheck", "creativeScoring", "compositionCheck",
   "lessonRanking", "visitorQuestionCheck", "factContradictionCheck", "ctaFitCheck",
   "repetitionExplanationCheck", "directionContinuityCheck",
 ];
@@ -339,7 +337,6 @@ export function enabledJevCallers(config: JevConfig): string[] {
     callers.push("copy-review", "content-review");
   }
   if (caps.creativeScoring !== "off") callers.push("direction");
-  if (caps.componentSelection !== "off") callers.push("representative", "pages");
   if (caps.compositionCheck !== "off") callers.push("storyboard", "representative");
   if (caps.lessonRanking !== "off" || caps.directionContinuityCheck !== "off") callers.push("direction");
   if (caps.visitorQuestionCheck !== "off" || caps.factContradictionCheck !== "off" || caps.ctaFitCheck !== "off" || caps.repetitionExplanationCheck !== "off") {
@@ -364,7 +361,6 @@ const JEV_CLIENT_CAPABILITIES: (keyof JevCapabilityConfig)[] = [
   "claimStrengthening",
   "crossStageContinuity",
   "creativeScoring",
-  "componentSelection",
   "compositionCheck",
   "lessonRanking",
   "visitorQuestionCheck",

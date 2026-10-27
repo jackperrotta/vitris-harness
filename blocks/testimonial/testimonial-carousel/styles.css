@@ -1,7 +1,0 @@
-.c-testimonial-carousel .card blockquote{margin:0;gap:var(--space-4)}
-.c-testimonial-carousel .card .quote{color:var(--color-text)}
-.c-testimonial-carousel .card .card__footer{border-top:1px solid var(--color-border);background:color-mix(in srgb,var(--color-surface-2) 60%,transparent)}
-.c-testimonial-carousel .card .rating .icon{width:1rem;height:1rem}
-.c-testimonial-carousel__head{display:flex;align-items:end;justify-content:space-between;gap:var(--space-5)}
-.c-testimonial-carousel__head .section__head,.c-testimonial-carousel__head .carousel__nav{margin-bottom:var(--space-6)}
-.c-testimonial-carousel__carousel .carousel__track > *{flex-basis:min(88%,24rem);display:flex;flex-direction:column}

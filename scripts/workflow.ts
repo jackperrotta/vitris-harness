@@ -7,7 +7,7 @@ import { creativeRunStatus, creativeRunStatusSnapshot, promoteCreativeRun, runCr
 import { isPreserveSite } from "../src/preserve/config.ts";
 import { runSite } from "../src/cli/run.ts";
 import { statusSite } from "../src/cli/status.ts";
-import { persistSiteInputs, resolveSiteInputs, siteInputsFromArgv } from '../src/agent/site-inputs.ts';
+import { persistSiteInputs, resolveSiteInputsLive, siteInputsFromArgv } from '../src/agent/site-inputs.ts';
 
 const argv = process.argv;
 if (argv.includes("--help")) {
@@ -27,7 +27,7 @@ const root = resolve(argFrom(argv, "--site") || "."), kernel = resolve(dirname(f
 const suppliedInputs = siteInputsFromArgv(argv);
 if (Object.values(suppliedInputs).some(value => value !== undefined)) {
   if (['--complete', '--status', '--print-status', '--promote'].some(flag => argv.includes(flag))) throw Error('Supply template/content inputs when starting or preparing a run');
-  persistSiteInputs(root, resolveSiteInputs(suppliedInputs));
+  persistSiteInputs(root, await resolveSiteInputsLive(suppliedInputs));
 }
 if (isPreserveSite(root)) {
   const result = hasFlag(argv, "--status") ? await statusSite({ site: root }) : await runSite({ site: root, creativeProfile: hasFlag(argv, "--creative-profile"), variants: argFrom(argv, "--variants"), theme: argFrom(argv, "--theme"), onLog: console.log });

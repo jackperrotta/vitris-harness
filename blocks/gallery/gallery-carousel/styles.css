@@ -1,7 +1,0 @@
-.c-gallery-carousel__head{display:flex;align-items:end;justify-content:space-between;gap:var(--space-5)}
-.c-gallery-carousel__head .section__head,.c-gallery-carousel__head .carousel__nav{margin-bottom:var(--space-6)}
-.c-gallery-carousel__carousel .carousel__track{gap:var(--space-5)}
-.c-gallery-carousel__carousel .carousel__track > *{flex-basis:min(88%,34rem);margin:0;display:grid;gap:var(--space-3)}
-.c-gallery-carousel__carousel .frame{box-shadow:none}
-.c-gallery-carousel__carousel figcaption{font-size:var(--step-0);color:var(--color-muted)}
-.c-gallery-carousel__carousel figcaption strong{color:var(--color-text);font-weight:600;margin-right:.35rem}

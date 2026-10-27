@@ -3,7 +3,7 @@ import { join, relative } from "node:path";
 import { createHash } from "node:crypto";
 import { AGENT_RUNTIME_HISTORY_ENTRIES } from "./kit-runtime.ts";
 
-export const SOURCE_ROOTS = ["src", "scripts", "bin", "agent", "templates", "blocks", "design-system", "migrations", "cloudflare", "docs", "package.json", "package-lock.json", "tsconfig.json", "wrangler.jsonc", "wrangler.templates.jsonc", "wrangler.forms-test.jsonc", "AGENTS.md", "README.md", ".github", ".gitignore", ".npmignore", ".dev.vars.example", "LICENSE", "NOTICE", "CONTRIBUTING.md", ".gitattributes", "licenses"];
+export const SOURCE_ROOTS = ["src", "scripts", "bin", "agent", "templates", "design-system", "migrations", "cloudflare", "docs", "package.json", "package-lock.json", "tsconfig.json", "wrangler.jsonc", "wrangler.templates.jsonc", "wrangler.forms-test.jsonc", "AGENTS.md", "README.md", ".github", ".gitignore", ".npmignore", ".dev.vars.example", "LICENSE", "NOTICE", "CONTRIBUTING.md", ".gitattributes", "licenses"];
 // Portable source trees never traverse links or workstation archive bridges.
 function sourceFiles(root: string, path: string): string[] {
   const name = relative(root, path).replaceAll("\\", "/");

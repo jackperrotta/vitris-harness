@@ -1,7 +1,0 @@
-.c-case-alternating__list{display:grid;gap:var(--space-7)}
-.c-case-alternating__list > article{display:grid;gap:var(--space-5);align-items:center;padding-top:var(--space-7);border-top:1px solid var(--color-border)}
-.c-case-alternating__list .stack{gap:var(--space-4);justify-items:start}
-.c-case-alternating__list .stack h3{font-size:var(--step-3);max-width:20ch}
-.c-case-alternating__list .stack > p:not(.eyebrow){color:var(--color-muted);max-width:36rem}
-.c-case-alternating__list .stack .eyebrow{display:flex;gap:var(--space-3)}
-@media(min-width:900px){.c-case-alternating__list{gap:var(--space-8)}.c-case-alternating__list > article{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-8)}.c-case-alternating__list > article:nth-child(even) > .frame{order:2}}

@@ -16,7 +16,6 @@ import { mergeJevConfig } from "./agent/jev/config.ts";
 import { scoreCreativeCandidates } from "./agent/jev/creative.ts";
 import { JevClient } from "./agent/jev/client.ts";
 import { DEFAULT_JEV_CONFIG } from "./agent/jev/config.ts";
-import { cacheKeyForSelection } from "./agent/jev/component-select.ts";
 import { evaluateV2 } from "./agent/evaluate.ts";
 import { recheckCompositionFinding } from "./agent/jev/repair.ts";
 
@@ -249,7 +248,7 @@ test("editorial scan keeps purchase qualifications and flags audit leakage", () 
   assert.match(gaps.join(" "), /viewport/);
 });
 
-test("missing Jev scores stay unavailable and component cache follows semantic context", async () => {
+test("missing Jev scores stay unavailable", async () => {
   const root = temp();
   const client = new JevClient({
     root, apiKey: "k",
@@ -263,16 +262,7 @@ test("missing Jev scores stay unavailable and component cache follows semantic c
   assert.equal(scores[0]?.status, "unavailable");
   assert.equal(scores[0]?.combined, undefined);
   assert.equal(scores[0]?.dimensions.audience_fit?.state, "unavailable");
-  const base = {
-    sectionId: "offer", pagePath: "/", visitorJob: "request an estimate", requiredActions: ["estimate"],
-    textLength: 40, mediaCount: 0, pageRole: "homepage", sectionPurpose: "State the repair",
-  };
-  const left = cacheKeyForSelection({ state: base, libraryHash: "lib", model: "m", policy: "p" });
-  const right = cacheKeyForSelection({
-    state: { ...base, neighborPurposes: ["Explain the diagnostic"] },
-    libraryHash: "lib", model: "m", policy: "p",
-  });
-  assert.notEqual(left, right);
+
 });
 
 test("headline edits stay in copy, image replacement stays out of direction, and binding ignores copy", () => {
@@ -309,7 +299,6 @@ test("design-assist preset does not override an explicit off", () => {
   assert.equal(held.capabilities?.creativeScoring, "off");
   const explicit = mergeJevConfig({ capabilities: { creativeScoring: "off" } }, ["--design-assist"]);
   assert.equal(explicit.capabilities?.creativeScoring, "off");
-  assert.equal(explicit.capabilities?.componentSelection, "assist");
 });
 
 test("legacy narrative does not pass the narrative gate", () => {

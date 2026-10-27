@@ -37,7 +37,7 @@ export function qualitySubject(root: string): string {
     "agent/reviews/representative-browser.json", "agent/screenshots/representative-browser",
   ]);
   const policy = resolveDesignAuthoring(root);
-  if (policy.mode === "blocks-v0") return base;
+  if (policy.mode === "theme-v1") return base;
   const pack = loadCompositionPack(root, policy.lessonRelease);
   return sha256(JSON.stringify({ base, policy: policy.hash, pack: pack.manifestHash, decisions: fingerprint(root, ["agent/decisions/authoring-decisions.json"]) }));
 }

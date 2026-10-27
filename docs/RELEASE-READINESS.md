@@ -1,6 +1,6 @@
 # Beta release checks
 
-The `0.1.0-beta.6` release is configured as public `@tryvitris/website-harness` with the `beta` dist-tag. Verification creates local artifacts and never publishes a package. `prepublishOnly` enforces the intended identity, public registry and visibility, prerelease tag, and packed-release audit.
+The `0.1.0-beta.7` release is configured as public `@tryvitris/website-harness` with the `beta` dist-tag. Verification creates local artifacts and never publishes a package. `prepublishOnly` enforces the intended identity, public registry and visibility, prerelease tag, and packed-release audit.
 
 Before publishing an owner-authorized release:
 

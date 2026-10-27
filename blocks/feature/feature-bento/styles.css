@@ -1,7 +1,0 @@
-.c-feature-bento__grid{gap:var(--space-4)}
-@media(max-width:719px){.c-feature-bento__grid{grid-template-columns:1fr}.c-feature-bento__grid > *{grid-column:auto}}
-.c-feature-bento__grid .card{height:100%}
-.c-feature-bento__grid .card__body{padding:var(--space-6);gap:var(--space-3)}
-.c-feature-bento__grid .card__media{aspect-ratio:16/9}
-.c-feature-bento__grid .stat__value{font-size:var(--step-5)}
-.c-feature-bento__grid .list-check{margin-top:var(--space-2)}

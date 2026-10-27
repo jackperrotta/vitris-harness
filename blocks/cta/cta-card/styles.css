@@ -1,8 +1,0 @@
-.c-cta-card__card{max-width:50rem;margin-inline:auto;text-align:center}
-.c-cta-card__card .card__body{padding:var(--space-8) var(--space-6);gap:var(--space-4);justify-items:center}
-.c-cta-card__card h2{font-size:var(--step-4);max-width:20ch}
-.c-cta-card__card .lede{margin-inline:auto}
-.c-cta-card__actions{justify-content:center;margin-top:var(--space-2)}
-.c-cta-card__card small{color:var(--color-muted)}
-.c-cta-card--muted{background:var(--color-surface-2)}
-.c-cta-card--muted .c-cta-card__card{box-shadow:none;border-color:var(--color-border)}

@@ -18,7 +18,7 @@ const bins = {
   'vitris-preview': 'scripts/preview.ts', 'vitris-refresh': 'scripts/refresh-agent.ts',
   'vitris-verify-browser': 'scripts/verify-browser.ts', 'vitris-catalog': 'scripts/catalog.ts',
   'vitris-create-site': 'scripts/create-site.ts', 'vitris-launch-preflight': 'scripts/launch-preflight.ts',
-  'vitris-knowledge': 'scripts/knowledge-explain.ts', 'vitris-blocks': 'scripts/blocks-preview.ts',
+  'vitris-knowledge': 'scripts/knowledge-explain.ts',
   'vitris-sign-publish-bundle': 'scripts/sign-publish-bundle.ts',
   'vitris-migrate-site': 'scripts/migrate-site.ts',
   'vitris-stock': 'scripts/stock-library.ts',

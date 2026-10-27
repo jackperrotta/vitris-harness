@@ -5,6 +5,7 @@ import { currentSelectionHash, selectionStore, themeSelectionEnabled } from './t
 import { digest, visualTheme } from './theme-library.ts';
 import { manifestPages } from './theme-preview.ts';
 import { ADAPTATION_PATH, templateProposalHash, validateAdaptationPreferences, type AdaptationPreferences, type TemplateAdaptation } from './template-adaptation.ts';
+import { pinnedTemplateEntry } from './template-catalog.ts';
 import type { SkillGraph } from './graph.ts';
 import { hasActiveStageLease } from './preparation.ts';
 
@@ -59,7 +60,7 @@ export function inventoryFailures(root:string,requireReview=true):string[] {
   if(!inv||inv.version!==1||inv.selectionHash!==currentSelectionHash(root)||!Array.isArray(inv.pages)||!inv.pages.length||!Array.isArray(inv.evidence)||!inv.evidence.length)return ['Missing or stale independent template inventory'];
   for(const e of inv.evidence)if(!text(e.path)||!existsSync(within(root,e.path))||digest(readFileSync(within(root,e.path)))!==e.sha256)errors.push('Changed or missing inventory evidence: '+e.path);
   const selected=selectionStore(root)?.current;
-  if(selected){const keys=manifestPages(visualTheme(selected.themeId,selected.themeRelease)).map(p=>p.pageId);for(const key of keys)if(!inv.pages.some(p=>p.key===key))errors.push('Reference inventory omits a catalog page: '+key);}
+  if(selected){const entry=pinnedTemplateEntry(root,selected.themeId,selected.themeRelease);const keys=(entry?.pages || manifestPages(visualTheme(selected.themeId,selected.themeRelease))).map(p=>p.pageId);for(const key of keys)if(!inv.pages.some(p=>p.key===key))errors.push('Reference inventory omits a catalog page: '+key);}
   if(new Set(inv.pages.map(p=>p.key)).size!==inv.pages.length)errors.push('Duplicate reference inventory pages');
   const ids:string[]=[];
   for(const p of inv.pages){

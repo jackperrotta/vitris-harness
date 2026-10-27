@@ -9,6 +9,7 @@ import { ADAPTATION_PATH, TEMPLATE_DECISIONS_PATH, templateAdaptationFailures, t
 import { TEMPLATE_MOTION_PATH } from './agent/template-motion.ts';
 import type { SkillGraph } from './agent/graph.ts';
 import { extractPage } from './onboard/extract.ts';
+import { solidPng } from './agent/design-calibration.ts';
 
 function fixture() {
   const root=mkdtempSync(join(tmpdir(),'vitris-adaptation-'));
@@ -39,6 +40,12 @@ test('preserved gaps remain in local preview and block launch; rendered omission
   assert.match(templateAdaptationFailures(root,'launch').join('\n'),/Resolve template content gap/);
   writeFileSync(join(root,'dist/index.html'),'<main>Plain introduction</main>');
   assert.match(templateAdaptationFailures(root,'representative').join('\n'),/Retained template section missing/);
+  writeFileSync(join(root,'dist/index.html'),'<div data-id="selected-work"></div><div data-content-gap="work">Fill in</div>');
+  assert.match(templateAdaptationFailures(root,'representative').join('\n'),/Retained template section missing/);
+  writeFileSync(join(root,'dist/index.html'),'<section id="selected-work"></section><div data-content-gap="work">Fill in</div>');
+  assert.match(templateAdaptationFailures(root,'representative').join('\n'),/located content gap/);
+  writeFileSync(join(root,'dist/index.html'),'<section id="selected-work" data-content-gap="work">Fill in</section><section id="selected-work"></section>');
+  assert.match(templateAdaptationFailures(root,'representative').join('\n'),/duplicated/);
 });
 test('each removal and image treatment requires an exact, current human decision',()=>{
   const {root,brief}=fixture();
@@ -71,11 +78,23 @@ test('production authorization consumes exact human decisions, preserves retries
  assert.throws(()=>assertTemplateImageAuthorization(root,'concept'),/Ask the user/);
 });
 test('fidelity review requires current located reference/build comparisons, not a bare pass',()=>{
- const {root}=fixture();mkdirSync(join(root,'dist'));writeFileSync(join(root,'dist/index.html'),'<section id="selected-work" data-content-gap="work">Fill in</section>');
+ const {root,brief}=fixture();mkdirSync(join(root,'dist'));writeFileSync(join(root,'dist/index.html'),'<section id="selected-work" data-content-gap="work">Fill in</section>');
  save(join(root,'agent/reviews/representative-review.json'),{verdict:'pass'});
  assert.match(templateAdaptationFailures(root,'representative-review').join('\n'),/fidelity comparison missing/);
- const review={templateFidelity:{selectionHash:currentSelectionHash(root),distHash:fingerprint(root,['dist']),qualities:[{id:'rhythm',referenceEvidence:'onboarding/reference-capture.json',implementedEvidence:'dist/index.html',observation:'Synthetic test comparison locates the retained work area after the introduction',verdict:'pass'}]}};
+ writeFileSync(join(root,'onboarding/reference.png'),solidPng(25,35,45));
+ mkdirSync(join(root,'agent/screenshots'),{recursive:true});writeFileSync(join(root,'agent/screenshots/representative.png'),solidPng(65,75,85));
+ brief.reference.evidence.push('onboarding/reference.png');save(join(root,ADAPTATION_PATH),brief);
+ const referenceHash=fingerprint(root,['onboarding/reference.png']),implementedHash=fingerprint(root,['agent/screenshots/representative.png']);
+ save(join(root,'agent/reviews/representative-browser.json'),{distHash:fingerprint(root,['dist']),checks:[{screenshot:'agent/screenshots/representative.png',screenshotHash:implementedHash,failures:[]}]});
+ const review={templateFidelity:{selectionHash:currentSelectionHash(root),distHash:fingerprint(root,['dist']),qualities:[{id:'rhythm',referenceEvidence:'onboarding/reference.png',referenceHash,implementedEvidence:'agent/screenshots/representative.png',implementedHash,observation:'Synthetic test comparison locates the retained work area after the introduction',verdict:'pass'}]}};
  save(join(root,'agent/reviews/representative-review.json'),review);assert.deepEqual(templateAdaptationFailures(root,'representative-review'),[]);
+ writeFileSync(join(root,'agent/screenshots/representative.png'),solidPng(1,2,3));
+ assert.match(templateAdaptationFailures(root,'representative-review').join('\n'),/reference\/build comparison/);
+ writeFileSync(join(root,'agent/screenshots/representative.png'),solidPng(65,75,85));
+ review.templateFidelity.qualities[0]!.implementedEvidence='dist/index.html';
+ save(join(root,'agent/reviews/representative-review.json'),review);
+ assert.match(templateAdaptationFailures(root,'representative-review').join('\n'),/reference\/build comparison/);
+ review.templateFidelity.qualities[0]!.implementedEvidence='agent/screenshots/representative.png';save(join(root,'agent/reviews/representative-review.json'),review);
  writeFileSync(join(root,'dist/index.html'),'<main>Reduced to a plain introduction</main>');assert.match(templateAdaptationFailures(root,'representative-review').join('\n'),/stale/);
  review.templateFidelity.distHash=fingerprint(root,['dist']);review.templateFidelity.qualities[0]!.referenceEvidence='dist/index.html';save(join(root,'agent/reviews/representative-review.json'),review);
  assert.match(templateAdaptationFailures(root,'representative-review').join('\n'),/reference\/build comparison/);

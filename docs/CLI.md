@@ -53,6 +53,7 @@ Options:
 - `--name`: Human-readable site name.
 - `--from`: Live website URL to harvest and crawl.
 - `--template`: Catalog template ID, display name, or hosted demo/preview URL. Records the supplied choice and continues through local preview without the selection artifact or adaptation/representative-feedback prompts. The choice is bound after harvest and media auditing so branding uses captured evidence. This route delegates section adaptation to the agent and uses existing, harvested, or stock media; AI image generation is disabled. Reference inventory, critic, fidelity, browser, and quality gates still apply. Missing content remains a visible fill-in and blocks launch.
+- Template input first reads the hosted gallery catalog and pins the selected entry and its hash in `agent/template-input.json`. If the catalog is unavailable, the command warns and uses the bundled snapshot, which may be stale. A template absent from that snapshot cannot be selected offline.
 - `--template-release`: Optional catalog revision for an ID/name; a hosted URL pins its revision automatically.
 - `--content` / `--content-file`: Additional business content and instructions, supplied inline or from a UTF-8 file (up to 256 KB; choose one). Wording is preserved in `onboarding/additional-content.md`, survives harvesting, and is included in authoring and review dependencies.
 - `--owner`: Site owner contact email.
@@ -85,7 +86,7 @@ Options:
 - `--restart-from`: Invalidate and restart from a specific graph node.
 - `--reason`: Required rationale when using `--restart-from`.
 - `--jev-mode`: Bounded semantic decision mode (`off`, `shadow`, `assist`). Default: `off`.
-- `--design-assist`: One preset that sets mode to `assist` and enables `creativeScoring`, `componentSelection`, and `compositionCheck` when those capabilities were not explicitly set. `--jev-mode off` and `--no-jev` win. Explicit `"creativeScoring": "off"` in `agent/jev.json` stays off. This preset does not enable `workOwnership: delegated`.
+- `--design-assist`: One preset that sets mode to `assist` and enables `creativeScoring` and `compositionCheck` when those capabilities were not explicitly set. `--jev-mode off` and `--no-jev` win. Explicit `"creativeScoring": "off"` in `agent/jev.json` stays off. This preset does not enable `workOwnership: delegated`.
 - `--no-jev`: Force mode `off`.
 - `--compact-packets`: Enable bounded context packet slicing and coverage manifests.
 - `--dry-run`: Preview workflow execution plan without launching agent loops.

@@ -7,7 +7,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { JevClient } from "./agent/jev/client.ts";
 import { DEFAULT_JEV_CONFIG, enabledJevCallers, loadJevConfig } from "./agent/jev/config.ts";
-import { ASSIST_QUALITY_PROFILE, COMPONENT_ASSIST_PROFILE, kernelRevision, validateMatchedAbConfigs } from "./agent/jev/pilot-recipe.ts";
+import { ASSIST_QUALITY_PROFILE, kernelRevision, validateMatchedAbConfigs } from "./agent/jev/pilot-recipe.ts";
 import { finalizeArm, prepareArm } from "./agent/jev/pilot-ops.ts";
 import {
   COMPACT_GRAPH,
@@ -39,9 +39,6 @@ import {
   selectAuthoritativeRunReceipt,
 } from "./agent/jev/agent-usage.ts";
 import { loadArmUsageMetrics } from "./agent/jev/evaluation.ts";
-import { cacheKeyForSelection, draftAuthoringSnippet, recommendComponents, attachComponentRecommendations, verifyComponentCacheHit } from "./agent/jev/component-select.ts";
-import { libraryContentHash, loadBlockLibrary } from "./agent/jev/block-catalog.ts";
-import { loadProfiledBlockLibrary } from "./blocks/library-profile.ts";
 import { loadTaskExecution } from "./agent/jev/service-registry.ts";
 
 const kernel = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -377,51 +374,6 @@ test("Usage coverage is incomplete when a retry or critic receipt is missing", (
   assert.equal(compareAgentUsageArms(aAgg, bAgg).verdict, "measurement_incomplete");
 });
 
-test("Component recommendation packet is current, cache-sensitive, and not auto-emitted", async () => {
-  const root = temp();
-  seedCompactPilotSite(root, "B", COMPONENT_ASSIST_PROFILE);
-  await writeCompactArtifacts(root);
-  const client = new JevClient({ root, apiKey: "k", fetch: passingFetch, config: { ...DEFAULT_JEV_CONFIG, model: "jev-1.13.0" } });
-  const summary = await attachComponentRecommendations({
-    root, kernel, client, nodeId: "pages", preparationId: "prep-comp",
-  });
-  assert.match(summary, /Optional Jev component shortlist/);
-  assert.ok(existsSync(join(root, "agent/runs/prep-comp.component-select.json")));
-  const lib = loadBlockLibrary(kernel);
-  const state = {
-    sectionId: "hero", pagePath: "/", visitorJob: "see the offer and call",
-    requiredActions: ["call"], textLength: 90, textContentIdentity: "aaa", mediaCount: 1, mediaIds: ["hero"],
-    mediaAspect: "4x3", pageRole: "hero", sourceIds: ["f1"], sourceHashes: ["abc"],
-  };
-  const key1 = cacheKeyForSelection({ state, libraryHash: libraryContentHash(lib), model: "jev-1.13.0", policy: "p" });
-  const key2 = cacheKeyForSelection({
-    state: { ...state, textContentIdentity: "bbb" },
-    libraryHash: libraryContentHash(lib), model: "jev-1.13.0", policy: "p",
-  });
-  assert.notEqual(key1, key2);
-  const key3 = cacheKeyForSelection({
-    state, libraryHash: libraryContentHash(lib) + "x", model: "jev-1.13.0", policy: "p",
-  });
-  assert.notEqual(key1, key3);
-  const rec = await recommendComponents({ root, kernel, client, state });
-  assert.ok(rec.ranked.some(r => r.custom));
-  const snippet = draftAuthoringSnippet(lib.blocks[0]!, { heading: "<script>", cta: "Go" });
-  assert.match(snippet, /non-production sketch/);
-  assert.match(snippet, /href="#"/);
-  const callers = enabledJevCallers(loadJevConfig(root));
-  assert.ok(callers.includes("pages") && callers.includes("representative"));
-  assert.ok(!callers.includes("copy-review") || ASSIST_QUALITY_PROFILE.capabilities.grounding === "assist");
-  writeFileSync(join(temp(), "jev-component-select-example.json"), JSON.stringify({
-    schemaVersion: 1,
-    nodeId: "pages",
-    preparationId: "prep-comp",
-    note: "Optional shortlist only. Do not auto-edit pages/ or components/. Jev scored text metadata; it did not inspect images. Draft snippets are non-production.",
-    summary,
-    packetPath: "agent/runs/prep-comp.component-select.json",
-    firstAbComponentSelection: "off",
-  }, null, 2), "utf8");
-});
-
 test("Adversarial measurement, evidence, finalization, and component cache fail closed", async () => {
   const measured = temp();
   mkdirSync(join(measured, "agent"), { recursive: true });
@@ -634,35 +586,5 @@ test("Adversarial measurement, evidence, finalization, and component cache fail 
   assert.equal(armAFinal.ok, false);
   assert.match(armAFinal.ok ? "" : armAFinal.reason, /zero Jev/);
 
-  const comp = temp();
-  seedCompactPilotSite(comp, "B", COMPONENT_ASSIST_PROFILE);
-  await writeCompactArtifacts(comp);
-  const client = new JevClient({ root: comp, apiKey: "k", fetch: passingFetch, config: loadJevConfig(comp) });
-  await attachComponentRecommendations({ root: comp, kernel, client, nodeId: "pages", preparationId: "prep-cache", inputHash: "same-subject" });
-  const packet = JSON.parse(readFileSync(join(comp, "agent/runs/prep-cache.component-select.json"), "utf8"));
-  const sample = packet.packets[0];
-  const profiled = loadProfiledBlockLibrary(kernel, comp);
-  const libraryHash = libraryContentHash(profiled.library);
-  const current = verifyComponentCacheHit({
-    root: comp, cached: sample.result, state: sample.state, libraryHash, model: client.model, profile: profiled.profile,
-  });
-  assert.equal(current.ok, true, current.ok ? "" : current.reason);
-  const changedText = verifyComponentCacheHit({
-    root: comp, cached: sample.result, state: { ...sample.state, textContentIdentity: "changed" }, libraryHash, model: client.model, profile: profiled.profile,
-  });
-  assert.equal(changedText.ok, false);
-  const changedLibrary = verifyComponentCacheHit({
-    root: comp, cached: sample.result, state: sample.state, libraryHash: `${libraryHash}x`, model: client.model, profile: profiled.profile,
-  });
-  assert.equal(changedLibrary.ok, false);
-  await attachComponentRecommendations({ root: comp, kernel, client, nodeId: "pages", preparationId: "prep-cache-2", inputHash: "same-subject" });
-  const second = loadTaskExecution(comp, "prep-cache-2", "component-fit-check");
-  assert.equal(second?.status, "cached");
-  assert.equal(second?.priorPreparationId, "prep-cache");
-  const receiptName = sample.result.provenance.receiptIds[0];
-  rmSync(join(comp, "agent/decisions/jev", receiptName));
-  const tampered = verifyComponentCacheHit({
-    root: comp, cached: sample.result, state: sample.state, libraryHash, model: client.model, profile: profiled.profile,
-  });
-  assert.equal(tampered.ok, false);
+
 });

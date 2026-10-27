@@ -8,6 +8,7 @@ import { buildPreservedSite } from "../preserve/build.ts";
 import type { PublicForm } from '../forms/config.ts';
 import { responsiveMedia } from './responsive-media.ts';
 import { finalizeStaticOutput } from './static-output.ts';
+import { archivePreviousBuild } from './archives.ts';
 
 export async function buildVerified(siteRoot: string, output = join(siteRoot, "dist"), origin?: string, slug?: string): Promise<void> {
   if (isPreserveSite(siteRoot)) return buildPreservedSite(siteRoot, output);
@@ -74,4 +75,8 @@ export async function buildVerified(siteRoot: string, output = join(siteRoot, "d
   if (existsSync(out)) replacePath(out, previous);
   try { replacePath(stage, out); }
   catch (error) { if (existsSync(previous)) replacePath(previous, out); throw error; }
+  if (out === join(root, 'dist') && existsSync(previous)) {
+    try { archivePreviousBuild(root, previous); }
+    catch (error) { console.warn(`Could not finish archiving previous build; inspect the previous-build and archive folders: ${String(error)}`); }
+  }
 }

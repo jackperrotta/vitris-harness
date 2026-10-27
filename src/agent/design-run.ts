@@ -296,11 +296,6 @@ export function ensureCandidateSite(parent: string, kernel: string, manifest: De
   const sitePath = join(dest, "site.json");
   if (existsSync(sitePath)) {
     const site = json<Record<string, unknown>>(sitePath);
-    const parentSitePath = join(parent, "site.json");
-    if (existsSync(parentSitePath)) {
-      const profile = json<{ designLibraryProfile?: string }>(parentSitePath).designLibraryProfile;
-      if (profile === "slice-v1" || profile === "legacy-v0") site.designLibraryProfile = profile;
-    }
     const designRun = site.designRun as { runId?: string; candidateId?: string } | undefined;
     if (designRun?.runId !== manifest.runId || designRun?.candidateId !== candidate.id) {
       site.designRun = { runId: manifest.runId, candidateId: candidate.id };

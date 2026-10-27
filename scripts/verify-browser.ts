@@ -14,6 +14,8 @@ import { buildVerified } from "../src/build/verified.ts";
 import { fingerprint, json, save, sourceHash, within, type MediaInventory, type Storyboard } from "../src/agent/artifacts.ts";
 import { prepareConsentCheck, verifyConsentControls } from "../src/agent/browser-consent.ts";
 import { resolveDesignAuthoring } from "../src/agent/composition-authoring.ts";
+import { adaptationPreferences, ADAPTATION_PATH, type TemplateAdaptation } from "../src/agent/template-adaptation.ts";
+import { checkTemplateSections } from "../src/agent/template-render-check.ts";
 import {captureMotionJourney,type MotionJourney} from "../src/agent/browser-motion-journey.ts";
 import {motionCompositionPolicy} from "../src/agent/motion-composition.ts";
 import {runBrowserTasks} from "../src/agent/browser-work-queue.ts";
@@ -47,6 +49,7 @@ if(plan.motionPlan?.version!==2)rmSync(join(root, directory), { recursive: true,
 mkdirSync(join(root, directory), { recursive: true });
 if(plan.motionPlan?.version===2&&existsSync(join(root,`agent/reviews/${name}.json`)))copyFileSync(join(root,`agent/reviews/${name}.json`),join(root,directory,"previous-report.json"));
 const compositionMode = resolveDesignAuthoring(root).mode === "composition-v1";
+const templatePlan = adaptationPreferences(root) && existsSync(join(root, ADAPTATION_PATH)) ? json<TemplateAdaptation>(join(root, ADAPTATION_PATH)) : undefined;
 const mediaInventory = existsSync(join(root, "onboarding/media-inventory.json"))
   ? json<MediaInventory>(join(root, "onboarding/media-inventory.json"))
   : { version: 2, harvestHash: "", assets: [] } as MediaInventory;
@@ -249,6 +252,7 @@ try {
     await page.evaluate("window.scrollTo(0,0)");
     const visibleText = await page.locator("body").innerText();
     await page.screenshot({ path: join(root, screenshot), fullPage: true });
+    failures.push(...await checkTemplateSections(page, p.path, templatePlan?.sections || []));
     if (compositionMode) for (const section of p.sections || []) for (const element of section.elementPlan || []) {
       const locator = page.locator(`[data-composition-element="${element.id}"]`);
       const count = await locator.count();

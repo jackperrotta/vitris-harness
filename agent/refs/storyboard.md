@@ -12,7 +12,7 @@ When `launch.json` selects `composition-v1`, keep version 3 and `designContractV
 
 Plan required mobile proof and action order in the page/section sequence. If that order cannot serve the visitor, record and review a justified plan revision before implementing a different sequence.
 
-Evaluate rhythm across scale, density, media prominence, alignment, background, and interaction. Changing grid to split is not enough if every section feels equally weighted. Repeat brand motifs while varying emphasis according to the narrative. Choose blocks only after the composition has a purpose.
+Evaluate rhythm across scale, density, media prominence, alignment, background, and interaction. Changing grid to split is not enough if every section feels equally weighted. Repeat brand motifs while varying emphasis according to the narrative.
 
 For people and work pages, explicitly map evidenced portraits and projects to the sections they substantiate. Explain intentional omissions of central source evidence. Keeping an image in the inventory does not by itself preserve its value to visitors; scattering unrelated originals across a page does not establish business fit.
 

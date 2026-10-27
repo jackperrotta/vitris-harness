@@ -30,7 +30,6 @@ const PRIMITIVE: Record<string, CapabilityMatrixRow["primitive"]> = {
   "media-fit-scoring": "Score",
   "direction-decision-check": "Choice",
   "composition-repetition-check": "none",
-  "component-fit-check": "Score",
 };
 
 const APPLICABILITY: Record<string, string> = {
@@ -46,7 +45,6 @@ const APPLICABILITY: Record<string, string> = {
   "direction-decision-check": "textual direction proposals against visitor goal, evidence, and user constraints",
   "composition-repetition-check": "storyboard section sequence, emphasis, and repetition rationale",
   "media-fit-scoring": "media vs section using agent text observations only (no pixels)",
-  "component-fit-check": "section text metadata vs block README/slots; Jev does not inspect images",
 };
 
 const IMPLEMENTED_CALLERS = new Set([
@@ -63,7 +61,6 @@ const IMPLEMENTED_CALLERS = new Set([
   "media-fit-scoring",
   "direction-decision-check",
   "composition-repetition-check",
-  "component-fit-check",
 ]);
 
 const MAY_REMOVE = new Set([

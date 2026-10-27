@@ -1,5 +1,0 @@
-.c-about-mission__inner{max-width:48rem;margin-inline:auto;text-align:center;display:grid;gap:var(--space-5);justify-items:center}
-.c-about-mission__inner h2{font-size:var(--step-4);max-width:22ch}
-.c-about-mission__inner .lede{max-width:40rem}
-.c-about-mission__inner .btn-group{justify-content:center}
-.c-about-mission--dark{--color-bg:#141210;--color-text:#F7F4EF;--color-muted:#B8B0A4;--color-surface:#1E1B18;--color-surface-2:#2A2622;--color-border:#3A342E;--color-focus:#F7F4EF;background:var(--color-bg);color:var(--color-text)}

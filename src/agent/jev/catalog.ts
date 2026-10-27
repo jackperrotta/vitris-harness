@@ -85,14 +85,6 @@ export const QUESTION_TASK_CATALOG: CatalogEntry[] = [
     policyRef: "media-fit-scoring (experimental)",
   },
   {
-    id: "component.fit",
-    primitive: "Score",
-    questionVersion: QUESTION_VERSION,
-    policyVersion: POLICY_VERSION,
-    promptRef: "makeComponentFitQuestion / COMPONENT_FIT_RUBRICS",
-    policyRef: "component-fit-check (experimental; advisory shortlist only)",
-  },
-  {
     id: "field.selection",
     primitive: "Choice",
     questionVersion: QUESTION_VERSION,

@@ -143,7 +143,7 @@ node --experimental-strip-types scripts/eval-jev.ts --trial-dir <path> --quality
 | `repairAssistance` | **Pending End-to-End Integration** | Repair packet building and edit resolution verification implemented; integrated critic repair loops remain pending. |
 | `preferenceScoring` | **Local rubric** | Local brand/craft rubric matching. It is not the creative-dimension caller. |
 | `creativeScoring` | **Advisory caller** | `scoreCreativeCandidates` runs from lifecycle on direction-review and representative-review when the capability is not `off`. Missing or invalid scores stay `unavailable` or `invalid`. They are not stored as zero. Assist text is advisory. Shadow does not change CURRENT.md. |
-| `componentSelection` | **Advisory caller** | Representative and pages preparation can rank a shortlist from semantic section state. Custom remains available. `draftAuthoringSnippet` is non-production and is not an authoring packet. |
+
 | `compositionCheck` | **Semantic caller plus deterministic preflight** | When the capability is not off, storyboard and representative preparation call `scoreCompositionRepetition` and write `agent/reviews/jev-composition.json`. Assist mode adds those judgments to the prompt. `off` makes no Jev call. Shadow records the receipt without changing the prompt. `agent/reviews/composition-preflight.json` stays a separate deterministic structure check. This task is uncalibrated and does not remove critic duties. Unavailable or invalid responses are not measured low scores. |
 
 > [!NOTE]

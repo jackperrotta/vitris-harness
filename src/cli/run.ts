@@ -11,7 +11,7 @@ import type { JevTransport } from "../agent/jev/types.ts";
 import { EXIT_CODES, type CommandResult, type ExitCode } from "./types.ts";
 import { isPreserveSite } from "../preserve/config.ts";
 import { runPreserve } from "./preserve.ts";
-import { persistSiteInputs, resolveSiteInputs, type SiteInputOptions } from '../agent/site-inputs.ts';
+import { persistSiteInputs, resolveSiteInputsLive, type SiteInputOptions } from '../agent/site-inputs.ts';
 
 const kernelRoot = findKernelRoot();
 
@@ -81,7 +81,7 @@ export async function runSite(opts: RunOptions = {}): Promise<CommandResult<{ ru
 
   let inputs;
   try {
-    inputs = resolveSiteInputs(opts);
+    inputs = await resolveSiteInputsLive(opts);
     if (isPreserveSite(root) && (inputs.template || inputs.content !== undefined)) throw Error('Template and additional content inputs require redesign mode');
   } catch (error) {
     return { ok: false, exitCode: EXIT_CODES.CONFIG_OR_CLI_ERROR, error: error instanceof Error ? error.message : String(error) };

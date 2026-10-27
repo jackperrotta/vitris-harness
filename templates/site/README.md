@@ -4,6 +4,8 @@ This is the starting directory for this customer website. Open this directory in
 
 Vitris site repo. The harness compiles `pages/` + `components/` to static `dist/`.
 
+When a new `dist/` replaces a prior build, Vitris keeps up to three unmodified managed archives under `.vitris/build-archives/`. Existing `dist.previous-*` folders and modified or unrecognized archives are preserved. The current `dist/` is not included in the archive limit.
+
 ## Layout
 
 ```

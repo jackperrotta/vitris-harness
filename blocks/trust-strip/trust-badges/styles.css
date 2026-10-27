@@ -1,5 +1,0 @@
-.c-trust-badges{border-block:1px solid var(--color-border)}
-.c-trust-badges__row{display:flex;flex-wrap:wrap;gap:var(--space-3);justify-content:center;align-items:center}
-.c-trust-badges .badge{min-height:2.25rem;padding-inline:var(--space-4)}
-.c-trust-badges .badge .rating{margin-right:.15rem}
-.c-trust-badges--muted{background:var(--color-surface-2);border-block-color:transparent}

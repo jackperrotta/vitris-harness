@@ -441,44 +441,6 @@ export function makeCreativeDimensionQuestion(
   );
 }
 
-export const COMPONENT_FIT_RUBRICS: ScoreCriteria = [
-  { score: 0, description: "Fail: incompatible with this dimension." },
-  { score: 1, description: "Weak fit; would need heavy adaptation." },
-  { score: 2, description: "Usable starting point with documented adaptations." },
-  { score: 3, description: "Strong fit on this dimension from metadata alone." },
-  { score: 4, description: "Excellent fit; little adaptation required." },
-];
-
-export type ComponentFitDimension = "visitor_job" | "slot_fit" | "media_fit" | "composition_fit";
-
-export function makeComponentFitQuestion(
-  dimension: ComponentFitDimension,
-  candidate: string,
-  state: string
-): ScoreQuestion<typeof COMPONENT_FIT_RUBRICS> {
-  return score(
-    `Score "${dimension}" for this block using only the supplied textual metadata. Jev has not seen pixels or screenshots.\n\nSection state:\n${state}\n\nCandidate:\n${candidate}`,
-    COMPONENT_FIT_RUBRICS
-  );
-}
-
-export function makeRhythmRepetitionQuestion(pageRhythm: string, candidate: string): NoulQuestion {
-  return noul(
-    `Would reusing this block create repetitive page rhythm relative to adjacent sections?\n\nAdjacent / page rhythm:\n${pageRhythm}\n\nCandidate:\n${candidate}`,
-    {
-      true: "Reuse would create repetitive page rhythm.",
-      false: "Reuse would not create repetitive page rhythm.",
-    }
-  );
-}
-
-export const COMPONENT_FIT_TASK_SEMANTICS = {
-  version: QUESTION_VERSION,
-  primitive: "score+noul",
-  rubrics: COMPONENT_FIT_RUBRICS,
-};
-export const COMPONENT_FIT_SEMANTICS_HASH = questionSemanticsHash(COMPONENT_FIT_TASK_SEMANTICS);
-
 export const DIRECTION_DECISION_CRITERIA = {
   supports: "The textual proposal supports this check.",
   contradicts: "The textual proposal conflicts with this check.",

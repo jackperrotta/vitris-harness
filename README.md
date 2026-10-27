@@ -4,11 +4,11 @@ Vitris gives your coding agent the business context, design judgment, and verifi
 
 This repository produces **`@tryvitris/website-harness`**, an agent harness for building and verifying customer websites. It includes a static site compiler, design tokens, an optional Cloudflare backend for owner admin, leads, and analytics, harvest tools, and an agent kit. Each customer website is a separate git repo started from `templates/site`. Normal generation stops at a verified local preview. Cloudflare launch is a separate explicit operation. Built-in design lessons live in `design-system/knowledge/v1` and do not require a user reference.
 
-Sites own their visual components. The optional harness block library supplies source material to copy and adapt into each site.
+Sites own their visual components and adapt the selected template direction to their content.
 
 The default template gallery is `artifacts/templates/gallery.html`. Run `npm run templates:gallery` and open `http://127.0.0.1:4390/`. It displays the live Cloudflare library and automatically includes future publications. Publish complete new demonstrations with `npm run templates -- publish --bundle ABSOLUTE_TRANSIENT_DIRECTORY`; see `agent/refs/template-library.md`. Source fixtures contain original Vitris instructional material; external demonstrations remain hosted with their own provenance records.
 
-MIT licensed. The public npm package is `@tryvitris/website-harness`; prerelease `0.1.0-beta.6` is available through the `beta` and `latest` dist-tags. Bring your own coding agent. Optional hosting uses your own Cloudflare account; see [Cloudflare setup](docs/CLOUDFLARE.md) and [credential safety](docs/SECURITY.md).
+MIT licensed. The public npm package is `@tryvitris/website-harness`; prerelease `0.1.0-beta.7` is available through the `beta` and `latest` dist-tags. Bring your own coding agent. Optional hosting uses your own Cloudflare account; see [Cloudflare setup](docs/CLOUDFLARE.md) and [credential safety](docs/SECURITY.md).
 
 Requires Node 24 or newer. Hosted demonstrations and third-party media have their own license records; see NOTICE.
 
@@ -23,7 +23,7 @@ To use a local checkout, build and pack it, then generate a site:
 ```bash
 npm ci
 npm pack
-node bin/vitris.js site create --dir ../acme --slug acme --name "Acme Shop" --from https://old-site.example --harness ../vitris-harness/tryvitris-website-harness-0.1.0-beta.6.tgz
+node bin/vitris.js site create --dir ../acme --slug acme --name "Acme Shop" --from https://old-site.example --harness ../vitris-harness/tryvitris-website-harness-0.1.0-beta.7.tgz
 cd ../acme
 npm install
 npx playwright install chromium
@@ -35,7 +35,7 @@ The tarball path is relative to the generated site directory. Adjust it for your
 The public beta starter command is:
 
 ```bash
-npx --package @tryvitris/website-harness@0.1.0-beta.6 vitris site create --dir acme --slug acme --from https://old-site.example
+npx --package @tryvitris/website-harness@0.1.0-beta.7 vitris site create --dir acme --slug acme --from https://old-site.example
 ```
 
 Use `--blank` when there is no existing website. New sites pin the creating harness version. `--harness file:../vitris-harness` explicitly opts into local development; run `npm run build:cli` in that checkout first. Jev is optional and off by default. Backend and Cloudflare credentials are not required to author and preview a static site locally.

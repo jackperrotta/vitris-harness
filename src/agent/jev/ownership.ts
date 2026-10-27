@@ -432,12 +432,6 @@ export function assessSiteTaskContext(root: string, taskId: string): { subjectEx
     return { subjectExists: existsSync(join(root, "onboarding/direction.json")), applicable: existsSync(join(root, "onboarding/direction.json")) };
   }
 
-  if (taskId === "component-fit-check") {
-    const story = existsSync(join(root, "onboarding/storyboard.json"));
-    const copy = existsSync(join(root, "onboarding/copy-plan.json"));
-    return { subjectExists: story && copy, applicable: story && copy };
-  }
-
   return { subjectExists: false, applicable: false };
 }
 
