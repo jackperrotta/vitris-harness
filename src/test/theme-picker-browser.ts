@@ -1,6 +1,7 @@
 import {VISUAL_THEMES,visualTheme} from '../agent/theme-library.ts';
 import assert from 'node:assert/strict';
 import {chromium,type Page} from 'playwright';
+import {galleryDiagnostics} from './theme-gallery-browser.ts';
 async function pickerControl(page:Page,id:string){if(id==='story'||id==='guide'){const roles=await page.locator('#detailpage option').evaluateAll(es=>es.map(e=>(e as any).value));await page.locator('#detailpage').selectOption(id==='story'?(roles.includes('home')?'home':'story'):(roles.includes('service-detail')?'service-detail':'guide'));}else await page.locator('#'+id).click();}
 import {pathToFileURL} from 'node:url';
 /** File origins differ from HTTP origins: verify the real offline bridge and embedded assets. */
@@ -47,5 +48,5 @@ export async function sweepThemePicker(url:string):Promise<{transitions:number;n
  console.log('Gallery regression: retry passed');const response=await page.request.get(url+'specimen/invalid');assert.equal(response.status(),404);assert.ok(direct);await page.goto(new URL(direct!,url).href);await page.reload();assert.match(await page.title(),/Swiss Index/);
  await page.goto(url);await page.setViewportSize({width:320,height:800});assert.equal(await page.evaluate(()=>(globalThis as any).document.documentElement.scrollWidth<=(globalThis as any).innerWidth),true);await page.getByRole('button',{name:'Explore Swiss Index',exact:true}).click();await ready();assert.equal(await page.locator('#close').isVisible(),true);assert.equal(await page.locator('#choose').isVisible(),true);await page.locator('#close').click();assert.deepEqual(errors,[]);
  console.log('Gallery regression: direct route and 320px passed');return{transitions,names,errors,shell320:true,errorRetry:true};
- }finally{await browser.close();}
+ }catch(error){console.error('Gallery sweep diagnostics',JSON.stringify(await galleryDiagnostics(page)));throw error;}finally{await browser.close();}
 }

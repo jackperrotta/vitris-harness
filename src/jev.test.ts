@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, writeFileSync, symlinkSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { basename, join, resolve } from "node:path";
 import { choice } from "@typesafe-ai/sdk";
@@ -1467,6 +1467,22 @@ test("buildRepairPacket resolves critic review findings from critic node targeti
   assert.ok(repair.contextSlice.includes("Severity: blocker"));
   // Minor finding should NOT be included
   assert.ok(!repair.contextSlice.includes("Minor wording tweak"));
+});
+
+test('linked workspace roots retain evidence access and reject escaping child links', () => {
+  const base = temp(), actual = join(base, 'actual'), linked = join(base, 'linked'), outside = join(base, 'outside');
+  mkdirSync(join(actual, 'onboarding/copy'), { recursive: true });
+  mkdirSync(outside);
+  writeFileSync(join(actual, 'onboarding/copy/home.md'), 'Trusted roofers with documented evidence.');
+  writeFileSync(join(outside, 'secret.txt'), 'Outside the workspace');
+  const linkType = process.platform === 'win32' ? 'junction' : 'dir';
+  symlinkSync(actual, linked, linkType);
+  symlinkSync(outside, join(actual, 'escape'), linkType);
+  assert.equal(verifyQuoteInSource(linked, 'home.md', 'documented evidence').quoteFound, true);
+  assert.equal(isPathConfined(linked, join(linked, 'onboarding/copy/home.md')).safe, true);
+  assert.equal(isPathConfined(linked, join(actual, 'onboarding/copy/home.md')).safe, true);
+  assert.equal(isPathConfined(linked, join(linked, 'escape/secret.txt')).safe, false);
+  assert.equal(isPathConfined(linked, '../outside/secret.txt').safe, false);
 });
 
 test("Separator-aware path confinement rejects sibling directories (e.g. site-extra from site)", () => {

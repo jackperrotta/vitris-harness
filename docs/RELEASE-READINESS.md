@@ -2,7 +2,7 @@
 
 The `0.1.0-beta.8` release is configured as public `@tryvitris/website-harness` with the `beta` dist-tag. Verification creates local artifacts and never publishes a package. `prepublishOnly` enforces the intended identity, public registry and visibility, prerelease tag, and packed-release audit.
 
-This release adds explicit quick publication, stage-scoped analytics guidance, lean cookie-page assets, single-pass page compilation, accurate asset inventories, and installed-package coverage checks for all 381 icons and 1,644 variants. Normal publication retains its full review gates.
+This release adds explicit quick publication, stage-scoped analytics guidance, lean cookie-page assets, single-pass page compilation, accurate asset inventories, and installed-package coverage checks for all 381 icons and 1,644 variants. Normal publication retains its full review gates. Canonical path checks support junction-backed workspaces while retaining child-link confinement. Cloudflare OAuth diagnostics require an explicit authenticated JSON identity; the full suite uses two workers to limit browser contention on CI runners.
 
 Before publishing an owner-authorized release:
 

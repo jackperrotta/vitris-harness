@@ -18,20 +18,25 @@ export function isPathConfined(root: string, candidatePath: string): PathConfine
     return { safe: false, resolvedPath: "", reason: "Empty root or candidate path" };
   }
 
+  const lexicalRoot = resolve(root);
   let canonicalRoot: string;
   try {
-    canonicalRoot = realpathSync.native ? realpathSync.native(resolve(root)) : realpathSync(resolve(root));
+    canonicalRoot = realpathSync.native ? realpathSync.native(lexicalRoot) : realpathSync(lexicalRoot);
   } catch {
-    canonicalRoot = resolve(root);
+    canonicalRoot = lexicalRoot;
   }
 
   const resolvedCandidate = isAbsolute(candidatePath)
     ? resolve(candidatePath)
-    : resolve(canonicalRoot, candidatePath);
+    : resolve(lexicalRoot, candidatePath);
 
   // Check 1: Pre-symlink relative path check
-  const rel = relative(canonicalRoot, resolvedCandidate);
-  if (rel.startsWith("..") || isAbsolute(rel) || rel.split(sep).includes("..")) {
+  // Compare lexical paths before resolving either side through a junction.
+  // The canonical target check below still rejects escaping child symlinks.
+  const rel = relative(lexicalRoot, resolvedCandidate);
+  const canonicalRel = relative(canonicalRoot, resolvedCandidate);
+  const escapes = (path: string) => path.startsWith('..') || isAbsolute(path) || path.split(sep).includes('..');
+  if (escapes(rel) && escapes(canonicalRel)) {
     return {
       safe: false,
       resolvedPath: resolvedCandidate,
@@ -44,7 +49,7 @@ export function isPathConfined(root: string, candidatePath: string): PathConfine
     try {
       const realTarget = realpathSync.native ? realpathSync.native(resolvedCandidate) : realpathSync(resolvedCandidate);
       const relReal = relative(canonicalRoot, realTarget);
-      if (relReal.startsWith("..") || isAbsolute(relReal) || relReal.split(sep).includes("..")) {
+      if (escapes(relReal)) {
         return {
           safe: false,
           resolvedPath: realTarget,

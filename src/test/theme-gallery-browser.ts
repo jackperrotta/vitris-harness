@@ -1,7 +1,14 @@
 import assert from 'node:assert/strict';
-import {chromium} from 'playwright';
+import {chromium,type Page} from 'playwright';
 import {THEME_RELEASE,VISUAL_THEMES} from '../agent/theme-library.ts';
 import {BROWSE_METADATA} from '../agent/theme-browse.ts';
+export async function galleryDiagnostics(page:Page){
+ return page.evaluate(()=>{const w=globalThis as any;return {url:w.location.pathname,canvases:[...w.document.querySelectorAll('.canvas,.preview')].map((e:any)=>({ready:e.getAttribute('data-ready'),text:(e.textContent||'').slice(0,120)})),frames:[...w.document.querySelectorAll('iframe')].map((frame:any)=>{
+  const src=(frame.getAttribute('src')||'').split(/[?#]/)[0];
+  try{return {src,state:frame.contentDocument?.readyState,fonts:frame.contentDocument?.fonts.status,pendingImages:[...(frame.contentDocument?.images||[])].filter((i:any)=>!i.complete).map((i:any)=>new URL(i.src,w.location.href).pathname)};}
+  catch{return {src,state:'cross-origin'};}
+ })};}).catch(()=>({state:'unavailable'}));
+}
 /** Selection and browse-state isolation against a real loopback server. */
 export async function checkGalleryBrowse(url:string){
  const browser=await chromium.launch(),page=await browser.newPage({viewport:{width:1440,height:1000}}),errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
@@ -28,5 +35,5 @@ export async function checkGalleryBrowse(url:string){
  const touchContext=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true}),touch=await touchContext.newPage();await touch.goto(url);const touchCard=touch.locator('[data-theme="fresh-routine"]');assert.equal(await touchCard.locator('.preview').isVisible(),false);await touchCard.getByRole('button',{name:'Scroll '+await touchCard.locator('h3').innerText()+' Home',exact:true}).tap();assert.equal(await touchCard.locator('.preview').isVisible(),true);await touchCard.getByRole('button',{name:'Return to gallery',exact:true}).tap();assert.equal(await touchCard.locator('.preview').isVisible(),false);await touchContext.close();
  await page.goto(url+'?families=obsolete&sort=popular&shortlist=missing&compare=missing');assert.equal(await cards().count(),VISUAL_THEMES.length);assert.equal(await page.locator('#sort').inputValue(),'curated');assert.equal(await page.locator('#shortlist').isVisible(),false);assert.deepEqual(errors,[]);
  return {note,combinedFacets:true,groupsUnique:true,persistence:true,compare:true,responsive:[320,390,768,1260],errors};
- }finally{await browser.close();}
+ }catch(error){console.error('Gallery browse diagnostics',JSON.stringify(await galleryDiagnostics(page)));throw error;}finally{await browser.close();}
 }

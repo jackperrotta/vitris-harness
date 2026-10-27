@@ -7,6 +7,7 @@ import { runCli } from "./cli/index.ts";
 import { EXIT_CODES } from "./cli/types.ts";
 import * as api from "./cli/api.ts";
 import { acquirePathLock } from "./agent/artifacts.ts";
+import { hasAuthenticatedWranglerSession } from './cli/doctor.ts';
 
 const temp = () => mkdtempSync(join(tmpdir(), "vitris-cli-test-"));
 
@@ -96,6 +97,15 @@ test("CLI verify evaluates compilation and gate status", async () => {
   assert.equal(dryCode, EXIT_CODES.SUCCESS);
 });
 
+test('Wrangler authentication requires a successful explicit JSON identity', () => {
+  assert.equal(hasAuthenticatedWranglerSession(0, '{"loggedIn":true}'), true);
+  for (const output of ['', '{"loggedIn":false}', '{"loggedIn":"true"}', 'You are not authenticated. Please run `wrangler login`.', '{invalid']) {
+    assert.equal(hasAuthenticatedWranglerSession(0, output), false);
+  }
+  assert.equal(hasAuthenticatedWranglerSession(1, '{"loggedIn":true}'), false);
+  assert.equal(hasAuthenticatedWranglerSession(null, '{"loggedIn":true}'), false);
+});
+
 test("CLI preview and deploy validate options and scoped credentials", async () => {
   const root = temp();
   await runCli(["site", "create", "--dir", root, "--slug", "test-deploy", "--blank"]);
@@ -103,9 +113,10 @@ test("CLI preview and deploy validate options and scoped credentials", async () 
   const prevDry = await runCli(["preview", "--site", root, "--dry-run"]);
   assert.equal(prevDry, EXIT_CODES.SUCCESS);
 
-  // Deploy without credentials fails doctor
+  // Without token credentials, a valid operator OAuth session can still authorize a dry run.
+  const withoutToken = await api.runDoctor({ site: root, provider: 'cloudflare', operation: 'pages' });
   const deployCode = await runCli(["deploy", "--site", root, "--provider", "cloudflare", "--dry-run"]);
-  assert.equal(deployCode, EXIT_CODES.CONFIG_OR_CLI_ERROR);
+  assert.equal(deployCode, withoutToken.ok ? EXIT_CODES.SUCCESS : EXIT_CODES.CONFIG_OR_CLI_ERROR);
 
   // Deploy with token credentials passes doctor and dry-run
   process.env.CLOUDFLARE_API_TOKEN = "dummy-token";

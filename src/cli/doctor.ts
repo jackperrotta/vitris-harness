@@ -4,6 +4,13 @@ import { spawnSync } from "node:child_process";
 import { recoverPendingTransactions } from "../agent/artifacts.ts";
 import { EXIT_CODES, type CommandResult } from "./types.ts";
 import { explainBrowserLaunchFailure, loadPlaywrightChromium } from "../agent/playwright-runtime.ts";
+import { wranglerCommand } from '../integrations/wrangler-command.ts';
+
+export function hasAuthenticatedWranglerSession(status: number | null, stdout: string): boolean {
+  if (status !== 0) return false;
+  try { return JSON.parse(stdout)?.loggedIn === true; }
+  catch { return false; }
+}
 
 export type DoctorOptions = {
   site?: string;
@@ -147,8 +154,13 @@ export async function runDoctor(opts: DoctorOptions = {}): Promise<CommandResult
       });
     } else {
       // Check interactive Wrangler session
-      const whoami = spawnSync(process.platform === "win32" ? "npx.cmd" : "npx", ["wrangler", "whoami"], { encoding: "utf8" });
-      if (whoami.status === 0 && !whoami.stdout.includes("not logged in") && !whoami.stderr.includes("not logged in")) {
+      let authenticated = false;
+      try {
+        const command = wranglerCommand(resolve(opts.site || '.'), ['whoami', '--json']);
+        const whoami = spawnSync(command.command, command.args, { encoding: 'utf8', timeout: 30_000, windowsHide: true });
+        authenticated = hasAuthenticatedWranglerSession(whoami.status, whoami.stdout || '');
+      } catch { /* Missing Wrangler or unreadable identity is not an authenticated session. */ }
+      if (authenticated) {
         diagnostics.push({
           name: "cloudflare_auth",
           ok: true,
