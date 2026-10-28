@@ -6,10 +6,10 @@ The `vitris` CLI (`@tryvitris/website-harness`) provides a unified, operator-fri
 
 ## 1. Installation & Binary
 
-After the first registry release, install as a dependency or run via `npx`. Until then use the tarball instructions in [distribution](DISTRIBUTION.md):
+Install the stable release as a dependency or run via `npx`. For local tarballs and managed upgrades, see [distribution](DISTRIBUTION.md):
 
 ```bash
-npm install --save-dev @tryvitris/website-harness
+npm install --save-dev --save-exact @tryvitris/website-harness@1.0.0
 npx vitris --help
 ```
 

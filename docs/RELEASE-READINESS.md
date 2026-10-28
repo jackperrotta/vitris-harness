@@ -1,8 +1,10 @@
-# Beta release checks
+# Stable release checks
 
-The `0.1.0-beta.8` release is configured as public `@tryvitris/website-harness` with the `beta` dist-tag. Verification creates local artifacts and never publishes a package. `prepublishOnly` enforces the intended identity, public registry and visibility, prerelease tag, and packed-release audit.
+The `1.0.0` release is configured as public `@tryvitris/website-harness` with the `latest` dist-tag. Verification creates local artifacts and never publishes a package. `prepublishOnly` enforces the intended identity, public registry and visibility, `latest` for stable versions (`beta` for prereleases), and the packed-release audit.
 
-This release adds explicit quick publication, stage-scoped analytics guidance, lean cookie-page assets, single-pass page compilation, accurate asset inventories, and installed-package coverage checks for all 381 icons and 1,644 variants. Normal publication retains its full review gates. Canonical path checks support junction-backed workspaces while retaining child-link confinement. Cloudflare OAuth diagnostics require an explicit authenticated JSON identity; the full suite uses two workers to limit browser contention on CI runners.
+This stable release includes the separate business admin integration, scoped admin v1 backend API, pinned published admin installer, and authoritative connection verification. New customer sites default to verified local builds and direct Cloudflare uploads; hosted deployment automation is an inactive opt-in example. Admin setup, backend upgrades, cloud provisioning and deployment remain separate operations. The admin dependencies retain their explicit `0.1.0-alpha.1` versions; stabilizing the website harness does not relabel the independent admin packages.
+
+Normal publication retains its full review gates, installed-package coverage for all 381 icons and 1,644 variants, and source/asset integrity checks. Canonical path checks support junction-backed workspaces while retaining child-link confinement. Cloudflare OAuth diagnostics require an explicit authenticated JSON identity; the full suite uses two workers to limit browser contention on CI runners.
 
 Before publishing an owner-authorized release:
 

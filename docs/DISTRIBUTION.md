@@ -29,7 +29,7 @@ At the same configuration level, current names take precedence. CLI build overri
 Stop its workflow first. From the harness checkout, preview changes:
 
 ```bash
-node bin/vitris-migrate-site.js --site ../acme --harness ../vitris-harness/tryvitris-website-harness-0.1.0-beta.7.tgz
+node bin/vitris-migrate-site.js --site ../acme --harness ../vitris-harness/tryvitris-website-harness-1.0.0.tgz
 ```
 
 Add `--apply` to perform the displayed changes. The command backs up affected files under the client's `agent-backups/`, renames the package dependency and known script paths, and converts the backend origin key. Conflicting old/new origins fail before writes. Client pages, components, media, secrets, existing lockfile, and workflow state are preserved. Repeating it makes no further edits.
@@ -61,7 +61,7 @@ These are rollout steps, not completed migrations. This package does not automat
 
 ## Public release preparation
 
-The owner selected MIT and public npm publication under `@tryvitris/website-harness`. The `prepublishOnly` guard verifies the package identity, public registry and visibility, beta dist-tag, and packed-release audit before allowing publication. See SECURITY.md for the release audit and CLOUDFLARE.md for user-owned infrastructure.
+The owner selected MIT and public npm publication under `@tryvitris/website-harness`. Version `1.0.0` is the first stable release, published with the `latest` dist-tag. The `prepublishOnly` guard verifies the package identity, public registry and visibility, the `latest` tag for stable versions (`beta` for prereleases), and the packed-release audit before allowing publication. See SECURITY.md for the release audit and CLOUDFLARE.md for user-owned infrastructure.
 
 MIT licensing and intended repository metadata are included. Before public release, review third-party provenance and dependency notices, confirm npm scope ownership/authentication, and repeat the source, Git-history, and tarball credential checks. The dedicated `vitris-harness` repository starts with fresh history. Keep the original private development repository and customer repositories private. Creating a remote repository, changing visibility, and publishing npm are separate explicitly authorized operations.
 
@@ -69,4 +69,4 @@ Run `npm run test:freeze` after final source edits. It checks type safety, tests
 
 ## Optional corrected teaching data
 
-The core npm package includes the original v1/v2 teaching studies and reference metadata. The larger immutable corrected studies (v3/v4, releases 2026-10-06.1 and 2026-10-06.2) are optional data, supplied separately from the core beta. They retain their original bytes and hashes; the package does not substitute reduced images or waive inspection. Set VITRIS_REFERENCE_DATA to a verified data root containing design-system/compositions/v3 and v4 before opting into those releases through launch.json.designReferences. A source checkout can serve as that root. Missing data produces an explicit error. The ordinary new-site workflow does not opt into those corrected teaching releases.
+The core npm package includes the original v1/v2 teaching studies and reference metadata. The larger immutable corrected studies (v3/v4, releases 2026-10-06.1 and 2026-10-06.2) are optional data, supplied separately from the core package. They retain their original bytes and hashes; the package does not substitute reduced images or waive inspection. Set VITRIS_REFERENCE_DATA to a verified data root containing design-system/compositions/v3 and v4 before opting into those releases through launch.json.designReferences. A source checkout can serve as that root. Missing data produces an explicit error. The ordinary new-site workflow does not opt into those corrected teaching releases.

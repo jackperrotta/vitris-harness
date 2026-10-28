@@ -9,7 +9,7 @@ The package is [`@tryvitris/website-harness`](https://www.npmjs.com/package/@try
 An optional separate business admin is available through `vitris admin setup|status|verify`; new-site `--admin` prepares follow-up instructions. See the [admin integration guide](docs/ADMIN.md) for pinned packages, local plan/apply, backend grants and the separate customer-account Cloudflare rollout.
 
 ```bash
-npx --package @tryvitris/website-harness@0.1.0-beta.8 vitris site create \
+npx --package @tryvitris/website-harness@1.0.0 vitris site create \
   --dir acme --slug acme --name "Acme Shop" \
   --from https://old-site.example --template "Still & Field" \
   --content-file ./acme-notes.md

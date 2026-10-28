@@ -39,15 +39,16 @@ test('source fingerprint rejects all links, including former archive bridges',()
  assert.throws(()=>sourceManifest(dir),/Unexpected source link/);
 });
 
-test('publish guard allows the intended public beta and rejects wrong identity, visibility, registry, and tag before auditing',()=>{
+test('publish guard allows public stable and beta releases and rejects wrong identity, visibility, registry, and tag before auditing',()=>{
  const dir=mkdtempSync(join(tmpdir(),'vitris-publish-guard-'));
  mkdirSync(join(dir,'scripts'));copyFileSync(join(root,'scripts/guard-publish.mjs'),join(dir,'scripts/guard-publish.mjs'));
  writeFileSync(join(dir,'scripts/audit-package.mjs'),"console.log('audit-invoked');");
  const valid={name:'@tryvitris/website-harness',version:'0.1.0-beta.5',private:false,publishConfig:{access:'public',tag:'beta',registry:'https://registry.npmjs.org/'}};
- for(const pkg of [valid,{...valid,name:'@vitris/harness'},{...valid,private:true},{...valid,publishConfig:{...valid.publishConfig,access:'restricted'}},{...valid,publishConfig:{...valid.publishConfig,registry:'https://other.example/'}},{...valid,publishConfig:{...valid.publishConfig,tag:'latest'}}]){
+ const stable={...valid,version:'1.0.0',publishConfig:{...valid.publishConfig,tag:'latest'}};
+ for(const pkg of [valid,stable,{...valid,name:'@vitris/harness'},{...valid,private:true},{...valid,publishConfig:{...valid.publishConfig,access:'restricted'}},{...valid,publishConfig:{...valid.publishConfig,registry:'https://other.example/'}},{...valid,publishConfig:{...valid.publishConfig,tag:'latest'}},{...stable,publishConfig:{...stable.publishConfig,tag:'beta'}}]){
   writeFileSync(join(dir,'package.json'),JSON.stringify(pkg));
   const run=spawnSync(process.execPath,[join(dir,'scripts/guard-publish.mjs')],{encoding:'utf8',windowsHide:true});
-  assert.equal(run.status,pkg===valid?0:1,run.stderr);
-  assert.equal(run.stdout.includes('audit-invoked'),pkg===valid);
+  assert.equal(run.status,pkg===valid||pkg===stable?0:1,run.stderr);
+  assert.equal(run.stdout.includes('audit-invoked'),pkg===valid||pkg===stable);
  }
 });
