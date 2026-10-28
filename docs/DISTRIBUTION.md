@@ -8,6 +8,8 @@ Generate a separate directory for each customer with `vitris site create`. Open 
 
 New sites depend on the exact creating package version, avoiding paths into an ephemeral `npx` cache. Before a registry release, pass `--harness` with a tarball path or an explicit `file:` dependency. Both paths are relative to the generated site directory. Registry and tarball installations include bundled JavaScript commands and APIs; consumers do not need to strip TypeScript inside `node_modules`.
 
+New sites build and verify locally and upload directly to Cloudflare Pages using `npm run deploy:preview` or an explicitly requested production `npm run deploy`. No active GitHub deployment workflow is scaffolded. `deployment/github-actions.yml.example` is an optional hosted alternative. Existing site scripts, workflows and remote project settings are not changed by installing or upgrading the harness; follow the migration steps in [Cloudflare setup](CLOUDFLARE.md). Keep generated output out of source control.
+
 ## Terminology and compatibility
 
 | Current name | Accepted legacy name |

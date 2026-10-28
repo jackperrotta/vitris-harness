@@ -3,7 +3,7 @@ import { join } from 'node:path';
 import { Miniflare, convertV4MiniflareOptions } from 'miniflare';
 import { unstable_splitSqlQuery } from 'wrangler';
 import type { Env } from '../worker/env.ts';
-export async function formsBackend() {
+export async function formsBackend(migrationDir = 'migrations', bootstrapLegacy = true) {
   // Execute statements inside the Worker, as production does. Passing native
   // prepared-statement proxies across processes can lose handles under load.
   const script=`export default {async fetch(request,env){
@@ -32,9 +32,9 @@ export async function formsBackend() {
       all:()=>query({sql,values,method:'all'}),run:()=>query({sql,values,method:'run'}),raw:()=>query({sql,values,method:'raw'})};
   }
   const DB={prepare:statement,batch:(statements:ReturnType<typeof statement>[])=>query({method:'batch',statements:statements.map(({sql,values})=>({sql,values}))}),exec:(sql:string)=>query({method:'exec',sql})} as unknown as D1Database;
-  for (const file of readdirSync('migrations').filter(f=>f.endsWith('.sql')).sort()) {
-    for (const sql of unstable_splitSqlQuery(readFileSync(`migrations/${file}`,'utf8'))) await DB.prepare(sql).run();
-    if (file==='0001_init.sql') {
+  for (const file of readdirSync(migrationDir).filter(f=>f.endsWith('.sql')).sort()) {
+    for (const sql of unstable_splitSqlQuery(readFileSync(join(migrationDir,file),'utf8'))) await DB.prepare(sql).run();
+    if (bootstrapLegacy && file==='0001_init.sql') {
       await DB.prepare("INSERT INTO tenants(id,slug,name) VALUES('legacy','legacy','Legacy')").run();
       await DB.prepare("INSERT INTO leads(id,tenant_id,name,email,message) VALUES('legacy-lead','legacy','Preserved Person','legacy@example.invalid','Existing lead')").run();
       await DB.prepare("INSERT INTO site_config(tenant_id,json) VALUES('legacy','{\"preserved\":true}')").run();

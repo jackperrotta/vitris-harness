@@ -18,6 +18,7 @@ import { deploySite } from "./deploy.ts";
 import { shareSite } from "./share.ts";
 import { explainStage } from "../knowledge/explain.ts";
 import { formsCommand } from "./forms.ts";
+import { adminCommand } from './admin.ts';
 import { findHarnessRoot } from "./root.ts";
 import { siteInputsFromFlags } from '../agent/site-inputs.ts';
 
@@ -132,6 +133,7 @@ export async function runCli(argv: string[]): Promise<number> {
 Usage: vitris <command> [options]
 
 Commands:
+  admin setup|status|verify             Separate business admin; explicit cloud rollout
   forms inspect|setup|status            Inventory, provision, and check contact forms
   doctor                                Check environment, dependencies, and site health
   site create --dir DIR --slug SLUG    Scaffold a new customer site repo (--from URL or --blank)
@@ -160,6 +162,7 @@ Options:
   --template-release RELEASE            Optional template revision
   --content TEXT                        Additional business content or instructions
   --content-file FILE                   UTF-8 content file (instead of --content)
+  --admin                               New-site opt-in: prepare sibling admin next steps
   --backend-origin URL                  Backend origin for a new site
   --site DIR                            Site directory path (default: current directory)
   --json                                Output single structured JSON result at completion
@@ -187,7 +190,10 @@ Options:
   let result: CommandResult;
 
   try {
-    if (primary === 'forms') {
+    if (primary === 'admin') {
+      const value = (key: string) => typeof opts[key] === 'string' ? opts[key] as string : undefined;
+      result = await adminCommand(secondary || 'status', { site: siteRoot, dir: value('dir'), domain: value('domain'), website: value('website'), tenant: value('tenant'), backendOrigin: value('backend-origin'), plan: !!opts.plan, apply: !!opts.apply, leadWrite: !!opts['lead-write'], grants: value('grants'), out: value('out'), dryRun });
+    } else if (primary === 'forms') {
       const list=(name:string)=>typeof opts[name]==='string'?(opts[name] as string).split(',').map(s=>s.trim()).filter(Boolean):undefined;
       result=await formsCommand(secondary || 'status',{site:siteRoot,tenant:typeof opts.tenant==='string'?opts.tenant:undefined,backendOrigin:typeof opts['backend-origin']==='string'?opts['backend-origin']:undefined,origins:list('origins'),recipients:list('recipients'),mode:typeof opts.mode==='string'?opts.mode:undefined,apply:!!opts.apply,testKeys:!!opts['test-keys'],cloudflare:!!opts.cloudflare,worker:typeof opts.worker==='string'?opts.worker:undefined,config:typeof opts['forms-config']==='string'?opts['forms-config']:undefined,dryRun});
     } else if (primary === "doctor") {
@@ -199,6 +205,7 @@ Options:
     } else if (primary === "site" && secondary === "create") {
       result = await createSite({
         ...siteInputsFromFlags(opts),
+        admin: !!opts.admin,
         dir: typeof opts.dir === "string" ? opts.dir : "",
         slug: typeof opts.slug === "string" ? opts.slug : "",
         name: typeof opts.name === "string" ? opts.name : undefined,

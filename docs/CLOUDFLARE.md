@@ -1,12 +1,34 @@
 # Use your own Cloudflare account
 
+Optional business admins use separate Workers, D1, R2 and Cloudflare Email Service authentication in the customer's intended account. See [ADMIN.md](ADMIN.md) for local `vitris admin setup`, explicit provisioning/owner bootstrap/DNS/migrations/deployment, and deployed backend compatibility checks. Setup never deploys or migrates a shared existing backend.
+
 Local authoring, compilation and preview require no Cloudflare account or API keys. Hosting is an explicit later operation. These examples provision resources in your own account.
 
 ## Static customer websites
 
-Create a Cloudflare account. From the customer directory run `npx wrangler login`, check the account with `npx wrangler whoami`, and run `npx wrangler pages project create YOUR_PROJECT`. Set `launch.json.pagesProject` to that name. CI uses your own `CLOUDFLARE_ACCOUNT_ID` and an account-scoped token with Pages Edit access, stored in protected CI secrets. Never put a token in launch.json, HTML, assets or Git.
+The default is to build and verify on the operator's computer and upload the finished bundle directly to Cloudflare Pages. GitHub stores source and history; no GitHub Actions or Cloudflare Git builds are required. New sites ship an inactive hosted-workflow example under `deployment/`, outside `.github/workflows/`.
 
-Run `npm run build` and `npm run preflight` locally. Run `npm run deploy` only when you intend to upload. Accept the hosted preview before separate custom-domain and DNS changes. Preservation mode supports temporary previews; follow PRESERVE.md for its narrower contract.
+Create a Cloudflare account. From the customer directory run `npx wrangler login`, check the account with `npx wrangler whoami`, and run `npx wrangler pages project create YOUR_PROJECT` to create a Direct Upload project. Set `launch.json.pagesProject` to that name and `launch.json.publicOrigin` to the intended production HTTPS origin. Never put credentials in launch.json, HTML, assets or Git. An unattended operator may use their own `CLOUDFLARE_ACCOUNT_ID` and an account-scoped token with Pages Edit access in ignored environment configuration.
+
+After dependency installation and `npx playwright install chromium`, run `npm run deploy:preview` for a hosted preview. After accepting the preview, run `npm run deploy` only when you intend to publish production. These scripts invoke `vitris deploy` with an explicit environment: local build and verification, exact-byte staging, direct upload, deployment receipt, and HTTP smoke check. Ordinary publishing retains the full verification gates. Keep `dist/`, `agent/release-bundles/`, `agent/release-candidate.json`, and `agent/releases/` ignored in Git. Local builds can be repeated without invoking a hosted build service; Cloudflare hosting, API, file and backend quotas still apply.
+
+Preservation mode supports temporary previews only; its `npm run deploy` selects preview. Follow PRESERVE.md for its narrower contract. Custom-domain and DNS changes remain separate explicit launch steps. The computer must be online and authenticated during an upload; Cloudflare serves the deployed site independently afterward.
+
+### Adopt local uploads in an existing site
+
+Installing a new harness version does not rewrite customer package scripts, authored files, workflow state or remote Cloudflare settings. Review each site's publication contract before making changes, especially if it uses authenticated backend Worker publication.
+
+1. Keep the existing Pages project, domains and `launch.json` settings. For a Git-connected Pages project, turn off automatic production branch deployments and set preview branches to None in Cloudflare's branch controls. Wrangler can still deploy directly to the existing project.
+2. Review and disable the site's automatic GitHub deployment workflow so source pushes do not create a second publication path. Keep any independently chosen test-only CI.
+3. Set the site's package scripts to `node ./node_modules/@tryvitris/website-harness/bin/vitris.js deploy --site . --environment production` for `deploy` and the same command with `--environment preview` for `deploy:preview`. Preservation sites must use preview for both. Keep quick publish separate and explicitly requested.
+4. Add the generated output paths listed above to `.gitignore`, preserving existing rules. Keep source and the lockfile in Git. Moving already tracked output to ignored status requires reviewing the site's index; an ignore rule alone does not untrack files.
+5. Authenticate with the site's own Cloudflare account, accept a direct-upload preview, then publish production only when requested. Check the receipt and hosted smoke result.
+
+See Cloudflare's [Direct Upload guide](https://developers.cloudflare.com/pages/get-started/direct-upload/) and [disabling automatic Git deployments](https://developers.cloudflare.com/pages/configuration/git-integration/#disable-automatic-deployments).
+
+### Optional hosted automation
+
+An operator may explicitly choose hosted builds. To use GitHub Actions, review and copy `deployment/github-actions.yml.example` into `.github/workflows/deploy.yml` and configure protected credentials. The example retains production/preview preflight and authenticated backend bundle signing where configured. Hosted CI uses the selected provider's allowance. Cloudflare Git integration is another opt-in alternative; its build must install Chromium and run the required site preflight before publication. Enable one publication path for each site.
 
 ## Optional backend Worker
 

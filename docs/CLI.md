@@ -23,6 +23,12 @@ node bin/vitris.js --help
 
 ## 2. Command Reference
 
+### `vitris admin setup|status|verify|grant`
+
+Prepare a branded sibling business admin with the pinned published `0.1.0-alpha.1` installer. `vitris admin setup --site SITE --dir SIBLING_ADMIN --domain admin.customer-domain.com --website HTTPS_SITE_ORIGIN --tenant EXISTING_TENANT_ID --backend-origin HTTPS_BACKEND --plan` writes a local plan. Review it, then repeat with `--apply` and dedicated environment `VITRIS_ADMIN_API_TOKEN`. Default grants are read-only; explicit `--lead-write` must be included in both steps to grant status updates. No cloud writes occur. Site creation accepts `--admin` to create instructions only.
+
+`vitris admin status --site SITE` reports local metadata. `vitris admin verify --site SITE --dir ADMIN` checks the actual backend contract, identities and stored records without exposing PII. `vitris admin grant --dir ADMIN --grants COMPLETE_MAP_FILE --out NEW_IGNORED_FILE` prepares a local hashed grant map while preserving other installations. See [ADMIN.md](ADMIN.md) for preservation rules, API semantics, secret stdin and explicit provisioning/authentication/DNS/deployment steps.
+
 ### `vitris doctor`
 Runs environment and preflight health checks.
 ```bash
@@ -195,14 +201,14 @@ vitris preview [--site <dir>] [--port <number>] [--dry-run]
 ---
 
 ### `vitris deploy`
-Builds a verified production bundle and deploys it to Cloudflare Pages.
+Builds and verifies locally, then directly uploads the exact staged bundle to Cloudflare Pages. This is the default site deployment path; it does not require GitHub Actions or Cloudflare-hosted builds. The CLI defaults to a preview, while new redesign sites' `npm run deploy` explicitly selects production and `npm run deploy:preview` selects a preview.
 ```bash
 vitris deploy [--site <dir>] [--provider cloudflare] [--environment preview|production] [--branch <branch>] [--quick] [--dry-run]
 ```
 Workflow:
 1. Scoped preflight check verifying Cloudflare credentials (`CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID` or `wrangler login`).
-2. Build verified static `dist/` bundle (aborts if build fails or is dirty).
-3. Executes `npx wrangler pages deploy dist --project-name=<slug>`.
+2. Build and verify the static `dist/` bundle locally, then stage its exact bytes (aborts if verification fails or source/output changes).
+3. Upload the staged bundle through Wrangler to the configured Pages project and environment; record the source, artifact and deployment identity.
 4. Executes automated remote smoke check against the deployed `*.pages.dev` URL.
 
 Quick publish: `vitris deploy --quick --environment production` rebuilds and uploads without graph gates, browser reviews, or launch preflight. New sites also include `npm run deploy:quick`. The CLI still defaults to preview; preservation sites support previews only and quick mode also skips screenshot comparisons. Compilation, Cloudflare credentials, staged-bundle integrity and the remote HTTP smoke check still apply. Receipts use policy `quick-publish-build-only-v1` and results report `verification: "build-only"`. Skipped reviews are never marked passed. Ordinary deployment retains full verification.

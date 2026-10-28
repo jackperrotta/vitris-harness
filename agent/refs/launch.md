@@ -1,13 +1,15 @@
-# Launch (optional)
-
-Only when the operator asks after `preview_ready`.
-
-1. `gh repo create ORG/SLUG --source . --private --push` (or push to existing remote).
-2. Set the real `launch.json.publicOrigin` and Cloudflare Pages build command to `npm ci && npx playwright install chromium && npm run build && npm run preflight`, output `dist`, production `main`. Set `VITRIS_SITE_ENVIRONMENT=production` on the production branch. Preview branches use `preview` and remain diagnostic. A direct `wrangler pages deploy` must follow a successful current preflight on the exact `dist` bytes.
-3. Register tenant in harness `/ops`: owner email (`launch.json` → `ownerEmail`), `pages_project`, `github_owner`, `github_repo`.
-4. Fill `launch.json` → `github`, `publicOrigin` when known.
-5. Owner admin: `{backendOrigin}/app/login` with `ownerEmail`.
-
-Do not merge secrets into git. Use `.env` for Cloudflare tokens.
+# Launch (optional)
+
+For a separately requested business admin at `admin.customer-domain.com`, read `admin.md` and the installed harness's `docs/ADMIN.md`. Use `vitris admin setup --plan` and reviewed `--apply`; verify the actual deployed backend with `vitris admin verify`. Local scaffolding does not enable collection/authentication or deploy infrastructure. Keep the sibling admin's Cloudflare provisioning and release separate from website publication.
+
+Only when the operator asks after `preview_ready`. Build and verify locally, then upload the exact staged bundle directly to Cloudflare Pages. GitHub stores source and history; hosted deployment automation is opt-in.
+
+1. Commit authored source and the lockfile to the customer's private repository when requested. Keep `dist/`, `agent/release-bundles/`, `agent/release-candidate.json`, `agent/releases/`, captures and credentials out of Git.
+2. Authenticate with the operator's own `npx wrangler login` and confirm the account. For a new site create a Pages Direct Upload project with `npx wrangler pages project create PROJECT`. Set `launch.json.pagesProject` and the real production `launch.json.publicOrigin`. Install Chromium locally for preflight. Run `npm run deploy:preview` and accept the hosted preview; run `npm run deploy` only for explicit production publication. Ordinary deployment builds and verifies locally, stages the exact checked files, uploads them, records their identity and checks the hosted URL. Preservation sites support temporary previews only.
+3. For existing Git-connected Pages projects, disable automatic production and preview branch deployments before local uploads. Review and disable existing automatic GitHub deployment workflows as well. Preserve project names, domains, launch configuration, authored files and workflow progress. Installing or upgrading the harness does not migrate package scripts or remote settings. See the installed harness's `docs/CLOUDFLARE.md`.
+4. Backend tenant registration, contact forms, administration sign-in, custom domains and DNS are separate configured features. If publishing through the authenticated backend Worker, retain the exact verified bundle signing and attestation contract and review that path before migration. Direct Pages uploads do not provision tenants or forms.
+5. Hosted automation is opt-in. `deployment/github-actions.yml.example` is inactive until an operator chooses and installs it under `.github/workflows/` with protected secrets. Cloudflare Git builds are another optional alternative. Enable one publication path per site; preserve preflight and bundle integrity checks in every ordinary path.
+
+Do not merge secrets into git. Use `.env` for Cloudflare tokens.
 
 For an explicitly requested quick publish, use `vitris deploy --quick --environment production` (`npm run deploy:quick` in newly scaffolded sites). This rebuilds and deploys without browser, graph or launch review gates. Compilation, Cloudflare credentials, staged-file integrity and an HTTP smoke check still run. Receipts record build-only verification. Preservation sites use `--environment preview` and also skip screenshot comparisons. Ordinary deployment retains full preflight.

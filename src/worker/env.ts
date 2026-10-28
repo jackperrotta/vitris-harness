@@ -1,4 +1,6 @@
 export interface Env {
+  /** Installation-keyed grants; only SHA-256 hashes, never raw admin tokens. */
+  ADMIN_CONNECTIONS?: string;
   DB: D1Database;
   KV: KVNamespace;
   R2: R2Bucket;

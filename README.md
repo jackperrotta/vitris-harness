@@ -6,6 +6,8 @@ The package is [`@tryvitris/website-harness`](https://www.npmjs.com/package/@try
 
 ## Create a website
 
+An optional separate business admin is available through `vitris admin setup|status|verify`; new-site `--admin` prepares follow-up instructions. See the [admin integration guide](docs/ADMIN.md) for pinned packages, local plan/apply, backend grants and the separate customer-account Cloudflare rollout.
+
 ```bash
 npx --package @tryvitris/website-harness@0.1.0-beta.8 vitris site create \
   --dir acme --slug acme --name "Acme Shop" \
@@ -49,6 +51,8 @@ The harness loads stage-specific instructions from [`agent/refs/`](agent/refs/) 
 For example, ask your agent to “improve the mobile layout,” “review the visitor journey,” or “adapt this template to the business.” The workflow includes additional guidance for template adaptation, copy, accessibility, SEO, browser checks, and launch. See the [workflow guide](agent/WORKFLOW.md) and [creative skill registry](src/agent/creative-skills.ts).
 
 ## Develop the harness
+
+Customer sites build and verify locally, then upload the exact finished bundle directly to Cloudflare Pages. Use `npm run deploy:preview` for a hosted preview and `npm run deploy` for explicitly requested production publication. GitHub stores source; hosted deployment automation is opt-in. See [Cloudflare setup](docs/CLOUDFLARE.md) for new sites and migration of existing sites.
 
 ```bash
 npm ci

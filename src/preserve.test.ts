@@ -28,7 +28,8 @@ test("preserve option requires a real source and rejects creative runs/productio
   assert.equal((await createSite({ dir: root, slug: "example", mode: "preserve", from: "https://example.com" })).ok, true);
   assert.equal(JSON.parse(readFileSync(join(root, "launch.json"), "utf8")).mode, "preserve");
   assert.match(JSON.parse(readFileSync(join(root, "package.json"), "utf8")).scripts.deploy, /--environment preview/);
-  const workflow = readFileSync(join(root, ".github/workflows/deploy.yml"), "utf8");
+  assert.equal(existsSync(join(root, ".github/workflows/deploy.yml")), false);
+  const workflow = readFileSync(join(root, "deployment/github-actions.yml.example"), "utf8");
   assert.match(workflow, /workflow_dispatch/); assert.doesNotMatch(workflow, /push:|production|wrangler pages deploy/);
   assert.equal((await runSite({ site: root, creativeProfile: true })).ok, false);
   assert.equal((await deploySite({ site: root, environment: "production", dryRun: true })).ok, false);

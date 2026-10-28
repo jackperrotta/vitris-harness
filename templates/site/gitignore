@@ -6,6 +6,9 @@ dist/
 .dev.vars
 scratch/
 agent/runs/traces/
+agent/release-bundles/
+agent/release-candidate.json
+agent/releases/
 .cursor/vitris-trace-hooks.json
 .cursor/hooks.json.vitris-backup
 .cursor/hooks.json.malformed

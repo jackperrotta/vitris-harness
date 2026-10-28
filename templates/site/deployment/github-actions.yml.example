@@ -1,9 +1,8 @@
-name: Deploy
-# Prefer connecting the Cloudflare Pages project to this GitHub repo
-# (Dashboard → Pages → project → Settings → Builds → Connect to Git).
-# Then every branch, including update-* preview branches from the Vitris
-# concierge, builds automatically. Keep this workflow only if you are NOT
-# using Pages Git integration (Direct Upload fallback).
+name: Deploy (optional GitHub Actions)
+# Local builds and direct uploads are the default: use npm run deploy locally.
+# This example does not run from deployment/. To opt into hosted CI, copy it to
+# .github/workflows/deploy.yml and configure your own protected secrets.
+# Enable only one automatic deployment path for each site.
 on:
   push:
     branches: [main]

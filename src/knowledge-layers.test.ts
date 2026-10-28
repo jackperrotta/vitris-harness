@@ -216,7 +216,7 @@ test("facts, creative freedom, and publication paths share the launch rule", () 
   assert.equal(creativeFinding({ kind: "novelty-unusable", usabilityDefect: true }).status, "fail");
   assert.equal(creativeFinding({ kind: "alternate-accessible", usabilityDefect: false }).status, "pass");
   const pkg = read("templates/site/package.json");
-  const workflow = read("templates/site/.github/workflows/deploy.yml");
+  const workflow = read("templates/site/deployment/github-actions.yml.example");
   const worker = read("src/worker/publish.ts");
   const cli = read("src/cli/deploy.ts");
   assert.match(pkg, /vitris-launch-preflight\.js --environment production/);

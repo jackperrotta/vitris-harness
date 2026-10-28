@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, mkdtempSync, readFileSync, unlinkSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from "node:fs";
 
 import { join, dirname, resolve } from "node:path";
 
@@ -93,6 +93,14 @@ export function verifyPackage(root: string, out = mkdtempSync(join(tmpdir(), "vi
     throw new Error('Installed starter omitted stage-scoped analytics guidance');
   }
   if (!existsSync(join(site, ".gitignore")) || !readFileSync(join(site, ".gitignore"), "utf8").includes(".env")) throw new Error("Installed starter is missing its Git ignore rules");
+  const sitePackage = JSON.parse(readFileSync(join(site, 'package.json'), 'utf8'));
+  const workflowDirectory = join(site, '.github/workflows');
+  if ((existsSync(workflowDirectory) && readdirSync(workflowDirectory).some(file => /\.ya?ml$/.test(file))) ||
+      !existsSync(join(site, 'deployment/github-actions.yml.example')) ||
+      sitePackage.scripts.deploy !== 'node ./node_modules/@tryvitris/website-harness/bin/vitris.js deploy --site . --environment production' ||
+      sitePackage.scripts['deploy:preview'] !== 'node ./node_modules/@tryvitris/website-harness/bin/vitris.js deploy --site . --environment preview') {
+    throw new Error('Installed starter must default to verified local builds and direct Cloudflare uploads with hosted automation opt-in');
+  }
   runCommand(process.execPath, [npm, "install", "--ignore-scripts", "--no-audit", "--no-fund"], site, join(out, "site-install.log"));
 
   // The fresh consumer can resolve a newer Playwright than this repo's lockfile.
@@ -116,6 +124,16 @@ export function verifyPackage(root: string, out = mkdtempSync(join(tmpdir(), "vi
   const launchPath=join(site,"launch.json"),launch=JSON.parse(readFileSync(launchPath,"utf8"));
 
   launch.backendOrigin="https://kernel.example.invalid";save(launchPath,launch); // Compile the consent route without making network requests.
+
+  // Exercise installer resolution through the bundled CLI in a fresh consumer.
+  const adminDir = join(out, 'business-admin');
+  const adminArgs = ['admin', 'setup', '--site', site, '--dir', adminDir, '--domain', 'admin.synthetic.example', '--website', 'https://www.synthetic.example', '--tenant', 'synthetic-tenant', '--backend-origin', 'https://backend.synthetic.example'];
+  runCommand(process.execPath, [join(installed, 'bin/vitris.js'), ...adminArgs, '--plan'], install, join(out, 'admin-plan.log'));
+  const appliedAdmin = spawnSync(process.execPath, [join(installed, 'bin/vitris.js'), ...adminArgs, '--apply'], { cwd: install, encoding: 'utf8', windowsHide: true, env: { ...process.env, VITRIS_ADMIN_API_TOKEN: 'synthetic_package_check_credential_1234567890' } });
+  writeFileSync(join(out, 'admin-apply.log'), `${appliedAdmin.stdout || ''}${appliedAdmin.stderr || ''}`);
+  if (appliedAdmin.status !== 0 || !existsSync(join(adminDir, 'admin.config.json')) || !existsSync(join(installed, 'docs/ADMIN.md')) || !existsSync(join(site, 'agent/refs/admin.md'))) throw Error('Installed admin setup or documentation missing; see admin-apply.log');
+  const afterAdmin = JSON.parse(readFileSync(launchPath, 'utf8'));
+  if (afterAdmin.backendOrigin !== launch.backendOrigin || JSON.stringify(afterAdmin.forms) !== JSON.stringify(launch.forms)) throw Error('Admin setup changed website backend or forms');
 
   writeFileSync(join(site,"pages/motion.html"), '<h1>Packaged motion smoke</h1><div style="height:1100px"></div><h2 id="packaged-proof" data-motion="entrance">Readable proof</h2>');
 

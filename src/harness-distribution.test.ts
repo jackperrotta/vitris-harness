@@ -57,6 +57,16 @@ test('new starter pins the harness version, escapes business names, and starts w
   assert.equal(existsSync(join(site, 'agent/runs')), false);
   assert.match(readFileSync(join(site, '.gitignore'), 'utf8'), /node_modules\//);
   assert.equal(existsSync(join(site, 'gitignore')), false);
+  assert.equal(pkg.scripts.deploy, 'node ./node_modules/@tryvitris/website-harness/bin/vitris.js deploy --site . --environment production');
+  assert.equal(pkg.scripts['deploy:preview'], 'node ./node_modules/@tryvitris/website-harness/bin/vitris.js deploy --site . --environment preview');
+  assert.doesNotMatch(pkg.scripts.deploy, /--quick|wrangler pages deploy/);
+  const workflowDirectory = join(site, '.github/workflows');
+  assert.deepEqual(existsSync(workflowDirectory) ? readdirSync(workflowDirectory).filter(file => /\.ya?ml$/.test(file)) : [], []);
+  const optionalWorkflow = readFileSync(join(site, 'deployment/github-actions.yml.example'), 'utf8');
+  assert.match(optionalWorkflow, /--project-name=workshop/);
+  assert.doesNotMatch(optionalWorkflow, /__SLUG__/);
+  const ignore = readFileSync(join(site, '.gitignore'), 'utf8');
+  for (const generated of ['dist/', 'agent/release-bundles/', 'agent/release-candidate.json', 'agent/releases/']) assert.ok(ignore.split(/\r?\n/).includes(generated), generated);
 });
 
 test('legacy create options remain usable and local dependencies are explicit', async () => {

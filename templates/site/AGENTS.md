@@ -1,5 +1,7 @@
 # __NAME__ site agent
 
+For a requested separate business admin, read `agent/refs/admin.md` and the installed harness's `docs/ADMIN.md`. Site creation `--admin` prepares next steps only. Use `vitris admin setup --plan` then reviewed `--apply` for a sibling installation; cloud provisioning, authentication and deployment are separate. Preserve existing forms, tenants, credentials and workflow progress; never deploy a shared backend as a setup side effect.
+
 This site uses the Vitris active-agent workflow. The active local agent executes workflow stages directly. The harness prepares context in `agent/CURRENT.md`, executes deterministic tools, evaluates artifacts, and advances the graph.
 
 ## Active-Agent Loop
@@ -30,6 +32,6 @@ When making later-life changes in Cursor or chat:
 - Never mark checks passed by hand. Skip deployment review gates only when the user explicitly requests quick publish, using `vitris deploy --quick` (production requires `--environment production`); record this as build-only verification.
 - Site-specific preferences belong in `agent/request.json` or site memory.
 - Plan managed-kit updates with `vitris upgrade --site . --plan`, inspect conflicts, then use `--apply`. `npm run refresh-agent` is a compatibility alias. Package defaults are selected only when their recorded hashes match `agent/managed-files.json`; place site-specific instructions under `agent/overrides/`. Unknown copied-kit edits remain conflicts. `launch.json`, authored files, `agent/STATE.json`, preparations, leases, and receipts are preserved.
-- Cloudflare deployment is explicit via `vitris deploy` (or `wrangler deploy`).
+- Local builds and direct Cloudflare Pages uploads are the default. Use `npm run deploy:preview` for a hosted preview and `npm run deploy` only for explicitly requested production publication. Both run local verification and upload the exact staged bundle. Keep `dist/`, release bundles, receipts, and credentials out of Git. Do not enable GitHub Actions or Cloudflare Git builds unless the operator chooses hosted automation; `deployment/github-actions.yml.example` is inactive by default. Existing sites require review of their workflows and Cloudflare branch-deployment settings before migration.
 
 Two identical failures block automatic continuation. Fix the cause and use an explicit restart with a reason; ordinary resume does not reset attempts or spend. Follow parent design-stage resume instructions exactly. Active-agent reviews and independent-model reviews are labeled separately; neither implies human approval.

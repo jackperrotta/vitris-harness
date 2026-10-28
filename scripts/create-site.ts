@@ -6,6 +6,7 @@ import { siteInputsFromArgv } from '../src/agent/site-inputs.ts';
 const arg = (flag: string) => { const i = process.argv.indexOf(flag); return i < 0 ? undefined : process.argv[i + 1]; };
 const usage = `Usage: vitris-create-site --dir ../acme --slug acme [--name "Acme Shop"] [--from URL | --blank]
   --owner EMAIL         Owner login email
+  --admin               Prepare optional sibling admin instructions (no cloud writes)
   --template ID         Catalog ID, name, or hosted template URL; continue automatically
   --template-release R  Optional catalog revision
   --content TEXT        Additional business content or instructions
@@ -24,7 +25,7 @@ async function main() {
   const result = await createSite({ dir: arg('--dir')!, slug: arg('--slug')!, name: arg('--name'), from: from || undefined, blank,
     ...siteInputsFromArgv(process.argv),
     mode: arg('--mode') as 'redesign' | 'preserve' | undefined,
-    owner: arg('--owner'), backendOrigin: arg('--backend-origin') || arg('--kernel-origin'), harnessSpec: arg('--harness') || arg('--kernel') });
+    admin: process.argv.includes('--admin'), owner: arg('--owner'), backendOrigin: arg('--backend-origin') || arg('--kernel-origin'), harnessSpec: arg('--harness') || arg('--kernel') });
   if (!result.ok) throw new Error(result.error);
   console.log(`${result.summary}\nOpen that site directory in your coding agent, run npm install and npx playwright install chromium, then npm run go. The workflow stops at a local preview; launch is separate.`);
 }

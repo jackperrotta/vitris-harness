@@ -1,4 +1,5 @@
 import type { Env } from "./env.ts";
+import { handleAdmin } from './admin.ts';
 import { handleApi } from "./surfaces/api.ts";
 import { handleApp } from "./surfaces/app.ts";
 import { handleOps } from "./surfaces/ops.ts";
@@ -16,6 +17,7 @@ export async function route(env: Env, request: Request): Promise<Response> {
   const path = url.pathname;
   if (isPreviewHost(env,request)) return handlePreview(env,request);
   if (path.startsWith('/preview/')) return previewHandoff(env,request);
+  if (path.startsWith('/api/admin/')) return handleAdmin(env, request);
 
   const approve = await handleApproveReject(env, request);
   if (approve) return approve;

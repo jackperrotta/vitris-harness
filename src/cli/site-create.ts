@@ -16,6 +16,8 @@ export type CreateSiteOptions = SiteInputOptions & {
   dir: string;
   slug: string;
   name?: string;
+  /** Opt-in instructions only; never provision during site creation. */
+  admin?: boolean;
   from?: string;
   mode?: "redesign" | "preserve";
   blank?: boolean;
@@ -142,11 +144,17 @@ export async function createSite(opts: CreateSiteOptions): Promise<CommandResult
   launch.publicOrigin = "";
   writeFileSync(launchPath, `${JSON.stringify(launch, null, 2)}\n`);
   if (mode === "preserve") {
-    writeFileSync(join(dest, "README.md"), `# ${name}\n\nPreserved custom website from ${fromArg}.\n\n1. npm install\n2. npx playwright install chromium\n3. npm run go\n4. npm run preview\n5. npm run deploy (temporary Cloudflare preview)\n\nCustom source: preserved/. Verification: agent/reviews/preserve.json. See AGENTS.md and the installed harness docs/PRESERVE.md. Run vitris forms inspect and vitris forms setup to register and connect contact forms; backendOrigin alone does not enable submission or notifications. See docs/CONTACT-FORMS.md.\n`);
-    writeFileSync(join(dest, "AGENTS.md"), `# ${name} preservation\n\nRun npm run go to capture and verify the existing client-facing site. Keep its appearance, copy, routes, and interactions. Custom HTML, CSS, assets, and runtime live in preserved/. No redesign, design-system injection, or creative graph is used while launch.json mode is preserve.\n\nRepair source in preserved/ when agent/reviews/preserve.json reports a failure; run npm run go again. Never change reference screenshots or hashes to make a check pass. Do not overwrite source by recapturing. onboarding/preserve.json records the source and captured routes. Contact forms require explicit registration and public launch.json forms bindings. backendOrigin alone does not enable delivery. Default previews show a notice without submitting. See docs/CONTACT-FORMS.md.\n\nUse npm run deploy for a temporary Cloudflare preview after verification. Production and customer domains are outside this mode. Scaffold a later redesign separately from the same source URL.\n`);
+    writeFileSync(join(dest, "README.md"), `# ${name}\n\nPreserved custom website from ${fromArg}.\n\n1. npm install\n2. npx playwright install chromium\n3. npm run go\n4. npm run preview\n5. npm run deploy (build and verify locally, then upload a temporary Cloudflare preview)\n\nLocal builds and direct uploads are the default. GitHub stores source; no deployment workflow runs automatically. Keep dist/ and release bundles out of Git.\n\nCustom source: preserved/. Verification: agent/reviews/preserve.json. See AGENTS.md and the installed harness docs/PRESERVE.md. Run vitris forms inspect and vitris forms setup to register and connect contact forms; backendOrigin alone does not enable submission or notifications. See docs/CONTACT-FORMS.md.\n`);
+    writeFileSync(join(dest, "AGENTS.md"), `# ${name} preservation\n\nRun npm run go to capture and verify the existing client-facing site. Keep its appearance, copy, routes, and interactions. Custom HTML, CSS, assets, and runtime live in preserved/. No redesign, design-system injection, or creative graph is used while launch.json mode is preserve.\n\nRepair source in preserved/ when agent/reviews/preserve.json reports a failure; run npm run go again. Never change reference screenshots or hashes to make a check pass. Do not overwrite source by recapturing. onboarding/preserve.json records the source and captured routes. Contact forms require explicit registration and public launch.json forms bindings. backendOrigin alone does not enable delivery. Default previews show a notice without submitting. See docs/CONTACT-FORMS.md.\n\nUse npm run deploy to build and verify locally and directly upload a temporary Cloudflare preview. Keep dist/ and release bundles out of Git. Hosted automation is opt-in; deployment/github-actions.yml.example is inactive by default. Production and customer domains are outside this mode. Scaffold a later redesign separately from the same source URL.\n`);
   }
 
-  const workflow = join(dest, ".github", "workflows", "deploy.yml");
+  if (mode === 'preserve') {
+    const instructions = join(dest, 'AGENTS.md');
+    writeFileSync(instructions, readFileSync(instructions, 'utf8') + '\nFor a requested sibling business admin, read agent/refs/admin.md and the installed harness docs/ADMIN.md. Use vitris admin setup --plan then reviewed --apply. Preserve current forms and backend identity; cloud provisioning, authentication and deployment remain separate.\n');
+  }
+
+  // Hosted deployment is an opt-in example, never an automatic new-site job.
+  const workflow = join(dest, "deployment", "github-actions.yml.example");
   if (existsSync(workflow)) {
     if (mode === "preserve") {
       writeFileSync(workflow, `name: Preserve preview\non: workflow_dispatch\njobs:\n  preview:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 24\n      - run: npm ci\n      - run: npx playwright install --with-deps chromium\n      - run: npm run deploy\n        env:\n          CLOUDFLARE_API_TOKEN: \${{ secrets.CLOUDFLARE_API_TOKEN }}\n          CLOUDFLARE_ACCOUNT_ID: \${{ secrets.CLOUDFLARE_ACCOUNT_ID }}\n`);
@@ -165,6 +173,9 @@ export async function createSite(opts: CreateSiteOptions): Promise<CommandResult
     copyMarkdown: gathered.copyMarkdown,
   });
   persistSiteInputs(dest, inputs);
+  if (opts.admin) {
+    writeFileSync(join(dest, 'ADMIN-SETUP.md'), `# Optional business admin\n\nRead node_modules/@tryvitris/website-harness/docs/ADMIN.md and agent/refs/admin.md.\n\nPrepare a separate sibling installation after confirming the exact website origin, existing tenant ID and backend origin:\n\nvitris admin setup --site . --dir ../${slug}-admin --domain admin.CUSTOMER_DOMAIN --website https://www.CUSTOMER_DOMAIN --tenant EXISTING_TENANT_ID --backend-origin https://BACKEND --plan\n\nReview artifacts/admin/setup-plan.json, then repeat with --apply and a dedicated VITRIS_ADMIN_API_TOKEN in the operator environment. This opt-in has created instructions only. No backend, grant, account, collection, authentication, DNS or cloud resources have been changed.\n`);
+  }
 
   const graphPath = join(dest, "agent", "graph.yaml");
   if (existsSync(graphPath)) {
@@ -179,7 +190,7 @@ export async function createSite(opts: CreateSiteOptions): Promise<CommandResult
   return {
     ok: true,
     exitCode: EXIT_CODES.SUCCESS,
-    summary: `Created site ${slug} at ${dest}`,
+    summary: `Created site ${slug} at ${dest}${opts.admin ? '; optional admin next steps: ADMIN-SETUP.md' : ''}`,
     data: { dest, slug, name },
   };
 }
