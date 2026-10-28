@@ -14,6 +14,7 @@ import { assertRequestId, type ChangeOrigin, type ChangePlanRecord, type ChangeR
 import { sourceRevision } from "../engine/revision.ts";
 import { parseFragment } from "parse5";
 import { elementMatchesIdentity } from "../editing/identity.ts";
+import { hasRefinementPlaceholder, settleRefinementImages } from "./refine-document-checks.ts";
 
 export const CHANGE_SCOPES = ["business", "copy", "pages", "direction", "media"] as const;
 export type ChangeScope = (typeof CHANGE_SCOPES)[number];
@@ -1745,7 +1746,7 @@ function verifyFulfillment(root: string, request: ChangeRequest, baseline: Refin
   // Check for unresolved placeholder tokens
   for (const file of htmlFiles) {
     const content = readFileSync(file, "utf8");
-    if (/\[TODO\b|\[INSERT\b|\[TBD\b|\bundefined\b|\bNaN\b/i.test(content)) {
+    if (hasRefinementPlaceholder(content)) {
       errors.push(`Unresolved placeholder content found in ${file.slice(distDir.length).replace(/\\/g, "/")}`);
     }
     if (/<h[1-6]>\s*<\/h[1-6]>/i.test(content)) {
@@ -2018,6 +2019,7 @@ export async function verifyRefine(opts: {
             const url = `http://127.0.0.1:${address.port}${route === "/" ? "" : route}`;
             try {
               await page.goto(url, { waitUntil: "domcontentloaded", timeout: 15000 });
+              await settleRefinementImages(page);
               const observed = await page.evaluate(`(() => {
                 const errors = [];
                 if (document.documentElement.scrollWidth > innerWidth + 2) errors.push('Live browser horizontal overflow detected at ${width}px');
