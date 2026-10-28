@@ -3,11 +3,11 @@ import {chromium,type Page} from 'playwright';
 import {THEME_RELEASE,VISUAL_THEMES} from '../agent/theme-library.ts';
 import {BROWSE_METADATA} from '../agent/theme-browse.ts';
 export async function galleryDiagnostics(page:Page){
- return page.evaluate(()=>{const w=globalThis as any;return {url:w.location.pathname,canvases:[...w.document.querySelectorAll('.canvas,.preview')].map((e:any)=>({ready:e.getAttribute('data-ready'),text:(e.textContent||'').slice(0,120)})),frames:[...w.document.querySelectorAll('iframe')].map((frame:any)=>{
-  const src=(frame.getAttribute('src')||'').split(/[?#]/)[0];
-  try{return {src,state:frame.contentDocument?.readyState,fonts:frame.contentDocument?.fonts.status,pendingImages:[...(frame.contentDocument?.images||[])].filter((i:any)=>!i.complete).map((i:any)=>new URL(i.src,w.location.href).pathname)};}
-  catch{return {src,state:'cross-origin'};}
- })};}).catch(()=>({state:'unavailable'}));
+ const shell=await page.evaluate(()=>{const w=globalThis as any;return {url:w.location.pathname,canvases:[...w.document.querySelectorAll('[data-ready]')].map((e:any)=>({ready:e.getAttribute('data-ready'),text:(e.textContent||'').slice(0,120)}))};}).catch(()=>({state:'unavailable'}));
+ // Sandboxed previews have opaque origins; inspect them through Playwright,
+ // rather than treating an inaccessible parent-side contentDocument as empty.
+ const frames=await Promise.all(page.frames().filter(f=>f!==page.mainFrame()).map(async frame=>({src:frame.url().split(/[?#]/)[0],...await frame.evaluate(()=>{const w=globalThis as any,b=w.document.body,r=b?.getBoundingClientRect();return {state:w.document.readyState,fonts:w.document.fonts.status,width:r?.width,height:r?.height,text:b?.innerText?.slice(0,180),images:[...w.document.images].map((i:any)=>({complete:i.complete,width:i.naturalWidth,path:new URL(i.src,w.location.href).pathname,loading:i.loading}))};}).catch(()=>({state:'unavailable'}))})));
+ return {shell,frames};
 }
 /** Selection and browse-state isolation against a real loopback server. */
 export async function checkGalleryBrowse(url:string){

@@ -26,6 +26,8 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: npm run typecheck
       - run: npm run build:cli
+      - name: Check gallery readiness before the full browser suite
+        run: node --experimental-strip-types --test "--test-name-pattern=browse, shortlist" src/theme-selection.test.ts
       - run: npm test
       - run: npm run verify:package
       - name: Install verified secret scanner

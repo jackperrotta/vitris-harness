@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, writeFileSync, symlinkSync } from "node:fs";
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, writeFileSync, symlinkSync, realpathSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { basename, join, resolve } from "node:path";
 import { choice } from "@typesafe-ai/sdk";
@@ -1480,7 +1480,8 @@ test('linked workspace roots retain evidence access and reject escaping child li
   symlinkSync(outside, join(actual, 'escape'), linkType);
   assert.equal(verifyQuoteInSource(linked, 'home.md', 'documented evidence').quoteFound, true);
   assert.equal(isPathConfined(linked, join(linked, 'onboarding/copy/home.md')).safe, true);
-  assert.equal(isPathConfined(linked, join(actual, 'onboarding/copy/home.md')).safe, true);
+  const canonicalFile = realpathSync.native(join(actual, 'onboarding/copy/home.md'));
+  assert.equal(isPathConfined(linked, canonicalFile).safe, true);
   assert.equal(isPathConfined(linked, join(linked, 'escape/secret.txt')).safe, false);
   assert.equal(isPathConfined(linked, '../outside/secret.txt').safe, false);
 });
