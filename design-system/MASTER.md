@@ -74,3 +74,7 @@ New authored sites and reauthored routes compose the entire temporal journey wit
 Used-component CSS only, islands only when needed. Give the actual LCP image priority when there is one; lazy-load images outside the initial view. Avoid `transition: all`.
 
 New builds use original Vitris SVG icons through paired `<vitris-icon name="phone"></vitris-icon>` tags. Read `agent/refs/icons.md`; use `vitris-icons inspect NAME --json` for supported families and sizing. Choose by meaning, keep a coherent family and visible service labels, and verify actual desktop/mobile rendering. The compiler emits only the geometry used by each route, with no client catalog. Studio industry support is curated to eight symbols; never synthesize unavailable variants.
+
+## Shared typography for new sites
+
+New redesigns enable site.json typography version 1. Follow agent/refs/typography.md: shared size, weight, leading, tracking and font roles in theme/defaults.json; 18px body, 16px controls, 14px supporting text and a 12px rendered floor. Ordinary H3s share one responsive treatment across pages. Named, justified role variants preserve deliberate hierarchy. Browser acceptance checks every authored route and exposed interaction states. Historical sites retain their styles until an explicit reviewed adoption; kit upgrades never enable this automatically.

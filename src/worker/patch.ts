@@ -27,7 +27,8 @@ export type PatchResult = {
   changedPaths: string[];
 };
 
-const THEME_KEYS = new Set<keyof ThemeTokens>([
+type TextThemeKey = Exclude<keyof ThemeTokens, 'typography'>;
+const THEME_KEYS = new Set<TextThemeKey>([
   "colorBg",
   "colorText",
   "colorMuted",
@@ -116,14 +117,14 @@ function applySet(
   theme: ThemeTokens,
   op: Extract<PatchOp, { op: "set" | "setList" }>,
 ): "content" | "theme" {
-  const target = op.target || (THEME_KEYS.has(parsePointer(op.path)[0] as keyof ThemeTokens) && !op.path.includes(".")
+  const target = op.target || (THEME_KEYS.has(parsePointer(op.path)[0] as TextThemeKey) && !op.path.includes(".")
     ? "theme"
     : "content");
   const parts = parsePointer(op.path);
   if (parts.length === 0) throw new Error("Empty path");
 
   if (target === "theme") {
-    const key = parts[0] as keyof ThemeTokens;
+    const key = parts[0] as TextThemeKey;
     if (!THEME_KEYS.has(key) || parts.length !== 1) {
       throw new Error(`Theme path not allowed: ${op.path}`);
     }

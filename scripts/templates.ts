@@ -6,6 +6,9 @@ import {validateManifest} from '../src/agent/theme-page-manifest.ts';
 import type {CloudEntry} from '../src/agent/theme-cloud.ts';
 import {themeHash} from '../src/agent/theme-library.ts';
 import {releaseRank} from '../src/agent/theme-cloud.ts';
+import { validateTypography } from '../src/typography.ts';
+import { verifyTemplateTypography } from '../src/agent/template-typography.ts';
+import { renderCloudPage, type CloudManifest } from '../src/template-cloud/render.ts';
 const argv=process.argv.slice(2),command=argv[0],arg=(key:string)=>argv[argv.indexOf(key)+1],origin=process.env.VITRIS_TEMPLATE_ORIGIN||'https://vitris-templates.jack-896.workers.dev';
 const json=(path:string)=>JSON.parse(readFileSync(path,'utf8'));
 const confined=(root:string,path:string)=>{const resolved=realpathSync(resolve(root,path));if(!resolved.startsWith(root+sep))throw Error('Bundle path escapes its staging directory');return resolved;};
@@ -53,9 +56,16 @@ if(command==='gallery'){
  }
  const activeRelease=initial.catalog.release||initial.catalog.entries.map((e:any)=>e.theme.release).sort((a:string,b:string)=>releaseRank(b)-releaseRank(a))[0];
  if(releaseRank(entry.theme.release)<=releaseRank(activeRelease))throw Error('New and revised templates require a release newer than the active catalog');
+ const typeErrors=validateTypography(entry.theme.tokens.typography,true);if(typeErrors.length)throw Error(typeErrors.join('\n'));
  // Assets must already use immutable cloud addresses inside the authored page recipes.
  const assets=draft.assets||[];await pool(assets,async(a:any)=>{const file=confined(root,a.localFile),bytes=readFileSync(file);if(sha(bytes)!==a.sha256||bytes.length!==a.bytes)throw Error('Asset integrity failure '+a.id);const key=`templates/assets/${a.sha256}/${a.file}`;await putVerified(key,bytes,a.mime);a.url=origin+'/'+key;
   if(a.licenseFile){const license=readFileSync(confined(root,a.licenseLocalFile));if(sha(license)!==a.licenseHash)throw Error('Font license integrity failure');const key=`templates/objects/${sha(license)}/${a.licenseFile}`;await putVerified(key,license,'text/plain');a.licenseUrl=origin+'/'+key;}});
+ const {chromium:typographyChromium}=await import('playwright');const typographyBrowser=await typographyChromium.launch();
+ try {
+  const manifest={...entry,version:1,id:entry.theme.id,release:entry.theme.release,revision:'local-validation',name:entry.theme.name,tokens:entry.theme.tokens} as unknown as CloudManifest;
+  const documents=entry.pages.map(p=>{const input=draft.recipes[p.pageId];if(!input)throw Error('Missing recipe '+p.pageId);const recipe=json(confined(root,input));return {path:p.path,original:renderCloudPage(recipe,manifest,{name:entry.business,colors:[],original:true},origin),brand:renderCloudPage(recipe,manifest,{name:'Typography verification',colors:['#365e85']},origin)};});
+  await verifyTemplateTypography(typographyBrowser,entry.theme.tokens,documents);
+ } finally {await typographyBrowser.close();}
  const sourceFiles:any[]=[];
  async function preserve(dir:string){for(const f of readdirSync(dir,{withFileTypes:true})){const file=join(dir,f.name),s=lstatSync(file);if(s.isSymbolicLink())throw Error('Template staging directories must not contain junctions or symlinks');if(s.isDirectory())await preserve(file);else{const bytes=readFileSync(file),name=relative(root,file).replaceAll('\\','/'),key=`templates/archives/${sha(bytes)}/${name}`;await putVerified(key,bytes,'application/octet-stream');sourceFiles.push({path:name,key,sha256:sha(bytes),bytes:bytes.length});}}}
  await preserve(root);

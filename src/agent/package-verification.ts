@@ -111,6 +111,18 @@ export function verifyPackage(root: string, out = mkdtempSync(join(tmpdir(), "vi
 
   runCommand(process.execPath, ["--input-type=module", "-e", "const api = await import('@tryvitris/website-harness/cli/api'); if (typeof api.createSite !== 'function' || typeof api.migrateSite !== 'function') process.exit(1); await import('@tryvitris/website-harness');"], site, join(out, "api-import.log"));
 
+  runCommand(process.execPath, ['--input-type=module', '-e', `
+    import {buildSite} from '@tryvitris/website-harness';
+    import {readFile} from 'node:fs/promises';
+    import {resolve} from 'node:path';
+    const outDir=resolve('booking-package-smoke');
+    await buildSite({site:{name:'Packaged booking smoke'},pages:[{path:'/',file:'index.html',title:'Home',body:'<main><h1>Booking smoke</h1></main>'}],catalog:{},theme:{},publicOrigin:'https://website.example.test',scheduling:{version:1,enabled:true,apiOrigin:'https://admin.example.test',siteId:'site',installationId:'installation',route:'/book'},outDir});
+    const html=await readFile(resolve(outDir,'book/index.html'),'utf8');
+    if(!html.includes('data-vitris-booking-config')||!html.includes('https://admin.example.test'))throw Error('Packed booking component missing');
+    const manage=await readFile(resolve(outDir,'book/manage/index.html'),'utf8');
+    if(!manage.includes('data-vitris-customer-config')||!manage.includes('data-vitris-customer-management')||!manage.includes('content="noindex"'))throw Error('Packed customer management page missing');
+  `], site, join(out, 'booking-component.log'));
+
   // Scaffolding deliberately leaves pages empty. Author an actual smoke input before testing compilation.
 
   mkdirSync(join(out, "site/pages"), {recursive: true});

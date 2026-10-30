@@ -75,6 +75,10 @@ vitris site create --dir ../acme --slug acme --from https://old-site.example --t
 
 Open the new site in your coding agent and continue the prepare/work/complete loop with `npm run go` until local preview is ready. The same inputs work with `vitris-create-site` and `npm run create-site -- ...`. When the initial chat already names a template and supplies content, the agent should pass them at setup and continue the workflow without asking the user to select that template again.
 
+New redesign sites enable `site.json.typography: {"version":1}` and ship concrete shared roles in `theme/defaults.json`. Defaults are 18px body, 16px controls/navigation, 14px supporting text and one responsive 24–32px H3 treatment. The 12px rendered minimum is a harness quality policy. See [the typography guide](../agent/refs/typography.md) for role tokens, named variants, font weights and reviewed adoption on an existing site. Existing sites and preserve-mode captures retain their current rendering; upgrading the harness does not opt them in.
+
+For enabled sites, `npm run verify:browser -- --site .` records typography evidence in `agent/reviews/browser.json`, checks every authored route even if omitted from the storyboard, and blocks completion on undersized text or inconsistent roles. Checks cover resting text, supported disclosures/tabs and form validation/results. Refinement verification retains this policy and cannot skip browser checks. New template publication validates every original/branded route before changing the catalog. Custom widgets and text embedded in images still need visual review.
+
 ---
 
 ### `vitris run`
@@ -306,3 +310,5 @@ const refineResult = await refineSite({
 ### Reproducible harness checks and trials
 
 `npm run test:freeze` runs typecheck, CLI build, the full tests, a packed install/build smoke check, and source archive round-trip verification. It writes a new baseline under `artifacts/official-test/`. See [official test protocol](OFFICIAL-TEST.md) for trial creation, active-agent continuation, spend limitations, and outcome labeling.
+
+For explicitly requested appointment booking, read [SCHEDULING.md](SCHEDULING.md). Public `launch.json.scheduling` metadata enables the standard route on compatible source/release builds; no scheduling setup CLI, remote migration or production activation is implied.

@@ -40,3 +40,5 @@ During refinement, resolve the recorded gaps one by one: fill, revise or ask bef
 For directions defined by movement, follow [the temporal comparison contract](template-motion.md). Keep its plan, captures, critic observations and actual human feedback distinct.
 
 An answer may include a durable `operationId` to distinguish a new instruction from a replay. Exact retries do not change history; a new explicit reversal becomes the current response for that proposal. Refine feedback returns ownership to representative authoring through normal workflow invalidation. A removal request returns to reference-analysis to revise the exact mapped proposal and record the existing instruction. These are agent repairs, not new unanswered human questions. Counter history and prior responses remain intact.
+
+For sites with typography version 1, load `typography.md`. Establish concrete shared roles before authoring, reuse sizes and weights across routes, retain the 12px rendered floor, and repair browser typography findings before acceptance. Template identity does not waive this policy.

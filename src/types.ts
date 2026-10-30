@@ -23,6 +23,8 @@ export type SiteConfig = {
   scrollMotion?: { version: 1; policy: "enabled" | "off" };
   /** New authoring contract; historical sites omit it, managed upgrade never adds it. */
   motionComposition?: { version: 2; routes: "all-authored" | string[] };
+  /** Shared type roles and rendered acceptance; omitted on historical sites. */
+  typography?: { version: 1 };
   /** Design-run instrumentation; omitted from ordinary single-site authoring. */
   designRun?: { runId?: string; candidateId?: string };
   /** Optional LocalBusiness JSON-LD hints. Address, not email alone, selects LocalBusiness. */
@@ -56,13 +58,14 @@ export type ThemeTokens = {
   /** Pill radius for `.btn` / `.btn-outline`. Cards keep `radius`. */
   radiusPill: string;
   maxWidth: string;
-  /** Opt-in type scale and rhythm. Omitted values retain legacy compiler defaults. */
+  /** Legacy scale and rhythm. Typography v1 resolves steps 0–3/5 from shared roles instead. */
   typeStep0?: string;
   typeStep1?: string;
   typeStep2?: string;
   typeStep3?: string;
   typeStep4?: string;
   typeStep5?: string;
+  typography?: import('./typography.ts').TypographySystem;
   sectionY?: string;
 };
 

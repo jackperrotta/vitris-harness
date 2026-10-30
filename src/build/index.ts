@@ -1,3 +1,9 @@
+import {managementJs} from '../scheduling/management.ts';
+import {schedulingConnection, bookingOrigin, bookingPage} from '../scheduling/config.ts';
+import type {SchedulingConnection} from '../scheduling/config.ts';
+import {bookingJs} from '../scheduling/widget.ts';
+import {bookingCss} from '../scheduling/styles.ts';
+import {escapeHtml} from '../html.ts';
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { join, relative } from "node:path";
 import { createHash } from 'node:crypto';
@@ -31,6 +37,7 @@ export type BuildSiteInput = {
   themeHref?: string;
   publicOrigin?: string;
   forms?: PublicForm[];
+  scheduling?: SchedulingConnection;
   webAnalyticsToken?: string;
 };
 
@@ -128,7 +135,22 @@ export async function buildSite(input: BuildSiteInput): Promise<string[]> {
   const themeHref = input.themeHref ?? "/theme.css";
   const envName = process.env.VITRIS_SITE_ENVIRONMENT;
   const site: SiteConfig = envName === "preview" || envName === "production" ? { ...input.site, environment: envName } : input.site;
-  const compiled = compileAllPages(site, input.pages, input.catalog, backendOrigin);
+  const scheduling = schedulingConnection(input.scheduling);
+  const booking = scheduling?.enabled ? scheduling : undefined;
+  const pages = input.pages.map(page => ({...page}));
+  if (booking) {
+    bookingOrigin(input.publicOrigin);
+    const existing = pages.find(page => page.path === booking.route);
+    if (existing && !/data-vitris-booking(?:[\s=>])/.test(existing.body)) throw new Error('The booking route already exists. Add the standard data-vitris-booking mount explicitly or choose another route.');
+    if (!existing) pages.push({path: booking.route, file: booking.route.slice(1) + '/index.html', title: 'Book an appointment', indexing: 'noindex', body: bookingPage(site.name)});
+    const manageRoute = booking.route + '/manage';
+    const management = pages.find(page => page.path === manageRoute);
+    if (management && !/data-vitris-customer-management(?:[\s=>])/.test(management.body)) throw new Error('The customer management route already exists. Add its standard mount or choose another booking route.');
+    if (management) management.indexing = 'noindex';
+    else pages.push({path: manageRoute, file: manageRoute.slice(1) + '/index.html', title: 'Manage your appointment', indexing: 'noindex', body: `<header class="vb-site-header"><a href="/">${escapeHtml(site.name)}</a></header><main class="vb-page"><p class="vb-eyebrow">APPOINTMENTS</p><h1>Manage your appointment</h1><div data-vitris-customer-management></div></main>`});
+    for (const page of pages) if (page.path !== booking.route && /data-vitris-booking(?:[\s=>])/.test(page.body)) throw new Error('The standard booking mount belongs only on the configured booking route.');
+  } else if (pages.some(page => /data-vitris-booking(?:[\s=>])/.test(page.body))) throw new Error('A booking mount requires an explicit scheduling connection');
+  const compiled = compileAllPages(site, pages, input.catalog, backendOrigin);
   const pageAssets: Record<string, { css: string; js: string | null }> = {};
   const routeAssets = new Map<string, string>();
   const asset = (body: string, ext: string) => {
@@ -137,13 +159,13 @@ export async function buildSite(input: BuildSiteInput): Promise<string[]> {
   };
   for (const page of compiled) {
     const js = siteIslands([page], input.catalog);
-    pageAssets[page.path] = { css: asset(siteCss([page], input.catalog), 'css'), js: js ? asset(js, 'js') : null };
+    pageAssets[page.path] = { css: asset(siteCss([page], input.catalog, site), 'css'), js: js ? asset(js, 'js') : null };
   }
   // The generated preference page needs primitives and the beacon, not site widgets.
-  if (backendOrigin) pageAssets[COOKIE_COMPLIANCE_PATH] = { css: asset(siteCss([], input.catalog), 'css'), js: null };
+  if (backendOrigin) pageAssets[COOKIE_COMPLIANCE_PATH] = { css: asset(siteCss([], input.catalog, site), 'css'), js: null };
   const files = compileSite({
     site,
-    pages: input.pages,
+    pages,
     catalog: input.catalog,
     kernelOrigin: backendOrigin,
     themeHref,
@@ -152,6 +174,9 @@ export async function buildSite(input: BuildSiteInput): Promise<string[]> {
     webAnalyticsToken: input.webAnalyticsToken,
   }, compiled);
 
+  const bookingScript = booking ? asset(bookingJs, 'js') : undefined;
+  const bookingStyle = booking ? asset(bookingCss, 'css') : undefined;
+  const managementScript = booking ? asset(managementJs, 'js') : undefined;
   const written: string[] = [];
   await mkdir(input.outDir, { recursive: true });
   await mkdir(join(input.outDir, 'assets/immutable'), { recursive: true });
@@ -167,12 +192,26 @@ export async function buildSite(input: BuildSiteInput): Promise<string[]> {
         : `${file.path.replace(/^\//, "").replace(/\/$/, "")}/index.html`;
     const dest = join(input.outDir, rel);
     await mkdir(join(dest, ".."), { recursive: true });
-    await writeFile(dest, connectForms(file.html, backendOrigin, file.path, input.forms || []), "utf8");
+    let html = connectForms(file.html, backendOrigin, file.path, input.forms || []);
+    if (booking && file.path === booking.route) {
+      const config = JSON.stringify({apiOrigin: booking.apiOrigin, siteId: booking.siteId, installationId: booking.installationId, siteOrigin: input.publicOrigin}).replaceAll('<', '\\u003c');
+      if ((html.match(/data-vitris-booking(?:[\s=>])/g) || []).length !== 1) throw new Error('Use exactly one standard booking mount');
+      html = html.replace('</head>', `<link rel="stylesheet" href="${bookingStyle}"></head>`).replace('</body>', `<script type="application/json" data-vitris-booking-config>${config}</script><script src="${bookingScript}" defer></script></body>`);
+      html = html.replace(/<div([^>]*data-vitris-booking[^>]*)><\/div>/, `<div$1><noscript>Booking requires JavaScript. Please contact ${escapeHtml(site.name)} to arrange an appointment.</noscript></div>`);
+    }
+    if (booking && file.path === booking.route + '/manage') {
+      const config = JSON.stringify({apiOrigin: booking.apiOrigin, siteId: booking.siteId, installationId: booking.installationId, siteOrigin: input.publicOrigin}).replaceAll('<', '\\u003c');
+      if ((html.match(/data-vitris-customer-management(?:[\s=>])/g) || []).length !== 1) throw new Error('Use exactly one customer management mount');
+      html = html.replace(/<script\b[^>]*src="[^"]*(?:beacon\.js|static\.cloudflareinsights\.com\/beacon\.min\.js)"[^>]*><\/script>/g, '');
+      html = html.replace('<head>', `<head><meta name="referrer" content="no-referrer"><script type="application/json" data-vitris-customer-config>${config}</script><script src="${managementScript}"></script>`).replace('</head>', `<link rel="stylesheet" href="${bookingStyle}"></head>`);
+      html = html.replace(/<div([^>]*data-vitris-customer-management[^>]*)><\/div>/, '<div$1><noscript>Appointment management requires JavaScript. Please contact the business.</noscript></div>');
+    }
+    await writeFile(dest, html, 'utf8');
     written.push(rel);
   }
 
-  await writeFile(join(input.outDir, "site.css"), siteCss(compiled, input.catalog), "utf8");
-  await writeFile(join(input.outDir, "theme.css"), themeCss(theme), "utf8");
+  await writeFile(join(input.outDir, "site.css"), siteCss(compiled, input.catalog, site), "utf8");
+  await writeFile(join(input.outDir, "theme.css"), themeCss(theme, site.typography), "utf8");
   if (backendOrigin) {
     await writeFile(join(input.outDir, "beacon.js"), beaconJs, "utf8");
     written.push("beacon.js");

@@ -120,6 +120,7 @@ export async function createSite(opts: CreateSiteOptions): Promise<CommandResult
     const p = join(dest, file);
     if (file === "site.json" && existsSync(p)) {
       const site = JSON.parse(readFileSync(p, "utf8")); site.slug = slug; site.name = name;
+      if (mode === 'preserve') delete site.typography;
       site.siteId = site.siteId || randomUUID(); site.sourceFormatVersion = 1; site.capabilities = backendOrigin ? ["analytics"] : [];
       writeFileSync(p, `${JSON.stringify(site, null, 2)}\n`);
     } else if (existsSync(p)) {

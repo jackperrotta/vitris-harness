@@ -4,6 +4,7 @@
   "sourceFormatVersion": 1,
   "capabilities": [],
   "knowledgeRelease": "2026-09-22",
+  "typography": { "version": 1 },
   "motion": { "strength": "off", "stagger": false },
   "scrollMotion": { "version": 1, "policy": "enabled" },
   "motionComposition": { "version": 2, "routes": "all-authored" }

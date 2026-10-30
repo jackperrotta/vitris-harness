@@ -15,6 +15,8 @@ import { sourceRevision } from "../engine/revision.ts";
 import { parseFragment } from "parse5";
 import { elementMatchesIdentity } from "../editing/identity.ts";
 import { hasRefinementPlaceholder, settleRefinementImages } from "./refine-document-checks.ts";
+import { typographyPolicy, typographyDirectionFailures } from './typography-policy.ts';
+import { captureTypographyStates, typographyConsistencyFailures, TYPOGRAPHY_SCENARIO, type TypographyCapture } from './browser-typography.ts';
 
 export const CHANGE_SCOPES = ["business", "copy", "pages", "direction", "media"] as const;
 export type ChangeScope = (typeof CHANGE_SCOPES)[number];
@@ -1991,6 +1993,8 @@ export async function verifyRefine(opts: {
       }
     }
 
+    const typePolicy=typographyPolicy(root);
+    if(typePolicy.enabled){failures.push(...typographyDirectionFailures(root));if(opts.browser===false)failures.push('Typography policy requires rendered verification; browser checks cannot be skipped');}
     if (opts.browser !== false) {
       const server = previewServer(distDir);
       await new Promise<void>(r => server.listen(0, "127.0.0.1", r));
@@ -2002,7 +2006,8 @@ export async function verifyRefine(opts: {
       try {
         const chromium = await loadPlaywrightChromium();
         browserInstance = await chromium.launch({ headless: true });
-        const targetPages = request.affectedPages?.length ? request.affectedPages : ["/"];
+        const targetPages = typePolicy.enabled ? [...new Set(files(distDir).filter(file=>file.endsWith('index.html')).map(file=>'/' + file.slice(distDir.length+1).replaceAll('\\','/').replace(/\/?index\.html$/,'')))] : request.affectedPages?.length ? request.affectedPages : ["/"];
+        const typography: TypographyCapture[]=[];
         const storyPath=join(root,"onboarding/storyboard.json");
         const motionStory=existsSync(storyPath)?json<import('./artifacts.ts').Storyboard>(storyPath):undefined;
         const journeys=[];
@@ -2015,11 +2020,12 @@ export async function verifyRefine(opts: {
           for (const width of [375, 1080]) {
             const checkId = `render-${width}`;
             if (completedChecks[checkId] === "unevaluated") completedChecks[checkId] = "pass";
-            const page = await browserInstance.newPage({ viewport: { width, height: 900 } });
+            const page = await browserInstance.newPage({ viewport: { width, height: 900 }, ...(typePolicy.enabled?{reducedMotion:'reduce'}:{}) });
             const url = `http://127.0.0.1:${address.port}${route === "/" ? "" : route}`;
             try {
               await page.goto(url, { waitUntil: "domcontentloaded", timeout: 15000 });
               await settleRefinementImages(page);
+              if(typePolicy.enabled){await page.evaluate('window.VitrisMotion?.dispose();window.VitrisCounters?.dispose()');typography.push(...await captureTypographyStates(page,typePolicy.theme,route,width));}
               const observed = await page.evaluate(`(() => {
                 const errors = [];
                 if (document.documentElement.scrollWidth > innerWidth + 2) errors.push('Live browser horizontal overflow detected at ${width}px');
@@ -2044,6 +2050,7 @@ export async function verifyRefine(opts: {
           }
         }
         if(journeys.length)save(join(root,`agent/reviews/refine-journeys-${Date.now()}.json`),{routeJourneys:journeys});
+        if(typePolicy.enabled){const typeFailures=[...typography.flatMap(c=>c.failures.map(f=>`${c.path} ${c.width}px ${c.state}: ${f}`)),...typographyConsistencyFailures(typography)];failures.push(...typeFailures);save(join(root,`agent/reviews/refine-typography-${Date.now()}.json`),{scenario:TYPOGRAPHY_SCENARIO,captures:typography,failures:typeFailures});}
       } catch (browserErr) {
         failures.push(`Browser verification failed: ${explainBrowserLaunchFailure(browserErr)}`);
         completedChecks["render-375"] = "fail"; completedChecks["render-1080"] = "fail";

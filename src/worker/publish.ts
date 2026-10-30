@@ -151,8 +151,8 @@ export function distFilesFromBundle(opts: {
     publicOrigin: opts.publicOrigin,
   });
   const files: Record<string, string> = {
-    "site.css": siteCss(compiled, bundle.catalog),
-    "theme.css": themeCss(bundle.theme),
+    "site.css": siteCss(compiled, bundle.catalog, bundle.site),
+    "theme.css": themeCss(bundle.theme, bundle.site.typography),
     "beacon.js": beaconJs,
     "robots.txt": robotsTxt(),
     "sitemap.xml": sitemapXml(

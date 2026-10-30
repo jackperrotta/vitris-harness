@@ -16,6 +16,7 @@ import { primitivesCss } from "./primitives.ts";
 import { prepareMotion } from "./scroll-motion.ts";
 import { compileIcons } from './icons.ts';
 import { iconCss } from '../icons/index.ts';
+import { typographyCss, typographyEnabled } from '../typography.ts';
 
 export { beaconJs };
 
@@ -371,8 +372,9 @@ export function usedComponents(pages: CompiledPage[]): string[] {
   return [...names];
 }
 
-export function siteCss(pages: CompiledPage[], catalog: Catalog): string {
+export function siteCss(pages: CompiledPage[], catalog: Catalog, site?: SiteConfig): string {
   const chunks = [baseCss, primitivesCss];
+  if (typographyEnabled(site)) chunks.push(typographyCss());
   if (pages.some(page => page.bodyHtml.includes('data-vitris-icon='))) chunks.push(iconCss);
   for (const name of usedComponents(pages)) {
     const css = catalog[name]?.css;

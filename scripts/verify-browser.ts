@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 import { checkFocusOcclusion } from "../src/agent/browser-focus.ts";
+import { captureTypography, captureTypographyStates, typographyConsistencyFailures, TYPOGRAPHY_SCENARIO, type TypographyCapture } from '../src/agent/browser-typography.ts';
+import { typographyPolicy } from '../src/agent/typography-policy.ts';
+import { loadSitePages } from '../src/build/index.ts';
 import { measurePerformance, performancePolicy } from '../src/agent/performance.ts';
 import { hasAnalyticsRuntime, productionQuality } from "../src/agent/production-quality.ts";
 import { previewServer } from "../src/build/serve.ts";
@@ -26,6 +29,7 @@ declare function getComputedStyle(element: any): any; // Only in serialized brow
 declare const document:any; // Only in serialized browser callbacks.
 const arg = (key: string) => { const i = process.argv.indexOf(key); return i < 0 ? undefined : process.argv[i + 1]; };
 const root = resolve(arg("--site") || "."), representative = process.argv.includes("--representative");
+const typePolicy = typographyPolicy(root);
 const concurrency=Number(arg("--concurrency")||process.env.VITRIS_BROWSER_CONCURRENCY||"1");
 if(!Number.isInteger(concurrency)||concurrency<1||concurrency>4)throw new Error('--concurrency must be an integer from 1 to 4');
 const extraViewports = (arg("--extra-viewports") || "").split(",").filter(Boolean).map(Number);
@@ -61,10 +65,12 @@ const checks: { path: string; width: number; motion?: "reduce" | "normal"; scree
 const routeChecks: { source: string; width: number; disposition: string; target?: string; status: number; location?: string; destination?: string; mechanism: string; failures: string[] }[] = [];
 const compositionTargets: { path: string; width: number; motion: string; sectionId: string; elementId: string; count: number; visible: boolean; screenshot: string; screenshotHash: string; captureSha256: string }[] = [];
 const pagesToCheck = plan.pages.filter(p => !representative || p.path === "/" || p.representative);
+if (typePolicy.enabled && !representative) for (const page of await loadSitePages(root)) if (!pagesToCheck.some(p => p.path === page.path)) pagesToCheck.push({path:page.path,sections:[],purpose:'Authored route',representative:false});
 if (!representative && existsSync(join(dist, "cookie-compliance/index.html")) && !pagesToCheck.some(p => p.path === "/cookie-compliance")) pagesToCheck.push({ path: "/cookie-compliance" } as Storyboard["pages"][number]);
 const consentChecks: { width: number; passed: boolean; failures: string[] }[] = [];
 const temporalMotion: TemporalMotionEvidence[] = [];
 const routeJourneys:MotionJourney[]=[];
+const typography: TypographyCapture[] = [];
 try {
   try {
     const chromium = await loadPlaywrightChromium();
@@ -114,6 +120,7 @@ try {
     let firstVisit: { screenshot: string; screenshotHash: string } | undefined;
     const cookieBanner = page.locator("#vitris-cookie-banner");
     if (await cookieBanner.isVisible()) {
+      if (typePolicy.enabled) typography.push(await captureTypography(page, typePolicy.theme, p.path, width, 'first-visit'));
       if (p.path === "/") {
         const path = `${directory}/first-visit-${width}${motion === "reduce" ? "" : "-normal"}.png`;
         await page.screenshot({ path: join(root, path) });
@@ -175,6 +182,7 @@ try {
       await page.evaluate(`(async () => { await Promise.race([Promise.all([...document.images].filter(i=>i.getClientRects().length).map(i=>{i.loading='eager';return i.decode().catch(()=>{});})),new Promise(r=>setTimeout(r,5000))]); })()`);
       const broken = await page.evaluate(`Array.from(document.images).filter(i=>i.getClientRects().length&&(!i.complete||!i.naturalWidth)).map(i=>i.getAttribute('src'))`) as string[];
       failures.push(...broken.map(src => `Broken tab image: ${src}`));
+      if (typePolicy.enabled) typography.push(await captureTypography(page, typePolicy.theme, p.path, width, `tab-${i}`));
     }
     if (await tabs.count()) await tabs.first().click();
     for (const carousel of await page.locator('[data-island="carousel"]').all()) {
@@ -247,6 +255,7 @@ try {
     // Temporal playback was observed earlier. Final static/media evidence must expose every offscreen target,
     // including groups still armed after keyboard/anchor/resize checks.
     await page.evaluate("window.VitrisMotion?.dispose(); window.VitrisCounters?.dispose()");
+    if (typePolicy.enabled) typography.push(...await captureTypographyStates(page, typePolicy.theme, p.path, width));
     const unreadableMotion = await page.locator('[data-motion],[data-reveal],[data-motion-child],[data-reveal-child]').evaluateAll((es: any[]) => es.filter((e:any)=>Number(getComputedStyle(e).opacity)<.99).map((e:any)=>e.id||e.tagName));
     if (unreadableMotion.length) failures.push(`Motion teardown left final static content hidden: ${unreadableMotion.join(', ')}`);
     await page.evaluate("window.scrollTo(0,0)");
@@ -311,6 +320,10 @@ try {
       }
       const statusBefore = await page.locator('[role="status"]:visible').allTextContents();
       const postsBefore = mockedLeadPosts;
+      if (typePolicy.enabled && !await form.evaluate((e: any) => e.checkValidity())) {
+        await form.locator('button[type=submit],input[type=submit],button:not([type])').first().click({timeout:3000});
+        typography.push(await captureTypography(page, typePolicy.theme, p.path, width, 'form-invalid'));
+      }
       let supported = true;
       for (const field of await form.locator("input:not([type=hidden]):not([type=submit]),textarea,select").all()) {
         const type = (await field.getAttribute("type") || "text").toLowerCase();
@@ -338,6 +351,7 @@ try {
         const next = page.url();
         const statusAfter = await page.locator('[role="status"]:visible').allTextContents();
         const newStatus = statusAfter.some((text: string) => text.trim() && !statusBefore.includes(text));
+        if (typePolicy.enabled) typography.push(await captureTypography(page, typePolicy.theme, p.path, width, 'form-result'));
         if (mockedLeadPosts === postsBefore) failures.push("Lead form did not reach the mocked POST /api/leads adapter");
         else if (!newStatus && !(new URL(next).searchParams.get("sent") && next !== before)) failures.push("Lead form has no new success state or destination");
       } catch (error) {
@@ -357,12 +371,15 @@ try {
   });
   const compare=(a:{path:string;width:number;motion?:string;mode?:string},b:{path:string;width:number;motion?:string;mode?:string})=>a.path.localeCompare(b.path)||a.width-b.width||String(a.motion||a.mode).localeCompare(String(b.motion||b.mode));
   checks.sort(compare);routeJourneys.sort(compare);
+  typography.sort((a,b)=>compare(a,b)||a.state.localeCompare(b.state));
+  const typographyFailures = typePolicy.enabled ? [...new Set([...typography.flatMap(c=>c.failures.map(f=>`${c.path} ${c.width}px ${c.state}: ${f}`)), ...typographyConsistencyFailures(typography)])] : [];
+  for (const failure of typographyFailures) console.log(`Typography: ${failure}`);
   const templateMotion=existsSync(join(root,TEMPLATE_MOTION_PATH))?await captureTemplateMotion(browser,root,`http://127.0.0.1:${address.port}/`,directory+'/template-motion',json<TemplateMotionPlan>(join(root,TEMPLATE_MOTION_PATH))):undefined;
-  save(join(root, `agent/reviews/${name}.json`), { version: 4, sourceHash: sourceHash(root), distHash: fingerprint(root, ["dist"]), scope: name, concurrency, viewports, motionModes, staticMotionState: 'complete-after-teardown', motionScenarioHash: MOTION_SCENARIO_HASH, temporalMotion, routeJourneys, checks, routeChecks, consentChecks, ...(templateMotion?{templateMotion}:{}), ...(compositionMode ? { compositionTargets } : {}) });
+  save(join(root, `agent/reviews/${name}.json`), { version: 4, sourceHash: sourceHash(root), distHash: fingerprint(root, ["dist"]), scope: name, concurrency, viewports, motionModes, staticMotionState: 'complete-after-teardown', motionScenarioHash: MOTION_SCENARIO_HASH, temporalMotion, routeJourneys, checks, routeChecks, consentChecks, ...(typePolicy.enabled?{typography:{scenario:TYPOGRAPHY_SCENARIO,captures:typography,failures:typographyFailures}}:{}), ...(templateMotion?{templateMotion}:{}), ...(compositionMode ? { compositionTargets } : {}) });
   if (!representative && performancePolicy(root).enabled) {
     const performance = await measurePerformance(root, `http://127.0.0.1:${address.port}`, { log: console.log });
     if (performance.failures.length) { console.error(performance.failures.join('\n')); process.exitCode = 1; }
   }
   console.log(`${name}: ${checks.length} route/viewport checks`);
-  if (checks.some(c => c.failures.length)||routeJourneys.some(j=>j.failures.length)||templateMotion?.captures.some(c=>c.failures.length)) process.exitCode = 1;
+  if (typographyFailures.length||checks.some(c => c.failures.length)||routeJourneys.some(j=>j.failures.length)||templateMotion?.captures.some(c=>c.failures.length)) process.exitCode = 1;
 } finally { await browser?.close(); await new Promise<void>(r => server.close(() => r())); }

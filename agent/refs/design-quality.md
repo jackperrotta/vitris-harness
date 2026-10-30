@@ -31,3 +31,5 @@ For scroll motion, use the stage-scoped `motion.md` contract. Choose business-sp
 
 
 Whole-page motion responsibility: for new/reauthored routes use motionPlan v2 and read `motion-page`. Cover every authored route, including expansion/contact; locate opening, development, connected quiet intervals and closing in actual IDs. Keep essential content/actions static and readable. Representative runtime success or two colocated effects is insufficient. Inspect normal desktop/mobile full journeys and reduced/static views; critique distribution, continuity, inert stretches, competition and meaningful differences among routes with located evidence. Return actionable repairs, preserving operator off and historical records. Human preference stays unset.
+
+For sites with typography version 1, load `typography.md`. Establish concrete shared roles before authoring, reuse sizes and weights across routes, retain the 12px rendered floor, and repair browser typography findings before acceptance. Template identity does not waive this policy.

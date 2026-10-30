@@ -67,12 +67,12 @@ async function renderPreview(env:Env,request:Request):Promise<Response> {
     : text("Not found",404);
 
   if (rest === "site.css") {
-    return new Response(siteCss(compiled, bundle.catalog), {
+    return new Response(siteCss(compiled, bundle.catalog, bundle.site), {
       headers: { "content-type": "text/css; charset=utf-8" },
     });
   }
   if (rest === "theme.css") {
-    return new Response(themeCss(bundle.theme), {
+    return new Response(themeCss(bundle.theme, bundle.site.typography), {
       headers: { "content-type": "text/css; charset=utf-8" },
     });
   }

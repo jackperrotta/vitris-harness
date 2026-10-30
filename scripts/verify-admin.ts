@@ -6,7 +6,7 @@ import { npmCliPath } from '../src/agent/package-verification.ts';
 const base = resolve('artifacts/admin-integration'); mkdirSync(base, { recursive: true });
 const root = mkdtempSync(join(base, 'published-'));
 writeFileSync(join(root, 'package.json'), JSON.stringify({ private: true, type: 'module' }));
-const packages = ['website-admin-harness', 'create-website-admin-harness', 'website-admin-contracts'].map(name => `@tryvitris/${name}@0.1.0-alpha.1`);
+const packages = ['website-admin-harness', 'create-website-admin-harness', 'website-admin-contracts'].map(name => `@tryvitris/${name}@0.1.0-alpha.2`);
 const installed = spawnSync(process.execPath, [npmCliPath(), 'install', '--save-exact', '--no-audit', '--no-fund', ...packages], { cwd: root, encoding: 'utf8', windowsHide: true });
 writeFileSync(join(root, 'install.log'), `${installed.stdout || ''}${installed.stderr || ''}`);
 if (installed.status !== 0) throw Error(`Published package installation failed; see ${root}/install.log`);

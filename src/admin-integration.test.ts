@@ -29,13 +29,13 @@ function setup(site: string, dir: string, flags: string[] = []) {
 }
 
 test('published installer: plan/apply, safe retries, conflicts, stale plans and preservation', async () => {
-  assert.equal(JSON.parse(readFileSync(join(packageRoot, 'package.json'), 'utf8')).version, '0.1.0-alpha.1');
+  assert.equal(JSON.parse(readFileSync(join(packageRoot, 'package.json'), 'utf8')).version, '0.1.0-alpha.2');
   if (process.env.VITRIS_ADMIN_PACKAGE_ROOT) {
     const initializer = join(dirname(requirePublished.resolve('@tryvitris/create-website-admin-harness/package.json')), 'index.mjs');
     const destination = join(scratch(), 'initialized');
     const result = spawnSync(process.execPath, [initializer, '--dir', destination, '--slug', 'initialized', '--name', 'Synthetic initializer', '--domain', 'admin.initialized.example', '--website', 'https://initialized.example'], { encoding: 'utf8', windowsHide: true });
     assert.equal(result.status, 0, result.stderr);
-    assert.equal(JSON.parse(readFileSync(join(destination, 'package.json'), 'utf8')).dependencies['@tryvitris/website-admin-harness'], '0.1.0-alpha.1');
+    assert.equal(JSON.parse(readFileSync(join(destination, 'package.json'), 'utf8')).dependencies['@tryvitris/website-admin-harness'], '0.1.0-alpha.2');
   }
   const root = scratch(), site = siteAt(root), dir = join(root, 'admin');
   const original = readFileSync(join(site, 'launch.json'), 'utf8');
@@ -48,7 +48,7 @@ test('published installer: plan/apply, safe retries, conflicts, stale plans and 
   assert.equal(readFileSync(join(site, 'agent/STATE.json'), 'utf8'), '{"progress":"preserve"}');
   const manifest = parseManifest(JSON.parse(readFileSync(join(dir, 'admin.config.json'), 'utf8')));
   assert.equal(manifest.business.name, launch.name); assert.equal(manifest.adminOrigin, 'https://admin.synthetic.example');
-  assert.equal(JSON.parse(readFileSync(join(dir, 'package.json'), 'utf8')).dependencies['@tryvitris/website-admin-harness'], '0.1.0-alpha.1');
+  assert.equal(JSON.parse(readFileSync(join(dir, 'package.json'), 'utf8')).dependencies['@tryvitris/website-admin-harness'], '0.1.0-alpha.2');
   const grant = JSON.parse(readFileSync(join(dir, '.vitris/backend-grant.json'), 'utf8'));
   assert.equal(grant.synthetic.tokenHash, await digest(token)); assert.deepEqual(grant.synthetic.scopes, ['leads:read', 'analytics:read']);
   assert.equal(setup(site, dir, ['--apply']).status, 0); assert.notEqual(setup(site, dir, ['--apply', '--lead-write']).status, 0);

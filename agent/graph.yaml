@@ -50,7 +50,8 @@
         "contracts"
       ],
       "optionalRefs": [
-        "refine"
+        "refine",
+        "scheduling"
       ],
       "tools": [],
       "eval": "business",
@@ -123,7 +124,10 @@
       "tools": [],
       "eval": "narrative",
       "maxAttempts": 4,
-      "kind": "agent"
+      "kind": "agent",
+      "optionalRefs": [
+        "scheduling"
+      ]
     },
     {
       "id": "narrative-review",
@@ -189,7 +193,8 @@
         "contracts",
         "design-calibration",
         "accessibility",
-        "motion"
+        "motion",
+        "typography"
       ],
       "tools": [],
       "eval": "direction",
@@ -229,7 +234,8 @@
         "critic",
         "contracts",
         "design-calibration",
-        "motion"
+        "motion",
+        "typography"
       ],
       "tools": [],
       "eval": "direction-review",
@@ -367,7 +373,8 @@
         "media",
         "motion",
         "icons",
-        "analytics"
+        "analytics",
+        "typography"
       ],
       "tools": [],
       "eval": "representative",
@@ -414,7 +421,8 @@
         "browser",
         "motion",
         "icons",
-        "analytics"
+        "analytics",
+        "typography"
       ],
       "tools": [],
       "eval": "representative-browser",
@@ -455,7 +463,8 @@
         "contracts",
         "design-calibration",
         "motion",
-        "icons"
+        "icons",
+        "typography"
       ],
       "tools": [],
       "eval": "representative-review",
@@ -497,7 +506,8 @@
         "critic",
         "contracts",
         "design-calibration",
-        "motion"
+        "motion",
+        "typography"
       ],
       "tools": [],
       "eval": "representative-quality",
@@ -566,7 +576,8 @@
         "performance",
         "motion",
         "icons",
-        "analytics"
+        "analytics",
+        "typography"
       ],
       "optionalRefs": [
         "design-synthesis",
@@ -610,7 +621,8 @@
         "browser",
         "motion",
         "icons",
-        "analytics"
+        "analytics",
+        "typography"
       ],
       "tools": [],
       "eval": "browser",
@@ -630,7 +642,8 @@
         "motion-image",
         "motion-process",
         "motion-sequence",
-        "motion-page"
+        "motion-page",
+        "scheduling"
       ]
     },
     {

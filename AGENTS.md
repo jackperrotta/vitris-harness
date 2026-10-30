@@ -1,6 +1,6 @@
 # Harness agent
 
-For an optional separate business admin, read `agent/refs/admin.md` and `docs/ADMIN.md`. Use `vitris admin setup --plan` then `--apply`, delegating to the exact published 0.1.0-alpha.1 installer. New-site `--admin` prepares instructions only. Verify deployed API compatibility separately; never provision, deploy or migrate an existing shared backend as a setup side effect.
+For an optional separate business admin, read `agent/refs/admin.md` and `docs/ADMIN.md`. Use `vitris admin setup --plan` then `--apply`, delegating to the exact published 0.1.0-alpha.2 installer. New-site `--admin` prepares instructions only. Verify deployed API compatibility separately; never provision, deploy or migrate an existing shared backend as a setup side effect.
 
 This is the source repository for **@tryvitris/website-harness**: compiler, optional Cloudflare Worker, harvest tools, and agent kit. Customer sites live in separate repositories.
 

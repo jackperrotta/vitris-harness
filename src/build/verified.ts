@@ -9,6 +9,7 @@ import type { PublicForm } from '../forms/config.ts';
 import { responsiveMedia } from './responsive-media.ts';
 import { finalizeStaticOutput } from './static-output.ts';
 import { archivePreviousBuild } from './archives.ts';
+import type {SchedulingConnection} from '../scheduling/config.ts';
 
 export async function buildVerified(siteRoot: string, output = join(siteRoot, "dist"), origin?: string, slug?: string): Promise<void> {
   if (isPreserveSite(siteRoot)) return buildPreservedSite(siteRoot, output);
@@ -22,8 +23,8 @@ export async function buildVerified(siteRoot: string, output = join(siteRoot, "d
   mkdirSync(dirname(stage), { recursive: true });
   const local = await loadSiteDir(root);
   if (slug) local.site = { ...local.site, slug };
-  const launch = existsSync(join(root, "launch.json")) ? json<{ backendOrigin?: string; kernelOrigin?: string; publicOrigin?: string; forms?: PublicForm[]; webAnalyticsToken?: string }>(join(root, "launch.json")) : {};
-  await buildSite({ ...local, webAnalyticsToken: launch.webAnalyticsToken, forms: launch.forms, kernelOrigin: origin || process.env.VITRIS_BACKEND_ORIGIN || process.env.KERNEL_ORIGIN || launch.backendOrigin || launch.kernelOrigin || "", publicOrigin: process.env.VITRIS_PUBLIC_ORIGIN || launch.publicOrigin, outDir: stage });
+  const launch = existsSync(join(root, "launch.json")) ? json<{ backendOrigin?: string; kernelOrigin?: string; publicOrigin?: string; forms?: PublicForm[]; scheduling?: SchedulingConnection; webAnalyticsToken?: string }>(join(root, "launch.json")) : {};
+  await buildSite({ ...local, webAnalyticsToken: launch.webAnalyticsToken, scheduling: launch.scheduling, forms: launch.forms, kernelOrigin: origin || process.env.VITRIS_BACKEND_ORIGIN || process.env.KERNEL_ORIGIN || launch.backendOrigin || launch.kernelOrigin || "", publicOrigin: process.env.VITRIS_PUBLIC_ORIGIN || launch.publicOrigin, outDir: stage });
   for (const path of ["media", "public"]) {
     const source = within(root, path);
     if (!existsSync(source)) continue;
@@ -70,7 +71,7 @@ export async function buildVerified(siteRoot: string, output = join(siteRoot, "d
   save(join(stage, "package-manifest.json"), { slug: local.site.slug || "", site: local.site });
   const kernelParent = resolve(import.meta.dirname, "..");
   const kernelSource = existsSync(join(kernelParent, "compile")) ? kernelParent : join(kernelParent, "src");
-  save(join(stage, "build-evidence.json"), { version: 2, sourceHash: sourceHash(root), compilerHash: fingerprint(kernelSource, ["compile", "build", "runtime", "forms", "theme.ts"]) });
+  save(join(stage, "build-evidence.json"), { version: 2, sourceHash: sourceHash(root), compilerHash: fingerprint(kernelSource, ["compile", "build", "runtime", "forms", "scheduling", "theme.ts", "typography.ts"]) });
   const previous = out + `.previous-${Date.now()}-${process.pid}`;
   if (existsSync(out)) replacePath(out, previous);
   try { replacePath(stage, out); }

@@ -72,3 +72,5 @@ For a local checkout, run `npm run build:cli` and create a sibling site with `--
 - [Evaluation protocol](agent/EVALUATION.md) and [CLI reference](docs/CLI.md)
 
 MIT licensed. Hosted demonstrations and third-party media have their own license records; see [NOTICE](NOTICE).
+
+Optional standard customer booking: see [scheduling](docs/SCHEDULING.md) for the source-only test booking component, compatible admin API, and paired local preview.

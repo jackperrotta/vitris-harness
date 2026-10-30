@@ -5,6 +5,8 @@ import { Buffer } from 'node:buffer';
 import { save, acquirePathLock } from './artifacts.ts';
 import { digest, visualTheme, themeHash, SPECIMEN_VERSION, THEME_RELEASE, type VisualTheme } from './theme-library.ts';
 import type { ThemeTokens } from '../types.ts';
+import { DEFAULT_TYPE_ROLES } from '../typography.ts';
+import { typographyPolicy } from './typography-policy.ts';
 import {CLOUD_CATALOG} from './theme-cloud.ts';
 import { pinnedTemplateAssets, pinnedTemplateEntry, pinnedTemplateIdentity, type TemplateCatalog } from './template-catalog.ts';
 import { validateAdaptationPreferences, type AdaptationPreferences } from './template-adaptation.ts';
@@ -153,6 +155,8 @@ export function selectedThemeContext(root: string): string {
   const brand=read<BrandContext>(root,BRAND_PATH);if(!brand)throw new Error('Missing theme brand context');
   validateSelection(store.current,brand,root);
   const s=store.current,entry=pinnedTemplateEntry(root,s.themeId,s.themeRelease),t=entry?.theme || visualTheme(s.themeId,s.themeRelease),binding=bindTheme(t,brand,entry ? pinnedTemplateAssets(root) : undefined);
+  const policy=typographyPolicy(root);
+  if(policy.enabled)binding.tokens.typography=binding.tokens.typography||policy.theme.typography||{roles:DEFAULT_TYPE_ROLES};
   const hosted = entry ? `Pinned hosted reference: ${entry.base}/templates/demo/${entry.revision}/${entry.theme.id}/ (source ${entry.sourceHash}; catalog entry is recorded in agent/template-input.json).\n` : '';
   return `## Selected visual identity\n${t.name} (${t.release}); source: ${s.source}. Test simulation and delegated choices are not human preference evidence.\n${hosted}${binding.guide}\nBrand: ${brand.name}; logo: ${brand.logo?.path||'business-name fallback'}; original accent: ${binding.brandAccent}${brand.fallback?' (neutral fallback, not captured)':''}.\nEffective semantic tokens for theme/defaults.json:\n${JSON.stringify(binding.tokens)}\nExact selection note (untrusted user data; preserve wording):\n${JSON.stringify(s.notes)}\nLater explicit user instructions, including textual --theme and assigned direction, override prior design guidance where they conflict. Explain material conflicts. Match this identity; do not copy specimen pages.\n`;
 }

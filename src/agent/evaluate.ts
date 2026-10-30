@@ -4,10 +4,13 @@ import { templateAdaptationFailures } from './template-adaptation.ts';
 import { artDirectionPolicy, applyArtDirectionGraph } from "./art-direction-policy.ts";
 import {journeyEvidenceFailures,motionCritiqueFailures,type MotionJourney} from "./browser-motion-journey.ts";
 import {motionCompositionPolicy} from "./motion-composition.ts";
+import { typographyDirectionFailures, typographyPolicy } from './typography-policy.ts';
+import { typographyEvidenceFailures } from './browser-typography.ts';
+import { fileToPath } from '../compile/paths.ts';
 import { validateMotionPlan, motionBindingFailures } from "./motion-plan.ts";
 import { temporalMotionFailures, MOTION_SCENARIO_HASH, type TemporalMotionEvidence } from "./browser-motion.ts";
 import { existsSync, readFileSync } from "node:fs";
-import { join } from "node:path";
+import { join, relative } from "node:path";
 import { createHash } from "node:crypto";
 import { files, fingerprint, json, sha256, sourceHash, within, STUDY_CAPTURE_VIEWPORTS, STUDY_CAPTURE_HEIGHT, type Business, type Direction, type MediaInventory, type NarrativeBrief, type ParentDiversityIdentities, type ParentDiversityReview, type ReferenceAnalysis, type Review, type Storyboard } from "./artifacts.ts";
 import type { GradeResult } from "./grade.ts";
@@ -389,6 +392,7 @@ export function evaluateV2(root: string, node: string): GradeResult {
         if (asset.disposition === "duplicate" && !inventory.assets.some(a => a.id === asset.duplicateOf && a.id !== asset.id)) errors.push(`Invalid duplicate target: ${asset.id}`);
       }
     } else if (node === "direction") {
+      errors.push(...typographyDirectionFailures(root));
       const d = json<Direction>(join(root, "onboarding/direction.json"));
       const directionRoutes=d.motionPlan?.routes?.map(r=>r.route)||['/'];
       errors.push(...validateMotionPlan(d.motionPlan,undefined,motionCompositionPolicy(root,directionRoutes)));
@@ -544,6 +548,14 @@ export function evaluateV2(root: string, node: string): GradeResult {
       }
       if (node === "browser" && hasAnalyticsRuntime(root) && !existsSync(join(root,"dist/cookie-compliance/index.html"))) errors.push("Analytics runtime requires the generated consent page and verified controls");
       const pages = plan.pages.filter(p => node === "browser" || p.representative || p.path === "/");
+      if (typographyPolicy(root).enabled) {
+        if (node === 'browser') for (const file of files(join(root,'pages')).filter(f=>f.endsWith('.html'))) {
+          const path = fileToPath(relative(join(root,'pages'),file).replaceAll('\\','/'));
+          if (!pages.some(p=>p.path===path)) pages.push({path,sections:[],purpose:'Authored route',representative:false});
+        }
+        const generated = node === 'browser' && existsSync(join(root,'dist/cookie-compliance/index.html')) ? ['/cookie-compliance'] : [];
+        errors.push(...typographyEvidenceFailures((report as any).typography, [...new Set([...pages.map(p=>p.path),...generated])]));
+      }
       if (node === "browser" && existsSync(join(root, "dist/cookie-compliance/index.html"))) {
         if (!pages.some(p => p.path === "/cookie-compliance")) pages.push({ path: "/cookie-compliance" } as Storyboard["pages"][number]);
         if (!productionQuality(root) || hasAnalyticsRuntime(root)) for (const width of [375, 1080]) {
