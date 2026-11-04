@@ -1,5 +1,7 @@
 import type { Env } from './env.ts';
 import { digest } from './forms.ts';
+import { isThemeColor, websiteColorKeys } from '@tryvitris/website-admin-contracts';
+import { LeadError, followUpsAvailable, listLeads, saveFollowUp } from './lead-management.ts';
 
 type Grant = { tenantId: string; siteOrigin: string; tokenHash: string; scopes: string[] };
 const scopes = ['leads:read', 'analytics:read', 'leads:write'];
@@ -8,7 +10,7 @@ const json = (data: unknown, status = 200) => Response.json(data, { status, head
 /** Server-to-server only. Never shares cookie, forms-setup, or deployment authority. */
 export async function handleAdmin(env: Env, request: Request): Promise<Response> {
   const url = new URL(request.url);
-  const match = url.pathname.match(/^\/api\/admin\/v1\/([a-zA-Z0-9_-]{1,100})\/(status|leads|analytics|leads\/status)$/);
+  const match = url.pathname.match(/^\/api\/admin\/v1\/([a-zA-Z0-9_-]{1,100})\/(status|leads|analytics|leads\/status|leads\/follow-up)$/);
   if (!match) return json({ error: 'Not found' }, 404);
   const [, tenant, resource] = match;
   // Browser origins are never allowed; the published Worker adapter sends only
@@ -26,18 +28,30 @@ export async function handleAdmin(env: Env, request: Request): Promise<Response>
   // A grant cannot create a tenant or reassign an existing site's ownership.
   if (!await env.DB.prepare('SELECT id FROM tenants WHERE id=?').bind(tenant).first()) return json({ error: 'Forbidden' }, 403);
   const identity = { schemaVersion: 1, installationId, tenantId: tenant, siteOrigin: grant.siteOrigin };
-  const required = resource === 'analytics' ? 'analytics:read' : resource === 'leads/status' ? 'leads:write' : resource === 'leads' ? 'leads:read' : undefined;
+  const mutation = resource === 'leads/status' || resource === 'leads/follow-up';
+  const required = resource === 'analytics' ? 'analytics:read' : mutation ? 'leads:write' : resource === 'leads' ? 'leads:read' : undefined;
   if (required && !grant.scopes.includes(required)) return json({ error: 'Forbidden' }, 403);
-  if (request.method !== (resource === 'leads/status' ? 'POST' : 'GET')) return json({ error: 'Method not allowed' }, 405);
-  if (resource === 'status') return json({ ...identity, scopes: grant.scopes, capabilities: { leads: grant.scopes.includes('leads:read'), testSubmissions: grant.scopes.includes('leads:read'), analytics: grant.scopes.includes('analytics:read'), leadStatus: grant.scopes.includes('leads:write') } });
-  if (resource === 'leads/status') {
+  if (request.method !== (mutation ? 'POST' : 'GET')) return json({ error: 'Method not allowed' }, 405);
+  if (resource === 'status') {
+    const stored = await env.DB.prepare('SELECT json FROM theme WHERE tenant_id=?').bind(tenant).first<{json:string}>();
+    let theme:Record<string,string>|null=null;
+    try { const raw=JSON.parse(stored?.json||'null'); if(raw&&typeof raw==='object'&&!Array.isArray(raw)){const safe=Object.fromEntries(websiteColorKeys.filter(key=>isThemeColor(raw[key])).map(key=>[key,raw[key]]));if(Object.keys(safe).length)theme=safe;} } catch { /* An invalid theme never exposes arbitrary stored fields. */ }
+    return json({ ...identity, scopes: grant.scopes, theme, capabilities: { leads: grant.scopes.includes('leads:read'), testSubmissions: grant.scopes.includes('leads:read'), analytics: grant.scopes.includes('analytics:read'), leadStatus: grant.scopes.includes('leads:write'), leadPagination: true, leadFollowUps: await followUpsAvailable(env.DB) } });
+  }
+  if (mutation) {
     if (url.searchParams.has('mode')) return json({ error: 'Test submissions are read-only' }, 400);
     if (!request.headers.get('content-type')?.startsWith('application/json')) return json({ error: 'JSON required' }, 400);
     // Bound streaming bodies too; content-length is not trusted.
     const reader = request.body?.getReader(); let body = ''; let size = 0;
-    if (reader) for (;;) { const { done, value } = await reader.read(); if (done) break; size += value.length; if (size > 2048) { await reader.cancel(); return json({ error: 'Body too large' }, 413); } body += new TextDecoder().decode(value); }
+    const decoder = new TextDecoder();
+    if (reader) for (;;) { const { done, value } = await reader.read(); if (done) break; size += value.length; if (size > (resource==='leads/follow-up'?16384:2048)) { await reader.cancel(); return json({ error: 'Body too large' }, 413); } body += decoder.decode(value,{stream:true}); }
+    body += decoder.decode();
     let data;
     try { data = JSON.parse(body); } catch { return json({ error: 'Invalid JSON' }, 400); }
+    if(resource==='leads/follow-up') {
+      try { return json(await saveFollowUp(env.DB,tenant,installationId,data,'tenant_id')); }
+      catch(error){if(error instanceof LeadError)return json({error:error.message},error.status);throw error;}
+    }
     if (!data || typeof data.id !== 'string' || data.id.length > 200 || !['new', 'contacted', 'closed'].includes(data.status)) return json({ error: 'Invalid lead status' }, 400);
     const result = await env.DB.prepare('UPDATE leads SET status=? WHERE id=? AND tenant_id=? RETURNING id').bind(data.status, data.id, tenant).first();
     return result ? json({ ok: true }) : json({ error: 'Lead not found' }, 404);
@@ -45,6 +59,10 @@ export async function handleAdmin(env: Env, request: Request): Promise<Response>
   if (resource === 'leads') {
     const mode = url.searchParams.get('mode') || 'live';
     if (!['live', 'test'].includes(mode)) return json({ error: 'Invalid mode' }, 400);
+    if(mode==='live'){
+      try{return json({...identity,source:'connected',mode:'production',writable:grant.scopes.includes('leads:write'),...await listLeads(env.DB,tenant,installationId,url.searchParams,'tenant_id')});}
+      catch(error){if(error instanceof LeadError)return json({error:error.message},error.status);throw error;}
+    }
     const sql = mode === 'test'
       ? `SELECT s.id,s.name,s.email,s.phone,s.message,s.page_path,s.created_at,s.fields_json,'test' AS status,s.form_id,'test' AS mode,o.status AS notification_status,o.last_error AS notification_error,o.test_output
          FROM form_submissions s LEFT JOIN form_outbox o ON o.id=s.id AND o.tenant_id=s.tenant_id WHERE s.tenant_id=? AND s.mode='test' ORDER BY s.created_at DESC,s.id DESC LIMIT 200`

@@ -9,7 +9,7 @@ The `vitris` CLI (`@tryvitris/website-harness`) provides a unified, operator-fri
 Install the stable release as a dependency or run via `npx`. For local tarballs and managed upgrades, see [distribution](DISTRIBUTION.md):
 
 ```bash
-npm install --save-dev --save-exact @tryvitris/website-harness@1.0.0
+npm install --save-dev --save-exact @tryvitris/website-harness@1.3.0
 npx vitris --help
 ```
 
@@ -22,6 +22,18 @@ node bin/vitris.js --help
 ---
 
 ## 2. Command Reference
+
+### `vitris manage prepare|status`
+
+New sites include a repository-local `vitris-site-manager` skill, `SITE-MANAGER.md` operational handbook, and `site-manager.json` preferences. `vitris manage prepare --site SITE` refreshes `agent/site-manager/CONTEXT.md` from current source, accepted-memory references, configured integrations and production receipts, and prepares `agent/site-manager/review-task.md`. Successful production publication refreshes these automatically. Existing sites can adopt management with the same command without replacing their agent entrypoints, authored sources or workflow state. Use managed-kit upgrade plan/apply for later shared instruction updates; customize instructions under `agent/overrides/refs/site-manager.md`.
+
+`vitris manage status --site SITE --json` reads local management metadata without writing, fetching analytics or checking uptime. `prepare --dry-run` also writes nothing. A production origin or receipt does not prove live health; configured analytics do not prove collection or dashboard access. Generated context and reports belong in ignored `agent/site-manager/` and `artifacts/site-manager/`. Keep the handbook and preferences in source; credentials and customer records stay out of both.
+
+Recurring reviews also check published website/admin harness and contracts releases against the site's actual declared, locked, installed, managed-kit and known deployed versions. The agent assesses compatibility, version/configuration drift and behavioral or analytics anomalies, then evaluates every proposed change against the accepted design system, shared components, route conventions and integration contracts. Release availability and compatibility need current evidence; `manage status` and `prepare` remain local context operations. Updates are prepared and verified locally through the existing dependency and managed-kit workflows; shared backend migrations and deployment retain their separate authorization requirements. Keep the verified system baseline and intentional exceptions in `SITE-MANAGER.md`.
+
+Reviews report findings and can prepare justified fixes locally for approval. They do not publish. To connect recurring reviews, the agent uses the prepared task brief and the owner's cadence/timezone through its actual scheduling tools, reusing any matching task. Keep cadence/timezone in `site-manager.json` and record the confirmed provider/task ID in ignored `agent/site-manager/schedule.json` after setup. No schedule, CI workflow or OS task is enabled by scaffolding, upgrading or deployment; the external task state must be checked in its scheduler. Missing analytics access is reported as unknown.
+
+The shared `.agents/skills/` location supports [Codex skill discovery](https://learn.chatgpt.com/docs/build-skills) and [Gemini CLI skill discovery](https://geminicli.com/docs/cli/tutorials/skills-getting-started/). Agent entrypoints also point to the skill for environments without that discovery path. [Codex scheduled tasks](https://learn.chatgpt.com/docs/automations?surface=app) can invoke the skill; other agents require a verified scheduler or an explicitly configured external runner.
 
 ### `vitris admin setup|status|verify|grant`
 

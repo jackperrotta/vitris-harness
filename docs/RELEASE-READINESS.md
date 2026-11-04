@@ -1,5 +1,15 @@
 # Stable release checks
 
+## 1.3.0 candidate
+
+The owner-authorized 1.3.0 minor release includes the site manager skill, operational handbook, local context/status commands and production handoff. Its recurring review brief covers live health and analytics, published website/admin harness updates, compatibility and anomaly investigation, and consistency with the site's accepted design and architecture. Reviews report findings and may prepare local fixes; an actual scheduler and separately instructed publication are still required.
+
+This candidate also includes the exact published admin 1.0.0 family integration, website/admin theme and lead follow-up handoff, shared booking/customer-management typography refinements, and updated design/media policy. Verify the published runtime, initializer and contracts with `npm run verify:admin`. Review the complete candidate source against 1.2.0, run the unchanged-source engineering freeze and release scans below, and publish only its verified tarball. Package installation and publication do not deploy or migrate customer websites, admins or shared backends; booking activation and live-service verification remain per-installation operations.
+
+The following 1.2.0 descriptions preserve that release's historical baseline. The 1.3.0 candidate uses the current admin 1.0.0 pins described above and below.
+
+Current development pins the independently published admin family to **1.0.0**. The 1.2.0 descriptions below retain that website-harness release's original baseline; see the current development target section for the reviewed admin upgrade.
+
 The `1.2.0` release candidate is configured as public `@tryvitris/website-harness` with the `latest` dist-tag. Verification creates local artifacts and never publishes a package. `prepublishOnly` enforces the intended identity, public registry and visibility, `latest` for stable versions (`beta` for prereleases), and the packed-release audit.
 
 This stable release includes the separate business admin integration, scoped admin v1 backend API, pinned published admin installer, and authoritative connection verification. New customer sites default to verified local builds and direct Cloudflare uploads; hosted deployment automation is an inactive opt-in example. Admin setup, backend upgrades, cloud provisioning and deployment remain separate operations. The admin dependencies retain their explicit `0.1.0-alpha.2` versions; stabilizing the website harness does not relabel the independent admin packages.
@@ -20,3 +30,7 @@ Existing optional backends must apply `0005_auth.sql` before upgrading their Wor
 Users supply coding-agent access and their own Cloudflare account. No operator credentials are distributed. External media/references retain their own rights. Engineering checks and mocked Cloudflare tests do not establish a live deployment or human design preference win.
 
 The 1.2.0 candidate includes optional website booking and customer appointment management, plus typography/design policy updates. Its exact admin dependency is 0.1.0-alpha.2. Publish and verify that admin family before publishing this package. The booking backend remains opt-in and test-only; live OAuth, challenge and mailbox acceptance remain explicit installation checks. Source push and npm publication do not deploy or migrate a customer backend.
+
+## Current development target: admin 1.0.0
+
+The release descriptions above record the website-harness 1.2.0 baseline and its original alpha.2 pins. Current development targets the independently published runtime, initializer and contracts at exact version 1.0.0. Verify all three public archives with npm run verify:admin before releasing the updated website harness. Admin publication does not publish this checkout or upgrade a customer backend. Preserve separate reviewed package/UI diffs, backend API compatibility, additive migrations, owner/email setup and test-only booking constraints described in docs/ADMIN.md.

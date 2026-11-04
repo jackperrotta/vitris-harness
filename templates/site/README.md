@@ -16,6 +16,8 @@ media/                 # harvest + composed assets
 onboarding/            # crawl + research artifacts
 launch.json            # backend + Cloudflare contract (no secrets)
 site.json              # name, slug, motion
+SITE-MANAGER.md        # operational handbook and owner goals
+site-manager.json      # review preferences (no account credentials)
 theme/defaults.json    # brand tokens
 ```
 
@@ -30,6 +32,8 @@ npm run build                     # → dist/ local preview
 ```
 
 Default loop stops at a local preview. Launch is explicit — see `agent/refs/launch.md` and `launch.json`. Builds and verification run locally; the deployment command uploads the finished files directly to Cloudflare Pages. GitHub stores source and history. New sites have no active GitHub deployment workflow.
+
+After creation, use the `vitris-site-manager` skill for ongoing edits and live-site reviews. `vitris manage prepare --site .` refreshes the site context and recurring review brief; successful production publication also refreshes them. Keep goals and service ownership in `SITE-MANAGER.md`. Recurring reviews report findings and prepare fixes locally for review. Connect a real scheduler with the owner's cadence/timezone before treating recurring reviews as active; see `agent/refs/site-manager.md`.
 
 Set `launch.json.pagesProject` to your Pages project and `launch.json.publicOrigin` to the final production `https://` origin. After completing the initial local-preview workflow, authenticate using `npx wrangler login`, and run `npm run deploy:preview` to check a hosted preview. After accepting it, explicitly publish with `npm run deploy`. Ordinary deployment uses quick publish: rebuild and validate assets, stage the exact files, upload that bundle, record its identity, and check the hosted URL. Use `npm run deploy:full` for a comprehensive publication review. Failed compilation, asset, integrity or availability checks stop publication. Keep `dist/` and staged release output ignored in Git. See `deployment/README.md` for setup.
 

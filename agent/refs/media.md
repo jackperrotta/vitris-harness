@@ -33,3 +33,12 @@ During storyboard, write onboarding/media-selection.json with version:1 and plac
 Jev mediaClassification, mediaSelection, mediaSetReview, and mediaProvenance are independently configurable off/shadow/assist capabilities. Read preparation-bound media-assist reports. Scores are based on supplied observations, not direct visual inspection. Missing/partial judgments never mean bad imagery. Keep all visual and identity obligations when inference is unavailable. Jev must not infer who a photographed person is.
 
 Use contain for logos and artwork; inspect photo crops at phone and desktop sizes. Videos need a local poster, muted inline playback when decorative, a static fallback under prefers-reduced-motion, and no autoplay with sound. Avoid making a video the only carrier of essential content. Inspect sampled footage and actual playback/crop before accepting a placement. Final reviews check that selection-manifest assets actually appear on their planned routes.
+
+
+## Photography that carries the story
+
+Give each placement a job: establish the real business, explain a service, demonstrate completed work, or help the visitor make a decision. Select from inspected full-size candidates for that job. A decorative stock image cannot carry an actual-project or actual-team claim. Preserve the provenance and identity rules below.
+
+Plan the image set across homepage and interiors, including useful context and details from an evidenced project where available. Keep the set coherent in light, color treatment, scale and subject matter; a consistent treatment should preserve the real material rather than apply an indiscriminate filter. Sparse authentic media can support an edited, type-led page; record a content gap instead of inventing proof or filling every section with interchangeable stock.
+
+Review the actual crop at phone and desktop widths. Locate the important subject, keep faces/work details and text-bearing artwork legible, and move text or choose a different image when an overlay competes with it. Use an explicit focal point or a separate derived crop when reflow needs one. Keep captions attached to their images and distinguish verified project facts from illustrative imagery. Preserve originals; record crop/treatment and planned placements in the existing media selection artifacts. Confirm responsive sizing, dimensions and loading priority without accepting a low-quality or misleading crop merely because the file is small.

@@ -147,7 +147,7 @@ export async function buildSite(input: BuildSiteInput): Promise<string[]> {
     const management = pages.find(page => page.path === manageRoute);
     if (management && !/data-vitris-customer-management(?:[\s=>])/.test(management.body)) throw new Error('The customer management route already exists. Add its standard mount or choose another booking route.');
     if (management) management.indexing = 'noindex';
-    else pages.push({path: manageRoute, file: manageRoute.slice(1) + '/index.html', title: 'Manage your appointment', indexing: 'noindex', body: `<header class="vb-site-header"><a href="/">${escapeHtml(site.name)}</a></header><main class="vb-page"><p class="vb-eyebrow">APPOINTMENTS</p><h1>Manage your appointment</h1><div data-vitris-customer-management></div></main>`});
+    else pages.push({path: manageRoute, file: manageRoute.slice(1) + '/index.html', title: 'Manage your appointment', indexing: 'noindex', body: `<header class="vb-site-header"><a href="/" data-type-role="ui">${escapeHtml(site.name)}</a></header><main class="vb-page"><p class="vb-eyebrow" data-type-role="label">APPOINTMENTS</p><h1>Manage your appointment</h1><div data-vitris-customer-management></div></main>`});
     for (const page of pages) if (page.path !== booking.route && /data-vitris-booking(?:[\s=>])/.test(page.body)) throw new Error('The standard booking mount belongs only on the configured booking route.');
   } else if (pages.some(page => /data-vitris-booking(?:[\s=>])/.test(page.body))) throw new Error('A booking mount requires an explicit scheduling connection');
   const compiled = compileAllPages(site, pages, input.catalog, backendOrigin);

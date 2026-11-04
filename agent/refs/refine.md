@@ -1,5 +1,7 @@
 # Later-life refinement
 
+For overall site context, live checks or recurring reviews, use `site-manager.md` and refresh with `vitris manage prepare --site .`. Its handbook and generated index complement accepted site memory; they do not replace the refinement baseline or verification below.
+
 For an opted-in reference release, retain the accepted reference relationships and current direction identity unless the classified change request explicitly revises them. Inspect relevant integrity-bound working-set expansions only as needed. Evaluate repaired production pixels against customer facts, the accepted identity and existing functional gates; do not reopen all catalog discovery or transfer fictional teaching content.
 
 Use this skill only when `agent/change-request.json` is present. Do not restart harvest. Load site memory and the classified slice, not the full onboarding kit.

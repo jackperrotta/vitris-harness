@@ -86,6 +86,11 @@ export function verifyPackage(root: string, out = mkdtempSync(join(tmpdir(), "vi
   runCommand(process.execPath, [join(installed, "bin/vitris-create-site.js"), "--dir", join(out, "site"), "--slug", "official-smoke", "--blank", "--no-prompt", "--harness", archive], install, join(out, "scaffold.log"));
 
   const site = join(out, "site");
+  for (const path of ['.agents/skills/vitris-site-manager/SKILL.md', 'SITE-MANAGER.md', 'site-manager.json', 'agent/refs/site-manager.md', 'agent/site-manager/CONTEXT.md', 'agent/site-manager/review-task.md']) {
+    if (!existsSync(join(site, path))) throw new Error(`Installed starter omitted site manager: ${path}`);
+  }
+  const managerStatus = JSON.parse(runCommand(process.execPath, [join(installed, 'bin/vitris.js'), 'manage', 'status', '--site', site, '--json'], install, join(out, 'manager-status.log')));
+  if (!managerStatus.ok || managerStatus.data.scheduleState !== 'not-connected' || managerStatus.data.liveHealth !== 'not-checked') throw new Error('Installed manager misrepresented schedule or live health');
   const analyticsRef = join(site, 'agent/refs/analytics.md');
   const installedGraph = JSON.parse(readFileSync(join(site, 'agent/graph.yaml'), 'utf8'));
   if (!existsSync(analyticsRef) || !readFileSync(analyticsRef, 'utf8').includes('webAnalyticsToken') ||

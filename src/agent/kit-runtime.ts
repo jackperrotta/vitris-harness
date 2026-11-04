@@ -7,6 +7,7 @@ import { join } from "node:path";
  * runtime during refresh.
  */
 export const AGENT_RUNTIME_HISTORY_ENTRIES = [
+  "site-manager",
   "decisions",
   "runs",
   "run-history",

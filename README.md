@@ -8,8 +8,10 @@ The package is [`@tryvitris/website-harness`](https://www.npmjs.com/package/@try
 
 An optional separate business admin is available through `vitris admin setup|status|verify`; new-site `--admin` prepares follow-up instructions. See the [admin integration guide](docs/ADMIN.md) for pinned packages, local plan/apply, backend grants and the separate customer-account Cloudflare rollout.
 
+This checkout targets the published admin runtime and contracts at exact version **1.0.0**. Earlier website-harness releases may retain older pins until a reviewed upgrade. Admin 1.0 includes lead follow-up, interface/color improvements, account lifecycle and optional operational modules; installing it does not update a deployed website backend or activate live booking, email or payments.
+
 ```bash
-npx --package @tryvitris/website-harness@1.0.0 vitris site create \
+npx --package @tryvitris/website-harness@1.3.0 vitris site create \
   --dir acme --slug acme --name "Acme Shop" \
   --from https://old-site.example --template "Still & Field" \
   --content-file ./acme-notes.md
@@ -25,6 +27,8 @@ Open the **site directory** in your coding agent and ask it to build the site. I
 To browse templates from a harness checkout, run `npm ci`, then `npm run templates:gallery` and open <http://127.0.0.1:4390/>. The gallery loads the hosted catalog. See the [template library guide](agent/refs/template-library.md) for creating and publishing templates.
 
 ## Built-in skills
+
+After creation, new sites also include the discoverable `vitris-site-manager` skill and `SITE-MANAGER.md` operational handbook. `vitris manage prepare --site SITE` refreshes the site context and recurring review brief; production publication refreshes the handoff automatically. Reviews cover live health, analytics, harness updates, compatibility, anomalies and consistency with the accepted site design. Findings and fixes stay local for review; connect the owner's cadence and timezone through the agent's actual scheduler to activate recurring reviews. See the [site manager workflow](agent/refs/site-manager.md).
 
 The harness loads stage-specific instructions from [`agent/refs/`](agent/refs/) automatically. These are not installed agent slash commands: describe the work to your agent, and the workflow selects the relevant guidance. The creative workflow also has the following named skills; their prerequisites are included when needed.
 

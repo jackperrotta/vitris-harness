@@ -111,6 +111,11 @@ test("default deployment uploads fresh build-only bytes and checks availability;
     assert.equal(result.ok, true, result.error);
     assert.equal(result.data?.verification, "build-only");
     assert.equal(result.data?.smokeCheck?.ok, true);
+    assert.equal(existsSync(join(root, 'agent/site-manager/CONTEXT.md')), environment === 'production');
+    if (environment === 'production') {
+      assert.ok(existsSync(join(root, '.agents/skills/vitris-site-manager/SKILL.md')));
+      assert.equal(existsSync(join(root, 'agent/site-manager/schedule.json')), false);
+    }
     const candidate = JSON.parse(readFileSync(join(root, "agent/release-candidate.json"), "utf8"));
     assert.equal(candidate.policyId, "quick-publish-build-only-v1");
     assert.equal(candidate.artifactDigest, artifactManifest(join(root, "dist")).sha256);

@@ -19,6 +19,8 @@ If the initial request provides a source URL, template, and additional content, 
 
 ## Refinement (CLI & Chat Editing)
 
+For ongoing editing, live-site health, analytics or maintenance, use the `vitris-site-manager` skill in `.agents/skills/vitris-site-manager/`. Run `vitris manage prepare --site .`, then read `SITE-MANAGER.md`, `agent/site-manager/CONTEXT.md` and `agent/refs/site-manager.md`. After production launch, use the prepared review brief to connect the owner's requested cadence/timezone through the current agent's scheduler. Report findings and prepare fixes locally for review; scheduled reviews do not publish changes.
+
 When making later-life changes in Cursor or chat:
 1. **Discover Memory & Prepare**:
    Run `npm run go -- --change "..." --prepare` to analyze impact, detect memory drift, and capture a baseline in `agent/requests/<requestId>/baseline.json`.

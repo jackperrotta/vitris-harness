@@ -11,6 +11,12 @@ Evaluate objectively against observable evidence. Inspect actual screenshots for
 
 A visual finding names the route, viewport, section, visible observation, consequence, repair, and what must be preserved. "Make this more premium" without an observable cause is not a finding. Check that the organizing idea is visible, emphasis matches the visitor priority, imagery is legible, type creates a usable hierarchy, interiors belong to the system, and mobile keeps the intended reading order. Decorative complexity is not a bonus.
 
+## Look beyond the homepage resting state
+
+Inspect the actual opening, middle, transitions and closing of the homepage and a substantive interior at desktop and phone widths. During expansion, review the remaining routes against the same accepted relationships. Check photographic meaning and focal crop, text/image association, spacing within and between groups, the relative emphasis of headings/proof/actions, and the completeness of the interior's task and next step. A matching palette or a passing type scale alone does not establish a successful page.
+
+Inspect available form and booking states as well as the initial screenshot: focus, validation, progress, acceptance, failure, no availability, approval pending, changed terms and retry recovery. Look for feedback that shifts or hides controls, detached errors/captions, broken mobile order, lost entries, contradictory receipt wording and decorative states that obscure the next action. Use the ordinary browser nodes and current evidence; do not manufacture successful submissions, provider delivery, screenshot observations or human preferences. Report a located repair through the existing findings contract rather than inventing an aesthetic score or a layout quota.
+
 ## Findings & Review Contract
 - Follow the criteria in `contracts.md`. Every finding must cite an exact location (page/section/viewport), observable evidence, concrete repair, responsible graph target, and verification step.
 - Return `unknown` when evidence is missing. Blocker and major findings require author repair.

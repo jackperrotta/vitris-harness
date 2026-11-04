@@ -10,7 +10,7 @@ export const managementJs = String.raw`(() => {
     const metadata = document.querySelector('script[data-vitris-customer-config]');
     if (!root || !metadata) return;
     root.classList.add('vb');
-    const node = (tag, text, className) => { const el = document.createElement(tag); if (text !== undefined) el.textContent = text; if (className) el.className = className; return el; };
+    const node = (tag, text, className) => { const el = document.createElement(tag); if (text !== undefined) el.textContent = text; if (className) el.className = className; const roles={h2:'card-title',legend:'label',dt:'label'}; if(roles[tag])el.dataset.typeRole=roles[tag]; if(className?.split(' ').some(c=>['vb-notice','vb-hint','vb-reference'].includes(c)))el.dataset.typeRole='caption'; if(className?.split(' ').some(c=>['vb-steps','vb-status'].includes(c)))el.dataset.typeRole='label'; return el; };
     let connection;
     try { connection = JSON.parse(metadata.textContent || ''); if (connection.siteOrigin !== location.origin) throw Error(); }
     catch { root.append(node('p', 'Appointment management is available on the approved business website.', 'vb-error')); return; }

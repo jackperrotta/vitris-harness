@@ -9,6 +9,10 @@ export const bookingJs = `(function initializeBooking() {
     const el = document.createElement(tag);
     if (text !== void 0) el.textContent = text;
     if (className) el.className = className;
+    const roles={h2:'card-title',legend:'label',dt:'label'};
+    if(roles[tag])el.dataset.typeRole=roles[tag];
+    if(className?.split(' ').some(c=>['vb-notice','vb-hint','vb-reference'].includes(c)))el.dataset.typeRole='caption';
+    if(className?.split(' ').some(c=>['vb-steps','vb-status'].includes(c)))el.dataset.typeRole='label';
     return el;
   };
   const notice = (text) => {
@@ -333,6 +337,7 @@ export const bookingJs = `(function initializeBooking() {
           render();
         });
         const label = node("label", void 0, "vb-service"), copy = node("span");
+        copy.dataset.typeRole='body';
         copy.append(node("strong", s.name), node("small", s.durationMinutes + " minutes \\xB7 " + price(s.price)), node("small", s.bookingMode === "approval" ? "Requires business approval" : "Immediate confirmation"));
         label.append(radio, copy);
         list.append(label);

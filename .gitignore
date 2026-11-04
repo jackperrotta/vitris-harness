@@ -30,6 +30,7 @@ agent/preparations/
 agent/leases/
 agent/receipts/
 agent/design-runs/
+agent/site-manager/
 agent/CURRENT.md
 agent/PREPARED.json
 agent/preview-server.json

@@ -17,4 +17,4 @@ export function bookingOrigin(value:unknown):string{
  if(url.origin!==value || url.username||url.password||url.protocol!=='https:' && !(local&&url.protocol==='http:'))throw Error('Scheduling requires HTTPS or an explicit loopback origin');
  return value;
 }
-export function bookingPage(name:string){return `<header class="vb-site-header"><a href="/">${escapeHtml(name)}</a></header><main class="vb-page"><p class="vb-eyebrow">APPOINTMENTS</p><h1>Book an appointment</h1><p>Choose a service and a time that works for you.</p><div data-vitris-booking></div></main>`;}
+export function bookingPage(name:string){return `<header class="vb-site-header"><a href="/" data-type-role="ui">${escapeHtml(name)}</a></header><main class="vb-page"><p class="vb-eyebrow" data-type-role="label">APPOINTMENTS</p><h1>Book an appointment</h1><p>Choose a service and a time that works for you.</p><div data-vitris-booking></div></main>`;}

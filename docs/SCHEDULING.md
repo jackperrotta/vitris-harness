@@ -1,8 +1,8 @@
 # Standard website booking
 
-This unreleased source adds a standard customer booking page backed by the business admin's authoritative appointments. The flow is service, optional location/staff, time, contact details, policy/review, then confirmation or an approval-pending receipt. Both admin and website bookings use the same availability calculations, native resource reservations and calendar export queue.
+The website harness and compatible admin 1.0.0 provide a standard customer booking page backed by the business admin's authoritative appointments. The flow is service, optional location/staff, time, contact details, policy/review, then confirmation or an approval-pending receipt. Both admin and website bookings use the same availability calculations, native resource reservations and calendar export queue.
 
-This slice supports **test bookings only**. Customer emails, calendar attachments and private cancellation/rescheduling links are now implemented. Local emails are captured; sending requires explicit admin/provider setup and allowed test recipients. Production activation, deposits and structured address/intake remain later work. Published admin `0.1.0-alpha.1` does not contain these routes; release and pin compatible packages before installation. No deployment, publication or remote migration is performed by this feature.
+This slice supports **test bookings only**. Customer emails, calendar attachments and private cancellation/rescheduling links are now implemented. Local emails are captured; sending requires explicit admin/provider setup and allowed test recipients. Production activation, deposits and structured address/intake remain later work. Use the exact compatible admin `1.0.0`. The shared website booking typography in this checkout still requires a website-harness release or reviewed local upgrade; publishing the admin does not update an existing website build. No deployment, publication or remote migration is performed by this feature.
 
 ## Connection
 
@@ -65,3 +65,5 @@ Run website `npm run typecheck`, `npm test`, and `npm run verify:package`; run a
 Real OAuth/challenge acceptance, notification onboarding, production mode, schema backup/recovery and customer rollout require separate reviewed releases and deployment authorization. A simulated receipt is not proof of deployed readiness.
 
 Business-configurable reminder emails are managed by the admin harness in Booking settings. It supports up to three lead times and reuses the confirmation sender, calendar attachments and customer-management page. Reminder eligibility follows current business settings and confirmed appointment status; no website credentials or new website component are required. See the admin packaged `agent/refs/customer-notifications.md` and additive migration 0008 for setup and missed-reminder behavior.
+
+The local typography refinement uses the website’s shared role tokens throughout booking and private appointment management, including form controls, summary details, notices and all steps. Panel headings use the declared card-title role; supporting text uses caption, controls use ui, and body copy uses body. Older sites receive readable role defaults. Surrounding authored headings keep their site roles.

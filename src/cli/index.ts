@@ -19,6 +19,7 @@ import { shareSite } from "./share.ts";
 import { explainStage } from "../knowledge/explain.ts";
 import { formsCommand } from "./forms.ts";
 import { adminCommand } from './admin.ts';
+import { manageSite } from './manage.ts';
 import { findHarnessRoot } from "./root.ts";
 import { siteInputsFromFlags } from '../agent/site-inputs.ts';
 
@@ -133,6 +134,7 @@ export async function runCli(argv: string[]): Promise<number> {
 Usage: vitris <command> [options]
 
 Commands:
+  manage prepare|status                Site manager context and recurring review brief
   admin setup|status|verify             Separate business admin; explicit cloud rollout
   forms inspect|setup|status            Inventory, provision, and check contact forms
   doctor                                Check environment, dependencies, and site health
@@ -191,7 +193,9 @@ Options:
   let result: CommandResult;
 
   try {
-    if (primary === 'admin') {
+    if (primary === 'manage') {
+      result = manageSite(secondary || 'status', { site: typeof opts.site === 'string' ? opts.site : undefined, dryRun });
+    } else if (primary === 'admin') {
       const value = (key: string) => typeof opts[key] === 'string' ? opts[key] as string : undefined;
       result = await adminCommand(secondary || 'status', { site: siteRoot, dir: value('dir'), domain: value('domain'), website: value('website'), tenant: value('tenant'), backendOrigin: value('backend-origin'), plan: !!opts.plan, apply: !!opts.apply, leadWrite: !!opts['lead-write'], grants: value('grants'), out: value('out'), dryRun });
     } else if (primary === 'forms') {

@@ -78,3 +78,9 @@ New builds use original Vitris SVG icons through paired `<vitris-icon name="phon
 ## Shared typography for new sites
 
 New redesigns enable site.json typography version 1. Follow agent/refs/typography.md: shared size, weight, leading, tracking and font roles in theme/defaults.json; 18px body, 16px controls, 14px supporting text and a 12px rendered floor. Ordinary H3s share one responsive treatment across pages. Named, justified role variants preserve deliberate hierarchy. Browser acceptance checks every authored route and exposed interaction states. Historical sites retain their styles until an explicit reviewed adoption; kit upgrades never enable this automatically.
+
+## Photography, page craft and interaction states
+
+Choose inspected photography for its business meaning and intended role, preserve verified identity, and inspect focal crops at phone and desktop sizes. Develop hierarchy and spacing through shared tokens and meaningful grouping across the full page. Interior pages must carry the accepted visual system through their own content, proof and next step. Avoid image quotas, fixed page skeletons and arbitrary spacing ratios.
+
+Treat contact, booking and appointment-management states as part of the design: focus, validation, progress, acceptance, empty/error conditions, conflicts and retry recovery need readable, stable layouts and truthful wording. Shared typography and color consistency do not replace visual review. Load the existing stage-scoped media.md, layout.md, implement.md, critic.md and scheduling.md guidance; use the existing direction/storyboard and browser/review contracts. No historical fixture, customer source or human-preference label changes automatically.

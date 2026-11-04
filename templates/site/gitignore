@@ -9,6 +9,8 @@ agent/runs/traces/
 agent/release-bundles/
 agent/release-candidate.json
 agent/releases/
+agent/site-manager/
+artifacts/site-manager/
 .cursor/vitris-trace-hooks.json
 .cursor/hooks.json.vitris-backup
 .cursor/hooks.json.malformed

@@ -7,6 +7,8 @@ import { cloudflarePagesAdapter } from "../integrations/cloudflare-pages.ts";
 import { isPreserveSite } from "../preserve/config.ts";
 import { verifyPreservedSite } from "../preserve/verify.ts";
 import { deploymentSmoke } from "../integrations/deployment-smoke.ts";
+import { prepareSiteManager } from '../agent/site-manager.ts';
+import { findHarnessRoot } from './root.ts';
 
 export type DeployOptions = {
   site?: string;
@@ -71,7 +73,17 @@ export async function deploySite(opts: DeployOptions = {}): Promise<CommandResul
       const remote = await verifyPreservedSite(root, { remoteUrl: deployment.url, signal: opts.signal, onLog: opts.onLog });
       if (!remote.ok) return { ok: false, exitCode: EXIT_CODES.DEPLOYMENT_FAILED, error: "Hosted preservation checks failed; see agent/reviews/preserve-remote.json", failures: remote.failures, data: { url: deployment.url, environment, project, verification, smokeCheck } };
     }
-    return { ok: true, exitCode: EXIT_CODES.SUCCESS, summary: `Deployed exact ${fullReview ? "verified bundle" : "build-only bundle (review gates skipped)"} to ${deployment.url}`,
+    let managementNote = '';
+    if (environment === 'production') {
+      try {
+        prepareSiteManager(root, findHarnessRoot());
+        managementNote = '\nSite manager context refreshed. Review agent/site-manager/review-task.md to connect recurring reviews in your agent scheduler.';
+      } catch (error) {
+        // Publication already succeeded; a local management setup failure must not invite a redeploy.
+        managementNote = `\nDeployment succeeded; site manager setup needs attention: ${error instanceof Error ? error.message : String(error)}`;
+      }
+    }
+    return { ok: true, exitCode: EXIT_CODES.SUCCESS, summary: `Deployed exact ${fullReview ? "verified bundle" : "build-only bundle (review gates skipped)"} to ${deployment.url}${managementNote}`,
       data: { url: deployment.url, environment, project, verification, smokeCheck } };
   } catch (error) {
     return { ok: false, exitCode: EXIT_CODES.DEPLOYMENT_FAILED, error: error instanceof Error ? error.message : String(error) };
