@@ -1,6 +1,6 @@
 {
   "name": "@tryvitris/website-harness",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Vitris agent harness for building and verifying customer websites, with a static compiler, media tools, and optional Cloudflare backend.",
   "type": "module",
   "exports": {

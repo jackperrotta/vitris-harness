@@ -60,6 +60,7 @@ test('new starter pins the harness version, escapes business names, and starts w
   assert.equal(pkg.scripts.deploy, 'node ./node_modules/@tryvitris/website-harness/bin/vitris.js deploy --site . --environment production');
   assert.equal(pkg.scripts['deploy:preview'], 'node ./node_modules/@tryvitris/website-harness/bin/vitris.js deploy --site . --environment preview');
   assert.doesNotMatch(pkg.scripts.deploy, /--quick|wrangler pages deploy/);
+  assert.equal(pkg.scripts['deploy:full'], pkg.scripts.deploy + ' --full-review');
   const workflowDirectory = join(site, '.github/workflows');
   assert.deepEqual(existsSync(workflowDirectory) ? readdirSync(workflowDirectory).filter(file => /\.ya?ml$/.test(file)) : [], []);
   const optionalWorkflow = readFileSync(join(site, 'deployment/github-actions.yml.example'), 'utf8');

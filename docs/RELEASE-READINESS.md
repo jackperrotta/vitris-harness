@@ -1,10 +1,10 @@
 # Stable release checks
 
-The `1.1.0` release candidate is configured as public `@tryvitris/website-harness` with the `latest` dist-tag. Verification creates local artifacts and never publishes a package. `prepublishOnly` enforces the intended identity, public registry and visibility, `latest` for stable versions (`beta` for prereleases), and the packed-release audit.
+The `1.2.0` release candidate is configured as public `@tryvitris/website-harness` with the `latest` dist-tag. Verification creates local artifacts and never publishes a package. `prepublishOnly` enforces the intended identity, public registry and visibility, `latest` for stable versions (`beta` for prereleases), and the packed-release audit.
 
 This stable release includes the separate business admin integration, scoped admin v1 backend API, pinned published admin installer, and authoritative connection verification. New customer sites default to verified local builds and direct Cloudflare uploads; hosted deployment automation is an inactive opt-in example. Admin setup, backend upgrades, cloud provisioning and deployment remain separate operations. The admin dependencies retain their explicit `0.1.0-alpha.2` versions; stabilizing the website harness does not relabel the independent admin packages.
 
-Normal publication retains its full review gates, installed-package coverage for all 381 icons and 1,644 variants, and source/asset integrity checks. Canonical path checks support junction-backed workspaces while retaining child-link confinement. Cloudflare OAuth diagnostics require an explicit authenticated JSON identity; the full suite uses two workers to limit browser contention on CI runners.
+Initial website creation retains its full review gates. Routine direct site publication defaults to quick publish with compilation, asset and bundle integrity checks plus a hosted HTTP smoke check; `--full-review` opts into comprehensive publication verification. Package release checks retain installed-package coverage for all 381 icons and 1,644 variants. Canonical path checks support junction-backed workspaces while retaining child-link confinement. Cloudflare OAuth diagnostics require an explicit authenticated JSON identity; the full suite uses two workers to limit browser contention on CI runners.
 
 Before publishing an owner-authorized release:
 
@@ -19,4 +19,4 @@ Existing optional backends must apply `0005_auth.sql` before upgrading their Wor
 
 Users supply coding-agent access and their own Cloudflare account. No operator credentials are distributed. External media/references retain their own rights. Engineering checks and mocked Cloudflare tests do not establish a live deployment or human design preference win.
 
-The 1.1.0 candidate includes optional website booking and customer appointment management, plus typography/design policy updates. Its exact admin dependency is 0.1.0-alpha.2. Publish and verify that admin family before publishing this package. The booking backend remains opt-in and test-only; live OAuth, challenge and mailbox acceptance remain explicit installation checks. Source push and npm publication do not deploy or migrate a customer backend.
+The 1.2.0 candidate includes optional website booking and customer appointment management, plus typography/design policy updates. Its exact admin dependency is 0.1.0-alpha.2. Publish and verify that admin family before publishing this package. The booking backend remains opt-in and test-only; live OAuth, challenge and mailbox acceptance remain explicit installation checks. Source push and npm publication do not deploy or migrate a customer backend.

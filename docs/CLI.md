@@ -205,17 +205,21 @@ vitris preview [--site <dir>] [--port <number>] [--dry-run]
 ---
 
 ### `vitris deploy`
-Builds and verifies locally, then directly uploads the exact staged bundle to Cloudflare Pages. This is the default site deployment path; it does not require GitHub Actions or Cloudflare-hosted builds. The CLI defaults to a preview, while new redesign sites' `npm run deploy` explicitly selects production and `npm run deploy:preview` selects a preview.
+Quick publish is the default: rebuild locally, then directly upload the exact staged bundle to Cloudflare Pages. This does not require GitHub Actions or Cloudflare-hosted builds. Initial website creation still completes all reference, browser, critic and quality gates through verified local preview. A routine publish request after creation does not restart that workflow or rerun verify/preflight. The CLI defaults to a preview, while new redesign sites' `npm run deploy` explicitly selects production and `npm run deploy:preview` selects a preview.
 ```bash
-vitris deploy [--site <dir>] [--provider cloudflare] [--environment preview|production] [--branch <branch>] [--quick] [--dry-run]
+vitris deploy [--site <dir>] [--provider cloudflare] [--environment preview|production] [--branch <branch>] [--full-review | --quick] [--dry-run]
 ```
 Workflow:
 1. Scoped preflight check verifying Cloudflare credentials (`CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID` or `wrangler login`).
-2. Build and verify the static `dist/` bundle locally, then stage its exact bytes (aborts if verification fails or source/output changes).
+2. Compile and validate the static `dist/` bundle locally, then stage its exact bytes (aborts if compilation or asset validation fails or source/output changes). Browser, graph and launch reviews are skipped by default.
 3. Upload the staged bundle through Wrangler to the configured Pages project and environment; record the source, artifact and deployment identity.
 4. Executes automated remote smoke check against the deployed `*.pages.dev` URL.
 
-Quick publish: `vitris deploy --quick --environment production` rebuilds and uploads without graph gates, browser reviews, or launch preflight. New sites also include `npm run deploy:quick`. The CLI still defaults to preview; preservation sites support previews only and quick mode also skips screenshot comparisons. Compilation, Cloudflare credentials, staged-bundle integrity and the remote HTTP smoke check still apply. Receipts use policy `quick-publish-build-only-v1` and results report `verification: "build-only"`. Skipped reviews are never marked passed. Ordinary deployment retains full verification.
+Use `vitris deploy --environment production` for quick production publication. Receipts use policy `quick-publish-build-only-v1` and results report `verification: "build-only"`. Skipped reviews are never marked passed. Preservation sites support previews only and skip screenshot comparisons during quick publication.
+
+For a comprehensive publication review, use `vitris deploy --full-review --environment production`. This retains graph gates and production browser/launch preflight; preservation previews also repeat local and hosted screenshot comparisons. Results report `verification: "full"`. New sites provide `npm run deploy:full`; for a fully reviewed preview use `vitris deploy --full-review --environment preview`. Full review requires the existing workflow evidence and Chromium where browser checks run; it does not author missing reviews. `--quick` and `npm run deploy:quick` remain compatibility aliases for the default and cannot be combined with `--full-review`. The programmatic `deploySite` API defaults to build-only; pass `fullReview: true` to opt in. Low-level `prepareVerifiedRelease` still always performs full verification.
+
+After upgrading, existing scripts that invoke `vitris deploy` without a review flag use quick publish. Add `--full-review` to retain their previous verification behavior. Separate `predeploy` hooks, hosted workflows and signed-Worker publication retain their configured checks; review those separately when adopting quick publish. Upgrade the managed agent kit through plan/apply so its publication instructions match the installed CLI.
 
 ---
 

@@ -149,8 +149,9 @@ Commands:
   synthesize [--feedback FILE]          Synthesize candidate directions into final representative
   verify                                Verify compilation and evaluate all quality gates
   preview [--port PORT]                 Serve local verified dist preview
-  deploy [--provider cloudflare]        Deploy site to Cloudflare Pages with smoke verification
-    --quick                            Build and deploy, skipping review and quality gates
+  deploy [--provider cloudflare]        Quick publish to Cloudflare Pages (build, upload, smoke check)
+    --full-review                      Include graph, browser and launch review gates
+    --quick                            Compatibility alias for the default quick publish
   cloudflare [doctor|whoami|login]      Cloudflare credentials and permissions diagnostics
   share [--run ID]                      Start local preview or design comparison review share
   knowledge explain --stage STAGE       Show the knowledge that stage would load. No model call.
@@ -329,6 +330,7 @@ Options:
         environment: opts.environment === "production" ? "production" : "preview",
         branch: typeof opts.branch === "string" ? opts.branch : undefined,
         quick: flags.quick === true,
+        fullReview: flags["full-review"] === true,
         dryRun,
         signal: abortController.signal,
         onLog: (line) => stream.log(line),

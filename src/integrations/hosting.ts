@@ -45,7 +45,7 @@ export async function prepareVerifiedRelease(siteRoot: string, environment: "pre
   return stageRelease(root, environment, isPreserveSite(root) ? "preserve-preview-v1" : environment === "production" ? "launch-preflight" : "preview-gates");
 }
 
-/** Explicit build-only release: policyId records that review gates were skipped. */
+/** Default CLI release: policyId records build-only verification, with review gates skipped. */
 export async function prepareQuickRelease(siteRoot: string, environment: "preview" | "production" = "preview"): Promise<VerifiedArtifact> {
   const root = resolve(siteRoot);
   if (isPreserveSite(root) && environment !== "preview") throw new Error("Preserve mode supports temporary previews only");

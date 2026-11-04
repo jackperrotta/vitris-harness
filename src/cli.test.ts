@@ -8,6 +8,7 @@ import { EXIT_CODES } from "./cli/types.ts";
 import * as api from "./cli/api.ts";
 import { acquirePathLock } from "./agent/artifacts.ts";
 import { hasAuthenticatedWranglerSession } from './cli/doctor.ts';
+import { EventStream } from './cli/events.ts';
 
 const temp = () => mkdtempSync(join(tmpdir(), "vitris-cli-test-"));
 
@@ -106,7 +107,7 @@ test('Wrangler authentication requires a successful explicit JSON identity', () 
   assert.equal(hasAuthenticatedWranglerSession(null, '{"loggedIn":true}'), false);
 });
 
-test("CLI preview and deploy validate options and scoped credentials", async () => {
+test("CLI preview and deploy validate options and scoped credentials", async t => {
   const root = temp();
   await runCli(["site", "create", "--dir", root, "--slug", "test-deploy", "--blank"]);
 
@@ -119,6 +120,8 @@ test("CLI preview and deploy validate options and scoped credentials", async () 
   assert.equal(deployCode, withoutToken.ok ? EXIT_CODES.SUCCESS : EXIT_CODES.CONFIG_OR_CLI_ERROR);
 
   // Deploy with token credentials passes doctor and dry-run
+  const oldToken = process.env.CLOUDFLARE_API_TOKEN;
+  const oldAccount = process.env.CLOUDFLARE_ACCOUNT_ID;
   process.env.CLOUDFLARE_API_TOKEN = "dummy-token";
   process.env.CLOUDFLARE_ACCOUNT_ID = "dummy-account";
   try {
@@ -126,16 +129,35 @@ test("CLI preview and deploy validate options and scoped credentials", async () 
     assert.equal(docPass.ok, true);
     const deployDry = await runCli(["deploy", "--site", root, "--provider", "cloudflare", "--dry-run"]);
     assert.equal(deployDry, EXIT_CODES.SUCCESS);
+    for (const environment of ["preview", "production"] as const) {
+      const defaultDry = await api.deploySite({ site: root, environment, dryRun: true });
+      assert.equal(defaultDry.data?.verification, "build-only");
+      assert.match(defaultDry.summary || "", /without review gates/);
+      const fullDry = await api.deploySite({ site: root, environment, fullReview: true, dryRun: true });
+      assert.equal(fullDry.data?.verification, "full");
+      assert.match(fullDry.summary || "", /with full review/);
+    }
     const quickDry = await api.deploySite({ site: root, quick: true, environment: "production", dryRun: true });
     assert.equal(quickDry.ok, true);
     assert.equal(quickDry.data?.verification, "build-only");
     assert.match(quickDry.summary || "", /without review gates/);
     assert.equal(await runCli(["deploy", "--site", root, "--quick", "--environment", "production", "--dry-run"]), EXIT_CODES.SUCCESS);
+    // Inspect the structured CLI result to verify flag forwarding, not only the exit code.
+    const finish = t.mock.method(EventStream.prototype, "finish", () => {});
+    try {
+      assert.equal(await runCli(["deploy", "--site", root, "--full-review", "--environment", "production", "--dry-run", "--json"]), EXIT_CODES.SUCCESS);
+      const result = finish.mock.calls.at(-1)?.arguments[0] as { data: { verification: string } };
+      assert.equal(result.data.verification, "full");
+    } finally { finish.mock.restore(); }
+    assert.equal(await runCli(["deploy", "--site", root, "--quick", "--full-review", "--dry-run"]), EXIT_CODES.CONFIG_OR_CLI_ERROR);
     const pkg = JSON.parse(readFileSync(join(root, "package.json"), "utf8"));
     assert.match(pkg.scripts["deploy:quick"], /--environment production --quick/);
+    assert.match(pkg.scripts["deploy:full"], /--environment production --full-review/);
   } finally {
-    delete process.env.CLOUDFLARE_API_TOKEN;
-    delete process.env.CLOUDFLARE_ACCOUNT_ID;
+    if (oldToken === undefined) delete process.env.CLOUDFLARE_API_TOKEN;
+    else process.env.CLOUDFLARE_API_TOKEN = oldToken;
+    if (oldAccount === undefined) delete process.env.CLOUDFLARE_ACCOUNT_ID;
+    else process.env.CLOUDFLARE_ACCOUNT_ID = oldAccount;
   }
 });
 
