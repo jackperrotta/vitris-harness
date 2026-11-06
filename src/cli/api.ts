@@ -1,5 +1,6 @@
 export { createSite, type CreateSiteOptions } from "./site-create.ts";
 export { manageSite } from './manage.ts';
+export { siteCareCommand, type SiteCareOptions } from './site-care.ts';
 export { runDoctor, type DoctorOptions, type DoctorDiagnostic } from "./doctor.ts";
 export { runSite, buildAdapterConfig, type RunOptions } from "./run.ts";
 export { refineSite, type RefineOptions } from "./refine.ts";

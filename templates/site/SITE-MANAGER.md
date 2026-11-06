@@ -14,6 +14,8 @@ Record who maintains hosting/domain, forms, booking/admin and analytics, with re
 
 ## Maintenance decisions
 
+For recurring care, use [the daily coordinator](agent/refs/site-care.md). One daily task adds weekly/monthly checks when due. Record the chosen scheduler, timezone/time and cloud/local execution reason here after verified setup. Cloud execution needs durable remote state and configured repository/source access; local fallback requires the computer and agent to remain on. Record where cloud reports and proposed patches are retained for review. Provider/task IDs and credentials belong only in ignored operator records and secret stores.
+
 ### System baseline and update history
 
 Record the website harness and, when present, the separate admin harness/contracts versions with the package/lockfile, managed-kit and deployment evidence that establish them. Keep local and deployed versions distinct, date release checks and compatibility decisions, and mark unknown versions explicitly. Record accepted design-system/theme references, shared component and route conventions, integration contracts and intentional exceptions so future changes can be checked against how the whole site is built. Retain previous verified baselines and their rollback references when an update passes verification.

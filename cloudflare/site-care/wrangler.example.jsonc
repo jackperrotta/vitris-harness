@@ -1,0 +1,10 @@
+{
+  // Copy to a dedicated directory and account configuration; never merge into the business backend.
+  "name": "YOUR-SITE-care-state",
+  "main": "../../node_modules/@tryvitris/website-harness/bin/cloudflare/site-care.js",
+  "compatibility_date": "2026-09-01",
+  "vars": { "SITE_CARE_SITE_ID": "COPY-SITE-ID-FROM-site-manager.json" },
+  "durable_objects": { "bindings": [{ "name": "CARE_STATE", "class_name": "SiteCareState" }] },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["SiteCareState"] }]
+  // Set SITE_CARE_STATE_TOKEN with wrangler secret put, never here.
+}

@@ -19,7 +19,7 @@ test('new and preserved sites receive management without scheduling or source wo
     const root = temp();
     const result = await createSite({ dir: root, slug: 'manager-fixture', ...(preserve ? { mode: 'preserve', from: 'https://source.example' } : { blank: true }) });
     assert.equal(result.ok, true);
-    for (const path of [MANAGER_SKILL, MANAGER_CONTEXT, MANAGER_TASK, 'SITE-MANAGER.md', 'site-manager.json', 'agent/refs/site-manager.md']) assert.ok(existsSync(join(root, path)), path);
+    for (const path of [MANAGER_SKILL, MANAGER_CONTEXT, MANAGER_TASK, 'SITE-MANAGER.md', 'site-manager.json', 'agent/refs/site-manager.md', 'agent/refs/site-care.md']) assert.ok(existsSync(join(root, path)), path);
     assert.equal(siteManagerStatus(root).mode, preserve ? 'preserve' : 'redesign');
     assert.equal(siteManagerStatus(root).scheduleState, 'not-connected');
     assert.deepEqual(read(root, 'site-manager.json').schedule, { cadence: null, timezone: null });

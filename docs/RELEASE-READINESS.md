@@ -1,5 +1,13 @@
 # Stable release checks
 
+## 1.4.0 candidate
+
+The owner-authorized 1.4.0 minor release adds one daily site-care coordinator that also assigns weekly and monthly reviews when due. It supports cloud-first native scheduler setup with a dedicated optional durable-state Worker and an explicit local scheduling fallback. Native tools must create or reuse the real task, complete a manual review and read the task back before its reference is recorded; files alone never activate a schedule. Local fallback requires the computer and agent to remain running.
+
+The coordinator retains bounded findings and comparison baselines, catches up missed calendar periods, prevents overlapping reviews, fences expired attempts and preserves per-scope history when checks are blocked. Reviews cover production health, analytics, website/admin harness updates and compatibility, anomalies and consistency with the accepted site design and architecture. Routine fixes remain reviewable candidates. This release does not activate customer schedules, publish sites, provision shared services or migrate existing backends. See `agent/refs/site-care.md` for setup, the dedicated optional cloud-state deployment and failure behavior.
+
+Run the unchanged-source engineering freeze and release scans below against the complete 1.4.0 candidate. Publish only the verified tarball. The following 1.3.0 and 1.2.0 descriptions retain their historical release scope.
+
 ## 1.3.0 candidate
 
 The owner-authorized 1.3.0 minor release includes the site manager skill, operational handbook, local context/status commands and production handoff. Its recurring review brief covers live health and analytics, published website/admin harness updates, compatibility and anomaly investigation, and consistency with the site's accepted design and architecture. Reviews report findings and may prepare local fixes; an actual scheduler and separately instructed publication are still required.

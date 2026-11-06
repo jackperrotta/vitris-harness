@@ -11,7 +11,7 @@ An optional separate business admin is available through `vitris admin setup|sta
 This checkout targets the published admin runtime and contracts at exact version **1.0.0**. Earlier website-harness releases may retain older pins until a reviewed upgrade. Admin 1.0 includes lead follow-up, interface/color improvements, account lifecycle and optional operational modules; installing it does not update a deployed website backend or activate live booking, email or payments.
 
 ```bash
-npx --package @tryvitris/website-harness@1.3.0 vitris site create \
+npx --package @tryvitris/website-harness@1.4.0 vitris site create \
   --dir acme --slug acme --name "Acme Shop" \
   --from https://old-site.example --template "Still & Field" \
   --content-file ./acme-notes.md

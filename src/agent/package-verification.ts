@@ -86,11 +86,22 @@ export function verifyPackage(root: string, out = mkdtempSync(join(tmpdir(), "vi
   runCommand(process.execPath, [join(installed, "bin/vitris-create-site.js"), "--dir", join(out, "site"), "--slug", "official-smoke", "--blank", "--no-prompt", "--harness", archive], install, join(out, "scaffold.log"));
 
   const site = join(out, "site");
-  for (const path of ['.agents/skills/vitris-site-manager/SKILL.md', 'SITE-MANAGER.md', 'site-manager.json', 'agent/refs/site-manager.md', 'agent/site-manager/CONTEXT.md', 'agent/site-manager/review-task.md']) {
+  for (const path of ['.agents/skills/vitris-site-manager/SKILL.md', 'SITE-MANAGER.md', 'site-manager.json', 'agent/refs/site-manager.md', 'agent/refs/site-care.md', 'agent/site-manager/CONTEXT.md', 'agent/site-manager/review-task.md']) {
     if (!existsSync(join(site, path))) throw new Error(`Installed starter omitted site manager: ${path}`);
   }
   const managerStatus = JSON.parse(runCommand(process.execPath, [join(installed, 'bin/vitris.js'), 'manage', 'status', '--site', site, '--json'], install, join(out, 'manager-status.log')));
   if (!managerStatus.ok || managerStatus.data.scheduleState !== 'not-connected' || managerStatus.data.liveHealth !== 'not-checked') throw new Error('Installed manager misrepresented schedule or live health');
+  for (const path of ['bin/cloudflare/site-care.js', 'cloudflare/site-care/wrangler.example.jsonc']) if (!existsSync(join(installed, path))) throw new Error(`Installed package omitted cloud care support: ${path}`);
+  const careCommand = (args: string[]) => JSON.parse(runCommand(process.execPath, [join(installed, 'bin/vitris.js'), 'manage', 'care', ...args, '--site', site, '--json'], install));
+  careCommand(['configure', '--timezone', 'America/New_York', '--state', 'local']);
+  const careRun = careCommand(['begin']);
+  if (careRun.data.packet.scopes.length !== 3 || careRun.data.packet.token || !careRun.data.packetFile) throw new Error('Installed care coordinator did not return all initial scopes and a private packet file');
+  save(join(site, 'artifacts/site-manager/smoke-report.json'), { scopes: { daily: 'completed', weekly: 'completed', monthly: 'completed' }, findings: [] });
+  careCommand(['complete', '--packet', careRun.data.packetFile, '--report', 'artifacts/site-manager/smoke-report.json']);
+  if (careCommand(['begin']).data.status !== 'already-completed') throw new Error('Installed care coordinator duplicated completed scopes');
+  save(join(site, 'agent/site-manager/smoke-capabilities.json'), { provider: 'package-smoke', local: { available: true, evidence: 'Test-only local capability; no task is created' } });
+  const carePlan = JSON.parse(runCommand(process.execPath, [join(installed, 'bin/vitris.js'), 'manage', 'schedule', 'plan', '--site', site, '--capabilities', 'agent/site-manager/smoke-capabilities.json', '--json'], install));
+  if (carePlan.data.executionEnvironment !== 'local' || carePlan.data.cadence !== 'daily' || existsSync(join(site, 'agent/site-manager/schedule.json'))) throw new Error('Installed schedule planner activated a task or lost its local fallback');
   const analyticsRef = join(site, 'agent/refs/analytics.md');
   const installedGraph = JSON.parse(readFileSync(join(site, 'agent/graph.yaml'), 'utf8'));
   if (!existsSync(analyticsRef) || !readFileSync(analyticsRef, 'utf8').includes('webAnalyticsToken') ||

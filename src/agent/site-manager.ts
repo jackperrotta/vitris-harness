@@ -2,6 +2,8 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative, resolve } from 'node:path';
 import { files, json, save, sha256, within } from './artifacts.ts';
 import { sourceRevision } from '../engine/revision.ts';
+import type { CareConfig } from './site-care/config.ts';
+import { careReviewBrief } from './site-care/brief.ts';
 
 export const MANAGER_SKILL = '.agents/skills/vitris-site-manager/SKILL.md';
 export const MANAGER_CONTEXT = 'agent/site-manager/CONTEXT.md';
@@ -11,12 +13,13 @@ export interface SiteManagerConfig {
   version: 1;
   reviewPolicy: 'report-and-prepare-local-fixes';
   schedule: { cadence: string | null; timezone: string | null };
+  care?: CareConfig;
 }
 
 const defaultConfig = (): SiteManagerConfig => ({ version: 1, reviewPolicy: 'report-and-prepare-local-fixes',
   schedule: { cadence: null, timezone: null } });
 
-function readConfig(root: string): SiteManagerConfig {
+export function readSiteManagerConfig(root: string): SiteManagerConfig {
   if (!existsSync(join(root, 'site-manager.json'))) return defaultConfig();
   const config = json<SiteManagerConfig>(join(root, 'site-manager.json'));
   if (config.version !== 1 || config.reviewPolicy !== 'report-and-prepare-local-fixes' || !config.schedule ||
@@ -25,6 +28,9 @@ function readConfig(root: string): SiteManagerConfig {
         return value !== null && (typeof value !== 'string' || !value.trim());
       })) throw new Error('Invalid site-manager.json: use version 1, report-and-prepare-local-fixes, and nullable schedule fields');
   if (config.schedule.timezone) new Intl.DateTimeFormat('en', { timeZone: config.schedule.timezone });
+  if (config.care !== undefined && (!config.care || typeof config.care !== 'object' || typeof config.care.siteId !== 'string' ||
+      !/^[a-zA-Z0-9_-]{1,128}$/.test(config.care.siteId) || !['local', 'remote'].includes(config.care.state) || typeof config.care.time !== 'string' ||
+      !/^([01]\d|2[0-3]):[0-5]\d$/.test(config.care.time))) throw new Error('Invalid site-manager.json care settings; preserve and resolve explicitly');
   return config;
 }
 
@@ -45,7 +51,7 @@ export function siteManagerStatus(siteRoot: string) {
   const site = json<{ name?: string; slug?: string }>(join(root, 'site.json'));
   const launch = json<{ mode?: string; publicOrigin?: string; backendOrigin?: string; webAnalyticsToken?: string;
     forms?: unknown[]; scheduling?: { enabled?: boolean; apiOrigin?: string } }>(join(root, 'launch.json'));
-  const config = readConfig(root);
+  const config = readSiteManagerConfig(root);
   const schedulePath = join(root, 'agent/site-manager/schedule.json');
   const scheduler = existsSync(schedulePath) ? json<{ provider: string; taskId: string }>(schedulePath) : null;
   if (scheduler && (typeof scheduler.provider !== 'string' || !scheduler.provider.trim() || typeof scheduler.taskId !== 'string' || !scheduler.taskId.trim())) throw new Error('Invalid local site manager schedule reference');
@@ -80,7 +86,7 @@ export function prepareSiteManager(siteRoot: string, harnessRoot: string) {
   const skillText = readFileSync(join(harness, 'templates/site', MANAGER_SKILL), 'utf8');
   const installationPath = 'agent/site-manager/installation.json';
   const previous = existsSync(join(root, installationPath)) ? json<{ skillHash?: string }>(join(root, installationPath)) : undefined;
-  const destinations = [MANAGER_SKILL, MANAGER_CONTEXT, MANAGER_TASK, installationPath, 'site-manager.json', 'SITE-MANAGER.md', 'agent/refs/site-manager.md', '.gitignore'];
+  const destinations = [MANAGER_SKILL, MANAGER_CONTEXT, MANAGER_TASK, installationPath, 'site-manager.json', 'SITE-MANAGER.md', 'agent/refs/site-manager.md', 'agent/refs/site-care.md', '.gitignore'];
   // Validate all output paths and skill provenance before installing anything.
   for (const path of destinations) within(root, path);
   const skillPath = join(root, MANAGER_SKILL);
@@ -100,6 +106,7 @@ export function prepareSiteManager(siteRoot: string, harnessRoot: string) {
   if (!existsSync(join(root, 'site-manager.json'))) save(join(root, 'site-manager.json'), status.config);
   // Existing sites can adopt management without replacing their AGENTS.md or other kit files.
   if (!existsSync(join(root, 'agent/refs/site-manager.md'))) write('agent/refs/site-manager.md', readFileSync(join(harness, 'agent/refs/site-manager.md'), 'utf8'));
+  if (!existsSync(join(root, 'agent/refs/site-care.md'))) write('agent/refs/site-care.md', readFileSync(join(harness, 'agent/refs/site-care.md'), 'utf8'));
   write(MANAGER_SKILL, skillText);
   save(join(root, installationPath), { version: 1, skillHash: sha256(skillText) });
   const inventory = (prefix: string) => status.inventory.filter(path => path.startsWith(prefix)).map(path => `- \`${path}\``).join('\n') || '- None recorded';
@@ -111,11 +118,6 @@ export function prepareSiteManager(siteRoot: string, harnessRoot: string) {
     `## Integrations\n\nFirst-party analytics: ${status.analytics.firstParty}\nField performance: ${status.analytics.fieldPerformance}\nAnalytics access/results: not checked\nForms configured: ${status.integrations.forms}\nBooking: ${status.integrations.booking}\nBooking API: ${status.integrations.bookingOrigin || 'unknown'}\nAdmin, DNS, email, other analytics and external services: inspect the handbook and existing configuration; connection and health unverified.\n\n` +
     `## Page sources\n\n${inventory(status.mode === 'preserve' ? 'preserved/' : 'pages/')}\n\n## Components and theme\n\n${inventory('components/')}\n${inventory('theme/')}\n\n## Business, content and media evidence\n\n${inventory('onboarding/')}\n${inventory('media/')}\n${inventory('public/')}\n\n` +
     `## Recurring review\n\nPolicy: report findings and prepare justified fixes locally for approval.\nSchedule: ${status.scheduleState}; external task state must be checked in its scheduler.\nPreferences: \`site-manager.json\`. Local task reference: \`agent/site-manager/schedule.json\`. Task prompt: \`agent/site-manager/review-task.md\`.\n`);
-  write(MANAGER_TASK, `Use the vitris-site-manager skill in this website repository. Run \`vitris manage prepare --site .\`, then read \`SITE-MANAGER.md\`, \`agent/site-manager/CONTEXT.md\`, any \`agent/overrides/refs/site-manager.md\`, and \`agent/refs/site-manager.md\`. Resolve the current production origin from the refreshed configuration; do not assume a preview or harvest source is production.\n\n` +
-    `Review current live availability, important desktop/mobile journeys, broken navigation/assets, content freshness and relevant accessibility/performance. Inspect authorized analytics and logs against owner goals using comparable production periods, reporting dates, timezone, sources and sample sizes. Missing access or data is unknown. Do not submit real leads, bookings or notifications.\n\n` +
-    `Check published website harness, separate admin harness and admin contracts releases using current registry metadata and publisher release notes. Compare declared, locked, installed, managed-kit and known deployed versions; locate the actual optional admin rather than inferring its version from an installer dependency. Report available and recommended versions, compatibility evidence, unexplained drift and required migrations. Missing release or deployed-version evidence is unknown. Prepare exact-version local update candidates through the documented dependency and managed-kit plan/apply workflows.\n\n` +
-    `Look for behavioral, configuration and analytics anomalies against prior dated reports and comparable production evidence; distinguish confirmed faults from hypotheses or missing data. Assess every proposed change against the whole site's accepted design system, shared components, route patterns and integration contracts. Preserve intentional exceptions and the supported website/admin theme handoff. Enumerate affected routes and services, verify shared behavior across them, and report compatibility and consistency findings alongside the proposed fixes.\n\n` +
-    `Report findings and prepare justified routine fixes locally through the site's existing editing and verification workflow. Preserve accepted design/content decisions. Never publish, send messages to customers, provision services or change shared backends from this review. Save a dated report and evidence under \`artifacts/site-manager/\`, preserve previous reports, and return verified findings, locally prepared changes, validation, unverified areas and decisions needed. If an active edit or unrelated dirty files overlap the repair, report it and leave that repair for the interactive agent.\n\n` +
-    `This brief does not activate a schedule. Bind it to this website repository in the chosen scheduler with the owner's cadence and timezone; inspect existing tasks to avoid duplicates. Store the confirmed provider/task ID in ignored \`agent/site-manager/schedule.json\` only after successful setup; keep cadence/timezone preferences in \`site-manager.json\`.\n`);
+  write(MANAGER_TASK, careReviewBrief);
   return { ...status, installed: true, contextPresent: true, context: MANAGER_CONTEXT, taskBrief: MANAGER_TASK };
 }

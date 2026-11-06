@@ -42,7 +42,7 @@ const workerBlake3={name:'worker-blake3',setup(build){
  build.onResolve({filter:/^blake3-wasm$/},()=>({path:'blake3',namespace:'vitris-worker'}));
  build.onLoad({filter:/.*/,namespace:'vitris-worker'},()=>({resolveDir:process.cwd(),contents:`import module from './blake3.wasm'; import init,* as bindings from 'blake3-wasm/dist/wasm/web/blake3_js.js'; import {provideWasm} from 'blake3-wasm/esm/browser/wasm.js'; provideWasm(bindings); await init(module); export {hash} from 'blake3-wasm/esm/browser/index.js';`}));
 }};
-const workerBuild=await build({bundle:true,metafile:true,platform:'browser',format:'esm',external:['cloudflare:*','node:*','./blake3.wasm'],plugins:[workerBlake3],entryPoints:{backend:'src/worker/index.ts',templates:'src/template-cloud/worker.ts','forms-test':'src/worker/forms-sandbox.ts'},outdir:'bin/cloudflare'});
+const workerBuild=await build({bundle:true,metafile:true,platform:'browser',format:'esm',external:['cloudflare:*','node:*','./blake3.wasm'],plugins:[workerBlake3],entryPoints:{backend:'src/worker/index.ts',templates:'src/template-cloud/worker.ts','forms-test':'src/worker/forms-sandbox.ts','site-care':'src/agent/site-care/worker.ts'},outdir:'bin/cloudflare'});
 copyFileSync('node_modules/blake3-wasm/dist/wasm/web/blake3_js_bg.wasm','bin/cloudflare/blake3.wasm');
 mkdirSync('licenses',{recursive:true});
 for(const name of new Set(Object.keys(workerBuild.metafile.inputs).flatMap(path=>path.match(/^node_modules\/(@[^/]+\/[^/]+|[^/]+)/)?.[1]||[]))){
