@@ -60,3 +60,8 @@ bin/chunks/
 bin/types/
 bin/cloudflare/
 .npmrc
+# Generated public release metadata is packed explicitly; its authored input is docs/releases.
+/vitris-release.json
+.vitris/
+.maintenance-*.log
+vitris-release.json

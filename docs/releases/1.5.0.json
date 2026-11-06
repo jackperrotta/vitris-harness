@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "name": "@tryvitris/website-harness",
+  "version": "1.5.0",
+  "title": "Daily package maintenance in existing site care",
+  "notesScope": "package",
+  "notes": [
+    "Adds a shared-registry package inventory and pinned preparation plan using admin maintenance SDK 1.5.0. Separate admin source is explicitly bound and revalidated against the website connection.",
+    "Refreshes the generated daily care brief to prepare and test compatible website/admin updates within the existing coordinator and publishing permissions; no extra schedule is activated."
+  ]
+}

@@ -2,6 +2,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative, resolve } from 'node:path';
 import { files, json, save, sha256, within } from './artifacts.ts';
 import { sourceRevision } from '../engine/revision.ts';
+import type {AdminMaintenanceBinding} from './package-maintenance.ts';
 import type { CareConfig } from './site-care/config.ts';
 import { careReviewBrief } from './site-care/brief.ts';
 
@@ -14,6 +15,7 @@ export interface SiteManagerConfig {
   reviewPolicy: 'report-and-prepare-local-fixes';
   schedule: { cadence: string | null; timezone: string | null };
   care?: CareConfig;
+  updates?: {version:1;policy:'prepare-and-test';admin?:AdminMaintenanceBinding};
 }
 
 const defaultConfig = (): SiteManagerConfig => ({ version: 1, reviewPolicy: 'report-and-prepare-local-fixes',
@@ -31,6 +33,7 @@ export function readSiteManagerConfig(root: string): SiteManagerConfig {
   if (config.care !== undefined && (!config.care || typeof config.care !== 'object' || typeof config.care.siteId !== 'string' ||
       !/^[a-zA-Z0-9_-]{1,128}$/.test(config.care.siteId) || !['local', 'remote'].includes(config.care.state) || typeof config.care.time !== 'string' ||
       !/^([01]\d|2[0-3]):[0-5]\d$/.test(config.care.time))) throw new Error('Invalid site-manager.json care settings; preserve and resolve explicitly');
+  if(config.updates!==undefined&&(config.updates.version!==1||config.updates.policy!=='prepare-and-test'||config.updates.admin&&(!config.updates.admin.directory||config.updates.admin.version!==1||!config.updates.admin.installationId||!config.updates.admin.siteId||!config.updates.admin.adminOrigin)))throw new Error('Invalid package maintenance binding; preserve and resolve explicitly');
   return config;
 }
 
@@ -86,7 +89,7 @@ export function prepareSiteManager(siteRoot: string, harnessRoot: string) {
   const skillText = readFileSync(join(harness, 'templates/site', MANAGER_SKILL), 'utf8');
   const installationPath = 'agent/site-manager/installation.json';
   const previous = existsSync(join(root, installationPath)) ? json<{ skillHash?: string }>(join(root, installationPath)) : undefined;
-  const destinations = [MANAGER_SKILL, MANAGER_CONTEXT, MANAGER_TASK, installationPath, 'site-manager.json', 'SITE-MANAGER.md', 'agent/refs/site-manager.md', 'agent/refs/site-care.md', '.gitignore'];
+  const destinations = [MANAGER_SKILL, MANAGER_CONTEXT, MANAGER_TASK, installationPath, 'site-manager.json', 'SITE-MANAGER.md', 'agent/refs/site-manager.md', 'agent/refs/site-care.md', 'agent/refs/package-updates.md', '.gitignore'];
   // Validate all output paths and skill provenance before installing anything.
   for (const path of destinations) within(root, path);
   const skillPath = join(root, MANAGER_SKILL);
@@ -107,12 +110,13 @@ export function prepareSiteManager(siteRoot: string, harnessRoot: string) {
   // Existing sites can adopt management without replacing their AGENTS.md or other kit files.
   if (!existsSync(join(root, 'agent/refs/site-manager.md'))) write('agent/refs/site-manager.md', readFileSync(join(harness, 'agent/refs/site-manager.md'), 'utf8'));
   if (!existsSync(join(root, 'agent/refs/site-care.md'))) write('agent/refs/site-care.md', readFileSync(join(harness, 'agent/refs/site-care.md'), 'utf8'));
+  if (!existsSync(join(root,'agent/refs/package-updates.md'))) write('agent/refs/package-updates.md',readFileSync(join(harness,'agent/refs/package-updates.md'),'utf8'));
   write(MANAGER_SKILL, skillText);
   save(join(root, installationPath), { version: 1, skillHash: sha256(skillText) });
   const inventory = (prefix: string) => status.inventory.filter(path => path.startsWith(prefix)).map(path => `- \`${path}\``).join('\n') || '- None recorded';
   write(MANAGER_CONTEXT, `# Current site context\n\nGenerated ${status.generatedAt}. Run \`vitris manage prepare --site .\` to refresh. This file indexes local evidence; it does not certify live health.\n\n` +
     `Site: ${status.name}\nMode: ${status.mode}\nSource revision: \`${status.sourceRevision}\`\nProduction origin: ${status.productionOrigin || 'unknown; do not substitute the harvest source or a preview'}\nLive health: not checked\n\n` +
-    `## Harness updates and site consistency\n\nRelease availability and compatibility: not checked by this local preparation. Read the website's package/lockfile, installed metadata and managed-kit manifest, plus the actual separate admin's package/configuration and deployment evidence when present. Follow \`agent/refs/site-manager.md\` to check published releases, identify drift and anomalies, and assess every proposed change against the accepted design system, shared components, route conventions and integration contracts. Record the verified system baseline and intentional exceptions in \`SITE-MANAGER.md\`.\n\n` +
+    `## Harness updates and site consistency\n\nRelease availability and compatibility: not checked by this local preparation. Run \`vitris manage updates --site . --out agent/site-manager/package-updates.json --json\` during daily care and before publication. Bind the actual separate admin once with \`--admin-dir PATH --bind\` after its identity matches this website; a tool dependency is not its installed version. Read the website's package/lockfile, installed metadata and managed-kit manifest, plus the actual separate admin's package/configuration and deployment evidence when present. Follow \`agent/refs/site-manager.md\` to check published releases, identify drift and anomalies, and assess every proposed change against the accepted design system, shared components, route conventions and integration contracts. Record the verified system baseline and intentional exceptions in \`SITE-MANAGER.md\`.\n\n` +
     `## Knowledge map\n\n- \`SITE-MANAGER.md\`: owner goals, important journeys, service ownership and maintenance decisions\n- \`launch.json\`, \`site.json\`: current public configuration and identity\n- \`agent/site-memory.json\`: accepted preferences and unresolved items (if present)\n- \`agent/overrides/refs/site-manager.md\`: site-specific instructions (if present)\n- \`agent/refs/site-manager.md\`: management workflow\n- \`agent/requests/\`, \`agent/reviews/\`: change baselines and verification evidence\n- \`agent/releases/\`: deployment records; no current health guarantee\n- \`artifacts/site-manager/\`: dated operational reports and evidence\n\n` +
     `## Production record\n\n${status.lastProductionRelease ? JSON.stringify(status.lastProductionRelease, null, 2) : 'No production deployment receipt recorded. A configured origin may still be live; verify it independently.'}\n\n` +
     `## Integrations\n\nFirst-party analytics: ${status.analytics.firstParty}\nField performance: ${status.analytics.fieldPerformance}\nAnalytics access/results: not checked\nForms configured: ${status.integrations.forms}\nBooking: ${status.integrations.booking}\nBooking API: ${status.integrations.bookingOrigin || 'unknown'}\nAdmin, DNS, email, other analytics and external services: inspect the handbook and existing configuration; connection and health unverified.\n\n` +

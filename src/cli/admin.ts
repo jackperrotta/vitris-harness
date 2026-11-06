@@ -6,7 +6,7 @@ import { parseManifest } from '@tryvitris/website-admin-contracts';
 import { readConnection } from '../admin/connection.ts';
 import { EXIT_CODES, type CommandResult } from './types.ts';
 
-export const ADMIN_VERSION = '1.0.0';
+export const ADMIN_VERSION = '1.5.0';
 export type AdminOptions = { site?: string; dir?: string; domain?: string; website?: string; tenant?: string; backendOrigin?: string; plan?: boolean; apply?: boolean; leadWrite?: boolean; dryRun?: boolean; grants?: string; out?: string };
 
 /** Merge the operator's COMPLETE map, never replace unrelated installations. */

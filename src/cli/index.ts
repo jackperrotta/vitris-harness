@@ -20,6 +20,7 @@ import { explainStage } from "../knowledge/explain.ts";
 import { formsCommand } from "./forms.ts";
 import { adminCommand } from './admin.ts';
 import { manageSite } from './manage.ts';
+import {packageMaintenanceCommand} from './package-maintenance.ts';
 import { siteCareCommand } from './site-care.ts';
 import { findHarnessRoot } from "./root.ts";
 import { siteInputsFromFlags } from '../agent/site-inputs.ts';
@@ -136,6 +137,7 @@ Usage: vitris <command> [options]
 
 Commands:
   manage prepare|status                Site manager context and recurring review brief
+  manage updates                      Check package releases; --admin-dir PATH --bind links the actual admin
   manage care ACTION                   Daily coordinator: configure/status/begin/renew/complete/abort
   manage schedule plan|record          Cloud-first native scheduler setup bridge
   admin setup|status|verify             Separate business admin; explicit cloud rollout
@@ -198,7 +200,7 @@ Options:
   try {
     if (primary === 'manage') {
       const value = (key: string) => typeof opts[key] === 'string' ? opts[key] as string : undefined;
-      result = ['care', 'schedule'].includes(secondary || '') ? await siteCareCommand(secondary!, command[2] || 'status', {
+      result = secondary==='updates'?await packageMaintenanceCommand({site:value('site'),adminDirectory:value('admin-dir'),bind:!!opts.bind,out:value('out'),dryRun}):['care', 'schedule'].includes(secondary || '') ? await siteCareCommand(secondary!, command[2] || 'status', {
         site: value('site'), dryRun, timezone: value('timezone'), time: value('time'), state: value('state'), packet: value('packet'), report: value('report'),
         capabilities: value('capabilities'), planFile: value('plan-file'), receipt: value('receipt'), out: value('out'),
       }) : manageSite(secondary || 'status', { site: value('site'), dryRun });

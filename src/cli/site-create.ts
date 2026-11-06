@@ -153,6 +153,7 @@ export async function createSite(opts: CreateSiteOptions): Promise<CommandResult
 
   if (mode === 'preserve') {
     const instructions = join(dest, 'AGENTS.md');
+    writeFileSync(instructions, readFileSync(instructions, 'utf8') + '\nBefore maintenance and publication, run vitris manage updates --site . --out agent/site-manager/package-updates.json --json; read agent/refs/package-updates.md. Prepare/test compatible updates under existing publishing permissions and reuse the current daily care task.\n');
     writeFileSync(instructions, readFileSync(instructions, 'utf8') + '\nFor ongoing management and later edits, use .agents/skills/vitris-site-manager/SKILL.md, SITE-MANAGER.md and agent/refs/site-manager.md. Refresh with vitris manage prepare --site .; preserve mode still supports temporary previews only.\n');
     writeFileSync(instructions, readFileSync(instructions, 'utf8') + '\nFor a requested sibling business admin, read agent/refs/admin.md and the installed harness docs/ADMIN.md. Use vitris admin setup --plan then reviewed --apply. Preserve current forms and backend identity; cloud provisioning, authentication and deployment remain separate.\n');
   }

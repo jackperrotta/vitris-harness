@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "name": "@tryvitris/website-harness",
+  "version": "1.4.0",
+  "title": "Daily, weekly and monthly site care",
+  "notesScope": "package",
+  "notes": [
+    "Added one daily site-care coordinator that includes weekly and monthly reviews when due.",
+    "Added durable review history, overlap protection, missed-period catch-up and finding deduplication.",
+    "Added cloud-first scheduler setup with an explicit local fallback, plus schedule verification and change/pause guidance. Installing the package alone does not activate a schedule.",
+    "Extended maintenance guidance for live health, analytics, website/admin release compatibility and consistency with each site's accepted design."
+  ]
+}

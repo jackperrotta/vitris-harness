@@ -78,3 +78,8 @@ For a local checkout, run `npm run build:cli` and create a sibling site with `--
 MIT licensed. Hosted demonstrations and third-party media have their own license records; see [NOTICE](NOTICE).
 
 Optional standard customer booking: see [scheduling](docs/SCHEDULING.md) for the source-only test booking component, compatible admin API, and paired local preview.
+
+
+## Daily package maintenance
+
+The 1.5.0 candidate integrates `vitris manage updates` into the existing daily care run. It checks actual website and identity-bound separate-admin dependencies against complete stable public releases, then provides pinned preparation/testing plans. It reuses the current scheduler and care lease, preserves authored configuration and follows existing publication permissions. See [package maintenance](agent/refs/package-updates.md).

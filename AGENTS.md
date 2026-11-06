@@ -1,6 +1,6 @@
 # Harness agent
 
-For an optional separate business admin, read `agent/refs/admin.md` and `docs/ADMIN.md`. Use `vitris admin setup --plan` then `--apply`, delegating to the exact published 1.0.0 installer. New-site `--admin` prepares instructions only. Verify deployed API compatibility separately; never provision, deploy or migrate an existing shared backend as a setup side effect.
+For an optional separate business admin, read `agent/refs/admin.md` and `docs/ADMIN.md`. Use `vitris admin setup --plan` then `--apply`, delegating to the exact pinned 1.5.0 installer. New-site `--admin` prepares instructions only. Verify deployed API compatibility separately; never provision, deploy or migrate an existing shared backend as a setup side effect.
 
 This is the source repository for **@tryvitris/website-harness**: compiler, optional Cloudflare Worker, harvest tools, and agent kit. Customer sites live in separate repositories.
 
@@ -11,6 +11,8 @@ When the user supplies template and content inputs, add `--template "catalog ID,
 Knowledge lives in `agent/refs/` and is loaded per node. Do not introduce always-on `.cursor/skills`. Run `vitris upgrade --site SITE --plan` before `--apply`. Preserve authored files, `launch.json`, `agent/STATE.json`, and progress. Unknown kit provenance remains a conflict; never overwrite silently. Compose explicit `agent/overrides/`. Design system: `design-system/MASTER.md`.
 
 Never commit credentials, local account configuration, customer captures, or operator experiment history. Use placeholders and ignored environment files. Publish to npm only with explicit owner authorization.
+
+Before packing a new release, author `docs/releases/<version>.json` with matching package/version, a title, `notesScope: "package"` and substantive shipped-change bullets. Prepack embeds these and the exact README as `vitris-release.json`. Use `npm run release:publish -- --archive ABSOLUTE_REVIEWED_TARBALL` after the existing package checks and explicit npm authorization. It verifies registry integrity, then updates the public documentation through the private configured hook. If npm succeeds and docs fail, run `npm run release:docs`; never republish changed bytes for an existing version. Keep `.vitris/release-docs.json` / webhook environment credentials private. A hosted five-minute reconciler also discovers npm versions. Run `node --test src/release-docs.test.mjs` when changing this flow.
 
 Customer sites default to local builds and verification followed by direct Cloudflare Pages uploads. Keep `dist/` and local release bundles out of Git. Hosted deployment automation is opt-in; ship its example outside `.github/workflows/`. Existing customer scripts and remote build settings require a separate reviewed migration.
 
