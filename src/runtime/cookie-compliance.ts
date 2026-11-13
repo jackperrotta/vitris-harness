@@ -18,8 +18,12 @@ const BODY = [
  * Kernel-owned cookie compliance body (no site components).
  * Sites should link here from their footer: /cookie-compliance
  */
-export function cookieComplianceHtml(siteName: string): string {
-  const paras = BODY.map((p) => `<p>${p}</p>`).join("\n");
+export function cookieComplianceHtml(siteName: string, chatgptBusiness = false): string {
+  const statements = chatgptBusiness ? [
+    ...BODY,
+    "We count visits from ChatGPT using the link or referring site. If you accept analytics cookies, we can remember that source in this tab and include it with your submitted inquiry. You can clear that preference below.",
+  ] : BODY;
+  const paras = statements.map((p) => `<p>${p}</p>`).join("\n");
   return `<main id="main" tabindex="-1" class="c-cookie-page">
   <div class="wrap">
     <h1>Cookie compliance</h1>

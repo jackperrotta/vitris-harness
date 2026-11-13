@@ -154,7 +154,9 @@ export function distFilesFromBundle(opts: {
     "site.css": siteCss(compiled, bundle.catalog, bundle.site),
     "theme.css": themeCss(bundle.theme, bundle.site.typography),
     "beacon.js": beaconJs,
-    "robots.txt": robotsTxt(),
+    "robots.txt": bundle.site.chatgptBusiness
+      ? robotsTxt(opts.publicOrigin, bundle.site.chatgptBusiness, bundle.site.environment === "preview" || bundle.site.indexing === "noindex")
+      : robotsTxt(),
     "sitemap.xml": sitemapXml(
       compiled.map((p) => p.path),
       opts.publicOrigin,

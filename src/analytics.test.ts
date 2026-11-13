@@ -1,5 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { classifyChatGPTSource, chatgptBusinessConfig } from "./integrations/chatgpt-business.ts";
+import { robotsTxt } from "./compile/site.ts";
 import {
   classifyChannel,
   classifyDevice,
@@ -27,6 +29,27 @@ test("classifies devices from user agents", () => {
   assert.equal(classifyDevice("Mozilla/5.0 (iPad; CPU OS 17_0 like Mac OS X)"), "tablet");
   assert.equal(classifyDevice("Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120"), "desktop");
   assert.equal(classifyDevice("Mozilla/5.0 (Linux; Android 13; Pixel 7) Mobile"), "mobile");
+});
+
+test("attributes only allowlisted ChatGPT signals and explicit paid tags", () => {
+  assert.equal(classifyChatGPTSource(" ChatGPT.com ", "", ""), "chatgpt");
+  assert.equal(classifyChatGPTSource("chatgpt", " CPC ", ""), "chatgpt_paid");
+  assert.equal(classifyChatGPTSource("", "cpc", "https://chatgpt.com/"), "chatgpt");
+  assert.equal(classifyChatGPTSource("google", "cpc", "https://chatgpt.com/"), null);
+  assert.equal(classifyChatGPTSource("", "", "https://chatgpt.com.example.com/"), null);
+  assert.equal(classifyChatGPTSource("", "", "https://chatgpt.com@evil.example/"), null);
+});
+
+test("ChatGPT crawler rules are independent and preview output closes crawling", () => {
+  const origin = "https://business.example";
+  const config = chatgptBusinessConfig({version: 1, inquiryPath: "/contact/", crawlers: {search: "allow", training: "disallow"}});
+  assert.match(robotsTxt(origin, config), /User-agent: OAI-SearchBot\nAllow: \//);
+  assert.match(robotsTxt(origin, config), /User-agent: GPTBot\nDisallow: \//);
+  assert.doesNotMatch(robotsTxt(origin, config), /OAI-AdsBot/);
+  assert.equal(robotsTxt(origin, config, true), "User-agent: *\nDisallow: /\n");
+  for (const inquiryPath of ["//other.example", "/contact?query", "/contact#fragment", "/../admin"]) {
+    assert.throws(() => chatgptBusinessConfig({version: 1, inquiryPath}));
+  }
 });
 
 test("detects bots and maps links", () => {

@@ -2,6 +2,7 @@ import type { Env } from './env.ts';
 import { digest } from './forms.ts';
 import { isThemeColor, websiteColorKeys } from '@tryvitris/website-admin-contracts';
 import { LeadError, followUpsAvailable, listLeads, saveFollowUp } from './lead-management.ts';
+import { readChatGPTAttribution } from './chatgpt-attribution.ts';
 
 type Grant = { tenantId: string; siteOrigin: string; tokenHash: string; scopes: string[] };
 const scopes = ['leads:read', 'analytics:read', 'leads:write'];
@@ -87,5 +88,8 @@ export async function handleAdmin(env: Env, request: Request): Promise<Response>
     (SELECT COUNT(*) FROM leads l WHERE l.tenant_id=? AND substr(l.created_at,1,10)=days.day) AS enquiries
     FROM days WHERE day>=date('now',?) AND day<=date('now') ORDER BY day`)
     .bind(tenant, tenant, tenant, tenant, tenant, `-${days - 1} days`).all()).results;
-  return json({ ...identity, source: 'connected', rows });
+  const chatgptAttribution = url.searchParams.get('attribution') === 'chatgpt'
+    ? await readChatGPTAttribution(env.DB, tenant, days)
+    : undefined;
+  return json({ ...identity, source: 'connected', rows, chatgptAttribution });
 }

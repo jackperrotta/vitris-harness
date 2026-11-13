@@ -1,3 +1,5 @@
+import { classifyChatGPTSource } from "../integrations/chatgpt-business.ts";
+
 /** Deferred first-party analytics beacon (shipped as beacon.js). */
 export const beaconJs = `(() => {
   const kernel = document.documentElement.getAttribute("data-backend") || document.documentElement.getAttribute("data-kernel");
@@ -112,8 +114,35 @@ export const beaconJs = `(() => {
     if (document.referrer) referrerHost = new URL(document.referrer).hostname.replace(/^www\\./, "");
   } catch (_) {}
 
+  const chatgptBusiness = !preview && document.documentElement.dataset.chatgptBusiness === "1";
+  const chatgptSource = chatgptBusiness ? (${classifyChatGPTSource.toString()})(
+    params.get("utm_source") || "", params.get("utm_medium") || "", referrerHost
+  ) : null;
+  const sourceKey = "vitris_chatgpt_source";
+  const consentedSource = () => {
+    if (!chatgptBusiness || gpc || readCookie("vitris_cc") !== "1") return null;
+    try {
+      const previous = JSON.parse(sessionStorage.getItem(sourceKey) || "null");
+      const hasOtherSource = !chatgptSource && (params.has("utm_source") || (referrerHost && referrerHost !== location.hostname.replace(/^www\\./, "")));
+      if (hasOtherSource) {
+        sessionStorage.removeItem(sourceKey);
+        return null;
+      }
+      if (chatgptSource) sessionStorage.setItem(sourceKey, JSON.stringify({ sid, source: chatgptSource }));
+      const source = chatgptSource || (previous?.sid === sid ? previous.source : null);
+      return source === "chatgpt" || source === "chatgpt_paid" ? source : null;
+    } catch {
+      return chatgptSource;
+    }
+  };
+  if (chatgptBusiness) {
+    window.vitrisChatGPTSource = consentedSource;
+    consentedSource();
+  }
+
   send({
     kind: "pageview",
+    chatgpt_business: chatgptBusiness ? "1" : "",
     referrer: referrerHost,
     utm_medium: params.get("utm_medium") || "",
     utm_source: params.get("utm_source") || "",
@@ -276,6 +305,7 @@ export const beaconJs = `(() => {
     consent = "1";
     writeCookie("vitris_cc", "1", 395);
     allowCookie = true;
+    consentedSource();
     ensureVid();
     syncVidFields();
     removeBanner();
@@ -291,6 +321,7 @@ export const beaconJs = `(() => {
     clearCookie("vitris_vid");
     vid = "";
     allowCookie = false;
+    try { sessionStorage.removeItem(sourceKey); } catch (_) {}
     syncVidFields();
     stopPing();
     removeBanner();

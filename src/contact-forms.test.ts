@@ -36,10 +36,12 @@ test('shared forms: real local D1 migrations, isolation, security, atomic accept
   });
   const count=async(table:string)=> (await env.DB.prepare(`SELECT COUNT(*) n FROM ${table}`).first<{n:number}>())!.n;
   let source=0;
-  const submit=(overrides:Record<string,string>={}, options:{origin?:string;form?:string;ip?:string;headers?:Record<string,string>}={})=>{
+  const submit=(overrides:Record<string,string>={}, options:{origin?:string;form?:string;ip?:string;headers?:Record<string,string>;attribution?:string}={})=>{
     const origin=options.origin ?? 'https://a.example.test',form=options.form ?? 'a_contact';
     const body=new URLSearchParams({form_id:form,idempotency_key:crypto.randomUUID(),name:'Fictional Visitor',email:'visitor@example.invalid',number:'5705550100',message:'Fictional test inquiry',trade:'carpentry',page_path:'/contact','cf-turnstile-response':`${new URL(origin || 'https://a.example.test').hostname}:${crypto.randomUUID()}`,...overrides});
-    return new Request('http://127.0.0.1:8787/api/leads',{method:'POST',headers:{origin,accept:'application/json','cf-connecting-ip':options.ip || `test-${++source}`,...options.headers},body});
+    const url = new URL('http://127.0.0.1:8787/api/leads');
+    if (options.attribution) url.searchParams.set('vitris_source', options.attribution);
+    return new Request(url,{method:'POST',headers:{origin,accept:'application/json','cf-connecting-ip':options.ip || `test-${++source}`,...options.headers},body});
   };
   await t.test('additive migrations retain lead and site configuration',async()=>{
     assert.equal((await env.DB.prepare("SELECT name FROM leads WHERE id='legacy-lead'").first<{name:string}>())?.name,'Preserved Person');
@@ -128,11 +130,12 @@ test('shared forms: real local D1 migrations, isolation, security, atomic accept
     const limited=await handleApi(env,submit({}, {ip:'limited-source'})); assert.equal(limited.status,429); assert.equal(limited.headers.get('retry-after'),'600');
   });
   await t.test('concurrent duplicates create one test submission/outbox, no lead or conversion; safe replay order',async()=>{
-    const request=submit(), text=await request.text();
+    const request=submit({}, {attribution:'chatgpt'}), text=await request.text();
     const attempts=Array.from({length:8},()=>handleApi(env,new Request(request,{body:text})));
     const responses=await Promise.all(attempts); assert.ok(responses.every(r=>r.ok));
     assert.equal(new Set(await Promise.all(responses.map(async r=>(await r.json() as {leadId:string}).leadId))).size,1);
     assert.equal(await count('form_submissions'),1); assert.equal(await count('form_outbox'),1); assert.equal(await count('leads'),1); assert.equal(await count('analytics_events'),0);
+    assert.equal(await env.DB.prepare('SELECT attribution_source FROM form_submissions').first('attribution_source'),null);
     const before=verifications;
     const retry=new URLSearchParams(text); retry.set('cf-turnstile-response','invalid:expired');
     assert.equal((await handleApi(env,new Request(request,{body:retry}))).status,200); assert.equal(verifications,before);
@@ -151,9 +154,10 @@ test('shared forms: real local D1 migrations, isolation, security, atomic accept
   });
   await t.test('live transaction includes one compatible lead, conversion, outbox; notifications retry and terminate',async()=>{
     await configureForms(env,'a',[config('a','live')]);
-    const visitor=crypto.randomUUID();const req=submit({vid:visitor}), text=await req.text(), responses=await Promise.all([handleApi(env,new Request(req,{body:text})),handleApi(env,new Request(req,{body:text}))]);
+    const visitor=crypto.randomUUID();const req=submit({vid:visitor},{attribution:'chatgpt_paid'}), text=await req.text(), responses=await Promise.all([handleApi(env,new Request(req,{body:text})),handleApi(env,new Request(req,{body:text}))]);
     assert.ok(responses.every(r=>r.ok)); assert.equal(await count('leads'),2); assert.equal(await count('analytics_events'),1); assert.equal(await count('form_outbox'),2);
     const leadId=(await responses[0]!.json() as {leadId:string}).leadId;
+    assert.equal(await env.DB.prepare('SELECT attribution_source FROM form_submissions WHERE id=?').bind(leadId).first('attribution_source'),'chatgpt_paid');
     assert.equal((await env.DB.prepare('SELECT vid FROM leads WHERE id=?').bind(leadId).first<{vid:string}>())?.vid,visitor);
     let sends=0, accept=false;
     const provider={send:async(message:EmailMessageBuilder,id:string)=>{sends++; assert.equal(id,leadId); assert.equal(message.replyTo,'visitor@example.invalid'); assert.deepEqual(message.to,['owner@example.invalid']); if(!accept)throw Object.assign(new Error('PII must not be recorded'),{code:'E_INTERNAL_SERVER_ERROR'});return {messageId:'provider-accepted'};}};

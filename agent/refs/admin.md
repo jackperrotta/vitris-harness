@@ -1,5 +1,7 @@
 # Optional business admin
 
+For a ChatGPT business listing handoff and referral reporting, read the website harness's `docs/CHATGPT-BUSINESS.md`.
+
 Only prepare an admin when requested or when the operator opts in with site creation `--admin`. Continue the website's prepare → CURRENT → work → complete workflow and verified local-preview stop. Admin rollout does not bypass website consent or release gates.
 
 Read the installed harness's `docs/ADMIN.md` and the published admin's packaged `agent/WORKFLOW.md`, `agent/refs/harness.md`, and `agent/refs/cloudflare.md`. Use the pinned **1.5.0** release. Run `vitris admin setup --site WEBSITE --dir SIBLING_ADMIN --domain admin.customer-domain.com --website HTTPS_SITE_ORIGIN --tenant EXISTING_TENANT_ID --backend-origin HTTPS_BACKEND --plan`. Review `artifacts/admin/setup-plan.json`, then repeat with `--apply` and a dedicated environment `VITRIS_ADMIN_API_TOKEN`. Reuse the published installer; never reproduce it or silently overwrite an installation.

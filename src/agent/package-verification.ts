@@ -147,11 +147,20 @@ export function verifyPackage(root: string, out = mkdtempSync(join(tmpdir(), "vi
 
   const siteConfigPath=join(site,"site.json"), siteConfig=JSON.parse(readFileSync(siteConfigPath,"utf8"));
 
-  siteConfig.scrollMotion={version:1,policy:"enabled"};save(siteConfigPath,siteConfig);
+  siteConfig.scrollMotion={version:1,policy:"enabled"};
+  siteConfig.chatgptBusiness={version:1,inquiryPath:'/',crawlers:{search:'allow',training:'disallow'}};
+  save(siteConfigPath,siteConfig);
 
   const launchPath=join(site,"launch.json"),launch=JSON.parse(readFileSync(launchPath,"utf8"));
 
-  launch.backendOrigin="https://kernel.example.invalid";save(launchPath,launch); // Compile the consent route without making network requests.
+  launch.backendOrigin="https://kernel.example.invalid";
+  launch.publicOrigin="https://www.synthetic.example";
+  save(launchPath,launch); // Compile the consent route without making network requests.
+  const business = JSON.parse(runCommand(process.execPath, [join(installed, 'bin/vitris.js'), 'chatgpt-business', 'inspect', '--site', site, '--json'], install));
+  if (business.data?.profile?.inquiryUrl !== 'https://www.synthetic.example/' || business.data.issues.length ||
+      !existsSync(join(installed, 'docs/CHATGPT-BUSINESS.md')) || !existsSync(join(installed, 'migrations/0007_chatgpt_attribution.sql'))) {
+    throw Error('Packaged ChatGPT Business handoff or migration is missing');
+  }
 
   // Exercise installer resolution through the bundled CLI in a fresh consumer.
   const adminDir = join(out, 'business-admin');
@@ -168,6 +177,10 @@ export function verifyPackage(root: string, out = mkdtempSync(join(tmpdir(), "vi
   runCommand(process.execPath, [join(installed, "bin/vitris-build.js"), "--site", join(out, "site"), "--out", join(out, "site/dist"), "--slug", "official-smoke"], install, join(out, "build.log"));
 
   runCommand(process.execPath, [npm, "run", "build"], site, join(out, "site-build.log"));
+  if (!readFileSync(join(site, 'dist/index.html'), 'utf8').includes('data-chatgpt-business="1"') ||
+      !readFileSync(join(site, 'dist/robots.txt'), 'utf8').includes('User-agent: GPTBot\nDisallow: /')) {
+    throw Error('Installed package failed to compile the ChatGPT Business configuration');
+  }
   const motionHtml=readFileSync(join(site,"dist/motion/index.html"),"utf8"),asset=motionHtml.match(/src="(\/motion-[^"]+\.js)"/)?.[1];
 
   if(!asset||!existsSync(join(site,"dist",asset)))throw new Error("Installed package failed to emit self-hosted motion");

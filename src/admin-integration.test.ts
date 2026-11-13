@@ -111,6 +111,16 @@ test('published admin Worker reads isolated D1 records through real compatibilit
   // conversion; test submissions above never do. No widget or mail is invoked.
   await env.DB.prepare(`INSERT INTO form_submissions(id,tenant_id,form_id,idempotency_key,fingerprint,challenge_hash,mode,fields_json,schema_json,name,email,phone,message,page_path,recipients_json) VALUES('live-a','a','test-form','live-key','fingerprint','synthetic-live-challenge','live','{"project":"Synthetic project"}','{}','Synthetic Live','live@example.invalid','','Synthetic production fixture','/','[]')`).run();
   for (const [id, tenant, src] of [['live', 'a', 'live'], ['preview', 'a', 'preview'], ['other', 'b', 'live']]) await env.DB.prepare("INSERT INTO analytics_events(id,tenant_id,path,vid,day,kind,src) VALUES(?,?,'/','synthetic-visitor',date('now'),'pageview',?)").bind(id, tenant, src).run();
+  await env.DB.prepare("UPDATE analytics_events SET attribution_source='chatgpt' WHERE id IN ('preview','other')").run();
+  await env.DB.prepare("INSERT INTO hostnames(hostname,tenant_id) VALUES(?,?)").bind(new URL(siteOrigin).hostname,'a').run();
+  const taggedPageview = new Request(backendOrigin + '/api/t', {
+    method:'POST',
+    headers:{origin:siteOrigin,'user-agent':'Mozilla/5.0'},
+    body:new URLSearchParams({path:'/contact',chatgpt_business:'1',utm_source:'chatgpt.com'}),
+  });
+  assert.equal((await route(env, taggedPageview)).status,204);
+  await env.DB.prepare("DELETE FROM analytics_events WHERE id='live'").run();
+  await env.DB.prepare("UPDATE form_submissions SET attribution_source='chatgpt'").run();
   const grant = { tenantId: 'a', siteOrigin, tokenHash: await digest(token), scopes: ['leads:read', 'analytics:read'] };
   env.ADMIN_CONNECTIONS = JSON.stringify({ synthetic: grant, other: { ...grant, tenantId: 'b', tokenHash: await digest('other_synthetic_credential_1234567890123456') } });
   const headers = { authorization: `Bearer ${token}`, 'x-vitris-installation': 'synthetic', 'x-vitris-site-origin': siteOrigin };
@@ -137,6 +147,15 @@ test('published admin Worker reads isolated D1 records through real compatibilit
   assert.equal((await call('a/leads/status', update)).status, 403);
   assert.equal((await call('a/leads', { method: 'OPTIONS' })).status, 405);
   assert.equal((await call('a/analytics?days=999')).status, 400);
+  assert.equal((await call('b/analytics?attribution=chatgpt')).status, 403);
+  const attribution = (await (await call('a/analytics?days=14&attribution=chatgpt')).json() as any).chatgptAttribution;
+  assert.deepEqual(attribution, {version:1,days:14,sources:[
+    {source:'chatgpt',landingPageviews:1,landingPages:[{path:'/contact',landingPageviews:1}],acceptedInquiries:1},
+    {source:'chatgpt_paid',landingPageviews:0,landingPages:[],acceptedInquiries:0},
+  ]});
+  const attributedLeads = await (await call('a/leads')).json() as {rows:{id:string;attribution_source?:string|null}[]};
+  assert.equal(attributedLeads.rows.find(row=>row.id==='live-a')?.attribution_source,'chatgpt');
+  assert.equal(attributedLeads.rows.find(row=>row.id==='lead-a')?.attribution_source,null);
 
   // Use the actual published Worker adapter, not a reimplementation of its client.
   const { createAdmin } = await import(pathToFileURL(requirePublished.resolve('@tryvitris/website-admin-harness/worker')).href);

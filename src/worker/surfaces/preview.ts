@@ -85,7 +85,7 @@ async function renderPreview(env:Env,request:Request):Promise<Response> {
     });
   }
   if (rest === "robots.txt") {
-    return new Response(robotsTxt(), { headers: { "content-type": "text/plain; charset=utf-8" } });
+    return new Response(robotsTxt(undefined, bundle.site.chatgptBusiness, true), { headers: { "content-type": "text/plain; charset=utf-8" } });
   }
   if (rest === "sitemap.xml") {
     return new Response(
@@ -101,6 +101,7 @@ async function renderPreview(env:Env,request:Request):Promise<Response> {
   }
 
   const islands = siteIslands(compiled, bundle.catalog);
+  const previewSite = bundle.site.chatgptBusiness ? { ...bundle.site, environment: 'preview' as const } : bundle.site;
   const page =
     source != null
       ? compilePage(source, bundle.catalog, bundle.site, origin)
@@ -118,7 +119,7 @@ async function renderPreview(env:Env,request:Request):Promise<Response> {
   const doc =
     pagePath === "/cookie-compliance" && !source
       ? renderDocument({
-          site: bundle.site,
+          site: previewSite,
           page: {
             path: "/cookie-compliance",
             title: "Cookie compliance",
@@ -134,7 +135,7 @@ async function renderPreview(env:Env,request:Request):Promise<Response> {
           islandsHref: null,
         })
       : renderDocument({
-          site: bundle.site,
+          site: previewSite,
           page,
           kernelOrigin: origin,
           themeHref: `${prefix}/theme.css`,

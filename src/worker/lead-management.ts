@@ -1,4 +1,6 @@
 /** Wire-compatible lead operations; this package never imports a sibling checkout. */
+import { chatgptInquiryAttributionAvailable } from './chatgpt-attribution.ts';
+
 export class LeadError extends Error {
     status: number;
     constructor(status: number, message: string) { super(message); this.status = status; }
@@ -101,8 +103,9 @@ export async function listLeads(db: D1Database, tenant: string, installation: st
     }
     const fields = enabled ? ',f.assigned_to,f.due_date,f.notes AS followup_notes,f.completed,f.revision AS followup_revision,f.updated_at AS followup_updated' : '';
     const notifications = scope === 'tenant_id' ? ` LEFT JOIN form_submissions s ON s.id=l.id AND s.tenant_id=l.tenant_id AND s.mode='live' LEFT JOIN form_outbox o ON o.id=s.id AND o.tenant_id=l.tenant_id` : '';
+    const attributed = scope === 'tenant_id' && await chatgptInquiryAttributionAvailable(db);
     const extras = scope === 'tenant_id' ? ',s.fields_json,o.status AS notification_status,o.last_error AS notification_error' : '';
-    const stored = (await db.prepare(`SELECT l.*${fields}${extras} FROM leads l${join}${notifications} WHERE ${where.join(' AND ')} ORDER BY l.created_at DESC,l.id DESC LIMIT ?`).bind(...prefix, ...values, limit + 1).all<Record<string, unknown>>()).results;
+    const stored = (await db.prepare(`SELECT l.*${fields}${extras}${attributed ? ',s.attribution_source' : ''} FROM leads l${join}${notifications} WHERE ${where.join(' AND ')} ORDER BY l.created_at DESC,l.id DESC LIMIT ?`).bind(...prefix, ...values, limit + 1).all<Record<string, unknown>>()).results;
     const rows: Record<string, unknown>[] = [];
     let bytes = 0;
     for (const row of stored.slice(0, limit)) {

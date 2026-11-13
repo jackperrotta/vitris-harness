@@ -6,6 +6,8 @@ import { carouselJs } from "../runtime/carousel.ts";
 import { headerJs } from "../runtime/header.ts";
 import { experienceJs, experienceArrivalBootstrap } from "../runtime/experience.ts";
 import { leadsJs } from "../runtime/leads.ts";
+import { chatgptBusinessConfig } from "../integrations/chatgpt-business.ts";
+import type { ChatGPTBusinessConfig } from "../integrations/chatgpt-business.ts";
 import { lightboxJs } from "../runtime/lightbox.ts";
 import { motionAssetHref } from "../runtime/scroll-motion.generated.ts";
 import { tabsJs } from "../runtime/tabs.ts";
@@ -419,8 +421,8 @@ export function siteIslands(pages: CompiledPage[], catalog: Catalog): string {
   return chunks.join("\n");
 }
 
-function buildEntityJsonLd(site: SiteConfig): string | null {
-  if (!site.telephone && !site.email && !site.address && !site.businessType) return null;
+function buildEntityJsonLd(site: SiteConfig, publicOrigin?: string): string | null {
+  if (!site.telephone && !site.email && !site.address && !site.businessType && !site.chatgptBusiness) return null;
   const type = site.businessType || (site.address ? "LocalBusiness" : "Organization");
   const data: Record<string, unknown> = {
     "@context": "https://schema.org",
@@ -430,6 +432,7 @@ function buildEntityJsonLd(site: SiteConfig): string | null {
   if (site.telephone) data.telephone = site.telephone;
   if (site.email) data.email = site.email;
   if (site.address) data.address = { "@type": "PostalAddress", streetAddress: site.address };
+  if (site.chatgptBusiness && publicOrigin) data.url = publicOrigin.replace(/\/$/, "") + "/";
   return JSON.stringify(data).replace(/</g, "\\u003c");
 }
 
@@ -464,7 +467,8 @@ export function renderDocument(opts: {
   const canonical = opts.publicOrigin
     ? `<link rel="canonical" href="${escapeHtml(opts.publicOrigin.replace(/\/$/, "") + canonicalPath)}">`
     : "";
-  const jsonLd = buildEntityJsonLd(site);
+  const business = chatgptBusinessConfig(site.chatgptBusiness);
+  const jsonLd = buildEntityJsonLd(site, opts.publicOrigin);
   const jsonLdTag = jsonLd ? `<script type="application/ld+json">${jsonLd}</script>` : "";
   const noindex = site.environment === "preview" || page.indexing === "noindex" || site.indexing === "noindex";
   const robots = noindex ? `\n  <meta name="robots" content="noindex">` : "";
@@ -473,7 +477,7 @@ export function renderDocument(opts: {
   const webAnalytics = opts.webAnalyticsToken && site.environment !== 'preview' ? `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='${JSON.stringify({ token: opts.webAnalyticsToken })}'></script>` : '';
 
   return `<!DOCTYPE html>
-<html lang="${escapeHtml(lang)}"${site.scrollMotion?.policy ? ` data-motion-policy="${site.scrollMotion.policy}"` : ""}${kernelOrigin ? ` data-backend="${escapeHtml(kernelOrigin)}" data-kernel="${escapeHtml(kernelOrigin)}"` : ""}>
+<html lang="${escapeHtml(lang)}"${business && !noindex ? ' data-chatgpt-business="1"' : ''}${site.scrollMotion?.policy ? ` data-motion-policy="${site.scrollMotion.policy}"` : ""}${kernelOrigin ? ` data-backend="${escapeHtml(kernelOrigin)}" data-kernel="${escapeHtml(kernelOrigin)}"` : ""}>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">${robots}
@@ -500,11 +504,17 @@ ${webAnalytics}
 `;
 }
 
-export function robotsTxt(publicOrigin?: string): string {
+export function robotsTxt(publicOrigin?: string, business?: ChatGPTBusinessConfig, privateSite = false): string {
+  const names = {search: 'OAI-SearchBot', ads: 'OAI-AdsBot', training: 'GPTBot'} as const;
+  const rules = business && !privateSite ? Object.entries(names).flatMap(([key, name]) => {
+    const rule = business.crawlers?.[key as keyof typeof names];
+    return rule ? [`User-agent: ${name}\n${rule === 'allow' ? 'Allow' : 'Disallow'}: /\n\n`] : [];
+  }).join('') : '';
+  if (business && privateSite) return 'User-agent: *\nDisallow: /\n';
   return `User-agent: *
 Allow: /
 
-${publicOrigin ? `Sitemap: ${publicOrigin.replace(/\/$/, '')}/sitemap.xml\n` : ''}
+${rules}${publicOrigin ? `Sitemap: ${publicOrigin.replace(/\/$/, '')}/sitemap.xml\n` : ''}
 `;
 }
 
@@ -565,7 +575,7 @@ export function compileSite(opts: {
     indexing: "noindex",
     title: "Cookie compliance",
     description: "How this site uses first-party analytics cookies, and how to change your preference.",
-    bodyHtml: cookieComplianceHtml(opts.site.name),
+    bodyHtml: cookieComplianceHtml(opts.site.name, Boolean(opts.site.chatgptBusiness)),
     used: [],
     usesMotion: false,
     usesLeadForm: false,

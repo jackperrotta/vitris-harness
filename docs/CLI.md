@@ -334,3 +334,5 @@ const refineResult = await refineSite({
 `npm run test:freeze` runs typecheck, CLI build, the full tests, a packed install/build smoke check, and source archive round-trip verification. It writes a new baseline under `artifacts/official-test/`. See [official test protocol](OFFICIAL-TEST.md) for trial creation, active-agent continuation, spend limitations, and outcome labeling.
 
 For explicitly requested appointment booking, read [SCHEDULING.md](SCHEDULING.md). Public `launch.json.scheduling` metadata enables the standard route on compatible source/release builds; no scheduling setup CLI, remote migration or production activation is implied.
+
+For Businesses in ChatGPT, use `vitris chatgpt-business inspect --site . --json` to prepare the public profile handoff. See [CHATGPT-BUSINESS.md](CHATGPT-BUSINESS.md) for the optional crawler and attribution settings and the admin contract.

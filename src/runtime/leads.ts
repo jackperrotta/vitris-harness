@@ -70,7 +70,10 @@ export const leadsJs = `(() => {
         say('Sending your inquiry…');
         const controller = new AbortController();
         timeout = setTimeout(() => controller.abort(), Math.max(100, Math.min(30000, Number(data.leadTimeoutMs) || 10000)));
-        const response = await fetch(Object.getOwnPropertyDescriptor(HTMLFormElement.prototype, 'action').get.call(form), { method:'POST', body:values, headers:{accept:'application/json'}, signal:controller.signal, credentials:'omit' });
+        const action = new URL(Object.getOwnPropertyDescriptor(HTMLFormElement.prototype, 'action').get.call(form));
+        const attribution = window.vitrisChatGPTSource?.();
+        if (attribution) action.searchParams.set('vitris_source', attribution);
+        const response = await fetch(action, { method:'POST', body:values, headers:{accept:'application/json'}, signal:controller.signal, credentials:'omit' });
         const result = response.headers.get('content-type')?.includes('application/json') ? await response.json() : null;
         if (!response.ok || result?.ok !== true) throw new Error(result?.error || 'backend_unavailable');
         say(result.mode === 'test' ? 'Test message accepted. No customer email will be sent.' : 'Message accepted. Your inquiry has been saved.');

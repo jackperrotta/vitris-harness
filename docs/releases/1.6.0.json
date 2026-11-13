@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "name": "@tryvitris/website-harness",
+  "version": "1.6.0",
+  "title": "Businesses in ChatGPT website preparation and attribution",
+  "notesScope": "package",
+  "notes": [
+    "Adds the Businesses in ChatGPT opt-in, independent crawler policies, and an inspection command that prepares public business details and an inquiry URL for the owner.",
+    "Adds first-party ChatGPT landing and accepted inquiry attribution with a consent-aware browser handoff, an additive Worker migration, and optional fields on scoped analytics and lead responses."
+  ]
+}

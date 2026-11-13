@@ -33,6 +33,8 @@ export type SiteConfig = {
   address?: string;
   /** Explicit schema type. Defaults to LocalBusiness only when address is present. */
   businessType?: string;
+  /** Opt-in website preparation and first-party ChatGPT attribution. */
+  chatgptBusiness?: import("./integrations/chatgpt-business.ts").ChatGPTBusinessConfig;
   environment?: "preview" | "production";
   indexing?: "index" | "noindex";
   /** Pinned knowledge release for sites created with this kernel. */

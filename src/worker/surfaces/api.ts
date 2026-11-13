@@ -16,6 +16,8 @@ import { kernelOrigin, secret, type Env } from "../env.ts";
 import { html, json, readBody, text } from "../http.ts";
 import { loadSiteSnapshot, tenantByHostname, tenantBySlug } from "../tenant.ts";
 import { handleFormSubmission, handleFormsAdmin } from '../forms.ts';
+import { classifyChatGPTSource } from '../../integrations/chatgpt-business.ts';
+import { chatgptTrafficAttributionAvailable } from '../chatgpt-attribution.ts';
 
 const KINDS = new Set<EventKind>(["pageview", "leave", "convert", "engage", "ping"]);
 const GOALS = new Set<ConvertGoal>(["form", "tel", "mailto", "maps"]);
@@ -183,6 +185,10 @@ export async function handleApi(env: Env, request: Request): Promise<Response> {
     let goal: string | null = null;
     let action: string | null = null;
     const label = (body.label || "").slice(0, 40) || null;
+    const attribution = kind === "pageview" && src === "live" && body.chatgpt_business === "1"
+      ? classifyChatGPTSource(body.utm_source || "", body.utm_medium || "", body.referrer || "")
+      : null;
+    const attributed = attribution && await chatgptTrafficAttributionAvailable(env.DB);
 
     if (kind === "convert") {
       const g = (body.goal || "").toLowerCase();
@@ -207,8 +213,8 @@ export async function handleApi(env: Env, request: Request): Promise<Response> {
 
     await env.DB.prepare(
       `INSERT INTO analytics_events
-        (id, tenant_id, path, referrer, vid, day, kind, sid, channel, device, hour, duration_ms, scroll_pct, goal, action, label, src)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        (id, tenant_id, path, referrer, vid, day, kind, sid, channel, device, hour, duration_ms, scroll_pct, goal, action, label, src${attributed ? ", attribution_source" : ""})
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?${attributed ? ", ?" : ""})`,
     )
       .bind(
         crypto.randomUUID(),
@@ -228,6 +234,7 @@ export async function handleApi(env: Env, request: Request): Promise<Response> {
         action,
         label,
         src,
+        ...(attributed ? [attribution] : []),
       )
       .run();
 

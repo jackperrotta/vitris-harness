@@ -3,6 +3,8 @@ import { hmacHex, readSession } from './auth.ts';
 import { isLocalRequest, type Env } from './env.ts';
 import { escapeHtml } from '../html.ts';
 import { isUuid } from '../analytics.ts';
+import { isChatGPTSource } from '../integrations/chatgpt-business.ts';
+import { chatgptInquiryAttributionAvailable } from './chatgpt-attribution.ts';
 
 type StoredForm = { id: string; tenant_id: string; config_json: string };
 type Receipt = { id: string; fingerprint: string; mode: string; notification: string | null };
@@ -145,7 +147,11 @@ export async function handleFormSubmission(env: Env, request: Request): Promise<
   const leadId = crypto.randomUUID();
   try {
     // Trigger creates the outbox, legacy lead and conversion in the same transaction.
-    await env.DB.prepare(`INSERT INTO form_submissions(id,tenant_id,form_id,idempotency_key,fingerprint,challenge_hash,mode,fields_json,schema_json,name,email,phone,message,page_path,recipients_json,vid) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`).bind(leadId,row.tenant_id,id,key,fingerprint,await digest(token),c.mode,JSON.stringify(fields),JSON.stringify(c.fields),mapped.name,mapped.email,mapped.phone,mapped.message,path,JSON.stringify(c.recipients),vid || null).run();
+    const attribution = url.searchParams.get('vitris_source');
+    const attributed = c.mode === 'live' && url.searchParams.getAll('vitris_source').length === 1
+      && isChatGPTSource(attribution) && await chatgptInquiryAttributionAvailable(env.DB);
+    await env.DB.prepare(`INSERT INTO form_submissions(id,tenant_id,form_id,idempotency_key,fingerprint,challenge_hash,mode,fields_json,schema_json,name,email,phone,message,page_path,recipients_json,vid${attributed ? ',attribution_source' : ''})
+      VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?${attributed ? ',?' : ''})`).bind(leadId,row.tenant_id,id,key,fingerprint,await digest(token),c.mode,JSON.stringify(fields),JSON.stringify(c.fields),mapped.name,mapped.email,mapped.phone,mapped.message,path,JSON.stringify(c.recipients),vid || null,...(attributed ? [attribution] : [])).run();
   } catch {
     const duplicate = await receipt(); if (duplicate) return acknowledge(duplicate);
     const replay = await env.DB.prepare('SELECT id FROM form_submissions WHERE challenge_hash=?').bind(await digest(token)).first();

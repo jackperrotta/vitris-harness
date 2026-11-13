@@ -19,6 +19,7 @@ import { shareSite } from "./share.ts";
 import { explainStage } from "../knowledge/explain.ts";
 import { formsCommand } from "./forms.ts";
 import { adminCommand } from './admin.ts';
+import { inspectChatGPTBusiness } from './chatgpt-business.ts';
 import { manageSite } from './manage.ts';
 import {packageMaintenanceCommand} from './package-maintenance.ts';
 import { siteCareCommand } from './site-care.ts';
@@ -141,6 +142,7 @@ Commands:
   manage care ACTION                   Daily coordinator: configure/status/begin/renew/complete/abort
   manage schedule plan|record          Cloud-first native scheduler setup bridge
   admin setup|status|verify             Separate business admin; explicit cloud rollout
+  chatgpt-business inspect              Prepare public profile details and check website configuration
   forms inspect|setup|status            Inventory, provision, and check contact forms
   doctor                                Check environment, dependencies, and site health
   site create --dir DIR --slug SLUG    Scaffold a new customer site repo (--from URL or --blank)
@@ -207,6 +209,8 @@ Options:
     } else if (primary === 'admin') {
       const value = (key: string) => typeof opts[key] === 'string' ? opts[key] as string : undefined;
       result = await adminCommand(secondary || 'status', { site: siteRoot, dir: value('dir'), domain: value('domain'), website: value('website'), tenant: value('tenant'), backendOrigin: value('backend-origin'), plan: !!opts.plan, apply: !!opts.apply, leadWrite: !!opts['lead-write'], grants: value('grants'), out: value('out'), dryRun });
+    } else if (primary === 'chatgpt-business' && (!secondary || secondary === 'inspect')) {
+      result = await inspectChatGPTBusiness(resolve(siteRoot || '.'));
     } else if (primary === 'forms') {
       const list=(name:string)=>typeof opts[name]==='string'?(opts[name] as string).split(',').map(s=>s.trim()).filter(Boolean):undefined;
       result=await formsCommand(secondary || 'status',{site:siteRoot,tenant:typeof opts.tenant==='string'?opts.tenant:undefined,backendOrigin:typeof opts['backend-origin']==='string'?opts['backend-origin']:undefined,origins:list('origins'),recipients:list('recipients'),mode:typeof opts.mode==='string'?opts.mode:undefined,apply:!!opts.apply,testKeys:!!opts['test-keys'],cloudflare:!!opts.cloudflare,worker:typeof opts.worker==='string'?opts.worker:undefined,config:typeof opts['forms-config']==='string'?opts['forms-config']:undefined,dryRun});

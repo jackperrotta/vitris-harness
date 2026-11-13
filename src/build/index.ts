@@ -216,7 +216,7 @@ export async function buildSite(input: BuildSiteInput): Promise<string[]> {
     await writeFile(join(input.outDir, "beacon.js"), beaconJs, "utf8");
     written.push("beacon.js");
   }
-  await writeFile(join(input.outDir, "robots.txt"), robotsTxt(input.publicOrigin), "utf8");
+  await writeFile(join(input.outDir, "robots.txt"), robotsTxt(input.publicOrigin, site.chatgptBusiness, site.environment === "preview" || site.indexing === "noindex"), "utf8");
   await writeFile(
     join(input.outDir, "sitemap.xml"),
     sitemapXml(

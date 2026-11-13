@@ -44,3 +44,33 @@ test("parent browser check verifies saved consent and rejects unwired controls",
     }
   } finally { await browser?.close(); await new Promise<void>(r => server.close(() => r())); }
 });
+
+test("ChatGPT inquiry attribution follows affirmative consent across navigation", async () => {
+  const browser = await chromium.launch();
+  try {
+    const page = await browser.newPage();
+    const source = () => page.evaluate("window.vitrisChatGPTSource()");
+    const events: URLSearchParams[] = [];
+    await page.route("https://site.example/**", async route => {
+      const path = new URL(route.request().url()).pathname;
+      if (path === "/api/t") {
+        events.push(new URLSearchParams(route.request().postData() || ""));
+        return route.fulfill({status: 204});
+      }
+      return route.fulfill({contentType: "text/html", body: `<html data-chatgpt-business="1" data-backend="https://site.example"><body>${cookieComplianceHtml("Test", true)}<script>${beaconJs}</script></body></html>`});
+    });
+    await page.goto("https://site.example/?utm_source=chatgpt.com&utm_medium=cpc");
+    assert.equal(await source(), null);
+    assert.ok(events.some(event => event.get("kind") === "pageview" && event.get("chatgpt_business") === "1"));
+    await page.locator('[data-vitris-cc="accept"]').click();
+    assert.equal(await source(), "chatgpt_paid");
+    await page.goto("https://site.example/contact");
+    assert.equal(await source(), "chatgpt_paid");
+    await page.locator('[data-vitris-cc="reject"]').click();
+    assert.equal(await source(), null);
+    await page.locator('[data-vitris-cc="accept"]').click();
+    assert.equal(await source(), null);
+  } finally {
+    await browser.close();
+  }
+});
